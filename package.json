@@ -4,6 +4,10 @@
   "description": "Website will showcase content not visible on CV",
   "main": "index.js",
   "scripts": {
+    "deploy": "gh-pages -d dist",
+    "postbuild": "gh-pages -d dist",
+    "build": "gulp build",
+    "prebuild": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +26,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4"
+    "gulp-sourcemaps": "^2.6.4",
+    "rimraf": "^2.6.2"
   }
 }
