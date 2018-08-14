@@ -1,0 +1,27 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Website will showcase content not visible on CV",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gautamnaik1994/me.git"
+  },
+  "author": "Gautam Naik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gautamnaik1994/me/issues"
+  },
+  "homepage": "https://github.com/gautamnaik1994/me#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gh-pages": "^1.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
