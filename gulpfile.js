@@ -12,7 +12,8 @@ var src = {
 
 gulp.task('serve', ['sass'], function () {
     browserSync.init({
-        server: "./src"
+        server: "./src",
+        port: 8080
     });
     gulp.watch(src.scss, ['sass']);
     gulp.watch(src.html).on('change', reload);

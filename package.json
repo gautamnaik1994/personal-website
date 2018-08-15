@@ -27,6 +27,10 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
+    "panini": "^1.6.2",
     "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3"
   }
 }

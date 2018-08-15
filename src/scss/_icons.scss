@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?nt22nn');
+    src:  url('../fonts/icomoon.eot?nt22nn#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?nt22nn') format('truetype'),
+      url('../fonts/icomoon.woff?nt22nn') format('woff'),
+      url('../fonts/icomoon.svg?nt22nn#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-linkedin:before {
+    content: "\e900";
+  }
+  .icon-github:before {
+    content: "\e901";
+  }
+  .icon-stack-overflow:before {
+    content: "\e902";
+  }
+  .icon-behance:before {
+    content: "\e903";
+  }
+  .icon-codepen:before {
+    content: "\e904";
+  }
+  .icon-stack-overflow-color:before {
+    content: "\e906";
+    color:$stackoveflow;
+  }
+  .icon-stack-overflow-color:after {
+    content: "\e905";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color:$stackoveflow-secondary;
+  }
