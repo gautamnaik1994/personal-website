@@ -37,6 +37,8 @@ gulp.task('sass', function () {
 gulp.task('copyfiles', function () {
     gulp.src('./src/*.html')
         .pipe(gulp.dest('./dist'));
+        gulp.src('./src/assets/**/*.*')
+        .pipe(gulp.dest('./dist/assets'));
 });
 
 gulp.task('buildcss', function () {
@@ -47,7 +49,7 @@ gulp.task('buildcss', function () {
             errLogToConsole: true
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", "Android 2", "Firefox ESR"))
-        .pipe(gulp.dest('dist/assets/css'))
+        .pipe(gulp.dest('src/assets/css'))
 });
 
 gulp.task('build', ['buildcss', 'copyfiles']);
