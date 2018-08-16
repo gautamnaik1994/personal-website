@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d dist",
-    "postbuild": "gh-pages -d dist",
     "build": "gulp build",
     "prebuild": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
