@@ -553,6 +553,7 @@ body {
 
 /* line 60, src/scss/app.scss */
 .intro .profile-pic img {
+  background-color: #ffc107;
   display: inline-block;
   height: 120px;
   width: 120px;
@@ -560,7 +561,7 @@ body {
   border-radius: 50%;
 }
 
-/* line 72, src/scss/app.scss */
+/* line 74, src/scss/app.scss */
 .profile-links a {
   text-decoration: none;
   display: inline-block;
@@ -578,27 +579,27 @@ body {
   position: relative;
 }
 
-/* line 89, src/scss/app.scss */
+/* line 91, src/scss/app.scss */
 .linkedin {
   color: #0077b5;
 }
 
-/* line 93, src/scss/app.scss */
+/* line 95, src/scss/app.scss */
 .behance {
   color: #1769ff;
 }
 
-/* line 97, src/scss/app.scss */
+/* line 99, src/scss/app.scss */
 .codepen {
   color: #0ebeff;
 }
 
-/* line 101, src/scss/app.scss */
+/* line 103, src/scss/app.scss */
 .github {
   color: #333;
 }
 
-/* line 105, src/scss/app.scss */
+/* line 107, src/scss/app.scss */
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -621,20 +622,20 @@ body {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  /* line 124, src/scss/app.scss */
+  /* line 127, src/scss/app.scss */
   .btn {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-/* line 129, src/scss/app.scss */
+/* line 132, src/scss/app.scss */
 .btn:hover,
 .btn:focus {
   text-decoration: none;
 }
 
-/* line 134, src/scss/app.scss */
+/* line 137, src/scss/app.scss */
 .btn:focus,
 .btn.focus {
   outline: 0;
@@ -642,24 +643,24 @@ body {
           box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-/* line 140, src/scss/app.scss */
+/* line 143, src/scss/app.scss */
 .btn.disabled,
 .btn:disabled {
   opacity: 0.65;
 }
 
-/* line 145, src/scss/app.scss */
+/* line 148, src/scss/app.scss */
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 
-/* line 149, src/scss/app.scss */
+/* line 152, src/scss/app.scss */
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-/* line 183, src/scss/app.scss */
+/* line 186, src/scss/app.scss */
 .download-cv {
   margin-top: 2rem;
   color: #333;

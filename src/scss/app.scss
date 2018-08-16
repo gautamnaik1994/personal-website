@@ -58,6 +58,7 @@ body {
   padding: 0 15px;
   .profile-pic {
     img {
+      background-color: #ffc107;
       display: inline-block;
       height: 120px;
       width: 120px;
@@ -65,7 +66,8 @@ body {
       border-radius: 50%;
     }
   }
-  .details {}
+  .details {
+  }
 }
 
 .profile-links {
@@ -117,7 +119,8 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -180,10 +183,10 @@ fieldset:disabled a.btn {
 //   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 // }
 
-.download-cv{
+.download-cv {
   margin-top: 2rem;
-    color: #333;
-    text-decoration: none;
-    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
-    padding: 6px 24px;
+  color: #333;
+  text-decoration: none;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
+  padding: 6px 24px;
 }
