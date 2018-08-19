@@ -40,6 +40,9 @@ body {
     max-width: 1140px;
   }
 }*/
+li + li {
+  margin-top: 5px;
+}
 section.container {
   margin-top: 5rem;
 }
@@ -226,11 +229,12 @@ ul {
 $green: #00ac4b;
 $orange: #f6914f;
 $red: #d12229;
+$blue: #00bcd4;
 [data-skillLevel='Intermediate'] {
   color: $orange;
 }
 [data-skillLevel='Beginner'] {
-  color: $red;
+  color:$primary;
 }
 [data-skillLevel='Expert'] {
   color: $green;

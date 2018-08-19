@@ -531,18 +531,23 @@ body {
   }
 }*/
 /* line 43, src/scss/app.scss */
+li + li {
+  margin-top: 5px;
+}
+
+/* line 46, src/scss/app.scss */
 section.container {
   margin-top: 5rem;
 }
 
 @media (min-width: 768px) {
-  /* line 46, src/scss/app.scss */
+  /* line 49, src/scss/app.scss */
   .left-right-list {
     margin-right: 7rem;
   }
 }
 
-/* line 50, src/scss/app.scss */
+/* line 53, src/scss/app.scss */
 .left-right-list > li .inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -565,17 +570,17 @@ section.container {
   */
 }
 
-/* line 68, src/scss/app.scss */
+/* line 71, src/scss/app.scss */
 .semi-bold {
   font-weight: 600;
 }
 
-/* line 71, src/scss/app.scss */
+/* line 74, src/scss/app.scss */
 .bold {
   font-weight: 700;
 }
 
-/* line 74, src/scss/app.scss */
+/* line 77, src/scss/app.scss */
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -584,7 +589,7 @@ section.container {
   margin-left: auto;
 }
 
-/* line 82, src/scss/app.scss */
+/* line 85, src/scss/app.scss */
 .intro {
   height: 100vh;
   text-align: center;
@@ -601,7 +606,7 @@ section.container {
   padding: 0 15px;
 }
 
-/* line 90, src/scss/app.scss */
+/* line 93, src/scss/app.scss */
 .intro .profile-pic img {
   background-color: #ffc107;
   display: inline-block;
@@ -611,7 +616,7 @@ section.container {
   border-radius: 50%;
 }
 
-/* line 104, src/scss/app.scss */
+/* line 107, src/scss/app.scss */
 .profile-links a {
   text-decoration: none;
   display: inline-block;
@@ -629,27 +634,27 @@ section.container {
   position: relative;
 }
 
-/* line 121, src/scss/app.scss */
+/* line 124, src/scss/app.scss */
 .linkedin {
   color: #0077b5;
 }
 
-/* line 125, src/scss/app.scss */
+/* line 128, src/scss/app.scss */
 .behance {
   color: #1769ff;
 }
 
-/* line 129, src/scss/app.scss */
+/* line 132, src/scss/app.scss */
 .codepen {
   color: #0ebeff;
 }
 
-/* line 133, src/scss/app.scss */
+/* line 136, src/scss/app.scss */
 .github {
   color: #333;
 }
 
-/* line 137, src/scss/app.scss */
+/* line 140, src/scss/app.scss */
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -672,20 +677,20 @@ section.container {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  /* line 157, src/scss/app.scss */
+  /* line 160, src/scss/app.scss */
   .btn {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-/* line 162, src/scss/app.scss */
+/* line 165, src/scss/app.scss */
 .btn:hover,
 .btn:focus {
   text-decoration: none;
 }
 
-/* line 167, src/scss/app.scss */
+/* line 170, src/scss/app.scss */
 .btn:focus,
 .btn.focus {
   outline: 0;
@@ -693,24 +698,24 @@ section.container {
           box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-/* line 173, src/scss/app.scss */
+/* line 176, src/scss/app.scss */
 .btn.disabled,
 .btn:disabled {
   opacity: 0.65;
 }
 
-/* line 178, src/scss/app.scss */
+/* line 181, src/scss/app.scss */
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 
-/* line 182, src/scss/app.scss */
+/* line 185, src/scss/app.scss */
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-/* line 216, src/scss/app.scss */
+/* line 219, src/scss/app.scss */
 .download-cv {
   margin-top: 2rem;
   color: #333;
@@ -720,22 +725,22 @@ fieldset:disabled a.btn {
   padding: 6px 24px;
 }
 
-/* line 223, src/scss/app.scss */
+/* line 226, src/scss/app.scss */
 ul {
   padding-left: 18px;
 }
 
-/* line 229, src/scss/app.scss */
+/* line 233, src/scss/app.scss */
 [data-skillLevel='Intermediate'] {
   color: #f6914f;
 }
 
-/* line 232, src/scss/app.scss */
+/* line 236, src/scss/app.scss */
 [data-skillLevel='Beginner'] {
-  color: #d12229;
+  color: #03a9f4;
 }
 
-/* line 235, src/scss/app.scss */
+/* line 239, src/scss/app.scss */
 [data-skillLevel='Expert'] {
   color: #00ac4b;
 }
