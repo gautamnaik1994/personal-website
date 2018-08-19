@@ -419,6 +419,13 @@ template {
   position: relative;
 }
 
+/* line 16, src/scss/_helpers.scss */
+.clearfix:after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?nt22nn");
@@ -507,25 +514,68 @@ body {
 @media (min-width: 768px) {
   /* line 27, src/scss/app.scss */
   .container {
-    max-width: 720px;
+    max-width: 700px;
   }
 }
 
+/*
 @media (min-width: 992px) {
-  /* line 33, src/scss/app.scss */
   .container {
     max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 39, src/scss/app.scss */
   .container {
     max-width: 1140px;
   }
+}*/
+/* line 43, src/scss/app.scss */
+section.container {
+  margin-top: 5rem;
 }
 
-/* line 44, src/scss/app.scss */
+@media (min-width: 768px) {
+  /* line 46, src/scss/app.scss */
+  .left-right-list {
+    margin-right: 7rem;
+  }
+}
+
+/* line 50, src/scss/app.scss */
+.left-right-list > li .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  z-index: 0;
+  /*
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: #f7f7f7;
+        top: 50%;
+        z-index: -1;
+      }
+  */
+}
+
+/* line 68, src/scss/app.scss */
+.semi-bold {
+  font-weight: 600;
+}
+
+/* line 71, src/scss/app.scss */
+.bold {
+  font-weight: 700;
+}
+
+/* line 74, src/scss/app.scss */
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -534,7 +584,7 @@ body {
   margin-left: auto;
 }
 
-/* line 52, src/scss/app.scss */
+/* line 82, src/scss/app.scss */
 .intro {
   height: 100vh;
   text-align: center;
@@ -551,7 +601,7 @@ body {
   padding: 0 15px;
 }
 
-/* line 60, src/scss/app.scss */
+/* line 90, src/scss/app.scss */
 .intro .profile-pic img {
   background-color: #ffc107;
   display: inline-block;
@@ -561,7 +611,7 @@ body {
   border-radius: 50%;
 }
 
-/* line 74, src/scss/app.scss */
+/* line 104, src/scss/app.scss */
 .profile-links a {
   text-decoration: none;
   display: inline-block;
@@ -579,27 +629,27 @@ body {
   position: relative;
 }
 
-/* line 91, src/scss/app.scss */
+/* line 121, src/scss/app.scss */
 .linkedin {
   color: #0077b5;
 }
 
-/* line 95, src/scss/app.scss */
+/* line 125, src/scss/app.scss */
 .behance {
   color: #1769ff;
 }
 
-/* line 99, src/scss/app.scss */
+/* line 129, src/scss/app.scss */
 .codepen {
   color: #0ebeff;
 }
 
-/* line 103, src/scss/app.scss */
+/* line 133, src/scss/app.scss */
 .github {
   color: #333;
 }
 
-/* line 107, src/scss/app.scss */
+/* line 137, src/scss/app.scss */
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -622,20 +672,20 @@ body {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  /* line 127, src/scss/app.scss */
+  /* line 157, src/scss/app.scss */
   .btn {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-/* line 132, src/scss/app.scss */
+/* line 162, src/scss/app.scss */
 .btn:hover,
 .btn:focus {
   text-decoration: none;
 }
 
-/* line 137, src/scss/app.scss */
+/* line 167, src/scss/app.scss */
 .btn:focus,
 .btn.focus {
   outline: 0;
@@ -643,24 +693,24 @@ body {
           box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-/* line 143, src/scss/app.scss */
+/* line 173, src/scss/app.scss */
 .btn.disabled,
 .btn:disabled {
   opacity: 0.65;
 }
 
-/* line 148, src/scss/app.scss */
+/* line 178, src/scss/app.scss */
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 
-/* line 152, src/scss/app.scss */
+/* line 182, src/scss/app.scss */
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-/* line 186, src/scss/app.scss */
+/* line 216, src/scss/app.scss */
 .download-cv {
   margin-top: 2rem;
   color: #333;
@@ -668,4 +718,24 @@ fieldset:disabled a.btn {
   -webkit-box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
           box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
   padding: 6px 24px;
+}
+
+/* line 223, src/scss/app.scss */
+ul {
+  padding-left: 18px;
+}
+
+/* line 229, src/scss/app.scss */
+[data-skillLevel='Intermediate'] {
+  color: #f6914f;
+}
+
+/* line 232, src/scss/app.scss */
+[data-skillLevel='Beginner'] {
+  color: #d12229;
+}
+
+/* line 235, src/scss/app.scss */
+[data-skillLevel='Expert'] {
+  color: #00ac4b;
 }

@@ -25,10 +25,10 @@ body {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 700px;
   }
 }
-
+/*
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
@@ -39,8 +39,38 @@ body {
   .container {
     max-width: 1140px;
   }
+}*/
+section.container {
+  margin-top: 5rem;
 }
-
+.left-right-list {
+  @include media-breakpoint-up(md) {
+    margin-right: 7rem;
+  }
+  & > li .inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 0;
+    /*
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: #f7f7f7;
+        top: 50%;
+        z-index: -1;
+      }
+  */
+  }
+}
+.semi-bold {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -189,4 +219,19 @@ fieldset:disabled a.btn {
   text-decoration: none;
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
   padding: 6px 24px;
+}
+ul {
+  padding-left: 18px;
+}
+$green: #00ac4b;
+$orange: #f6914f;
+$red: #d12229;
+[data-skillLevel='Intermediate'] {
+  color: $orange;
+}
+[data-skillLevel='Beginner'] {
+  color: $red;
+}
+[data-skillLevel='Expert'] {
+  color: $green;
 }
