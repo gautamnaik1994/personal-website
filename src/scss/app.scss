@@ -7,8 +7,32 @@
 body {
   background-color: var(--body-background-color);
   color: var(--text-color);
+  padding-bottom: 10rem;
+}
+@include media-breakpoint-up(md) {
+  h1 {
+    font-size: 2em;
+  }
 }
 
+.section-header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  margin: 0;
+  z-index: 1;
+  padding: 1rem 0;
+}
+.sub-header {
+  margin:10px 0;
+
+}
+@supports (position: sticky) {
+  .footerWithAbsolutePositionedChildren {
+    position: sticky;
+    bottom: 20px; /* now this won't mess with positioning in non-sticky browsers */
+  }
+}
 .container {
   width: 100%;
   padding-right: 15px;
@@ -225,6 +249,7 @@ fieldset:disabled a.btn {
 }
 ul {
   padding-left: 18px;
+  margin-bottom: 1.5rem;;
 }
 $green: #00ac4b;
 $orange: #f6914f;
@@ -234,8 +259,59 @@ $blue: #00bcd4;
   color: $orange;
 }
 [data-skillLevel='Beginner'] {
-  color:$primary;
+  color: $primary;
 }
 [data-skillLevel='Expert'] {
   color: $green;
+}
+
+.experience {
+  ul{
+    position: relative;
+    &:after{
+      content: "";
+      width: 1px;
+      // height: 100%;
+      position: absolute;
+      top: 16px;
+      bottom: 0;
+      background: #d8d8d8;
+      left: 3px;
+      z-index: -1;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #F44336;
+      border-radius: 50%;
+      bottom: 0;
+      left: 1px;
+    }
+    li{
+      &+li{
+        margin-top: 17px;
+      }
+      *+*{
+        margin: 0;
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.other-things{
+  a{
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .github-img-container{
+    overflow-x: auto;
+    img{
+          //width:100%;
+   // height:auto;
+    }
+
+  }
 }

@@ -493,9 +493,43 @@ template {
 body {
   background-color: var(--body-background-color);
   color: var(--text-color);
+  padding-bottom: 10rem;
 }
 
-/* line 12, src/scss/app.scss */
+@media (min-width: 768px) {
+  /* line 13, src/scss/app.scss */
+  h1 {
+    font-size: 2em;
+  }
+}
+
+/* line 18, src/scss/app.scss */
+.section-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  margin: 0;
+  z-index: 1;
+  padding: 1rem 0;
+}
+
+/* line 26, src/scss/app.scss */
+.sub-header {
+  margin: 10px 0;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  /* line 31, src/scss/app.scss */
+  .footerWithAbsolutePositionedChildren {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 20px;
+    /* now this won't mess with positioning in non-sticky browsers */
+  }
+}
+
+/* line 36, src/scss/app.scss */
 .container {
   width: 100%;
   padding-right: 15px;
@@ -505,14 +539,14 @@ body {
 }
 
 @media (min-width: 576px) {
-  /* line 21, src/scss/app.scss */
+  /* line 45, src/scss/app.scss */
   .container {
     max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 27, src/scss/app.scss */
+  /* line 51, src/scss/app.scss */
   .container {
     max-width: 700px;
   }
@@ -530,24 +564,24 @@ body {
     max-width: 1140px;
   }
 }*/
-/* line 43, src/scss/app.scss */
+/* line 67, src/scss/app.scss */
 li + li {
   margin-top: 5px;
 }
 
-/* line 46, src/scss/app.scss */
+/* line 70, src/scss/app.scss */
 section.container {
   margin-top: 5rem;
 }
 
 @media (min-width: 768px) {
-  /* line 49, src/scss/app.scss */
+  /* line 73, src/scss/app.scss */
   .left-right-list {
     margin-right: 7rem;
   }
 }
 
-/* line 53, src/scss/app.scss */
+/* line 77, src/scss/app.scss */
 .left-right-list > li .inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -570,17 +604,17 @@ section.container {
   */
 }
 
-/* line 71, src/scss/app.scss */
+/* line 95, src/scss/app.scss */
 .semi-bold {
   font-weight: 600;
 }
 
-/* line 74, src/scss/app.scss */
+/* line 98, src/scss/app.scss */
 .bold {
   font-weight: 700;
 }
 
-/* line 77, src/scss/app.scss */
+/* line 101, src/scss/app.scss */
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -589,7 +623,7 @@ section.container {
   margin-left: auto;
 }
 
-/* line 85, src/scss/app.scss */
+/* line 109, src/scss/app.scss */
 .intro {
   height: 100vh;
   text-align: center;
@@ -606,7 +640,7 @@ section.container {
   padding: 0 15px;
 }
 
-/* line 93, src/scss/app.scss */
+/* line 117, src/scss/app.scss */
 .intro .profile-pic img {
   background-color: #ffc107;
   display: inline-block;
@@ -616,7 +650,7 @@ section.container {
   border-radius: 50%;
 }
 
-/* line 107, src/scss/app.scss */
+/* line 131, src/scss/app.scss */
 .profile-links a {
   text-decoration: none;
   display: inline-block;
@@ -634,27 +668,27 @@ section.container {
   position: relative;
 }
 
-/* line 124, src/scss/app.scss */
+/* line 148, src/scss/app.scss */
 .linkedin {
   color: #0077b5;
 }
 
-/* line 128, src/scss/app.scss */
+/* line 152, src/scss/app.scss */
 .behance {
   color: #1769ff;
 }
 
-/* line 132, src/scss/app.scss */
+/* line 156, src/scss/app.scss */
 .codepen {
   color: #0ebeff;
 }
 
-/* line 136, src/scss/app.scss */
+/* line 160, src/scss/app.scss */
 .github {
   color: #333;
 }
 
-/* line 140, src/scss/app.scss */
+/* line 164, src/scss/app.scss */
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -677,20 +711,20 @@ section.container {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  /* line 160, src/scss/app.scss */
+  /* line 184, src/scss/app.scss */
   .btn {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-/* line 165, src/scss/app.scss */
+/* line 189, src/scss/app.scss */
 .btn:hover,
 .btn:focus {
   text-decoration: none;
 }
 
-/* line 170, src/scss/app.scss */
+/* line 194, src/scss/app.scss */
 .btn:focus,
 .btn.focus {
   outline: 0;
@@ -698,24 +732,24 @@ section.container {
           box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-/* line 176, src/scss/app.scss */
+/* line 200, src/scss/app.scss */
 .btn.disabled,
 .btn:disabled {
   opacity: 0.65;
 }
 
-/* line 181, src/scss/app.scss */
+/* line 205, src/scss/app.scss */
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 
-/* line 185, src/scss/app.scss */
+/* line 209, src/scss/app.scss */
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-/* line 219, src/scss/app.scss */
+/* line 243, src/scss/app.scss */
 .download-cv {
   margin-top: 2rem;
   color: #333;
@@ -725,22 +759,74 @@ fieldset:disabled a.btn {
   padding: 6px 24px;
 }
 
-/* line 226, src/scss/app.scss */
+/* line 250, src/scss/app.scss */
 ul {
   padding-left: 18px;
+  margin-bottom: 1.5rem;
 }
 
-/* line 233, src/scss/app.scss */
+/* line 258, src/scss/app.scss */
 [data-skillLevel='Intermediate'] {
   color: #f6914f;
 }
 
-/* line 236, src/scss/app.scss */
+/* line 261, src/scss/app.scss */
 [data-skillLevel='Beginner'] {
   color: #03a9f4;
 }
 
-/* line 239, src/scss/app.scss */
+/* line 264, src/scss/app.scss */
 [data-skillLevel='Expert'] {
   color: #00ac4b;
+}
+
+/* line 269, src/scss/app.scss */
+.experience ul {
+  position: relative;
+}
+
+/* line 271, src/scss/app.scss */
+.experience ul:after {
+  content: "";
+  width: 1px;
+  position: absolute;
+  top: 16px;
+  bottom: 0;
+  background: #d8d8d8;
+  left: 3px;
+  z-index: -1;
+}
+
+/* line 282, src/scss/app.scss */
+.experience ul:before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #F44336;
+  border-radius: 50%;
+  bottom: 0;
+  left: 1px;
+}
+
+/* line 293, src/scss/app.scss */
+.experience ul li + li {
+  margin-top: 17px;
+}
+
+/* line 296, src/scss/app.scss */
+.experience ul li * + * {
+  margin: 0;
+  margin-top: 3px;
+}
+
+/* line 305, src/scss/app.scss */
+.other-things a {
+  margin-bottom: 2rem;
+  display: block;
+}
+
+/* line 309, src/scss/app.scss */
+.other-things .github-img-container {
+  overflow-x: auto;
 }
