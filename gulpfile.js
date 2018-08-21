@@ -67,7 +67,16 @@ gulp.task('gsw', () => {
         runtimeCaching: [{
             urlPattern: new RegExp('https://develop--gautamnaik.netlify.com'),
             handler: 'staleWhileRevalidate'
-          }]
+          },
+          {
+            urlPattern: new RegExp('https://stackoverflow.com/users/flair/2376317.png'),
+            handler: 'staleWhileRevalidate'
+          } ,
+          {
+            urlPattern: new RegExp(' http://ghchart.rshah.org/00ac4b/gautamnaik1994'),
+            handler: 'staleWhileRevalidate'
+          }] 
+         
     }).then(({warnings}) => {
         // In case there are any warnings from workbox-build, log them.
         for (const warning of warnings) {
