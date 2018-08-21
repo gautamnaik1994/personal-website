@@ -24,8 +24,7 @@ body {
   padding: 1rem 0;
 }
 .sub-header {
-  margin:10px 0;
-
+  margin: 10px 0;
 }
 @supports (position: sticky) {
   .footerWithAbsolutePositionedChildren {
@@ -66,6 +65,9 @@ body {
 }*/
 li + li {
   margin-top: 5px;
+}
+.text-muted {
+  color: #6c757d;
 }
 section.container {
   margin-top: 5rem;
@@ -249,7 +251,7 @@ fieldset:disabled a.btn {
 }
 ul {
   padding-left: 18px;
-  margin-bottom: 1.5rem;;
+  margin-bottom: 1.5rem;
 }
 $green: #00ac4b;
 $orange: #f6914f;
@@ -266,10 +268,10 @@ $blue: #00bcd4;
 }
 
 .experience {
-  ul{
+  ul {
     position: relative;
-    &:after{
-      content: "";
+    &:after {
+      content: '';
       width: 1px;
       // height: 100%;
       position: absolute;
@@ -279,21 +281,21 @@ $blue: #00bcd4;
       left: 3px;
       z-index: -1;
     }
-    &:before{
-      content: "";
+    &:before {
+      content: '';
       position: absolute;
       width: 6px;
       height: 6px;
-      background: #F44336;
+      background: #f44336;
       border-radius: 50%;
       bottom: 0;
       left: 1px;
     }
-    li{
-      &+li{
+    li {
+      & + li {
         margin-top: 17px;
       }
-      *+*{
+      * + * {
         margin: 0;
         margin-top: 3px;
       }
@@ -301,17 +303,16 @@ $blue: #00bcd4;
   }
 }
 
-.other-things{
-  a{
+.other-things {
+  a {
     margin-bottom: 2rem;
     display: block;
   }
-  .github-img-container{
+  .github-img-container {
     overflow-x: auto;
-    img{
-          //width:100%;
-   // height:auto;
+    img {
+      //width:100%;
+      // height:auto;
     }
-
   }
 }
