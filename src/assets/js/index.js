@@ -9,18 +9,7 @@
 //   });
 
 window.onload = function(e) {
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then(registration => {
-          console.log('SW registered: ', registration);
-        })
-        .catch(registrationError => {
-          console.log('SW registration failed: ', registrationError);
-        });
-    });
-  }
+ 
   let expert = document.querySelectorAll('[data-skillLevel="Expert"]');
   let intermediate = document.querySelectorAll(
     '[data-skillLevel="Intermediate"]',
@@ -37,3 +26,20 @@ function addSkills(nodes) {
     //nodes[i].classList.add(skillNodeValue.toLowerCase() + '');
   }
 }
+
+function init() {
+  console.log("Initing")
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then(registration => {
+          console.log('SW registered: ', registration);
+        })
+        .catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+    });
+  }
+}
+init();
