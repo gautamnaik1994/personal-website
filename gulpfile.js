@@ -63,7 +63,11 @@ gulp.task('gsw', () => {
         ],
         swDest: `${dist}/sw.js`,
         clientsClaim: true,
-        skipWaiting: true
+        skipWaiting: true,
+        runtimeCaching: [{
+            urlPattern: new RegExp('https://develop--gautamnaik.netlify.com'),
+            handler: 'staleWhileRevalidate'
+          }]
     }).then(({warnings}) => {
         // In case there are any warnings from workbox-build, log them.
         for (const warning of warnings) {
