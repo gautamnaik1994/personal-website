@@ -3,6 +3,7 @@ const autoprefixer = require('gulp-autoprefixer');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
+workbox = require('workbox-build');
 
 var src = {
     scss: 'src/scss/*.scss',
@@ -13,7 +14,7 @@ var src = {
 gulp.task('serve', ['sass'], function () {
     browserSync.init({
         server: "./src",
-        port: 5000
+        port: 8080
     });
     gulp.watch(src.scss, ['sass']);
     gulp.watch(src.html).on('change', reload);
@@ -37,7 +38,7 @@ gulp.task('sass', function () {
 gulp.task('copyfiles', function () {
     gulp.src('./src/*.html')
         .pipe(gulp.dest('./dist'));
-        gulp.src('./src/assets/**/*.*')
+    gulp.src('./src/assets/**/*.*')
         .pipe(gulp.dest('./dist/assets'));
 });
 
@@ -50,6 +51,28 @@ gulp.task('buildcss', function () {
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", "Android 2", "Firefox ESR"))
         .pipe(gulp.dest('src/assets/css'))
+});
+
+const dist = 'dist';
+
+gulp.task('gsw', () => {
+    return workbox.generateSW({
+        globDirectory: dist,
+        globPatterns: [
+            '**/*.{html,js,png,ttf,svg,woff,eot,pdf,css}'
+        ],
+        swDest: `${dist}/sw.js`,
+        clientsClaim: true,
+        skipWaiting: true
+    }).then(({warnings}) => {
+        // In case there are any warnings from workbox-build, log them.
+        for (const warning of warnings) {
+            console.warn(warning);
+        }
+        console.info('Service worker generation completed.');
+    }).catch((error) => {
+        console.warn('Service worker generation failed:', error);
+    });
 });
 
 gulp.task('build', ['buildcss', 'copyfiles']);
