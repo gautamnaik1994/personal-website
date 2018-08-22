@@ -9,7 +9,7 @@
 //   });
 
 window.onload = function(e) {
- 
+  init();
   let expert = document.querySelectorAll('[data-skillLevel="Expert"]');
   let intermediate = document.querySelectorAll(
     '[data-skillLevel="Intermediate"]',
@@ -42,4 +42,3 @@ function init() {
     });
   }
 }
-init();

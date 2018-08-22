@@ -88,6 +88,6 @@ gulp.task('gsw', () => {
     });
 });
 
-gulp.task('build', ['buildcss', 'copyfiles']);
+gulp.task('build', [ 'copyfiles','buildcss']);
 
 gulp.task('default', ['serve']);
