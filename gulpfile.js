@@ -59,7 +59,7 @@ gulp.task('gsw', () => {
     return workbox.generateSW({
         globDirectory: dist,
         globPatterns: [
-            '**/*.{html,js,png,ttf,svg,woff,woff2,eot,pdf,css}'
+            '**/*.{html,js,png,ttf,svg,woff,woff2,eot,pdf,css,json}'
         ],
         swDest: `${dist}/sw.js`,
         clientsClaim: true,

@@ -75,10 +75,12 @@ function checkIfAppInstalled() {
 
 }
 
-function startTimer(){
-  if(checkIfAppInstalled === 0 || checkIfAppInstalled === 2){
-    let insstallTimer=setTimeout(() => {
+function startTimer() {
+  console.log("insede satrt Timer");
+  if (checkIfAppInstalled === 0 || checkIfAppInstalled === 2) {
+    let insstallTimer = setTimeout(() => {
       deferredPrompt.prompt();
+      console.log("Timer Satrted");
       // Wait for the user to respond to the prompt
       deferredPrompt.userChoice
         .then((choiceResult) => {
