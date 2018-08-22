@@ -59,29 +59,32 @@ gulp.task('gsw', () => {
     return workbox.generateSW({
         globDirectory: dist,
         globPatterns: [
-            '**/*.{html,js,png,ttf,svg,woff,eot,pdf,css}'
+            '**/*.{html,js,png,ttf,svg,woff,woff2,eot,pdf,css}'
         ],
         swDest: `${dist}/sw.js`,
         clientsClaim: true,
         skipWaiting: true,
         runtimeCaching: [{
-            urlPattern: new RegExp('https://develop--gautamnaik.netlify.com'),
-            handler: 'staleWhileRevalidate'
-          },
-          {
-            urlPattern: new RegExp('https://stackoverflow.com/users/flair/2376317.png'),
-            handler: 'staleWhileRevalidate'
-          } ,
-          {
-            urlPattern: new RegExp(' http://ghchart.rshah.org/00ac4b/gautamnaik1994'),
-            handler: 'staleWhileRevalidate'
-          },
-        {
-            urlPattern:new RegExp('/^https:\/\/fonts\.googleapis\.com/'),
-            handler: 'staleWhileRevalidate'
-        }] 
-         
-    }).then(({warnings}) => {
+                urlPattern: new RegExp('https://develop--gautamnaik.netlify.com'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://stackoverflow.com/users/flair/2376317.png'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('http://ghchart.rshah.org/00ac4b/gautamnaik1994'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('/^https:\/\/fonts\.googleapis\.com/'),
+                handler: 'staleWhileRevalidate'
+            },
+        ]
+
+    }).then(({
+        warnings
+    }) => {
         // In case there are any warnings from workbox-build, log them.
         for (const warning of warnings) {
             console.warn(warning);
@@ -92,6 +95,6 @@ gulp.task('gsw', () => {
     });
 });
 
-gulp.task('build', [ 'copyfiles','buildcss']);
+gulp.task('build', ['copyfiles', 'buildcss']);
 
 gulp.task('default', ['serve']);
