@@ -8,6 +8,7 @@
 //     console.log(myJson);
 //   });
 var deferredPrompt;
+var installBtn;
 window.onload = function (e) {
   init();
   //startTimer();
@@ -19,6 +20,22 @@ window.onload = function (e) {
   if (expert.length > 0) addSkills(expert);
   if (intermediate.length > 0) addSkills(intermediate);
   if (beginner.length > 0) addSkills(beginner);
+  installBtn = document.querySelector('#installApp');
+  installBtn.addEventListener('click', (e) => {
+
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice
+      .then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+      });
+  });
 };
 
 function addSkills(nodes) {
@@ -60,24 +77,11 @@ function init() {
       installBtn.style.display = 'none';
     });
 
-    var installBtn = document.querySelector('#install');
-    installBtn.addEventListener('click', (e) => {
 
-      // Show the prompt
-      deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice
-        .then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-          } else {
-            console.log('User dismissed the A2HS prompt');
-          }
-          deferredPrompt = null;
-        });
-    });
+    
   }
 }
+
 
 
 
