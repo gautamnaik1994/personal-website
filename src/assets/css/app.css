@@ -755,42 +755,48 @@ fieldset:disabled a.btn {
 }
 
 /* line 245, src/scss/app.scss */
-.download-cv {
+.download-cv, .install-app {
   margin-top: 2rem;
   color: #333;
   text-decoration: none;
   -webkit-box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
           box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
   padding: 6px 24px;
+  background-color: #fff;
 }
 
-/* line 252, src/scss/app.scss */
+/* line 253, src/scss/app.scss */
+.install-app {
+  margin-left: 5px;
+}
+
+/* line 255, src/scss/app.scss */
 ul {
   padding-left: 18px;
   margin-bottom: 1.5rem;
 }
 
-/* line 260, src/scss/app.scss */
+/* line 263, src/scss/app.scss */
 [data-skillLevel='Intermediate'] {
   color: #f6914f;
 }
 
-/* line 263, src/scss/app.scss */
+/* line 266, src/scss/app.scss */
 [data-skillLevel='Beginner'] {
   color: #03a9f4;
 }
 
-/* line 266, src/scss/app.scss */
+/* line 269, src/scss/app.scss */
 [data-skillLevel='Expert'] {
   color: #00ac4b;
 }
 
-/* line 271, src/scss/app.scss */
+/* line 274, src/scss/app.scss */
 .experience ul {
   position: relative;
 }
 
-/* line 273, src/scss/app.scss */
+/* line 276, src/scss/app.scss */
 .experience ul:after {
   content: '';
   width: 1px;
@@ -802,7 +808,7 @@ ul {
   z-index: -1;
 }
 
-/* line 284, src/scss/app.scss */
+/* line 287, src/scss/app.scss */
 .experience ul:before {
   content: '';
   position: absolute;
@@ -814,24 +820,24 @@ ul {
   left: 1px;
 }
 
-/* line 295, src/scss/app.scss */
+/* line 298, src/scss/app.scss */
 .experience ul li + li {
   margin-top: 17px;
 }
 
-/* line 298, src/scss/app.scss */
+/* line 301, src/scss/app.scss */
 .experience ul li * + * {
   margin: 0;
   margin-top: 3px;
 }
 
-/* line 307, src/scss/app.scss */
+/* line 310, src/scss/app.scss */
 .other-things a {
   margin-bottom: 2rem;
   display: block;
 }
 
-/* line 311, src/scss/app.scss */
+/* line 314, src/scss/app.scss */
 .other-things .github-img-container {
   overflow-x: auto;
 }

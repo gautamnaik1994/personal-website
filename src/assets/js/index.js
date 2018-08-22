@@ -7,7 +7,7 @@
 //   .then(function(myJson) {
 //     console.log(myJson);
 //   });
-
+var deferredPrompt;
 window.onload = function (e) {
   init();
   //startTimer();
@@ -28,7 +28,7 @@ function addSkills(nodes) {
     //nodes[i].classList.add(skillNodeValue.toLowerCase() + '');
   }
 }
-let deferredPrompt;
+
 
 
 
@@ -52,14 +52,16 @@ function init() {
       e.preventDefault();
       // Stash the event so it can be triggered later.
       deferredPrompt = e;
+      deferredPrompt.prompt();
     });
 
     window.addEventListener('appinstalled', (evt) => {
       //localStorage.setItem('appInstalled', true);
+      installBtn.style.display = 'none';
     });
 
     var installBtn = document.querySelector('#install');
-installBtn.addEventListener('click', (e) => {
+    installBtn.addEventListener('click', (e) => {
 
       // Show the prompt
       deferredPrompt.prompt();
@@ -76,7 +78,7 @@ installBtn.addEventListener('click', (e) => {
     });
   }
 }
-  
+
 
 
 
