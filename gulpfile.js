@@ -3,6 +3,7 @@ const autoprefixer = require('gulp-autoprefixer');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
+workbox = require('workbox-build');
 
 var src = {
     scss: 'src/scss/*.scss',
@@ -37,7 +38,7 @@ gulp.task('sass', function () {
 gulp.task('copyfiles', function () {
     gulp.src('./src/*.html')
         .pipe(gulp.dest('./dist'));
-        gulp.src('./src/assets/**/*.*')
+    gulp.src('./src/assets/**/*.*')
         .pipe(gulp.dest('./dist/assets'));
 });
 
@@ -52,6 +53,64 @@ gulp.task('buildcss', function () {
         .pipe(gulp.dest('src/assets/css'))
 });
 
-gulp.task('build', ['buildcss', 'copyfiles']);
+const dist = 'dist';
+
+gulp.task('gsw', () => {
+    return workbox.generateSW({
+        globDirectory: dist,
+        globPatterns: [
+            '**/*.{html,js,png,ttf,svg,woff,woff2,eot,pdf,css,json}'
+        ],
+        swDest: `${dist}/sw.js`,
+        clientsClaim: true,
+        skipWaiting: true,
+        runtimeCaching: [{
+                urlPattern: new RegExp('https://develop--gautamnaik.netlify.com'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://gautamnaik.netlify.com'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://stackoverflow.com/users/flair/2376317.png'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://ghchart.rshah.org/00ac4b/gautamnaik1994'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('/^https:\/\/fonts\.googleapis\.com/'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600,700'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://fonts.gstatic.com/s/ibmplexsans/v3/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIFsdP3pBms.woff2'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://fonts.gstatic.com/s/ibmplexsans/v3/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2'),
+                handler: 'staleWhileRevalidate'
+            },
+        ]
+
+    }).then(({
+        warnings
+    }) => {
+        // In case there are any warnings from workbox-build, log them.
+        for (const warning of warnings) {
+            console.warn(warning);
+        }
+        console.info('Service worker generation completed.');
+    }).catch((error) => {
+        console.warn('Service worker generation failed:', error);
+    });
+});
+
+gulp.task('build', ['copyfiles', 'buildcss']);
 
 gulp.task('default', ['serve']);

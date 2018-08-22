@@ -10,6 +10,11 @@
 .one-rem-mt {
   margin-top: 1rem;
 }
-.is-relative{
+.is-relative {
   position: relative;
+}
+.clearfix:after {
+  content: ' ';
+  display: table;
+  clear: both;
 }

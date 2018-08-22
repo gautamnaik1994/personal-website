@@ -7,8 +7,31 @@
 body {
   background-color: var(--body-background-color);
   color: var(--text-color);
+  padding-bottom: 10rem;
+}
+@include media-breakpoint-up(md) {
+  h1 {
+    font-size: 2em;
+  }
 }
 
+.section-header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  margin: 0;
+  z-index: 1;
+  padding: 1rem 0;
+}
+.sub-header {
+  margin: 10px 0;
+}
+@supports (position: sticky) {
+  .footerWithAbsolutePositionedChildren {
+    position: sticky;
+    bottom: 20px; /* now this won't mess with positioning in non-sticky browsers */
+  }
+}
 .container {
   width: 100%;
   padding-right: 15px;
@@ -25,10 +48,10 @@ body {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 700px;
   }
 }
-
+/*
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
@@ -39,8 +62,44 @@ body {
   .container {
     max-width: 1140px;
   }
+}*/
+li + li {
+  margin-top: 5px;
 }
-
+.text-muted {
+  color: #6c757d;
+}
+section.container {
+  margin-top: 5rem;
+}
+.left-right-list {
+  @include media-breakpoint-up(md) {
+    margin-right: 7rem;
+  }
+  & > li .inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 0;
+    /*
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: #f7f7f7;
+        top: 50%;
+        z-index: -1;
+      }
+  */
+  }
+}
+.semi-bold {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -182,11 +241,83 @@ fieldset:disabled a.btn {
 // .show > .btn-primary.dropdown-toggle:focus {
 //   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 // }
+.two-rem-mt{
+    margin-top: 2rem;
+}
+.download-cv, .install-app{
 
-.download-cv {
-  margin-top: 2rem;
   color: #333;
   text-decoration: none;
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
   padding: 6px 24px;
+  background-color: #fff;
+}
+.install-app{}
+
+ul {
+  padding-left: 18px;
+  margin-bottom: 1.5rem;
+}
+$green: #00ac4b;
+$orange: #f6914f;
+$red: #d12229;
+$blue: #00bcd4;
+[data-skillLevel='Intermediate'] {
+  color: $orange;
+}
+[data-skillLevel='Beginner'] {
+  color: $primary;
+}
+[data-skillLevel='Expert'] {
+  color: $green;
+}
+
+.experience {
+  ul {
+    position: relative;
+    &:after {
+      content: '';
+      width: 1px;
+      // height: 100%;
+      position: absolute;
+      top: 16px;
+      bottom: 0;
+      background: #d8d8d8;
+      left: 3px;
+      z-index: -1;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #f44336;
+      border-radius: 50%;
+      bottom: 0;
+      left: 1px;
+    }
+    li {
+      & + li {
+        margin-top: 17px;
+      }
+      * + * {
+        margin: 0;
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.other-things {
+  a {
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .github-img-container {
+    overflow-x: auto;
+    img {
+      //width:100%;
+      // height:auto;
+    }
+  }
 }
