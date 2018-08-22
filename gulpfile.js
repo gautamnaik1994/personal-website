@@ -69,6 +69,10 @@ gulp.task('gsw', () => {
                 handler: 'staleWhileRevalidate'
             },
             {
+                urlPattern: new RegExp('https://gautamnaik.netlify.com'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
                 urlPattern: new RegExp('https://stackoverflow.com/users/flair/2376317.png'),
                 handler: 'staleWhileRevalidate'
             },
@@ -78,6 +82,18 @@ gulp.task('gsw', () => {
             },
             {
                 urlPattern: new RegExp('/^https:\/\/fonts\.googleapis\.com/'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600,700'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://fonts.gstatic.com/s/ibmplexsans/v3/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIFsdP3pBms.woff2'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('https://fonts.gstatic.com/s/ibmplexsans/v3/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2'),
                 handler: 'staleWhileRevalidate'
             },
         ]
