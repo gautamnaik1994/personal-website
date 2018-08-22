@@ -77,7 +77,7 @@ gulp.task('gsw', () => {
                 handler: 'staleWhileRevalidate'
             },
             {
-                urlPattern: new RegExp('http://ghchart.rshah.org/00ac4b/gautamnaik1994'),
+                urlPattern: new RegExp('https://ghchart.rshah.org/00ac4b/gautamnaik1994'),
                 handler: 'staleWhileRevalidate'
             },
             {
