@@ -10,7 +10,7 @@
 
 window.onload = function (e) {
   init();
-  startTimer();
+  //startTimer();
   let expert = document.querySelectorAll('[data-skillLevel="Expert"]');
   let intermediate = document.querySelectorAll(
     '[data-skillLevel="Intermediate"]',
@@ -55,29 +55,9 @@ function init() {
     });
 
     window.addEventListener('appinstalled', (evt) => {
-      localStorage.setItem('appInstalled', true);
+      //localStorage.setItem('appInstalled', true);
     });
-  }
-}
 
-function checkIfAppInstalled() {
-  if (localStorage.getItem('appInstalled') == null) {
-    localStorage.setItem('appInstalled', false);
-    console.log('App First time');
-    return 0;
-  } else if (localStorage.getItem('appInstalled') == true) {
-    console.log('App Installed');
-    return 1;
-  } else {
-    console.log('App Not Installed');
-    return 2;
-  }
-
-}
-
-function startTimer() {
-  console.log("insede satrt Timer");
-  if (checkIfAppInstalled == 0 || checkIfAppInstalled == 2) {
     setTimeout(() => {
       deferredPrompt.prompt();
       console.log("Timer Satrted");
@@ -92,6 +72,44 @@ function startTimer() {
           }
           deferredPrompt = null;
         });
-    }, 25000);
+    }, 20000);
   }
 }
+
+
+
+// function checkIfAppInstalled() {
+//   if (localStorage.getItem('appInstalled') == null) {
+//     localStorage.setItem('appInstalled', false);
+//     console.log('App First time');
+//     return 0;
+//   } else if (localStorage.getItem('appInstalled') == true) {
+//     console.log('App Installed');
+//     return 1;
+//   } else {
+//     console.log('App Not Installed');
+//     return 2;
+//   }
+
+// }
+
+// function startTimer() {
+//   console.log("insede satrt Timer");
+//   if (checkIfAppInstalled == 0 || checkIfAppInstalled == 2) {
+//     setTimeout(() => {
+//       deferredPrompt.prompt();
+//       console.log("Timer Satrted");
+//       // Wait for the user to respond to the prompt
+//       deferredPrompt.userChoice
+//         .then((choiceResult) => {
+//           if (choiceResult.outcome === 'accepted') {
+
+//             console.log('User accepted the A2HS prompt');
+//           } else {
+//             console.log('User dismissed the A2HS prompt');
+//           }
+//           deferredPrompt = null;
+//         });
+//     }, 25000);
+//   }
+// }
