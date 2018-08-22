@@ -8,8 +8,9 @@
 //     console.log(myJson);
 //   });
 
-window.onload = function(e) {
+window.onload = function (e) {
   init();
+  startTimer();
   let expert = document.querySelectorAll('[data-skillLevel="Expert"]');
   let intermediate = document.querySelectorAll(
     '[data-skillLevel="Intermediate"]',
@@ -19,6 +20,7 @@ window.onload = function(e) {
   if (intermediate.length > 0) addSkills(intermediate);
   if (beginner.length > 0) addSkills(beginner);
 };
+
 function addSkills(nodes) {
   for (let i = 0; i < nodes.length; i++) {
     let skillNodeValue = nodes[i].attributes['data-skillLevel'].nodeValue;
@@ -26,6 +28,9 @@ function addSkills(nodes) {
     //nodes[i].classList.add(skillNodeValue.toLowerCase() + '');
   }
 }
+let deferredPrompt;
+
+
 
 function init() {
   console.log("Initing")
@@ -40,5 +45,51 @@ function init() {
           console.log('SW registration failed: ', registrationError);
         });
     });
+
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+    });
+
+    window.addEventListener('appinstalled', (evt) => {
+      localStorage.setItem('appInstalled', true);
+    });
+  }
+}
+
+function checkIfAppInstalled() {
+  if (localStorage.getItem('appInstalled') == null) {
+    localStorage.setItem('appInstalled', false);
+    console.log('App First time');
+    return 0;
+  } else if (localStorage.getItem('appInstalled') == true) {
+    console.log('App Installed');
+    return 1;
+  } else {
+    console.log('App Not Installed');
+    return 2;
+  }
+
+}
+
+function startTimer(){
+  if(checkIfAppInstalled === 0 || checkIfAppInstalled === 2){
+    let insstallTimer=setTimeout(() => {
+      deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice
+        .then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
+        });
+    }, 25000);
   }
 }
