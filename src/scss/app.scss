@@ -321,3 +321,9 @@ $blue: #00bcd4;
     }
   }
 }
+
+@media all and (display-mode: standalone) {
+ .show-for-installed{
+   display: block;
+ }
+}

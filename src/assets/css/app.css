@@ -840,3 +840,10 @@ ul {
 .other-things .github-img-container {
   overflow-x: auto;
 }
+
+@media all and (display-mode: standalone) {
+  /* line 326, src/scss/app.scss */
+  .show-for-installed {
+    display: block;
+  }
+}

@@ -10,7 +10,7 @@
 var deferredPrompt;
 var installBtn;
 window.onload = function (e) {
-  init();
+  // init();
   //startTimer();
   let expert = document.querySelectorAll('[data-skillLevel="Expert"]');
   let intermediate = document.querySelectorAll(
