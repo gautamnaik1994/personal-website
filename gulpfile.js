@@ -35,6 +35,16 @@ gulp.task('sass', function () {
         }));
 });
 
+gulp.task('servel', ['sass'], function () {
+    browserSync.init({
+        server: "./dist",
+        port: 8080
+    });
+    gulp.watch(src.scss, ['sass']);
+    gulp.watch(src.html).on('change', reload);
+});
+
+
 gulp.task('copyfiles', function () {
     gulp.src('./src/*.html')
         .pipe(gulp.dest('./dist'));

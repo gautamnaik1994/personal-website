@@ -27,7 +27,6 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
-
     "rimraf": "^2.6.2",
     "workbox-build": "^3.4.1"
   },
