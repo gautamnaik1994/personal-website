@@ -10,6 +10,7 @@ body {
   color: var(--text-color);
   padding-bottom: 10rem;
 }
+
 @include media-breakpoint-up(md) {
   h1 {
     font-size: 2em;
@@ -21,16 +22,14 @@ body {
   top: 0;
   background-color: #fff;
   margin: 0;
-  z-index: 1;
+
   padding: 1rem 0;
 }
 .sub-header {
   margin: 10px 0;
 }
 
-.text-muted {
-  color: #6c757d;
-}
+
 section.container {
   margin-top: 5rem;
 }
@@ -42,18 +41,6 @@ section.container {
     display: flex;
     justify-content: space-between;
     position: relative;
-    z-index: 0;
-    /*
-      &:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        background: #f7f7f7;
-        top: 50%;
-        z-index: -1;
-      }
-  */
   }
 }
 
