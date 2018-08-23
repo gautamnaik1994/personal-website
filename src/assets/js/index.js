@@ -20,9 +20,9 @@ window.onload = function (e) {
   if (expert.length > 0) addSkills(expert);
   if (intermediate.length > 0) addSkills(intermediate);
   if (beginner.length > 0) addSkills(beginner);
-  installBtn = document.querySelector('#installApp');
-  installBtn.addEventListener('click', install);
-  console.log("bb", installBtn);
+  //installBtn = document.querySelector('#installApp');
+ // installBtn.addEventListener('click', install);
+  //console.log("bb", installBtn);
   
 };
 
@@ -69,23 +69,23 @@ function addSkills(nodes) {
 
 
 
-function init() {
-  console.log("Initing")
+// function init() {
+//   console.log("Initing")
 
-}
+// }
 
-function install() {
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice
-    .then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
-      } else {
-        console.log('User dismissed the A2HS prompt');
-      }
-      deferredPrompt = null;
-    });
-}
+// function install() {
+//   deferredPrompt.prompt();
+//   deferredPrompt.userChoice
+//     .then((choiceResult) => {
+//       if (choiceResult.outcome === 'accepted') {
+//         console.log('User accepted the A2HS prompt');
+//       } else {
+//         console.log('User dismissed the A2HS prompt');
+//       }
+//       deferredPrompt = null;
+//     });
+// }
 
 
 
