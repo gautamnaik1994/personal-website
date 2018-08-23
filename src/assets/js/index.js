@@ -54,8 +54,6 @@ if ('serviceWorker' in navigator) {
     // installBtn.style.display = 'none';
   });
 
-
-
 }
 
 function addSkills(nodes) {
@@ -65,9 +63,6 @@ function addSkills(nodes) {
     //nodes[i].classList.add(skillNodeValue.toLowerCase() + '');
   }
 }
-
-
-
 
 // function init() {
 //   console.log("Initing")
@@ -86,7 +81,6 @@ function addSkills(nodes) {
 //       deferredPrompt = null;
 //     });
 // }
-
 
 
 
