@@ -28,7 +28,6 @@ window.onload = function (e) {
 
 
 if ('serviceWorker' in navigator) {
-  console.log("serviceWorker ")
   window.addEventListener('load', () => {
     navigator.serviceWorker
       .register('/sw.js')
