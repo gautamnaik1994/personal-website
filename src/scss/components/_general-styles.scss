@@ -1,3 +1,15 @@
+body {
+  background-color: var(--body-background-color);
+  color: var(--text-color);
+  padding-bottom: 10rem;
+}
+
+@include media-breakpoint-up(md) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
 li + li {
     margin-top: 5px;
   }

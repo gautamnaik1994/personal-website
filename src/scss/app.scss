@@ -5,34 +5,29 @@
 @import './helpers.scss';
 @import './icons.scss';
 
-body {
-  background-color: var(--body-background-color);
-  color: var(--text-color);
-  padding-bottom: 10rem;
-}
+@import './components/button.scss';
+@import './components/container.scss';
+@import './components/general-styles.scss';
+@import './components/standalone.scss';
+@import './components/form.scss';
 
-@include media-breakpoint-up(md) {
-  h1 {
-    font-size: 2em;
-  }
-}
 
 .section-header {
   position: sticky;
   top: 0;
   background-color: #fff;
   margin: 0;
-
+z-index: 1;
   padding: 1rem 0;
 }
 .sub-header {
   margin: 10px 0;
 }
 
-
 section.container {
   margin-top: 5rem;
 }
+
 .left-right-list {
   @include media-breakpoint-up(md) {
     margin-right: 7rem;
@@ -43,7 +38,6 @@ section.container {
     position: relative;
   }
 }
-
 
 .intro {
   height: 100vh;
@@ -96,16 +90,6 @@ section.container {
 
 .github {
   color: $github;
-}
-
-
-.download-cv, .install-app{
-
-  color: #333;
-  text-decoration: none;
-  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
-  padding: 6px 24px;
-  background-color: #fff;
 }
 
 
@@ -169,4 +153,3 @@ section.container {
     }
   }
 }
-
