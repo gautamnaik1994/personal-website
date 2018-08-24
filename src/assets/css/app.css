@@ -955,3 +955,11 @@ section.container {
 .other-things .github-img-container {
   overflow-x: auto;
 }
+
+@media (min-width: 768px) {
+  /* line 151, src/scss/app.scss */
+  .other-things .github-img-container img {
+    width: 100%;
+    height: auto;
+  }
+}

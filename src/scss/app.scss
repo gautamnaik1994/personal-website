@@ -147,9 +147,12 @@ section.container {
   }
   .github-img-container {
     overflow-x: auto;
-    img {
-      //width:100%;
-      // height:auto;
+    @include media-breakpoint-up(md) {
+      img {
+        width:100%;
+       height:auto;
+      }
     }
+    
   }
 }
