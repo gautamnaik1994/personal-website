@@ -666,7 +666,6 @@ fieldset:disabled a.btn {
 body {
   background-color: var(--body-background-color);
   color: var(--text-color);
-  padding-bottom: 10rem;
 }
 
 @media (min-width: 768px) {
@@ -1186,4 +1185,11 @@ section .container {
     height: auto;
     background: white;
   }
+}
+
+/* line 339, src/scss/app.scss */
+footer {
+  text-align: center;
+  background-color: #404040;
+  padding: 25px 0;
 }
