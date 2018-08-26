@@ -462,14 +462,26 @@ template {
 }
 
 /* line 48, src/scss/_helpers.scss */
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+/* line 51, src/scss/_helpers.scss */
 .has-box-shadow {
   -webkit-box-shadow: 0px 8px 20px 5px rgba(0, 0, 0, 0.06);
           box-shadow: 0px 8px 20px 5px rgba(0, 0, 0, 0.06);
 }
 
-/* line 51, src/scss/_helpers.scss */
+/* line 54, src/scss/_helpers.scss */
 .text-muted {
   color: #6c757d;
+}
+
+/* line 58, src/scss/_helpers.scss */
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @font-face {
@@ -786,46 +798,200 @@ select.form-control:focus::-ms-value {
   width: 100%;
 }
 
-/* line 15, src/scss/app.scss */
+/* line 12, src/scss/app.scss */
 .section-header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: #fff;
-  margin: 0;
+  margin: 0 -15px;
   z-index: 1;
-  padding: 1rem 0;
+  padding: 1rem 15px;
 }
 
-/* line 23, src/scss/app.scss */
+/* line 21, src/scss/app.scss */
 .sub-header {
   margin: 10px 0;
 }
 
-/* line 27, src/scss/app.scss */
-section.container {
-  margin-top: 5rem;
+/* line 26, src/scss/app.scss */
+.light-black-bg {
+  background-color: #404040;
+  color: #bfbfbf;
 }
 
-@media (min-width: 768px) {
-  /* line 31, src/scss/app.scss */
-  .left-right-list {
-    margin-right: 7rem;
-  }
+/* line 29, src/scss/app.scss */
+.light-black-bg .section-header {
+  background-color: #404040;
 }
 
-/* line 35, src/scss/app.scss */
-.left-right-list > li .inner {
+/* line 34, src/scss/app.scss */
+.primary-bg {
+  background-color: #03a9f4;
+  color: white;
+}
+
+/* line 37, src/scss/app.scss */
+.primary-bg .section-header {
+  background-color: #03a9f4;
+}
+
+/* line 41, src/scss/app.scss */
+.primary-bg .left-right-list > li {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.19);
+}
+
+/* line 48, src/scss/app.scss */
+section .container {
+  padding: 5rem 15px;
+}
+
+/* line 52, src/scss/app.scss */
+.linkedin {
+  color: #0077b5;
+}
+
+/* line 56, src/scss/app.scss */
+.behance {
+  color: #1769ff;
+}
+
+/* line 60, src/scss/app.scss */
+.codepen {
+  color: #0ebeff;
+}
+
+/* line 64, src/scss/app.scss */
+.github {
+  color: #333;
+}
+
+/* line 69, src/scss/app.scss */
+[data-skillLevel='Intermediate'] .skill-level {
+  color: #f6914f;
+}
+
+/* line 75, src/scss/app.scss */
+[data-skillLevel='Beginner'] .skill-level {
+  color: #03a9f4;
+}
+
+/* line 81, src/scss/app.scss */
+[data-skillLevel='Expert'] .skill-level {
+  color: #00ac4b;
+}
+
+/* line 86, src/scss/app.scss */
+.left-right-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* line 91, src/scss/app.scss */
+.left-right-list .inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: relative;
+  color: #bfbfbf;
+  padding: 12px 15px;
+  background-color: rgba(0, 0, 0, 0.19);
+  border-radius: 3px;
 }
 
-/* line 42, src/scss/app.scss */
+/* line 99, src/scss/app.scss */
+.left-right-list li + li {
+  margin-top: 8px;
+}
+
+/* line 104, src/scss/app.scss */
+.skill-list {
+  list-style-type: none;
+}
+
+/* line 106, src/scss/app.scss */
+.skill-list .inner {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.19);
+  border-radius: 3px;
+  padding: 12px 30px;
+  color: white;
+}
+
+/* line 113, src/scss/app.scss */
+.skill-list .inner > svg {
+  position: absolute;
+  left: -17px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.13);
+          box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.13);
+  padding: 4px;
+}
+
+/* line 124, src/scss/app.scss */
+.skill-list + li {
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  /* line 130, src/scss/app.scss */
+  .sub-header {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  /* line 136, src/scss/app.scss */
+  .left-right-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  /* line 141, src/scss/app.scss */
+  .left-right-list li {
+    padding: 15px;
+    width: 50%;
+  }
+  /* line 145, src/scss/app.scss */
+  .left-right-list li + li {
+    margin-top: 0px;
+  }
+  /* line 151, src/scss/app.scss */
+  .skill-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0;
+    margin: 0 1px;
+  }
+  /* line 157, src/scss/app.scss */
+  .skill-list li {
+    width: 50%;
+    padding: 15px 19px;
+  }
+  /* line 161, src/scss/app.scss */
+  .skill-list li + li {
+    margin-top: 0px;
+  }
+}
+
+/* line 169, src/scss/app.scss */
 .intro {
   height: 100vh;
   text-align: center;
@@ -842,7 +1008,7 @@ section.container {
   padding: 0 15px;
 }
 
-/* line 50, src/scss/app.scss */
+/* line 177, src/scss/app.scss */
 .intro .profile-pic img {
   background-color: #ffc107;
   display: inline-block;
@@ -852,7 +1018,7 @@ section.container {
   border-radius: 50%;
 }
 
-/* line 62, src/scss/app.scss */
+/* line 189, src/scss/app.scss */
 .profile-links a {
   text-decoration: none;
   display: inline-block;
@@ -870,96 +1036,154 @@ section.container {
   position: relative;
 }
 
-/* line 79, src/scss/app.scss */
-.linkedin {
-  color: #0077b5;
+/* line 206, src/scss/app.scss */
+.experience {
+  list-style-type: none;
+  padding: 0;
 }
 
-/* line 83, src/scss/app.scss */
-.behance {
-  color: #1769ff;
+/* line 209, src/scss/app.scss */
+.experience .work {
+  list-style-type: disc;
+  padding-left: 24px;
 }
 
-/* line 87, src/scss/app.scss */
-.codepen {
-  color: #0ebeff;
-}
-
-/* line 91, src/scss/app.scss */
-.github {
-  color: #333;
-}
-
-/* line 97, src/scss/app.scss */
-[data-skillLevel='Intermediate'] {
-  color: #f6914f;
-}
-
-/* line 100, src/scss/app.scss */
-[data-skillLevel='Beginner'] {
-  color: #03a9f4;
-}
-
-/* line 103, src/scss/app.scss */
-[data-skillLevel='Expert'] {
-  color: #00ac4b;
-}
-
-/* line 108, src/scss/app.scss */
-.experience ul {
+/* line 212, src/scss/app.scss */
+.experience .work .inner {
+  left: -4px;
   position: relative;
 }
 
-/* line 110, src/scss/app.scss */
-.experience ul:after {
-  content: '';
-  width: 1px;
-  position: absolute;
-  top: 16px;
-  bottom: 0;
-  background: #d8d8d8;
-  left: 3px;
-  z-index: -1;
+/* line 238, src/scss/app.scss */
+.experience > li {
+  background: white;
+  color: #333;
+  padding: 50px 15px;
+  border-radius: 5px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.22);
 }
 
-/* line 121, src/scss/app.scss */
-.experience ul:before {
-  content: '';
+/* line 245, src/scss/app.scss */
+.experience > li .hole {
+  margin: 0;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, #03a9f4 0%, #03a9f4 32%, #c7c7c7 33%, whitesmoke 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#F5F5F5', GradientType=1);
+}
+
+/* line 258, src/scss/app.scss */
+.experience > li .hole:after {
+  content: "";
   position: absolute;
   width: 6px;
-  height: 6px;
-  background: #f44336;
-  border-radius: 50%;
-  bottom: 0;
-  left: 1px;
+  height: 71px;
+  /* ff3.6+ */
+  /* safari4+,chrome */
+  /* safari5.1+,chrome10+ */
+  /* opera 11.10+ */
+  /* ie10+ */
+  background: -webkit-gradient(linear, left top, right top, from(#d4a80b), color-stop(50%, #ffeb3b), to(#d4a80b));
+  background: linear-gradient(90deg, #d4a80b 0%, #ffeb3b 50%, #d4a80b 100%);
+  /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4a80b', endColorstr='#d4a80b',GradientType=1 );
+  /* ie6-9 */
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 13px;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.19);
+          box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.19);
 }
 
-/* line 132, src/scss/app.scss */
-.experience ul li + li {
+/* line 277, src/scss/app.scss */
+.experience > li .tl {
+  top: 12px;
+  left: 12px;
+}
+
+/* line 281, src/scss/app.scss */
+.experience > li .tr {
+  top: 12px;
+  right: 12px;
+}
+
+/* line 285, src/scss/app.scss */
+.experience > li .bl {
+  bottom: 12px;
+  left: 12px;
+}
+
+/* line 288, src/scss/app.scss */
+.experience > li .bl:after {
+  display: none;
+}
+
+/* line 292, src/scss/app.scss */
+.experience > li .br {
+  bottom: 12px;
+  right: 12px;
+}
+
+/* line 295, src/scss/app.scss */
+.experience > li .br:after {
+  display: none;
+}
+
+/* line 299, src/scss/app.scss */
+.experience > li:first-child {
+  padding-top: 18px;
+}
+
+/* line 301, src/scss/app.scss */
+.experience > li:first-child .tl,
+.experience > li:first-child .tr {
+  display: none;
+}
+
+/* line 306, src/scss/app.scss */
+.experience > li:last-child {
+  padding-bottom: 18px;
+}
+
+/* line 308, src/scss/app.scss */
+.experience > li:last-child .bl,
+.experience > li:last-child .br {
+  display: none;
+}
+
+/* line 313, src/scss/app.scss */
+.experience > li + li {
   margin-top: 17px;
 }
 
-/* line 135, src/scss/app.scss */
-.experience ul li * + * {
+/* line 316, src/scss/app.scss */
+.experience > li * + * {
   margin: 0;
-  margin-top: 3px;
+  margin-top: 8px;
 }
 
-/* line 144, src/scss/app.scss */
+/* line 324, src/scss/app.scss */
 .other-things a {
   margin-bottom: 2rem;
   display: block;
 }
 
-/* line 148, src/scss/app.scss */
+/* line 328, src/scss/app.scss */
 .other-things .github-img-container {
   overflow-x: auto;
 }
 
 @media (min-width: 768px) {
-  /* line 151, src/scss/app.scss */
+  /* line 331, src/scss/app.scss */
   .other-things .github-img-container img {
     width: 100%;
     height: auto;
+    background: white;
   }
 }

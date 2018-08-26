@@ -4,38 +4,165 @@
 //@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 @import './helpers.scss';
 @import './icons.scss';
-
 @import './components/button.scss';
 @import './components/container.scss';
 @import './components/general-styles.scss';
 @import './components/standalone.scss';
 @import './components/form.scss';
-
-
 .section-header {
   position: sticky;
   top: 0;
   background-color: #fff;
-  margin: 0;
-z-index: 1;
-  padding: 1rem 0;
-}
-.sub-header {
-  margin: 10px 0;
+  margin: 0 -15px;
+  z-index: 1;
+  padding: 1rem 15px;
 }
 
-section.container {
-  margin-top: 5rem;
+.sub-header {
+  margin: 10px 0;
+
+}
+
+.light-black-bg {
+  background-color: $light-black;
+  color: $light-text;
+  .section-header {
+    background-color: $light-black;
+  }
+}
+
+.primary-bg {
+  background-color: $primary;
+  color: white;
+  .section-header {
+    background-color: $primary;
+  }
+  .left-right-list {
+    &>li {
+      color: white;
+      background-color: rgba(0, 0, 0, 0.19);
+    }
+  }
+}
+
+section .container {
+  padding: 5rem 15px;
+}
+
+.linkedin {
+  color: $linkedin;
+}
+
+.behance {
+  color: $behance;
+}
+
+.codepen {
+  color: $codepen;
+}
+
+.github {
+  color: $github;
+}
+
+[data-skillLevel='Intermediate'] {
+  .skill-level {
+    color: $orange;
+  } //border-left: 5px solid $orange;
+}
+
+[data-skillLevel='Beginner'] {
+  .skill-level {
+    color: $primary;
+  } //border-left: 5px solid $primary;
+}
+
+[data-skillLevel='Expert'] {
+  .skill-level {
+    color: $green;
+  } //border-left: 5px solid $green;
 }
 
 .left-right-list {
-  @include media-breakpoint-up(md) {
-    margin-right: 7rem;
-  }
-  & > li .inner {
+  list-style-type: none;
+  padding: 0; // @include media-breakpoint-up(md) {
+  //   margin-right: 7rem;
+  // }
+  .inner {
     display: flex;
     justify-content: space-between;
+    color: $light-text;
+    padding: 12px 15px;
+    background-color: rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+  }
+  li+li {
+    margin-top: 8px;
+  }
+}
+
+.skill-list {
+  list-style-type: none;
+  .inner {
     position: relative;
+    background-color: rgba(255, 255, 255, 0.19);
+    border-radius: 3px;
+    padding: 12px 30px;
+    color: white;
+   
+    >svg {
+      position: absolute;
+      left: -17px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.13);
+      padding: 4px;
+    }
+  }
+  &+li {
+    margin-top: 8px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .sub-header {
+  
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  
+  .left-right-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    li{
+     // margin: 0 15px 15px 0;
+     padding: 15px;
+      width:50%;
+      &+li {
+        margin-top: 0px;
+      }
+    }
+    
+  }
+  .skill-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 1px;
+    li {
+      // margin: 0 15px 15px 0;
+      width: 50%;
+      padding: 15px 19px;
+      &+li {
+        margin-top: 0px;
+      }
+    }
+   
   }
 }
 
@@ -76,66 +203,119 @@ section.container {
   }
 }
 
-.linkedin {
-  color: $linkedin;
-}
-
-.behance {
-  color: $behance;
-}
-
-.codepen {
-  color: $codepen;
-}
-
-.github {
-  color: $github;
-}
-
-
-
-[data-skillLevel='Intermediate'] {
-  color: $orange;
-}
-[data-skillLevel='Beginner'] {
-  color: $primary;
-}
-[data-skillLevel='Expert'] {
-  color: $green;
-}
-
 .experience {
-  ul {
+  list-style-type: none;
+  padding: 0; // position: relative;
+  .work{
+    list-style-type: disc;
+    padding-left: 24px;
+    .inner{
+      left: -4px;
     position: relative;
-    &:after {
-      content: '';
-      width: 1px;
-      // height: 100%;
-      position: absolute;
-      top: 16px;
-      bottom: 0;
-      background: #d8d8d8;
-      left: 3px;
-      z-index: -1;
     }
-    &:before {
-      content: '';
+  }
+  // &:after {
+  //   content: '';
+  //   width: 1px; // height: 100%;
+  //   position: absolute;
+  //   top: 16px;
+  //   bottom: 0;
+  //   background: #d8d8d8;
+  //   left: 3px;
+  //   z-index: -1;
+  // }
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   width: 6px;
+  //   height: 6px;
+  //   background: #f44336;
+  //   border-radius: 50%;
+  //   bottom: 0;
+  //   left: 1px;
+  // }
+  $l-value: 12px;
+  &>li {
+    background: white;
+    color: $body-text-color;
+    padding: 50px 15px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.22);
+    .hole {
+      margin: 0;
       position: absolute;
-      width: 6px;
-      height: 6px;
-      background: #f44336;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      bottom: 0;
-      left: 1px;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(3, 169, 244, 1) 0%, rgba(3, 169, 244, 1) 32%, rgba(199, 199, 199, 1) 33%, rgba(245, 245, 245, 1) 100%);
+      background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(3, 169, 244, 1)), color-stop(32%, rgba(3, 169, 244, 1)), color-stop(33%, rgba(199, 199, 199, 1)), color-stop(100%, rgba(245, 245, 245, 1)));
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(3, 169, 244, 1) 0%, rgba(3, 169, 244, 1) 32%, rgba(199, 199, 199, 1) 33%, rgba(245, 245, 245, 1) 100%);
+      background: -o-radial-gradient(center, ellipse cover, rgba(3, 169, 244, 1) 0%, rgba(3, 169, 244, 1) 32%, rgba(199, 199, 199, 1) 33%, rgba(245, 245, 245, 1) 100%);
+      background: -ms-radial-gradient(center, ellipse cover, rgba(3, 169, 244, 1) 0%, rgba(3, 169, 244, 1) 32%, rgba(199, 199, 199, 1) 33%, rgba(245, 245, 245, 1) 100%);
+      background: radial-gradient(ellipse at center, rgba(3, 169, 244, 1) 0%, rgba(3, 169, 244, 1) 32%, rgba(199, 199, 199, 1) 33%, rgba(245, 245, 245, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#F5F5F5', GradientType=1);
+      &:after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 71px;
+        background: -moz-linear-gradient(0deg, rgba(212,168,11,1) 0%, rgba(255,235,59,1) 50%, rgba(212,168,11,1) 100%); /* ff3.6+ */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(212,168,11,1)), color-stop(50%, rgba(255,235,59,1)), color-stop(100%, rgba(212,168,11,1))); /* safari4+,chrome */
+        background: -webkit-linear-gradient(0deg, rgba(212,168,11,1) 0%, rgba(255,235,59,1) 50%, rgba(212,168,11,1) 100%); /* safari5.1+,chrome10+ */
+        background: -o-linear-gradient(0deg, rgba(212,168,11,1) 0%, rgba(255,235,59,1) 50%, rgba(212,168,11,1) 100%); /* opera 11.10+ */
+        background: -ms-linear-gradient(0deg, rgba(212,168,11,1) 0%, rgba(255,235,59,1) 50%, rgba(212,168,11,1) 100%); /* ie10+ */
+        background: linear-gradient(90deg, rgba(212,168,11,1) 0%, rgba(255,235,59,1) 50%, rgba(212,168,11,1) 100%); /* w3c */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4a80b', endColorstr='#d4a80b',GradientType=1 ); /* ie6-9 */
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 13px;
+        border-radius: 25px;
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.19);
+      }
     }
-    li {
-      & + li {
-        margin-top: 17px;
+    .tl {
+      top: $l-value;
+      left: $l-value;
+    }
+    .tr {
+      top: $l-value;
+      right: $l-value;
+    }
+    .bl {
+      bottom: $l-value;
+      left: $l-value;
+      &:after {
+        display: none;
       }
-      * + * {
-        margin: 0;
-        margin-top: 3px;
+    }
+    .br {
+      bottom: $l-value;
+      right: $l-value;
+      &:after {
+        display: none;
       }
+    }
+    &:first-child {
+      padding-top: 18px;
+      .tl,
+      .tr {
+        display: none;
+      }
+    }
+    &:last-child {
+      padding-bottom: 18px;
+      .bl,
+      .br {
+        display: none;
+      }
+    }
+    &+li {
+      margin-top: 17px;
+    }
+    *+* {
+      margin: 0;
+      margin-top: 8px;
     }
   }
 }
@@ -149,10 +329,10 @@ section.container {
     overflow-x: auto;
     @include media-breakpoint-up(md) {
       img {
-        width:100%;
-       height:auto;
+        width: 100%;
+        height: auto;
+        background: white;
       }
     }
-    
   }
 }

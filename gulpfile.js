@@ -28,6 +28,11 @@ gulp.task('sass', function () {
         }, {
             errLogToConsole: true
         }))
+        .on('error', function (err) {
+            console.log(err.toString());
+
+            this.emit('end');
+        })
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", "Android 2", "Firefox ESR"))
         .pipe(gulp.dest('src/assets/css'))
         .pipe(reload({
@@ -106,6 +111,11 @@ gulp.task('gsw', () => {
                 urlPattern: new RegExp('https://fonts.gstatic.com/s/ibmplexsans/v3/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2'),
                 handler: 'staleWhileRevalidate'
             },
+            {
+                urlPattern: new RegExp('  https://cdn.jsdelivr.net/npm/jdenticon@2.1.0'),
+                handler: 'staleWhileRevalidate'
+            },
+          
         ]
 
     }).then(({
