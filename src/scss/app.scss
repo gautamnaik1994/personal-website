@@ -340,4 +340,14 @@ footer{
   text-align: center;
   background-color: $light-black;
     padding: 25px 0;
+    .profile-links a{
+      background-color: #545454;
+      box-shadow: none;
+    }
+    i{
+      color:white;
+      opacity: 0.4;
+     
+    }
+   
 }

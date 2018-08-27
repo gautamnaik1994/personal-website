@@ -618,6 +618,16 @@ fieldset:disabled a.btn {
   background-color: #fff;
 }
 
+/* line 58, src/scss/components/_button.scss */
+.btn-dark {
+  color: #333;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
+          box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
+  padding: 6px 24px;
+  background-color: #fff;
+}
+
 /* line 1, src/scss/components/_container.scss */
 .container {
   width: 100%;
@@ -1192,4 +1202,17 @@ footer {
   text-align: center;
   background-color: #404040;
   padding: 25px 0;
+}
+
+/* line 343, src/scss/app.scss */
+footer .profile-links a {
+  background-color: #545454;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 347, src/scss/app.scss */
+footer i {
+  color: white;
+  opacity: 0.4;
 }
