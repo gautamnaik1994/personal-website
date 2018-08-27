@@ -1191,15 +1191,16 @@ section .container {
 .other-things a {
   margin-bottom: 2rem;
   display: block;
+  margin-top: 15px;
 }
 
-/* line 333, src/scss/app.scss */
+/* line 334, src/scss/app.scss */
 .other-things .github-img-container {
   overflow-x: auto;
 }
 
 @media (min-width: 768px) {
-  /* line 336, src/scss/app.scss */
+  /* line 337, src/scss/app.scss */
   .other-things .github-img-container img {
     width: 100%;
     height: auto;
@@ -1207,14 +1208,14 @@ section .container {
   }
 }
 
-/* line 344, src/scss/app.scss */
+/* line 345, src/scss/app.scss */
 footer {
   text-align: center;
   background-color: #404040;
   padding: 25px 0;
 }
 
-/* line 348, src/scss/app.scss */
+/* line 349, src/scss/app.scss */
 footer .profile-links a {
   background-color: #545454;
   width: 40px;
@@ -1223,7 +1224,7 @@ footer .profile-links a {
   padding: 8px;
 }
 
-/* line 355, src/scss/app.scss */
+/* line 356, src/scss/app.scss */
 footer i {
   color: white;
   opacity: 0.4;
