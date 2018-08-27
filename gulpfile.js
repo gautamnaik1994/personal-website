@@ -21,7 +21,7 @@ gulp.task('serve', ['sass'], function () {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('src/scss/*.scss')
+    return gulp.src('src/scss/**/*.scss')
         .pipe(sass({
             outputStyle: 'expanded',
             sourceComments: 'map'

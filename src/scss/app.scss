@@ -200,6 +200,11 @@ section .container {
     font-size: 21px;
     padding: 9px;
     position: relative;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+      transform: scale(1.1);
+      box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.13);
+    }
   }
 }
 
@@ -342,7 +347,10 @@ footer{
     padding: 25px 0;
     .profile-links a{
       background-color: #545454;
-      box-shadow: none;
+      width: 40px;
+height: 40px;
+font-size: 17px;
+padding: 8px;
     }
     i{
       color:white;
