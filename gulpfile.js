@@ -65,7 +65,7 @@ gulp.task('buildcss', function () {
             errLogToConsole: true
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", "Android 2", "Firefox ESR"))
-        .pipe(gulp.dest('src/assets/css'))
+        .pipe(gulp.dest('dist/assets/css'))
 });
 
 const dist = 'dist';
