@@ -1,7 +1,6 @@
 body {
   background-color: var(--body-background-color);
   color: var(--text-color);
- 
 }
 
 @include media-breakpoint-up(md) {
@@ -11,10 +10,14 @@ body {
 }
 
 li + li {
-    margin-top: 5px;
-  }
-  ul {
-    padding-left: 18px;
-    margin-bottom: 1.5rem;
-  }
-  
+  margin-top: 5px;
+}
+ul {
+  padding-left: 18px;
+  margin-bottom: 1.5rem;
+}
+hr {
+  height: 1px;
+  background: hsla(0, 0%, 50%, 1);
+  border: 0 none;
+}

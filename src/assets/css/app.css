@@ -679,21 +679,28 @@ body {
 }
 
 @media (min-width: 768px) {
-  /* line 8, src/scss/components/_general-styles.scss */
+  /* line 7, src/scss/components/_general-styles.scss */
   h1 {
     font-size: 2em;
   }
 }
 
-/* line 13, src/scss/components/_general-styles.scss */
+/* line 12, src/scss/components/_general-styles.scss */
 li + li {
   margin-top: 5px;
 }
 
-/* line 16, src/scss/components/_general-styles.scss */
+/* line 15, src/scss/components/_general-styles.scss */
 ul {
   padding-left: 18px;
   margin-bottom: 1.5rem;
+}
+
+/* line 19, src/scss/components/_general-styles.scss */
+hr {
+  height: 1px;
+  background: gray;
+  border: 0 none;
 }
 
 @media all and (display-mode: standalone) {
@@ -823,81 +830,81 @@ select.form-control:focus::-ms-value {
   margin: 10px 0;
 }
 
-/* line 26, src/scss/app.scss */
+/* line 25, src/scss/app.scss */
 .light-black-bg {
   background-color: #404040;
   color: #bfbfbf;
 }
 
-/* line 29, src/scss/app.scss */
+/* line 28, src/scss/app.scss */
 .light-black-bg .section-header {
   background-color: #404040;
 }
 
-/* line 34, src/scss/app.scss */
+/* line 33, src/scss/app.scss */
 .primary-bg {
   background-color: #03a9f4;
   color: white;
 }
 
-/* line 37, src/scss/app.scss */
+/* line 36, src/scss/app.scss */
 .primary-bg .section-header {
   background-color: #03a9f4;
 }
 
-/* line 41, src/scss/app.scss */
+/* line 40, src/scss/app.scss */
 .primary-bg .left-right-list > li {
   color: white;
   background-color: rgba(0, 0, 0, 0.19);
 }
 
-/* line 48, src/scss/app.scss */
+/* line 47, src/scss/app.scss */
 section .container {
   padding: 5rem 15px;
 }
 
-/* line 52, src/scss/app.scss */
+/* line 51, src/scss/app.scss */
 .linkedin {
   color: #0077b5;
 }
 
-/* line 56, src/scss/app.scss */
+/* line 55, src/scss/app.scss */
 .behance {
   color: #1769ff;
 }
 
-/* line 60, src/scss/app.scss */
+/* line 59, src/scss/app.scss */
 .codepen {
   color: #0ebeff;
 }
 
-/* line 64, src/scss/app.scss */
+/* line 63, src/scss/app.scss */
 .github {
   color: #333;
 }
 
-/* line 69, src/scss/app.scss */
+/* line 68, src/scss/app.scss */
 [data-skillLevel='Intermediate'] .skill-level {
   color: #f6914f;
 }
 
-/* line 75, src/scss/app.scss */
+/* line 74, src/scss/app.scss */
 [data-skillLevel='Beginner'] .skill-level {
   color: #03a9f4;
 }
 
-/* line 81, src/scss/app.scss */
+/* line 80, src/scss/app.scss */
 [data-skillLevel='Expert'] .skill-level {
   color: #00ac4b;
 }
 
-/* line 86, src/scss/app.scss */
+/* line 85, src/scss/app.scss */
 .left-right-list {
   list-style-type: none;
   padding: 0;
 }
 
-/* line 91, src/scss/app.scss */
+/* line 90, src/scss/app.scss */
 .left-right-list .inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -911,17 +918,17 @@ section .container {
   border-radius: 3px;
 }
 
-/* line 99, src/scss/app.scss */
+/* line 98, src/scss/app.scss */
 .left-right-list li + li {
   margin-top: 8px;
 }
 
-/* line 104, src/scss/app.scss */
+/* line 103, src/scss/app.scss */
 .skill-list {
   list-style-type: none;
 }
 
-/* line 106, src/scss/app.scss */
+/* line 105, src/scss/app.scss */
 .skill-list .inner {
   position: relative;
   background-color: rgba(255, 255, 255, 0.19);
@@ -930,7 +937,7 @@ section .container {
   color: white;
 }
 
-/* line 113, src/scss/app.scss */
+/* line 112, src/scss/app.scss */
 .skill-list .inner > svg {
   position: absolute;
   left: -17px;
@@ -944,18 +951,18 @@ section .container {
   padding: 4px;
 }
 
-/* line 124, src/scss/app.scss */
+/* line 123, src/scss/app.scss */
 .skill-list + li {
   margin-top: 8px;
 }
 
 @media (min-width: 768px) {
-  /* line 130, src/scss/app.scss */
+  /* line 129, src/scss/app.scss */
   .sub-header {
     margin-top: 2rem;
     margin-bottom: 0;
   }
-  /* line 136, src/scss/app.scss */
+  /* line 134, src/scss/app.scss */
   .left-right-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -967,16 +974,16 @@ section .container {
         flex-wrap: wrap;
     margin: 0 -15px;
   }
-  /* line 141, src/scss/app.scss */
+  /* line 139, src/scss/app.scss */
   .left-right-list li {
     padding: 15px;
     width: 50%;
   }
-  /* line 145, src/scss/app.scss */
+  /* line 143, src/scss/app.scss */
   .left-right-list li + li {
     margin-top: 0px;
   }
-  /* line 151, src/scss/app.scss */
+  /* line 148, src/scss/app.scss */
   .skill-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -989,18 +996,18 @@ section .container {
     padding: 0;
     margin: 0 1px;
   }
-  /* line 157, src/scss/app.scss */
+  /* line 154, src/scss/app.scss */
   .skill-list li {
     width: 50%;
     padding: 15px 19px;
   }
-  /* line 161, src/scss/app.scss */
+  /* line 158, src/scss/app.scss */
   .skill-list li + li {
     margin-top: 0px;
   }
 }
 
-/* line 169, src/scss/app.scss */
+/* line 165, src/scss/app.scss */
 .intro {
   height: 100vh;
   text-align: center;
@@ -1017,7 +1024,7 @@ section .container {
   padding: 0 15px;
 }
 
-/* line 177, src/scss/app.scss */
+/* line 173, src/scss/app.scss */
 .intro .profile-pic img {
   background-color: #ffc107;
   display: inline-block;
@@ -1027,7 +1034,7 @@ section .container {
   border-radius: 50%;
 }
 
-/* line 189, src/scss/app.scss */
+/* line 185, src/scss/app.scss */
 .profile-links a {
   text-decoration: none;
   display: inline-block;
@@ -1047,7 +1054,7 @@ section .container {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 204, src/scss/app.scss */
+/* line 200, src/scss/app.scss */
 .profile-links a:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -1055,25 +1062,25 @@ section .container {
           box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.13);
 }
 
-/* line 211, src/scss/app.scss */
+/* line 207, src/scss/app.scss */
 .experience {
   list-style-type: none;
   padding: 0;
 }
 
-/* line 214, src/scss/app.scss */
+/* line 210, src/scss/app.scss */
 .experience .work {
   list-style-type: disc;
   padding-left: 24px;
 }
 
-/* line 217, src/scss/app.scss */
+/* line 213, src/scss/app.scss */
 .experience .work .inner {
   left: -4px;
   position: relative;
 }
 
-/* line 243, src/scss/app.scss */
+/* line 239, src/scss/app.scss */
 .experience > li {
   background: white;
   color: #333;
@@ -1084,7 +1091,7 @@ section .container {
           box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.22);
 }
 
-/* line 250, src/scss/app.scss */
+/* line 246, src/scss/app.scss */
 .experience > li .hole {
   margin: 0;
   position: absolute;
@@ -1095,9 +1102,9 @@ section .container {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#F5F5F5', GradientType=1);
 }
 
-/* line 263, src/scss/app.scss */
+/* line 303, src/scss/app.scss */
 .experience > li .hole:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 6px;
   height: 71px;
@@ -1120,87 +1127,87 @@ section .container {
           box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.19);
 }
 
-/* line 282, src/scss/app.scss */
+/* line 354, src/scss/app.scss */
 .experience > li .tl {
   top: 12px;
   left: 12px;
 }
 
-/* line 286, src/scss/app.scss */
+/* line 358, src/scss/app.scss */
 .experience > li .tr {
   top: 12px;
   right: 12px;
 }
 
-/* line 290, src/scss/app.scss */
+/* line 362, src/scss/app.scss */
 .experience > li .bl {
   bottom: 12px;
   left: 12px;
 }
 
-/* line 293, src/scss/app.scss */
+/* line 365, src/scss/app.scss */
 .experience > li .bl:after {
   display: none;
 }
 
-/* line 297, src/scss/app.scss */
+/* line 369, src/scss/app.scss */
 .experience > li .br {
   bottom: 12px;
   right: 12px;
 }
 
-/* line 300, src/scss/app.scss */
+/* line 372, src/scss/app.scss */
 .experience > li .br:after {
   display: none;
 }
 
-/* line 304, src/scss/app.scss */
+/* line 376, src/scss/app.scss */
 .experience > li:first-child {
   padding-top: 18px;
 }
 
-/* line 306, src/scss/app.scss */
+/* line 378, src/scss/app.scss */
 .experience > li:first-child .tl,
 .experience > li:first-child .tr {
   display: none;
 }
 
-/* line 311, src/scss/app.scss */
+/* line 383, src/scss/app.scss */
 .experience > li:last-child {
   padding-bottom: 18px;
 }
 
-/* line 313, src/scss/app.scss */
+/* line 385, src/scss/app.scss */
 .experience > li:last-child .bl,
 .experience > li:last-child .br {
   display: none;
 }
 
-/* line 318, src/scss/app.scss */
+/* line 390, src/scss/app.scss */
 .experience > li + li {
   margin-top: 17px;
 }
 
-/* line 321, src/scss/app.scss */
+/* line 393, src/scss/app.scss */
 .experience > li * + * {
   margin: 0;
   margin-top: 8px;
 }
 
-/* line 329, src/scss/app.scss */
+/* line 401, src/scss/app.scss */
 .other-things a {
   margin-bottom: 2rem;
   display: block;
   margin-top: 15px;
 }
 
-/* line 334, src/scss/app.scss */
+/* line 406, src/scss/app.scss */
 .other-things .github-img-container {
   overflow-x: auto;
 }
 
 @media (min-width: 768px) {
-  /* line 337, src/scss/app.scss */
+  /* line 409, src/scss/app.scss */
   .other-things .github-img-container img {
     width: 100%;
     height: auto;
@@ -1208,14 +1215,14 @@ section .container {
   }
 }
 
-/* line 345, src/scss/app.scss */
+/* line 417, src/scss/app.scss */
 footer {
   text-align: center;
   background-color: #404040;
   padding: 25px 0;
 }
 
-/* line 349, src/scss/app.scss */
+/* line 421, src/scss/app.scss */
 footer .profile-links a {
   background-color: #545454;
   width: 40px;
@@ -1224,8 +1231,13 @@ footer .profile-links a {
   padding: 8px;
 }
 
-/* line 356, src/scss/app.scss */
+/* line 428, src/scss/app.scss */
 footer i {
   color: white;
   opacity: 0.4;
+}
+
+/* line 432, src/scss/app.scss */
+footer .site-info {
+  color: #bfbfbf;
 }
