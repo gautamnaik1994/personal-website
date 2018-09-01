@@ -6,7 +6,7 @@ var reload = browserSync.reload;
 workbox = require('workbox-build');
 
 var src = {
-    scss: 'src/scss/*.scss',
+    scss: 'src/scss/**/*.scss',
     css: 'src/assets/css',
     html: 'src/*.html'
 };
@@ -21,7 +21,7 @@ gulp.task('serve', ['sass'], function () {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('src/scss/**/*.scss')
+    return gulp.src('src/scss/app.scss')
         .pipe(sass({
             outputStyle: 'expanded',
             sourceComments: 'map'

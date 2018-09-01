@@ -50,3 +50,16 @@
     top: 0;
     color:$stackoveflow-secondary;
   }
+  
+  .icon-marker:before {
+    content: "\e907";
+  }
+  .icon-link:before {
+    content: "\e908";
+  }
+  .icon-email:before {
+    content: "\e909";
+  }
+  .icon-cake:before {
+    content: "\e90a";
+  }

@@ -9,12 +9,15 @@
 @import './components/general-styles.scss';
 @import './components/standalone.scss';
 @import './components/form.scss';
+@import './components/v-card.scss';
+@import './components/experience.scss';
+
 .section-header {
   position: sticky;
   top: 0;
   background-color: #fff;
   margin: 0 -15px;
-  z-index: 1;
+  z-index: 2;
   padding: 1rem 15px;
 }
 
@@ -27,6 +30,12 @@
   color: $light-text;
   .section-header {
     background-color: $light-black;
+  }
+}
+.gradient-bg{
+  background: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%) no-repeat;
+  .section-header {
+    background-color: transparent;
   }
 }
 
@@ -62,6 +71,10 @@ section .container {
 
 .github {
   color: $github;
+}
+
+.separotor-color{
+  color: #F44336;
 }
 
 [data-skillLevel='Intermediate'] {
@@ -416,8 +429,8 @@ section .container {
 }
 footer {
   text-align: center;
-  background-color: $light-black;
-  padding: 25px 0;
+  // background-color: $light-black;
+  padding: 25px 10px;
   .profile-links a {
     background-color: #545454;
     width: 40px;
