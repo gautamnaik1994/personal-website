@@ -84,6 +84,14 @@ gulp.task('gsw', () => {
                 handler: 'staleWhileRevalidate'
             },
             {
+                urlPattern: new RegExp('/.*\.css/'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
+                urlPattern: new RegExp('/.*\.js/'),
+                handler: 'staleWhileRevalidate'
+            },
+            {
                 urlPattern: new RegExp('https://gautamnaik.netlify.com'),
                 handler: 'staleWhileRevalidate'
             },
@@ -119,6 +127,7 @@ gulp.task('gsw', () => {
                 urlPattern: new RegExp('/^https:\/\/.*\.cloudfront\.net\/.*/'),
                 handler: 'staleWhileRevalidate'
             },
+
         ]
 
     }).then(({
