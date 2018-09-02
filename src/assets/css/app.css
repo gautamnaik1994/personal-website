@@ -734,7 +734,7 @@ hr {
 .form-control {
   display: block;
   width: 100%;
-  height: calc(2.25rem + 2px);
+  height: calc(2.25rem + 14px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -816,22 +816,44 @@ hr {
 }
 
 /* line 60, src/scss/components/_form.scss */
-.form-control:disabled, .form-control[readonly] {
+.form-control:disabled,
+.form-control[readonly] {
   background-color: #e9ecef;
   opacity: 1;
 }
 
-/* line 65, src/scss/components/_form.scss */
+/* line 66, src/scss/components/_form.scss */
 select.form-control:focus::-ms-value {
   color: #495057;
   background-color: #fff;
 }
 
-/* line 70, src/scss/components/_form.scss */
+/* line 71, src/scss/components/_form.scss */
 .form-control-file,
 .form-control-range {
   display: block;
   width: 100%;
+}
+
+/* line 76, src/scss/components/_form.scss */
+textarea {
+  height: auto !important;
+}
+
+/* line 80, src/scss/components/_form.scss */
+label {
+  display: block;
+  font-weight: 700;
+  font-size: 11px;
+  color: #434c5e;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* line 89, src/scss/components/_form.scss */
+.form-group {
+  margin-bottom: 20px;
 }
 
 /* line 5, src/scss/components/_v-card.scss */

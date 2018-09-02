@@ -112,10 +112,13 @@ gulp.task('gsw', () => {
                 handler: 'staleWhileRevalidate'
             },
             {
-                urlPattern: new RegExp('  https://cdn.jsdelivr.net/npm/jdenticon@2.1.0'),
+                urlPattern: new RegExp('https://cdn.jsdelivr.net/npm/jdenticon@2.1.0'),
                 handler: 'staleWhileRevalidate'
             },
-          
+            {
+                urlPattern: new RegExp('/^https:\/\/.*\.cloudfront\.net/'),
+                handler: 'staleWhileRevalidate'
+            },
         ]
 
     }).then(({
