@@ -6,7 +6,7 @@ var reload = browserSync.reload;
 workbox = require('workbox-build');
 
 var src = {
-    scss: 'src/scss/*.scss',
+    scss: 'src/scss/**/*.scss',
     css: 'src/assets/css',
     html: 'src/*.html'
 };
@@ -21,7 +21,7 @@ gulp.task('serve', ['sass'], function () {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('src/scss/**/*.scss')
+    return gulp.src('src/scss/app.scss')
         .pipe(sass({
             outputStyle: 'expanded',
             sourceComments: 'map'
@@ -65,7 +65,7 @@ gulp.task('buildcss', function () {
             errLogToConsole: true
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", "Android 2", "Firefox ESR"))
-        .pipe(gulp.dest('src/assets/css'))
+        .pipe(gulp.dest('dist/assets/css'))
 });
 
 const dist = 'dist';

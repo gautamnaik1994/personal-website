@@ -17,6 +17,26 @@ window.onload = function (e) {
   if (expert.length > 0) addSkills(expert);
   if (intermediate.length > 0) addSkills(intermediate);
   if (beginner.length > 0) addSkills(beginner);
+
+  var years = document.querySelector("#years");
+var months = document.querySelector("#months");
+var days = document.querySelector("#days");
+var hours = document.querySelector("#hours");
+var minutes = document.querySelector("#minutes");
+var seconds = document.querySelector("#seconds");
+
+var res = document.querySelector("#res");
+var date = new Date(parseInt(1438778579000));
+setInterval(function () {
+  var dateData = dateDiff(date.getTime());
+  years.textContent = dateData.years;
+  months.textContent = dateData.months;
+  days.textContent = dateData.days;
+  hours.textContent = dateData.hours;
+  minutes.textContent = dateData.minutes;
+  seconds.textContent = dateData.seconds;
+}, 1000);
+
 };
 
 if ('serviceWorker' in navigator) {
@@ -31,7 +51,7 @@ if ('serviceWorker' in navigator) {
       });
   });
   window.addEventListener('beforeinstallprompt', (e) => {
-     e.preventDefault();
+    e.preventDefault();
     deferredPrompt = e;
   });
   window.addEventListener('appinstalled', (evt) => {
@@ -43,8 +63,29 @@ if ('serviceWorker' in navigator) {
 function addSkills(nodes) {
   for (let i = 0; i < nodes.length; i++) {
     let skillNodeValue = nodes[i].attributes['data-skillLevel'].nodeValue;
-    nodes[i].querySelector(".skill-level").textContent=skillNodeValue;
+    nodes[i].querySelector(".skill-level").textContent = skillNodeValue;
     //nodes[i].getElementsByClassName("skill-level")[0].innerHTML = skillNodeValue;
     //nodes[i].classList.add(skillNodeValue.toLowerCase() + '');
   }
+}
+
+function dateDiff(timestamp) {
+  var d = Math.abs(timestamp - new Date().getTime()) / 1000; // delta
+  var r = {};
+  var s = {
+    years: 31536000,
+    months: 2592000,
+    weeks: 604800,
+    days: 86400,
+    hours: 3600,
+    minutes: 60,
+    seconds: 1 };
+
+
+  Object.keys(s).forEach(function (key) {
+    r[key] = Math.floor(d / s[key]);
+    d -= r[key] * s[key];
+  });
+
+  return r;
 }
