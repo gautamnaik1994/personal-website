@@ -82,7 +82,6 @@ function addSkills(nodes) {
 //     minutes: 60,
 //     seconds: 1
 //   };
-
 //   Object.keys(s).forEach(function(key) {
 //     r[key] = Math.floor(d / s[key]);
 //     d -= r[key] * s[key];
