@@ -96,7 +96,7 @@ gulp.task('gsw', () => {
                 handler: 'staleWhileRevalidate'
             },
             {
-                urlPattern: new RegExp('/^https:\/\/fonts\.googleapis\.com/'),
+                urlPattern: new RegExp('/^https:\/\/fonts\.googleapis\.com\/.*/'),
                 handler: 'staleWhileRevalidate'
             },
             {
@@ -116,7 +116,7 @@ gulp.task('gsw', () => {
                 handler: 'staleWhileRevalidate'
             },
             {
-                urlPattern: new RegExp('/^https:\/\/.*\.cloudfront\.net/'),
+                urlPattern: new RegExp('/^https:\/\/.*\.cloudfront\.net\/.*/'),
                 handler: 'staleWhileRevalidate'
             },
         ]
