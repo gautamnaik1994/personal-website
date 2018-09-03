@@ -3,6 +3,8 @@ const autoprefixer = require('gulp-autoprefixer');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
+var uglify = require('gulp-uglify');
+var pump = require('pump');
 workbox = require('workbox-build');
 
 var src = {
@@ -11,16 +13,7 @@ var src = {
     html: 'src/*.html'
 };
 
-gulp.task('serve', ['sass'], function () {
-    browserSync.init({
-        server: "./src",
-        port: 8080
-    });
-    gulp.watch(src.scss, ['sass']);
-    gulp.watch(src.html).on('change', reload);
-});
-
-gulp.task('sass', function () {
+gulp.task('sass', function (done) {
     return gulp.src('src/scss/app.scss')
         .pipe(sass({
             outputStyle: 'expanded',
@@ -40,24 +33,16 @@ gulp.task('sass', function () {
         }));
 });
 
-gulp.task('servel', ['sass'], function () {
-    browserSync.init({
-        server: "./dist",
-        port: 8080
-    });
-    gulp.watch(src.scss, ['sass']);
-    gulp.watch(src.html).on('change', reload);
-});
 
-
-gulp.task('copyfiles', function () {
+gulp.task('copyfiles', function (done) {
     gulp.src('./src/*.html')
         .pipe(gulp.dest('./dist'));
-    gulp.src('./src/assets/**/*.*')
+    gulp.src(['./src/assets/**/*.*', '!./src/assets/**/*.js'])
         .pipe(gulp.dest('./dist/assets'));
+    done();
 });
 
-gulp.task('buildcss', function () {
+gulp.task('buildcss', function (done) {
     return gulp.src('src/scss/*.scss')
         .pipe(sass({
             outputStyle: 'compressed'
@@ -65,7 +50,17 @@ gulp.task('buildcss', function () {
             errLogToConsole: true
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", "Android 2", "Firefox ESR"))
-        .pipe(gulp.dest('dist/assets/css'))
+        .pipe(gulp.dest('dist/assets/css'));
+});
+
+gulp.task('compress', function (cb) {
+    pump([
+            gulp.src('src/assets/js/*.js'),
+            uglify(),
+            gulp.dest('dist/assets/js')
+        ],
+        cb
+    );
 });
 
 const dist = 'dist';
@@ -143,6 +138,23 @@ gulp.task('gsw', () => {
     });
 });
 
-gulp.task('build', ['copyfiles', 'buildcss']);
+gulp.task('serve', gulp.series('sass', function (done) {
+    browserSync.init({
+        server: "./src",
+        port: 8080
+    });
+    gulp.watch(src.scss, gulp.series('sass', function (done) {
+        done()
+    }));
+    gulp.watch(src.html).on('change', reload);
+    done()
+}));
 
-gulp.task('default', ['serve']);
+// gulp.task('build', ['copyfiles', 'buildcss', 'compress']);
+gulp.task('build', gulp.series('copyfiles', 'buildcss', 'compress', function (done) {
+    done()
+}));
+
+gulp.task('default', gulp.series('serve', function (done) {
+    done()
+}));
