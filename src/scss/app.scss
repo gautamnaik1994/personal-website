@@ -443,6 +443,12 @@ section .container {
   border-radius: 5px;
   padding: 15px;
   margin-top: 5px;
+  a{
+    word-wrap: break-word;
+  }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
   &+.project{
     margin-top: 20px;
   }
@@ -461,6 +467,7 @@ footer {
     font-size: 18px;
     padding: 8px;
   }
+
   i {
     color: white;
     opacity: 0.4;

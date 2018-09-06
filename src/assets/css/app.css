@@ -1646,17 +1646,27 @@ section .container {
 }
 
 /* line 446, src/scss/app.scss */
+.project a {
+  word-wrap: break-word;
+}
+
+/* line 449, src/scss/app.scss */
+.project p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* line 452, src/scss/app.scss */
 .project + .project {
   margin-top: 20px;
 }
 
-/* line 453, src/scss/app.scss */
+/* line 459, src/scss/app.scss */
 footer {
   text-align: center;
   padding: 25px 10px;
 }
 
-/* line 457, src/scss/app.scss */
+/* line 463, src/scss/app.scss */
 footer .profile-links a {
   background-color: #545454;
   width: 40px;
@@ -1665,13 +1675,13 @@ footer .profile-links a {
   padding: 8px;
 }
 
-/* line 464, src/scss/app.scss */
+/* line 471, src/scss/app.scss */
 footer i {
   color: white;
   opacity: 0.4;
 }
 
-/* line 468, src/scss/app.scss */
+/* line 475, src/scss/app.scss */
 footer .site-info {
   color: #bfbfbf;
 }
