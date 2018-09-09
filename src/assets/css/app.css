@@ -467,17 +467,22 @@ template {
 }
 
 /* line 51, src/scss/_helpers.scss */
+.m-0 {
+  margin: 0 !important;
+}
+
+/* line 54, src/scss/_helpers.scss */
 .has-box-shadow {
   -webkit-box-shadow: 0px 8px 20px 5px rgba(0, 0, 0, 0.06);
           box-shadow: 0px 8px 20px 5px rgba(0, 0, 0, 0.06);
 }
 
-/* line 54, src/scss/_helpers.scss */
+/* line 57, src/scss/_helpers.scss */
 .text-muted {
   color: #6c757d;
 }
 
-/* line 58, src/scss/_helpers.scss */
+/* line 61, src/scss/_helpers.scss */
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -547,24 +552,29 @@ template {
   color: #bcbbbb;
 }
 
-/* line 54, src/scss/_icons.scss */
+/* line 66, src/scss/_icons.scss */
 .icon-marker:before {
-  content: "\e907";
+  content: "\e90c";
 }
 
-/* line 57, src/scss/_icons.scss */
-.icon-link:before {
-  content: "\e908";
-}
-
-/* line 60, src/scss/_icons.scss */
-.icon-email:before {
-  content: "\e909";
-}
-
-/* line 63, src/scss/_icons.scss */
+/* line 69, src/scss/_icons.scss */
 .icon-cake:before {
-  content: "\e90a";
+  content: "\e90d";
+}
+
+/* line 72, src/scss/_icons.scss */
+.icon-open-new-tab:before {
+  content: "\e90f";
+}
+
+/* line 75, src/scss/_icons.scss */
+.icon-email:before {
+  content: "\e90e";
+}
+
+/* line 78, src/scss/_icons.scss */
+.icon-link:before {
+  content: "\e907";
 }
 
 /* line 1, src/scss/components/_button.scss */
@@ -921,7 +931,6 @@ label {
   height: 20px;
   line-height: 20px;
   text-align: center;
-  margin-right: 5px;
   /* opacity: 1; */
   display: inline-block;
   /* background-color: #ff3636; */
@@ -1030,7 +1039,7 @@ label {
   }
   /* line 150, src/scss/components/_v-card.scss */
   .v-card .bottom-sec i {
-    margin-right: 10px;
+    margin-right: 5px;
   }
   /* line 157, src/scss/components/_v-card.scss */
   .v-card .right-sec {
@@ -1062,8 +1071,8 @@ label {
   font-weight: 700;
   font-size: 19px;
   border-radius: 4px;
-  -webkit-box-shadow: 0px -10px 17px 5px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px -10px 17px 5px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.16);
   overflow: hidden;
   height: 42px;
   width: 214px;
@@ -1296,7 +1305,7 @@ section .container {
 
 /* line 84, src/scss/app.scss */
 .separotor-color {
-  color: #F44336;
+  color: #f44336;
 }
 
 /* line 89, src/scss/app.scss */
@@ -1645,28 +1654,36 @@ section .container {
   margin-top: 5px;
 }
 
-/* line 446, src/scss/app.scss */
+/* line 447, src/scss/app.scss */
+.project h3 i {
+  vertical-align: baseline;
+  color: #03a9f4;
+}
+
+/* line 452, src/scss/app.scss */
 .project a {
+  text-decoration: none;
+  color: #333;
   word-wrap: break-word;
 }
 
-/* line 449, src/scss/app.scss */
+/* line 457, src/scss/app.scss */
 .project p:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 452, src/scss/app.scss */
+/* line 460, src/scss/app.scss */
 .project + .project {
   margin-top: 20px;
 }
 
-/* line 459, src/scss/app.scss */
+/* line 465, src/scss/app.scss */
 footer {
   text-align: center;
   padding: 25px 10px;
 }
 
-/* line 463, src/scss/app.scss */
+/* line 469, src/scss/app.scss */
 footer .profile-links a {
   background-color: #545454;
   width: 40px;
@@ -1675,13 +1692,13 @@ footer .profile-links a {
   padding: 8px;
 }
 
-/* line 471, src/scss/app.scss */
+/* line 477, src/scss/app.scss */
 footer i {
   color: white;
   opacity: 0.4;
 }
 
-/* line 475, src/scss/app.scss */
+/* line 481, src/scss/app.scss */
 footer .site-info {
   color: #bfbfbf;
 }

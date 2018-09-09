@@ -51,15 +51,30 @@
     color:$stackoveflow-secondary;
   }
   
+  // .icon-marker:before {
+  //   content: "\e907";
+  // }
+  // .icon-link:before {
+  //   content: "\e908";
+  // }
+  // .icon-email:before {
+  //   content: "\e909";
+  // }
+  // .icon-cake:before {
+  //   content: "\e90a";
+  // }
   .icon-marker:before {
-    content: "\e907";
+    content: "\e90c";
   }
-  .icon-link:before {
-    content: "\e908";
-  }
-  .icon-email:before {
-    content: "\e909";
-  }
-  .icon-cake:before {
-    content: "\e90a";
-  }
+.icon-cake:before {
+  content: "\e90d";
+}
+.icon-open-new-tab:before {
+  content: "\e90f";
+}
+.icon-email:before {
+  content: "\e90e";
+}
+.icon-link:before {
+  content: "\e907";
+}
