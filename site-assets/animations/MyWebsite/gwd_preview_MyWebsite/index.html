@@ -36,11 +36,7 @@ body {
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
 }
-.anim-container {
-    display: inline-block;
-    margin-right: 15px;
-}
-.inner {
+.anim-container {} .inner {
     height: 250px;
     border: 2px solid white;
     position: relative;
@@ -68,15 +64,15 @@ body {
 }
 .laptop::before {
     content: "";
-    width: 100px;
-    height: 15px;
+    width: 122px;
+    height: 4px;
     background: white;
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
-    bottom: -30px;
+    bottom: -24px;
 }
 .gwd-div-lu80 {
     left: 50px;
@@ -607,11 +603,21 @@ body {
     animation: gwd-gen-1hxogwdanimation_gwd-keyframes 5s linear 0s infinite normal forwards;
     -webkit-animation: gwd-gen-1hxogwdanimation_gwd-keyframes 5s linear 0s infinite normal forwards;
     -moz-animation: gwd-gen-1hxogwdanimation_gwd-keyframes 5s linear 0s infinite normal forwards;
+}
+.gwd-oval-1fj7 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    fill: rgb(255, 255, 255);
+    stroke: rgb(0, 0, 0);
+    stroke-width: 1px;
+    left: 77px;
+    top: 19px;
 }</style>
 </head>
 
 <body class="htmlNoPages">
-  <div class="anim-container gwd-div-lu80">
+  <div class="anim-container gwd-div-lu80" id="Design">
     <div class="inner">
       <svg data-gwd-shape="rectangle" class="gwd-rect-gnbv gwd-svg-16fm gwd-gen-18zdgwdanimation"></svg>
       <svg data-gwd-shape="rectangle" class="gwd-rect-gnbv gwd-svg-emj3 gwd-gen-14vzgwdanimation"></svg>
@@ -623,7 +629,9 @@ body {
   <div class="anim-container gwd-div-lu80">
     <div class="inner">
       <div class="laptop">
-        
+        <svg data-gwd-shape="oval" preserveAspectRatio="none" viewBox="0 0 45 45" class="gwd-oval-1fj7">
+          <ellipse cx="50%" cy="50%" rx="22" ry="22"></ellipse>
+        </svg>
       </div>
     </div>
   </div>
