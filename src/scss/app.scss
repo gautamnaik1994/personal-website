@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import '../../node_modules/bootstrap/scss/bootstrap-reboot.scss';
 @import '../../node_modules/bootstrap/scss/mixins/breakpoints';
+//@import '../../node_modules/bootstrap/scss/buttons.scss';
 //@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 @import './helpers.scss';
 @import './icons.scss';
@@ -9,57 +10,19 @@
 @import './components/general-styles.scss';
 @import './components/standalone.scss';
 @import './components/form.scss';
-@import './components/v-card.scss';
+//@import './components/v-card.scss';
 @import './components/experience.scss';
 
 .section-header {
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  margin: 0 -15px;
-  z-index: 2;
-  padding: 1rem 15px;
 }
 
 .sub-header {
-  margin: 10px 0;
 }
 
-.light-black-bg {
-  background-color: $light-black;
-  color: $light-text;
-  .section-header {
-    background-color: $light-black;
-  }
-}
-.gradient-bg {
-  background: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%) no-repeat;
-  .section-header {
-    background-color: transparent;
-  }
+.card {
+  box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.07);
 }
 
-.grey-bg {
-  background-color: #f3f3f3;
-  color: $body-text-color;
-  .section-header {
-    background-color: #f3f3f3;
-  }
-}
-
-.primary-bg {
-  background-color: $primary;
-  color: white;
-  .section-header {
-    background-color: $primary;
-  }
-  .left-right-list {
-    & > li {
-      color: white;
-      background-color: rgba(0, 0, 0, 0.19);
-    }
-  }
-}
 
 section .container {
   padding: 5rem 15px;
@@ -81,404 +44,81 @@ section .container {
   color: $github;
 }
 
-.separotor-color {
-  color: #f44336;
-}
-
-[data-skillLevel='Intermediate'] {
-  .skill-level {
-    color: $orange;
-  } //border-left: 5px solid $orange;
-}
-
-[data-skillLevel='Beginner'] {
-  .skill-level {
-    color: $primary;
-  } //border-left: 5px solid $primary;
-}
-
-[data-skillLevel='Expert'] {
-  .skill-level {
-    color: $green;
-  } //border-left: 5px solid $green;
-}
-
-.left-right-list {
-  list-style-type: none;
-  padding: 0; // @include media-breakpoint-up(md) {
-  //   margin-right: 7rem;
-  // }
-  .inner {
-    display: flex;
-    justify-content: space-between;
-    color: $light-text;
-    padding: 12px 15px;
-    background-color: rgba(0, 0, 0, 0.19);
-    border-radius: 3px;
-  }
-  li + li {
-    margin-top: 8px;
-  }
-}
-
-.skill-list {
-  list-style-type: none;
-  .inner {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.19);
-    border-radius: 3px;
-    padding: 12px 30px;
-    color: white;
-
-    > svg {
-      position: absolute;
-      left: -17px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      border-radius: 50%;
-      box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.13);
-      padding: 4px;
-    }
-  }
-  & + li {
-    margin-top: 8px;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .sub-header {
-    margin-top: 2rem;
-    margin-bottom: 0;
-  }
-
-  .left-right-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-    li {
-      // margin: 0 15px 15px 0;
-      padding: 15px;
-      width: 50%;
-      & + li {
-        margin-top: 0px;
-      }
-    }
-  }
-  .skill-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0 1px;
-    li {
-      // margin: 0 15px 15px 0;
-      width: 50%;
-      padding: 15px 19px;
-      & + li {
-        margin-top: 0px;
-      }
-    }
-  }
-}
-
 .intro {
-  height: 100vh;
-  text-align: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  padding: 0 15px;
-  .profile-pic {
-    img {
-      background-color: #ffc107;
-      display: inline-block;
-      height: 120px;
-      width: 120px;
-      margin-bottom: 1rem;
-      border-radius: 50%;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  .name-svg {
+   // width: 95%;
+   // height:186px;
+    margin: 0 auto;
+    text{
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 70px;
+      stroke-dasharray: 100%;
+      stroke-dashoffset: 100%;
+     animation: draw 3s infinite forwards;
     }
+    tspan{
+      letter-spacing: -2;
+      &:nth-child(2){
+        stroke:$primary;
+        animation: drawDot 3s infinite forwards;
+      }
+    }
+    @media all and (-ms-high-contrast:none){
+      text{
+        fill: white;
+        stroke-dashoffset: 0%;
+      }
+      tspan{
+     
+        &:nth-child(2){
+          fill: $primary;
+    stroke:$primary;
+        }
+      }
+    } 
+    @include media-breakpoint-up(xl) { 
+      width: 538px;
+      height: 374px;
+      text{     
+        //font-size: 148px;
+  
+      }
+     }
+
+  }
+
+}
+
+@keyframes draw {
+  0% {
+    fill: transparent;
+  
+  }
+    50% {
+    fill: transparent;
+  }
+  100% {
+    fill: white;
+    stroke-dashoffset: 0%;
+  }
+}
+@keyframes drawDot {
+  0% {
+    fill: transparent;
+
+  }
+    50% {
+    fill: transparent;
+
+  }
+  100% {
+    fill: $primary;
+    stroke-dashoffset: 0%;
   }
 }
 
-.profile-links {
-  a {
-    text-decoration: none;
-    display: inline-block;
-    width: 46px;
-    height: 46px;
-    /* line-height: 46px; */
-    background-color: white;
-    box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.13);
-    border-radius: 50%;
-    margin: 0 4px;
-    color: gray;
-    font-size: 21px;
-    padding: 9px;
-    position: relative;
-    transition: all 0.2s ease-in-out;
-    &:hover {
-      transform: scale(1.1);
-      box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.13);
-    }
-  }
-}
-
-.experience {
-  list-style-type: none;
-  padding: 0; // position: relative;
-  .work {
-    list-style-type: disc;
-    padding-left: 24px;
-    .inner {
-      left: -4px;
-      position: relative;
-    }
-  }
-  // &:after {
-  //   content: '';
-  //   width: 1px; // height: 100%;
-  //   position: absolute;
-  //   top: 16px;
-  //   bottom: 0;
-  //   background: #d8d8d8;
-  //   left: 3px;
-  //   z-index: -1;
-  // }
-  // &:before {
-  //   content: '';
-  //   position: absolute;
-  //   width: 6px;
-  //   height: 6px;
-  //   background: #f44336;
-  //   border-radius: 50%;
-  //   bottom: 0;
-  //   left: 1px;
-  // }
-  $l-value: 12px;
-  & > li {
-    background: white;
-    color: $body-text-color;
-    padding: 50px 15px;
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.22);
-    .hole {
-      margin: 0;
-      position: absolute;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: -moz-radial-gradient(
-        center,
-        ellipse cover,
-        rgba(3, 169, 244, 1) 0%,
-        rgba(3, 169, 244, 1) 32%,
-        rgba(199, 199, 199, 1) 33%,
-        rgba(245, 245, 245, 1) 100%
-      );
-      background: -webkit-gradient(
-        radial,
-        center center,
-        0px,
-        center center,
-        100%,
-        color-stop(0%, rgba(3, 169, 244, 1)),
-        color-stop(32%, rgba(3, 169, 244, 1)),
-        color-stop(33%, rgba(199, 199, 199, 1)),
-        color-stop(100%, rgba(245, 245, 245, 1))
-      );
-      background: -webkit-radial-gradient(
-        center,
-        ellipse cover,
-        rgba(3, 169, 244, 1) 0%,
-        rgba(3, 169, 244, 1) 32%,
-        rgba(199, 199, 199, 1) 33%,
-        rgba(245, 245, 245, 1) 100%
-      );
-      background: -o-radial-gradient(
-        center,
-        ellipse cover,
-        rgba(3, 169, 244, 1) 0%,
-        rgba(3, 169, 244, 1) 32%,
-        rgba(199, 199, 199, 1) 33%,
-        rgba(245, 245, 245, 1) 100%
-      );
-      background: -ms-radial-gradient(
-        center,
-        ellipse cover,
-        rgba(3, 169, 244, 1) 0%,
-        rgba(3, 169, 244, 1) 32%,
-        rgba(199, 199, 199, 1) 33%,
-        rgba(245, 245, 245, 1) 100%
-      );
-      background: radial-gradient(
-        ellipse at center,
-        rgba(3, 169, 244, 1) 0%,
-        rgba(3, 169, 244, 1) 32%,
-        rgba(199, 199, 199, 1) 33%,
-        rgba(245, 245, 245, 1) 100%
-      );
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#F5F5F5', GradientType=1);
-      &:after {
-        content: '';
-        position: absolute;
-        width: 6px;
-        height: 71px;
-        background: -moz-linear-gradient(
-          0deg,
-          rgba(212, 168, 11, 1) 0%,
-          rgba(255, 235, 59, 1) 50%,
-          rgba(212, 168, 11, 1) 100%
-        ); /* ff3.6+ */
-        background: -webkit-gradient(
-          linear,
-          left top,
-          right top,
-          color-stop(0%, rgba(212, 168, 11, 1)),
-          color-stop(50%, rgba(255, 235, 59, 1)),
-          color-stop(100%, rgba(212, 168, 11, 1))
-        ); /* safari4+,chrome */
-        background: -webkit-linear-gradient(
-          0deg,
-          rgba(212, 168, 11, 1) 0%,
-          rgba(255, 235, 59, 1) 50%,
-          rgba(212, 168, 11, 1) 100%
-        ); /* safari5.1+,chrome10+ */
-        background: -o-linear-gradient(
-          0deg,
-          rgba(212, 168, 11, 1) 0%,
-          rgba(255, 235, 59, 1) 50%,
-          rgba(212, 168, 11, 1) 100%
-        ); /* opera 11.10+ */
-        background: -ms-linear-gradient(
-          0deg,
-          rgba(212, 168, 11, 1) 0%,
-          rgba(255, 235, 59, 1) 50%,
-          rgba(212, 168, 11, 1) 100%
-        ); /* ie10+ */
-        background: linear-gradient(
-          90deg,
-          rgba(212, 168, 11, 1) 0%,
-          rgba(255, 235, 59, 1) 50%,
-          rgba(212, 168, 11, 1) 100%
-        ); /* w3c */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4a80b', endColorstr='#d4a80b',GradientType=1 ); /* ie6-9 */
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 13px;
-        border-radius: 25px;
-        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.19);
-      }
-    }
-    .tl {
-      top: $l-value;
-      left: $l-value;
-    }
-    .tr {
-      top: $l-value;
-      right: $l-value;
-    }
-    .bl {
-      bottom: $l-value;
-      left: $l-value;
-      &:after {
-        display: none;
-      }
-    }
-    .br {
-      bottom: $l-value;
-      right: $l-value;
-      &:after {
-        display: none;
-      }
-    }
-    &:first-child {
-      padding-top: 18px;
-      .tl,
-      .tr {
-        display: none;
-      }
-    }
-    &:last-child {
-      padding-bottom: 18px;
-      .bl,
-      .br {
-        display: none;
-      }
-    }
-    & + li {
-      margin-top: 17px;
-    }
-    * + * {
-      margin: 0;
-      margin-top: 8px;
-    }
-  }
-}
-
-.other-things {
-  a {
-    margin-bottom: 2rem;
-    display: block;
-    margin-top: 15px;
-  }
-  .github-img-container {
-    overflow-x: auto;
-    @include media-breakpoint-up(md) {
-      img {
-        width: 100%;
-        height: auto;
-        background: white;
-      }
-    }
-  }
-}
-.card {
-  box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.07);
-}
-.project {
-  background-color: white;
-  border-radius: 5px;
-  padding: 15px;
-  margin-top: 5px;
-  h3 {
-    i {
-      vertical-align: baseline;
-      color: $primary;
-    }
-  }
-  a {
-    text-decoration: none;
-    color: $body-text-color;
-    word-wrap: break-word;
-  }
-  p:last-of-type {
-    margin-bottom: 0;
-  }
-  & + .project {
-    margin-top: 20px;
-  }
-}
-
-footer {
-  text-align: center;
-  // background-color: $light-black;
-  padding: 25px 10px;
-  .profile-links a {
-    background-color: #545454;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    padding: 8px;
-  }
-
-  i {
-    color: white;
-    opacity: 0.4;
-  }
-  .site-info {
-    color: $light-text;
-  }
-}

@@ -1,6 +1,15 @@
 body {
-  background-color: var(--body-background-color);
-  color: var(--text-color);
+  background-color: $body-background-color;
+  color: $body-text-color;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 15px;
 }
 
 @include media-breakpoint-up(md) {
