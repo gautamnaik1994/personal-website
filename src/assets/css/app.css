@@ -1092,7 +1092,21 @@ section .container {
   color: #03a9f4;
 }
 
-/* line 49, src/scss/app.scss */
+/* line 48, src/scss/app.scss */
+.confetti {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(../img/strayobjects.svg);
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+/* line 62, src/scss/app.scss */
 .intro {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1101,6 +1115,7 @@ section .container {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100vh;
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1108,33 +1123,52 @@ section .container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
+  background-size: 95% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-/* line 55, src/scss/app.scss */
+@media (min-width: 768px) {
+  /* line 62, src/scss/app.scss */
+  .intro {
+    background-size: 80% auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 62, src/scss/app.scss */
+  .intro {
+    background-size: 60% auto;
+  }
+}
+
+/* line 86, src/scss/app.scss */
 .intro .position {
   color: #b0bec5;
 }
 
-/* line 58, src/scss/app.scss */
+/* line 89, src/scss/app.scss */
 .intro .details {
   padding: 15px;
 }
 
 @media (min-width: 1200px) {
-  /* line 58, src/scss/app.scss */
+  /* line 89, src/scss/app.scss */
   .intro .details {
     padding: 0;
   }
 }
 
-/* line 64, src/scss/app.scss */
+/* line 103, src/scss/app.scss */
 .intro .name-svg {
   vector-effect: non-scaling-stroke;
   width: 70vw;
   margin: 0 auto;
 }
 
-/* line 69, src/scss/app.scss */
+/* line 108, src/scss/app.scss */
 .intro .name-svg text {
   font-family: 'Ubuntu', sans-serif;
   font-size: 70px;
@@ -1144,12 +1178,12 @@ section .container {
           animation: draw 3s infinite forwards;
 }
 
-/* line 76, src/scss/app.scss */
+/* line 115, src/scss/app.scss */
 .intro .name-svg tspan {
   letter-spacing: -2;
 }
 
-/* line 78, src/scss/app.scss */
+/* line 117, src/scss/app.scss */
 .intro .name-svg tspan:nth-child(2) {
   stroke: #03a9f4;
   -webkit-animation: drawDot 3s infinite forwards;
@@ -1157,12 +1191,12 @@ section .container {
 }
 
 @media all and (-ms-high-contrast: none) {
-  /* line 84, src/scss/app.scss */
+  /* line 123, src/scss/app.scss */
   .intro .name-svg text {
     fill: white;
     stroke-dashoffset: 0%;
   }
-  /* line 89, src/scss/app.scss */
+  /* line 128, src/scss/app.scss */
   .intro .name-svg tspan:nth-child(2) {
     fill: #03a9f4;
     stroke: #03a9f4;
@@ -1170,7 +1204,15 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 64, src/scss/app.scss */
+  /* line 103, src/scss/app.scss */
+  .intro .name-svg {
+    width: 348px;
+    height: 244px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 103, src/scss/app.scss */
   .intro .name-svg {
     width: 538px;
     height: 374px;

@@ -45,22 +45,61 @@ section .container {
 .text-primary {
   color: $primary;
 }
+.confetti{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(../img/strayobjects.svg);
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  //transform: translateZ(0);
+}
 
 .intro {
   display: flex;
   justify-content: center;
   height: 100vh;
+  position: relative;
   align-items: center;
   flex-direction: column;
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
+  background-size: 95% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  // perspective: 1px;
+  // overflow-x: hidden;
+  // overflow-y: auto;
+
+
+  @include media-breakpoint-up(md) {
+    background-size: 80% auto;
+  }
+  @include media-breakpoint-up(xl) {
+    background-size: 60% auto;
+  }
   .position {
     color: #b0bec5;
   }
   .details {
     padding: 15px;
+
+  //   transform: translateZ(-1px);
+  //   position: absolute;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
     @include media-breakpoint-up(xl) {
       padding: 0;
     }
   }
+
   .name-svg {
     vector-effect: non-scaling-stroke;
     width: 70vw;
@@ -93,12 +132,16 @@ section .container {
       }
     }
     @include media-breakpoint-up(md) {
+      width: 348px;
+      height: 244px;
+    }
+    @include media-breakpoint-up(xl) {
       width: 538px;
       height: 374px;
-      text {
-        //font-size: 148px;
-      }
+      
     }
+
+
   }
 }
 
