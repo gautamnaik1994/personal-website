@@ -1,4 +1,3 @@
-
 .is-relative {
   position: relative;
 }
@@ -7,8 +6,11 @@
   display: table;
   clear: both;
 }
-.normal-font{
+.normal-font {
   font-weight: normal;
+}
+.medium {
+  font-weight: 500;
 }
 .semi-bold {
   font-weight: 600;
@@ -18,49 +20,58 @@
 }
 
 .half-rem-mb {
-  margin-bottom: 0.5rem!important;
+  margin-bottom: 0.5rem !important;
 }
 .half-rem-mt {
-  margin-top: 0.5rem!important;
+  margin-top: 0.5rem !important;
 }
 
 .one-rem-mb {
-  margin-bottom: 1rem!important;
+  margin-bottom: 1rem !important;
 }
 .one-rem-mt {
-  margin-top: 1rem!important;
+  margin-top: 1rem !important;
 }
 
 .two-rem-mb {
-  margin-bottom: 2rem!important;
+  margin-bottom: 2rem !important;
 }
 .two-rem-mt {
-  margin-top: 2rem!important;
+  margin-top: 2rem !important;
 }
 
-.inline-block{
+.inline-block {
   display: inline-block;
 }
 
-.padding-15-side{
+.padding-15-side {
   padding: 0 15px;
 }
-.pt-0{
-  padding-top: 0!important;
+.pt-0 {
+  padding-top: 0 !important;
 }
-.m-0{
-  margin: 0!important;
+.m-0 {
+  margin: 0 !important;
 }
-.has-box-shadow{
+.has-box-shadow {
   box-shadow: 0px 8px 20px 5px rgba(0, 0, 0, 0.06);
 }
 .text-muted {
   color: #6c757d;
 }
 
-.d-flex{
+.d-flex {
   display: flex;
 }
-.space-between{
-justify-content: space-between;
+.space-between {
+  justify-content: space-between;
+}
+
+.show-for-medium {
+  display: none;
+}
+@include media-breakpoint-up(md) {
+  .show-for-medium {
+    display: block;
+  }
 }

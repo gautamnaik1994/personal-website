@@ -394,106 +394,123 @@ template {
   display: none !important;
 }
 
-/* line 2, src/scss/_helpers.scss */
+/* line 1, src/scss/_helpers.scss */
 .is-relative {
   position: relative;
 }
 
-/* line 5, src/scss/_helpers.scss */
+/* line 4, src/scss/_helpers.scss */
 .clearfix:after {
   content: ' ';
   display: table;
   clear: both;
 }
 
-/* line 10, src/scss/_helpers.scss */
+/* line 9, src/scss/_helpers.scss */
 .normal-font {
   font-weight: normal;
 }
 
-/* line 13, src/scss/_helpers.scss */
+/* line 12, src/scss/_helpers.scss */
+.medium {
+  font-weight: 500;
+}
+
+/* line 15, src/scss/_helpers.scss */
 .semi-bold {
   font-weight: 600;
 }
 
-/* line 16, src/scss/_helpers.scss */
+/* line 18, src/scss/_helpers.scss */
 .bold {
   font-weight: 700;
 }
 
-/* line 20, src/scss/_helpers.scss */
+/* line 22, src/scss/_helpers.scss */
 .half-rem-mb {
   margin-bottom: 0.5rem !important;
 }
 
-/* line 23, src/scss/_helpers.scss */
+/* line 25, src/scss/_helpers.scss */
 .half-rem-mt {
   margin-top: 0.5rem !important;
 }
 
-/* line 27, src/scss/_helpers.scss */
+/* line 29, src/scss/_helpers.scss */
 .one-rem-mb {
   margin-bottom: 1rem !important;
 }
 
-/* line 30, src/scss/_helpers.scss */
+/* line 32, src/scss/_helpers.scss */
 .one-rem-mt {
   margin-top: 1rem !important;
 }
 
-/* line 34, src/scss/_helpers.scss */
+/* line 36, src/scss/_helpers.scss */
 .two-rem-mb {
   margin-bottom: 2rem !important;
 }
 
-/* line 37, src/scss/_helpers.scss */
+/* line 39, src/scss/_helpers.scss */
 .two-rem-mt {
   margin-top: 2rem !important;
 }
 
-/* line 41, src/scss/_helpers.scss */
+/* line 43, src/scss/_helpers.scss */
 .inline-block {
   display: inline-block;
 }
 
-/* line 45, src/scss/_helpers.scss */
+/* line 47, src/scss/_helpers.scss */
 .padding-15-side {
   padding: 0 15px;
 }
 
-/* line 48, src/scss/_helpers.scss */
+/* line 50, src/scss/_helpers.scss */
 .pt-0 {
   padding-top: 0 !important;
 }
 
-/* line 51, src/scss/_helpers.scss */
+/* line 53, src/scss/_helpers.scss */
 .m-0 {
   margin: 0 !important;
 }
 
-/* line 54, src/scss/_helpers.scss */
+/* line 56, src/scss/_helpers.scss */
 .has-box-shadow {
   -webkit-box-shadow: 0px 8px 20px 5px rgba(0, 0, 0, 0.06);
           box-shadow: 0px 8px 20px 5px rgba(0, 0, 0, 0.06);
 }
 
-/* line 57, src/scss/_helpers.scss */
+/* line 59, src/scss/_helpers.scss */
 .text-muted {
   color: #6c757d;
 }
 
-/* line 61, src/scss/_helpers.scss */
+/* line 63, src/scss/_helpers.scss */
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 64, src/scss/_helpers.scss */
+/* line 66, src/scss/_helpers.scss */
 .space-between {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+/* line 70, src/scss/_helpers.scss */
+.show-for-medium {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  /* line 74, src/scss/_helpers.scss */
+  .show-for-medium {
+    display: block;
+  }
 }
 
 @font-face {
@@ -691,12 +708,25 @@ fieldset:disabled a.btn {
 }
 
 /* line 1, src/scss/components/_general-styles.scss */
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 1500px) {
+  /* line 1, src/scss/components/_general-styles.scss */
+  html {
+    font-size: 18px;
+  }
+}
+
+/* line 9, src/scss/components/_general-styles.scss */
 body {
+  font-size: 1rem;
   background-color: #1B1B1B;
   color: white;
 }
 
-/* line 6, src/scss/components/_general-styles.scss */
+/* line 15, src/scss/components/_general-styles.scss */
 nav {
   position: fixed;
   top: 0;
@@ -707,24 +737,24 @@ nav {
 }
 
 @media (min-width: 768px) {
-  /* line 16, src/scss/components/_general-styles.scss */
+  /* line 25, src/scss/components/_general-styles.scss */
   h1 {
-    font-size: 2em;
+    font-size: 2rem;
   }
 }
 
-/* line 21, src/scss/components/_general-styles.scss */
+/* line 30, src/scss/components/_general-styles.scss */
 li + li {
   margin-top: 5px;
 }
 
-/* line 24, src/scss/components/_general-styles.scss */
+/* line 33, src/scss/components/_general-styles.scss */
 ul {
   padding-left: 18px;
   margin-bottom: 1.5rem;
 }
 
-/* line 28, src/scss/components/_general-styles.scss */
+/* line 37, src/scss/components/_general-styles.scss */
 hr {
   height: 1px;
   background: rgba(128, 128, 128, 0.5);
@@ -1032,32 +1062,37 @@ label {
           box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.07);
 }
 
-/* line 27, src/scss/app.scss */
+/* line 26, src/scss/app.scss */
 section .container {
   padding: 5rem 15px;
 }
 
-/* line 31, src/scss/app.scss */
+/* line 30, src/scss/app.scss */
 .linkedin {
   color: #0077b5;
 }
 
-/* line 35, src/scss/app.scss */
+/* line 34, src/scss/app.scss */
 .behance {
   color: #1769ff;
 }
 
-/* line 39, src/scss/app.scss */
+/* line 38, src/scss/app.scss */
 .codepen {
   color: #0ebeff;
 }
 
-/* line 43, src/scss/app.scss */
+/* line 42, src/scss/app.scss */
 .github {
   color: #333;
 }
 
-/* line 47, src/scss/app.scss */
+/* line 45, src/scss/app.scss */
+.text-primary {
+  color: #03a9f4;
+}
+
+/* line 49, src/scss/app.scss */
 .intro {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1075,12 +1110,31 @@ section .container {
           flex-direction: column;
 }
 
-/* line 53, src/scss/app.scss */
+/* line 55, src/scss/app.scss */
+.intro .position {
+  color: #b0bec5;
+}
+
+/* line 58, src/scss/app.scss */
+.intro .details {
+  padding: 15px;
+}
+
+@media (min-width: 1200px) {
+  /* line 58, src/scss/app.scss */
+  .intro .details {
+    padding: 0;
+  }
+}
+
+/* line 64, src/scss/app.scss */
 .intro .name-svg {
+  vector-effect: non-scaling-stroke;
+  width: 70vw;
   margin: 0 auto;
 }
 
-/* line 57, src/scss/app.scss */
+/* line 69, src/scss/app.scss */
 .intro .name-svg text {
   font-family: 'Ubuntu', sans-serif;
   font-size: 70px;
@@ -1090,12 +1144,12 @@ section .container {
           animation: draw 3s infinite forwards;
 }
 
-/* line 64, src/scss/app.scss */
+/* line 76, src/scss/app.scss */
 .intro .name-svg tspan {
   letter-spacing: -2;
 }
 
-/* line 66, src/scss/app.scss */
+/* line 78, src/scss/app.scss */
 .intro .name-svg tspan:nth-child(2) {
   stroke: #03a9f4;
   -webkit-animation: drawDot 3s infinite forwards;
@@ -1103,20 +1157,20 @@ section .container {
 }
 
 @media all and (-ms-high-contrast: none) {
-  /* line 72, src/scss/app.scss */
+  /* line 84, src/scss/app.scss */
   .intro .name-svg text {
     fill: white;
     stroke-dashoffset: 0%;
   }
-  /* line 78, src/scss/app.scss */
+  /* line 89, src/scss/app.scss */
   .intro .name-svg tspan:nth-child(2) {
     fill: #03a9f4;
     stroke: #03a9f4;
   }
 }
 
-@media (min-width: 1200px) {
-  /* line 53, src/scss/app.scss */
+@media (min-width: 768px) {
+  /* line 64, src/scss/app.scss */
   .intro .name-svg {
     width: 538px;
     height: 374px;
