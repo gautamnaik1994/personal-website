@@ -45,18 +45,26 @@ section .container {
 .text-primary {
   color: $primary;
 }
-.confetti{
+.confetti {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-image: url(../img/strayobjects.svg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   z-index: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: 1220px auto;
+  //background-position: center;
   //transform: translateZ(0);
+
+  @include media-breakpoint-up(md) {
+    background-size: 1440px auto;
+  }
+  @include media-breakpoint-up(xl) {
+    background-size: contain;
+    background-position: center;
+  }
 }
 
 .intro {
@@ -66,7 +74,7 @@ section .container {
   position: relative;
   align-items: center;
   flex-direction: column;
-	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
   background-size: 95% auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -75,7 +83,6 @@ section .container {
   // perspective: 1px;
   // overflow-x: hidden;
   // overflow-y: auto;
-
 
   @include media-breakpoint-up(md) {
     background-size: 80% auto;
@@ -89,12 +96,12 @@ section .container {
   .details {
     padding: 15px;
 
-  //   transform: translateZ(-1px);
-  //   position: absolute;
-  // top: 0;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
+    //   transform: translateZ(-1px);
+    //   position: absolute;
+    // top: 0;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
     @include media-breakpoint-up(xl) {
       padding: 0;
     }
@@ -110,25 +117,23 @@ section .container {
       font-size: 70px;
       stroke-dasharray: 100%;
       stroke-dashoffset: 100%;
-      animation: draw 3s infinite forwards;
+      animation: draw 3s forwards;
     }
     tspan {
       letter-spacing: -2;
-      &:nth-child(2) {
-        stroke: $primary;
-        animation: drawDot 3s infinite forwards;
-      }
+    }
+    .hello-dot {
+      stroke: $primary;
+      animation: drawDot 3s forwards;
     }
     @media all and (-ms-high-contrast: none) {
       text {
         fill: white;
         stroke-dashoffset: 0%;
       }
-      tspan {
-        &:nth-child(2) {
-          fill: $primary;
-          stroke: $primary;
-        }
+      .hello-dot {
+        fill: $primary;
+        stroke: $primary;
       }
     }
     @include media-breakpoint-up(md) {
@@ -138,10 +143,7 @@ section .container {
     @include media-breakpoint-up(xl) {
       width: 538px;
       height: 374px;
-      
     }
-
-
   }
 }
 

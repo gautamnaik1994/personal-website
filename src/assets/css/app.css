@@ -601,6 +601,11 @@ template {
   content: "\e907";
 }
 
+/* line 81, src/scss/_icons.scss */
+.icon-logo:before {
+  content: "\e908";
+}
+
 /* line 1, src/scss/components/_button.scss */
 .btn {
   display: inline-block;
@@ -1100,13 +1105,27 @@ section .container {
   bottom: 0;
   left: 0;
   background-image: url(../img/strayobjects.svg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   z-index: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: 1220px auto;
 }
 
-/* line 62, src/scss/app.scss */
+@media (min-width: 768px) {
+  /* line 48, src/scss/app.scss */
+  .confetti {
+    background-size: 1440px auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 48, src/scss/app.scss */
+  .confetti {
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+/* line 70, src/scss/app.scss */
 .intro {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1131,80 +1150,80 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 62, src/scss/app.scss */
+  /* line 70, src/scss/app.scss */
   .intro {
     background-size: 80% auto;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 62, src/scss/app.scss */
+  /* line 70, src/scss/app.scss */
   .intro {
     background-size: 60% auto;
   }
 }
 
-/* line 86, src/scss/app.scss */
+/* line 93, src/scss/app.scss */
 .intro .position {
   color: #b0bec5;
 }
 
-/* line 89, src/scss/app.scss */
+/* line 96, src/scss/app.scss */
 .intro .details {
   padding: 15px;
 }
 
 @media (min-width: 1200px) {
-  /* line 89, src/scss/app.scss */
+  /* line 96, src/scss/app.scss */
   .intro .details {
     padding: 0;
   }
 }
 
-/* line 103, src/scss/app.scss */
+/* line 110, src/scss/app.scss */
 .intro .name-svg {
   vector-effect: non-scaling-stroke;
   width: 70vw;
   margin: 0 auto;
 }
 
-/* line 108, src/scss/app.scss */
+/* line 115, src/scss/app.scss */
 .intro .name-svg text {
   font-family: 'Ubuntu', sans-serif;
   font-size: 70px;
   stroke-dasharray: 100%;
   stroke-dashoffset: 100%;
-  -webkit-animation: draw 3s infinite forwards;
-          animation: draw 3s infinite forwards;
+  -webkit-animation: draw 3s forwards;
+          animation: draw 3s forwards;
 }
 
-/* line 115, src/scss/app.scss */
+/* line 122, src/scss/app.scss */
 .intro .name-svg tspan {
   letter-spacing: -2;
 }
 
-/* line 117, src/scss/app.scss */
-.intro .name-svg tspan:nth-child(2) {
+/* line 125, src/scss/app.scss */
+.intro .name-svg .hello-dot {
   stroke: #03a9f4;
-  -webkit-animation: drawDot 3s infinite forwards;
-          animation: drawDot 3s infinite forwards;
+  -webkit-animation: drawDot 3s forwards;
+          animation: drawDot 3s forwards;
 }
 
 @media all and (-ms-high-contrast: none) {
-  /* line 123, src/scss/app.scss */
+  /* line 130, src/scss/app.scss */
   .intro .name-svg text {
     fill: white;
     stroke-dashoffset: 0%;
   }
-  /* line 128, src/scss/app.scss */
-  .intro .name-svg tspan:nth-child(2) {
+  /* line 134, src/scss/app.scss */
+  .intro .name-svg .hello-dot {
     fill: #03a9f4;
     stroke: #03a9f4;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 103, src/scss/app.scss */
+  /* line 110, src/scss/app.scss */
   .intro .name-svg {
     width: 348px;
     height: 244px;
@@ -1212,7 +1231,7 @@ section .container {
 }
 
 @media (min-width: 1200px) {
-  /* line 103, src/scss/app.scss */
+  /* line 110, src/scss/app.scss */
   .intro .name-svg {
     width: 538px;
     height: 374px;

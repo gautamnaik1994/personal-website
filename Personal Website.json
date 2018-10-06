@@ -55,12 +55,20 @@
     {
       "selection": [
         {
+          "order": 57,
+          "id": 17,
+          "name": "logo",
+          "prevSize": 32,
+          "code": 59656,
+          "tempChar": ""
+        },
+        {
           "order": 53,
           "id": 16,
           "name": "link",
           "prevSize": 32,
           "code": 59655,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 51,
@@ -68,7 +76,7 @@
           "name": "marker",
           "prevSize": 32,
           "code": 59660,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 50,
@@ -76,7 +84,7 @@
           "name": "cake",
           "prevSize": 32,
           "code": 59661,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 49,
@@ -84,7 +92,7 @@
           "name": "email",
           "prevSize": 32,
           "code": 59662,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 48,
@@ -92,7 +100,7 @@
           "name": "open-new-tab",
           "prevSize": 32,
           "code": 59663,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 0,
@@ -132,7 +140,7 @@
           "name": "stack-overflow-bottom",
           "prevSize": 32,
           "code": 59653,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 35,
@@ -140,7 +148,7 @@
           "name": "stack-overflow-top",
           "prevSize": 32,
           "code": 59654,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 36,
@@ -148,7 +156,7 @@
           "name": "linkedin",
           "prevSize": 32,
           "code": 59648,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 37,
@@ -156,7 +164,7 @@
           "name": "github",
           "prevSize": 32,
           "code": 59649,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 38,
@@ -164,7 +172,7 @@
           "name": "stack-overflow",
           "prevSize": 32,
           "code": 59650,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 39,
@@ -172,7 +180,7 @@
           "name": "behance",
           "prevSize": 32,
           "code": 59651,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 40,
@@ -180,7 +188,7 @@
           "name": "codepen",
           "prevSize": 32,
           "code": 59652,
-          "tempChar": ""
+          "tempChar": ""
         }
       ],
       "id": 1,
@@ -193,13 +201,36 @@
         "licenseURL": "https://github.com/FortAwesome/Font-Awesome#license",
         "iconsHash": 309851062,
         "importSize": {
-          "width": 24,
-          "height": 24
+          "width": 336,
+          "height": 336
         }
       },
       "height": 1024,
       "prevSize": 28,
       "icons": [
+        {
+          "id": 17,
+          "paths": [
+            "M543.086 115.2l-402.286 536.381c-5.486 7.010-3.657 16.762 3.657 21.638l396.8 263.924c12.8 8.533 28.952-5.486 21.943-19.505l-124.343-248.381c-1.829-3.048-2.133-6.705-1.219-10.362l132.571-530.895c3.962-16.152-17.067-26.21-27.124-12.8z",
+            "M740.571 664.381c0 42.079-34.112 76.19-76.19 76.19s-76.19-34.112-76.19-76.19c0-42.079 34.112-76.19 76.19-76.19s76.19 34.112 76.19 76.19z"
+          ],
+          "attrs": [
+            {},
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 24,
+          "tags": [
+            "logo"
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {},
+              {}
+            ]
+          }
+        },
         {
           "id": 16,
           "paths": [
@@ -217,7 +248,14 @@
           "grid": 24,
           "tags": [
             "outline-link-24px"
-          ]
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {},
+              {},
+              {}
+            ]
+          }
         },
         {
           "id": 15,
@@ -234,7 +272,13 @@
           "grid": 24,
           "tags": [
             "outline-location_on-24px"
-          ]
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {},
+              {}
+            ]
+          }
         },
         {
           "id": 14,
@@ -251,7 +295,13 @@
           "grid": 24,
           "tags": [
             "outline-cake-24px"
-          ]
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {},
+              {}
+            ]
+          }
         },
         {
           "id": 13,
@@ -266,7 +316,12 @@
           "grid": 24,
           "tags": [
             "outline-email-24px"
-          ]
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
         },
         {
           "id": 12,
@@ -281,7 +336,12 @@
           "grid": 24,
           "tags": [
             "outline-open_in_new-24px"
-          ]
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
         },
         {
           "id": 11,
@@ -298,7 +358,13 @@
             "birthday-cake-with-candle"
           ],
           "isMulticolor": false,
-          "isMulticolor2": false
+          "isMulticolor2": false,
+          "colorPermutations": {
+            "12552552551": [
+              {},
+              {}
+            ]
+          }
         },
         {
           "id": 10,
@@ -315,7 +381,13 @@
           ],
           "grid": 24,
           "isMulticolor": false,
-          "isMulticolor2": false
+          "isMulticolor2": false,
+          "colorPermutations": {
+            "12552552551": [
+              {},
+              {}
+            ]
+          }
         },
         {
           "id": 8,
@@ -334,7 +406,13 @@
           ],
           "grid": 24,
           "isMulticolor": false,
-          "isMulticolor2": false
+          "isMulticolor2": false,
+          "colorPermutations": {
+            "12552552551": [
+              {},
+              {}
+            ]
+          }
         },
         {
           "id": 9,
@@ -357,7 +435,14 @@
           ],
           "grid": 24,
           "isMulticolor": false,
-          "isMulticolor2": false
+          "isMulticolor2": false,
+          "colorPermutations": {
+            "12552552551": [
+              {},
+              {},
+              {}
+            ]
+          }
         },
         {
           "id": 5,
@@ -372,7 +457,12 @@
           "grid": 24,
           "tags": [
             "stack-overflow-bottom"
-          ]
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
         },
         {
           "id": 6,
@@ -387,7 +477,12 @@
           "grid": 24,
           "tags": [
             "stack-overflow-top"
-          ]
+          ],
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
         },
         {
           "id": 4,
@@ -401,7 +496,9 @@
             "linkedin"
           ],
           "grid": 24,
-          "colorPermutations": {}
+          "colorPermutations": {
+            "12552552551": []
+          }
         },
         {
           "id": 3,
@@ -416,7 +513,12 @@
           "tags": [
             "github"
           ],
-          "grid": 24
+          "grid": 24,
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
         },
         {
           "id": 2,
@@ -431,7 +533,12 @@
           "tags": [
             "stack-overflow"
           ],
-          "grid": 24
+          "grid": 24,
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
         },
         {
           "id": 1,
@@ -446,7 +553,12 @@
           "tags": [
             "behance"
           ],
-          "grid": 24
+          "grid": 24,
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
         },
         {
           "id": 0,
@@ -461,11 +573,32 @@
           "tags": [
             "codepen"
           ],
-          "grid": 24
+          "grid": 24,
+          "colorPermutations": {
+            "12552552551": [
+              {}
+            ]
+          }
         }
       ],
       "invisible": false,
-      "colorThemes": []
+      "colorThemes": [
+        [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            255,
+            255,
+            255,
+            1
+          ]
+        ]
+      ],
+      "colorThemeIdx": 0
     },
     {
       "selection": [],
@@ -500,7 +633,9 @@
     "fontPref": {
       "prefix": "icon-",
       "metadata": {
-        "fontFamily": "icomoon"
+        "fontFamily": "icomoon",
+        "majorVersion": 1,
+        "minorVersion": 0
       },
       "metrics": {
         "emSize": 1024,
@@ -508,7 +643,13 @@
         "whitespace": 50
       },
       "embed": false,
-      "autoHost": true
+      "autoHost": true,
+      "cssVars": true,
+      "cssVarsFormat": "scss",
+      "showSelector": false,
+      "showMetrics": false,
+      "showMetadata": false,
+      "showVersion": false
     },
     "imagePref": {
       "prefix": "icon-",
