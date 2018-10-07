@@ -14,6 +14,11 @@
 @import './components/experience.scss';
 
 .section-header {
+  .inner {
+    font-size: 3.34rem;
+    font-weight: 700;
+  }
+  margin-bottom: 2rem;
 }
 
 .sub-header {
@@ -66,7 +71,6 @@ section .container {
     background-position: center;
   }
 }
-
 .intro {
   display: flex;
   justify-content: center;
@@ -75,27 +79,17 @@ section .container {
   align-items: center;
   flex-direction: column;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
-  background-size: 95% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 
   // perspective: 1px;
   // overflow-x: hidden;
   // overflow-y: auto;
 
-  @include media-breakpoint-up(md) {
-    background-size: 80% auto;
-  }
-  @include media-breakpoint-up(xl) {
-    background-size: 60% auto;
-  }
   .position {
     color: #b0bec5;
   }
   .details {
     padding: 15px;
-
+    z-index: 1;
     //   transform: translateZ(-1px);
     //   position: absolute;
     // top: 0;
@@ -169,5 +163,74 @@ section .container {
   100% {
     fill: $primary;
     stroke-dashoffset: 0%;
+  }
+}
+
+.about-me-parent {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
+  1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"
+  fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
+}
+.about-me-container {
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    flex-direction: row;
+    .summary {
+      width: 60%;
+    }
+  }
+}
+
+.profile-links {
+  .btn {
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
+    margin: 0 15px 15px 0;
+  }
+  i {
+    margin-right: 8px;
+  }
+  @include media-breakpoint-down(md) {
+    .btn {
+      font-size: 0.8rem;
+      padding: 0.384rem 0.65rem;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+  }
+  .icon-linkedin {
+    position: relative;
+    &:before {
+      position: relative;
+      z-index: 1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: #fff;
+      z-index: 0;
+      left: 2px;
+      top: 2px;
+      right: 2px;
+      bottom: 2px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    i {
+      font-size: 23px;
+      vertical-align: sub;
+    }
+  }
+}
+.svg-bg {
+  background-size: 95% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  @include media-breakpoint-up(md) {
+    background-size: 80% auto;
+  }
+  @include media-breakpoint-up(xl) {
+    background-size: 60% auto;
   }
 }

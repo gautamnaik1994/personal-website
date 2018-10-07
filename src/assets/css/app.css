@@ -1,6 +1,6 @@
 /* line 1, src/scss/_variables.scss */
 :root {
-  --body-background-color: #1B1B1B;
+  --body-background-color: #1b1b1b;
   --text-color: white;
 }
 
@@ -513,6 +513,11 @@ template {
   }
 }
 
+/* line 79, src/scss/_helpers.scss */
+.white-color {
+  color: white;
+}
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot ");
@@ -522,7 +527,8 @@ template {
 }
 
 /* line 12, src/scss/_icons.scss */
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -536,80 +542,85 @@ template {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 27, src/scss/_icons.scss */
+/* line 28, src/scss/_icons.scss */
 .icon-linkedin:before {
-  content: "\e900";
+  content: '\e900';
 }
 
-/* line 30, src/scss/_icons.scss */
+/* line 31, src/scss/_icons.scss */
 .icon-github:before {
-  content: "\e901";
+  content: '\e901';
 }
 
-/* line 33, src/scss/_icons.scss */
+/* line 34, src/scss/_icons.scss */
 .icon-stack-overflow:before {
-  content: "\e902";
+  content: '\e902';
 }
 
-/* line 36, src/scss/_icons.scss */
+/* line 37, src/scss/_icons.scss */
 .icon-behance:before {
-  content: "\e903";
+  content: '\e903';
 }
 
-/* line 39, src/scss/_icons.scss */
+/* line 40, src/scss/_icons.scss */
 .icon-codepen:before {
-  content: "\e904";
+  content: '\e904';
 }
 
-/* line 42, src/scss/_icons.scss */
+/* line 43, src/scss/_icons.scss */
 .icon-stack-overflow-color:before {
-  content: "\e906";
+  content: '\e906';
   color: #f48024;
 }
 
-/* line 46, src/scss/_icons.scss */
+/* line 47, src/scss/_icons.scss */
 .icon-stack-overflow-color:after {
-  content: "\e905";
+  content: '\e905';
   position: absolute;
   left: 0;
   top: 0;
   color: #bcbbbb;
 }
 
-/* line 66, src/scss/_icons.scss */
+/* line 67, src/scss/_icons.scss */
 .icon-marker:before {
-  content: "\e90c";
+  content: '\e90c';
 }
 
-/* line 69, src/scss/_icons.scss */
+/* line 70, src/scss/_icons.scss */
 .icon-cake:before {
-  content: "\e90d";
+  content: '\e90d';
 }
 
-/* line 72, src/scss/_icons.scss */
+/* line 73, src/scss/_icons.scss */
 .icon-open-new-tab:before {
-  content: "\e90f";
+  content: '\e90f';
 }
 
-/* line 75, src/scss/_icons.scss */
+/* line 76, src/scss/_icons.scss */
 .icon-email:before {
-  content: "\e90e";
+  content: '\e90e';
 }
 
-/* line 78, src/scss/_icons.scss */
+/* line 79, src/scss/_icons.scss */
 .icon-link:before {
-  content: "\e907";
+  content: '\e907';
 }
 
-/* line 81, src/scss/_icons.scss */
+/* line 82, src/scss/_icons.scss */
 .icon-logo:before {
-  content: "\e908";
+  content: '\e908';
+}
+
+/* line 85, src/scss/_icons.scss */
+.icon-zigzag:before {
+  content: '\e909';
 }
 
 /* line 1, src/scss/components/_button.scss */
 .btn {
   display: inline-block;
-  font-weight: 400;
+  font-weight: 700;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -618,10 +629,10 @@ template {
   -ms-user-select: none;
   user-select: none;
   border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
+  padding: 0.584rem 1.55rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0.25rem;
+  border-radius: 7px;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -668,23 +679,21 @@ fieldset:disabled a.btn {
 }
 
 /* line 50, src/scss/components/_button.scss */
-.btn-white {
-  color: #333;
-  text-decoration: none;
-  -webkit-box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
-          box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
-  padding: 6px 24px;
-  background-color: #fff;
+.btn-primary {
+  background-color: #03a9f4;
+  color: white;
 }
 
-/* line 57, src/scss/components/_button.scss */
+/* line 54, src/scss/components/_button.scss */
+.btn-white {
+  background-color: #fff;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* line 58, src/scss/components/_button.scss */
 .btn-dark {
-  color: #989898;
-  text-decoration: none;
-  -webkit-box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
-          box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
-  padding: 6px 24px;
-  background-color: #545454;
+  color: #d2d2d2;
+  background-color: #363636;
 }
 
 /* line 1, src/scss/components/_container.scss */
@@ -727,8 +736,8 @@ html {
 /* line 9, src/scss/components/_general-styles.scss */
 body {
   font-size: 1rem;
-  background-color: #1B1B1B;
-  color: white;
+  background-color: #1b1b1b;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 /* line 15, src/scss/components/_general-styles.scss */
@@ -897,55 +906,66 @@ label {
 
 /* line 1, src/scss/components/_experience.scss */
 .experience-number-parent {
-  background: white;
-  padding: 20px 10px 20px 10px;
-  -webkit-box-shadow: 0 1px 14px 4px #0003;
-          box-shadow: 0 1px 14px 4px #0003;
-  margin: 4rem auto;
-  border-radius: 5px;
-  max-width: 700px;
+  background: #151515;
+  padding: 20px 10px 50px 10px;
+  -webkit-box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.71);
+          box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.71);
+  margin-top: 2rem;
+  border-radius: 10px;
   position: relative;
 }
 
 /* line 9, src/scss/components/_experience.scss */
-.experience-number-parent .title {
+.experience-number-parent .download-cv-btn {
   position: absolute;
-  top: -30px;
+  bottom: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  -webkit-box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.57);
+          box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.57);
+}
+
+@media (min-width: 992px) {
+  /* line 9, src/scss/components/_experience.scss */
+  .experience-number-parent .download-cv-btn {
+    left: 35px;
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+  }
+}
+
+/* line 20, src/scss/components/_experience.scss */
+.experience-number-parent .title {
+  position: relative;
   padding: 8px 15px;
-  background-color: #ffeb3b;
   font-weight: 700;
   font-size: 19px;
   border-radius: 4px;
-  -webkit-box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.16);
   overflow: hidden;
   height: 42px;
-  width: 214px;
 }
 
-/* line 24, src/scss/components/_experience.scss */
+/* line 29, src/scss/components/_experience.scss */
 .experience-number-parent .text {
   position: absolute;
   top: 7px;
   opacity: 0;
 }
 
-/* line 29, src/scss/components/_experience.scss */
+/* line 34, src/scss/components/_experience.scss */
 .experience-number-parent .text-1 {
   -webkit-animation: slideTextUp 4s infinite;
           animation: slideTextUp 4s infinite;
 }
 
-/* line 32, src/scss/components/_experience.scss */
+/* line 37, src/scss/components/_experience.scss */
 .experience-number-parent .text-2 {
   -webkit-animation: slideTextUp 4s infinite 2s;
           animation: slideTextUp 4s infinite 2s;
 }
 
-/* line 36, src/scss/components/_experience.scss */
+/* line 41, src/scss/components/_experience.scss */
 .experience-number-parent .inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -954,18 +974,27 @@ label {
       justify-content: space-around;
 }
 
-/* line 40, src/scss/components/_experience.scss */
+@media (min-width: 992px) {
+  /* line 41, src/scss/components/_experience.scss */
+  .experience-number-parent .inner {
+    width: 400px;
+  }
+}
+
+/* line 48, src/scss/components/_experience.scss */
 .experience-number-parent .num {
   text-align: center;
 }
 
-/* line 43, src/scss/components/_experience.scss */
+/* line 51, src/scss/components/_experience.scss */
 .experience-number-parent .n-value {
   font-size: 40px;
+  font-weight: 700;
   color: #03a9f4;
+  font-family: 'Rajdhani', sans-serif;
 }
 
-/* line 48, src/scss/components/_experience.scss */
+/* line 58, src/scss/components/_experience.scss */
 .experience-number-parent .n-label:after {
   content: attr(data-sm);
   display: block;
@@ -974,38 +1003,27 @@ label {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
-  /* line 48, src/scss/components/_experience.scss */
+@media (min-width: 992px) {
+  /* line 68, src/scss/components/_experience.scss */
   .experience-number-parent .n-label:after {
-    content: attr(data-md);
-  }
-}
-
-@media (min-width: 768px) {
-  /* line 60, src/scss/components/_experience.scss */
-  .experience-number-parent .n-value {
-    font-size: 50px;
-  }
-  /* line 64, src/scss/components/_experience.scss */
-  .experience-number-parent .n-label:after {
-    content: attr(data-md);
     font-size: 16px;
   }
 }
 
-@media (min-width: 768px) {
-  /* line 74, src/scss/components/_experience.scss */
-  .experience-number-parent {
-    margin: 8rem auto;
-  }
-  /* line 76, src/scss/components/_experience.scss */
+@media (min-width: 992px) {
+  /* line 77, src/scss/components/_experience.scss */
   .experience-number-parent .title {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-    left: 19px;
     height: 53px;
     font-size: 25px;
-    width: 275px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 84, src/scss/components/_experience.scss */
+  .experience-number-parent {
+    position: absolute;
+    right: 0;
+    left: 60%;
   }
 }
 
@@ -1061,43 +1079,54 @@ label {
   }
 }
 
-/* line 22, src/scss/app.scss */
+/* line 16, src/scss/app.scss */
+.section-header {
+  margin-bottom: 2rem;
+}
+
+/* line 17, src/scss/app.scss */
+.section-header .inner {
+  font-size: 3.34rem;
+  font-weight: 700;
+}
+
+/* line 27, src/scss/app.scss */
 .card {
   -webkit-box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.07);
           box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.07);
 }
 
-/* line 26, src/scss/app.scss */
+/* line 31, src/scss/app.scss */
 section .container {
   padding: 5rem 15px;
 }
 
-/* line 30, src/scss/app.scss */
+/* line 35, src/scss/app.scss */
 .linkedin {
   color: #0077b5;
 }
 
-/* line 34, src/scss/app.scss */
+/* line 39, src/scss/app.scss */
 .behance {
   color: #1769ff;
 }
 
-/* line 38, src/scss/app.scss */
+/* line 43, src/scss/app.scss */
 .codepen {
   color: #0ebeff;
 }
 
-/* line 42, src/scss/app.scss */
+/* line 47, src/scss/app.scss */
 .github {
   color: #333;
 }
 
-/* line 45, src/scss/app.scss */
+/* line 50, src/scss/app.scss */
 .text-primary {
   color: #03a9f4;
 }
 
-/* line 48, src/scss/app.scss */
+/* line 53, src/scss/app.scss */
 .confetti {
   position: absolute;
   top: 0;
@@ -1111,21 +1140,21 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 48, src/scss/app.scss */
+  /* line 53, src/scss/app.scss */
   .confetti {
     background-size: 1440px auto;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 48, src/scss/app.scss */
+  /* line 53, src/scss/app.scss */
   .confetti {
     background-size: contain;
     background-position: center;
   }
 }
 
-/* line 70, src/scss/app.scss */
+/* line 74, src/scss/app.scss */
 .intro {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1143,51 +1172,34 @@ section .container {
       -ms-flex-direction: column;
           flex-direction: column;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
-  background-size: 95% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
-@media (min-width: 768px) {
-  /* line 70, src/scss/app.scss */
-  .intro {
-    background-size: 80% auto;
-  }
-}
-
-@media (min-width: 1200px) {
-  /* line 70, src/scss/app.scss */
-  .intro {
-    background-size: 60% auto;
-  }
-}
-
-/* line 93, src/scss/app.scss */
+/* line 87, src/scss/app.scss */
 .intro .position {
   color: #b0bec5;
 }
 
-/* line 96, src/scss/app.scss */
+/* line 90, src/scss/app.scss */
 .intro .details {
   padding: 15px;
+  z-index: 1;
 }
 
 @media (min-width: 1200px) {
-  /* line 96, src/scss/app.scss */
+  /* line 90, src/scss/app.scss */
   .intro .details {
     padding: 0;
   }
 }
 
-/* line 110, src/scss/app.scss */
+/* line 104, src/scss/app.scss */
 .intro .name-svg {
   vector-effect: non-scaling-stroke;
   width: 70vw;
   margin: 0 auto;
 }
 
-/* line 115, src/scss/app.scss */
+/* line 109, src/scss/app.scss */
 .intro .name-svg text {
   font-family: 'Ubuntu', sans-serif;
   font-size: 70px;
@@ -1197,12 +1209,12 @@ section .container {
           animation: draw 3s forwards;
 }
 
-/* line 122, src/scss/app.scss */
+/* line 116, src/scss/app.scss */
 .intro .name-svg tspan {
   letter-spacing: -2;
 }
 
-/* line 125, src/scss/app.scss */
+/* line 119, src/scss/app.scss */
 .intro .name-svg .hello-dot {
   stroke: #03a9f4;
   -webkit-animation: drawDot 3s forwards;
@@ -1210,12 +1222,12 @@ section .container {
 }
 
 @media all and (-ms-high-contrast: none) {
-  /* line 130, src/scss/app.scss */
+  /* line 124, src/scss/app.scss */
   .intro .name-svg text {
     fill: white;
     stroke-dashoffset: 0%;
   }
-  /* line 134, src/scss/app.scss */
+  /* line 128, src/scss/app.scss */
   .intro .name-svg .hello-dot {
     fill: #03a9f4;
     stroke: #03a9f4;
@@ -1223,7 +1235,7 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 110, src/scss/app.scss */
+  /* line 104, src/scss/app.scss */
   .intro .name-svg {
     width: 348px;
     height: 244px;
@@ -1231,7 +1243,7 @@ section .container {
 }
 
 @media (min-width: 1200px) {
-  /* line 110, src/scss/app.scss */
+  /* line 104, src/scss/app.scss */
   .intro .name-svg {
     width: 538px;
     height: 374px;
@@ -1287,5 +1299,102 @@ section .container {
   100% {
     fill: #03a9f4;
     stroke-dashoffset: 0%;
+  }
+}
+
+/* line 169, src/scss/app.scss */
+.about-me-parent {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0\a   1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"\a   fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
+}
+
+@media (min-width: 992px) {
+  /* line 174, src/scss/app.scss */
+  .about-me-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  /* line 178, src/scss/app.scss */
+  .about-me-container .summary {
+    width: 60%;
+  }
+}
+
+/* line 185, src/scss/app.scss */
+.profile-links .btn {
+  -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
+  margin: 0 15px 15px 0;
+}
+
+/* line 189, src/scss/app.scss */
+.profile-links i {
+  margin-right: 8px;
+}
+
+@media (max-width: 991.98px) {
+  /* line 193, src/scss/app.scss */
+  .profile-links .btn {
+    font-size: 0.8rem;
+    padding: 0.384rem 0.65rem;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+}
+
+/* line 200, src/scss/app.scss */
+.profile-links .icon-linkedin {
+  position: relative;
+}
+
+/* line 202, src/scss/app.scss */
+.profile-links .icon-linkedin:before {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 206, src/scss/app.scss */
+.profile-links .icon-linkedin:after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  z-index: 0;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+
+@media (min-width: 768px) {
+  /* line 219, src/scss/app.scss */
+  .profile-links i {
+    font-size: 23px;
+    vertical-align: sub;
+  }
+}
+
+/* line 225, src/scss/app.scss */
+.svg-bg {
+  background-size: 95% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (min-width: 768px) {
+  /* line 225, src/scss/app.scss */
+  .svg-bg {
+    background-size: 80% auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 225, src/scss/app.scss */
+  .svg-bg {
+    background-size: 60% auto;
   }
 }

@@ -1,111 +1,115 @@
 .experience-number-parent {
-    background: white;
-    padding: 20px 10px 20px 10px;
-    box-shadow: 0 1px 14px 4px #0003;
-    margin: 4rem auto;
-    border-radius: 5px;
-    max-width: 700px;
+  background: #151515;
+  padding: 20px 10px 50px 10px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.71);
+  margin-top: 2rem;
+  border-radius: 10px;
+  //max-width: 700px;
+  position: relative;
+  .download-cv-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.57);
+    @include media-breakpoint-up(lg) {
+      left: 35px;
+      transform: translate(0, 50%);
+    }
+  }
+  .title {
     position: relative;
-    .title {
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 8px 15px;
-      background-color: #ffeb3b;
+    padding: 8px 15px;
+    font-weight: 700;
+    font-size: 19px;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 42px;
+  }
+  .text {
+    position: absolute;
+    top: 7px;
+    opacity: 0;
+  }
+  .text-1 {
+    animation: slideTextUp 4s infinite;
+  }
+  .text-2 {
+    animation: slideTextUp 4s infinite 2s;
+  }
+
+  .inner {
+    display: flex;
+    justify-content: space-around;
+    @include media-breakpoint-up(lg) {
+      width: 400px;
+    }
+  }
+  .num {
+    text-align: center;
+  }
+  .n-value {
+    font-size: 40px;
+    font-weight: 700;
+    color: $primary;
+    font-family: 'Rajdhani', sans-serif;
+  }
+  .n-label {
+    &:after {
+      content: attr(data-sm);
+      display: block;
+      color: grey;
       font-weight: 700;
-      font-size: 19px;
-      border-radius: 4px;
-      box-shadow: 0px 2px 20px 6px rgba(0,0,0,0.16);
-      overflow: hidden;
-      height:42px;
-      width: 214px;
+      font-size: 14px;
     }
-    .text {
-      position: absolute;
-      top: 7px;
-      opacity: 0;
-    }
-    .text-1 {
-      animation: slideTextUp 4s infinite;
-    }
-    .text-2 {
-      animation: slideTextUp 4s infinite 2s;
-    }
-  
-    .inner {
-      display: flex;
-      justify-content: space-around;
-    }
-    .num {
-      text-align: center;
-    }
-    .n-value {
-      font-size: 40px;
-      color: $primary;
-    }
+  }
+  @include media-breakpoint-up(lg) {
     .n-label {
       &:after {
-        content: attr(data-sm);
-        @media (min-width: 768px) {
-          content: attr(data-md);
-        }
-        display: block;
-        color: grey;
-        font-weight: 700;
-        font-size: 14px;
+        font-size: 16px;
       }
     }
-    @media (min-width: 768px) {
-      .n-value {
-        font-size: 50px;
-      }
-      .n-label {
-        &:after {
-          content: attr(data-md);
-          font-size: 16px;
-        }
-      }
-    }
-
   }
+}
 
-  @include media-breakpoint-up(md) {
-    .experience-number-parent {
-        margin: 8rem auto;
-        .title {
-          transform: translateX(0%);
-          left: 19px;
-          height: 53px;
-          font-size: 25px;
-          width: 275px;
-        }
-    }
-
-  }
-  @keyframes slideTextUp {
-    0% {
-      top: 7px;
-      opacity: 1;
-    }
-    50% {
-      top: -40px;
-      opacity: 1;
-    }
-    51% {
-      opacity: 0;
-      top: -40px;
-    }
-    52% {
-      opacity: 0;
-      top: 55px;
-    }
-    53% {
-      opacity: 1;
-    }
-    100% {
-      top: 7px;
-      opacity: 1;
+@include media-breakpoint-up(lg) {
+  .experience-number-parent {
+    .title {
+      height: 53px;
+      font-size: 25px;
     }
   }
-  
+}
+@include media-breakpoint-up(lg) {
+  .experience-number-parent {
+    position: absolute;
+    right: 0;
+    left: 60%;
+  }
+}
+
+@keyframes slideTextUp {
+  0% {
+    top: 7px;
+    opacity: 1;
+  }
+  50% {
+    top: -40px;
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+    top: -40px;
+  }
+  52% {
+    opacity: 0;
+    top: 55px;
+  }
+  53% {
+    opacity: 1;
+  }
+  100% {
+    top: 7px;
+    opacity: 1;
+  }
+}

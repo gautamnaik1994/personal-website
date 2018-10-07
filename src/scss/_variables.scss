@@ -1,5 +1,5 @@
 :root {
-  --body-background-color: #1B1B1B;
+  --body-background-color: #1b1b1b;
   --text-color: white;
 }
 
@@ -13,7 +13,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl:1500px
+  xxl: 1500px
 );
 
 $container-max-widths: (
@@ -22,12 +22,9 @@ $container-max-widths: (
   lg: 960px,
   xl: 1140px
 );
-
 $light-black: hsl(0, 0%, 25%);
 $light-text: hsl(0, 0%, 75%);
-
 $green: #00ac4b;
-
 $orange: #f6914f;
 $red: #d12229;
 $blue: #00bcd4;
@@ -38,7 +35,7 @@ $codepen: #0ebeff;
 $stackoveflow: #f48024;
 $stackoveflow-secondary: #bcbbbb;
 $github: #333;
-$body-text-color: white;
-$body-background-color: #1B1B1B;
+$body-text-color: hsla(0, 0%, 100%, 0.88);
+$body-background-color: #1b1b1b;
 $colors: ();
 $theme-colors: ();
