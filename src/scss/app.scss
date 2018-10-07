@@ -17,6 +17,8 @@
   .inner {
     font-size: 3.34rem;
     font-weight: 700;
+    line-height: 1.2;
+    margin: 10px 0px;
   }
   margin-bottom: 2rem;
 }
@@ -195,6 +197,7 @@ section .container {
       padding: 0.384rem 0.65rem;
       font-weight: 500;
       border-radius: 4px;
+      margin: 0 10px 10px 0;
     }
   }
   .icon-linkedin {
@@ -208,10 +211,10 @@ section .container {
       position: absolute;
       background-color: #fff;
       z-index: 0;
-      left: 2px;
-      top: 2px;
-      right: 2px;
-      bottom: 2px;
+      left: 1px;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
     }
   }
 
@@ -232,5 +235,38 @@ section .container {
   }
   @include media-breakpoint-up(xl) {
     background-size: 60% auto;
+  }
+}
+.info {
+  .item {
+    * {
+      vertical-align: middle;
+    }
+    display: inline-block;
+    margin-right: 10px;
+    &:first-child {
+      i {
+        color: $violet;
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+      i {
+        color: $orange;
+      }
+    }
+    &:nth-child(2) {
+      i {
+        color: $green;
+      }
+    }
+    i {
+      font-size: 24px;
+    }
+    span {
+      font-weight: 700;
+      margin-left: 8px;
+      letter-spacing: 1px;
+    }
   }
 }

@@ -633,10 +633,10 @@ template {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 7px;
-  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -1088,45 +1088,47 @@ label {
 .section-header .inner {
   font-size: 3.34rem;
   font-weight: 700;
+  line-height: 1.2;
+  margin: 10px 0px;
 }
 
-/* line 27, src/scss/app.scss */
+/* line 29, src/scss/app.scss */
 .card {
   -webkit-box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.07);
           box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.07);
 }
 
-/* line 31, src/scss/app.scss */
+/* line 33, src/scss/app.scss */
 section .container {
   padding: 5rem 15px;
 }
 
-/* line 35, src/scss/app.scss */
+/* line 37, src/scss/app.scss */
 .linkedin {
   color: #0077b5;
 }
 
-/* line 39, src/scss/app.scss */
+/* line 41, src/scss/app.scss */
 .behance {
   color: #1769ff;
 }
 
-/* line 43, src/scss/app.scss */
+/* line 45, src/scss/app.scss */
 .codepen {
   color: #0ebeff;
 }
 
-/* line 47, src/scss/app.scss */
+/* line 49, src/scss/app.scss */
 .github {
   color: #333;
 }
 
-/* line 50, src/scss/app.scss */
+/* line 52, src/scss/app.scss */
 .text-primary {
   color: #03a9f4;
 }
 
-/* line 53, src/scss/app.scss */
+/* line 55, src/scss/app.scss */
 .confetti {
   position: absolute;
   top: 0;
@@ -1140,21 +1142,21 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 53, src/scss/app.scss */
+  /* line 55, src/scss/app.scss */
   .confetti {
     background-size: 1440px auto;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 53, src/scss/app.scss */
+  /* line 55, src/scss/app.scss */
   .confetti {
     background-size: contain;
     background-position: center;
   }
 }
 
-/* line 74, src/scss/app.scss */
+/* line 76, src/scss/app.scss */
 .intro {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1174,32 +1176,32 @@ section .container {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
 }
 
-/* line 87, src/scss/app.scss */
+/* line 89, src/scss/app.scss */
 .intro .position {
   color: #b0bec5;
 }
 
-/* line 90, src/scss/app.scss */
+/* line 92, src/scss/app.scss */
 .intro .details {
   padding: 15px;
   z-index: 1;
 }
 
 @media (min-width: 1200px) {
-  /* line 90, src/scss/app.scss */
+  /* line 92, src/scss/app.scss */
   .intro .details {
     padding: 0;
   }
 }
 
-/* line 104, src/scss/app.scss */
+/* line 106, src/scss/app.scss */
 .intro .name-svg {
   vector-effect: non-scaling-stroke;
   width: 70vw;
   margin: 0 auto;
 }
 
-/* line 109, src/scss/app.scss */
+/* line 111, src/scss/app.scss */
 .intro .name-svg text {
   font-family: 'Ubuntu', sans-serif;
   font-size: 70px;
@@ -1209,12 +1211,12 @@ section .container {
           animation: draw 3s forwards;
 }
 
-/* line 116, src/scss/app.scss */
+/* line 118, src/scss/app.scss */
 .intro .name-svg tspan {
   letter-spacing: -2;
 }
 
-/* line 119, src/scss/app.scss */
+/* line 121, src/scss/app.scss */
 .intro .name-svg .hello-dot {
   stroke: #03a9f4;
   -webkit-animation: drawDot 3s forwards;
@@ -1222,12 +1224,12 @@ section .container {
 }
 
 @media all and (-ms-high-contrast: none) {
-  /* line 124, src/scss/app.scss */
+  /* line 126, src/scss/app.scss */
   .intro .name-svg text {
     fill: white;
     stroke-dashoffset: 0%;
   }
-  /* line 128, src/scss/app.scss */
+  /* line 130, src/scss/app.scss */
   .intro .name-svg .hello-dot {
     fill: #03a9f4;
     stroke: #03a9f4;
@@ -1235,7 +1237,7 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 104, src/scss/app.scss */
+  /* line 106, src/scss/app.scss */
   .intro .name-svg {
     width: 348px;
     height: 244px;
@@ -1243,7 +1245,7 @@ section .container {
 }
 
 @media (min-width: 1200px) {
-  /* line 104, src/scss/app.scss */
+  /* line 106, src/scss/app.scss */
   .intro .name-svg {
     width: 538px;
     height: 374px;
@@ -1302,13 +1304,13 @@ section .container {
   }
 }
 
-/* line 169, src/scss/app.scss */
+/* line 171, src/scss/app.scss */
 .about-me-parent {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0\a   1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"\a   fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
 }
 
 @media (min-width: 992px) {
-  /* line 174, src/scss/app.scss */
+  /* line 176, src/scss/app.scss */
   .about-me-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1318,66 +1320,67 @@ section .container {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  /* line 178, src/scss/app.scss */
+  /* line 180, src/scss/app.scss */
   .about-me-container .summary {
     width: 60%;
   }
 }
 
-/* line 185, src/scss/app.scss */
+/* line 187, src/scss/app.scss */
 .profile-links .btn {
   -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
   margin: 0 15px 15px 0;
 }
 
-/* line 189, src/scss/app.scss */
+/* line 191, src/scss/app.scss */
 .profile-links i {
   margin-right: 8px;
 }
 
 @media (max-width: 991.98px) {
-  /* line 193, src/scss/app.scss */
+  /* line 195, src/scss/app.scss */
   .profile-links .btn {
     font-size: 0.8rem;
     padding: 0.384rem 0.65rem;
     font-weight: 500;
     border-radius: 4px;
+    margin: 0 10px 10px 0;
   }
 }
 
-/* line 200, src/scss/app.scss */
+/* line 203, src/scss/app.scss */
 .profile-links .icon-linkedin {
   position: relative;
 }
 
-/* line 202, src/scss/app.scss */
+/* line 205, src/scss/app.scss */
 .profile-links .icon-linkedin:before {
   position: relative;
   z-index: 1;
 }
 
-/* line 206, src/scss/app.scss */
+/* line 209, src/scss/app.scss */
 .profile-links .icon-linkedin:after {
   content: '';
   position: absolute;
   background-color: #fff;
   z-index: 0;
-  left: 2px;
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
+  left: 1px;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
 }
 
 @media (min-width: 768px) {
-  /* line 219, src/scss/app.scss */
+  /* line 222, src/scss/app.scss */
   .profile-links i {
     font-size: 23px;
     vertical-align: sub;
   }
 }
 
-/* line 225, src/scss/app.scss */
+/* line 228, src/scss/app.scss */
 .svg-bg {
   background-size: 95% auto;
   background-position: center;
@@ -1386,15 +1389,58 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 225, src/scss/app.scss */
+  /* line 228, src/scss/app.scss */
   .svg-bg {
     background-size: 80% auto;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 225, src/scss/app.scss */
+  /* line 228, src/scss/app.scss */
   .svg-bg {
     background-size: 60% auto;
   }
+}
+
+/* line 241, src/scss/app.scss */
+.info .item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* line 242, src/scss/app.scss */
+.info .item * {
+  vertical-align: middle;
+}
+
+/* line 248, src/scss/app.scss */
+.info .item:first-child i {
+  color: #b178f4;
+}
+
+/* line 252, src/scss/app.scss */
+.info .item:last-child {
+  margin-right: 0;
+}
+
+/* line 254, src/scss/app.scss */
+.info .item:last-child i {
+  color: #ff8c32;
+}
+
+/* line 259, src/scss/app.scss */
+.info .item:nth-child(2) i {
+  color: #7af478;
+}
+
+/* line 263, src/scss/app.scss */
+.info .item i {
+  font-size: 24px;
+}
+
+/* line 266, src/scss/app.scss */
+.info .item span {
+  font-weight: 700;
+  margin-left: 8px;
+  letter-spacing: 1px;
 }
