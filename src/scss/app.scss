@@ -270,3 +270,82 @@ section .container {
     }
   }
 }
+.timeline {
+  .item {
+    background-image: linear-gradient($primary 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: 5px 7px;
+    background-size: 2px 15px;
+    background-repeat: repeat-y;
+    padding-left: 30px;
+    padding-bottom: 3rem;
+    padding-top: 0.01rem;
+    &:first-child{
+      padding-top: 0;
+      .position:before{
+          width: 28px;
+      height: 28px;
+      left: -38px;
+      top: 1px;
+      }
+    }
+    &:last-child{
+      position: relative;
+      &:before{
+        content: '';
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ffc107;
+        left: 1px;
+        bottom: 0px;
+        position: absolute;
+      }
+    }
+
+  }
+
+  .position {
+    position: relative;
+    &:before {
+      content: '';
+      // width: 28px;
+      // height: 28px;
+      // left: -38px;
+      // top: 1px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: #03a9f4;
+      left: -35px;
+      top: 3px;
+      border-radius: 50%;
+      background-color: $primary;
+      position: absolute;
+      box-shadow: inset 0 0 0px 5px #1b1b1b;
+      border: 2px dotted $primary;
+    }
+  }
+  .f-phase ~ .item{
+    background-image: linear-gradient(#FFC107 50%, rgba(255, 255, 255, 0) 0%);
+    .position:before{
+      background-color: #FFC107;
+      border: 2px dotted #FFC107;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .item {
+     
+      padding-left: 60px;
+      .position:before{
+        left: -64px;
+      }
+      &:first-child{
+        .position:before{
+        
+          left: -67px;
+        
+        }
+      }
+    }
+  }
+}

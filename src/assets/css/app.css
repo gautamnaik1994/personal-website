@@ -484,7 +484,7 @@ template {
 
 /* line 59, src/scss/_helpers.scss */
 .text-muted {
-  color: #6c757d;
+  color: #898989;
 }
 
 /* line 63, src/scss/_helpers.scss */
@@ -1443,4 +1443,95 @@ section .container {
   font-weight: 700;
   margin-left: 8px;
   letter-spacing: 1px;
+}
+
+/* line 274, src/scss/app.scss */
+.timeline .item {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #03a9f4), color-stop(0%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(#03a9f4 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: 5px 7px;
+  background-size: 2px 15px;
+  background-repeat: repeat-y;
+  padding-left: 30px;
+  padding-bottom: 3rem;
+  padding-top: 0.01rem;
+}
+
+/* line 282, src/scss/app.scss */
+.timeline .item:first-child {
+  padding-top: 0;
+}
+
+/* line 284, src/scss/app.scss */
+.timeline .item:first-child .position:before {
+  width: 28px;
+  height: 28px;
+  left: -38px;
+  top: 1px;
+}
+
+/* line 291, src/scss/app.scss */
+.timeline .item:last-child {
+  position: relative;
+}
+
+/* line 293, src/scss/app.scss */
+.timeline .item:last-child:before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ffc107;
+  left: 1px;
+  bottom: 0px;
+  position: absolute;
+}
+
+/* line 307, src/scss/app.scss */
+.timeline .position {
+  position: relative;
+}
+
+/* line 309, src/scss/app.scss */
+.timeline .position:before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #03a9f4;
+  left: -35px;
+  top: 3px;
+  border-radius: 50%;
+  background-color: #03a9f4;
+  position: absolute;
+  -webkit-box-shadow: inset 0 0 0px 5px #1b1b1b;
+          box-shadow: inset 0 0 0px 5px #1b1b1b;
+  border: 2px dotted #03a9f4;
+}
+
+/* line 328, src/scss/app.scss */
+.timeline .f-phase ~ .item {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #FFC107), color-stop(0%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(#FFC107 50%, rgba(255, 255, 255, 0) 0%);
+}
+
+/* line 330, src/scss/app.scss */
+.timeline .f-phase ~ .item .position:before {
+  background-color: #FFC107;
+  border: 2px dotted #FFC107;
+}
+
+@media (min-width: 768px) {
+  /* line 336, src/scss/app.scss */
+  .timeline .item {
+    padding-left: 60px;
+  }
+  /* line 339, src/scss/app.scss */
+  .timeline .item .position:before {
+    left: -64px;
+  }
+  /* line 343, src/scss/app.scss */
+  .timeline .item:first-child .position:before {
+    left: -67px;
+  }
 }
