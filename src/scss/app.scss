@@ -12,6 +12,9 @@
 @import './components/form.scss';
 //@import './components/v-card.scss';
 @import './components/experience.scss';
+@import './components/designer-anim';
+@import './components/frontend-dev-anim';
+@import './components/gamedev-anim';
 
 .section-header {
   .inner {
@@ -111,9 +114,9 @@ section .container {
     text {
       font-family: 'Ubuntu', sans-serif;
       font-size: 70px;
-      stroke-dasharray: 100%;
+      stroke-dasharray: 128%;
       stroke-dashoffset: 100%;
-      animation: draw 3s forwards;
+      animation: draw 4s forwards;
     }
     tspan {
       letter-spacing: -2;
@@ -279,18 +282,21 @@ section .container {
     padding-left: 30px;
     padding-bottom: 3rem;
     padding-top: 0.01rem;
-    &:first-child{
+    &:first-child {
       padding-top: 0;
-      .position:before{
-          width: 28px;
-      height: 28px;
-      left: -38px;
-      top: 1px;
+      .position:before {
+        width: 28px;
+        height: 28px;
+        left: -38px;
+        top: 1px;
+        box-shadow: inset 0 0 0px 5px #1b1b1b,
+          0 0 11px 3px rgba(3, 169, 244, 0.47);
+        animation: glow 3s infinte;
       }
     }
-    &:last-child{
+    &:last-child {
       position: relative;
-      &:before{
+      &:before {
         content: '';
         width: 12px;
         height: 12px;
@@ -301,7 +307,6 @@ section .container {
         position: absolute;
       }
     }
-
   }
 
   .position {
@@ -325,27 +330,64 @@ section .container {
       border: 2px dotted $primary;
     }
   }
-  .f-phase ~ .item{
-    background-image: linear-gradient(#FFC107 50%, rgba(255, 255, 255, 0) 0%);
-    .position:before{
-      background-color: #FFC107;
-      border: 2px dotted #FFC107;
+  .f-phase ~ .item {
+    background-image: linear-gradient(#ffc107 50%, rgba(255, 255, 255, 0) 0%);
+    .position:before {
+      background-color: #ffc107;
+      border: 2px dotted #ffc107;
     }
   }
   @include media-breakpoint-up(md) {
     .item {
-     
       padding-left: 60px;
-      .position:before{
+      .position:before {
         left: -64px;
       }
-      &:first-child{
-        .position:before{
-        
+      &:first-child {
+        .position:before {
           left: -67px;
-        
         }
       }
+    }
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: inset 0 0 0px 5px #1b1b1b, 0 0 11px 3px rgba(3, 169, 244, 0.47);
+  }
+  50% {
+    box-shadow: inset 0 0 0px 5px #1b1b1b, 0 0 20px 3px rgba(3, 169, 244, 0.47);
+  }
+  100% {
+    box-shadow: inset 0 0 0px 5px #1b1b1b, 0 0 11px 3px rgba(3, 169, 244, 0.47);
+  }
+}
+
+.skill-container {
+  & + .skill-container {
+    margin-top: 4rem;
+  }
+  .skill-item {
+    font-weight: bold;
+    letter-spacing: 1px;
+    & + .skill-item {
+      margin-top: 15px;
+    }
+  }
+  .sub-header {
+    color: $green;
+  }
+  @include media-breakpoint-up(md) {
+    .info-container {
+      padding-top: 25px;
+    }
+    display: flex;
+    .info-container {
+      padding-left: 30px;
+    }
+    .skill-item {
+      display: flex;
     }
   }
 }
