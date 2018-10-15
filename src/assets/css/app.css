@@ -2571,4 +2571,10 @@ section .container {
     display: -ms-flexbox;
     display: flex;
   }
+  /* line 393, src/scss/app.scss */
+  .skill-container .title:after {
+    content: ':';
+    font-family: inherit;
+    margin: 0 6px 0 2px;
+  }
 }

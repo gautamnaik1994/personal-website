@@ -389,5 +389,12 @@ section .container {
     .skill-item {
       display: flex;
     }
+    .title {
+      &:after {
+        content: ':';
+        font-family: inherit;
+        margin: 0 6px 0 2px;
+      }
+    }
   }
 }
