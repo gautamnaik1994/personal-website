@@ -378,6 +378,9 @@ section .container {
   .sub-header {
     color: $green;
   }
+.anim-container{
+overflow: hidden;
+  }
   .anim-container .inner{
     height: 230px;
     margin: 0 auto;
