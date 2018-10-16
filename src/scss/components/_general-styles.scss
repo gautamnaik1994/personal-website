@@ -18,7 +18,18 @@ nav {
   right: 0;
   left: 0;
   width: 100%;
-  padding: 0 15px;
+  padding: 15px 15px;
+  background: $body-background-color;
+  z-index: 9999;
+  .icon-logo{
+    font-size:40px;
+    @include media-breakpoint-up(md) {
+     
+        font-size:50px;
+      
+    }
+    
+  }
 }
 
 @include media-breakpoint-up(md) {

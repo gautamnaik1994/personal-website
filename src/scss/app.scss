@@ -172,9 +172,7 @@ section .container {
 }
 
 .about-me-parent {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
-  1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"
-  fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
 }
 .about-me-container {
   @include media-breakpoint-up(lg) {
@@ -363,14 +361,16 @@ section .container {
     box-shadow: inset 0 0 0px 5px #1b1b1b, 0 0 11px 3px rgba(3, 169, 244, 0.47);
   }
 }
-
+.timeline-sec {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Where was</tspan><tspan x="40%"  dy="1em">I</tspan></text></svg>');
+}
 .skill-container {
   & + .skill-container {
     margin-top: 4rem;
   }
   .skill-item {
     font-weight: bold;
-    letter-spacing: 1px;
+    // letter-spacing: 1px;
     & + .skill-item {
       margin-top: 15px;
     }
@@ -378,7 +378,15 @@ section .container {
   .sub-header {
     color: $green;
   }
+  .anim-container .inner{
+    height: 230px;
+    margin: 0 auto;
+  }
   @include media-breakpoint-up(md) {
+    .anim-container .inner{
+      height: 250px;
+      
+    }
     .info-container {
       padding-top: 25px;
     }
@@ -397,4 +405,8 @@ section .container {
       }
     }
   }
+}
+
+.skills-section{
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What I can</tspan><tspan x="40%"  dy="1em">do</tspan></text></svg>');
 }

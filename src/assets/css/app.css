@@ -747,28 +747,42 @@ nav {
   right: 0;
   left: 0;
   width: 100%;
-  padding: 0 15px;
+  padding: 15px 15px;
+  background: #1b1b1b;
+  z-index: 9999;
+}
+
+/* line 24, src/scss/components/_general-styles.scss */
+nav .icon-logo {
+  font-size: 40px;
 }
 
 @media (min-width: 768px) {
-  /* line 25, src/scss/components/_general-styles.scss */
+  /* line 24, src/scss/components/_general-styles.scss */
+  nav .icon-logo {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 36, src/scss/components/_general-styles.scss */
   h1 {
     font-size: 2rem;
   }
 }
 
-/* line 30, src/scss/components/_general-styles.scss */
+/* line 41, src/scss/components/_general-styles.scss */
 li + li {
   margin-top: 5px;
 }
 
-/* line 33, src/scss/components/_general-styles.scss */
+/* line 44, src/scss/components/_general-styles.scss */
 ul {
   padding-left: 18px;
   margin-bottom: 1.5rem;
 }
 
-/* line 37, src/scss/components/_general-styles.scss */
+/* line 48, src/scss/components/_general-styles.scss */
 hr {
   height: 1px;
   background: rgba(128, 128, 128, 0.5);
@@ -2265,11 +2279,11 @@ section .container {
 
 /* line 174, src/scss/app.scss */
 .about-me-parent {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0\a   1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"\a   fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
 }
 
 @media (min-width: 992px) {
-  /* line 179, src/scss/app.scss */
+  /* line 177, src/scss/app.scss */
   .about-me-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2279,26 +2293,26 @@ section .container {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  /* line 183, src/scss/app.scss */
+  /* line 181, src/scss/app.scss */
   .about-me-container .summary {
     width: 60%;
   }
 }
 
-/* line 190, src/scss/app.scss */
+/* line 188, src/scss/app.scss */
 .profile-links .btn {
   -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
   margin: 0 15px 15px 0;
 }
 
-/* line 194, src/scss/app.scss */
+/* line 192, src/scss/app.scss */
 .profile-links i {
   margin-right: 8px;
 }
 
 @media (max-width: 991.98px) {
-  /* line 198, src/scss/app.scss */
+  /* line 196, src/scss/app.scss */
   .profile-links .btn {
     font-size: 0.8rem;
     padding: 0.384rem 0.65rem;
@@ -2308,18 +2322,18 @@ section .container {
   }
 }
 
-/* line 206, src/scss/app.scss */
+/* line 204, src/scss/app.scss */
 .profile-links .icon-linkedin {
   position: relative;
 }
 
-/* line 208, src/scss/app.scss */
+/* line 206, src/scss/app.scss */
 .profile-links .icon-linkedin:before {
   position: relative;
   z-index: 1;
 }
 
-/* line 212, src/scss/app.scss */
+/* line 210, src/scss/app.scss */
 .profile-links .icon-linkedin:after {
   content: '';
   position: absolute;
@@ -2332,14 +2346,14 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 225, src/scss/app.scss */
+  /* line 223, src/scss/app.scss */
   .profile-links i {
     font-size: 23px;
     vertical-align: sub;
   }
 }
 
-/* line 231, src/scss/app.scss */
+/* line 229, src/scss/app.scss */
 .svg-bg {
   background-size: 95% auto;
   background-position: center;
@@ -2348,63 +2362,63 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 231, src/scss/app.scss */
+  /* line 229, src/scss/app.scss */
   .svg-bg {
     background-size: 80% auto;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 231, src/scss/app.scss */
+  /* line 229, src/scss/app.scss */
   .svg-bg {
     background-size: 60% auto;
   }
 }
 
-/* line 244, src/scss/app.scss */
+/* line 242, src/scss/app.scss */
 .info .item {
   display: inline-block;
   margin-right: 10px;
 }
 
-/* line 245, src/scss/app.scss */
+/* line 243, src/scss/app.scss */
 .info .item * {
   vertical-align: middle;
 }
 
-/* line 251, src/scss/app.scss */
+/* line 249, src/scss/app.scss */
 .info .item:first-child i {
   color: #b178f4;
 }
 
-/* line 255, src/scss/app.scss */
+/* line 253, src/scss/app.scss */
 .info .item:last-child {
   margin-right: 0;
 }
 
-/* line 257, src/scss/app.scss */
+/* line 255, src/scss/app.scss */
 .info .item:last-child i {
   color: #ff8c32;
 }
 
-/* line 262, src/scss/app.scss */
+/* line 260, src/scss/app.scss */
 .info .item:nth-child(2) i {
   color: #7af478;
 }
 
-/* line 266, src/scss/app.scss */
+/* line 264, src/scss/app.scss */
 .info .item i {
   font-size: 24px;
 }
 
-/* line 269, src/scss/app.scss */
+/* line 267, src/scss/app.scss */
 .info .item span {
   font-weight: 700;
   margin-left: 8px;
   letter-spacing: 1px;
 }
 
-/* line 277, src/scss/app.scss */
+/* line 275, src/scss/app.scss */
 .timeline .item {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #03a9f4), color-stop(0%, rgba(255, 255, 255, 0)));
   background-image: linear-gradient(#03a9f4 50%, rgba(255, 255, 255, 0) 0%);
@@ -2416,12 +2430,12 @@ section .container {
   padding-top: 0.01rem;
 }
 
-/* line 285, src/scss/app.scss */
+/* line 283, src/scss/app.scss */
 .timeline .item:first-child {
   padding-top: 0;
 }
 
-/* line 287, src/scss/app.scss */
+/* line 285, src/scss/app.scss */
 .timeline .item:first-child .position:before {
   width: 28px;
   height: 28px;
@@ -2433,12 +2447,12 @@ section .container {
           animation: glow 3s infinte;
 }
 
-/* line 297, src/scss/app.scss */
+/* line 295, src/scss/app.scss */
 .timeline .item:last-child {
   position: relative;
 }
 
-/* line 299, src/scss/app.scss */
+/* line 297, src/scss/app.scss */
 .timeline .item:last-child:before {
   content: '';
   width: 12px;
@@ -2450,12 +2464,12 @@ section .container {
   position: absolute;
 }
 
-/* line 312, src/scss/app.scss */
+/* line 310, src/scss/app.scss */
 .timeline .position {
   position: relative;
 }
 
-/* line 314, src/scss/app.scss */
+/* line 312, src/scss/app.scss */
 .timeline .position:before {
   content: '';
   width: 22px;
@@ -2472,28 +2486,28 @@ section .container {
   border: 2px dotted #03a9f4;
 }
 
-/* line 333, src/scss/app.scss */
+/* line 331, src/scss/app.scss */
 .timeline .f-phase ~ .item {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ffc107), color-stop(0%, rgba(255, 255, 255, 0)));
   background-image: linear-gradient(#ffc107 50%, rgba(255, 255, 255, 0) 0%);
 }
 
-/* line 335, src/scss/app.scss */
+/* line 333, src/scss/app.scss */
 .timeline .f-phase ~ .item .position:before {
   background-color: #ffc107;
   border: 2px dotted #ffc107;
 }
 
 @media (min-width: 768px) {
-  /* line 341, src/scss/app.scss */
+  /* line 339, src/scss/app.scss */
   .timeline .item {
     padding-left: 60px;
   }
-  /* line 343, src/scss/app.scss */
+  /* line 341, src/scss/app.scss */
   .timeline .item .position:before {
     left: -64px;
   }
-  /* line 347, src/scss/app.scss */
+  /* line 345, src/scss/app.scss */
   .timeline .item:first-child .position:before {
     left: -67px;
   }
@@ -2529,6 +2543,11 @@ section .container {
   }
 }
 
+/* line 364, src/scss/app.scss */
+.timeline-sec {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Where was</tspan><tspan x="40%"  dy="1em">I</tspan></text></svg>');
+}
+
 /* line 368, src/scss/app.scss */
 .skill-container + .skill-container {
   margin-top: 4rem;
@@ -2537,7 +2556,6 @@ section .container {
 /* line 371, src/scss/app.scss */
 .skill-container .skill-item {
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
 /* line 374, src/scss/app.scss */
@@ -2550,6 +2568,12 @@ section .container {
   color: #7af478;
 }
 
+/* line 381, src/scss/app.scss */
+.skill-container .anim-container .inner {
+  height: 230px;
+  margin: 0 auto;
+}
+
 @media (min-width: 768px) {
   /* line 367, src/scss/app.scss */
   .skill-container {
@@ -2557,24 +2581,33 @@ section .container {
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 382, src/scss/app.scss */
+  /* line 386, src/scss/app.scss */
+  .skill-container .anim-container .inner {
+    height: 250px;
+  }
+  /* line 390, src/scss/app.scss */
   .skill-container .info-container {
     padding-top: 25px;
   }
-  /* line 386, src/scss/app.scss */
+  /* line 394, src/scss/app.scss */
   .skill-container .info-container {
     padding-left: 30px;
   }
-  /* line 389, src/scss/app.scss */
+  /* line 397, src/scss/app.scss */
   .skill-container .skill-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 393, src/scss/app.scss */
+  /* line 401, src/scss/app.scss */
   .skill-container .title:after {
     content: ':';
     font-family: inherit;
     margin: 0 6px 0 2px;
   }
+}
+
+/* line 410, src/scss/app.scss */
+.skills-section {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What I can</tspan><tspan x="40%"  dy="1em">do</tspan></text></svg>');
 }
