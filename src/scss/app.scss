@@ -385,7 +385,6 @@ section .container {
   @include media-breakpoint-up(md) {
     .anim-container .inner{
       height: 250px;
-      
     }
     .info-container {
       padding-top: 25px;
