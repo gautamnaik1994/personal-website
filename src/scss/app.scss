@@ -378,15 +378,15 @@ section .container {
   .sub-header {
     color: $green;
   }
-.anim-container{
-overflow: hidden;
+  .anim-container {
+    overflow: hidden;
   }
-  .anim-container .inner{
+  .anim-container .inner {
     height: 230px;
     margin: 0 auto;
   }
   @include media-breakpoint-up(md) {
-    .anim-container .inner{
+    .anim-container .inner {
       height: 250px;
     }
     .info-container {
@@ -409,6 +409,23 @@ overflow: hidden;
   }
 }
 
-.skills-section{
+.skills-section {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What I can</tspan><tspan x="40%"  dy="1em">do</tspan></text></svg>');
+}
+
+.hire-me {
+  background: #151515;
+  width: 880px;
+  border-radius: 14px;
+  padding: 15px;
+  .left-sec {
+    font-size: 20px;
+  }
+  font-weight: bold;
+  .level {
+    position: relative;
+    top: -10px;
+    padding-left: 5px;
+    font-size: 24px;
+  }
 }

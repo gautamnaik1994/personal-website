@@ -2569,6 +2569,11 @@ section .container {
 }
 
 /* line 381, src/scss/app.scss */
+.skill-container .anim-container {
+  overflow: hidden;
+}
+
+/* line 384, src/scss/app.scss */
 .skill-container .anim-container .inner {
   height: 230px;
   margin: 0 auto;
@@ -2581,25 +2586,25 @@ section .container {
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 386, src/scss/app.scss */
+  /* line 389, src/scss/app.scss */
   .skill-container .anim-container .inner {
     height: 250px;
   }
-  /* line 390, src/scss/app.scss */
+  /* line 392, src/scss/app.scss */
   .skill-container .info-container {
     padding-top: 25px;
   }
-  /* line 394, src/scss/app.scss */
+  /* line 396, src/scss/app.scss */
   .skill-container .info-container {
     padding-left: 30px;
   }
-  /* line 397, src/scss/app.scss */
+  /* line 399, src/scss/app.scss */
   .skill-container .skill-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 401, src/scss/app.scss */
+  /* line 403, src/scss/app.scss */
   .skill-container .title:after {
     content: ':';
     font-family: inherit;
@@ -2607,7 +2612,29 @@ section .container {
   }
 }
 
-/* line 410, src/scss/app.scss */
+/* line 412, src/scss/app.scss */
 .skills-section {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What I can</tspan><tspan x="40%"  dy="1em">do</tspan></text></svg>');
+}
+
+/* line 416, src/scss/app.scss */
+.hire-me {
+  background: #151515;
+  width: 880px;
+  border-radius: 14px;
+  padding: 15px;
+  font-weight: bold;
+}
+
+/* line 421, src/scss/app.scss */
+.hire-me .left-sec {
+  font-size: 20px;
+}
+
+/* line 425, src/scss/app.scss */
+.hire-me .level {
+  position: relative;
+  top: -10px;
+  padding-left: 5px;
+  font-size: 24px;
 }
