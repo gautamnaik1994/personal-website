@@ -415,17 +415,103 @@ section .container {
 
 .hire-me {
   background: #151515;
-  width: 880px;
+  font-weight: bold;
   border-radius: 14px;
   padding: 15px;
-  .left-sec {
-    font-size: 20px;
+  .hire-text {
+    font-size: 2rem;
+    opacity: 0.05;
+    @supports (-webkit-background-clip: text) {
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      background: linear-gradient(
+        to right,
+        hsla(46, 100%, 65%, 1),
+        hsla(46, 100%, 86%, 1)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
   }
-  font-weight: bold;
-  .level {
+  .bulb-container {
+    width: 70px;
     position: relative;
-    top: -10px;
-    padding-left: 5px;
-    font-size: 24px;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      /* border: 1px solid #ff0c74; */
+      top: 43%;
+      left: 43%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .rays {
+      display: none;
+    }
+    .cls-1 {
+      fill: #8d8382;
+    }
+    .cls-2 {
+      fill: #504742;
+    }
+    .cls-3 {
+      fill: #848484;
+    }
+    .cls-4 {
+      fill: #fff;
+    }
+    svg {
+      position: relative;
+      z-index: 1;
+    }
+    @include media-breakpoint-up(md) {
+      width: 100px;
+    }
+
+    &.entered {
+      &:before {
+        box-shadow: 0 0 75px 41px rgba(255, 197, 12, 0.27);
+        background-color: #ffc50c;
+      }
+
+      & + .hire-text {
+        opacity: 1;
+      }
+      .rays {
+        display: block;
+      }
+      .cls-3 {
+        fill: #ffc50c;
+      }
+    }
+  }
+  .left-sec {
+    font-size: 1.25rem;
+  }
+  .right-sec {
+    align-items: baseline;
+    padding-top: 15px;
+    @include media-breakpoint-up(md) {
+      padding: 0;
+    }
+  }
+  .level {
+    font-size: 1.5rem;
+    @include media-breakpoint-up(md) {
+      position: relative;
+      top: -10px;
+      padding-left: 5px;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    width: 880px;
+    display: flex;
+    padding: 50px 50px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
   }
 }

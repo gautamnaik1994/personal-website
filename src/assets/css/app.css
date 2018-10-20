@@ -868,10 +868,6 @@ hr {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder {
-  color: #6c757d;
-  opacity: 1;
-}
 .form-control::-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
@@ -2624,21 +2620,158 @@ section .container {
 /* line 416, src/scss/app.scss */
 .hire-me {
   background: #151515;
-  width: 880px;
+  font-weight: bold;
   border-radius: 14px;
   padding: 15px;
-  font-weight: bold;
 }
 
 /* line 421, src/scss/app.scss */
-.hire-me .left-sec {
-  font-size: 20px;
+.hire-me .hire-text {
+  font-size: 2rem;
+  opacity: 0.05;
 }
 
-/* line 425, src/scss/app.scss */
-.hire-me .level {
+@supports (-webkit-background-clip: text) {
+  /* line 421, src/scss/app.scss */
+  .hire-me .hire-text {
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background: -webkit-gradient(linear, left top, right top, from(#ffd54d), to(#ffeeb8));
+    background: linear-gradient(to right, #ffd54d, #ffeeb8);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+/* line 436, src/scss/app.scss */
+.hire-me .bulb-container {
+  width: 70px;
   position: relative;
-  top: -10px;
-  padding-left: 5px;
-  font-size: 24px;
+}
+
+/* line 439, src/scss/app.scss */
+.hire-me .bulb-container:before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  /* border: 1px solid #ff0c74; */
+  top: 43%;
+  left: 43%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* line 451, src/scss/app.scss */
+.hire-me .bulb-container .rays {
+  display: none;
+}
+
+/* line 454, src/scss/app.scss */
+.hire-me .bulb-container .cls-1 {
+  fill: #8d8382;
+}
+
+/* line 457, src/scss/app.scss */
+.hire-me .bulb-container .cls-2 {
+  fill: #504742;
+}
+
+/* line 460, src/scss/app.scss */
+.hire-me .bulb-container .cls-3 {
+  fill: #848484;
+}
+
+/* line 463, src/scss/app.scss */
+.hire-me .bulb-container .cls-4 {
+  fill: #fff;
+}
+
+/* line 466, src/scss/app.scss */
+.hire-me .bulb-container svg {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  /* line 436, src/scss/app.scss */
+  .hire-me .bulb-container {
+    width: 100px;
+  }
+}
+
+/* line 475, src/scss/app.scss */
+.hire-me .bulb-container.entered:before {
+  -webkit-box-shadow: 0 0 75px 41px rgba(255, 197, 12, 0.27);
+          box-shadow: 0 0 75px 41px rgba(255, 197, 12, 0.27);
+  background-color: #ffc50c;
+}
+
+/* line 480, src/scss/app.scss */
+.hire-me .bulb-container.entered + .hire-text {
+  opacity: 1;
+}
+
+/* line 483, src/scss/app.scss */
+.hire-me .bulb-container.entered .rays {
+  display: block;
+}
+
+/* line 486, src/scss/app.scss */
+.hire-me .bulb-container.entered .cls-3 {
+  fill: #ffc50c;
+}
+
+/* line 491, src/scss/app.scss */
+.hire-me .left-sec {
+  font-size: 1.25rem;
+}
+
+/* line 494, src/scss/app.scss */
+.hire-me .right-sec {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding-top: 15px;
+}
+
+@media (min-width: 768px) {
+  /* line 494, src/scss/app.scss */
+  .hire-me .right-sec {
+    padding: 0;
+  }
+}
+
+/* line 501, src/scss/app.scss */
+.hire-me .level {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  /* line 501, src/scss/app.scss */
+  .hire-me .level {
+    position: relative;
+    top: -10px;
+    padding-left: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 416, src/scss/app.scss */
+  .hire-me {
+    width: 880px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 50px 50px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto;
+  }
 }
