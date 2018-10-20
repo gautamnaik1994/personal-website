@@ -49,7 +49,7 @@ window.onload = function(e) {
   //'intersectionRatio' in window.IntersectionObserverEntry.prototype
   //) {
   console.log('IntersectionObserver is supported');
-  const config = {
+  var config = {
     rootMargin: '-20% 0% -40% 0%',
     //threshold: [0,1],
   };
