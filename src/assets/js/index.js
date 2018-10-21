@@ -92,7 +92,7 @@ window.onload = function(e) {
 
 function generateArray(count){
   var interval=1/count;
-  for (let i = 0; i <= 1.0; i += interval) {
+  for (var i = 0; i <= 1.0; i += interval) {
     parallaxArray.push(i.toFixed(3));
   }
   return parallaxArray;
