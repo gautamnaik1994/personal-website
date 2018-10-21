@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+x="0px" y="0px"
+	 viewBox="0 0 1000 1000" 
+	 style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<g>
+	<path fill="red" d="M178.2,37.8l-132,176c-1.8,2.3-1.2,5.5,1.2,7.1l130.2,86.6c4.2,2.8,9.5-1.8,7.2-6.4L144,219.6c-0.6-1-0.7-2.2-0.4-3.4
+		L187.1,42C188.4,36.7,181.5,33.4,178.2,37.8z"/>
+	<circle cx="218" cy="218" r="25" fill="red">
+	 <animate attributeName="r" calcMode="linear" 
+	 values="21.5;53.5;53.5;53.5;53.5;21.5;21.5;21.5;21.5"
+	  keyTimes="0;0.083;0.25;0.333;0.5;0.583;0.75;0.833;1" dur="1.5" begin="-1s" repeatCount="indefinite"></animate>
+	</circle>
+</g>
+</svg>

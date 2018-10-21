@@ -10,10 +10,13 @@
 //     console.log(myJson);
 //   });
 var deferredPrompt;
+var parallaxArray=[];
 window.onload = function(e) {
   var clickSound = new Audio('./assets/sound/click.mp3');
   var hireMeTrigger = document.querySelector('#hireMeTrigger');
   var bulbContainer = document.querySelector('.bulb-container');
+  var parallaxTrigger = document.querySelector('#parallaxTrigger');
+  var confetti= document.querySelector('.confetti');
   //var expert = document.querySelectorAll('[data-skillLevel="Expert"]');
   //var intermediate = document.querySelectorAll(
   //'[data-skillLevel="Intermediate"]'
@@ -48,31 +51,52 @@ window.onload = function(e) {
   //'IntersectionObserverEntry' in window &&
   //'intersectionRatio' in window.IntersectionObserverEntry.prototype
   //) {
-  console.log('IntersectionObserver is supported');
-  var config = {
+
+  var hireMeConfig = {
     rootMargin: '-20% 0% -40% 0%',
     //threshold: [0,1],
   };
-  var observer = new IntersectionObserver(function(entry, observer) {
-    console.log('entry:', entry);
-    console.log('observer:', observer);
+  var hireMeObserver = new IntersectionObserver(function(entry, hireMeObserver) {
+    // console.log('entry:', entry);
+    // console.log('observer:', hireMeObserver);
     if (entry[0].intersectionRatio > 0) {
       bulbContainer.classList.add('entered');
       clickSound.play();
-      console.log('in view');
       //observer.unobserve(entry.target);
     } else {
       bulbContainer.classList.remove('entered');
       clickSound.play();
-      console.log('out of view');
     }
-  }, config);
+  }, hireMeConfig);
+  hireMeObserver.observe(hireMeTrigger);
 
-  observer.observe(hireMeTrigger);
-  //} else {
-  //bulbContainer.classList.add('entered');
-  //}
+
+
+
+  var parallaxConfig={
+    threshold: generateArray(100),
+  };
+
+  var parallaxObserver = new IntersectionObserver(function(entry, parallaxObserver) {
+    // console.log('entry:', entry);
+    // console.log('observer:', parallaxObserver);
+    var bPos='0 '+ Math.floor(entry[0].intersectionRatio * (-500)) + 'px';
+    confetti.style.backgroundPosition=bPos;
+  }, parallaxConfig);
+  parallaxObserver.observe(parallaxTrigger);
+
+  //loader.parentNode.removeChild(loader);
+  //loader.classList.add('bottom-zero');
+  document.body.classList.add("loaded");
 };
+
+function generateArray(count){
+  var interval=1/count;
+  for (let i = 0; i <= 1.0; i += interval) {
+    parallaxArray.push(i.toFixed(3));
+  }
+  return parallaxArray;
+}
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -90,7 +114,6 @@ if ('serviceWorker' in navigator) {
     deferredPrompt = e;
   });
   window.addEventListener('appinstalled', function(evt) {
-    //localStorage.setItem('appInstalled', true);
   });
 }
 

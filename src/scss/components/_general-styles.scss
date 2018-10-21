@@ -20,7 +20,7 @@ nav {
   width: 100%;
   padding: 15px 15px;
   background: $body-background-color;
-  z-index: 9999;
+  z-index: 9998;
   .icon-logo{
     font-size:40px;
     @include media-breakpoint-up(md) {
