@@ -868,10 +868,6 @@ hr {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder {
-  color: #6c757d;
-  opacity: 1;
-}
 .form-control::-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
@@ -2808,43 +2804,90 @@ section .container {
   }
 }
 
-/* line 546, src/scss/app.scss */
+@media (min-width: 768px) {
+  /* line 546, src/scss/app.scss */
+  .all-projects {
+    padding: 0px 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  /* line 550, src/scss/app.scss */
+  .all-projects > * {
+    width: 50%;
+    padding: 25px;
+  }
+}
+
+/* line 558, src/scss/app.scss */
 .project {
   background: #151515;
   -webkit-box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.71);
           box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.71);
   border-radius: 15px;
   padding: 15px;
+  margin-top: 60px;
 }
 
-/* line 551, src/scss/app.scss */
+/* line 564, src/scss/app.scss */
 .project .title {
   color: white;
   text-transform: uppercase;
 }
 
-/* line 555, src/scss/app.scss */
+/* line 568, src/scss/app.scss */
+.project img {
+  max-width: 230px;
+  margin: auto;
+}
+
+/* line 573, src/scss/app.scss */
 .project strong {
   color: white;
   letter-spacing: 0.07rem;
 }
 
-/* line 559, src/scss/app.scss */
+/* line 577, src/scss/app.scss */
 .project .img-container {
   border-radius: 15px;
   height: 200px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#00AA69), to(#00B06C));
-  background: linear-gradient(180deg, #00AA69 0%, #00B06C 100%);
   -webkit-box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.25);
   position: relative;
   top: -40px;
   margin-bottom: -20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-/* line 568, src/scss/app.scss */
+/* line 587, src/scss/app.scss */
 .project .p-link {
   text-decoration: none;
   letter-spacing: 1px;
   color: grey;
+}
+
+/* line 594, src/scss/app.scss */
+.meetgreen {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FC1E68), color-stop(48.07%, #FA413D), to(#FF5F35));
+  background: linear-gradient(180deg, #FC1E68 0%, #FA413D 48.07%, #FF5F35 100%);
+}
+
+/* line 597, src/scss/app.scss */
+.grassdoor {
+  background: -webkit-gradient(linear, left top, left bottom, from(#00AA69), to(#00B06C));
+  background: linear-gradient(180deg, #00AA69 0%, #00B06C 100%);
+}
+
+/* line 600, src/scss/app.scss */
+.ticlet {
+  background: -webkit-gradient(linear, left top, left bottom, from(#6164C1), to(#4448C0));
+  background: linear-gradient(180deg, #6164C1 0%, #4448C0 100%);
+}
+
+/* line 603, src/scss/app.scss */
+.mwell {
+  background: -webkit-gradient(linear, left top, left bottom, from(#00AEEF), to(#00A1DC));
+  background: linear-gradient(180deg, #00AEEF 0%, #00A1DC 100%);
 }

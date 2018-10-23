@@ -543,14 +543,32 @@ section .container {
 }
 
 
+.all-projects{
+  @include media-breakpoint-up(md) {
+  padding: 0px 100px;
+    display: flex;
+    &>*{
+      width:50%;
+      padding: 25px;
+    }
+  }
+}
+
+
 .project{
   background: #151515;
   box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.71);
   border-radius: 15px;
   padding: 15px;
+  margin-top: 60px;
   .title{
     color: white;
     text-transform: uppercase;
+  }
+  img{
+    max-width: 230px;
+    margin: auto;
+    // max-height: 70px;
   }
   strong{
     color: white;
@@ -559,15 +577,29 @@ section .container {
   .img-container{
     border-radius: 15px;
     height: 200px;
-    background: linear-gradient(180deg, #00AA69 0%, #00B06C 100%);
+
     box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.25);
     position: relative;
     top: -40px;
     margin-bottom: -20px;
+    display: flex;
   }
   .p-link{
     text-decoration: none;
     letter-spacing: 1px;
     color:grey;
   }
+}
+
+.meetgreen{
+  background: linear-gradient(180deg, #FC1E68 0%, #FA413D 48.07%, #FF5F35 100%);
+}
+.grassdoor{
+  background: linear-gradient(180deg, #00AA69 0%, #00B06C 100%);
+}
+.ticlet{
+  background: linear-gradient(180deg, #6164C1 0%, #4448C0 100%);
+}
+.mwell{
+  background: linear-gradient(180deg, #00AEEF 0%, #00A1DC 100%);
 }
