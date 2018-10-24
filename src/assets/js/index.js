@@ -99,6 +99,7 @@ window.onload = function (e) {
 
   menuBtn.addEventListener('click', function () {
     sideMenu.classList.toggle('loaded');
+    menuBtn.classList.toggle('open');
   })
 };
 

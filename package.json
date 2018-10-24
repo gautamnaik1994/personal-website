@@ -22,6 +22,7 @@
   "homepage": "https://github.com/gautamnaik1994/me#readme",
   "devDependencies": {
     "browser-sync": "^2.24.7",
+    "bs-console-qrcode": "^1.0.2",
     "gh-pages": "^2.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",

@@ -463,26 +463,29 @@ section .container {
     height: 230px;
     margin: 0 auto;
   }
+
   @include media-breakpoint-up(md) {
     .anim-container .inner {
       height: 250px;
     }
     .info-container {
       padding-top: 25px;
+      padding-left: 30px;
+      width: calc(100% - 250px);
     }
     display: flex;
-    .info-container {
-      padding-left: 30px;
-    }
-    .skill-item {
-      display: flex;
-    }
+
     .title {
       &:after {
         content: ':';
         font-family: inherit;
         margin: 0 6px 0 2px;
       }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .skill-item {
+      display: flex;
     }
   }
 }
@@ -590,24 +593,46 @@ section .container {
     }
   }
   @include media-breakpoint-up(md) {
-    width: 880px;
+;
     display: flex;
     padding: 50px 50px;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
   }
+  @include media-breakpoint-up(lg) {
+    width: 880px;
+  }
 }
 
 
 .all-projects{
-  @include media-breakpoint-up(md) {
-  padding: 0px 100px;
-    display: flex;
-    &>*{
-      width:50%;
-      padding: 25px;
+  
+  .inner{
+    @include media-breakpoint-up(md) {
+      display: flex;
+      &>*{
+        width:50%;
+        padding: 0 15px;
+      }
+      .left-sec{
+        padding-left: 0;
+      }
+      .right-sec{
+        padding-right: 0;
+      }
     }
+    
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 0px 100px;
+    .inner{
+      &>*{
+   
+        padding: 0 25px;
+      }
+    }
+
   }
 }
 
@@ -618,6 +643,16 @@ section .container {
   border-radius: 15px;
   padding: 15px;
   margin-top: 60px;
+
+  @include media-breakpoint-up(md) {
+    &:first-child{
+      margin-top: 40px;
+    }
+  }
+  // & + .project{
+  //   margin-top: 40px;
+  // }
+
   .title{
     color: white;
     text-transform: uppercase;
