@@ -56,7 +56,7 @@ gulp.task('buildcss', function (done) {
 gulp.task('compress', function (cb) {
     pump([
             gulp.src('src/assets/js/*.js'),
-            // uglify(),
+            uglify(),
             gulp.dest('dist/assets/js')
         ],
         cb
@@ -150,14 +150,10 @@ gulp.task('serve', gulp.series('sass', function (done) {
     done()
 }));
 
-gulp.task('build', ['copyfiles', 'buildcss', 'compress']);
+// gulp.task('build', ['copyfiles', 'buildcss', 'compress']);
 gulp.task('build', gulp.series('copyfiles', 'buildcss', 'compress', function (done) {
     done()
 }));
-
-// gulp.task('build', gulp.series('copyfiles', 'buildcss', function (done) {
-//     done()
-// }));
 
 gulp.task('default', gulp.series('serve', function (done) {
     done()
