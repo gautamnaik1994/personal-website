@@ -151,7 +151,11 @@ gulp.task('serve', gulp.series('sass', function (done) {
 }));
 
 // gulp.task('build', ['copyfiles', 'buildcss', 'compress']);
-gulp.task('build', gulp.series('copyfiles', 'buildcss', 'compress', function (done) {
+// gulp.task('build', gulp.series('copyfiles', 'buildcss', 'compress', function (done) {
+//     done()
+// }));
+
+gulp.task('build', gulp.series('copyfiles', 'buildcss', function (done) {
     done()
 }));
 
