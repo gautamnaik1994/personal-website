@@ -10,13 +10,23 @@
 //     console.log(myJson);
 //   });
 var deferredPrompt;
-var parallaxArray=[];
-window.onload = function(e) {
+
+var parallaxArray = [];
+function generateArray(count) {
+  var interval = 1 / count;
+  for (var i = interval; i <= 1.0; i += interval) {
+    parallaxArray.push(parseFloat(i.toFixed(2)));
+  }
+  console.log("parallax array ", parallaxArray);
+  return parallaxArray;
+}
+
+window.onload = function (e) {
   var clickSound = new Audio('./assets/sound/click.mp3');
   var hireMeTrigger = document.querySelector('#hireMeTrigger');
   var bulbContainer = document.querySelector('.bulb-container');
   var parallaxTrigger = document.querySelector('#parallaxTrigger');
-  var confetti= document.querySelector('.confetti');
+  var confetti = document.querySelector('.confetti');
   //var expert = document.querySelectorAll('[data-skillLevel="Expert"]');
   //var intermediate = document.querySelectorAll(
   //'[data-skillLevel="Intermediate"]'
@@ -35,7 +45,7 @@ window.onload = function(e) {
 
   var res = document.querySelector('#res');
   var date = new Date(parseInt(1438765200000));
-  setInterval(function() {
+  setInterval(function () {
     //var dateData = dateDiff(date.getTime());
     var dateData = countdown(date, new Date());
     years.textContent = dateData.years;
@@ -56,7 +66,7 @@ window.onload = function(e) {
     rootMargin: '-20% 0% -40% 0%',
     //threshold: [0,1],
   };
-  var hireMeObserver = new IntersectionObserver(function(entry, hireMeObserver) {
+  var hireMeObserver = new IntersectionObserver(function (entry, hireMeObserver) {
     // console.log('entry:', entry);
     // console.log('observer:', hireMeObserver);
     if (entry[0].intersectionRatio > 0) {
@@ -73,15 +83,15 @@ window.onload = function(e) {
 
 
 
-  var parallaxConfig={
-    threshold: generateArray(100),
+  var parallaxConfig = {
+    threshold:generateArray(100),
   };
 
-  var parallaxObserver = new IntersectionObserver(function(entry, parallaxObserver) {
+  var parallaxObserver = new IntersectionObserver(function (entry, parallaxObserver) {
     // console.log('entry:', entry);
     // console.log('observer:', parallaxObserver);
-    var bPos='0 '+ Math.floor(entry[0].intersectionRatio * (-500)) + 'px';
-    confetti.style.backgroundPosition=bPos;
+    var bPos = '0 ' + Math.floor(entry[0].intersectionRatio * (-500)) + 'px';
+    confetti.style.backgroundPosition = bPos;
   }, parallaxConfig);
   parallaxObserver.observe(parallaxTrigger);
 
@@ -90,32 +100,23 @@ window.onload = function(e) {
   document.body.classList.add("loaded");
 };
 
-function generateArray(count){
-  var interval=1/count;
-  for (var i = interval; i <= 1.0; i += interval) {
-    parallaxArray.push(i.toFixed(2));
-  }
-  console.log("parallax array ", parallaxArray);
-  return parallaxArray;
-}
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     navigator.serviceWorker
       .register('/sw.js')
-      .then(function(registration) {
+      .then(function (registration) {
         console.log('SW registered: ', registration);
       })
-      .catch(function(registrationError) {
+      .catch(function (registrationError) {
         console.log('SW registration failed: ', registrationError);
       });
   });
-  window.addEventListener('beforeinstallprompt', function(e) {
+  window.addEventListener('beforeinstallprompt', function (e) {
     e.preventDefault();
     deferredPrompt = e;
   });
-  window.addEventListener('appinstalled', function(evt) {
-  });
+  window.addEventListener('appinstalled', function (evt) {});
 }
 
 //function addSkills(nodes) {
@@ -147,23 +148,25 @@ if ('serviceWorker' in navigator) {
 //   return r;
 // }
 var module,
-  countdown = (function(v) {
+  countdown = (function (v) {
     function A(a, b) {
       var c = a.getTime();
       a.setMonth(a.getMonth() + b);
       return Math.round((a.getTime() - c) / 864e5);
     }
+
     function w(a) {
       var b = a.getTime(),
         c = new Date(b);
       c.setMonth(a.getMonth() + 1);
       return Math.round((c.getTime() - b) / 864e5);
     }
+
     function x(a, b) {
       b =
-        b instanceof Date || (null !== b && isFinite(b))
-          ? new Date(+b)
-          : new Date();
+        b instanceof Date || (null !== b && isFinite(b)) ?
+        new Date(+b) :
+        new Date();
       if (!a) return b;
       var c = +a.value || 0;
       if (c) return b.setTime(b.getTime() + c), b;
@@ -180,10 +183,13 @@ var module,
       (c += +a.years || 0) && b.setFullYear(b.getFullYear() + c);
       return b;
     }
+
     function D(a, b) {
       return y(a) + (1 === a ? p[b] : q[b]);
     }
+
     function n() {}
+
     function k(a, b, c, e, l, d) {
       0 <= a[c] && ((b += a[c]), delete a[c]);
       b /= l;
@@ -232,6 +238,7 @@ var module,
       }
       return b;
     }
+
     function B(a, b, c, e, l, d) {
       var f = new Date();
       a.start = b = b || f;
@@ -253,69 +260,69 @@ var module,
         a.seconds = c.getSeconds() - b.getSeconds();
         a.milliseconds = c.getMilliseconds() - b.getMilliseconds();
         var g;
-        0 > a.milliseconds
-          ? ((g = s(-a.milliseconds / 1e3)),
+        0 > a.milliseconds ?
+          ((g = s(-a.milliseconds / 1e3)),
             (a.seconds -= g),
-            (a.milliseconds += 1e3 * g))
-          : 1e3 <= a.milliseconds &&
-            ((a.seconds += m(a.milliseconds / 1e3)), (a.milliseconds %= 1e3));
-        0 > a.seconds
-          ? ((g = s(-a.seconds / 60)), (a.minutes -= g), (a.seconds += 60 * g))
-          : 60 <= a.seconds &&
-            ((a.minutes += m(a.seconds / 60)), (a.seconds %= 60));
-        0 > a.minutes
-          ? ((g = s(-a.minutes / 60)), (a.hours -= g), (a.minutes += 60 * g))
-          : 60 <= a.minutes &&
-            ((a.hours += m(a.minutes / 60)), (a.minutes %= 60));
-        0 > a.hours
-          ? ((g = s(-a.hours / 24)), (a.days -= g), (a.hours += 24 * g))
-          : 24 <= a.hours && ((a.days += m(a.hours / 24)), (a.hours %= 24));
-        for (; 0 > a.days; ) a.months--, (a.days += A(a.refMonth, 1));
+            (a.milliseconds += 1e3 * g)) :
+          1e3 <= a.milliseconds &&
+          ((a.seconds += m(a.milliseconds / 1e3)), (a.milliseconds %= 1e3));
+        0 > a.seconds ?
+          ((g = s(-a.seconds / 60)), (a.minutes -= g), (a.seconds += 60 * g)) :
+          60 <= a.seconds &&
+          ((a.minutes += m(a.seconds / 60)), (a.seconds %= 60));
+        0 > a.minutes ?
+          ((g = s(-a.minutes / 60)), (a.hours -= g), (a.minutes += 60 * g)) :
+          60 <= a.minutes &&
+          ((a.hours += m(a.minutes / 60)), (a.minutes %= 60));
+        0 > a.hours ?
+          ((g = s(-a.hours / 24)), (a.days -= g), (a.hours += 24 * g)) :
+          24 <= a.hours && ((a.days += m(a.hours / 24)), (a.hours %= 24));
+        for (; 0 > a.days;) a.months--, (a.days += A(a.refMonth, 1));
         7 <= a.days && ((a.weeks += m(a.days / 7)), (a.days %= 7));
-        0 > a.months
-          ? ((g = s(-a.months / 12)), (a.years -= g), (a.months += 12 * g))
-          : 12 <= a.months && ((a.years += m(a.months / 12)), (a.months %= 12));
+        0 > a.months ?
+          ((g = s(-a.months / 12)), (a.years -= g), (a.months += 12 * g)) :
+          12 <= a.months && ((a.years += m(a.months / 12)), (a.months %= 12));
         10 <= a.years &&
           ((a.decades += m(a.years / 10)),
-          (a.years %= 10),
-          10 <= a.decades &&
+            (a.years %= 10),
+            10 <= a.decades &&
             ((a.centuries += m(a.decades / 10)),
-            (a.decades %= 10),
-            10 <= a.centuries &&
+              (a.decades %= 10),
+              10 <= a.centuries &&
               ((a.millennia += m(a.centuries / 10)), (a.centuries %= 10))));
         b = 0;
-        !(e & 1024) || b >= l
-          ? ((a.centuries += 10 * a.millennia), delete a.millennia)
-          : a.millennia && b++;
-        !(e & 512) || b >= l
-          ? ((a.decades += 10 * a.centuries), delete a.centuries)
-          : a.centuries && b++;
-        !(e & 256) || b >= l
-          ? ((a.years += 10 * a.decades), delete a.decades)
-          : a.decades && b++;
-        !(e & 128) || b >= l
-          ? ((a.months += 12 * a.years), delete a.years)
-          : a.years && b++;
-        !(e & 64) || b >= l
-          ? (a.months && (a.days += A(a.refMonth, a.months)),
+        !(e & 1024) || b >= l ?
+          ((a.centuries += 10 * a.millennia), delete a.millennia) :
+          a.millennia && b++;
+        !(e & 512) || b >= l ?
+          ((a.decades += 10 * a.centuries), delete a.centuries) :
+          a.centuries && b++;
+        !(e & 256) || b >= l ?
+          ((a.years += 10 * a.decades), delete a.decades) :
+          a.decades && b++;
+        !(e & 128) || b >= l ?
+          ((a.months += 12 * a.years), delete a.years) :
+          a.years && b++;
+        !(e & 64) || b >= l ?
+          (a.months && (a.days += A(a.refMonth, a.months)),
             delete a.months,
-            7 <= a.days && ((a.weeks += m(a.days / 7)), (a.days %= 7)))
-          : a.months && b++;
-        !(e & 32) || b >= l
-          ? ((a.days += 7 * a.weeks), delete a.weeks)
-          : a.weeks && b++;
-        !(e & 16) || b >= l
-          ? ((a.hours += 24 * a.days), delete a.days)
-          : a.days && b++;
-        !(e & 8) || b >= l
-          ? ((a.minutes += 60 * a.hours), delete a.hours)
-          : a.hours && b++;
-        !(e & 4) || b >= l
-          ? ((a.seconds += 60 * a.minutes), delete a.minutes)
-          : a.minutes && b++;
-        !(e & 2) || b >= l
-          ? ((a.milliseconds += 1e3 * a.seconds), delete a.seconds)
-          : a.seconds && b++;
+            7 <= a.days && ((a.weeks += m(a.days / 7)), (a.days %= 7))) :
+          a.months && b++;
+        !(e & 32) || b >= l ?
+          ((a.days += 7 * a.weeks), delete a.weeks) :
+          a.weeks && b++;
+        !(e & 16) || b >= l ?
+          ((a.hours += 24 * a.days), delete a.days) :
+          a.days && b++;
+        !(e & 8) || b >= l ?
+          ((a.minutes += 60 * a.hours), delete a.hours) :
+          a.hours && b++;
+        !(e & 4) || b >= l ?
+          ((a.seconds += 60 * a.minutes), delete a.minutes) :
+          a.minutes && b++;
+        !(e & 2) || b >= l ?
+          ((a.milliseconds += 1e3 * a.seconds), delete a.seconds) :
+          a.seconds && b++;
         if (!(e & 1) || b >= l) {
           var h = k(a, 0, 'milliseconds', 'seconds', 1e3, d);
           if (
@@ -345,6 +352,7 @@ var module,
       }
       return a;
     }
+
     function d(a, b, c, e, d) {
       var f;
       c = +c || 222;
@@ -352,30 +360,32 @@ var module,
       d = 0 < d ? (20 > d ? Math.round(d) : 20) : 0;
       var k = null;
       'function' === typeof a
-        ? ((f = a), (a = null))
-        : a instanceof Date ||
-          (null !== a && isFinite(a)
-            ? (a = new Date(+a))
-            : ('object' === typeof k && (k = a), (a = null)));
+        ?
+        ((f = a), (a = null)) :
+        a instanceof Date ||
+        (null !== a && isFinite(a) ?
+          (a = new Date(+a)) :
+          ('object' === typeof k && (k = a), (a = null)));
       var g = null;
       'function' === typeof b
-        ? ((f = b), (b = null))
-        : b instanceof Date ||
-          (null !== b && isFinite(b)
-            ? (b = new Date(+b))
-            : ('object' === typeof b && (g = b), (b = null)));
+        ?
+        ((f = b), (b = null)) :
+        b instanceof Date ||
+        (null !== b && isFinite(b) ?
+          (b = new Date(+b)) :
+          ('object' === typeof b && (g = b), (b = null)));
       k && (a = x(k, b));
       g && (b = x(g, a));
       if (!a && !b) return new n();
       if (!f) return B(new n(), a, b, c, e, d);
       var k =
-          c & 1
-            ? 1e3 / 30
-            : c & 2
-              ? 1e3
-              : c & 4 ? 6e4 : c & 8 ? 36e5 : c & 16 ? 864e5 : 6048e5,
+        c & 1 ?
+        1e3 / 30 :
+        c & 2 ?
+        1e3 :
+        c & 4 ? 6e4 : c & 8 ? 36e5 : c & 16 ? 864e5 : 6048e5,
         h,
-        g = function() {
+        g = function () {
           f(B(new n(), a, b, c, e, d), h);
         };
       g();
@@ -391,7 +401,7 @@ var module,
       f,
       y,
       z;
-    n.prototype.toString = function(a) {
+    n.prototype.toString = function (a) {
       var b = z(this),
         c = b.length;
       if (!c) return a ? '' + a : u;
@@ -399,24 +409,24 @@ var module,
       a = r + b.pop();
       return b.join(t) + a;
     };
-    n.prototype.toHTML = function(a, b) {
+    n.prototype.toHTML = function (a, b) {
       a = a || 'span';
       var c = z(this),
         e = c.length;
       if (!e)
-        return (b = b || u)
-          ? '\x3c' + a + '\x3e' + b + '\x3c/' + a + '\x3e'
-          : b;
+        return (b = b || u) ?
+          '\x3c' + a + '\x3e' + b + '\x3c/' + a + '\x3e' :
+          b;
       for (var d = 0; d < e; d++)
         c[d] = '\x3c' + a + '\x3e' + c[d] + '\x3c/' + a + '\x3e';
       if (1 === e) return c[0];
       e = r + c.pop();
       return c.join(t) + e;
     };
-    n.prototype.addTo = function(a) {
+    n.prototype.addTo = function (a) {
       return x(this, a);
     };
-    z = function(a) {
+    z = function (a) {
       var b = [],
         c = a.millennia;
       c && b.push(f(c, 10));
@@ -445,7 +455,7 @@ var module,
     d.MILLENNIA = 1024;
     d.DEFAULTS = 222;
     d.ALL = 2047;
-    var E = (d.setFormat = function(a) {
+    var E = (d.setFormat = function (a) {
         if (a) {
           if ('singular' in a || 'plural' in a) {
             var b = a.singular || [];
@@ -462,7 +472,7 @@ var module,
           'function' === typeof a.formatter && (f = a.formatter);
         }
       }),
-      C = (d.resetFormat = function() {
+      C = (d.resetFormat = function () {
         p = ' millisecond; second; minute; hour; day; week; month; year; decade; century; millennium'.split(
           ';'
         );
@@ -472,12 +482,12 @@ var module,
         r = ' and ';
         t = ', ';
         u = '';
-        y = function(a) {
+        y = function (a) {
           return a;
         };
         f = D;
       });
-    d.setLabels = function(a, b, c, d, f, k, m) {
+    d.setLabels = function (a, b, c, d, f, k, m) {
       E({
         singular: a,
         plural: b,
@@ -490,12 +500,12 @@ var module,
     };
     d.resetLabels = C;
     C();
-    v && v.exports
-      ? (v.exports = d)
-      : 'function' === typeof window.define &&
-        'undefined' !== typeof window.define.amd &&
-        window.define('countdown', [], function() {
-          return d;
-        });
+    v && v.exports ?
+      (v.exports = d) :
+      'function' === typeof window.define &&
+      'undefined' !== typeof window.define.amd &&
+      window.define('countdown', [], function () {
+        return d;
+      });
     return d;
   })(module);
