@@ -2056,29 +2056,155 @@ label {
   pointer-events: none;
 }
 
-/* line 21, src/scss/app.scss */
+/* line 22, src/scss/app.scss */
 body.loaded .loader {
   bottom: 100%;
 }
 
-/* line 25, src/scss/app.scss */
+/* line 26, src/scss/app.scss */
 body.loaded .name-svg text {
   -webkit-animation: draw 4s 0.8s forwards;
           animation: draw 4s 0.8s forwards;
 }
 
-/* line 29, src/scss/app.scss */
+/* line 30, src/scss/app.scss */
 body.loaded .name-svg .hello-dot {
   -webkit-animation: drawDot 3s 0.8s forwards;
           animation: drawDot 3s 0.8s forwards;
 }
 
 /* line 36, src/scss/app.scss */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #151515;
+  z-index: 9998;
+}
+
+/* line 45, src/scss/app.scss */
+.side-menu .inner {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 51, src/scss/app.scss */
+.side-menu ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 57, src/scss/app.scss */
+.side-menu .item {
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
+}
+
+/* line 59, src/scss/app.scss */
+.side-menu .item + .item {
+  margin-top: 10px;
+}
+
+/* line 62, src/scss/app.scss */
+.side-menu .item a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 1px;
+}
+
+/* line 68, src/scss/app.scss */
+.side-menu .item span:first-child {
+  display: none;
+}
+
+/* line 72, src/scss/app.scss */
+.side-menu.loaded {
+  display: block;
+}
+
+/* line 76, src/scss/app.scss */
+.side-menu.loaded .item:nth-child(1) {
+  -webkit-animation: slideUp 0.8s 0s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+          animation: slideUp 0.8s 0s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+}
+
+/* line 76, src/scss/app.scss */
+.side-menu.loaded .item:nth-child(2) {
+  -webkit-animation: slideUp 0.8s 0.1s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+          animation: slideUp 0.8s 0.1s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+}
+
+/* line 76, src/scss/app.scss */
+.side-menu.loaded .item:nth-child(3) {
+  -webkit-animation: slideUp 0.8s 0.2s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+          animation: slideUp 0.8s 0.2s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+}
+
+/* line 76, src/scss/app.scss */
+.side-menu.loaded .item:nth-child(4) {
+  -webkit-animation: slideUp 0.8s 0.3s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+          animation: slideUp 0.8s 0.3s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+}
+
+/* line 76, src/scss/app.scss */
+.side-menu.loaded .item:nth-child(5) {
+  -webkit-animation: slideUp 0.8s 0.4s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+          animation: slideUp 0.8s 0.4s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+}
+
+/* line 76, src/scss/app.scss */
+.side-menu.loaded .item:nth-child(6) {
+  -webkit-animation: slideUp 0.8s 0.5s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+          animation: slideUp 0.8s 0.5s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+}
+
+/* line 76, src/scss/app.scss */
+.side-menu.loaded .item:nth-child(7) {
+  -webkit-animation: slideUp 0.8s 0.6s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+          animation: slideUp 0.8s 0.6s cubic-bezier(0, 0.63, 0.68, 1) forwards;
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/* line 93, src/scss/app.scss */
 .section-header {
   margin-bottom: 2rem;
 }
 
-/* line 37, src/scss/app.scss */
+/* line 94, src/scss/app.scss */
 .section-header .inner {
   font-size: 3.34rem;
   font-weight: 700;
@@ -2086,43 +2212,43 @@ body.loaded .name-svg .hello-dot {
   margin: 10px 0px;
 }
 
-/* line 49, src/scss/app.scss */
+/* line 106, src/scss/app.scss */
 .card {
   -webkit-box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.07);
           box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.07);
 }
 
-/* line 53, src/scss/app.scss */
+/* line 110, src/scss/app.scss */
 section .container {
   padding: 5rem 15px;
 }
 
-/* line 57, src/scss/app.scss */
+/* line 114, src/scss/app.scss */
 .linkedin {
   color: #0077b5;
 }
 
-/* line 61, src/scss/app.scss */
+/* line 118, src/scss/app.scss */
 .behance {
   color: #1769ff;
 }
 
-/* line 65, src/scss/app.scss */
+/* line 122, src/scss/app.scss */
 .codepen {
   color: #0ebeff;
 }
 
-/* line 69, src/scss/app.scss */
+/* line 126, src/scss/app.scss */
 .github {
   color: #333;
 }
 
-/* line 72, src/scss/app.scss */
+/* line 129, src/scss/app.scss */
 .text-primary {
   color: #03a9f4;
 }
 
-/* line 75, src/scss/app.scss */
+/* line 132, src/scss/app.scss */
 .confetti {
   position: absolute;
   top: 0;
@@ -2136,21 +2262,21 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 75, src/scss/app.scss */
+  /* line 132, src/scss/app.scss */
   .confetti {
     background-size: 1440px auto;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 75, src/scss/app.scss */
+  /* line 132, src/scss/app.scss */
   .confetti {
     background-size: contain;
     background-position: center;
   }
 }
 
-/* line 96, src/scss/app.scss */
+/* line 153, src/scss/app.scss */
 .intro {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2170,32 +2296,32 @@ section .container {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
 }
 
-/* line 109, src/scss/app.scss */
+/* line 166, src/scss/app.scss */
 .intro .position {
   color: #b0bec5;
 }
 
-/* line 112, src/scss/app.scss */
+/* line 169, src/scss/app.scss */
 .intro .details {
   padding: 15px;
   z-index: 1;
 }
 
 @media (min-width: 1200px) {
-  /* line 112, src/scss/app.scss */
+  /* line 169, src/scss/app.scss */
   .intro .details {
     padding: 0;
   }
 }
 
-/* line 126, src/scss/app.scss */
+/* line 183, src/scss/app.scss */
 .intro .name-svg {
   vector-effect: non-scaling-stroke;
   width: 70vw;
   margin: 0 auto;
 }
 
-/* line 131, src/scss/app.scss */
+/* line 188, src/scss/app.scss */
 .intro .name-svg text {
   font-family: 'Ubuntu', sans-serif;
   font-size: 70px;
@@ -2203,23 +2329,23 @@ section .container {
   stroke-dashoffset: 100%;
 }
 
-/* line 138, src/scss/app.scss */
+/* line 195, src/scss/app.scss */
 .intro .name-svg tspan {
   letter-spacing: -2;
 }
 
-/* line 141, src/scss/app.scss */
+/* line 198, src/scss/app.scss */
 .intro .name-svg .hello-dot {
   stroke: #03a9f4;
 }
 
 @media all and (-ms-high-contrast: none) {
-  /* line 146, src/scss/app.scss */
+  /* line 203, src/scss/app.scss */
   .intro .name-svg text {
     fill: white;
     stroke-dashoffset: 0%;
   }
-  /* line 150, src/scss/app.scss */
+  /* line 207, src/scss/app.scss */
   .intro .name-svg .hello-dot {
     fill: #03a9f4;
     stroke: #03a9f4;
@@ -2227,7 +2353,7 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 126, src/scss/app.scss */
+  /* line 183, src/scss/app.scss */
   .intro .name-svg {
     width: 348px;
     height: 244px;
@@ -2235,7 +2361,7 @@ section .container {
 }
 
 @media (min-width: 1200px) {
-  /* line 126, src/scss/app.scss */
+  /* line 183, src/scss/app.scss */
   .intro .name-svg {
     width: 538px;
     height: 374px;
@@ -2300,13 +2426,13 @@ section .container {
   }
 }
 
-/* line 195, src/scss/app.scss */
+/* line 252, src/scss/app.scss */
 .about-me-parent {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
 }
 
 @media (min-width: 992px) {
-  /* line 198, src/scss/app.scss */
+  /* line 255, src/scss/app.scss */
   .about-me-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2316,26 +2442,26 @@ section .container {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  /* line 202, src/scss/app.scss */
+  /* line 259, src/scss/app.scss */
   .about-me-container .summary {
     width: 60%;
   }
 }
 
-/* line 209, src/scss/app.scss */
+/* line 266, src/scss/app.scss */
 .profile-links .btn {
   -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
   margin: 0 15px 15px 0;
 }
 
-/* line 213, src/scss/app.scss */
+/* line 270, src/scss/app.scss */
 .profile-links i {
   margin-right: 8px;
 }
 
 @media (max-width: 991.98px) {
-  /* line 217, src/scss/app.scss */
+  /* line 274, src/scss/app.scss */
   .profile-links .btn {
     font-size: 0.8rem;
     padding: 0.384rem 0.65rem;
@@ -2345,18 +2471,18 @@ section .container {
   }
 }
 
-/* line 225, src/scss/app.scss */
+/* line 282, src/scss/app.scss */
 .profile-links .icon-linkedin {
   position: relative;
 }
 
-/* line 227, src/scss/app.scss */
+/* line 284, src/scss/app.scss */
 .profile-links .icon-linkedin:before {
   position: relative;
   z-index: 1;
 }
 
-/* line 231, src/scss/app.scss */
+/* line 288, src/scss/app.scss */
 .profile-links .icon-linkedin:after {
   content: '';
   position: absolute;
@@ -2369,14 +2495,14 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 244, src/scss/app.scss */
+  /* line 301, src/scss/app.scss */
   .profile-links i {
     font-size: 23px;
     vertical-align: sub;
   }
 }
 
-/* line 250, src/scss/app.scss */
+/* line 307, src/scss/app.scss */
 .svg-bg {
   background-size: 95% auto;
   background-position: center;
@@ -2385,63 +2511,63 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 250, src/scss/app.scss */
+  /* line 307, src/scss/app.scss */
   .svg-bg {
     background-size: 80% auto;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 250, src/scss/app.scss */
+  /* line 307, src/scss/app.scss */
   .svg-bg {
     background-size: 60% auto;
   }
 }
 
-/* line 263, src/scss/app.scss */
+/* line 320, src/scss/app.scss */
 .info .item {
   display: inline-block;
   margin-right: 10px;
 }
 
-/* line 264, src/scss/app.scss */
+/* line 321, src/scss/app.scss */
 .info .item * {
   vertical-align: middle;
 }
 
-/* line 270, src/scss/app.scss */
+/* line 327, src/scss/app.scss */
 .info .item:first-child i {
   color: #b178f4;
 }
 
-/* line 274, src/scss/app.scss */
+/* line 331, src/scss/app.scss */
 .info .item:last-child {
   margin-right: 0;
 }
 
-/* line 276, src/scss/app.scss */
+/* line 333, src/scss/app.scss */
 .info .item:last-child i {
   color: #ff8c32;
 }
 
-/* line 281, src/scss/app.scss */
+/* line 338, src/scss/app.scss */
 .info .item:nth-child(2) i {
   color: #7af478;
 }
 
-/* line 285, src/scss/app.scss */
+/* line 342, src/scss/app.scss */
 .info .item i {
   font-size: 24px;
 }
 
-/* line 288, src/scss/app.scss */
+/* line 345, src/scss/app.scss */
 .info .item span {
   font-weight: 700;
   margin-left: 8px;
   letter-spacing: 1px;
 }
 
-/* line 296, src/scss/app.scss */
+/* line 353, src/scss/app.scss */
 .timeline .item {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #03a9f4), color-stop(0%, rgba(255, 255, 255, 0)));
   background-image: linear-gradient(#03a9f4 50%, rgba(255, 255, 255, 0) 0%);
@@ -2453,12 +2579,12 @@ section .container {
   padding-top: 0.01rem;
 }
 
-/* line 304, src/scss/app.scss */
+/* line 361, src/scss/app.scss */
 .timeline .item:first-child {
   padding-top: 0;
 }
 
-/* line 306, src/scss/app.scss */
+/* line 363, src/scss/app.scss */
 .timeline .item:first-child .position:before {
   width: 28px;
   height: 28px;
@@ -2470,12 +2596,12 @@ section .container {
           animation: glow 3s infinte;
 }
 
-/* line 316, src/scss/app.scss */
+/* line 373, src/scss/app.scss */
 .timeline .item:last-child {
   position: relative;
 }
 
-/* line 318, src/scss/app.scss */
+/* line 375, src/scss/app.scss */
 .timeline .item:last-child:before {
   content: '';
   width: 12px;
@@ -2487,12 +2613,12 @@ section .container {
   position: absolute;
 }
 
-/* line 331, src/scss/app.scss */
+/* line 388, src/scss/app.scss */
 .timeline .position {
   position: relative;
 }
 
-/* line 333, src/scss/app.scss */
+/* line 390, src/scss/app.scss */
 .timeline .position:before {
   content: '';
   width: 22px;
@@ -2509,28 +2635,28 @@ section .container {
   border: 2px dotted #03a9f4;
 }
 
-/* line 352, src/scss/app.scss */
+/* line 409, src/scss/app.scss */
 .timeline .f-phase ~ .item {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ffc107), color-stop(0%, rgba(255, 255, 255, 0)));
   background-image: linear-gradient(#ffc107 50%, rgba(255, 255, 255, 0) 0%);
 }
 
-/* line 354, src/scss/app.scss */
+/* line 411, src/scss/app.scss */
 .timeline .f-phase ~ .item .position:before {
   background-color: #ffc107;
   border: 2px dotted #ffc107;
 }
 
 @media (min-width: 768px) {
-  /* line 360, src/scss/app.scss */
+  /* line 417, src/scss/app.scss */
   .timeline .item {
     padding-left: 60px;
   }
-  /* line 362, src/scss/app.scss */
+  /* line 419, src/scss/app.scss */
   .timeline .item .position:before {
     left: -64px;
   }
-  /* line 366, src/scss/app.scss */
+  /* line 423, src/scss/app.scss */
   .timeline .item:first-child .position:before {
     left: -67px;
   }
@@ -2566,68 +2692,68 @@ section .container {
   }
 }
 
-/* line 385, src/scss/app.scss */
+/* line 442, src/scss/app.scss */
 .timeline-sec {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Where was</tspan><tspan x="40%"  dy="1em">I</tspan></text></svg>');
 }
 
-/* line 389, src/scss/app.scss */
+/* line 446, src/scss/app.scss */
 .skill-container + .skill-container {
   margin-top: 4rem;
 }
 
-/* line 392, src/scss/app.scss */
+/* line 449, src/scss/app.scss */
 .skill-container .skill-item {
   font-weight: bold;
 }
 
-/* line 395, src/scss/app.scss */
+/* line 452, src/scss/app.scss */
 .skill-container .skill-item + .skill-item {
   margin-top: 15px;
 }
 
-/* line 399, src/scss/app.scss */
+/* line 456, src/scss/app.scss */
 .skill-container .sub-header {
   color: #7af478;
 }
 
-/* line 402, src/scss/app.scss */
+/* line 459, src/scss/app.scss */
 .skill-container .anim-container {
   overflow: hidden;
 }
 
-/* line 405, src/scss/app.scss */
+/* line 462, src/scss/app.scss */
 .skill-container .anim-container .inner {
   height: 230px;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
-  /* line 388, src/scss/app.scss */
+  /* line 445, src/scss/app.scss */
   .skill-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 410, src/scss/app.scss */
+  /* line 467, src/scss/app.scss */
   .skill-container .anim-container .inner {
     height: 250px;
   }
-  /* line 413, src/scss/app.scss */
+  /* line 470, src/scss/app.scss */
   .skill-container .info-container {
     padding-top: 25px;
   }
-  /* line 417, src/scss/app.scss */
+  /* line 474, src/scss/app.scss */
   .skill-container .info-container {
     padding-left: 30px;
   }
-  /* line 420, src/scss/app.scss */
+  /* line 477, src/scss/app.scss */
   .skill-container .skill-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 424, src/scss/app.scss */
+  /* line 481, src/scss/app.scss */
   .skill-container .title:after {
     content: ':';
     font-family: inherit;
@@ -2635,12 +2761,12 @@ section .container {
   }
 }
 
-/* line 433, src/scss/app.scss */
+/* line 490, src/scss/app.scss */
 .skills-section {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What I can</tspan><tspan x="40%"  dy="1em">do</tspan></text></svg>');
 }
 
-/* line 437, src/scss/app.scss */
+/* line 494, src/scss/app.scss */
 .hire-me {
   background: #151515;
   font-weight: bold;
@@ -2650,21 +2776,21 @@ section .container {
           box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.71);
 }
 
-/* line 443, src/scss/app.scss */
+/* line 500, src/scss/app.scss */
 .hire-me .hire-text {
   font-size: 2rem;
   opacity: 0.05;
 }
 
 @media (min-width: 768px) {
-  /* line 443, src/scss/app.scss */
+  /* line 500, src/scss/app.scss */
   .hire-me .hire-text {
     font-size: 2.5rem;
   }
 }
 
 @supports (-webkit-background-clip: text) {
-  /* line 443, src/scss/app.scss */
+  /* line 500, src/scss/app.scss */
   .hire-me .hire-text {
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
@@ -2675,13 +2801,13 @@ section .container {
   }
 }
 
-/* line 462, src/scss/app.scss */
+/* line 519, src/scss/app.scss */
 .hire-me .bulb-container {
   width: 70px;
   position: relative;
 }
 
-/* line 465, src/scss/app.scss */
+/* line 522, src/scss/app.scss */
 .hire-me .bulb-container:before {
   content: '';
   position: absolute;
@@ -2696,72 +2822,72 @@ section .container {
   z-index: 0;
 }
 
-/* line 477, src/scss/app.scss */
+/* line 534, src/scss/app.scss */
 .hire-me .bulb-container .rays {
   display: none;
 }
 
-/* line 480, src/scss/app.scss */
+/* line 537, src/scss/app.scss */
 .hire-me .bulb-container .cls-1 {
   fill: #8d8382;
 }
 
-/* line 483, src/scss/app.scss */
+/* line 540, src/scss/app.scss */
 .hire-me .bulb-container .cls-2 {
   fill: #504742;
 }
 
-/* line 486, src/scss/app.scss */
+/* line 543, src/scss/app.scss */
 .hire-me .bulb-container .cls-3 {
   fill: #848484;
 }
 
-/* line 489, src/scss/app.scss */
+/* line 546, src/scss/app.scss */
 .hire-me .bulb-container .cls-4 {
   fill: #fff;
 }
 
-/* line 492, src/scss/app.scss */
+/* line 549, src/scss/app.scss */
 .hire-me .bulb-container svg {
   position: relative;
   z-index: 1;
 }
 
 @media (min-width: 768px) {
-  /* line 462, src/scss/app.scss */
+  /* line 519, src/scss/app.scss */
   .hire-me .bulb-container {
     width: 100px;
   }
 }
 
-/* line 501, src/scss/app.scss */
+/* line 558, src/scss/app.scss */
 .hire-me .bulb-container.entered:before {
   -webkit-box-shadow: 0 0 75px 41px rgba(255, 197, 12, 0.27);
           box-shadow: 0 0 75px 41px rgba(255, 197, 12, 0.27);
   background-color: #ffc50c;
 }
 
-/* line 506, src/scss/app.scss */
+/* line 563, src/scss/app.scss */
 .hire-me .bulb-container.entered + .hire-text {
   opacity: 1;
 }
 
-/* line 509, src/scss/app.scss */
+/* line 566, src/scss/app.scss */
 .hire-me .bulb-container.entered .rays {
   display: block;
 }
 
-/* line 512, src/scss/app.scss */
+/* line 569, src/scss/app.scss */
 .hire-me .bulb-container.entered .cls-3 {
   fill: #ffc50c;
 }
 
-/* line 517, src/scss/app.scss */
+/* line 574, src/scss/app.scss */
 .hire-me .left-sec {
   font-size: 1.25rem;
 }
 
-/* line 520, src/scss/app.scss */
+/* line 577, src/scss/app.scss */
 .hire-me .right-sec {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
@@ -2770,19 +2896,19 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 520, src/scss/app.scss */
+  /* line 577, src/scss/app.scss */
   .hire-me .right-sec {
     padding: 0;
   }
 }
 
-/* line 527, src/scss/app.scss */
+/* line 584, src/scss/app.scss */
 .hire-me .level {
   font-size: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  /* line 527, src/scss/app.scss */
+  /* line 584, src/scss/app.scss */
   .hire-me .level {
     position: relative;
     top: -10px;
@@ -2791,7 +2917,7 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 437, src/scss/app.scss */
+  /* line 494, src/scss/app.scss */
   .hire-me {
     width: 880px;
     display: -webkit-box;
@@ -2809,21 +2935,21 @@ section .container {
 }
 
 @media (min-width: 768px) {
-  /* line 546, src/scss/app.scss */
+  /* line 603, src/scss/app.scss */
   .all-projects {
     padding: 0px 100px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 550, src/scss/app.scss */
+  /* line 607, src/scss/app.scss */
   .all-projects > * {
     width: 50%;
     padding: 25px;
   }
 }
 
-/* line 558, src/scss/app.scss */
+/* line 615, src/scss/app.scss */
 .project {
   background: #151515;
   -webkit-box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.71);
@@ -2833,25 +2959,25 @@ section .container {
   margin-top: 60px;
 }
 
-/* line 564, src/scss/app.scss */
+/* line 621, src/scss/app.scss */
 .project .title {
   color: white;
   text-transform: uppercase;
 }
 
-/* line 568, src/scss/app.scss */
+/* line 625, src/scss/app.scss */
 .project img {
   max-width: 230px;
   margin: auto;
 }
 
-/* line 573, src/scss/app.scss */
+/* line 630, src/scss/app.scss */
 .project strong {
   color: white;
   letter-spacing: 0.07rem;
 }
 
-/* line 577, src/scss/app.scss */
+/* line 634, src/scss/app.scss */
 .project .img-container {
   border-radius: 15px;
   height: 200px;
@@ -2865,32 +2991,32 @@ section .container {
   display: flex;
 }
 
-/* line 587, src/scss/app.scss */
+/* line 644, src/scss/app.scss */
 .project .p-link {
   text-decoration: none;
   letter-spacing: 1px;
   color: grey;
 }
 
-/* line 594, src/scss/app.scss */
+/* line 651, src/scss/app.scss */
 .meetgreen {
   background: -webkit-gradient(linear, left top, left bottom, from(#FC1E68), color-stop(48.07%, #FA413D), to(#FF5F35));
   background: linear-gradient(180deg, #FC1E68 0%, #FA413D 48.07%, #FF5F35 100%);
 }
 
-/* line 597, src/scss/app.scss */
+/* line 654, src/scss/app.scss */
 .grassdoor {
   background: -webkit-gradient(linear, left top, left bottom, from(#00AA69), to(#00B06C));
   background: linear-gradient(180deg, #00AA69 0%, #00B06C 100%);
 }
 
-/* line 600, src/scss/app.scss */
+/* line 657, src/scss/app.scss */
 .ticlet {
   background: -webkit-gradient(linear, left top, left bottom, from(#6164C1), to(#4448C0));
   background: linear-gradient(180deg, #6164C1 0%, #4448C0 100%);
 }
 
-/* line 603, src/scss/app.scss */
+/* line 660, src/scss/app.scss */
 .mwell {
   background: -webkit-gradient(linear, left top, left bottom, from(#00AEEF), to(#00A1DC));
   background: linear-gradient(180deg, #00AEEF 0%, #00A1DC 100%);

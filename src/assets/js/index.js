@@ -17,7 +17,6 @@ function generateArray(count) {
   for (var i = interval; i <= 1.0; i += interval) {
     parallaxArray.push(parseFloat(i.toFixed(2)));
   }
-  console.log("parallax array ", parallaxArray);
   return parallaxArray;
 }
 
@@ -27,6 +26,8 @@ window.onload = function (e) {
   var bulbContainer = document.querySelector('.bulb-container');
   var parallaxTrigger = document.querySelector('#parallaxTrigger');
   var confetti = document.querySelector('.confetti');
+  var menuBtn = document.querySelector('#menuBtn');
+  var sideMenu = document.querySelector('.side-menu');
   //var expert = document.querySelectorAll('[data-skillLevel="Expert"]');
   //var intermediate = document.querySelectorAll(
   //'[data-skillLevel="Intermediate"]'
@@ -80,9 +81,6 @@ window.onload = function (e) {
   }, hireMeConfig);
   hireMeObserver.observe(hireMeTrigger);
 
-
-
-
   var parallaxConfig = {
     threshold:generateArray(100),
   };
@@ -98,6 +96,10 @@ window.onload = function (e) {
   //loader.parentNode.removeChild(loader);
   //loader.classList.add('bottom-zero');
   document.body.classList.add("loaded");
+
+  menuBtn.addEventListener('click', function () {
+    sideMenu.classList.toggle('loaded');
+  })
 };
 
 

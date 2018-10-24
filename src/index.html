@@ -34,6 +34,7 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://gautamnaik.netlify.com" />
     <style>
+
         .loader{
   position: fixed;
   top: 0;
@@ -140,7 +141,9 @@
     transform: rotate(360deg);
   }
 }
-
+.side-menu{
+    display: none;
+}
       
             </style>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet">
@@ -158,10 +161,25 @@
         </div>
 
     </div>
+    <div class ="side-menu ">
+        <div class="inner">
+            <ul>
+                <li class="item"> <a href="#"> <span>01</span><span>Main</span> </a></li>
+                <li class="item"> <a href="#"> <span>02</span><span>About Me</span> </a></li>
+                <li class="item"> <a href="#"> <span>03</span><span>Skills</span> </a></li>
+                <li class="item"> <a href="#"> <span>04</span><span>Timeline</span> </a></li>
+                <li class="item"> <a href="#"> <span>05</span><span>My Projects</span> </a></li>
+                <li class="item"> <a href="#"> <span>06</span><span>Other Things</span> </a></li>
+                <li class="item"> <a href="#"> <span>07</span><span>Contact</span> </a></li>
+            </ul>
+        </div>
 
+       
+
+    </div>
     <nav class="d-flex space-between">
         <div class="icon-logo"></div>
-        <div class="menu-btn"></div>
+        <button class="menu-btn" id="menuBtn">MENU</button>
     </nav>
     <section class="intro svg-bg">
         <div class="confetti"></div>

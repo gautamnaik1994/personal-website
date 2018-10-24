@@ -16,6 +16,7 @@
 @import './components/frontend-dev-anim';
 @import './components/gamedev-anim';
 
+$startTimeout:0.8s;
 
 body.loaded{
   .loader{
@@ -24,13 +25,69 @@ body.loaded{
   .name-svg {
     text {
     
-      animation: draw 4s 0.8s forwards;
+      animation: draw 4s $startTimeout forwards;
     }
     .hello-dot {
-      animation: drawDot 3s 0.8s forwards;
+      animation: drawDot 3s $startTimeout forwards;
     }
   
 }
+}
+.side-menu{
+  position: fixed;
+  top:0;
+  right: 0;
+  left:0;
+  bottom: 0;
+  background: #151515;
+  z-index: 9998;
+
+  .inner{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ul{
+    list-style-type: none;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .item{
+    transform: translateY(100vh);
+    &+.item{
+      margin-top:10px; 
+    }
+    a{
+      text-decoration: none;
+      font-size: 1.8rem;
+      color:$body-text-color;
+      letter-spacing: 1px;
+    }
+    span:first-child{
+      display: none;
+    }
+  }
+  &.loaded{
+    display: block;
+    @for $i from 0 through 6 {
+    $delay:$i*0.1s;
+    .item:nth-child(#{$i+1}) {
+      animation: slideUp 0.8s $delay cubic-bezier(0,.63,.68,1) forwards;
+     }
+  }
+  }
+  
+
+}
+@keyframes slideUp{
+  from{
+    transform:translateY(100vh); 
+  }
+  to{
+    transform:translateY(0); 
+  }
 }
 
 .section-header {
