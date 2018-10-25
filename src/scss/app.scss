@@ -16,77 +16,73 @@
 @import './components/frontend-dev-anim';
 @import './components/gamedev-anim';
 
-$startTimeout:0.8s;
+$startTimeout: 0.8s;
 
-body.loaded{
-  .loader{
+body.loaded {
+  .loader {
     bottom: 100%;
   }
   .name-svg {
     text {
-    
       animation: draw 4s $startTimeout forwards;
     }
     .hello-dot {
       animation: drawDot 3s $startTimeout forwards;
     }
-  
+  }
 }
-}
-.side-menu{
+.side-menu {
   position: fixed;
-  top:0;
+  top: 0;
   right: 0;
-  left:0;
+  left: 0;
   bottom: 0;
   background: #151515;
   z-index: 9998;
 
-  .inner{
+  .inner {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  ul{
+  ul {
     list-style-type: none;
     margin-bottom: 0;
     padding: 0;
     text-align: center;
   }
-  .item{
+  .item {
     transform: translateY(100vh);
-    &+.item{
-      margin-top:10px; 
+    & + .item {
+      margin-top: 10px;
     }
-    a{
+    a {
       text-decoration: none;
       font-size: 1.8rem;
-      color:$body-text-color;
+      color: $body-text-color;
       letter-spacing: 1px;
     }
-    span:first-child{
+    span:first-child {
       display: none;
     }
   }
-  &.loaded{
+  &.loaded {
     display: block;
     @for $i from 0 through 6 {
-    $delay:$i*0.1s;
-    .item:nth-child(#{$i+1}) {
-      animation: slideUp 0.8s $delay cubic-bezier(0,.63,.68,1) forwards;
-     }
+      $delay: $i * 0.1s;
+      .item:nth-child(#{$i + 1}) {
+        animation: slideUp 0.8s $delay cubic-bezier(0, 0.63, 0.68, 1) forwards;
+      }
+    }
   }
-  }
-  
-
 }
-@keyframes slideUp{
-  from{
-    transform:translateY(100vh); 
+@keyframes slideUp {
+  from {
+    transform: translateY(100vh);
   }
-  to{
-    transform:translateY(0); 
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -190,7 +186,7 @@ section .container {
       font-size: 70px;
       stroke-dasharray: 128%;
       stroke-dashoffset: 100%;
-     // animation: draw 4s forwards;
+      // animation: draw 4s forwards;
     }
     tspan {
       letter-spacing: -2;
@@ -593,7 +589,6 @@ section .container {
     }
   }
   @include media-breakpoint-up(md) {
-;
     display: flex;
     padding: 30px;
     justify-content: space-between;
@@ -605,39 +600,33 @@ section .container {
   }
 }
 
-
-.all-projects{
-  
-  .inner{
+.all-projects {
+  .inner {
     @include media-breakpoint-up(md) {
       display: flex;
-      &>*{
-        width:50%;
+      & > * {
+        width: 50%;
         padding: 0 15px;
       }
-      .left-sec{
+      .left-sec {
         padding-left: 0;
       }
-      .right-sec{
+      .right-sec {
         padding-right: 0;
       }
     }
-    
   }
   @include media-breakpoint-up(lg) {
     padding: 0px 150px;
-    .inner{
-      &>*{
-   
+    .inner {
+      & > * {
         padding: 0 25px;
       }
     }
-
   }
 }
 
-
-.project{
+.project {
   background: #151515;
   box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.71);
   border-radius: 15px;
@@ -645,7 +634,7 @@ section .container {
   margin-top: 60px;
 
   @include media-breakpoint-up(md) {
-    &:first-child{
+    &:first-child {
       margin-top: 40px;
     }
   }
@@ -653,20 +642,20 @@ section .container {
   //   margin-top: 40px;
   // }
 
-  .title{
+  .title {
     color: white;
     text-transform: uppercase;
   }
-  img{
+  img {
     max-width: 230px;
     margin: auto;
     // max-height: 70px;
   }
-  strong{
+  strong {
     color: white;
     letter-spacing: 0.07rem;
   }
-  .img-container{
+  .img-container {
     border-radius: 15px;
     height: 200px;
 
@@ -676,22 +665,30 @@ section .container {
     margin-bottom: -20px;
     display: flex;
   }
-  .p-link{
-    text-decoration: none;
+  .p-link {
     letter-spacing: 1px;
-    color:grey;
   }
 }
 
-.meetgreen{
-  background: linear-gradient(180deg, #FC1E68 0%, #FA413D 48.07%, #FF5F35 100%);
+.meetgreen {
+  background: linear-gradient(180deg, #fc1e68 0%, #fa413d 48.07%, #ff5f35 100%);
 }
-.grassdoor{
-  background: linear-gradient(180deg, #00AA69 0%, #00B06C 100%);
+.grassdoor {
+  background: linear-gradient(180deg, #00aa69 0%, #00b06c 100%);
 }
-.ticlet{
-  background: linear-gradient(180deg, #6164C1 0%, #4448C0 100%);
+.ticlet {
+  background: linear-gradient(180deg, #6164c1 0%, #4448c0 100%);
 }
-.mwell{
-  background: linear-gradient(180deg, #00AEEF 0%, #00A1DC 100%);
+.mwell {
+  background: linear-gradient(180deg, #00aeef 0%, #00a1dc 100%);
+}
+.alert-info {
+  border-left: 5px solid $primary;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+.projects-section {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
+  1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"
+  fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What have I</tspan><tspan x="40%"  dy="1em">done</tspan></text></svg>');
 }
