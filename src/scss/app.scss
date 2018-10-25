@@ -578,7 +578,7 @@ section .container {
     font-size: 1.25rem;
   }
   .right-sec {
-    align-items: baseline;
+    align-items: center;
     padding-top: 15px;
     @include media-breakpoint-up(md) {
       padding: 0;
@@ -595,13 +595,13 @@ section .container {
   @include media-breakpoint-up(md) {
 ;
     display: flex;
-    padding: 50px 50px;
+    padding: 30px;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
   }
   @include media-breakpoint-up(lg) {
-    width: 880px;
+    width: 800px;
   }
 }
 
@@ -625,7 +625,7 @@ section .container {
     
   }
   @include media-breakpoint-up(lg) {
-    padding: 0px 100px;
+    padding: 0px 150px;
     .inner{
       &>*{
    
