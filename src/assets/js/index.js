@@ -10,6 +10,16 @@
 //     console.log(myJson);
 //   });
 var deferredPrompt;
+// var clickSound = new Audio('./assets/sound/click.mp3');
+var clickSound = document.querySelector('#clickSound');
+var hireMeTrigger = document.querySelector('#hireMeTrigger');
+var bulbContainer = document.querySelector('.bulb-container');
+var parallaxTrigger = document.querySelector('#aboutMe');
+var confetti = document.querySelector('.confetti');
+var menuBtn = document.querySelector('#menuBtn');
+var sideMenu = document.querySelector('.side-menu');
+var menuLinks = document.querySelectorAll('#sideMenuUl a');
+
 
 var parallaxArray = [];
 function generateArray(count) {
@@ -21,13 +31,8 @@ function generateArray(count) {
 }
 
 window.onload = function (e) {
-  var clickSound = new Audio('./assets/sound/click.mp3');
-  var hireMeTrigger = document.querySelector('#hireMeTrigger');
-  var bulbContainer = document.querySelector('.bulb-container');
-  var parallaxTrigger = document.querySelector('#parallaxTrigger');
-  var confetti = document.querySelector('.confetti');
-  var menuBtn = document.querySelector('#menuBtn');
-  var sideMenu = document.querySelector('.side-menu');
+  clickSound.volume=0.1;
+ 
   //var expert = document.querySelectorAll('[data-skillLevel="Expert"]');
   //var intermediate = document.querySelectorAll(
   //'[data-skillLevel="Intermediate"]'
@@ -72,10 +77,12 @@ window.onload = function (e) {
     // console.log('observer:', hireMeObserver);
     if (entry[0].intersectionRatio > 0) {
       bulbContainer.classList.add('entered');
+
       clickSound.play();
       //observer.unobserve(entry.target);
     } else {
       bulbContainer.classList.remove('entered');
+
       clickSound.play();
     }
   }, hireMeConfig);
@@ -97,12 +104,23 @@ window.onload = function (e) {
   //loader.classList.add('bottom-zero');
   document.body.classList.add("loaded");
 
-  menuBtn.addEventListener('click', function () {
-    sideMenu.classList.toggle('loaded');
-    menuBtn.classList.toggle('open');
-  })
+  menuBtn.addEventListener('click', toggleMenu);
+
+  for(var a=0;a < menuLinks.length; a++){
+    menuLinks[a].addEventListener('click',toggleMenu);
+  }
 };
 
+function toggleMenu(){
+  sideMenu.classList.toggle('loaded');
+  menuBtn.classList.toggle('open');
+}
+
+// function scrollToView(e){
+//  var elem=document.querySelector(e.srcElement.getAttribute("data-href"));
+//  toggleMenu();
+//  elem.scrollIntoView({behavior: "smooth"});
+// }
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {

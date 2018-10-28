@@ -145,7 +145,7 @@ gulp.task('serve', gulp.series('sass', function (done) {
     browserSync.init({
         server: "./src",
         port: 8080,
-plugins: ['bs-console-qrcode'],
+//plugins: ['bs-console-qrcode'],
     });
     gulp.watch(src.scss, gulp.series('sass', function (done) {
         done()

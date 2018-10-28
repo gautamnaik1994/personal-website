@@ -143,6 +143,7 @@
 }
 .side-menu{
     display: none;
+
 }
 
         </style>
@@ -154,6 +155,9 @@
 </head>
 
 <body>
+    <aside>
+        <audio id="clickSound" src="./assets/sound/click.mp3"></audio>
+    </aside>
     <div class="loader">
         <div>
             <div class="loader-inner"></div>
@@ -162,15 +166,19 @@
 
     </div>
     <div class="side-menu ">
-        <div class="inner">
-            <ul>
-                <li class="item"> <a href="#"> <span>01</span><span>Main</span> </a></li>
-                <li class="item"> <a href="#"> <span>02</span><span>About Me</span> </a></li>
-                <li class="item"> <a href="#"> <span>03</span><span>Skills</span> </a></li>
-                <li class="item"> <a href="#"> <span>04</span><span>Timeline</span> </a></li>
-                <li class="item"> <a href="#"> <span>05</span><span>My Projects</span> </a></li>
-                <li class="item"> <a href="#"> <span>06</span><span>Other Things</span> </a></li>
-                <li class="item"> <a href="#"> <span>07</span><span>Contact</span> </a></li>
+        <div class="inner container">
+            <div class="menu-txt">
+            Menu
+            </div>
+            <ul id="sideMenuUl">
+                <li class="item"> <a href="#main" class="title">Main<div class="num">01</div> </a></li>
+                <li class="item"> <a href="#aboutMe" class="title">About Me<div class="num">02</div> </a></li>
+                <li class="item"> <a href="#skills" class="title">Skills<div class="num">03</div> </a></li>
+                <li class="item"> <a href="#timeline" class="title">Timeline<div class="num">04</div> </a></li>
+                <li class="item"> <a href="#projects" class="title">My Projects<div class="num">05</div> </a></li>
+                <li class="item"> <a href="#otherThings" class="title">Other Things<div class="num">06</div> </a></li>
+                <!-- <li class="item"> <a href="#" class="title">Contact<div class="num">07</div> </a></li> -->
+
             </ul>
         </div>
     </div>
@@ -185,7 +193,7 @@
         </button>
 
     </nav>
-    <section class="intro svg-bg">
+    <section class="intro svg-bg" id="main">
         <div class="confetti"></div>
         <div class="details">
             <svg viewBox="0 0 256 180" class="name-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -201,7 +209,7 @@
             </h2>
         </div>
     </section>
-    <section class="is-relative about-me-parent svg-bg" id="parallaxTrigger">
+    <section class="is-relative about-me-parent svg-bg" id="aboutMe">
         <div class="container ">
             <div class="section-header ">
                 <i class="icon-zigzag text-primary"></i>
@@ -320,7 +328,7 @@
             </div>
         </div>
     </section>
-    <section class="skills-section svg-bg">
+    <section class="skills-section svg-bg" id="skills">
         <div class="container">
             <div class="section-header ">
                 <i class="icon-zigzag text-primary"></i>
@@ -556,7 +564,7 @@
     </section>
 
 
-    <section class="timeline-sec svg-bg ">
+    <section class="timeline-sec svg-bg " id="timeline">
         <div class="container">
             <div class="section-header ">
                 <i class="icon-zigzag text-primary"></i>
@@ -626,7 +634,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section >
         <div class="container">
             <div class="hire-me">
                 <div class="left-sec">Want someone to take </br> your product to the next
@@ -655,7 +663,7 @@
             </div>
         </div>
     </section>
-    <section class="projects-section svg-bg">
+    <section class="projects-section svg-bg" id="projects">
         <div class="container">
             <div class="section-header ">
                 <i class="icon-zigzag text-primary"></i>
@@ -829,21 +837,29 @@
                                 </div> -->
         </div>
     </section>
-    <section class=" ">
-        <div class="container other-things">
-            <h2 class="section-header">Some Other Things</h2>
-            <h3 class="sub-header">Stackoverflow
-                <span class="text-muted"> (Just, Showing Off) </span>
-            </h3>
+    <section class="other-things-sec svg-bg" id="otherThings">
+        <div class="container ">
+            <div class="section-header ">
+                <i class="icon-zigzag text-primary"></i>
+                <div class="inner">
+                   SOME OTHER</br>THINGS<span class="text-primary">.</span>
+                </div>
+            </div>
+            <div class="item">
+                 <h3 class="sub-header ">Stackoverflow Flair</h3>
             <a href="https://stackoverflow.com/users/2376317/gautam-naik" target="_blank" rel="noopener" aria-label="Stack Overflow Flair">
                 <img src="https://stackoverflow.com/users/flair/2376317.png" width="208" height="58" alt="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
                     title="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
             </a>
-            <!--<h3 class="sub-header">Github Chart</h3>-->
-            <!--<a href="https://github.com/gautamnaik1994" class="github-img-container" target="_blank" rel="noopener"-->
-            <!--aria-label="Gautam Naik's Github chart">-->
-            <!--<img src="https://ghchart.rshah.org/00ac4b/gautamnaik1994" alt="Gautam Naik's Github chart" />-->
-            <!--</a>-->
+            </div>
+           <div class="item github-graph">
+   <h3 class="sub-header four-rem-mt">Github Chart</h3>
+            <a href="https://github.com/gautamnaik1994" class="github-img-container" target="_blank" rel="noopener"
+            aria-label="Gautam Naik's Github chart">
+            <img src="https://ghchart.rshah.org/0ebeff/gautamnaik1994" alt="Gautam Naik's Github chart" />
+           </a>
+           </div>
+         
         </div>
     </section>
     <!-- <section class=" ">

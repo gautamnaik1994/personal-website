@@ -18,6 +18,12 @@
 
 $startTimeout: 0.8s;
 
+html {
+  scroll-behavior: smooth;
+}
+aside{
+  display: none;
+}
 body.loaded {
   .loader {
     bottom: 100%;
@@ -41,10 +47,14 @@ body.loaded {
   z-index: 9998;
 
   .inner {
+    position: relative;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    @include media-breakpoint-up(md) {
+      justify-content: flex-end;
+    }
   }
   ul {
     list-style-type: none;
@@ -62,9 +72,69 @@ body.loaded {
       font-size: 1.8rem;
       color: $body-text-color;
       letter-spacing: 1px;
+      display: block;
     }
-    span:first-child {
+    .num {
       display: none;
+    }
+    @include media-breakpoint-up(md) {
+      $menu-width:300px;
+      $menu-transition-time:0.2s;
+      text-align: left;
+      .num {
+        transform:translateY(-50%) rotate(-90deg);
+        font-size: 0.7rem;
+        position: absolute;
+        right: 0;
+        top:50%;
+        display: block;
+        transition: transform $menu-transition-time ease-in;
+      }
+  
+      .title {
+        // padding-left: 200px; 
+        font-size: 1.4rem;
+        min-width: $menu-width;
+        position: relative;
+        &:before{
+          content: " ";
+          width: 0px;
+          height: 10px;
+          display: inline-block;
+          transition: width $menu-transition-time ease-in;
+        }
+        &:after {
+          content: '';
+          transition: all $menu-transition-time ease-in;
+          height: 3px;
+          background-color: $primary;
+          box-shadow: 0px 0px 0px 0px #03a9f4;
+          position: absolute;
+          left: 0;
+          right: $menu-width;
+          top: 50%;
+          z-index: -1;
+          transform: perspective(382px) translateY(-50%) rotateY(43deg);
+          transform-origin: left;
+        }
+      }
+      
+      &:hover {
+        .num {
+          transform:translateY(-50%) rotate(0deg);
+        }
+        .title {
+          &:before{
+            width: 10px;
+            
+          }
+      
+          &:after {
+            right: -1000px;
+            box-shadow: 0px 0px 20px 4px #03a9f4;
+          }
+        }
+      }
     }
   }
   &.loaded {
@@ -74,6 +144,19 @@ body.loaded {
       .item:nth-child(#{$i + 1}) {
         animation: slideUp 0.8s $delay cubic-bezier(0, 0.63, 0.68, 1) forwards;
       }
+    }
+  }
+  .menu-txt {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      position: absolute;
+      left: 100px;
+      /* top: 50%; */
+      font-size: 10rem;
+      font-weight: bold;
+      color: rgb(34, 34, 34);
     }
   }
 }
@@ -649,6 +732,9 @@ section .container {
   img {
     max-width: 230px;
     margin: auto;
+    object-fit: contain;
+    max-height: 200px;
+    max-height: 100px;
     // max-height: 70px;
   }
   strong {
@@ -685,10 +771,32 @@ section .container {
 .alert-info {
   border-left: 5px solid $primary;
   border-radius: 5px;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .projects-section {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
   1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"
-  fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What have I</tspan><tspan x="40%"  dy="1em">done</tspan></text></svg>');
+  fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What have</tspan><tspan x="20%"  dy="1em">I done</tspan></text></svg>');
 }
+
+.other-things-sec{
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
+  1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"
+  fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Showing</tspan><tspan x="30%"  dy="1em">off</tspan></text></svg>');
+  .sub-header {
+    color: $green;
+  }
+  .item{
+    &+.item{
+      margin-top: 3rem;
+    }
+  }
+  .github-graph{
+  a{
+    overflow: auto;
+    width: 100%;
+    display: block;
+}
+  }
+  }
+
