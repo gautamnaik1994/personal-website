@@ -59,3 +59,13 @@ fieldset:disabled a.btn {
   color: #d2d2d2;
   background-color: #363636;
 }
+
+a.btn-primary:hover{
+  background-color: darken( $primary, 9%);
+  color:white;
+}
+
+a.btn-dark:hover{
+  background-color: darken( #363636, 3%);
+  color: $body-text-color;
+}
