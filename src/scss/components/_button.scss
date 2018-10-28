@@ -1,7 +1,6 @@
 .btn {
-  
   display: inline-block;
-  font-weight: 400;
+  font-weight: 700;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -10,11 +9,12 @@
   -ms-user-select: none;
   user-select: none;
   border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
+  padding: 0.584rem 1.55rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 7px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -47,17 +47,25 @@ a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
-.btn-white{
-  color: #333;
-  text-decoration: none;
-  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13);
-  padding: 6px 24px;
-  background-color: #fff;
+.btn-primary {
+  background-color: $primary;
+  color: white;
 }
-.btn-dark{
-  color: #989898;
-  text-decoration: none;
-  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.13); 
-  padding: 6px 24px;
-  background-color: #545454;
+.btn-white {
+  background-color: #fff;
+  color: $body-text-color;
+}
+.btn-dark {
+  color: #d2d2d2;
+  background-color: #363636;
+}
+
+a.btn-primary:hover{
+  background-color: darken( $primary, 9%);
+  color:white;
+}
+
+a.btn-dark:hover{
+  background-color: darken( #363636, 3%);
+  color: $body-text-color;
 }

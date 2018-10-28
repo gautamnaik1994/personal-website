@@ -1,6 +1,6 @@
 :root {
-  --body-background-color: white;
-  --text-color: #333;
+  --body-background-color: #1b1b1b;
+  --text-color: white;
 }
 
 $font-family-sans-serif: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont,
@@ -11,20 +11,23 @@ $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
-  lg: 992px
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1500px
 );
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px
+  lg: 960px,
+  xl: 1140px
 );
 $light-black: hsl(0, 0%, 25%);
 $light-text: hsl(0, 0%, 75%);
+$green: #7af478;
+$violet: #b178f4;
 
-$green: #00ac4b;
-
-$orange: #f6914f;
+$orange: #ff8c32;
 $red: #d12229;
 $blue: #00bcd4;
 $primary: #03a9f4;
@@ -34,4 +37,7 @@ $codepen: #0ebeff;
 $stackoveflow: #f48024;
 $stackoveflow-secondary: #bcbbbb;
 $github: #333;
-$body-text-color: #333;
+$body-text-color: hsla(0, 0%, 100%, 0.88);
+$body-background-color: #1b1b1b;
+$colors: ();
+$theme-colors: ();

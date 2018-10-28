@@ -6,6 +6,7 @@ var reload = browserSync.reload;
 var uglify = require('gulp-uglify');
 var pump = require('pump');
 workbox = require('workbox-build');
+var sourcemaps = require('gulp-sourcemaps');
 
 var src = {
     scss: 'src/scss/**/*.scss',
@@ -15,9 +16,9 @@ var src = {
 
 gulp.task('sass', function (done) {
     return gulp.src('src/scss/app.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass({
-            outputStyle: 'expanded',
-            sourceComments: 'map'
+            outputStyle: 'compact',
         }, {
             errLogToConsole: true
         }))
@@ -26,6 +27,8 @@ gulp.task('sass', function (done) {
 
             this.emit('end');
         })
+        .pipe(sourcemaps.write())
+.pipe(sourcemaps.init({loadMaps: true}))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", "Android 2", "Firefox ESR"))
         .pipe(gulp.dest('src/assets/css'))
         .pipe(reload({
@@ -69,7 +72,7 @@ gulp.task('gsw', () => {
     return workbox.generateSW({
         globDirectory: dist,
         globPatterns: [
-            '**/*.{html,js,png,ttf,svg,woff,woff2,eot,pdf,css,json,ico,xml}'
+            '**/*.{html,js,png,ttf,svg,woff,woff2,eot,pdf,css,json,ico,xml,mp3}'
         ],
         swDest: `${dist}/sw.js`,
         clientsClaim: true,
@@ -141,7 +144,8 @@ gulp.task('gsw', () => {
 gulp.task('serve', gulp.series('sass', function (done) {
     browserSync.init({
         server: "./src",
-        port: 8080
+        port: 8080,
+//plugins: ['bs-console-qrcode'],
     });
     gulp.watch(src.scss, gulp.series('sass', function (done) {
         done()
