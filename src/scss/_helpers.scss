@@ -9,6 +9,9 @@
 .normal-font {
   font-weight: normal;
 }
+.one-rem-font {
+  font-size: 1rem !important;
+}
 .medium {
   font-weight: 500;
 }
@@ -78,4 +81,8 @@
 
 .white-color {
   color: white;
+}
+
+.primary-color {
+  color: $primary !important;
 }
