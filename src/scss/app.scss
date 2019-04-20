@@ -240,7 +240,7 @@ section .container {
   position: relative;
   align-items: center;
   flex-direction: column;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="serif"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Designer &amp; </tspan> <tspan x="35" dy="1em">Developer</tspan></text></svg>');
 
   // perspective: 1px;
   // overflow-x: hidden;
@@ -333,7 +333,7 @@ section .container {
 }
 
 .about-me-parent {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="serif"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Who am I</tspan></text></svg>');
 }
 .about-me-container {
   @include media-breakpoint-up(lg) {
@@ -523,7 +523,7 @@ section .container {
   }
 }
 .timeline-sec {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Where was</tspan><tspan x="40%"  dy="1em">I</tspan></text></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="serif"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Where was</tspan><tspan x="40%"  dy="1em">I</tspan></text></svg>');
 }
 .skill-container {
   & + .skill-container {
@@ -574,7 +574,7 @@ section .container {
 }
 
 .skills-section {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What I can</tspan><tspan x="40%"  dy="1em">do</tspan></text></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1287 550"><text x="0" y="0" font-family="serif"  font-size="248" font-weight="bold" fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What I can</tspan><tspan x="40%"  dy="1em">do</tspan></text></svg>');
 }
 
 .hire-me {
@@ -785,13 +785,13 @@ section .container {
 }
 .projects-section {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
-  1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"
+  1287 550"><text x="0" y="0" font-family="serif"  font-size="248" font-weight="bold"
   fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">What have</tspan><tspan x="20%"  dy="1em">I done</tspan></text></svg>');
 }
 
 .other-things-sec {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
-  1287 550"><text x="0" y="0" font-family="IBM Plex Sans"  font-size="248" font-weight="bold"
+  1287 550"><text x="0" y="0" font-family="serif"  font-size="248" font-weight="bold"
   fill="rgb(34, 34, 34)"><tspan x="0" dy="1em">Showing</tspan><tspan x="30%"  dy="1em">off</tspan></text></svg>');
   .sub-header {
     color: $green;
