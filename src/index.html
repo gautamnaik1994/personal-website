@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="Description" content="Personal website of Gautam Naik, who is the best UX Designer, UI Designer, Frontend Developer, HTML, CSS developer, Website designer, and also a Game Developer in Goa India">
+    <meta name="Description"
+        content="Personal website of Gautam Naik, who is the best UX Designer, UI Designer, Frontend Developer, HTML, CSS developer, Website designer, and also a Game Developer in Goa India">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,
@@ -12,12 +13,14 @@
     <meta name="apple-mobile-web-app-title" content="Gautam Naik">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:title" content="Gautam Naik">
-    <meta property="og:description" content="Personal website of Gautam Naik, who is the best UX Designer, UI Designer, Frontend Developer, HTML, CSS developer, Website designer, and also a Game Developer in Goa India">
+    <meta property="og:description"
+        content="Personal website of Gautam Naik, who is the best UX Designer, UI Designer, Frontend Developer, HTML, CSS developer, Website designer, and also a Game Developer in Goa India">
     <meta property="og:image" content="/assets/img/facebook-600x315.png">
     <meta property="og:url" content="https://gautamnaik.netlify.com">
     <meta property="og:site_name" content="Gautam Naik Resume">
     <meta property="twitter:title" content="Gautam Naik">
-    <meta property="twitter:description" content="Personal website of Gautam Naik, who is the best UX Designer, UI Designer, Frontend Developer, HTML, CSS developer, Website designer, and also a Game Developer in Goa India">
+    <meta property="twitter:description"
+        content="Personal website of Gautam Naik, who is the best UX Designer, UI Designer, Frontend Developer, HTML, CSS developer, Website designer, and also a Game Developer in Goa India">
     <meta property="twitter:image" content="/assets/img/twitter-280x150.png">
     <meta property="twitter:url" content="https://gautamnaik.netlify.com">
     <title>Gautam Naik</title>
@@ -34,119 +37,135 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://gautamnaik.netlify.com" />
     <style>
+        .loader {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background: #151515;
+            overflow: hidden;
+            transition: bottom 0.8s ease-in;
+        }
 
-        .loader{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    background: #151515;
-    overflow: hidden;
-    transition: bottom 0.8s ease-in;
-}
-.l-text{
-    letter-spacing: 2px;
-    font-family: "IBM Plex Sans",sans-serif;
-    font-size: 23px;
-}
+        .l-text {
+            letter-spacing: 2px;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-size: 23px;
+        }
 
-.loader-inner {
-    color: #5bbad5;
-    font-size: 50px;
-    text-indent: -9999em;
-    overflow: hidden;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    margin: 42px auto;
-    position: relative;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
-    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
-}
-@-webkit-keyframes load6 {
-    0% {
-        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    5%,
-    95% {
-        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    10%,
-    59% {
-        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-    }
-    20% {
-        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-    }
-    38% {
-        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-    }
-    100% {
-        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-}
-@keyframes load6 {
-    0% {
-        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    5%,
-    95% {
-        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    10%,
-    59% {
-        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-    }
-    20% {
-        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-    }
-    38% {
-        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-    }
-    100% {
-        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-}
-@-webkit-keyframes round {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-@keyframes round {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-.side-menu{
-    display: none;
+        .loader-inner {
+            color: #5bbad5;
+            font-size: 50px;
+            text-indent: -9999em;
+            overflow: hidden;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            margin: 42px auto;
+            position: relative;
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+            animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+        }
 
-}
+        @-webkit-keyframes load6 {
+            0% {
+                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+            }
 
-        </style>
+            5%,
+            95% {
+                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+            }
+
+            10%,
+            59% {
+                box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+            }
+
+            20% {
+                box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+            }
+
+            38% {
+                box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+            }
+
+            100% {
+                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+            }
+        }
+
+        @keyframes load6 {
+            0% {
+                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+            }
+
+            5%,
+            95% {
+                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+            }
+
+            10%,
+            59% {
+                box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+            }
+
+            20% {
+                box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+            }
+
+            38% {
+                box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+            }
+
+            100% {
+                box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+            }
+        }
+
+        @-webkit-keyframes round {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes round {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        .side-menu {
+            display: none;
+
+        }
+    </style>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700|Rajdhani:700" rel="stylesheet">
 
@@ -168,7 +187,7 @@
     <div class="side-menu ">
         <div class="inner container">
             <div class="menu-txt">
-            Menu
+                Menu
             </div>
             <ul id="sideMenuUl">
                 <li class="item"> <a href="#main" class="title">Main<div class="num">01</div> </a></li>
@@ -196,7 +215,8 @@
     <section class="intro svg-bg" id="main">
         <div class="confetti"></div>
         <div class="details">
-            <svg viewBox="0 0 256 180" class="name-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <svg viewBox="0 0 256 180" class="name-svg" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
                 <text x="50%" alignment-baseline="middle" fill="none" stroke="white" stroke-width="1">
                     <tspan x="0" dy="0.8em">Hello<tspan class="hello-dot">.</tspan>
                     </tspan>
@@ -205,7 +225,8 @@
                     <tspan x="0" dy="0.8em">Gautam</tspan>
                 </text>
             </svg>
-            <h2 class="bold  position">Frontend Developer & Designer at <br class="show-for-medium" /> <span class="text-primary">Bidchat</span>
+            <h2 class="bold  position">Frontend Developer & Designer at <br class="show-for-medium" /> <span
+                    class="text-primary">Bidchat</span>
             </h2>
         </div>
     </section>
@@ -275,12 +296,12 @@
                             aria-label="Github" rel="noopener">
                             <i class="icon-github white-color"></i>Github
                         </a>
-                        <a class="btn btn-dark" href="https://www.behance.net/gautamnaik1994" target="_blank" title="Behance Design Portfolio"
-                            aria-label="Behance Design Portfolio" rel="noopener">
+                        <a class="btn btn-dark" href="https://www.behance.net/gautamnaik1994" target="_blank"
+                            title="Behance Design Portfolio" aria-label="Behance Design Portfolio" rel="noopener">
                             <i class="icon-behance behance"></i>Behance
                         </a>
-                        <a class="btn btn-dark" href="https://codepen.io/gautamnaik1994/" target="_blank" title="Codepen"
-                            aria-label="Codepen" rel="noopener">
+                        <a class="btn btn-dark" href="https://codepen.io/gautamnaik1994/" target="_blank"
+                            title="Codepen" aria-label="Codepen" rel="noopener">
                             <i class="icon-codepen white-color"></i>Codepen
                         </a>
                         <a class="btn btn-dark" href="https://www.linkedin.com/in/gautamnaik1994/" target="_blank"
@@ -322,8 +343,8 @@
                             <div class="n-label" data-sm="SEC" data-md="SECONDS"></div>
                         </div>
                     </div>
-                    <a class="btn btn-primary download-cv-btn " title="Experience inside CV is greater than it appears" href="./assets/cv/Gautam Naik(UI & Frontend Dev).pdf"
-                        download>Download CV</a>
+                    <a class="btn btn-primary download-cv-btn " title="Experience inside CV is greater than it appears"
+                        href="./assets/cv/Gautam Naik(UI & Frontend Dev).pdf" download>Download CV</a>
                 </div>
             </div>
         </div>
@@ -343,7 +364,8 @@
                         <svg data-gwd-shape="rectangle" class="gwd-rect-1wv6"></svg>
                         <svg data-gwd-shape="rectangle" class="gwd-rect-1wv6 gwd-svg-1gdx"></svg>
                         <div class="gwd-div-1yi9">
-                            <svg height="150px" width="38" viewBox="0 0 70 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg height="150px" width="38" viewBox="0 0 70 260" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <line y1="6.5" x2="31" y2="6.5" stroke="#FF0F00" stroke-width="13"></line>
                                 <line x1="38" y1="6.5" x2="69" y2="6.5" stroke="#FF0F00" stroke-width="13"></line>
                                 <line y1="23.5" x2="9" y2="23.5" stroke="#0067FF" stroke-width="7"></line>
@@ -372,7 +394,8 @@
                             </svg>
                         </div>
                         <div class=" gwd-div-xboa">
-                            <svg height="150px" width="10" viewBox="0 0 10 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg height="150px" width="10" viewBox="0 0 10 260" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <line y1="6.5" x2="10" y2="6.5" stroke="#FF0F00" stroke-width="13"></line>
                                 <line y1="25.5" x2="10" y2="25.5" stroke="#0067FF" stroke-width="7"></line>
                                 <line y1="43.5" x2="10" y2="43.5" stroke="#7AF478" stroke-width="11"></line>
@@ -389,7 +412,8 @@
                             </svg>
                         </div>
                         <div class="gwd-div-1tw9">
-                            <svg data-gwd-shape="oval" preserveAspectRatio="none" viewBox="0 0 24.916 24.916" class="gwd-oval-10me gwd-gen-3qoegwdanimation">
+                            <svg data-gwd-shape="oval" preserveAspectRatio="none" viewBox="0 0 24.916 24.916"
+                                class="gwd-oval-10me gwd-gen-3qoegwdanimation">
                                 <ellipse cx="50%" cy="50%" rx="12.458" ry="12.458"></ellipse>
                             </svg>
                             <svg data-gwd-shape="rectangle" class="gwd-rect-152a gwd-gen-1aobgwdanimation"></svg>
@@ -428,8 +452,8 @@
                         <svg data-gwd-shape="rectangle" class="gwd-rect-1wv6"></svg>
                         <svg data-gwd-shape="rectangle" class="gwd-rect-1wv6 gwd-svg-1gdx"></svg>
                         <div class="gwd-div-1yi9 gwd-gen-1kbegwdanimation">
-                            <svg height="150px" width="100%" viewBox="0 0 150 250" preserveAspectRatio="none" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg height="150px" width="100%" viewBox="0 0 150 250" preserveAspectRatio="none"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line y1="2.5" x2="31" y2="2.5" stroke="#FF0F00" stroke-width="5"></line>
                                 <line y1="17.5" x2="94" y2="17.5" stroke="#7AF478" stroke-width="5"></line>
                                 <line y1="32.5" x2="94" y2="32.5" stroke="#7AF478" stroke-width="5"></line>
@@ -449,7 +473,8 @@
                             </svg>
                         </div>
                         <div class="gwd-div-1tw9 gwd-gen-9x43gwdanimation">
-                            <svg data-gwd-shape="oval" preserveAspectRatio="none" viewBox="0 0 24.916 24.916" class="gwd-oval-10me gwd-gen-3qoegwdanimation">
+                            <svg data-gwd-shape="oval" preserveAspectRatio="none" viewBox="0 0 24.916 24.916"
+                                class="gwd-oval-10me gwd-gen-3qoegwdanimation">
                                 <ellipse cx="50%" cy="50%" rx="12.458" ry="12.458"></ellipse>
                             </svg>
                             <svg data-gwd-shape="rectangle" class="gwd-rect-152a gwd-gen-1aobgwdanimation"></svg>
@@ -492,8 +517,8 @@
                         <svg data-gwd-shape="rectangle" class="gwd-rect-1wv6"></svg>
                         <svg data-gwd-shape="rectangle" class="gwd-rect-1wv6 gwd-svg-1gdx"></svg>
                         <div class="gwd-div-1yi9">
-                            <svg height="150px" width="100%" viewBox="0 0 150 250" preserveAspectRatio="none" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg height="150px" width="100%" viewBox="0 0 150 250" preserveAspectRatio="none"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line y1="2.5" x2="31" y2="2.5" stroke="#FF0F00" stroke-width="5"></line>
                                 <line y1="17.5" x2="94" y2="17.5" stroke="#7AF478" stroke-width="5"></line>
                                 <line y1="32.5" x2="94" y2="32.5" stroke="#7AF478" stroke-width="5"></line>
@@ -513,8 +538,8 @@
                             </svg>
                         </div>
                         <div class="gwd-div-1tw9">
-                            <svg width="250" height="232" viewBox="0 0 250 232" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                class="gwd-svg-1fju">
+                            <svg width="250" height="232" viewBox="0 0 250 232" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="gwd-svg-1fju">
                                 <rect y="136.471" width="40.9091" height="95.5294" fill="#7af478"></rect>
                                 <rect y="136.471" x="220.091" width="40.9091" height="95.5294" fill="#7af478"></rect>
                                 <rect x="109.091" width="40.9091" height="95.5294" fill="#7af478"></rect>
@@ -634,23 +659,29 @@
             </div>
         </div>
     </section>
-    <section >
+    <section>
         <div class="container">
             <div class="hire-me">
                 <div class="left-sec">Want someone to take </br> your product to the next
                     <span class="level">LEVEL</span></div>
                 <div class="right-sec d-flex">
                     <div class="bulb-container" id="hireMeTrigger">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.1 128.1">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 128.1 128.1">
                             <g id="holder">
                                 <rect class="cls-1" x="57.9" y="93.7" width="23.8" height="27.95" rx="5.5" ry="5.5"
                                     transform="translate(-26.8 23.2) rotate(-15.9)" />
-                                <path class="cls-2" d="M57,105.6l22.6-6.4a1.7,1.7,0,0,1,2.1,1h0a1.7,1.7,0,0,1-1.3,2l-22.6,6.4a1.7,1.7,0,0,1-2.1-1h0A1.7,1.7,0,0,1,57,105.6Z" />
-                                <path class="cls-2" d="M58.6,112.2l22.6-6.4a1.7,1.7,0,0,1,2.1,1h0a1.7,1.7,0,0,1-1.3,2l-22.6,6.4a1.7,1.7,0,0,1-2.1-1h0A1.7,1.7,0,0,1,58.6,112.2Z" />
-                                <path class="cls-2" d="M60.5,118l22.6-6.4a1.7,1.7,0,0,1,2.1,1h0a1.7,1.7,0,0,1-1.3,2L61.4,121a1.7,1.7,0,0,1-2.1-1h0A1.7,1.7,0,0,1,60.5,118Z" />
+                                <path class="cls-2"
+                                    d="M57,105.6l22.6-6.4a1.7,1.7,0,0,1,2.1,1h0a1.7,1.7,0,0,1-1.3,2l-22.6,6.4a1.7,1.7,0,0,1-2.1-1h0A1.7,1.7,0,0,1,57,105.6Z" />
+                                <path class="cls-2"
+                                    d="M58.6,112.2l22.6-6.4a1.7,1.7,0,0,1,2.1,1h0a1.7,1.7,0,0,1-1.3,2l-22.6,6.4a1.7,1.7,0,0,1-2.1-1h0A1.7,1.7,0,0,1,58.6,112.2Z" />
+                                <path class="cls-2"
+                                    d="M60.5,118l22.6-6.4a1.7,1.7,0,0,1,2.1,1h0a1.7,1.7,0,0,1-1.3,2L61.4,121a1.7,1.7,0,0,1-2.1-1h0A1.7,1.7,0,0,1,60.5,118Z" />
                             </g>
-                            <path id="bulb" class="cls-3" d="M19.4,62.1A36,36,0,0,0,33.5,81.8l2.5,1.7c8.2,5.6,13.1,9,16.4,17.5a3.9,3.9,0,0,0,4.7,2.3l21.1-6A3.8,3.8,0,0,0,81,92.9c-1.7-8.9.7-14.3,4.7-23.3L87,66.5a36,36,0,1,0-67.6-4.5Z" />
-                            <path id="shine" class="cls-4" d="M61.3,25.3c4-1.2,7.8,1.5,10.8,3.9a29,29,0,0,1,7.4,8.7,26,26,0,0,1,.4,24c-.3.7-1.2.2-1.1-.5A31.2,31.2,0,0,0,74,40.2a26,26,0,0,0-6.3-6.6c-2.6-1.8-5.6-3-7.5-5.6A1.9,1.9,0,0,1,61.3,25.3Z" />
+                            <path id="bulb" class="cls-3"
+                                d="M19.4,62.1A36,36,0,0,0,33.5,81.8l2.5,1.7c8.2,5.6,13.1,9,16.4,17.5a3.9,3.9,0,0,0,4.7,2.3l21.1-6A3.8,3.8,0,0,0,81,92.9c-1.7-8.9.7-14.3,4.7-23.3L87,66.5a36,36,0,1,0-67.6-4.5Z" />
+                            <path id="shine" class="cls-4"
+                                d="M61.3,25.3c4-1.2,7.8,1.5,10.8,3.9a29,29,0,0,1,7.4,8.7,26,26,0,0,1,.4,24c-.3.7-1.2.2-1.1-.5A31.2,31.2,0,0,0,74,40.2a26,26,0,0,0-6.3-6.6c-2.6-1.8-5.6-3-7.5-5.6A1.9,1.9,0,0,1,61.3,25.3Z" />
                             <g class="rays">
                                 <polygon class="cls-3" points="88.3 22.5 110.1 19.9 106.8 14.4 88.3 22.5" />
                                 <polygon class="cls-3" points="84.9 21.1 92.6 12.8 86.1 9.7 84.9 21.1" />
@@ -704,8 +735,8 @@
                             </p>
                             <p><strong>Role :</strong> UI designer</p>
                             <p><strong>Technologies Used : </strong> Photoshop, Illustrator</p>
-                            <a href="https://www.behance.net/gallery/50665321/Events-App-UI-Design" target="_blank" rel="noopener"
-                                aria-label="Behance Link" class="p-link">
+                            <a href="https://www.behance.net/gallery/50665321/Events-App-UI-Design" target="_blank"
+                                rel="noopener" aria-label="Behance Link" class="p-link">
                                 VIEW PROJECT <i class="icon-open-new-tab text-primary"></i></a>
                         </div>
 
@@ -742,8 +773,8 @@
                             </p>
                             <p><strong>Role :</strong> UI designer</p>
                             <p><strong>Technologies Used : </strong> Photoshop, Illustrator</p>
-                            <a href="https://www.behance.net/gallery/50031057/Health-App-UI-Design" target="_blank" rel="noopener"
-                                aria-label="Behance Link" class="p-link">
+                            <a href="https://www.behance.net/gallery/50031057/Health-App-UI-Design" target="_blank"
+                                rel="noopener" aria-label="Behance Link" class="p-link">
                                 VIEW PROJECT <i class="icon-open-new-tab text-primary"></i></a>
                         </div>
 
@@ -752,15 +783,16 @@
                 <div class="project alert-info">
 
                     <p class="m-0">
-                            Visit my <a href="https://www.behance.net/gautamnaik1994" target="_blank" rel="noopener"
+                        Visit my <a href="https://www.behance.net/gautamnaik1994" target="_blank" rel="noopener"
                             aria-label="Behance">
                             Behance Profile
-                         </a> and  <a href="https://github.com/gautamnaik1994" target="_blank" title="Github" aria-label="Github" rel="noopener">
+                        </a> and <a href="https://github.com/gautamnaik1994" target="_blank" title="Github"
+                            aria-label="Github" rel="noopener">
                             Github Profile
-                            </a> <span class="text-muted">(in case u haven't)</span> to see my
-                            other
-                            projects
-                       
+                        </a> <span class="text-muted">(in case u haven't)</span> to see my
+                        other
+                        projects
+
                     </p>
                 </div>
             </div>
@@ -842,24 +874,26 @@
             <div class="section-header ">
                 <i class="icon-zigzag text-primary"></i>
                 <div class="inner">
-                   SOME OTHER</br>THINGS<span class="text-primary">.</span>
+                    SOME OTHER</br>THINGS<span class="text-primary">.</span>
                 </div>
             </div>
             <div class="item">
-                 <h3 class="sub-header ">Stackoverflow Flair</h3>
-            <a href="https://stackoverflow.com/users/2376317/gautam-naik" target="_blank" rel="noopener" aria-label="Stack Overflow Flair">
-                <img src="https://stackoverflow.com/users/flair/2376317.png" width="208" height="58" alt="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-                    title="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
-            </a>
+                <h3 class="sub-header ">Stackoverflow Flair</h3>
+                <a href="https://stackoverflow.com/users/2376317/gautam-naik" target="_blank" rel="noopener"
+                    aria-label="Stack Overflow Flair">
+                    <img src="https://stackoverflow.com/users/flair/2376317.png" width="208" height="58"
+                        alt="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                        title="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>
             </div>
-           <div class="item github-graph">
-   <h3 class="sub-header four-rem-mt">Github Chart</h3>
-            <a href="https://github.com/gautamnaik1994" class="github-img-container" target="_blank" rel="noopener"
-            aria-label="Gautam Naik's Github chart">
-            <img src="https://ghchart.rshah.org/03a9f4/gautamnaik1994" alt="Gautam Naik's Github chart" />
-           </a>
-           </div>
-         
+            <div class="item github-graph">
+                <h3 class="sub-header four-rem-mt">Github Chart</h3>
+                <a href="https://github.com/gautamnaik1994" class="github-img-container" target="_blank" rel="noopener"
+                    aria-label="Gautam Naik's Github chart">
+                    <img src="https://ghchart.rshah.org/03a9f4/gautamnaik1994" alt="Gautam Naik's Github chart" />
+                </a>
+            </div>
+
         </div>
     </section>
     <!-- <section class=" ">
@@ -912,27 +946,33 @@
                 Made with ❤ using HTML, CSS & Javascript
                 </small>
                 </footer> -->
-                <footer>
-                    <svg width="1920" height="280" viewBox="0 0 1920 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1283.98 59.5396C1582.17 -44.0638 1904.49 19.3491 1920 17.8267V279.5H0V244.8C175.5 141.185 451.64 187.312 559.5 187.312C942 187.312 1035.5 145.869 1283.98 59.5396Z" fill="url(#paint0_linear)" fill-opacity="0.9"/>
-                        <path d="M1283.98 131.511C1538.74 30.4692 1904.49 103.742 1920 102.691V280H0V264.198C134.5 188.719 306.898 197.462 582.5 214.158C804 227.577 994.5 246.32 1283.98 131.511Z" fill="url(#paint1_linear)" fill-opacity="0.9"/>
-                        <defs>
-                        <linearGradient id="paint0_linear" x1="960" y1="-108.296" x2="960" y2="405.127" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#03A9F4"/>
-                        <stop offset="1" stop-color="#027AB0"/>
-                        </linearGradient>
-                        <linearGradient id="paint1_linear" x1="960" y1="-12.0001" x2="960" y2="390.643" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#03A9F4"/>
-                        <stop offset="1" stop-color="#027AB0"/>
-                        </linearGradient>
-                        </defs>
-                        </svg>
-                        
-                        <!-- <small class="">
+    <footer>
+        <svg width="1920" height="280" viewBox="0 0 1920 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M1283.98 59.5396C1582.17 -44.0638 1904.49 19.3491 1920 17.8267V279.5H0V244.8C175.5 141.185 451.64 187.312 559.5 187.312C942 187.312 1035.5 145.869 1283.98 59.5396Z"
+                fill="url(#paint0_linear)" fill-opacity="0.9" />
+            <path
+                d="M1283.98 131.511C1538.74 30.4692 1904.49 103.742 1920 102.691V280H0V264.198C134.5 188.719 306.898 197.462 582.5 214.158C804 227.577 994.5 246.32 1283.98 131.511Z"
+                fill="url(#paint1_linear)" fill-opacity="0.9" />
+            <defs>
+                <linearGradient id="paint0_linear" x1="960" y1="-108.296" x2="960" y2="405.127"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#03A9F4" />
+                    <stop offset="1" stop-color="#027AB0" />
+                </linearGradient>
+                <linearGradient id="paint1_linear" x1="960" y1="-12.0001" x2="960" y2="390.643"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#03A9F4" />
+                    <stop offset="1" stop-color="#027AB0" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <!-- <small class="">
                             Made with ❤ using HTML, CSS & Javascript
                             </small> -->
-                        
-                </footer>
+
+    </footer>
 </body>
 <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script type="text/javascript" src="./assets/js/index.js"></script>
