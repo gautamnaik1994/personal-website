@@ -32,6 +32,7 @@ module.exports = {
     'react/display-name': 'off',
     'no-console': 'warn',
     camelcase: 'warn',
+    'react/no-unescaped-entities': 'off',
   },
   overrides: [
     // Override some TypeScript rules just for .js files
@@ -39,7 +40,8 @@ module.exports = {
       files: ['*.js'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off', //
-        '@typescript-eslint/camelcase': 'warn',
+        '@typescript-eslint/camelcase': 'off',
+        // '@typescript-eslint/naming-convention': [],
       },
     },
   ],

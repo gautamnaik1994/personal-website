@@ -5,7 +5,7 @@ import { lighten } from 'polished';
 import styled from 'styled-components';
 import theme from 'styled-theming';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
-// @ts-ignore
+// Had added @ts-ignore
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import media from '../utils/MediaQueries';
 import Layout from '../components/Layout';
@@ -73,8 +73,11 @@ interface Props {
   };
   pageContext: PageContext;
 }
+interface GatsbyImageProps {
+  fluid: any;
+}
 
-const CustomImg = styled(Img)`
+const CustomImg = styled(Img)<GatsbyImageProps>`
   width: 100%;
   ${media.tablet} {
     width: 650px;

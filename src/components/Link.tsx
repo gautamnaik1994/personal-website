@@ -4,9 +4,9 @@ import GatsbyLink from 'gatsby-link';
 interface Props {
   children: React.ReactNode;
   to: string;
-  other?: {};
+  other?: Record<string, unknown>;
   css?: any;
-  state?: {};
+  state?: Record<string, unknown>;
   className?: string;
   title: string;
 }

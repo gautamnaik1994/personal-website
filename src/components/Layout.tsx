@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect, useLayoutEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import '../global.d.ts';
-// @ts-ignore
+// Had added @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'sanitize.css';

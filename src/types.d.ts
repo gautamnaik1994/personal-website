@@ -31,7 +31,7 @@ export interface Mdx {
 export interface LayoutProps {
   site?: Site;
   frontmatter?: Frontmatter;
-  children: {};
+  children: JSX.Element[] | JSX.Element;
 }
 
 export interface PageContext {
