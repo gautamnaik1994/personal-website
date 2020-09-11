@@ -11,6 +11,7 @@ import { configure, addDecorator } from '@storybook/react';
 
 import { GlobalStyle } from '../src/components/GlobalStyle';
 import { StoryContext, StoryGetter, StoryWrapper } from '@storybook/addons';
+import { MINIMAL_VIEWPORTS, DEFAULT_VIEWPORT } from '@storybook/addon-viewport';
 
 // const withGloabalStyleProvider = (Story, context) => {
 //   return (
@@ -39,17 +40,21 @@ configure(loadStories, module);
 
 export const parameters = {
   backgrounds: {
-    default: 'twitter',
+    default: 'dark',
     values: [
       {
-        name: 'twitter',
-        value: '#00aced',
+        name: 'dark',
+        value: '#212738',
       },
       {
-        name: 'facebook',
-        value: '#3b5998',
+        name: 'light',
+        value: '#fff',
       },
     ],
+  },
+  viewport: {
+    viewports: MINIMAL_VIEWPORTS, // newViewports would be an ViewportMap. (see below for examples)
+    defaultViewport: DEFAULT_VIEWPORT,
   },
 };
 
