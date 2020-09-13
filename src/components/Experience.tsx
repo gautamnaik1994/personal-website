@@ -48,6 +48,8 @@ const Experience = styled.div`
     height: 100%;
     position: absolute;
     border-radius: 50%;
+    border-style: solid;
+    border-width: 8px;
     &:after,
     &:before {
       content: '';
@@ -69,14 +71,14 @@ const Experience = styled.div`
   }
 
   .circle-1 {
-    border: 16px solid red;
+    border-color: red;
     border-top-color: transparent;
     animation: ${spin1} 60s linear infinite;
   }
   .circle-2 {
     width: 70%;
     height: 70%;
-    border: 16px solid blue;
+    border-color: red;
     border-top-color: transparent;
     transform: translateZ(20px);
     animation: ${spin2} 45s linear infinite reverse;
@@ -95,7 +97,7 @@ const Experience = styled.div`
   .circle-3 {
     width: 40%;
     height: 40%;
-    border: 16px solid green;
+    border-color: red;
     border-top-color: transparent;
     transform: translateZ(40px);
     animation: ${spin3} 25s linear infinite;
@@ -122,7 +124,38 @@ export default () => (
     </div>
     <div>
       <h3>Experience</h3>
-      <div>Numbers</div>
+      <div>
+        <div>
+          05
+          <br />
+          Years
+        </div>
+        <div>
+          05
+          <br />
+          Years
+        </div>
+        <div>
+          05
+          <br />
+          Years
+        </div>
+        <div>
+          05
+          <br />
+          Years
+        </div>
+        <div>
+          05
+          <br />
+          Years
+        </div>
+        <div>
+          05
+          <br />
+          Years
+        </div>
+      </div>
     </div>
   </Experience>
 );
