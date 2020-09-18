@@ -1,17 +1,19 @@
-// export const parameters = {
-//   actions: { argTypesRegex: "^on[A-Z].*" },
-// }
 import React from 'react';
 import { render } from 'react-dom';
+import { themes } from '@storybook/theming';
 import { action } from '@storybook/addon-actions';
 import 'sanitize.css';
 import 'sanitize.css/typography.css';
 import 'sanitize.css/forms.css';
 import { configure, addDecorator } from '@storybook/react';
-
-import { GlobalStyle } from '../src/components/GlobalStyle';
+import { useDarkMode } from 'storybook-dark-mode';
+import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import { StoryContext, StoryGetter, StoryWrapper } from '@storybook/addons';
 import { MINIMAL_VIEWPORTS, DEFAULT_VIEWPORT } from '@storybook/addon-viewport';
+import { ThemeProvider as StyleThemeProvider } from 'styled-components';
+
+import { GlobalStyle } from '../src/components/GlobalStyle';
+import ThemeProvider from '../src/components/ThemeProvider';
 
 // const withGloabalStyleProvider = (Story, context) => {
 //   return (
@@ -23,6 +25,29 @@ import { MINIMAL_VIEWPORTS, DEFAULT_VIEWPORT } from '@storybook/addon-viewport';
 // }
 // export const decorators = [withGloabalStyleProvider];
 
+const appThemes = [
+  {
+    name: 'light',
+    mode: 'light',
+    primary: 'blue',
+  },
+  {
+    name: 'dark',
+    mode: 'dark',
+    primary: 'blue',
+  },
+];
+//addDecorator(withThemesProvider(themes));
+
+function ThemeWrapper(props) {
+  return (
+    <StyleThemeProvider theme={useDarkMode() ? appThemes[1] : appThemes[0]}>
+      {props.children}
+    </StyleThemeProvider>
+  );
+}
+addDecorator((renderStory) => <ThemeWrapper>{renderStory()}</ThemeWrapper>);
+
 function loadStories() {
   const globalStyleEl =
     document.querySelector('#gen3-global-style') ||
@@ -32,7 +57,12 @@ function loadStories() {
       document.head.append(el);
       return el;
     })();
-  render(<GlobalStyle />, globalStyleEl);
+  render(
+    <ThemeWrapper>
+      <GlobalStyle />
+    </ThemeWrapper>,
+    globalStyleEl,
+  );
 }
 
 configure(loadStories, module);
@@ -53,8 +83,11 @@ export const parameters = {
     ],
   },
   viewport: {
-    viewports: MINIMAL_VIEWPORTS, // newViewports would be an ViewportMap. (see below for examples)
+    viewports: MINIMAL_VIEWPORTS,
     defaultViewport: DEFAULT_VIEWPORT,
+  },
+  darkMode: {
+    //dark: { ...themes.dark, appBg: '#212738', stylePreview: true },
   },
 };
 

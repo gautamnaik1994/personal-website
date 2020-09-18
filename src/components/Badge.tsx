@@ -18,9 +18,10 @@ const tone = compose(desaturate(0.2), lighten(0.1));
 
 const textColor = theme('mode', {
   dark: (props: any) => tone(props.theme.primary),
+  light: (props: any) => tone(props.theme.primary),
 });
 
-interface Props {
+export interface Props {
   name: string;
 }
 

@@ -1,14 +1,3 @@
-// module.exports = {
-//   "stories": [
-//     "../src/**/*.stories.mdx",
-//     "../src/**/*.stories.@(js|jsx|ts|tsx)"
-//   ],
-//   "addons": [
-//     "@storybook/addon-links",
-//     "@storybook/addon-essentials"
-//   ]
-// }
-
 module.exports = {
   // You will want to change this to wherever your Stories will live.
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -19,6 +8,7 @@ module.exports = {
     '@storybook/addon-storysource',
     '@storybook/addon-viewport',
     '@storybook/addon-backgrounds',
+    'storybook-dark-mode/register',
   ],
   webpackFinal: async (config) => {
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
