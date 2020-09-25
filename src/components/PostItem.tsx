@@ -22,10 +22,6 @@ const readMoreAnimation = keyframes`
 `;
 
 const bottomPadding = 44;
-const backgroundColor = theme('mode', {
-  light: '#fff',
-  dark: lighten(0.05, darkBackgroundColor),
-});
 
 const boxShadow = theme('mode', {
   light: '0 6px 16px -4px #ff8705',
@@ -41,7 +37,7 @@ const PostItem = styled.div`
     margin-bottom: 100px;
   }
   position: relative;
-  background: ${backgroundColor};
+  background: var(--bodyBackgroundColor);
   border-bottom: 0;
   h2 {
     font-variant-ligatures: none;

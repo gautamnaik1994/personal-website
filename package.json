@@ -1,8 +1,8 @@
 {
-  "name": "my-blog",
-  "description": "Blog will contain Vim tips, tricks and mappings",
+  "name": "personal-website",
+  "description": "personal website",
   "version": "1.0.0",
-  "author": "Gautam Naik <gautamnaik@gmail.com> (https://gautamnaik.netlify.com/)",
+  "author": "Gautam Naik <gautamnaik@gmail.com> (https://gautamnaik.com/)",
   "repository": "https://github.com/gautamnaik1994/my-blog",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
@@ -35,6 +35,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "~6.1.0",
     "react-helmet-async": "^1.0.6",
+    "react-spring": "^8.0.27",
     "react-youtube": "^7.12.0",
     "sanitize.css": "^12.0.1",
     "styled-components": "^5.1.1",
@@ -61,7 +62,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.11.1",
     "babel-preset-react-app": "^9.1.2",
-    "eslint": "^7.7.0",
+    "eslint": "^7.9.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",

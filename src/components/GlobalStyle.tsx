@@ -28,12 +28,14 @@ interface Props {
   theme?: { primary: string };
 }
 
+//transition: background-color 0.3s ease-in, color 0.3s ease-in;
+
 export const GlobalStyle = createGlobalStyle<Props>`
 :root {
-    --primary: ${_primaryCol};
+    --primary: ${primaryCol};
     --accent: ${accentColor};
-    --bodyBackgroundColor: ${bodyBackgroundColor};
-    --bodyColor: ${bodyColor};
+		--bodyBackgroundColor: #fff;
+    --bodyColor: #333;
   }
   html,
   body {
@@ -42,7 +44,6 @@ export const GlobalStyle = createGlobalStyle<Props>`
       'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   body {
-    transition: background-color 0.3s ease-in, color 0.3s ease-in;
     background-color: var(--bodyBackgroundColor);
     color: var(--bodyColor);
   }

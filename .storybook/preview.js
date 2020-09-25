@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import 'sanitize.css';
 import 'sanitize.css/typography.css';
 import 'sanitize.css/forms.css';
+import '../src/styles/style.css';
 import { configure, addDecorator } from '@storybook/react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { withThemesProvider } from 'storybook-addon-styled-component-theme';
@@ -14,6 +15,7 @@ import { ThemeProvider as StyleThemeProvider } from 'styled-components';
 
 import { GlobalStyle } from '../src/components/GlobalStyle';
 import ThemeProvider from '../src/components/ThemeProvider';
+import { setColors } from '../src/utils/themeConfig';
 
 // const withGloabalStyleProvider = (Story, context) => {
 //   return (
@@ -37,11 +39,20 @@ const appThemes = [
     primary: 'blue',
   },
 ];
+
+const setTheme = (theme) => {
+  setColors(theme);
+  if (theme == 'light') {
+    return appThemes[1];
+  } else return appThemes[0];
+};
 //addDecorator(withThemesProvider(themes));
 
 function ThemeWrapper(props) {
   return (
-    <StyleThemeProvider theme={useDarkMode() ? appThemes[1] : appThemes[0]}>
+    <StyleThemeProvider
+      theme={useDarkMode() ? setTheme('dark') : setTheme('light')}
+    >
       {props.children}
     </StyleThemeProvider>
   );

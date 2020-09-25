@@ -23,11 +23,11 @@ const NavLink = styled(Link)`
 `;
 
 const Navbar = styled.nav`
-  transition: background-color 0.3s ease-in;
+  //transition: background-color 0.3s ease-in;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: ${navBarBgColor};
+  background-color: var(--bodyBackgroundColor);
   box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.3);
   padding: 0 15px 0 5px;
   position: fixed;
