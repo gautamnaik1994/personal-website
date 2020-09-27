@@ -1,8 +1,8 @@
-import React, { Fragment, useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider as StyleThemeProvider } from 'styled-components';
 import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 
-export default ({ children }) => {
+export default ({ children }: any): JSX.Element => {
   const [theme, setTheme] = useState<string | null>(null);
 
   const toggleTheme = (): void => {
