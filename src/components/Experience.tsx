@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { subContainerWidth } from '../utils/constant';
+import countdown from 'countdown';
 
 import media from '../utils/MediaQueries';
 
@@ -54,11 +55,12 @@ const Experience = styled.div`
       transform: translate(-50%, -50%);
     }
   }
-  h3 {
+  .box-title {
     text-align: center;
-    letter-spacing: 0.06rem;
-    word-spacing: 5px;
     margin: 0.5rem 0;
+    font-weight: var(--fontWeightBold);
+    font-size: 20px;
+    color: var(--primary);
   }
   ${media.tablet} {
     display: flex;
@@ -147,21 +149,44 @@ const Experience = styled.div`
   }
 `;
 
-export default () => (
-  <Experience>
-    <div className="circle-container">
-      <div className="circle circle-1"></div>
-      <div className="circle circle-2"></div>
-      <div className="circle circle-3"></div>
-    </div>
-    <div>
-      <h3>TOTAL EXPERIENCE</h3>
-      <div className="date-container">
-        <div>
-          <div>05</div>
-          <div>Years</div>
+export default () => {
+  const [dateData, setDateData] = useState({
+    years: 0,
+    months: 0,
+    days: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const date = new Date(parseInt(1438765200000));
+    const dateInterval = setInterval(function () {
+      const _dateData = countdown(date, new Date());
+      const { years, months, days, hours, minutes, seconds } = _dateData;
+      setDateData({ years, months, days, hours, minutes, seconds });
+    }, 1000);
+
+    return () => {
+      window.clearInterval(dateInterval);
+    };
+  }, []);
+
+  return (
+    <Experience>
+      <div className="circle-container">
+        <div className="circle circle-1"></div>
+        <div className="circle circle-2"></div>
+        <div className="circle circle-3"></div>
+      </div>
+      <div>
+        <div className="box-title">TOTAL EXPERIENCE</div>
+        <div className="date-container">
+          <div className="item">
+            <div className="value">Seconds</div>
+            <div className="title">{dateData['seconds']}</div>
+          </div>
         </div>
       </div>
-    </div>
-  </Experience>
-);
+    </Experience>
+  );
+};

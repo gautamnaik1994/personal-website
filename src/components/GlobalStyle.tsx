@@ -45,6 +45,10 @@ export const GlobalStyle = createGlobalStyle<Props>`
     --accent: ${accentColor};
 		--bodyBackgroundColor: #fff;
     --bodyColor: #333;
+		--fontWeightBold:700;
+		--fontWeightMedium:500;
+		--fontWeightRegular:400;
+		--fontWeightLight:300;
   }
   html,
   body {
@@ -61,10 +65,6 @@ export const GlobalStyle = createGlobalStyle<Props>`
   button {
     cursor: pointer;
   }
-	${hSizes}
-	${media.tablet} {
-${hSizesMed}
-}
   a {
     text-decoration: none;
     color: var(--primary);
