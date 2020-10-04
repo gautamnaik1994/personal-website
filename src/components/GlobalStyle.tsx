@@ -28,6 +28,15 @@ interface Props {
   theme?: { primary: string };
 }
 
+const headings = [24, 20, 19, 18, 17, 16];
+const headingsMed = [48, 40, 31, 25, 20, 16];
+
+const hSizes = headings.map((size, index) => {
+  return `h${index + 1}{font-size:${size}px;}`;
+});
+const hSizesMed = headingsMed.map((size, index) => {
+  return `h${index + 1}{font-size:${size}px;}`;
+});
 //transition: background-color 0.3s ease-in, color 0.3s ease-in;
 
 export const GlobalStyle = createGlobalStyle<Props>`
@@ -42,6 +51,7 @@ export const GlobalStyle = createGlobalStyle<Props>`
     font-family: Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
       'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+		font-size:14px;
   }
   body {
     background-color: var(--bodyBackgroundColor);
@@ -51,11 +61,16 @@ export const GlobalStyle = createGlobalStyle<Props>`
   button {
     cursor: pointer;
   }
-
+	${hSizes}
+	${media.tablet} {
+${hSizesMed}
+}
   a {
     text-decoration: none;
     color: var(--primary);
   }
+
+
 
   ${() => {
     /* Override PrismJS Defaults */ return null;

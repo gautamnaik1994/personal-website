@@ -78,6 +78,42 @@ function loadStories() {
 
 configure(loadStories, module);
 // .storybook/preview.js
+//
+
+const customViewports = {
+  iphone5: {
+    name: 'iPhone 5',
+    styles: {
+      height: '568px',
+      width: '320px',
+    },
+    type: 'mobile',
+  },
+  iphone6: {
+    name: 'iPhone 6',
+    styles: {
+      height: '667px',
+      width: '375px',
+    },
+    type: 'mobile',
+  },
+  iphonex: {
+    name: 'iPhone X',
+    styles: {
+      height: '812px',
+      width: '375px',
+    },
+    type: 'mobile',
+  },
+  ipad: {
+    name: 'iPad',
+    styles: {
+      height: '1024px',
+      width: '768px',
+    },
+    type: 'tablet',
+  },
+};
 
 export const parameters = {
   backgrounds: {
@@ -94,7 +130,10 @@ export const parameters = {
     ],
   },
   viewport: {
-    viewports: MINIMAL_VIEWPORTS,
+    viewports: {
+      ...MINIMAL_VIEWPORTS,
+      ...customViewports,
+    },
     defaultViewport: DEFAULT_VIEWPORT,
   },
   darkMode: {

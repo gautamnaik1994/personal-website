@@ -2,6 +2,8 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { subContainerWidth } from '../utils/constant';
 
+import media from '../utils/MediaQueries';
+
 export const spin1 = keyframes`
   from {
     transform: rotate(0deg);
@@ -31,18 +33,39 @@ const Experience = styled.div`
   border: 2px solid #67e5ff;
   padding: 10px;
   border-radius: 14px;
-  display: flex;
-  width: ${subContainerWidth}px;
   .circle-container {
-    /* margin: auto; */
+    display: none;
     width: 125px;
     height: 125px;
     position: relative;
-    display: flex;
     justify-content: center;
     align-items: center;
     /* transform: rotate3d(1, 0, 0, 73deg); */
     transform-style: preserve-3d;
+    &:after {
+      content: '';
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #808080;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  h3 {
+    text-align: center;
+    letter-spacing: 0.06rem;
+    word-spacing: 5px;
+    margin: 0.5rem 0;
+  }
+  ${media.tablet} {
+    display: flex;
+    .circle-container {
+      display: flex;
+      margin-right: 30px;
+    }
   }
 
   .circle {
@@ -115,8 +138,12 @@ const Experience = styled.div`
       right: -1px;
     }
   }
-  .flex-container {
+  .date-container {
     display: flex;
+    justify-content: space-between;
+    div {
+      text-align: center;
+    }
   }
 `;
 
@@ -129,36 +156,10 @@ export default () => (
     </div>
     <div>
       <h3>TOTAL EXPERIENCE</h3>
-      <div className="flex-container">
+      <div className="date-container">
         <div>
-          05
-          <br />
-          Years
-        </div>
-        <div>
-          05
-          <br />
-          Years
-        </div>
-        <div>
-          05
-          <br />
-          Years
-        </div>
-        <div>
-          05
-          <br />
-          Years
-        </div>
-        <div>
-          05
-          <br />
-          Years
-        </div>
-        <div>
-          05
-          <br />
-          Years
+          <div>05</div>
+          <div>Years</div>
         </div>
       </div>
     </div>
