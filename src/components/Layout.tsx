@@ -45,7 +45,7 @@ export default ({ site, children }: LayoutProps) => {
       <Helmet>
         <html lang="en" />
         <link
-          href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i&display=swap"
+          href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700,700i&display=swap"
           rel="stylesheet"
         />
         <meta name="robots" content="all" />
