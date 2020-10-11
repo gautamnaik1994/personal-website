@@ -116,13 +116,19 @@ export const GlobalStyle = createGlobalStyle<Props>`
   .half-rem-mt {
     margin-top: 0.5rem;
   }
+  .half-rem-mb {
+    margin-bottom: 0.5rem;
+  }
   .two-rem-mb {
     margin-bottom: 2rem;
   }
-  /**
-        * * Add back the container background-color, border-radius, padding, margin
-    * * and overflow that we removed from <pre>.
-        * */
+	.one-rem-mb{
+		margin-bottom:1rem;
+	}
+	.one-rem-mt{
+		margin-top:1rem;
+	}
+  /*Add back the container background-color, border-radius, padding, margin and overflow that we removed from <pre>.*/
   .gatsby-highlight {
     background-color: #2d2d2d;
     border-radius: 0.3em;
@@ -133,14 +139,12 @@ export const GlobalStyle = createGlobalStyle<Props>`
     border-left: 6px solid #38ff64;
     box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.25);
 
-    /**
-         *   * Remove the default PrismJS theme background-color, border-radius,
-         *   margin,
-         *     * padding and overflow.
-         *       * 1. Make the element just wide enough to fit its content.
-         *         * 2. Always fill the visible space in .gatsby-highlight.
-         *           * 3. Adjust the position of the line numbers
-         *             */
+    /*
+    Remove the default PrismJS theme background-color, border-radius,margin, padding and overflow.
+    1. Make the element just wide enough to fit its content.
+    2. Always fill the visible space in .gatsby-highlight.
+    3. Adjust the position of the line numbers
+    */
     pre[class*='language-'] {
       background-color: transparent;
       margin: 0;
@@ -174,5 +178,8 @@ export const GlobalStyle = createGlobalStyle<Props>`
     font-size: 0.85em;
     color: #38ff64;
     background: #404040;
+  }
+  .text-center{
+    text-align:center;
   }
 `;

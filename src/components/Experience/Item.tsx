@@ -9,6 +9,7 @@ const Item = styled.div`
   .title {
     font-size: 12px;
     color: #808080;
+    font-weight: var(--fontWeightBold);
     &:after {
       content: attr(data-title);
     }
@@ -21,6 +22,20 @@ const Item = styled.div`
   .value {
     font-size: 25px;
   }
+  ${media.tablet} {
+    & + & {
+      margin-left: 33px;
+    }
+    .value {
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 5px;
+      margin-top: 22px;
+    }
+    .title {
+      font-size: 14px;
+    }
+  }
 `;
 
 interface ItemProps {
@@ -31,7 +46,7 @@ interface ItemProps {
 
 export default ({ title, titleMed, value }: ItemProps) => (
   <Item>
-    <div className="value">{value}</div>
+    <div className="value">{value.toString().padStart(2, '0')}</div>
     <div className="title" data-titleMed={titleMed} data-title={title}></div>
   </Item>
 );

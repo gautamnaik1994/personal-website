@@ -10,4 +10,4 @@ export default {
   component: Experience,
 } as Meta;
 
-export const ExperienceDefault = () => <Experience />;
+export const ExperienceDefault = (): JSX.Element => <Experience />;

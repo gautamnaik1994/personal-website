@@ -35,3 +35,6 @@ tags
 NERD_tree*
 *.swp
 __vista__
+privatekey.pem
+certrequest.csr
+certificate.pem

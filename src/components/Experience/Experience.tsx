@@ -17,7 +17,7 @@ const spin1 = keyframes`
 const Experience = styled.div`
   border: 2px solid var(--primary);
   padding: 10px 15px;
-  border-radius: 14px;
+  border-radius: 22px;
   .circle-container {
     display: none;
     width: 125px;
@@ -32,7 +32,7 @@ const Experience = styled.div`
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      background-color: #808080;
+      background-color: #c4c4c4;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -48,6 +48,14 @@ const Experience = styled.div`
   }
   ${media.tablet} {
     display: flex;
+    width: 680px;
+    padding: 40px 50px;
+    margin: auto;
+    .box-title {
+      font-size: 24px;
+      text-align: left;
+      margin: 0;
+    }
     .circle-container {
       display: flex;
       margin-right: 30px;
@@ -60,24 +68,14 @@ const Experience = styled.div`
     position: absolute;
     border-radius: 50%;
     border-style: solid;
-    border-width: 8px;
+    border-width: 7px;
     &:after,
     &:before {
       content: '';
       position: absolute;
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-    }
-    &:after {
-      top: 8px;
-      left: 10px;
-      background: #ff8c32;
-    }
-    &:before {
-      top: 8px;
-      right: 10px;
-      background: #ff8c32;
     }
   }
 
@@ -85,43 +83,54 @@ const Experience = styled.div`
     border-color: #ff8c32;
     border-top-color: transparent;
     animation: ${spin1} 60s linear infinite;
+    &:after,
+    &:before {
+      top: 11px;
+      background: #ff8c32;
+    }
+    &:after {
+      left: 10px;
+    }
+    &:before {
+      right: 10px;
+    }
   }
   .circle-2 {
-    width: 70%;
-    height: 70%;
+    width: 75%;
+    height: 75%;
     border-color: #55c2d8;
     border-top-color: transparent;
-    transform: translateZ(20px);
+    //transform: translateZ(20px);
     animation: ${spin1} 45s linear infinite reverse;
     &:after,
     &:before {
       background: #55c2d8;
-      top: 3px;
+      top: 5px;
     }
     &:after {
-      left: 4px;
+      left: 6px;
     }
     &:before {
-      right: 4px;
+      right: 6px;
     }
   }
   .circle-3 {
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
     border-color: #fc5050;
     border-top-color: transparent;
-    transform: translateZ(40px);
+    //transform: translateZ(40px);
     animation: ${spin1} 25s linear infinite;
     &:after,
     &:before {
       background: #fc5050;
-      top: -3px;
+      top: 1px;
     }
     &:after {
-      left: -1px;
+      left: 1px;
     }
     &:before {
-      right: -1px;
+      right: 1px;
     }
   }
   .date-container {

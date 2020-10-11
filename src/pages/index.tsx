@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from '../components/Link';
 import Layout from '../components/Layout';
+import SkillMeter from '../components/Skill/SkillMeter';
 import { primaryCol } from '../utils/colors';
 import { transparentize, lighten, desaturate } from 'polished';
 
@@ -62,6 +63,7 @@ export default () => (
       <h1>Homepage</h1>
       <h1>Homepage</h1>
       <h1>Homepage</h1>
+      <SkillMeter level={75} />
     </div>
   </Layout>
 );

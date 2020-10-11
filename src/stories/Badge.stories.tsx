@@ -8,4 +8,6 @@ export default {
   component: Badge,
 } as Meta;
 
-export const BadgeDefault = () => <Badge name="Badge" />;
+export const BadgeDefault: React.FC<{ name: string }> = () => (
+  <Badge name="Badge" />
+);

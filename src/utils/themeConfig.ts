@@ -19,12 +19,10 @@ export const getThemeValue = (): string => {
 
 export const setColors = (theme: string): void => {
   if (theme === 'light') {
-    document.documentElement.style.setProperty('--gautam', '#fff');
     lightTheme.forEach((data) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });
   } else {
-    document.documentElement.style.setProperty('--gautam', '#000');
     darkTheme.forEach((data) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });

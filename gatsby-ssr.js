@@ -15,14 +15,14 @@ function htmlThemeFunction() {
     initialThemeValue = localStorage.getItem('theme') || 'light';
   }
   const darkTheme = [
-    { name: 'primary', value: '#95a0fe' },
-    { name: 'accent', value: '#ff8000' },
+    { name: 'primary', value: '#FF8C32' },
+    { name: 'accent', value: '#44D6BC' },
     { name: 'bodyBackgroundColor', value: '#212738' },
     { name: 'bodyColor', value: '#fff' },
   ];
   const lightTheme = [
-    { name: 'primary', value: '#2459ff' },
-    { name: 'accent', value: '#ff8000' },
+    { name: 'primary', value: '#FF8C32' },
+    { name: 'accent', value: '#44D6BC' },
     { name: 'bodyBackgroundColor', value: '#fff' },
     { name: 'bodyColor', value: '#333' },
   ];
