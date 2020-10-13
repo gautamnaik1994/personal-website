@@ -43,8 +43,8 @@ const appThemes = [
 const setTheme = (theme) => {
   setColors(theme);
   if (theme == 'light') {
-    return appThemes[1];
-  } else return appThemes[0];
+    return appThemes[0];
+  } else return appThemes[1];
 };
 //addDecorator(withThemesProvider(themes));
 
@@ -146,8 +146,8 @@ export const parameters = {
 // This global object isn't set in storybook context, requiring you to override it to empty functions (no-op),
 // so Gatsby Link doesn't throw any errors.
 global.___loader = {
-  enqueue: () => { },
-  hovering: () => { },
+  enqueue: () => {},
+  hovering: () => {},
 };
 
 // Navigating through a gatsby app using gatsby-link or any other gatsby component will use the `___navigate` method.

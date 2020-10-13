@@ -1,47 +1,50 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 
 interface Props {
   className?: string;
+  hideName?: boolean;
 }
 
-export default ({ className }: Props) => (
-  <svg
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 128 230"
-  >
-    <path
-      fill="url(#paint0_linear)"
-      d="M127.86 52.172c0 28.815-23.359 52.173-52.173 52.173H62.971c4.102-19.251 16.565-37.792 39.997-56.475-25.685 7.392-45.232 31.28-58.33 56.475l-37.727.001A6.912 6.912 0 010 97.434V6.912A6.911 6.911 0 016.911 0h68.52L75.688 0c28.814 0 52.173 23.358 52.173 52.172z"
-    />
-    <path
-      fill="url(#paint1_linear)"
-      d="M35.094 125.655H13.823c-6.516 0-9.774 0-11.799 2.024C0 129.703 0 132.962 0 139.478v76.699c0 6.516 0 9.774 2.024 11.799C4.05 230 7.307 230 13.823 230h61.864c28.814 0 52.173-23.358 52.173-52.173 0-28.814-23.359-52.172-52.173-52.172h-14c.1 1.221.229 2.447.385 3.676 3.609 28.509-28.667 35.824-37.01 36.77.489-9.372 3.862-24.272 10.032-40.446z"
-    />
-    <defs>
-      <linearGradient
-        id="paint0_linear"
-        x1="3.674"
-        x2="6.981"
-        y1="0"
-        y2="230"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#00D7CE" />
-        <stop offset="1" stopColor="#0084FF" />
-      </linearGradient>
-      <linearGradient
-        id="paint1_linear"
-        x1="3.674"
-        x2="6.981"
-        y1="0"
-        y2="230"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#00D7CE" />
-        <stop offset="1" stopColor="#0084FF" />
-      </linearGradient>
-    </defs>
-  </svg>
+const Logo = styled.div<Props>`
+  svg,
+  h1 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  path {
+    fill: currentColor;
+  }
+
+  h1 {
+    font-weight: var(--fontWeightRegular);
+    font-size: 24px;
+    line-height: 1;
+    margin: 6px 0 6px 13px;
+    display: ${(props) => props.hideName && 'none'};
+  }
+`;
+
+export default ({ className, hideName }: Props): JSX.Element => (
+  <Logo hideName={hideName}>
+    <svg
+      className={className}
+      width="30"
+      height="40"
+      viewBox="0 0 30 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.14676 26.1131L19.5059 0.297078C19.986 -0.343169 20.9983 0.138715 20.8042 0.915129L14.4164 26.4702C14.3739 26.64 14.3936 26.8195 14.4719 26.9761L20.45 38.934C20.7863 39.6068 20.0129 40.2896 19.3871 39.8724L0.326675 27.1636C-0.0236706 26.93 -0.105878 26.45 0.14676 26.1131Z"
+        fill="white"
+      />
+      <path
+        d="M29.0196 26.7334C29.0196 28.7591 27.3777 30.4012 25.3523 30.4012C23.3269 30.4012 21.6851 28.7591 21.6851 26.7334C21.6851 24.7077 23.3269 23.0656 25.3523 23.0656C27.3777 23.0656 29.0196 24.7077 29.0196 26.7334Z"
+        fill="white"
+      />
+    </svg>
+    <h1>Gautam Naik</h1>
+  </Logo>
 );

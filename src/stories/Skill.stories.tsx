@@ -9,8 +9,28 @@ export default {
   component: Skill,
 } as Meta;
 
-export const SkillDefault = (): JSX.Element => (
-  <Skill>
+export const SkillProfessional = (): JSX.Element => (
+  <Skill level={79}>
+    <Item />
+    <Item />
+  </Skill>
+);
+export const SkillBeginner = (): JSX.Element => (
+  <Skill level={24}>
+    <Item />
+    <Item />
+  </Skill>
+);
+export const SkillAmateur = (): JSX.Element => (
+  <Skill level={49}>
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+  </Skill>
+);
+export const SkillSsemiPro = (): JSX.Element => (
+  <Skill level={74}>
     <Item />
     <Item />
   </Skill>

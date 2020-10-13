@@ -92,7 +92,7 @@ const backgroundGrad = (props: GradientProps) => css`
     .bottomDark}'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
 `;
 
-const SkillMeter = styled.div`
+const SkillMeter = styled.div<{ glow: string }>`
   --glassDims: 100px;
   .value,
   .label {
@@ -112,13 +112,48 @@ const SkillMeter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  .info-wrapper {
+    position: relative;
+    &:before {
+      content: '';
+      background: #${(props) => props.glow};
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: -4px;
+      right: -4px;
+      border-radius: 4px 12px;
+    }
+    .info-wrapper-inner {
+      padding: 10px;
+      background: rgba(126, 126, 126, 0.2);
+      backdrop-filter: blur(15px);
+      text-align: center;
+      border-radius: 12px;
+    }
+  }
   ${media.tablet} {
     padding-left: 0;
     text-align: center;
+    flex-basis: 200px;
+    .info-wrapper {
+      margin-top: 1rem;
+      &:before {
+        content: none;
+      }
+      .info-wrapper-inner {
+        padding: 5px 15px;
+        backdrop-filter: none;
+      }
+    }
+    .value,
+    .label {
+      font-size: 20px;
+    }
   }
 `;
 
-const Glass = styled.div<{ level: number }>`
+const Glass = styled.div<{ level: number; glow: string }>`
   --angle: 0deg;
   width: var(--glassDims);
   height: var(--glassDims);
@@ -130,7 +165,7 @@ const Glass = styled.div<{ level: number }>`
   transform-origin: center;
   transform: rotate(var(--angle));
   background: rgba(0, 0, 0, 0.13);
-  box-shadow: inset 0 0 20px #f8c338;
+  box-shadow: inset 0 0 20px #${(props) => props.glow};
   position: absolute;
   left: 0;
   top: 0;
@@ -196,9 +231,8 @@ export default ({ level }: { level: number }): JSX.Element => {
   }, []);
 
   return (
-    <SkillMeter className="">
-      <div className="label ">Level</div>
-      <Glass ref={glassRef} level={100 - level}>
+    <SkillMeter className="" glow={currentConfig.top}>
+      <Glass ref={glassRef} level={100 - level} glow={currentConfig.top}>
         <LiquidBackground colors={currentConfig} className="liquid" />
         <LiquidForeground colors={currentConfig} className="liquid" />
         <svg
@@ -222,7 +256,12 @@ export default ({ level }: { level: number }): JSX.Element => {
           />
         </svg>
       </Glass>
-      <div className="value ">{currentConfig.label}</div>
+      <div className="info-wrapper">
+        <div className="info-wrapper-inner">
+          <div className="label ">Level</div>
+          <div className="value ">{currentConfig.label}</div>
+        </div>
+      </div>
     </SkillMeter>
   );
 };

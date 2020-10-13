@@ -17,7 +17,7 @@ const spin1 = keyframes`
 const Experience = styled.div`
   border: 2px solid var(--primary);
   padding: 10px 15px;
-  border-radius: 22px;
+  border-radius: 10px;
   .circle-container {
     display: none;
     width: 125px;
@@ -51,6 +51,7 @@ const Experience = styled.div`
     width: 680px;
     padding: 40px 50px;
     margin: auto;
+    border-radius: 22px;
     .box-title {
       font-size: 24px;
       text-align: left;

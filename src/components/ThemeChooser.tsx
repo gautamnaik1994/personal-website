@@ -12,7 +12,7 @@ const smallCircles = [
 ];
 
 const properties = {
-  dark: {
+  light: {
     r: 9,
     transform: 'rotate(40deg)',
     rayTransform: 'scale(0)',
@@ -21,7 +21,7 @@ const properties = {
     opacity: 0,
     rayColor: '#000', //not matters
   },
-  light: {
+  dark: {
     r: 6,
     transform: 'rotate(90deg)',
     rayTransform: 'scale(1)',
@@ -43,7 +43,6 @@ const ThemeChooser = styled.button`
   padding: 0px;
   border: none;
   outline: none;
-  margin-left: 15px;
   circle {
     will-change: transform;
     transform-origin: center;
