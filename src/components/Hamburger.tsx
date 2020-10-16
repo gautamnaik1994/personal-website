@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
-import { useSpring, animated, useTransition } from 'react-spring';
-import styled, { ThemeContext } from 'styled-components';
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
+import styled from 'styled-components';
 
 const properties = {
   open: {
@@ -31,7 +31,10 @@ const ThemeChooser = styled.button`
   padding: 0px;
   border: none;
   outline: none;
-  margin-left: 15px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
   rect {
     will-change: transform;
     transform-origin: center;
@@ -39,12 +42,14 @@ const ThemeChooser = styled.button`
   }
 `;
 
-interface Props {}
+interface Props {
+  clickHandler: () => void;
+  menuOpen: boolean;
+}
 
-export default (): JSX.Element => {
-  const [menuOpen, setMenuOpen] = useState(false);
+export default (props: Props): JSX.Element => {
   const { transform1, transform2, transform, y2, y1, opacity } = properties[
-    menuOpen ? 'open' : 'close'
+    props.menuOpen ? 'open' : 'close'
   ];
 
   const rect1Props = useSpring({
@@ -70,14 +75,14 @@ export default (): JSX.Element => {
 
   return (
     <ThemeChooser
-      title="Toggle Theme"
-      onClick={() => setMenuOpen(!menuOpen)}
-      aria-label="Toggle Theme"
+      title="Toggle Menu"
+      onClick={props.clickHandler}
+      aria-label="Toggle Menu"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="100%"
+        height="100%"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"

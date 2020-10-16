@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect, useLayoutEffect } from 'react';
+import React, { Fragment, useState, useEffect, createContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import '../global.d.ts';
@@ -18,6 +18,16 @@ import { ThemeProvider } from 'styled-components';
 import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 import { setColors, getThemeValue } from '../utils/themeConfig';
 
+type ThemeChangeContextProps = {
+  toggleTheme: () => void;
+};
+
+export const ThemeChangeContext = createContext<
+  Partial<ThemeChangeContextProps>
+>({});
+
+// This context provider is passed to any component requiring the context
+
 export default ({ site, children }: LayoutProps) => {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
 
@@ -26,6 +36,18 @@ export default ({ site, children }: LayoutProps) => {
     localStorage.setItem('theme', currentTheme);
     setColors(currentTheme);
     setTheme(currentTheme);
+  };
+
+  const ThemeChangeProvider = ({ children }) => {
+    return (
+      <ThemeChangeContext.Provider
+        value={{
+          toggleTheme,
+        }}
+      >
+        {children}
+      </ThemeChangeContext.Provider>
+    );
   };
 
   useEffect(() => {
@@ -67,7 +89,10 @@ export default ({ site, children }: LayoutProps) => {
             }}
           >
             <Fragment>
-              <Navbar toggleTheme={toggleTheme} />
+              <ThemeChangeProvider>
+                <Navbar />
+              </ThemeChangeProvider>
+
               {children}
               <Footer />
             </Fragment>

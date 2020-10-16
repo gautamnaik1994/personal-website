@@ -182,4 +182,21 @@ export const GlobalStyle = createGlobalStyle<Props>`
   .text-center{
     text-align:center;
   }
+  .metaball-svg{
+   
+  height: 100vh;
+  width: 100%;
+  fill: red;
+
+.balls {
+  /* transition: transform 1s linear; */
+  will-change: transform;
+}
+  }
+
+  .tweakpane-container{
+    position:fixed;
+    right:0;
+    top: 66px;
+}
 `;

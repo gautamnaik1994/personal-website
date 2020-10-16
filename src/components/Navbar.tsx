@@ -6,7 +6,6 @@ import media from '../utils/MediaQueries';
 import Link from './Link';
 import Logo from './Logo';
 import ThemeChooser from './ThemeChooser';
-import Hamburger from './Hamburger';
 import { NAVIGATION } from '../utils/constant';
 
 const navBarBgColor = theme('mode', {
@@ -21,6 +20,7 @@ const logoColor = theme('mode', {
 
 const NavLink = styled(Link)`
   margin-right: 15px;
+  font-size: 16px;
   display: none;
   ${media.tablet} {
     display: inline-block;
@@ -32,7 +32,7 @@ const Navbar = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: var(--bodyBackgroundColor);
+  /* background-color: var(--bodyBackgroundColor); */
   /* box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.3); */
   padding: 10px 15px;
   position: fixed;
@@ -52,11 +52,10 @@ const HomeLink = styled(Link)`
 `;
 
 export interface Props {
-  toggleTheme: () => void;
   className?: any;
 }
 
-export default ({ toggleTheme, className }: Props) => (
+export default ({ className }: Props) => (
   <Navbar className={className}>
     <HomeLink title="Gautam Naik" to="/">
       <Logo />
@@ -71,7 +70,6 @@ export default ({ toggleTheme, className }: Props) => (
         {navigation.label}
       </NavLink>
     ))}
-    <ThemeChooser toggleTheme={toggleTheme} />
-    <Hamburger />
+    <ThemeChooser />
   </Navbar>
 );

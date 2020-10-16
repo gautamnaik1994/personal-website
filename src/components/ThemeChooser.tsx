@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useSpring, animated, useTransition } from 'react-spring';
 import styled, { ThemeContext } from 'styled-components';
+import { ThemeChangeContext } from './Layout';
 
 const smallCircles = [
   { key: 0, cx: '14', cy: '4' },
@@ -55,6 +56,7 @@ interface Props {
 
 export default ({ toggleTheme }: Props): JSX.Element => {
   const themeContext = useContext(ThemeContext);
+  const themeChangeContext = useContext(ThemeChangeContext);
   const isDarkMode = themeContext.mode === 'dark';
   const { r, transform, cx, cy, opacity, rayTransform, rayColor } = properties[
     isDarkMode ? 'dark' : 'light'
@@ -93,10 +95,11 @@ export default ({ toggleTheme }: Props): JSX.Element => {
     trail: 100,
     config: properties.springConfig,
   });
+
   return (
     <ThemeChooser
       title="Toggle Theme"
-      onClick={toggleTheme}
+      onClick={themeChangeContext.toggleTheme}
       aria-label="Toggle Theme"
     >
       <animated.svg
@@ -125,7 +128,7 @@ export default ({ toggleTheme }: Props): JSX.Element => {
             );
           })}
         </animated.g>
-        <mask id="mask">
+        <mask id="themeChooserMask">
           <rect width="100%" height="100%" fill="#fff" />
           <animated.circle {...maskedCircleProps} r="10" fill="#000" />
         </mask>
@@ -134,7 +137,7 @@ export default ({ toggleTheme }: Props): JSX.Element => {
           cy="14"
           {...centerCircleProps}
           strokeWidth="0"
-          mask="url(#mask)"
+          mask="url(#themeChooserMask)"
         />
       </animated.svg>
     </ThemeChooser>

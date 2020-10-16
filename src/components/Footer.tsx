@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
 import media from '../utils/MediaQueries';
-import NamedLogo from './NamedLogo';
+import Logo from './Logo';
 import Link from './Link';
 
 const DividerColor = theme('mode', {
@@ -45,7 +45,7 @@ const getYear = () => {
 export default () => (
   <Footer>
     <div className="inner">
-      <NamedLogo />
+      <Logo />
       <p>
         Gautam Blogs is created and maintained by Gautam Naik. If you see
         anything broken, you are welcome to create a pull request&nbsp;
