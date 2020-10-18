@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import Metaballs from '../components/Metaballs';
+import HomePageHeader from '../components/HomePageHeader';
 
 export default () => (
   <Layout>
-    <Metaballs />
+    <HomePageHeader />
   </Layout>
 );

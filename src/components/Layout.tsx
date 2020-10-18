@@ -17,6 +17,7 @@ import { LayoutProps } from '../types';
 import { ThemeProvider } from 'styled-components';
 import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 import { setColors, getThemeValue } from '../utils/themeConfig';
+import Sidebar from './Sidebar';
 
 type ThemeChangeContextProps = {
   toggleTheme: () => void;
@@ -89,10 +90,8 @@ export default ({ site, children }: LayoutProps) => {
             }}
           >
             <Fragment>
-              <ThemeChangeProvider>
-                <Navbar />
-              </ThemeChangeProvider>
-
+              <Navbar toggleTheme={toggleTheme} />
+              <Sidebar toggleTheme={toggleTheme} />
               {children}
               <Footer />
             </Fragment>

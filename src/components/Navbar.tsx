@@ -42,7 +42,11 @@ const Navbar = styled.nav`
   width: 100%;
   z-index: 2;
   button {
+    display: none;
     //margin-left: 5px;
+    ${media.tablet} {
+      display: inline-block;
+    }
   }
 `;
 
@@ -52,10 +56,11 @@ const HomeLink = styled(Link)`
 `;
 
 export interface Props {
+  toggleTheme: () => void;
   className?: any;
 }
 
-export default ({ className }: Props) => (
+export default ({ toggleTheme, className }: Props) => (
   <Navbar className={className}>
     <HomeLink title="Gautam Naik" to="/">
       <Logo />
@@ -70,6 +75,6 @@ export default ({ className }: Props) => (
         {navigation.label}
       </NavLink>
     ))}
-    <ThemeChooser />
+    <ThemeChooser toggleTheme={toggleTheme} maskName="Navbar" />
   </Navbar>
 );

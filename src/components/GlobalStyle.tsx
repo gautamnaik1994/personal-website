@@ -60,6 +60,7 @@ export const GlobalStyle = createGlobalStyle<Props>`
   body {
     background-color: var(--bodyBackgroundColor);
     color: var(--bodyColor);
+    transition: background-color 0.3s ease-in, color 0.3s ease-in;
   }
 
   button {
@@ -183,20 +184,22 @@ export const GlobalStyle = createGlobalStyle<Props>`
     text-align:center;
   }
   .metaball-svg{
-   
+
   height: 100vh;
   width: 100%;
   fill: red;
-
-.balls {
-  /* transition: transform 1s linear; */
-  will-change: transform;
-}
+		.balls {
+			/* transition: transform 1s linear; */
+			will-change: transform;
+		}
   }
 
   .tweakpane-container{
     position:fixed;
     right:0;
     top: 66px;
-}
+	}
+		.text-right{
+			text-align:right;
+		}
 `;

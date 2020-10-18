@@ -1,12 +1,13 @@
 import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
-import { useSpring, animated, useTransition } from 'react-spring';
-import media from '../utils/MediaQueries';
+import { useSpring, animated } from 'react-spring';
+import { darkBackgroundColor } from '../utils/colors';
 import Link from './Link';
 import Logo from './Logo';
 import ThemeChooser from './ThemeChooser';
 import Hamburger from './Hamburger';
+import { transparentize, cssVar } from 'polished';
 
 import { NAVIGATION } from '../utils/constant';
 
@@ -25,6 +26,11 @@ const logoColor = theme('mode', {
   dark: '#fff',
 });
 
+const bgColor = theme('mode', {
+  light: transparentize(0.5, '#fff'),
+  dark: transparentize(0.5, darkBackgroundColor),
+});
+
 const NavLink = styled(Link)`
   margin-bottom: 15px;
   font-size: 18px;
@@ -33,10 +39,13 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Sidebar = styled(animated.aside)`
-  //transition: background-color 0.3s ease-in;
+// const bgColor = transparentize(0.5, cssVar('--bodyBackgroundColor', '#fff'));
 
-  background-color: var(--bodyBackgroundColor);
+const Sidebar = styled(animated.aside)`
+  transition: background-color 0.3s ease-in;
+
+  background-color: ${bgColor};
+  backdrop-filter: blur(30px);
   padding: 35px;
   position: fixed;
   top: 0;
@@ -48,6 +57,7 @@ const Sidebar = styled(animated.aside)`
   flex-direction: column;
   justify-content: center;
   box-shadow: 2px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  will-change: transform;
 `;
 
 const HomeLink = styled(Link)`
@@ -56,10 +66,11 @@ const HomeLink = styled(Link)`
 `;
 
 export interface Props {
-  className?: any;
+  className?: string;
+  toggleTheme: () => void;
 }
 
-export default ({ className }: Props) => {
+export default ({ className, toggleTheme }: Props): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const { transform } = properties[menuOpen ? 'open' : 'close'];
@@ -70,7 +81,10 @@ export default ({ className }: Props) => {
   });
   return (
     <Fragment>
-      <Sidebar style={{ transform: sideBarProps.transform }}>
+      <Sidebar
+        className={className}
+        style={{ transform: sideBarProps.transform }}
+      >
         <HomeLink title="Gautam Naik" to="/">
           <Logo />
         </HomeLink>
@@ -84,7 +98,7 @@ export default ({ className }: Props) => {
             {navigation.label}
           </NavLink>
         ))}
-        <ThemeChooser />
+        <ThemeChooser toggleTheme={toggleTheme} maskName="Sidebar" />
       </Sidebar>
       <Hamburger
         clickHandler={() => setMenuOpen(!menuOpen)}

@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useSpring, animated, useTransition } from 'react-spring';
-import styled, { ThemeContext } from 'styled-components';
+import styled, { ThemeContext, withTheme } from 'styled-components';
 import { ThemeChangeContext } from './Layout';
 
 const smallCircles = [
@@ -35,30 +35,20 @@ const properties = {
   springConfig: { mass: 5, tension: 250, friction: 35 },
 };
 
-const ThemeChooser = styled.button`
-  display: inline-block;
-  height: 28px;
-  overflow: hidden;
-  width: 28px;
-  overflow: hidden;
-  padding: 0px;
-  border: none;
-  outline: none;
+const ThemeChooser = styled.div`
   circle {
     will-change: transform;
     transform-origin: center;
   }
 `;
 
-interface Props {
-  toggleTheme: () => void;
-  maskName: string;
-}
+interface Props { }
 
-export default ({ toggleTheme, maskName }: Props): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
+export default ({ theme }: Props): JSX.Element => {
+  // const themeContext = useContext(ThemeContext);
   // const themeChangeContext = useContext(ThemeChangeContext);
-  const isDarkMode = themeContext.mode === 'dark';
+  const isDarkMode = theme === 'dark';
+
   const { r, transform, cx, cy, opacity, rayTransform, rayColor } = properties[
     isDarkMode ? 'dark' : 'light'
   ];
@@ -98,11 +88,7 @@ export default ({ toggleTheme, maskName }: Props): JSX.Element => {
   });
 
   return (
-    <ThemeChooser
-      title="Toggle Theme"
-      onClick={toggleTheme}
-      aria-label="Toggle Theme"
-    >
+    <ThemeChooser>
       <animated.svg
         xmlns="http://www.w3.org/2000/svg"
         width="28"
@@ -129,7 +115,7 @@ export default ({ toggleTheme, maskName }: Props): JSX.Element => {
             );
           })}
         </animated.g>
-        <mask id={`themeChooserMask_${maskName}`}>
+        <mask id="themeChooserMask">
           <rect width="100%" height="100%" fill="#fff" />
           <animated.circle {...maskedCircleProps} r="10" fill="#000" />
         </mask>
@@ -138,7 +124,7 @@ export default ({ toggleTheme, maskName }: Props): JSX.Element => {
           cy="14"
           {...centerCircleProps}
           strokeWidth="0"
-          mask={`url(#themeChooserMask_${maskName})`}
+          mask="url(#themeChooserMask)"
         />
       </animated.svg>
     </ThemeChooser>

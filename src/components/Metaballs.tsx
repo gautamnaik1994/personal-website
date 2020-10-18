@@ -1,24 +1,33 @@
 import React, { Fragment } from 'react';
 import Tweakpane from 'tweakpane';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 
 interface IState {
-  radiusDivider?: number;
-  smallCircleRadius?: number;
-  color?: string;
-  distributionRadius?: number;
-  xSpeed?: number;
-  ySpeed?: number;
-  svgCenter?: number;
-  ballCount?: number;
-  blurStdDeviation?: number;
-  matrixW?: number;
-  matrixAlpha?: number;
+  radiusDivider: number | null;
+  smallCircleRadius: number | null;
+  color: string | null;
+  distributionRadius: number | null;
+  xSpeed: number | null;
+  ySpeed: number | null;
+  svgCenter: [number, number] | null;
+  ballCount: number | null;
+  blurStdDeviation: number | null;
+  matrixW: number | null;
+  matrixAlpha: number | null;
 }
 
-interface IProps {}
+declare module 'react' {
+  interface HTMLProps<T> {
+    vx?: number;
+    vy?: number;
+  }
+}
 
-class Metaballs extends React.Component<IState, IProps> {
+interface IProps {
+  showTweakPane: boolean;
+}
+
+class Metaballs extends React.Component<IProps, IState> {
   config = {
     ballCount: 5,
     smallCircleRadius: 100,
@@ -31,9 +40,9 @@ class Metaballs extends React.Component<IState, IProps> {
     ySpeed: 1,
     radiusDivider: 9,
   };
-  private svgRef: React.RefObject<HTMLOrSVGElement>;
-  private ballHolder: React.RefObject<HTMLOrSVGElement>;
-  constructor(props: {}) {
+  private svgRef: React.RefObject<HTMLElement>;
+  private ballHolder: React.RefObject<HTMLElement>;
+  constructor(props: IProps) {
     super(props);
     this.svgRef = React.createRef();
     this.ballHolder = React.createRef();
@@ -45,33 +54,35 @@ class Metaballs extends React.Component<IState, IProps> {
 
   static contextType = ThemeContext;
 
-  animationRequest = null;
-  timerID = null;
-  private ballHolderElem: HTMLOrSVGElement | null = null;
-  allCircles = null;
-  SVG_WIDTH = null;
-  SVG_HEIGHT = null;
+  animationRequest: number | null = null;
+  timerID: number | null = null;
+  private ballHolderElem: HTMLElement | null = null;
+  allCircles: NodeListOf<HTMLElement> | null = null;
+  SVG_WIDTH: number | null = null;
+  SVG_HEIGHT: number | null = null;
+  SVG_CENTER_X: number | null = null;
+  SVG_CENTER_Y: number | null = null;
   // matrixW = this.config.matrixW;
 
   widthMultiplier = (): number => {
     if (this.SVG_HEIGHT > this.SVG_WIDTH) {
-      return this.SVG_HEIGHT / (this.state.radiusDivider * 100);
-    } else return this.SVG_WIDTH / (this.state.radiusDivider * 100);
+      return this.SVG_HEIGHT / (this.state?.radiusDivider * 100);
+    } else return this.SVG_WIDTH / (this.state?.radiusDivider * 100);
   };
 
   cancelAll = (): void => {
     const cancelAnimationFrame =
       window.cancelAnimationFrame || window.mozCancelAnimationFrame;
-    cancelAnimationFrame(this.animationRequest);
-    clearTimeout(this.timerID);
+    cancelAnimationFrame(this?.animationRequest);
+    clearTimeout(this?.timerID);
   };
 
   componentDidMount(): void {
     this.cancelAll();
 
     const svgElem = this.svgRef.current;
-    this.SVG_HEIGHT = svgElem.clientHeight;
-    this.SVG_WIDTH = svgElem.clientWidth;
+    this.SVG_HEIGHT = svgElem!.clientHeight;
+    this.SVG_WIDTH = svgElem!.clientWidth;
     this.SVG_CENTER_X = this.SVG_WIDTH / 2;
     this.SVG_CENTER_Y = this.SVG_HEIGHT / 2;
     this.setState({
@@ -82,29 +93,32 @@ class Metaballs extends React.Component<IState, IProps> {
       ...this.config,
     };
 
-    const pane = new Tweakpane({
-      container: document.getElementById('tweakpaneContainer'),
-    });
-    const f1 = pane.addFolder({
-      title: 'Tweaks',
-    });
-
-    for (const [key, val] of Object.entries(this.config)) {
-      f1.addInput(PARAMS, key, {
-        min: 1,
-        max: 100,
-        step: 1,
-      }).on('change', (val) => {
-        this.setState({
-          [key]: val,
-        });
+    if (this.props.showTweakPane) {
+      const pane = new Tweakpane({
+        container: document.getElementById('tweakpaneContainer'),
       });
+      const f1 = pane.addFolder({
+        title: 'Tweaks',
+      });
+
+      for (const [key, val] of Object.entries(this.config)) {
+        f1.addInput(PARAMS, key, {
+          min: 1,
+          max: 100,
+          step: 1,
+        }).on('change', (val) => {
+          this.setState({
+            [key]: val,
+          });
+        });
+      }
     }
+
     this.ballHolderElem = this.ballHolder.current;
-    this.allCircles = this.ballHolderElem.childNodes;
+    this.allCircles = this.ballHolderElem?.childNodes;
     this.step();
-    console.log('last');
-    console.log(this.widthMultiplier());
+    // console.log('last');
+    // console.log(this.widthMultiplier());
   }
 
   step = (): void => {
@@ -116,7 +130,7 @@ class Metaballs extends React.Component<IState, IProps> {
       window.msRequestAnimationFrame;
 
     for (let i = 0; i < this.allCircles.length; i++) {
-      const _mb = this.allCircles[i];
+      const _mb: HTMLElement = this.allCircles[i];
       const r = parseFloat(_mb.attributes.r.nodeValue);
       const scrollY = window.scrollY;
       const mb = {
@@ -155,9 +169,8 @@ class Metaballs extends React.Component<IState, IProps> {
         // _mb.setAttribute("vy", mb.vy);
       }
 
-      _mb.style.transform = `translate(${mb.x - this.SVG_CENTER_X}px,${
-        mb.y - this.SVG_CENTER_Y
-      }px )`;
+      _mb.style.transform = `translate(${mb.x - this.SVG_CENTER_X}px,${mb.y - this.SVG_CENTER_Y
+        }px )`;
       // _mb.setAttribute("vx", mb.vx);
 
       // debugger;
@@ -235,8 +248,8 @@ class Metaballs extends React.Component<IState, IProps> {
         <svg
           ref={this.svgRef}
           className="metaball-svg"
-          // width="100%"
-          // height="100%"
+        // width="100%"
+        // height="100%"
         >
           <defs>
             <filter id="gooey">
@@ -278,6 +291,7 @@ class Metaballs extends React.Component<IState, IProps> {
             </g>
           </mask>
         </svg>
+        {/*TODO: need tp remove this later*/}
         <div id="tweakpaneContainer" className="tweakpane-container" />
       </Fragment>
     );

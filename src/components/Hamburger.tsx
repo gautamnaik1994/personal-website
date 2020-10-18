@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
+import media from '../utils/MediaQueries';
 
 const properties = {
   open: {
@@ -22,7 +23,7 @@ const properties = {
   springConfig: { mass: 5, tension: 250, friction: 35 },
 };
 
-const ThemeChooser = styled.button`
+const Hamburger = styled.button`
   display: inline-block;
   height: 28px;
   overflow: hidden;
@@ -32,9 +33,12 @@ const ThemeChooser = styled.button`
   border: none;
   outline: none;
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   z-index: 2;
+  ${media.tablet} {
+    display: none;
+  }
   rect {
     will-change: transform;
     transform-origin: center;
@@ -74,7 +78,7 @@ export default (props: Props): JSX.Element => {
   }
 
   return (
-    <ThemeChooser
+    <Hamburger
       title="Toggle Menu"
       onClick={props.clickHandler}
       aria-label="Toggle Menu"
@@ -116,6 +120,6 @@ export default (props: Props): JSX.Element => {
           fill="white"
         />
       </svg>
-    </ThemeChooser>
+    </Hamburger>
   );
 };
