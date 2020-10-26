@@ -6,7 +6,7 @@ import media from '../../utils/MediaQueries';
 const Skill = styled.div`
   border: 2px solid var(--primary);
   padding: 10px 15px;
-  border-radius: 12px;
+  border-radius: 8px;
   .box-title {
     margin: 0.5rem 0 1rem 0;
     font-weight: var(--fontWeightBold);
@@ -18,6 +18,14 @@ const Skill = styled.div`
     margin-top: 1.5rem;
   }
   ${media.tablet} {
+    position: relative;
+    .skill-meter {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 180px;
+    }
     .right-sec {
       margin-top: 0;
     }
@@ -26,7 +34,7 @@ const Skill = styled.div`
       align-items: center;
     }
     padding: 25px 30px;
-    border-radius: 22px;
+    padding-left: 210px;
     .box-title {
       font-size: 24px;
       text-align: left;
@@ -56,11 +64,8 @@ export default ({
   return (
     <Skill>
       <div className="box-title">{name}</div>
-      <div className="inner">
-        <SkillMeter level={level} />
-        <div className="v-hr" />
-        <div className="right-sec">{props.children}</div>
-      </div>
+      <SkillMeter className="skill-meter" level={level} />
+      <div className="right-sec">{props.children}</div>
     </Skill>
   );
 };

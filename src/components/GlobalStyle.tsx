@@ -104,13 +104,13 @@ export const GlobalStyle = createGlobalStyle<Props>`
   }
   .category-shadow {
     box-shadow: 0 4px 3px 0px rgba(0, 0, 0, 0.16);
-    ${media.tablet} {
+    ${media.desktop} {
       box-shadow: none;
     }
   }
   .show-for-tablet {
     display: none;
-    ${media.tablet} {
+    ${media.desktop} {
       display: block;
     }
   }

@@ -13,7 +13,7 @@ import { Frontmatter, SiteMetadata, Site } from '../types';
 import media from '../utils/MediaQueries';
 
 const Grid = styled.div`
-  ${media.tablet} {
+  ${media.desktop} {
     display: grid;
     grid-template-columns:
       auto minmax(auto, 200px) minmax(550px, 650px) minmax(0, 200px)

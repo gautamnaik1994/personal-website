@@ -19,7 +19,7 @@ export default media;
 //${media.desktop} {
 //background: dodgerblue;
 //}
-//${media.tablet} {
+//${media.desktop} {
 //background: mediumseagreen;
 //}
 //${media.phone} {

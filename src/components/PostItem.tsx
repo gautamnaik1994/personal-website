@@ -59,7 +59,7 @@ const PostItem = styled.div`
     background-repeat: no-repeat;
     opacity: 0.75;
   }
-  ${media.tablet} {
+  ${media.desktop} {
     padding: 15px;
     margin-bottom: 15px;
   }
@@ -102,7 +102,7 @@ const ReadMore = styled(Link)`
       animation: ${readMoreAnimation} 0.3s linear 2;
     }
   }
-  ${media.tablet} {
+  ${media.desktop} {
     transform: translateX(0);
     box-shadow: ${boxShadow};
     top: 30px;
@@ -136,31 +136,31 @@ export default ({
   tags,
   readTime,
 }: Props) => (
-  <PostItem>
-    <div className="inner">
-      <h2 className="m-0">
-        <Link title={title} to={`/blog${link}`}>
-          {title}
-        </Link>
-      </h2>
-      <small>
-        {date} &bull; {readTime} minutes read
+    <PostItem>
+      <div className="inner">
+        <h2 className="m-0">
+          <Link title={title} to={`/blog${link}`}>
+            {title}
+          </Link>
+        </h2>
+        <small>
+          {date} &bull; {readTime} minutes read
       </small>
 
-      <div className="half-rem-mt">
-        <Badge name={category[0]} />
-      </div>
-      <StyledParagraph>{excerpt}</StyledParagraph>
-      {/*
+        <div className="half-rem-mt">
+          <Badge name={category[0]} />
+        </div>
+        <StyledParagraph>{excerpt}</StyledParagraph>
+        {/*
       <div>
         {tags.map((tag, index) => (
           <Badge key={index} name={tag} />
         ))}
     </div>
       */}
-    </div>
-    <ReadMore title="Read More" to={link}>
-      <i className="icon-arrow" />
-    </ReadMore>
-  </PostItem>
-);
+      </div>
+      <ReadMore title="Read More" to={link}>
+        <i className="icon-arrow" />
+      </ReadMore>
+    </PostItem>
+  );

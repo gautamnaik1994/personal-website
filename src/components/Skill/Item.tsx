@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import media from '../../utils/MediaQueries';
-
 const Item = styled.div`
   .value,
   .label {
@@ -28,8 +26,8 @@ export default ({
   label = 'Tech Stack',
   value = 'Photoshop, Adone XD, Illustrator',
 }: ItemProps): JSX.Element => (
-  <Item>
-    <div className="label">{label}</div>
-    <div className="value">{value}</div>
-  </Item>
-);
+    <Item>
+      <div className="label">{label}</div>
+      <div className="value">{value}</div>
+    </Item>
+  );

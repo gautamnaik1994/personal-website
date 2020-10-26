@@ -13,7 +13,7 @@ const Holder = styled.div`
   transform: translate(-50%, -50%);
   white-space: nowrap;
   font-size: 16px;
-  ${media.tablet} {
+  ${media.desktop} {
     font-size: 26px;
   }
 `;

@@ -20,7 +20,7 @@ const StyledLogo = styled(Logo)`
   border-radius: 10px;
   box-shadow: 0 0 7px 0px #8b8b8b;
   box-sizing: content-box;
-  ${media.tablet} {
+  ${media.desktop} {
     width: 31px;
     padding: 14px 26px;
     border-radius: 18px;
@@ -44,7 +44,7 @@ const Name = styled.div<NameProps>`
   z-index: -1;
   margin-left: ${(props) => props.marginLeft}px;
 
-  ${media.tablet} {
+  ${media.desktop} {
     font-size: 33px;
     line-height: 32px;
   }
@@ -87,11 +87,11 @@ const Hero = styled.header<HeroProps>`
     bottom: 0;
     background-image: url('abstractbgRings.svg');
     animation: ${bgAnim} 350s infinite linear;
-    ${media.tablet} {
+    ${media.desktop} {
       height: auto;
     }
   }
-  ${media.tablet} {
+  ${media.desktop} {
     height: ${(props) => (props.showHero ? 50 : 0)}vh;
   }
   .img-bg-2 {

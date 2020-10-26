@@ -34,7 +34,7 @@ const backgroundColor = theme('mode', {
   dark: (props: any) => transparentize(0.4, props.theme.primary),
 });
 
-const CategoryItem = styled(Link)<CategoryItemProps>`
+const CategoryItem = styled(Link) <CategoryItemProps>`
   --blur: 7px;
   display: inline-block;
   padding: 5px 8px;
@@ -74,19 +74,19 @@ const CategoryItem = styled(Link)<CategoryItemProps>`
       }
     `};
 
-  ${media.tablet} {
+  ${media.desktop} {
   box-shadow: ${boxShadow};
     padding: 3px 8px;
     border-radius: 3px;
     margin: 5px 8px 5px 0;
     background-color: ${(props) =>
-      props.activeCategory
-        ? props.theme.primary
-        : transparentize(0.6, props.theme.primary)};
+    props.activeCategory
+      ? props.theme.primary
+      : transparentize(0.6, props.theme.primary)};
     text-transform: capitalize;
     ${(props) =>
-      props.activeCategory &&
-      css`
+    props.activeCategory &&
+    css`
         color: ${textColorTablet};
         &:after {
           display: none;

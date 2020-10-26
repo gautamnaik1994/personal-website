@@ -24,7 +24,7 @@ const Categories = styled.ul`
   z-index: 2;
   background: var(--bodyBackgroundColor);
   transition: box-shadow 0.3s ease-in, background 0.3s ease-in;
-  ${media.tablet} {
+  ${media.desktop} {
     padding: 0;
     background: transparent;
     white-space: normal;

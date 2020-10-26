@@ -36,7 +36,7 @@ const Hamburger = styled.button`
   top: 15px;
   right: 15px;
   z-index: 2;
-  ${media.tablet} {
+  ${media.desktop} {
     display: none;
   }
   rect {

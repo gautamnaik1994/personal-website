@@ -14,7 +14,7 @@ const Footer = styled.footer`
   min-height: 150px;
   border-top: 1px solid ${DividerColor};
   border-bottom: 5px solid var(--primary);
-  ${media.tablet} {
+  ${media.desktop} {
     display: grid;
     grid-template-columns:
       auto minmax(auto, 200px) minmax(550px, 650px) minmax(0, 200px)
@@ -30,7 +30,7 @@ const Footer = styled.footer`
     small {
       display: block;
     }
-    ${media.tablet} {
+    ${media.desktop} {
       display: flex;
       justify-content: space-between;
     }

@@ -24,7 +24,7 @@ const postBgColor = theme('mode', {
 });
 
 const Grid = styled.div`
-  ${media.tablet} {
+  ${media.desktop} {
     display: grid;
     grid-template-columns:
       auto minmax(auto, 200px) minmax(550px, 650px) minmax(0, 200px)
@@ -77,9 +77,9 @@ interface GatsbyImageProps {
   fluid: any;
 }
 
-const CustomImg = styled(Img)<GatsbyImageProps>`
+const CustomImg = styled(Img) <GatsbyImageProps>`
   width: 100%;
-  ${media.tablet} {
+  ${media.desktop} {
     width: 650px;
     margin: auto;
   }
@@ -89,7 +89,7 @@ const Title = styled.h1`
   margin-bottom: 0;
   margin-top: 0;
   font-variant-ligatures: none;
-  ${media.tablet} {
+  ${media.desktop} {
     font-weight: 600;
     font-size: 36px;
     line-height: 47px;
@@ -109,7 +109,7 @@ const MetaDataContainer = styled.div`
     font-size: 14px;
   }
 
-  ${media.tablet} {
+  ${media.desktop} {
     .title {
       font-size: 14px;
     }

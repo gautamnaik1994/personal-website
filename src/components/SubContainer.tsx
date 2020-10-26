@@ -6,7 +6,7 @@ const SubContainer = styled.div`
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  ${media.tablet} {
+  ${media.desktop} {
     max-width: 768px;
   }
 `;

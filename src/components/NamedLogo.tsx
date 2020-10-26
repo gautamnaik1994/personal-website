@@ -15,7 +15,7 @@ const StyledLogo = styled(Logo)`
   border-radius: 7px;
   box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.24);
   box-sizing: content-box;
-  ${media.tablet} {
+  ${media.desktop} {
   }
 `;
 
@@ -28,7 +28,7 @@ const Name = styled.div`
   line-height: 20px;
   //font-family: 'Merriweather', serif;
   position: relative;
-  ${media.tablet} {
+  ${media.desktop} {
   }
 `;
 
