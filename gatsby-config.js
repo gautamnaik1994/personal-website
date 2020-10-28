@@ -1,11 +1,11 @@
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
-    siteUrl: 'https://gautamblogs.netlify.app',
+    siteUrl: 'https://gautamnaik.com',
     author: 'Gautam Naik',
-    title: 'Gautam Blogs',
-    description: 'Blog will contain blogs',
-    keywords: ['vim', 'blog', 'mappings', 'css', 'react'],
+    title: 'Gautam Naik',
+    description: 'Personal Website',
+    keywords: ['ui', 'ux', 'designer', 'css', 'frontend'],
   },
   plugins: [
     {
@@ -91,5 +91,6 @@ module.exports = {
     //     trackingId: 'UA-124761745-2',
     //   },
     // },
+    'gatsby-plugin-netlify-cms',
   ],
 };
