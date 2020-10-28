@@ -34,7 +34,10 @@ export default ({ site, children }: LayoutProps) => {
 
   const toggleTheme = (): void => {
     const currentTheme = theme === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', currentTheme);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', currentTheme);
+    }
+
     setColors(currentTheme);
     setTheme(currentTheme);
   };
