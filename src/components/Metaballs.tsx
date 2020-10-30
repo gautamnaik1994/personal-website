@@ -78,6 +78,7 @@ class Metaballs extends React.Component<IProps, IState> {
   };
 
   componentDidMount(): void {
+    console.log('cdm');
     this.cancelAll();
 
     const svgElem = this.svgRef.current;
@@ -122,7 +123,7 @@ class Metaballs extends React.Component<IProps, IState> {
   }
 
   step = (): void => {
-    // console.log("stepping");
+    console.log('stepping');
     const requestAnimationFrame =
       window.requestAnimationFrame ||
       window.mozRequestAnimationFrame ||
@@ -169,8 +170,9 @@ class Metaballs extends React.Component<IProps, IState> {
         // _mb.setAttribute("vy", mb.vy);
       }
 
-      _mb.style.transform = `translate(${mb.x - this.SVG_CENTER_X}px,${mb.y - this.SVG_CENTER_Y
-        }px )`;
+      _mb.style.transform = `translate(${mb.x - this.SVG_CENTER_X}px,${
+        mb.y - this.SVG_CENTER_Y
+      }px )`;
       // _mb.setAttribute("vx", mb.vx);
 
       // debugger;
@@ -178,7 +180,7 @@ class Metaballs extends React.Component<IProps, IState> {
 
     this.timerID = setTimeout(() => {
       this.animationRequest = requestAnimationFrame(this.step);
-    }, 1000 / 60);
+    }, 1000 / 10);
   };
 
   generatePointsOnCircle = (
@@ -247,10 +249,13 @@ class Metaballs extends React.Component<IProps, IState> {
       <Fragment>
         <svg
           ref={this.svgRef}
-          className="metaball-svg"
-        // width="100%"
-        // height="100%"
+          className="metaball-svg gautam"
+          // width="100%"
+          // height="100%"
         >
+          <g filter="url(#gooey)" id="ballHolderMain" ref={this.ballHolder}>
+            {this.state.svgCenter && this.renderBalls(ballCount)}
+          </g>
           <defs>
             <filter id="gooey">
               <feGaussianBlur
@@ -286,9 +291,7 @@ class Metaballs extends React.Component<IProps, IState> {
           />
           <mask id="metaballsMask">
             <rect x="0" y="0" width="100%" height="100%" fill="white" />
-            <g filter="url(#gooey)" ref={this.ballHolder}>
-              {this.state.svgCenter && this.renderBalls(ballCount)}
-            </g>
+            <use href="#ballHolderMain" />
           </mask>
         </svg>
         {/*TODO: need tp remove this later*/}
