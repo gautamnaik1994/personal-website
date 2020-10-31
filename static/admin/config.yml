@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  # name: test-repo
+  # name: git-gateway
+  name: test-repo
   branch: master
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
@@ -12,6 +12,11 @@ backend:
 site_url: https://gautamn.netlify.app
 
 publish_mode: editorial_workflow
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
 
 media_folder: static/img
 public_folder: /img
@@ -53,20 +58,25 @@ collections: # A list of collections the CMS should be able to edit
         description: "Static Data of the website like text, images"
         fields:
           - { label: "Position", name: "position", widget: "string", default: "Frontend Developer & Designer" }
-          - { label: "Comapany", name: "company", widget: "string" , default: "Bidchat" }
+          - { label: "Company", name: "company", widget: "string" , default: "Bidchat" }
           - { label: "About Me", name: "aboutMe", widget: "markdown", default: "Hi, I am Gautam Naik"}
+          - { label: "Birthdate", name: "bday", widget: "string" , default: "2nd May 1994" }
+          - { label: "Email", name: "email", widget: "string" , default: "gautamnaik1994@gmail.com" }
+          - { label: "Location", name: "location", widget: "string" , default: "Panaji-Goa" }
+          # Socail Links
           - { label: "About Me Image", name: "aboutMeImage", widget: "image" }
           - { label: "CV", name: "cv", widget: "file" }
 
   - name: "skills"
     label: "Skills"
     folder: "_data/skills"
+    slug: 'skill-{{title}}'
     editor:
       preview: false
     create: true
     description: "Skills Info"
     fields:
-      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Name", name: "title", widget: "string" }
       - { label: "Value", name: "value", widget: "number" }
       - label: "Details"
         name: "details"
@@ -88,9 +98,10 @@ collections: # A list of collections the CMS should be able to edit
     editor:
       preview: false
     create: true
+    slug: 'project-{{title}}'
     description: "Projects Info"
     fields:
-      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Name", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - label: "Details"
         name: "details"
@@ -109,11 +120,13 @@ collections: # A list of collections the CMS should be able to edit
   - name: "workExperience"
     label: "Work Experience"
     folder: "_data/workExperience"
+    slug: 'workExperience-{{title}}'
     editor:
       preview: false
     create: true
     description: "Work Experience Info"
     fields:
-      - { label: "Company Name", name: "name", widget: "string" }
+      - { label: "Company Name", name: "title", widget: "string" }
       - { label: "Role", name: "role", widget: "string" }
+      - { label: "Time Range", name: "timeRange", widget: "string" }
       - { label: "Responsibilities", name: "responsibilities", widget: "markdown" }
