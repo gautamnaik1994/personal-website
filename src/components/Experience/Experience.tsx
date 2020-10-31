@@ -139,7 +139,7 @@ const Experience = styled.div`
   }
 `;
 
-export default () => {
+export default (): JSX.Element => {
   const [dateData, setDateData] = useState({
     years: 0,
     months: 0,

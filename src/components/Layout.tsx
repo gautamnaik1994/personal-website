@@ -29,7 +29,7 @@ export const ThemeChangeContext = createContext<
 
 // This context provider is passed to any component requiring the context
 
-export default ({ site, children }: LayoutProps) => {
+export default ({ site, children }: LayoutProps): JSX.Element => {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
 
   const toggleTheme = (): void => {
