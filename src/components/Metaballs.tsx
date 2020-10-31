@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { Fragment } from 'react';
 import Tweakpane from 'tweakpane';
 import { ThemeContext } from 'styled-components';

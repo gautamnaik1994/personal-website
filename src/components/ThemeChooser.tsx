@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useSpring, animated, useTransition } from 'react-spring';
 import styled, { ThemeContext } from 'styled-components';
-import { ThemeChangeContext } from './Layout';
 
 const smallCircles = [
   { key: 0, cx: '14', cy: '4' },

@@ -77,7 +77,7 @@ interface GatsbyImageProps {
   fluid: any;
 }
 
-const CustomImg = styled(Img) <GatsbyImageProps>`
+const CustomImg = styled(Img)<GatsbyImageProps>`
   width: 100%;
   ${media.desktop} {
     width: 650px;

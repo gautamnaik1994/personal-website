@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-
+import '../../global.d.ts';
+//@ts-ignore
 import countdown from 'countdown';
 import Item from './Item';
 import media from '../../utils/MediaQueries';
@@ -146,11 +147,12 @@ export default () => {
     months: 0,
     days: 0,
     minutes: 0,
+    hours: 0,
     seconds: 0,
   });
 
   useEffect(() => {
-    const date = new Date(parseInt(1438765200000));
+    const date = new Date(1438765200000);
     const dateInterval = setInterval(function () {
       const _dateData = countdown(date, new Date());
       const { years, months, days, hours, minutes, seconds } = _dateData;
@@ -175,8 +177,8 @@ export default () => {
           <Item titleMed="Years" title="Yrs" value={dateData['years']} />
           <Item titleMed="Months" title="Mons" value={dateData['months']} />
           <Item titleMed="Days" title="Days" value={dateData['days']} />
+          <Item titleMed="Hours" title="Hrs" value={dateData['hours']} />
           <Item titleMed="Minutes" title="Mins" value={dateData['minutes']} />
-          <Item titleMed="Seconds" title="Sec" value={dateData['seconds']} />
         </div>
       </div>
     </Experience>

@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect, createContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import '../global.d.ts';
+// import '../global.d.ts';
 // Had added @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
 import 'prismjs/themes/prism-tomorrow.css';
@@ -42,17 +42,17 @@ export default ({ site, children }: LayoutProps) => {
     setTheme(currentTheme);
   };
 
-  const ThemeChangeProvider = ({ children }) => {
-    return (
-      <ThemeChangeContext.Provider
-        value={{
-          toggleTheme,
-        }}
-      >
-        {children}
-      </ThemeChangeContext.Provider>
-    );
-  };
+  // const ThemeChangeProvider = ({ children }) => {
+  //   return (
+  //     <ThemeChangeContext.Provider
+  //       value={{
+  //         toggleTheme,
+  //       }}
+  //     >
+  //       {children}
+  //     </ThemeChangeContext.Provider>
+  //   );
+  // };
 
   useEffect(() => {
     //themeConfig();

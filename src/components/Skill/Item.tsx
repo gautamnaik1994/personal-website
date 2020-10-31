@@ -26,8 +26,8 @@ export default ({
   label = 'Tech Stack',
   value = 'Photoshop, Adone XD, Illustrator',
 }: ItemProps): JSX.Element => (
-    <Item>
-      <div className="label">{label}</div>
-      <div className="value">{value}</div>
-    </Item>
-  );
+  <Item>
+    <div className="label">{label}</div>
+    <div className="value">{value}</div>
+  </Item>
+);

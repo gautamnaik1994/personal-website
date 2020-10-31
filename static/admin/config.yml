@@ -3,11 +3,11 @@ backend:
   name: test-repo
   branch: master
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 site_url: https://gautamn.netlify.app
 
@@ -17,83 +17,103 @@ media_folder: static/img
 public_folder: /img
 
 collections: # A list of collections the CMS should be able to edit
-  - name: 'settings'
-    label: 'Settings'
+  - name: "settings"
+    label: "Settings"
     delete: false # Prevent users from deleting documents in this collection
     editor:
       preview: false
     files:
-      - name: 'general'
-        label: 'Site Settings'
-        file: '_data/settings.json'
-        description: 'General Site Settings'
+      - name: "general"
+        label: "Site Settings"
+        file: "_data/settings.json"
+        description: "General Site Settings"
         fields:
-          - { label: 'Position', name: 'position', widget: 'string' }
-          - { label: 'About Me', name: 'about_me', widget: 'string' }
-          - label: 'Post Settings'
+          - label: "Post Settings"
             name: posts
-            widget: 'object'
+            widget: "object"
             fields:
               - {
-                  label: 'Number of posts on frontpage',
+                  label: "Number of posts on frontpage",
                   name: front_limit,
                   widget: number,
                   min: 1,
                   max: 10,
                 }
-              - { label: 'Default Author', name: author, widget: string }
+              - { label: "Default Author", name: author, widget: string }
               - {
-                  label: 'Default Thumbnail',
+                  label: "Default Thumbnail",
                   name: thumb,
                   widget: image,
-                  class: 'thumb',
+                  class: "thumb",
                   required: false,
                 }
-  - name: 'skills'
-    label: 'Skills'
-    folder: 'skills'
+      - name: "websiteStaticContent"
+        label: "Website Static Content"
+        file: "_data/websiteStaticContent.json"
+        description: "Static Data of the website like text, images"
+        fields:
+          - { label: "Position", name: "position", widget: "string", default: "Frontend Developer & Designer" }
+          - { label: "Comapany", name: "company", widget: "string" , default: "Bidchat" }
+          - { label: "About Me", name: "aboutMe", widget: "markdown", default: "Hi, I am Gautam Naik"}
+          - { label: "About Me Image", name: "aboutMeImage", widget: "image" }
+          - { label: "CV", name: "cv", widget: "file" }
+
+  - name: "skills"
+    label: "Skills"
+    folder: "_data/skills"
     editor:
       preview: false
     create: true
-    description: 'Skills Info'
+    description: "Skills Info"
     fields:
-      - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Value', name: 'value', widget: 'number' }
-      - label: 'Details'
-        name: 'details'
-        widget: 'list'
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Value", name: "value", widget: "number" }
+      - label: "Details"
+        name: "details"
+        widget: "list"
         allow_add: true
-        summary: '{{fields.key}} - {{fields.value}}'
+        summary: "{{fields.key}} - {{fields.value}}"
         fields:
           - label: Key
             name: key
             widget: string
-            default: 'Languages'
+            default: "Languages"
           - label: Value
             name: value
             widget: string
-            default: 'HTML, CSS'
-  - name: 'projects'
-    label: 'Projects'
-    folder: 'projects'
+            default: "HTML, CSS"
+  - name: "projects"
+    label: "Projects"
+    folder: "_data/projects"
     editor:
       preview: false
     create: true
-    description: 'Projects Info'
+    description: "Projects Info"
     fields:
-      - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Value', name: 'value', widget: 'number' }
-      - label: 'Details'
-        name: 'details'
-        widget: 'list'
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Details"
+        name: "details"
+        widget: "list"
         allow_add: true
-        summary: '{{fields.key}} - {{fields.value}}'
+        summary: "{{fields.key}} - {{fields.value}}"
         fields:
           - label: Key
             name: key
             widget: string
-            default: 'Languages'
+            default: "Languages"
           - label: Value
             name: value
             widget: string
-            default: 'HTML, CSS'
+            default: "HTML, CSS"
+  - name: "workExperience"
+    label: "Work Experience"
+    folder: "_data/workExperience"
+    editor:
+      preview: false
+    create: true
+    description: "Work Experience Info"
+    fields:
+      - { label: "Company Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Responsibilities", name: "responsibilities", widget: "markdown" }

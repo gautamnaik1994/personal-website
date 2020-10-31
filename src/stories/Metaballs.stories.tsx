@@ -8,4 +8,6 @@ export default {
   component: Metaballs,
 } as Meta;
 
-export const MetaballsDefault = (): JSX.Element => <Metaballs />;
+export const MetaballsDefault = (): JSX.Element => (
+  <Metaballs showTweakPane={true} />
+);

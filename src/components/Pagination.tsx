@@ -149,18 +149,18 @@ export default ({
   nextPostTitle = 'Next',
   prevPostTitle = 'Prev',
 }: Props) => (
-    <PaginationWrapper insidePost={insidePost}>
-      {previousPagePath && (
-        <Link className="left" title={prevPostTitle} to={previousPagePath}>
-          <i className="icon-arrow" />
-          <span>&nbsp;{prevPostTitle}</span>
-        </Link>
-      )}
-      {nextPagePath && (
-        <Link className="right" title={nextPostTitle} to={nextPagePath}>
-          <span>{nextPostTitle}&nbsp;</span>
-          <i className="icon-arrow" />
-        </Link>
-      )}
-    </PaginationWrapper>
-  );
+  <PaginationWrapper insidePost={insidePost}>
+    {previousPagePath && (
+      <Link className="left" title={prevPostTitle} to={previousPagePath}>
+        <i className="icon-arrow" />
+        <span>&nbsp;{prevPostTitle}</span>
+      </Link>
+    )}
+    {nextPagePath && (
+      <Link className="right" title={nextPostTitle} to={nextPagePath}>
+        <span>{nextPostTitle}&nbsp;</span>
+        <i className="icon-arrow" />
+      </Link>
+    )}
+  </PaginationWrapper>
+);

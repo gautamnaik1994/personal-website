@@ -83,13 +83,13 @@ interface GradientProps {
 const foregroundGrad = (props: GradientProps) => css`
   background-image: url("data:image/svg+xml,%3Csvg width='182' height='232' viewBox='0 0 182 232' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M182 18.1768C161.145 17.9924 156.144 0 131.344 0C120.904 0 112.216 4.63641 103.89 9.22013C95.5629 13.8038 83.7303 15.3054 75.5326 12.2759C67.3348 9.24647 59.3949 1.52791 46.0414 1.73865C34.0025 1.89671 29.4397 5.69013 22.6856 8.95669C15.3643 12.4867 7.6306 18.2558 0 18.1768V232H182V18.1768Z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='91' y1='0' x2='91' y2='182' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23${props
     .colors.top}'/%3E%3Cstop offset='1' stop-color='%23${props.colors
-      .bottom}'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+    .bottom}'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
 `;
 
 const backgroundGrad = (props: GradientProps) => css`
   background-image: url("data:image/svg+xml,%3Csvg width='182' height='232' viewBox='0 0 182 232' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 18.1768C20.8552 17.9924 25.8564 0 50.6558 0C61.0963 0 69.7839 4.63641 78.1105 9.22013C86.4371 13.8038 98.2697 15.3054 106.467 12.2759C114.665 9.24647 122.605 1.52791 135.959 1.73865C147.997 1.89671 152.56 5.69013 159.314 8.95669C166.636 12.4867 174.369 18.2558 182 18.1768V232H0V18.1768Z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='91' y1='0' x2='91' y2='182' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23${props
     .colors.topDark}'/%3E%3Cstop offset='1' stop-color='%23${props.colors
-      .bottomDark}'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+    .bottomDark}'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
 `;
 
 const SkillMeter = styled.div<{ glow: string }>`

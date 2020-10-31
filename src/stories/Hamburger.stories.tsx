@@ -8,8 +8,6 @@ export default {
   component: Hamburger,
 } as Meta;
 
-interface Props {}
-
-export const HamburgerDefault: React.FC<Props> = (): JSX.Element => (
-  <Hamburger />
+export const HamburgerDefault = (): JSX.Element => (
+  <Hamburger clickHandler={action('button-click')} menuOpen={false} />
 );

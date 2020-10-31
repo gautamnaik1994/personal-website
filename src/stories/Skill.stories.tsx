@@ -10,28 +10,28 @@ export default {
 } as Meta;
 
 export const SkillProfessional = (): JSX.Element => (
-  <Skill level={79}>
-    <Item />
-    <Item />
+  <Skill name="UI Designing" level={79}>
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
   </Skill>
 );
 export const SkillBeginner = (): JSX.Element => (
-  <Skill level={24}>
-    <Item />
-    <Item />
+  <Skill name="UI Designing" level={24}>
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
   </Skill>
 );
 export const SkillAmateur = (): JSX.Element => (
-  <Skill level={49}>
-    <Item />
-    <Item />
-    <Item />
-    <Item />
+  <Skill name="UI Designing" level={49}>
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
   </Skill>
 );
 export const SkillSsemiPro = (): JSX.Element => (
-  <Skill level={74}>
-    <Item />
-    <Item />
+  <Skill name="UI Designing" level={74}>
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
+    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
   </Skill>
 );

@@ -10,5 +10,5 @@ export default {
 } as Meta;
 
 export const ThemeChooserDefault = (): JSX.Element => (
-  <ThemeChooser toggleTheme={action('button-click')} />
+  <ThemeChooser maskName="test" toggleTheme={action('button-click')} />
 );

@@ -50,8 +50,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gautam Blogs',
-        short_name: 'Gautam Blogs',
+        name: 'Gautam Naik',
+        short_name: 'Gautam Naik',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#525dce',
@@ -66,8 +66,8 @@ module.exports = {
         openGraph: {
           type: 'website',
           locale: 'en_IN',
-          url: 'https://gautamblogs.netlify.app/',
-          site_name: 'Gautam Blogs',
+          url: 'https://www.gautamnaik.com/',
+          site_name: 'Gautam Naik',
         },
         facebook: {
           appId: 543210136344363,
