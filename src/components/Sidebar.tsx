@@ -7,7 +7,7 @@ import Link from './Link';
 import Logo from './Logo';
 import ThemeChooser from './ThemeChooser';
 import Hamburger from './Hamburger';
-import { transparentize, cssVar } from 'polished';
+import { transparentize } from 'polished';
 
 import { NAVIGATION } from '../utils/constant';
 
@@ -82,9 +82,7 @@ export default ({ className, toggleTheme }: Props): JSX.Element => {
   return (
     <Fragment>
       <Sidebar
-        //@ts-ignore
         className={className}
-        //@ts-ignore
         style={{ transform: sideBarProps.transform }}
       >
         <HomeLink title="Gautam Naik" to="/">

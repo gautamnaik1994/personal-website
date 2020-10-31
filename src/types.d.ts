@@ -38,5 +38,3 @@ export interface PageContext {
   next: { fields: { title: string; slug: string } };
   prev: { fields: { title: string; slug: string } };
 }
-
-declare module 'countdown';

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-// import '../../global.d.ts';
 import countdown from 'countdown';
 import Item from './Item';
 import media from '../../utils/MediaQueries';
