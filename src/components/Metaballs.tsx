@@ -245,7 +245,7 @@ class Metaballs extends React.Component<IProps, IState> {
       matrixAlpha,
     }: IState = this.state;
 
-    const { mode } = this.context;
+    const { mode = 'dark' } = this.context;
 
     return (
       <Fragment>

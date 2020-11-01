@@ -16,6 +16,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `cms`,
+        path: `${__dirname}/_data`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
@@ -91,6 +98,12 @@ module.exports = {
     //     trackingId: 'UA-124761745-2',
     //   },
     // },
-    'gatsby-plugin-netlify-cms',
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        htmlTitle: `Gautam's Content Manager`,
+        htmlFavicon: `./assets/logo.png`,
+      },
+    },
   ],
 };

@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  # name: test-repo
+  #name: test-repo
   branch: master
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
@@ -9,7 +9,11 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
+local_backend: true
+
 site_url: https://gautamn.netlify.app
+
+logo_url: https://gautamn.netlify.app/blogLogo.svg
 
 publish_mode: editorial_workflow
 
@@ -30,7 +34,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - name: "general"
         label: "Site Settings"
-        file: "_data/settings.json"
+        file: "_data/siteData/settings.md"
         description: "General Site Settings"
         fields:
           - label: "Post Settings"
@@ -43,6 +47,7 @@ collections: # A list of collections the CMS should be able to edit
                   widget: number,
                   min: 1,
                   max: 10,
+                  default: 5
                 }
               - { label: "Default Author", name: author, widget: string }
               - {
@@ -54,7 +59,7 @@ collections: # A list of collections the CMS should be able to edit
                 }
       - name: "websiteStaticContent"
         label: "Website Static Content"
-        file: "_data/websiteStaticContent.json"
+        file: "_data/siteData/websiteStaticContent.md"
         description: "Static Data of the website like text, images"
         fields:
           - { label: "Position", name: "position", widget: "string", default: "Frontend Developer & Designer" }
@@ -63,10 +68,46 @@ collections: # A list of collections the CMS should be able to edit
           - { label: "Birthdate", name: "bday", widget: "string" , default: "2nd May 1994" }
           - { label: "Email", name: "email", widget: "string" , default: "gautamnaik1994@gmail.com" }
           - { label: "Location", name: "location", widget: "string" , default: "Panaji-Goa" }
-          # Socail Links
           - { label: "About Me Image", name: "aboutMeImage", widget: "image" }
           - { label: "CV", name: "cv", widget: "file" }
-
+          - { label: "Footer", name: "footer", widget: "file" }
+            # Socail Links
+          - label: "Social Links"
+            name: "socialLinks"
+            widget: "list"
+            allow_add: true
+            summary: "{{fields.key}} - {{fields.value}}"
+            fields:
+              - label: Key
+                name: key
+                widget: string
+                default: "StackOverflow"
+              - label: Value
+                name: value
+                widget: string
+                default: "https/StackOverflow.com"
+              - label: Icon
+                name: icon
+                widget: file
+  - name: "blog"
+    label: "Blog"
+    folder: "_data/blog"
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    create: true
+    description: "Blogs"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Updated Date", name: "updatedDate", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Categories", name: "categories", widget: "list"}
+      - {label: "Keywords", name: "keywords", widget: "list"}
+      - {label: "Banner Image", name: "bannerImage", widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "skills"
     label: "Skills"
     folder: "_data/skills"
@@ -75,9 +116,10 @@ collections: # A list of collections the CMS should be able to edit
       preview: false
     create: true
     description: "Skills Info"
+    sortable_fields: ['value']
     fields:
       - { label: "Name", name: "title", widget: "string" }
-      - { label: "Value", name: "value", widget: "number" }
+      - { label: "Value", name: "value", widget: "number", min: 1, max: 99 }
       - label: "Details"
         name: "details"
         widget: "list"
@@ -102,7 +144,9 @@ collections: # A list of collections the CMS should be able to edit
     description: "Projects Info"
     fields:
       - { label: "Name", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
+      - { label: "Order", name: "order", widget: "number" }
       - label: "Details"
         name: "details"
         widget: "list"
@@ -114,6 +158,20 @@ collections: # A list of collections the CMS should be able to edit
             widget: string
             default: "Languages"
           - label: Value
+            name: value
+            widget: string
+            default: "HTML, CSS"
+      - label: "Links"
+        name: "links"
+        widget: "list"
+        allow_add: true
+        summary: "{{fields.key}} - {{fields.value}}"
+        fields:
+          - label: "Link Name"
+            name: key
+            widget: string
+            default: "Project Link"
+          - label: "Link"
             name: value
             widget: string
             default: "HTML, CSS"

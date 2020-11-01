@@ -181,7 +181,10 @@ const createBlog = (createPage, edges) => {
 exports.createPages = ({ actions, graphql }) =>
   graphql(`
     query {
-      allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+      allMdx(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+      ) {
         edges {
           node {
             id
@@ -224,8 +227,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent);
+    if (parent.internal.type === 'File') {
+      createNodeField({
+        name: `sourceName`,
+        node,
+        value: parent.sourceInstanceName,
+      });
+    }
     createNodeField({
       name: 'id',
+      node,
+      value: node.id,
+    });
+    createNodeField({
+      name: 'g_id',
       node,
       value: node.id,
     });

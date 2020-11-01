@@ -1,6 +1,6 @@
 ---
 title: Designer
-value: 70
+value: 75
 details:
   - key: Expertise
     value: " UI Design • Graphic Design • Branding • Prototyping"
