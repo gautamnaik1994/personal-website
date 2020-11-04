@@ -31,7 +31,7 @@ interface IProps {
 
 class Metaballs extends React.Component<IProps, IState> {
   config = {
-    ballCount: 5,
+    ballCount: 2,
     smallCircleRadius: 100,
     distributionRadius: 90,
     color: '#8df',
@@ -182,7 +182,7 @@ class Metaballs extends React.Component<IProps, IState> {
 
     this.timerID = setTimeout(() => {
       this.animationRequest = requestAnimationFrame(this.step);
-    }, 1000 / 10);
+    }, 1000 / 60);
   };
 
   generatePointsOnCircle = (

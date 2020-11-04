@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 
-import Metaballs from '../components/Metaballs';
+import Metaballs from '../components/MetaballsSVG';
 
 export default {
   title: 'Components/Metaballs',
