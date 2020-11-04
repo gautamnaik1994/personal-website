@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Metaballs from './MetaballsSVG';
+import Metaballs from './MetaBallsWebGL';
 import Name from './Name';
 
 const HomePageHeader = styled.div`
