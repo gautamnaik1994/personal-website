@@ -1,9 +1,9 @@
 ---
 title: Designer
-value: 75
+value: 70
 details:
   - key: Expertise
-    value: " UI Design • Graphic Design • Branding • Prototyping"
-  - key: "Tools "
+    value: ' UI Design • Graphic Design • Branding • Prototyping'
+  - key: 'Tools '
     value: Adobe XD • Photoshop • Illustrator • Figma • Indesign
 ---
