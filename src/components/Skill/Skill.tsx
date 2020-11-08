@@ -5,16 +5,16 @@ import media from '../../utils/MediaQueries';
 import Item from './Item';
 
 const Skill = styled.div`
-  border: 2px solid var(--primary);
-  padding: 10px 15px;
   border-radius: 8px;
-  margin-top: 2rem;
+  margin-bottom: 6rem;
+
   .box-title {
     margin: 0.5rem 0 1rem 0;
     font-weight: var(--fontWeightBold);
     font-size: 20px;
     color: var(--primary);
     text-transform: uppercase;
+    margin-bottom: 2rem;
   }
   .right-sec {
     margin-top: 1.5rem;
@@ -24,8 +24,9 @@ const Skill = styled.div`
     .skill-meter {
       position: absolute;
       left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 0%;
+      bottom: 0;
+      //transform: translateY(-50%);
       width: 180px;
     }
     .right-sec {
@@ -36,7 +37,7 @@ const Skill = styled.div`
       align-items: center;
     }
     padding: 25px 30px;
-    padding-left: 210px;
+    padding-left: 230px;
     .box-title {
       font-size: 24px;
       text-align: left;

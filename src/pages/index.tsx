@@ -13,8 +13,8 @@ export default () => (
     <Container>
       <SubContainer>
         <Experience />
-        <SkillsSection />
       </SubContainer>
+      <SkillsSection />
     </Container>
   </Layout>
 );

@@ -11,6 +11,7 @@ const Item = styled.div`
     color: #44d6bc;
   }
   .value {
+    font-size: 18px;
   }
   & + & {
     margin-top: 1rem;

@@ -136,6 +136,15 @@ const SkillMeter = styled.div<{ glow: string }>`
     padding-left: 0;
     text-align: center;
     flex-basis: 200px;
+    &:after {
+      content: '';
+      width: 2px;
+      top: 10px;
+      right: -20px;
+      bottom: 10px;
+      background: #${(props) => props.glow};
+      position: absolute;
+    }
     .info-wrapper {
       margin-top: 1rem;
       &:before {
@@ -144,6 +153,7 @@ const SkillMeter = styled.div<{ glow: string }>`
       .info-wrapper-inner {
         padding: 5px 15px;
         backdrop-filter: none;
+        background: none;
       }
     }
     .value,
@@ -158,7 +168,7 @@ const Glass = styled.div<{ level: number; glow: string }>`
   width: var(--glassDims);
   height: var(--glassDims);
   position: relative;
-  margin: auto;
+  margin: 0 auto;
   border: 1px solid rgba(0, 0, 0, 0.13);
   border-radius: 50%;
   overflow: hidden;

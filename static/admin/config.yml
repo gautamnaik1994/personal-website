@@ -120,6 +120,7 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: "Name", name: "title", widget: "string" }
       - { label: "Value", name: "value", widget: "number", min: 1, max: 99 }
+      - { label: "Order", name: "order", widget: "number" }
       - label: "Details"
         name: "details"
         widget: "list"
