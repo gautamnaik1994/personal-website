@@ -14,9 +14,10 @@ const spin1 = keyframes`
 `;
 
 const Experience = styled.div`
-  border: 2px solid var(--primary);
   padding: 10px 15px;
   border-radius: 10px;
+  background: #131620;
+  box-shadow: 0 0 20px 0px rgb(19 22 32);
   .circle-container {
     display: none;
     width: 125px;
@@ -49,8 +50,8 @@ const Experience = styled.div`
     display: flex;
     width: 680px;
     padding: 40px 50px;
-    margin: auto;
-    border-radius: 22px;
+    margin: 2rem auto;
+    border-radius: 15px;
     .box-title {
       font-size: 24px;
       text-align: left;

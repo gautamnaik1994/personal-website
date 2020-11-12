@@ -26,12 +26,51 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-moon:before {
+.icon-linkedin:before {
+  content: '\e900';
+}
+.icon-github:before {
+  content: '\e901';
+}
+.icon-stack-overflow:before {
   content: '\e902';
 }
-.icon-sun:before {
+.icon-behance:before {
+  content: '\e903';
+}
+.icon-codepen:before {
   content: '\e904';
 }
-.icon-arrow:before {
-  content: '\e900';
+.icon-stack-overflow-color:before {
+  content: '\e906';
+  color: #f48024;
+}
+.icon-stack-overflow-color:after {
+  content: '\e905';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #bcbbbb;
+}
+
+.icon-marker:before {
+  content: '\e90c';
+}
+.icon-cake:before {
+  content: '\e90d';
+}
+.icon-open-new-tab:before {
+  content: '\e90f';
+}
+.icon-email:before {
+  content: '\e90e';
+}
+.icon-link:before {
+  content: '\e907';
+}
+.icon-logo:before {
+  content: '\e908';
+}
+.icon-zigzag:before {
+  content: '\e909';
 }

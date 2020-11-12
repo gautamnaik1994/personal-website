@@ -3,11 +3,11 @@ backend:
   #name: test-repo
   branch: master
   commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
-    uploadMedia: "[skip ci] Upload “{{path}}”"
-    deleteMedia: "[skip ci] Delete “{{path}}”"
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
 
 local_backend: true
 
@@ -18,174 +18,205 @@ logo_url: https://gautamn.netlify.app/blogLogo.svg
 publish_mode: editorial_workflow
 
 slug:
-  encoding: "ascii"
+  encoding: 'ascii'
   clean_accents: true
-  sanitize_replacement: "_"
+  sanitize_replacement: '_'
 
 media_folder: static/img
 public_folder: /img
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "settings"
-    label: "Settings"
+  - name: 'settings'
+    label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
     editor:
       preview: false
     files:
-      - name: "general"
-        label: "Site Settings"
-        file: "_data/siteData/settings.md"
-        description: "General Site Settings"
+      - name: 'general'
+        label: 'Site Settings'
+        file: '_data/siteData/settings.md'
+        description: 'General Site Settings'
         fields:
-          - label: "Post Settings"
+          - label: 'Post Settings'
             name: posts
-            widget: "object"
+            widget: 'object'
             fields:
               - {
-                  label: "Number of posts on frontpage",
+                  label: 'Number of posts on frontpage',
                   name: front_limit,
                   widget: number,
                   min: 1,
                   max: 10,
-                  default: 5
+                  default: 5,
                 }
-              - { label: "Default Author", name: author, widget: string }
+              - { label: 'Default Author', name: author, widget: string }
               - {
-                  label: "Default Thumbnail",
+                  label: 'Default Thumbnail',
                   name: thumb,
                   widget: image,
-                  class: "thumb",
+                  class: 'thumb',
                   required: false,
                 }
-      - name: "websiteStaticContent"
-        label: "Website Static Content"
-        file: "_data/siteData/websiteStaticContent.md"
-        description: "Static Data of the website like text, images"
+      - name: 'websiteStaticContent'
+        label: 'Website Static Content'
+        file: '_data/siteData/websiteStaticContent.md'
+        editor:
+          preview: false
+        description: 'Static Data of the website like text, images'
         fields:
-          - { label: "Position", name: "position", widget: "string", default: "Frontend Developer & Designer" }
-          - { label: "Company", name: "company", widget: "string" , default: "Bidchat" }
-          - { label: "About Me", name: "aboutMe", widget: "markdown", default: "Hi, I am Gautam Naik"}
-          - { label: "Birthdate", name: "bday", widget: "string" , default: "2nd May 1994" }
-          - { label: "Email", name: "email", widget: "string" , default: "gautamnaik1994@gmail.com" }
-          - { label: "Location", name: "location", widget: "string" , default: "Panaji-Goa" }
-          - { label: "About Me Image", name: "aboutMeImage", widget: "image" }
-          - { label: "CV", name: "cv", widget: "file" }
-          - { label: "Footer", name: "footer", widget: "file" }
+          - {
+              label: 'Position',
+              name: 'position',
+              widget: 'string',
+              default: 'Frontend Developer & Designer',
+            }
+          - {
+              label: 'Company',
+              name: 'company',
+              widget: 'string',
+              default: 'Bidchat',
+            }
+          - {
+              label: 'Birthdate',
+              name: 'bday',
+              widget: 'string',
+              default: '2nd May 1994',
+            }
+          - {
+              label: 'Email',
+              name: 'email',
+              widget: 'string',
+              default: 'gautamnaik1994@gmail.com',
+            }
+          - {
+              label: 'Location',
+              name: 'location',
+              widget: 'string',
+              default: 'Panaji-Goa',
+            }
+          - { label: 'About Me Image', name: 'aboutMeImage', widget: 'image' }
+          - { label: 'CV', name: 'cv', widget: 'file' }
+          - { label: 'Footer', name: 'footer', widget: 'string' }
             # Socail Links
-          - label: "Social Links"
-            name: "socialLinks"
-            widget: "list"
+          - label: 'Social Links'
+            name: 'socialLinks'
+            widget: 'list'
             allow_add: true
-            summary: "{{fields.key}} - {{fields.value}}"
+            summary: '{{fields.key}} - {{fields.value}}'
             fields:
               - label: Key
                 name: key
                 widget: string
-                default: "StackOverflow"
+                default: 'StackOverflow'
               - label: Value
                 name: value
                 widget: string
-                default: "https/StackOverflow.com"
+                default: 'https/StackOverflow.com'
               - label: Icon
                 name: icon
                 widget: file
-  - name: "blog"
-    label: "Blog"
-    folder: "_data/blog"
+          - { label: 'About Me', name: 'body', widget: 'markdown' }
+  - name: 'blog'
+    label: 'Blog'
+    folder: '_data/blog'
     slug: '{{slug}}'
     editor:
       preview: true
     create: true
-    description: "Blogs"
+    description: 'Blogs'
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Updated Date", name: "updatedDate", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Categories", name: "categories", widget: "list"}
-      - {label: "Keywords", name: "keywords", widget: "list"}
-      - {label: "Banner Image", name: "bannerImage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - name: "skills"
-    label: "Skills"
-    folder: "_data/skills"
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Updated Date', name: 'updatedDate', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Featured Post', name: 'featuredpost', widget: 'boolean' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Categories', name: 'categories', widget: 'list' }
+      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - { label: 'Banner Image', name: 'bannerImage', widget: image }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'skills'
+    label: 'Skills'
+    folder: '_data/skills'
     slug: 'skill-{{title}}'
     editor:
       preview: false
     create: true
-    description: "Skills Info"
+    description: 'Skills Info'
     sortable_fields: ['value']
     fields:
-      - { label: "Name", name: "title", widget: "string" }
-      - { label: "Value", name: "value", widget: "number", min: 1, max: 99 }
-      - { label: "Order", name: "order", widget: "number" }
-      - label: "Details"
-        name: "details"
-        widget: "list"
+      - { label: 'Name', name: 'title', widget: 'string' }
+      - { label: 'Value', name: 'value', widget: 'number', min: 1, max: 99 }
+      - { label: 'Order', name: 'order', widget: 'number' }
+      - label: 'Details'
+        name: 'details'
+        widget: 'list'
         allow_add: true
-        summary: "{{fields.key}} - {{fields.value}}"
+        summary: '{{fields.key}} - {{fields.value}}'
         fields:
           - label: Key
             name: key
             widget: string
-            default: "Languages"
+            default: 'Languages'
           - label: Value
             name: value
             widget: string
-            default: "HTML, CSS"
-  - name: "projects"
-    label: "Projects"
-    folder: "_data/projects"
+            default: 'HTML, CSS'
+  - name: 'projects'
+    label: 'Projects'
+    folder: '_data/projects'
     editor:
       preview: false
     create: true
     slug: 'project-{{title}}'
-    description: "Projects Info"
+    description: 'Projects Info'
     fields:
-      - { label: "Name", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Order", name: "order", widget: "number" }
-      - label: "Details"
-        name: "details"
-        widget: "list"
+      - { label: 'Name', name: 'title', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Order', name: 'order', widget: 'number' }
+      - label: 'Details'
+        name: 'details'
+        widget: 'list'
         allow_add: true
-        summary: "{{fields.key}} - {{fields.value}}"
+        summary: '{{fields.key}} - {{fields.value}}'
         fields:
           - label: Key
             name: key
             widget: string
-            default: "Languages"
+            default: 'Languages'
           - label: Value
             name: value
             widget: string
-            default: "HTML, CSS"
-      - label: "Links"
-        name: "links"
-        widget: "list"
+            default: 'HTML, CSS'
+      - label: 'Links'
+        name: 'links'
+        widget: 'list'
         allow_add: true
-        summary: "{{fields.key}} - {{fields.value}}"
+        summary: '{{fields.key}} - {{fields.value}}'
         fields:
-          - label: "Link Name"
+          - label: 'Link Name'
             name: key
             widget: string
-            default: "Project Link"
-          - label: "Link"
+            default: 'Project Link'
+          - label: 'Link'
             name: value
             widget: string
-            default: "HTML, CSS"
-  - name: "workExperience"
-    label: "Work Experience"
-    folder: "_data/workExperience"
+            default: 'HTML, CSS'
+  - name: 'workExperience'
+    label: 'Work Experience'
+    folder: '_data/workExperience'
     slug: 'workExperience-{{title}}'
     editor:
       preview: false
     create: true
-    description: "Work Experience Info"
+    description: 'Work Experience Info'
     fields:
-      - { label: "Company Name", name: "title", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Time Range", name: "timeRange", widget: "string" }
-      - { label: "Responsibilities", name: "responsibilities", widget: "markdown" }
+      - { label: 'Company Name', name: 'title', widget: 'string' }
+      - { label: 'Role', name: 'role', widget: 'string' }
+      - { label: 'Time Range', name: 'timeRange', widget: 'string' }
+      - {
+          label: 'Responsibilities',
+          name: 'responsibilities',
+          widget: 'markdown',
+        }

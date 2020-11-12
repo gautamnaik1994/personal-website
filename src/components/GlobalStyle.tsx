@@ -202,4 +202,7 @@ export const GlobalStyle = createGlobalStyle<Props>`
 		.text-right{
 			text-align:right;
 		}
+		.relative{
+			position:relative;
+		}
 `;
