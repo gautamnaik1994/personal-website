@@ -104,10 +104,11 @@ export const GlobalStyle = createGlobalStyle<Props>`
   }
   .category-shadow {
     box-shadow: 0 4px 3px 0px rgba(0, 0, 0, 0.16);
-    ${media.desktop} {
-      box-shadow: none;
-    }
   }
+	.navbar-special-styles{
+		box-shadow: none;
+		background-color:transparent;
+	}
   .show-for-tablet {
     display: none;
     ${media.desktop} {
@@ -119,6 +120,9 @@ export const GlobalStyle = createGlobalStyle<Props>`
   }
   .half-rem-mb {
     margin-bottom: 0.5rem;
+  }
+  .two-rem-mt {
+    margin-top: 2rem;
   }
   .two-rem-mb {
     margin-bottom: 2rem;

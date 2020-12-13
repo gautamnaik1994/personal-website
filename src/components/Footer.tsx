@@ -72,7 +72,7 @@ export default () => (
             Netlify
           </Link>
         </small>
-        <small>&copy; Copyright {getYear()}, Gautam Blogs</small>
+        <small>&copy; Copyright {getYear()}, Gautam Naik</small>
       </div>
     </div>
   </Footer>

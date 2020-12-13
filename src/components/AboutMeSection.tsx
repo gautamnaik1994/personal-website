@@ -33,7 +33,7 @@ const AboutMeImage = styled.img`
   }
 `;
 
-const AboutMeSection = () => {
+const AboutMeSection = ({ className }: string) => {
   const data = useStaticQuery(graphql`
     {
       mdx(fileAbsolutePath: { regex: "/siteData/" }) {
@@ -49,12 +49,11 @@ const AboutMeSection = () => {
       }
     }
   `);
-  console.log(data);
   const _data = data.mdx.frontmatter;
   const aboutMe = data.mdx.body;
 
   return (
-    <div className="relative">
+    <div className={`relative ${className}`}>
       <SectionTitle title="About Me" />
       <SubContainer>
         <AboutMeImage src={_data.aboutMeImage} />

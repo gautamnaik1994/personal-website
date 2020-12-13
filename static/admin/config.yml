@@ -135,6 +135,24 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Keywords', name: 'keywords', widget: 'list' }
       - { label: 'Banner Image', name: 'bannerImage', widget: image }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'snippets'
+    label: 'Snippets'
+    folder: '_data/snippets'
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    create: true
+    description: 'Snippets'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Updated Date', name: 'updatedDate', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Featured Post', name: 'featuredpost', widget: 'boolean' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Categories', name: 'categories', widget: 'list' }
+      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'skills'
     label: 'Skills'
     folder: '_data/skills'

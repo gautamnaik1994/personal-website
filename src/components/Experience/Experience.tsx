@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import countdown from 'countdown';
+import theme from 'styled-theming';
 import Item from './Item';
 import media from '../../utils/MediaQueries';
+
+const bgColor = theme('mode', {
+  dark: '#131620',
+  light: '#fff',
+});
+
+const boxShadow = theme('mode', {
+  dark: '0 0 20px 0px rgb(19 22 32)',
+  light: '0 0 20px 0px rgba(0, 0, 0,  0.12)',
+});
 
 const spin1 = keyframes`
   from {
@@ -16,8 +27,8 @@ const spin1 = keyframes`
 const Experience = styled.div`
   padding: 10px 15px;
   border-radius: 10px;
-  background: #131620;
-  box-shadow: 0 0 20px 0px rgb(19 22 32);
+  background: ${bgColor};
+  box-shadow: ${boxShadow};
   .circle-container {
     display: none;
     width: 125px;
@@ -140,7 +151,7 @@ const Experience = styled.div`
   }
 `;
 
-export default (): JSX.Element => {
+export default ({ className }: string): JSX.Element => {
   const [dateData, setDateData] = useState({
     years: 0,
     months: 0,
@@ -164,7 +175,7 @@ export default (): JSX.Element => {
   }, []);
 
   return (
-    <Experience>
+    <Experience className={className}>
       <div className="circle-container">
         <div className="circle circle-1"></div>
         <div className="circle circle-2"></div>

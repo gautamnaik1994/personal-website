@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { useSpring, animated } from 'react-spring';
 import { darkBackgroundColor } from '../utils/colors';
@@ -46,6 +46,10 @@ const Sidebar = styled(animated.aside)`
 
   background-color: ${bgColor};
   backdrop-filter: blur(30px);
+  ${navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
+  css`
+    background-color: var(--bodyBackgroundColor);
+  `};
   padding: 35px;
   position: fixed;
   top: 0;

@@ -1,7 +1,6 @@
-// @ts-nocheck
 import React, { Fragment } from 'react';
 import Tweakpane from 'tweakpane';
-import { ThemeContext } from 'styled-components';
+import { ThemeContext, withTheme } from 'styled-components';
 
 interface IState {
   radiusDivider: number | null;
@@ -121,6 +120,7 @@ class Metaballs extends React.Component<IProps, IState> {
 
     this.setupGL(this.gl);
     this.renderBalls(this.state.ballCount);
+    this.changeBackground(this.context.mode);
 
     // const PARAMS = {
     //   ...this.config
@@ -240,7 +240,7 @@ class Metaballs extends React.Component<IProps, IState> {
     const vertexShader = this.compileShader(
       `
     attribute vec2 position;
-    
+
     void main() {
         gl_Position = vec4(position.x,position.y, 0.0, 1.0);
     }
@@ -257,7 +257,7 @@ class Metaballs extends React.Component<IProps, IState> {
     const float HEIGHT = ${this.CANVAS_HEIGHT}.0;
     uniform vec4 bg_color;
     uniform vec4 metaball_color;
-    
+
     void main(){
         float x = gl_FragCoord.x;
         float y = gl_FragCoord.y;
@@ -273,7 +273,7 @@ class Metaballs extends React.Component<IProps, IState> {
             gl_FragColor = vec4(metaball_color.x,y/HEIGHT,metaball_color.z ,  1.0);
         } else {
             gl_FragColor=bg_color;
-            
+
         }
     }
     `,
@@ -388,13 +388,15 @@ class Metaballs extends React.Component<IProps, IState> {
   };
 
   render() {
-    const { mode = 'dark' } = this.context;
+    const { mode } = this.context;
+    console.log('Mode ', mode);
     this.changeBackground(mode);
     return (
       <Fragment>
         <div
           style={{
             height: '100vh',
+            //marginTop: 60,
           }}
         >
           <canvas ref={this.canvasRef} id="main"></canvas>
@@ -406,4 +408,4 @@ class Metaballs extends React.Component<IProps, IState> {
   }
 }
 
-export default Metaballs;
+export default withTheme(Metaballs);
