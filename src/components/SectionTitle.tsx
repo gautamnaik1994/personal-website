@@ -6,6 +6,7 @@ const SectionTitle = styled.h2`
   font-size: 25px;
   ${media.desktop} {
     font-size: 64px;
+    margin-bottom: 4rem;
     &:before {
       content: '';
       width: 165px;

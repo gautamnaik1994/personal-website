@@ -10,7 +10,6 @@ interface CategoryProps {
 }
 
 const Categories = styled.ul`
-  grid-column: 2/3;
   padding: 8px;
   margin: 0;
   text-align: center;
@@ -29,7 +28,7 @@ const Categories = styled.ul`
     background: transparent;
     white-space: normal;
     overflow: hidden;
-    height: calc(100vh - 330px);
+    //height: calc(100vh - 330px);
     text-align: left;
   }
 `;

@@ -7,30 +7,20 @@ import Layout from '../components/Layout';
 //import Link from '../components/Link';
 import Hero from '../components/Hero';
 import PostItem from '../components/PostItem';
-import Categories from '../components/Categories';
+import CategoryTagList from '../components/CategoryTagList';
 import Pagination from '../components/Pagination';
 import { Frontmatter, SiteMetadata, Site } from '../types';
 import media from '../utils/MediaQueries';
+import Container from '../components/Container';
+import BlogSidebar from '../components/BlogSidebar';
 
-const Grid = styled.div`
+const Grid = styled(Container)`
   ${media.desktop} {
     display: grid;
-    grid-template-columns:
-      auto minmax(auto, 200px) minmax(550px, 650px) minmax(0, 200px)
-      auto;
-    //grid-template-rows: minmax(0, 50vh) auto;
+    grid-template-columns: 1fr 200px;
     grid-gap: 15px;
   }
   margin-top: 60px;
-`;
-const BlogWrapper = styled.div`
-  grid-column: 3/4;
-  padding: 0px 10px 30px 10px;
-`;
-
-const HeroWrapper = styled.div`
-  //grid-row: 1/2;
-  grid-column: 1/-1;
 `;
 
 interface Props {
@@ -101,34 +91,36 @@ const Blog = ({
           ],
         }}
       />
+      <Hero showHero={showHero} title="Welcome to Blog" />
       <Grid>
-        <HeroWrapper>
-          <Hero showHero={showHero} title="Welcome to Blog" />
-        </HeroWrapper>
-        <Categories
-          activeCategoryIndex={activeCategoryIndex}
-          categories={categories}
-        />
-        <BlogWrapper>
-          <div>
-            {posts.map(({ node }: any) => (
-              <PostItem
-                key={node.id}
-                link={node.frontmatter.slug}
-                title={node.frontmatter.title}
-                date={node.frontmatter.date}
-                excerpt={node.excerpt}
-                tags={node.frontmatter.tags}
-                category={node.frontmatter.categories}
-                readTime={node.timeToRead}
-              />
-            ))}
-          </div>
+        <div className="left-sec">
+          {posts.map(({ node }: any) => (
+            <PostItem
+              key={node.id}
+              link={node.frontmatter.slug}
+              title={node.frontmatter.title}
+              date={node.frontmatter.date}
+              excerpt={node.excerpt}
+              tags={node.frontmatter.tags}
+              banner={node.frontmatter.banner.publicURL}
+              category={node.frontmatter.categories}
+              readTime={node.timeToRead}
+            />
+          ))}
           <Pagination
             nextPagePath={nextPagePath}
             previousPagePath={previousPagePath}
           />
-        </BlogWrapper>
+        </div>
+        <div className="right-sec">
+          <BlogSidebar>
+            <CategoryTagList
+              name={'Categories'}
+              activeIndex={activeCategoryIndex}
+              list={categories}
+            />
+          </BlogSidebar>
+        </div>
       </Grid>
     </Layout>
   );
@@ -153,6 +145,9 @@ export const pageQuery = graphql`
             categories
             keywords
             tags
+            banner {
+              publicURL
+            }
           }
           wordCount {
             words

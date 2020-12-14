@@ -53,25 +53,7 @@ const CategoryItem = styled(Link)<CategoryItemProps>`
   ${(props) =>
     props.activeCategory &&
     css`
-      &:after {
-        content: '';
-        position: absolute;
-        width: 50%;
-        min-width: 30px;
-        height: 4px;
-        background-image: linear-gradient(
-          115deg,
-          #4fcf70,
-          #fad648,
-          #a767e5,
-          #12bcfe,
-          #44ce7b
-        );
-        border-radius: 13px;
-        bottom: -4px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+      text-decoration: undeline;
     `};
 
   ${media.desktop} {
@@ -84,14 +66,7 @@ const CategoryItem = styled(Link)<CategoryItemProps>`
         ? props.theme.primary
         : transparentize(0.6, props.theme.primary)};
     text-transform: capitalize;
-    ${(props) =>
-      props.activeCategory &&
-      css`
-        color: ${textColorTablet};
-        &:after {
-          display: none;
-        }
-      `};`;
+   `;
 
 export default ({ category, activeCategory }: Props) => (
   <CategoryItem

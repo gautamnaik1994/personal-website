@@ -50,12 +50,15 @@ export const GlobalStyle = createGlobalStyle<Props>`
 		--fontWeightRegular:400;
 		--fontWeightLight:300;
   }
+	html{
+		font-size: 14px;
+		line-height: 21px;
+	}
   html,
   body {
     font-family: Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
       'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-		font-size:14px;
   }
   body {
     background-color: var(--bodyBackgroundColor);

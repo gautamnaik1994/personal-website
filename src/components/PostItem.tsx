@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import theme from 'styled-theming';
-import Paragraph from './mdx/Paragraph';
 import { lighten } from 'polished';
 import Link from './Link';
 import Badge from './Badge';
@@ -21,8 +20,6 @@ const readMoreAnimation = keyframes`
 
 `;
 
-const bottomPadding = 44;
-
 const boxShadow = theme('mode', {
   light: '0 6px 16px -4px #ff8705',
   dark: '0 0px 0px 10px #121212',
@@ -30,20 +27,32 @@ const boxShadow = theme('mode', {
 
 const PostItem = styled.div`
   box-shadow: 0px 3px 9px -2px rgba(0, 0, 0, 0.25);
-  padding: 15px 15px ${bottomPadding}px 15px;
+  padding: 10px;
   border-radius: 5px;
   margin-bottom: 40px;
+  overflow: hidden;
   &:last-child {
     margin-bottom: 100px;
   }
   position: relative;
   background: var(--bodyBackgroundColor);
   border-bottom: 0;
+  .img-container {
+    margin: -10px;
+    margin-bottom: 1rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
   h2 {
     font-variant-ligatures: none;
+    line-height: 2rem;
   }
   &:before {
-    content: '';
+    //content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -62,18 +71,27 @@ const PostItem = styled.div`
   ${media.desktop} {
     padding: 15px;
     margin-bottom: 15px;
+    box-shadow: none;
+    padding-left: 320px;
+    .img-container {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 300px;
+      height: 200px;
+      margin: 0;
+      transform: translateY(-50%);
+      border-radius: 5px;
+      overflow: hidden;
+      img {
+      }
+    }
+    h2 {
+    }
   }
   &:last-child {
     margin-bottom: 40px;
   }
-  .inner {
-    position: relative;
-    z-index: 1;
-  }
-`;
-const StyledParagraph = styled(Paragraph)`
-  font-size: 16px;
-  line-height: 1.85;
 `;
 
 const ReadMore = styled(Link)`
@@ -125,6 +143,7 @@ interface Props {
   category: string[];
   tags: string[];
   readTime: number;
+  banner: string;
 }
 
 export default ({
@@ -135,32 +154,27 @@ export default ({
   category,
   tags,
   readTime,
+  banner,
 }: Props) => (
   <PostItem>
-    <div className="inner">
-      <h2 className="m-0">
-        <Link title={title} to={`/blog${link}`}>
-          {title}
-        </Link>
-      </h2>
-      <small>
-        {date} &bull; {readTime} minutes read
-      </small>
+    <div className="img-container">
+      <img src={banner} />
+    </div>
+    <h2 className="m-0">
+      <Link title={title} to={`/blog${link}`}>
+        {title}
+      </Link>
+    </h2>
+    <small>
+      {date} &bull; {readTime} minutes read
+    </small>
 
-      <div className="half-rem-mt">
-        <Badge name={category[0]} />
-      </div>
-      <StyledParagraph>{excerpt}</StyledParagraph>
-      {/*
-      <div>
-        {tags.map((tag, index) => (
-          <Badge key={index} name={tag} />
-        ))}
+    <div className="half-rem-mt">
+      <Badge name={category[0]} />
     </div>
-      */}
-    </div>
-    <ReadMore title="Read More" to={link}>
-      <i className="icon-arrow" />
-    </ReadMore>
+    <article className="one-rem-mt one-rem-mb">{excerpt}</article>
+    <Link title="Read More" to={`/blog${link}`}>
+      Read More
+    </Link>
   </PostItem>
 );

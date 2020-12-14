@@ -14,13 +14,13 @@ export default () => (
   <Layout>
     <HomePageHeader />
     <Container>
-      <AboutMeSection className="two-rem-mb" />
+      <AboutMeSection className="two-rem-mb two-rem-mt" />
       <SubContainer>
         <Experience className="two-rem-mt" />
         <DownloadCVSection />
       </SubContainer>
       <SkillsSection />
-      <BlogsSection />
+      <BlogsSection className="two-rem-mb" />
     </Container>
   </Layout>
 );

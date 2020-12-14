@@ -14,5 +14,8 @@ const Container = styled.div`
 
 interface Props {
   children: React.ReactNode;
+  className?: string;
 }
-export default ({ children }: Props) => <Container>{children}</Container>;
+export default ({ children, className = '' }: Props) => (
+  <Container className={className}>{children}</Container>
+);

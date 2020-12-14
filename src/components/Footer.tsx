@@ -47,11 +47,11 @@ export default () => (
     <div className="inner">
       <Logo />
       <p>
-        Gautam Blogs is created and maintained by Gautam Naik. If you see
-        anything broken, you are welcome to create a pull request&nbsp;
+        This is created and maintained by Gautam Naik. If you see anything
+        broken, you are welcome to create a pull request&nbsp;
         <Link
           title="Github Link"
-          to="https://github.com/gautamnaik1994/my-blog"
+          to="https://github.com/gautamnaik1994/personal-website"
         >
           here
         </Link>

@@ -18,7 +18,7 @@ const Holder = styled.div`
   }
 `;
 const Name = styled.h1`
-  font-size: 2.8em;
+  font-size: 3.5em;
   line-height: 1.2;
 `;
 

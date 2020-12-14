@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from './Link';
 
 const LinkButton = styled(Link)<{ variant: string }>`
-  padding: 10px 35px;
+  padding: 20px 35px;
   border-radius: 3px;
   font-weight: var(--fontWeightBold);
   background-color: ${(props) => `var(--${props.variant})`};
