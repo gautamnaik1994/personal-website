@@ -1,3 +1,10 @@
+var netlifyCmsPaths = {
+  resolve: `gatsby-plugin-netlify-cms-paths`,
+  options: {
+    cmsConfig: `/static/admin/config.yml`,
+  },
+};
+
 module.exports = {
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -17,11 +24,18 @@ module.exports = {
     keywords: ['ui', 'ux', 'designer', 'css', 'frontend'],
   },
   plugins: [
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/content/blog`,
+    //     name: 'blog',
+    //   },
+    // },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: 'blog',
+        name: `images`,
+        path: `${__dirname}/static/img`,
       },
     },
     {
@@ -31,11 +45,13 @@ module.exports = {
         path: `${__dirname}/_data`,
       },
     },
+    netlifyCmsPaths,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
+          netlifyCmsPaths,
           {
             resolve: 'gatsby-remark-images',
             options: {

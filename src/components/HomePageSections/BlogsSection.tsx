@@ -9,7 +9,7 @@ const BlogsSection = ({ className }) => {
   const data = useStaticQuery(graphql`
     {
       allMdx(
-        filter: { fields: { sourceName: { eq: "blog" } } }
+        filter: { fileAbsolutePath: { regex: "/_data/blog/" } }
         limit: 2
         sort: { fields: frontmatter___date, order: DESC }
       ) {
@@ -21,7 +21,7 @@ const BlogsSection = ({ className }) => {
               title
               categories
               date(formatString: "MMMM DD, YYYY")
-              banner {
+              bannerImage {
                 publicURL
                 childImageSharp {
                   fixed {
@@ -52,7 +52,7 @@ const BlogsSection = ({ className }) => {
               title={_data.title}
               category={_data.categories}
               link={_data.slug}
-              banner={_data.banner.publicURL}
+              banner={_data.bannerImage.publicURL}
               tags={_data.categories}
               excerpt={post.node.excerpt}
               date={_data.date}

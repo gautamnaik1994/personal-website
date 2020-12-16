@@ -4,8 +4,8 @@ company: Bidchat
 bday: 2nd May '94
 email: gautamnaik1994@gmail.com
 location: Panaji - Goa
-aboutMeImage: /img/aboutme.png
-cv: /img/gautam-naik-ui-frontend-dev-.pdf
+aboutMeImage: /siteMedia/aboutme.png
+cv: /siteMedia/gautam-naik-ui-frontend-dev.pdf
 footer: This is footer
 ---
 

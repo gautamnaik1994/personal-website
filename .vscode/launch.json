@@ -3,33 +3,21 @@
   "configurations": [
     {
       "name": "Gatsby develop",
-      "type": "node",
+      "type": "pwa-node",
       "request": "launch",
-      "protocol": "inspector",
-      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
-      "args": [
-        "develop"
-      ],
-      "stopOnEntry": false,
-      "runtimeArgs": [
-        "--nolazy"
-      ],
-      "sourceMaps": false
+      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
+      "args": ["develop"],
+      "runtimeArgs": ["--nolazy"],
+      "console": "integratedTerminal"
     },
     {
       "name": "Gatsby build",
-      "type": "node",
+      "type": "pwa-node",
       "request": "launch",
-      "protocol": "inspector",
-      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
-      "args": [
-        "build"
-      ],
-      "stopOnEntry": false,
-      "runtimeArgs": [
-        "--nolazy"
-      ],
-      "sourceMaps": false
+      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
+      "args": ["build"],
+      "runtimeArgs": ["--nolazy"],
+      "console": "integratedTerminal"
     }
   ]
 }

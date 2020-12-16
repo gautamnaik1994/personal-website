@@ -102,7 +102,7 @@ const Blog = ({
               date={node.frontmatter.date}
               excerpt={node.excerpt}
               tags={node.frontmatter.tags}
-              banner={node.frontmatter.banner.publicURL}
+              banner={node.frontmatter.bannerImage.publicURL}
               category={node.frontmatter.categories}
               readTime={node.timeToRead}
             />
@@ -133,7 +133,7 @@ export const pageQuery = graphql`
     site {
       ...site
     }
-    allMdx {
+    allMdx(filter: { fileAbsolutePath: { regex: "/_data/blog/" } }) {
       edges {
         node {
           excerpt(pruneLength: 200)
@@ -145,7 +145,7 @@ export const pageQuery = graphql`
             categories
             keywords
             tags
-            banner {
+            bannerImage {
               publicURL
             }
           }

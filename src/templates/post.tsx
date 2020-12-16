@@ -146,7 +146,7 @@ export default ({
           description: mdx.frontmatter.description,
           images: [
             {
-              url: `${site.siteMetadata.siteUrl}${mdx.frontmatter.banner.publicURL}`,
+              url: `${site.siteMetadata.siteUrl}${mdx.frontmatter.bannerImage.publicURL}`,
               width: 1200,
               height: 630,
               alt: mdx.frontmatter.title,
@@ -154,10 +154,10 @@ export default ({
           ],
         }}
       />
-      <Banner bgImage={mdx.frontmatter.banner.childImageSharp.fluid.src}>
+      <Banner bgImage={mdx.frontmatter.bannerImage.childImageSharp.fluid.src}>
         <div className="blur-container"></div>
         <CustomImg
-          fluid={mdx.frontmatter.banner.childImageSharp.fluid}
+          fluid={mdx.frontmatter.bannerImage.childImageSharp.fluid}
           alt={site.siteMetadata.keywords.join(', ')}
         />
       </Banner>
@@ -207,7 +207,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMM D, 'YY")
         updatedDate(formatString: "MMM D, 'YY")
-        banner {
+        bannerImage {
           childImageSharp {
             fluid(maxWidth: 650, srcSetBreakpoints: [400]) {
               ...GatsbyImageSharpFluid
