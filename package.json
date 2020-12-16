@@ -91,7 +91,7 @@
   "scripts": {
     "storybook-https": "start-storybook --https --ssl-key privatekey.pem --ssl-cert certificate.pem",
     "storybook": "start-storybook -p 6006",
-    "dont-run-pre-start": "rimraf .cache",
+    "prestart": "rimraf .cache",
     "clean": "gatsby clean",
     "start": "gatsby develop -o -H 0.0.0.0 -p 8080",
     "start-https": "gatsby develop -o -H 0.0.0.0 -p 8080 --https",
