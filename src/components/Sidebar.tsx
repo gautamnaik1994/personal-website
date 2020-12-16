@@ -46,7 +46,8 @@ const Sidebar = styled(animated.aside)`
 
   background-color: ${bgColor};
   backdrop-filter: blur(30px);
-  ${navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
+  ${typeof window !== 'undefined' &&
+  navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
   css`
     background-color: var(--bodyBackgroundColor);
   `};

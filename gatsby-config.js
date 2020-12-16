@@ -1,4 +1,13 @@
 module.exports = {
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_REFRESH: true,
+    FAST_DEV: true,
+    QUERY_ON_DEMAND: true,
+    LAZY_IMAGES: true,
+    DEV_SSR: true,
+  },
   pathPrefix: '/',
   siteMetadata: {
     siteUrl: 'https://gautamnaik.com',
