@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import LinkButton from './LinkButton';
+import LinkButton from '../LinkButton';
 
 const DownloadCVSection = (props) => {
   const data = useStaticQuery(graphql`

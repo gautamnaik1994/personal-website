@@ -130,6 +130,9 @@ export const GlobalStyle = createGlobalStyle<Props>`
   .two-rem-mb {
     margin-bottom: 2rem;
   }
+  .four-rem-mt {
+    margin-top: 4rem;
+  }
 	.one-rem-mb{
 		margin-bottom:1rem;
 	}

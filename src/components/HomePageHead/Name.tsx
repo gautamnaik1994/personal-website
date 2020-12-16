@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import media from '../utils/MediaQueries';
+import media from '../../utils/MediaQueries';
 
 const Holder = styled.div`
   * {

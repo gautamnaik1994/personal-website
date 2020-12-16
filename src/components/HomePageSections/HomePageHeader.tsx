@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import Metaballs from './MetaBallsWebGL';
-import Name from './Name';
+import Metaballs from '../HomePageHead/MetaBallsWebGL';
+import Name from '../HomePageHead/Name';
 
 const HomePageHeader = styled.div`
   position: relative;

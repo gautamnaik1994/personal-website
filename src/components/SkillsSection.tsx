@@ -1,10 +1,14 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Skill from './Skill/Skill';
-import SectionTitle from './SectionTitle.tsx';
+import SectionTitle from './SectionTitle';
 import SubContainer from './SubContainer';
 
-const SkillsSection = () => {
+interface Props {
+  className?: string;
+}
+
+const SkillsSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       allMdx(filter: { fileAbsolutePath: { regex: "/skills/" } }) {
@@ -23,7 +27,7 @@ const SkillsSection = () => {
   `);
   // console.log(data.allMdx.nodes);
   return (
-    <div>
+    <div className={className}>
       <SectionTitle title="Skills" />
       <SubContainer>
         {data.allMdx.nodes.map((d, i) => {

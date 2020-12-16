@@ -13,6 +13,7 @@ import Pagination from '../components/Pagination';
 import Badge from '../components/Badge';
 import { Site, Mdx, PageContext } from '../types';
 import { darkBackgroundColor } from '../utils/colors';
+import Container from '../components/Container';
 
 const bodyBackgroundColor = theme('mode', {
   light: '#f5f5f5',
@@ -23,16 +24,13 @@ const postBgColor = theme('mode', {
   dark: lighten(0.05, darkBackgroundColor),
 });
 
-const Grid = styled.div`
+const Grid = styled(Container)`
   ${media.desktop} {
     display: grid;
-    grid-template-columns:
-      auto minmax(auto, 200px) minmax(550px, 650px) minmax(0, 200px)
-      auto;
-    //grid-template-rows: minmax(0, 50vh) auto;
+    grid-template-columns: 1fr 200px;
+    grid-gap: 15px;
   }
   margin-top: 60px;
-  background: ${bodyBackgroundColor};
 `;
 
 interface BannerProps {
@@ -40,7 +38,6 @@ interface BannerProps {
 }
 
 const Banner = styled.div<BannerProps>`
-  grid-column: 1/-1;
   overflow: hidden;
   position: relative;
   .blur-container {
@@ -60,7 +57,7 @@ const Banner = styled.div<BannerProps>`
 
 const Post = styled.div`
   padding: 20px 15px 50px 15px;
-  grid-column: 3/4;
+
   background: ${postBgColor};
   box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.126);
   margin-bottom: 25px;
@@ -157,42 +154,44 @@ export default ({
           ],
         }}
       />
+      <Banner bgImage={mdx.frontmatter.banner.childImageSharp.fluid.src}>
+        <div className="blur-container"></div>
+        <CustomImg
+          fluid={mdx.frontmatter.banner.childImageSharp.fluid}
+          alt={site.siteMetadata.keywords.join(', ')}
+        />
+      </Banner>
       <Grid>
-        <Banner bgImage={mdx.frontmatter.banner.childImageSharp.fluid.src}>
-          <div className="blur-container"></div>
-          <CustomImg
-            fluid={mdx.frontmatter.banner.childImageSharp.fluid}
-            alt={site.siteMetadata.keywords.join(', ')}
-          />
-        </Banner>
-
-        <Post>
-          <Title>{mdx.frontmatter.title}</Title>
-          <MetaDataContainer>
-            <div className="">
-              <div className="title">Posted in</div>
-              <Badge name={mdx.frontmatter.categories[0]} />
-            </div>
-            <div>
-              <div className="title">Published on </div>
-              <div className="value">{mdx.frontmatter.date}</div>
-            </div>
-            <div>
-              <div className="title">Updated on </div>
-              <div className="value">{mdx.frontmatter.updatedDate}</div>
-            </div>
-          </MetaDataContainer>
-          <StyledMDXRenderer>
-            <MDXRenderer>{mdx.body}</MDXRenderer>
-          </StyledMDXRenderer>
-          <Pagination
-            insidePost
-            nextPagePath={next && `/blog${next.fields.slug}`}
-            previousPagePath={prev && `/blog${prev.fields.slug}`}
-            nextPostTitle={next && next.fields.title}
-            prevPostTitle={prev && prev.fields.title}
-          />
-        </Post>
+        <div className="left-sec">
+          <Post>
+            <Title>{mdx.frontmatter.title}</Title>
+            <MetaDataContainer>
+              <div className="">
+                <div className="title">Posted in</div>
+                <Badge name={mdx.frontmatter.categories[0]} />
+              </div>
+              <div>
+                <div className="title">Published on </div>
+                <div className="value">{mdx.frontmatter.date}</div>
+              </div>
+              <div>
+                <div className="title">Updated on </div>
+                <div className="value">{mdx.frontmatter.updatedDate}</div>
+              </div>
+            </MetaDataContainer>
+            <StyledMDXRenderer>
+              <MDXRenderer>{mdx.body}</MDXRenderer>
+            </StyledMDXRenderer>
+            <Pagination
+              insidePost
+              nextPagePath={next && `/blog${next.fields.slug}`}
+              previousPagePath={prev && `/blog${prev.fields.slug}`}
+              nextPostTitle={next && next.fields.title}
+              prevPostTitle={prev && prev.fields.title}
+            />
+          </Post>
+        </div>
+        <div className="right-sec"></div>
       </Grid>
     </Layout>
   );

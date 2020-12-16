@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import PostItem from './PostItem';
-import SectionTitle from './SectionTitle';
-import SubContainer from './SubContainer';
-import LinkButton from './LinkButton';
+import PostItem from '../PostItem';
+import SectionTitle from '../SectionTitle';
+import SubContainer from '../SubContainer';
+import LinkButton from '../LinkButton';
 
 const BlogsSection = ({ className }) => {
   const data = useStaticQuery(graphql`

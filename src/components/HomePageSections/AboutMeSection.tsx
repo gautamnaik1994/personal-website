@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import media from '../utils/MediaQueries';
+import media from '../../utils/MediaQueries';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import SubContainer from './SubContainer';
-import SectionTitle from './SectionTitle';
+import SubContainer from '../SubContainer';
+import SectionTitle from '../SectionTitle';
 import styled from 'styled-components';
 
 const StyledAboutMe = styled.div`
