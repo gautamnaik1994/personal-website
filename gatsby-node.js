@@ -183,7 +183,7 @@ exports.createPages = ({ actions, graphql }) =>
     query {
       allMdx(
         sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+        filter: { fileAbsolutePath: { regex: "/_data/blog/" } }
       ) {
         edges {
           node {
@@ -276,9 +276,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     });
 
     createNodeField({
-      name: 'banner',
+      name: 'bannerImage',
       node,
-      banner: node.frontmatter.banner,
+      bannerImage: node.frontmatter.bannerImage,
     });
 
     createNodeField({
