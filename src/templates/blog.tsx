@@ -12,7 +12,7 @@ import Pagination from '../components/Pagination';
 import { Frontmatter, SiteMetadata, Site } from '../types';
 import media from '../utils/MediaQueries';
 import Container from '../components/Container';
-import BlogSidebar from '../components/BlogSidebar';
+import BlogSideBar from '../components/BlogSideBar';
 
 const Grid = styled(Container)`
   ${media.desktop} {
@@ -113,13 +113,13 @@ const Blog = ({
           />
         </div>
         <div className="right-sec">
-          <BlogSidebar>
+          <BlogSideBar>
             <CategoryTagList
               name={'Categories'}
               activeIndex={activeCategoryIndex}
               list={categories}
             />
-          </BlogSidebar>
+          </BlogSideBar>
         </div>
       </Grid>
     </Layout>
