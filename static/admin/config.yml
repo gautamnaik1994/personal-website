@@ -128,6 +128,26 @@ collections: # A list of collections the CMS should be able to edit
                 name: icon
                 widget: file
           - { label: 'About Me', name: 'body', widget: 'markdown' }
+      - name: 'blogCategories'
+        label: 'Blog Categories'
+        file: '_data/siteData/blogCategories.md'
+        description: 'Blog Categories'
+        fields:
+          - label: 'Title'
+            name: 'title'
+            widget: 'list'
+            allow_add: true
+            default: ["React"]
+      - name: 'blogTags'
+        label: 'Blog Tags'
+        file: '_data/siteData/blogTags.md'
+        description: 'Blog Tags'
+        fields:
+          - label: 'Title'
+            name: 'title'
+            widget: 'list'
+            allow_add: true
+            default: ["react"]
   - name: 'blog'
     label: 'Blog'
     folder: '_data/blog'
@@ -147,8 +167,9 @@ collections: # A list of collections the CMS should be able to edit
           widget: 'boolean',
           required: false,
         }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Tags', name: 'tags', widget: 'relation', collection: 'settings', file: 'blogTags', valueField: 'title.*', searchFields: ["title.*"], displayFields: ["title.*"], multiple: true}
       - { label: 'Categories', name: 'categories', widget: 'list' }
+      - { label: 'Category', name: 'category', widget: 'relation', collection: 'settings', file: 'blogCategories', valueField: 'title.*', searchFields: ["title.*"], displayFields: ["title.*"]}
       - { label: 'Keywords', name: 'keywords', widget: 'list' }
       - { label: 'Banner Image', name: 'bannerImage', widget: image }
       - { label: 'Body', name: 'body', widget: 'markdown' }

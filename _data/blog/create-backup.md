@@ -11,9 +11,9 @@ description: Sometimes we have a create a copy of current working file, just for
   trying out some new thing or feature.
 tags:
   - vim
-  - keymaps
 categories:
   - vim
+category: Vim
 bannerImage: /img/create-backup.png
 ---
 Sometimes we have to create a copy of the current working file, just for trying out some new thing or feature.

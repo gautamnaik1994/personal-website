@@ -12,10 +12,11 @@ description: There will come a time when you will want to view the contents of
   the same file or a different file from another branch.
 tags:
   - vim
-  - keymaps
+  - git
 categories:
   - vim
   - git
+category: Vim
 bannerImage: /img/view-diff-branch-file.png
 ---
 Over the past few months, VIM has become my goto text editor at both the workplace and at home. I still use Visual Studio Code when I want to inspect the project from a bird's eye view.

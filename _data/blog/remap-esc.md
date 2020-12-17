@@ -15,6 +15,7 @@ tags:
   - keymaps
 categories:
   - vim
+category: Vim
 bannerImage: /img/remap-esc.png
 ---
 By default,the <kbd>ESC</kbd> key is used to switch to Normal mode from Insert mode.
