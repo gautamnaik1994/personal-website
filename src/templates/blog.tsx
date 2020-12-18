@@ -9,11 +9,10 @@ import Hero from '../components/Hero';
 import PostItem from '../components/PostItem';
 import CategoryTagList from '../components/CategoryTagList';
 import Pagination from '../components/Pagination';
-import { Frontmatter, SiteMetadata, Site } from '../types';
+import { Site } from '../types';
 import media from '../utils/MediaQueries';
 import Container from '../components/Container';
 import BlogSideBar from '../components/BlogSideBar';
-import { useStaticQuery } from 'gatsby';
 
 const Grid = styled(Container)`
   ${media.desktop} {
@@ -27,19 +26,32 @@ const Grid = styled(Container)`
 interface Props {
   data: { site: Site; allMdx: { edges: [] } };
   pageContext: {
-    pagination: {
-      page: [];
-      nextPagePath: string;
-      previousPagePath: string;
-    };
-    categories: string[];
+    currentPage: number;
+    pageCount: number;
+    base: string;
+    categories: [];
     activeCategoryIndex: number;
-    tags: string[];
   };
-  location?: any;
 }
 
-const Blog = ({ data, pageContext }) => {
+interface PostItemProps {
+  node: {
+    id: string;
+    frontmatter: {
+      slug: string;
+      date: string;
+      description: string;
+      title: string;
+      excerpt: string;
+      tags: [];
+      bannerImage: { publicURL: string };
+      category: string;
+    };
+    timeToRead: number;
+  };
+}
+
+const Blog = ({ data, pageContext }: Props): JSX.Element => {
   const { site, allMdx } = data;
   const posts = allMdx.edges;
   const [showHero, setShowHero] = useState<boolean>(true);
@@ -92,7 +104,7 @@ const Blog = ({ data, pageContext }) => {
       <Hero showHero={showHero} title="Welcome to Blog" />
       <Grid>
         <div className="left-sec">
-          {posts.map(({ node }: any) => (
+          {posts.map(({ node }: PostItemProps) => (
             <PostItem
               key={node.id}
               link={node.frontmatter.slug}

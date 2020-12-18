@@ -125,7 +125,7 @@ const StyledMDXRenderer = styled.div`
 export default ({
   data: { site, mdx },
   pageContext: { next, prev },
-}: Props) => {
+}: Props): JSX.Element => {
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
       <GatsbySeo

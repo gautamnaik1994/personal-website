@@ -10,11 +10,6 @@ export async function createPages(params) {
     createPostPage(params),
     createBlogPages(params),
   ]);
-
-  // await fetchImportantData(params);
-  // await createCategoryPages(params);
-  // await createPostPage(params);
-  // await createBlogPages(params);
 }
 
 async function createPostPage({ actions, graphql }) {
@@ -60,6 +55,7 @@ async function createPostPage({ actions, graphql }) {
 }
 
 async function fetchImportantData({ actions, graphql }) {
+  console.log('called fetch data');
   const { data } = await graphql(`
     query {
       siteData: allMdx(
@@ -85,6 +81,7 @@ async function fetchImportantData({ actions, graphql }) {
   data.allMdx.group.forEach(({ fieldValue }) => {
     categories.push(fieldValue);
   });
+  categories = [...new Set(categories)];
 }
 
 async function createBlogPages({ actions, graphql }) {
@@ -125,7 +122,6 @@ async function createCategoryPages({ actions, graphql }) {
         }
       }
     `);
-    console.log(' Category ', cat, ' Count: ', data.allMdx.totalCount);
     const pageCount = Math.ceil(data.allMdx.totalCount / blogPostPerPage);
     Array.from({ length: pageCount }).forEach((_, i) => {
       actions.createPage({

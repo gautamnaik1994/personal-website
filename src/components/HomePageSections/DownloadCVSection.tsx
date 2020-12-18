@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import LinkButton from '../LinkButton';
 
-const DownloadCVSection = (props) => {
+const DownloadCVSection = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       mdx(fileAbsolutePath: { regex: "/siteData/" }) {
@@ -13,7 +13,7 @@ const DownloadCVSection = (props) => {
       }
     }
   `);
-  console.log(data);
+
   const _data = data.mdx.frontmatter;
   return (
     <div className="text-center one-rem-mt">

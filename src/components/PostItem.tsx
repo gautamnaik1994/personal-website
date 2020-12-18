@@ -5,25 +5,6 @@ import { lighten } from 'polished';
 import Link from './Link';
 import Badge from './Badge';
 import media from '../utils/MediaQueries';
-import { darkBackgroundColor } from '../utils/colors';
-
-const readMoreAnimation = keyframes`
-    0%{
-        transform:translateX(-34px);
-    }
-    50%{
-        transform:translateX(0px);
-    }
-    100%{
-        transform:translateX(34px);
-    }
-
-`;
-
-const boxShadow = theme('mode', {
-  light: '0 6px 16px -4px #ff8705',
-  dark: '0 0px 0px 10px #121212',
-});
 
 const PostItem = styled.div`
   box-shadow: 0px 3px 9px -2px rgba(0, 0, 0, 0.25);
@@ -94,53 +75,12 @@ const PostItem = styled.div`
   }
 `;
 
-const ReadMore = styled(Link)`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  padding: 14px;
-  text-align: center;
-  display: block;
-  color: black;
-  background-image: linear-gradient(#ff9913, #ff8000);
-  text-align: center;
-  position: absolute;
-  bottom: -25px;
-  right: 50%;
-  transform: translateX(50%);
-  transition: box-shadow 0.3s ease-in;
-  color: rgba(255, 255, 255, 0.61);
-  box-shadow: ${boxShadow};
-  overflow: hidden;
-  i {
-    display: inline-block;
-  }
-  & :hover {
-    i {
-      animation: ${readMoreAnimation} 0.3s linear 2;
-    }
-  }
-  ${media.desktop} {
-    transform: translateX(0);
-    box-shadow: ${boxShadow};
-    top: 30px;
-    bottom: auto;
-    right: -23px;
-  }
-`;
-
-const Category = styled.div`
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
-`;
-
 interface Props {
   link: string;
   title: string;
   date: string;
   excerpt: string;
-  category: string[];
+  category: string;
   tags: string[];
   readTime: number;
   banner: string;

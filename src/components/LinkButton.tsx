@@ -27,7 +27,7 @@ export interface LinkButtonProps {
   to: string;
 }
 
-export default (props: ButtonProps): JSX.Element => {
+export default (props: LinkButtonProps): JSX.Element => {
   return (
     <LinkButton
       variant={props.variant || 'default'}
