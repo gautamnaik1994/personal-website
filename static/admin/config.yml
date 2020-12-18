@@ -20,7 +20,7 @@ publish_mode: editorial_workflow
 slug:
   encoding: 'ascii'
   clean_accents: true
-  sanitize_replacement: '_'
+  sanitize_replacement: '-'
 
 media_folder: static/img
 public_folder: /img
@@ -42,8 +42,8 @@ collections: # A list of collections the CMS should be able to edit
             widget: 'object'
             fields:
               - {
-                  label: 'Number of posts on frontpage',
-                  name: front_limit,
+                  label: 'Number of posts/page on blog',
+                  name: postPerPage,
                   widget: number,
                   min: 1,
                   max: 10,
@@ -137,7 +137,7 @@ collections: # A list of collections the CMS should be able to edit
             name: 'title'
             widget: 'list'
             allow_add: true
-            default: ["React"]
+            default: ['React']
       - name: 'blogTags'
         label: 'Blog Tags'
         file: '_data/siteData/blogTags.md'
@@ -147,7 +147,7 @@ collections: # A list of collections the CMS should be able to edit
             name: 'title'
             widget: 'list'
             allow_add: true
-            default: ["react"]
+            default: ['react']
   - name: 'blog'
     label: 'Blog'
     folder: '_data/blog'
@@ -159,6 +159,7 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Browser Address', name: 'slug', widget: 'string' }
       - { label: 'Updated Date', name: 'updatedDate', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'text' }
       - {
@@ -167,9 +168,28 @@ collections: # A list of collections the CMS should be able to edit
           widget: 'boolean',
           required: false,
         }
-      - { label: 'Tags', name: 'tags', widget: 'relation', collection: 'settings', file: 'blogTags', valueField: 'title.*', searchFields: ["title.*"], displayFields: ["title.*"], multiple: true}
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'relation',
+          collection: 'settings',
+          file: 'blogTags',
+          valueField: 'title.*',
+          searchFields: ['title.*'],
+          displayFields: ['title.*'],
+          multiple: true,
+        }
       - { label: 'Categories', name: 'categories', widget: 'list' }
-      - { label: 'Category', name: 'category', widget: 'relation', collection: 'settings', file: 'blogCategories', valueField: 'title.*', searchFields: ["title.*"], displayFields: ["title.*"]}
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'relation',
+          collection: 'settings',
+          file: 'blogCategories',
+          valueField: 'title.*',
+          searchFields: ['title.*'],
+          displayFields: ['title.*'],
+        }
       - { label: 'Keywords', name: 'keywords', widget: 'list' }
       - { label: 'Banner Image', name: 'bannerImage', widget: image }
       - { label: 'Body', name: 'body', widget: 'markdown' }

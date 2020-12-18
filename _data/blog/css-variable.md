@@ -3,7 +3,7 @@ updatedDate: 2019-08-27
 keywords:
   - css
   - css-variables
-slug: /css-variable
+slug: css-variable
 banner: ./images/banner.png
 title: CSS Variables
 date: 2019-08-23
@@ -17,7 +17,8 @@ categories:
 category: CSS
 bannerImage: /img/css-variable.png
 ---
-CSS variables is a new addition to CSS. As the name says, we can now add custom variables, similar to SCSS, Less and Stylus.
+
+CSS variables is a new addition to CSS. As the name says, we can now add custom variables, similar to SCSS, Less and Stylus.
 
 ### Example
 

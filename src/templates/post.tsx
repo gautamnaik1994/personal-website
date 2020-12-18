@@ -168,7 +168,7 @@ export default ({
             <MetaDataContainer>
               <div className="">
                 <div className="title">Posted in</div>
-                <Badge name={mdx.frontmatter.categories[0]} />
+                <Badge name={mdx.frontmatter.category} />
               </div>
               <div>
                 <div className="title">Published on </div>
@@ -184,10 +184,10 @@ export default ({
             </StyledMDXRenderer>
             <Pagination
               insidePost
-              nextPagePath={next && `/blog${next.fields.slug}`}
-              previousPagePath={prev && `/blog${prev.fields.slug}`}
-              nextPostTitle={next && next.fields.title}
-              prevPostTitle={prev && prev.fields.title}
+              nextPagePath={next && `/blog/${next.frontmatter.slug}`}
+              previousPagePath={prev && `/blog/${prev.frontmatter.slug}`}
+              nextPostTitle={next && next.frontmatter.title}
+              prevPostTitle={prev && prev.frontmatter.title}
             />
           </Post>
         </div>
@@ -202,21 +202,21 @@ export const pageQuery = graphql`
     site {
       ...site
     }
-    mdx(fields: { id: { eq: $id } }) {
+    mdx(id: { eq: $id }) {
       frontmatter {
         title
         date(formatString: "MMM D, 'YY")
         updatedDate(formatString: "MMM D, 'YY")
         bannerImage {
           childImageSharp {
-            fluid(maxWidth: 650, srcSetBreakpoints: [400]) {
+            fluid(maxWidth: 650) {
               ...GatsbyImageSharpFluid
             }
           }
           publicURL
         }
         slug
-        categories
+        category
         keywords
         description
       }

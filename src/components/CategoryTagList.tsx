@@ -28,12 +28,8 @@ export default ({ list = [], activeIndex, name }: Props) => {
     <CategoryTagList>
       <p className="">{name}</p>
       {list.map((item, index) => (
-        <Link
-          key={item}
-          title={item}
-          to={'/blog/' + name.toLowerCase() + '/' + item}
-        >
-          {item}
+        <Link key={item} title={item} to={'/blog/' + item}>
+          {item} {activeIndex === index && 'active'}
         </Link>
       ))}
     </CategoryTagList>

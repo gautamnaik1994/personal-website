@@ -161,7 +161,7 @@ export default ({
       <img src={banner} />
     </div>
     <h2 className="m-0">
-      <Link title={title} to={`/blog${link}`}>
+      <Link title={title} to={`/blog/${link}`}>
         {title}
       </Link>
     </h2>
@@ -170,10 +170,10 @@ export default ({
     </small>
 
     <div className="half-rem-mt">
-      <Badge name={category[0]} />
+      <Badge name={category} />
     </div>
     <article className="one-rem-mt one-rem-mb">{excerpt}</article>
-    <Link title="Read More" to={`/blog${link}`}>
+    <Link title="Read More" to={`/blog/${link}`}>
       Read More
     </Link>
   </PostItem>
