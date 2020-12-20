@@ -1,7 +1,7 @@
 ---
 title: Python 5
 date: 2020-12-18T13:54:05.254Z
-slug: python-dash-dashboard
+slug: python-5
 updatedDate: 2020-12-18T13:54:05.284Z
 description: need to add this later
 tags:
@@ -13,4 +13,5 @@ keywords:
   - python
 bannerImage: /img/create-backup.png
 ---
+
 need to add this later

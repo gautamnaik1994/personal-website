@@ -7,13 +7,13 @@ var netlifyCmsPaths = {
 
 module.exports = {
   flags: {
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: true,
-    FAST_REFRESH: true,
-    FAST_DEV: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
+    PRESERVE_WEBPACK_CACHE: false,
+    FAST_REFRESH: false,
+    FAST_DEV: false,
     QUERY_ON_DEMAND: false,
     LAZY_IMAGES: true,
-    DEV_SSR: true,
+    DEV_SSR: false,
   },
   pathPrefix: '/',
   siteMetadata: {
@@ -79,6 +79,7 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

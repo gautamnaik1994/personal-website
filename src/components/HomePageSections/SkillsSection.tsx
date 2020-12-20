@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Skill from './Skill/Skill';
-import SectionTitle from './SectionTitle';
-import SubContainer from './SubContainer';
+import Skill from '../Skill/Skill';
+import SectionTitle from '../SectionTitle';
+import SubContainer from '../SubContainer';
 
 interface Props {
   className?: string;

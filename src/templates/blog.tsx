@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState, Fragment } from 'react';
 import { graphql } from 'gatsby';
 //import Img from 'gatsby-image';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
@@ -79,7 +79,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
   };
 
   return (
-    <Layout>
+    <Fragment>
       <GatsbySeo
         title={site.siteMetadata.title}
         description={site.siteMetadata.description}
@@ -132,7 +132,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
           </BlogSideBar>
         </div>
       </Grid>
-    </Layout>
+    </Fragment>
   );
 };
 

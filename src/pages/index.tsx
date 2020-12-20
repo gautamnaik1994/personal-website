@@ -6,12 +6,13 @@ import Container from '../components/Container';
 import SubContainer from '../components/SubContainer';
 import AboutMeSection from '../components/HomePageSections/AboutMeSection';
 import Experience from '../components/Experience/Experience';
-import SkillsSection from '../components/SkillsSection';
+import SkillsSection from '../components/HomePageSections/SkillsSection';
 import DownloadCVSection from '../components/HomePageSections/DownloadCVSection';
 import BlogsSection from '../components/HomePageSections/BlogsSection';
+import { Fragment } from 'react';
 
 export default () => (
-  <Layout>
+  <Fragment>
     <HomePageHeader />
     <Container>
       <AboutMeSection className="two-rem-mb two-rem-mt" />
@@ -22,5 +23,5 @@ export default () => (
       <SkillsSection className="four-rem-mt" />
       <BlogsSection className="two-rem-mb" />
     </Container>
-  </Layout>
+  </Fragment>
 );

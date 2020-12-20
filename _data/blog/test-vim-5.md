@@ -1,7 +1,7 @@
 ---
 title: Test Vim 5
 date: 2020-12-18T11:36:24.537Z
-slug: ddfd
+slug: test-vim-5
 updatedDate: 2020-12-18T11:36:24.565Z
 description: ddfd
 tags:
@@ -11,4 +11,5 @@ keywords:
   - dfd
 bannerImage: /img/create-backup.png
 ---
+
 dfdfd

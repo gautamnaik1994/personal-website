@@ -28,15 +28,6 @@ interface Props {
   theme?: { primary: string };
 }
 
-const headings = [24, 20, 19, 18, 17, 16];
-const headingsMed = [48, 40, 31, 25, 20, 16];
-
-const hSizes = headings.map((size, index) => {
-  return `h${index + 1}{font-size:${size}px;}`;
-});
-const hSizesMed = headingsMed.map((size, index) => {
-  return `h${index + 1}{font-size:${size}px;}`;
-});
 //transition: background-color 0.3s ease-in, color 0.3s ease-in;
 
 export const GlobalStyle = createGlobalStyle<Props>`
@@ -50,169 +41,22 @@ export const GlobalStyle = createGlobalStyle<Props>`
 		--fontWeightRegular:400;
 		--fontWeightLight:300;
   }
-	html{
-		font-size: 14px;
-		line-height: 21px;
-	}
-  html,
-  body {
-    font-family: Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
-      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  }
-  body {
-    background-color: var(--bodyBackgroundColor);
-    color: var(--bodyColor);
-    transition: background-color 0.3s ease-in, color 0.3s ease-in;
-  }
-
-  button {
-    cursor: pointer;
-  }
-  a {
-    text-decoration: none;
-    color: var(--primary);
-  }
-
-
-
   ${() => {
     /* Override PrismJS Defaults */ return null;
   }}
 
-  pre {
-    //background-color: #2f1e2e !important;
-    //border-radius: 4px;
-    //font-size: 14px;
-  }
-  code {
-  }
-
-  .gatsby-highlight-code-line {
-    background-color: #4f424c;
-    display: block;
-    margin-right: -1em;
-    margin-left: -1em;
-    padding-right: 1em;
-    padding-left: 1em;
-  }
-  .m-0 {
-    margin: 0 !important;
-  }
-  .mb-0 {
-    margin-bottom: 0 !important;
-  }
-  .date {
-    color: #9e9e9e;
-  }
-  .category-shadow {
-    box-shadow: 0 4px 3px 0px rgba(0, 0, 0, 0.16);
-  }
-	.navbar-special-styles{
-		box-shadow: none;
-		background-color:transparent;
+	html{
+		font-size: 14px;
+		line-height: 21px;
 	}
+
+  
+
   .show-for-tablet {
     display: none;
     ${media.desktop} {
       display: block;
     }
   }
-  .half-rem-mt {
-    margin-top: 0.5rem;
-  }
-  .half-rem-mb {
-    margin-bottom: 0.5rem;
-  }
-  .two-rem-mt {
-    margin-top: 2rem;
-  }
-  .two-rem-mb {
-    margin-bottom: 2rem;
-  }
-  .four-rem-mt {
-    margin-top: 4rem;
-  }
-	.one-rem-mb{
-		margin-bottom:1rem;
-	}
-	.one-rem-mt{
-		margin-top:1rem;
-	}
-  /*Add back the container background-color, border-radius, padding, margin and overflow that we removed from <pre>.*/
-  .gatsby-highlight {
-    background-color: #2d2d2d;
-    border-radius: 0.3em;
-    margin: 0.5em 0;
-    padding: 1em;
-    overflow: auto;
-    //border: 2px solid #38FF64;
-    border-left: 6px solid #38ff64;
-    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.25);
-
-    /*
-    Remove the default PrismJS theme background-color, border-radius,margin, padding and overflow.
-    1. Make the element just wide enough to fit its content.
-    2. Always fill the visible space in .gatsby-highlight.
-    3. Adjust the position of the line numbers
-    */
-    pre[class*='language-'] {
-      background-color: transparent;
-      margin: 0;
-      padding: 0;
-      overflow: initial;
-      float: left;
-      min-width: calc(100% - 3em);
-
-      &.line-numbers {
-        padding-left: 3em;
-        padding-right: 1em;
-
-        .line-numbers-rows {
-          right: calc(100% - 25px);
-          left: unset !important;
-        }
-
-        .gatsby-highlight-code-line {
-          background-color: #455a64;
-          display: block;
-          margin-right: -1em;
-          margin-left: -1em;
-          padding-right: 1em;
-          padding-left: 0.75em;
-        }
-      }
-    }
-  }
-  :not(pre) > code[class*='language-'] {
-    padding: 2px 8px;
-    font-size: 0.85em;
-    color: #38ff64;
-    background: #404040;
-  }
-  .text-center{
-    text-align:center;
-  }
-  .metaball-svg{
-
-  height: 100vh;
-  width: 100%;
-  fill: red;
-		.balls {
-			/* transition: transform 1s linear; */
-			will-change: transform;
-		}
-  }
-
-  .tweakpane-container{
-    position:fixed;
-    right:0;
-    top: 66px;
-	}
-		.text-right{
-			text-align:right;
-		}
-		.relative{
-			position:relative;
-		}
+  
 `;

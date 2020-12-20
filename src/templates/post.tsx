@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { lighten } from 'polished';
@@ -19,10 +19,10 @@ const bodyBackgroundColor = theme('mode', {
   light: '#f5f5f5',
   dark: darkBackgroundColor,
 });
-const postBgColor = theme('mode', {
-  light: '#fff',
-  dark: lighten(0.05, darkBackgroundColor),
-});
+// const postBgColor = theme('mode', {
+//   light: '#fff',
+//   dark: lighten(0.05, darkBackgroundColor),
+// });
 
 const Grid = styled(Container)`
   ${media.desktop} {
@@ -58,7 +58,7 @@ const Banner = styled.div<BannerProps>`
 const Post = styled.div`
   padding: 20px 15px 50px 15px;
 
-  background: ${postBgColor};
+  background: var(--bodyBackgroundColor);
   box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.126);
   margin-bottom: 25px;
 `;
@@ -127,7 +127,7 @@ export default ({
   pageContext: { next, prev },
 }: Props): JSX.Element => {
   return (
-    <Layout site={site} frontmatter={mdx.frontmatter}>
+    <Fragment>
       <GatsbySeo
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description}
@@ -193,7 +193,7 @@ export default ({
         </div>
         <div className="right-sec"></div>
       </Grid>
-    </Layout>
+    </Fragment>
   );
 };
 

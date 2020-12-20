@@ -1,0 +1,312 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../../static/fonts/icomoon.eot?weix62');
+  src: url('../../static/fonts/icomoon.eot?weix62#iefix')
+      format('embedded-opentype'),
+    url('../../static/fonts/icomoon.ttf?weix62') format('truetype'),
+    url('../../static/fonts/icomoon.woff?weix62') format('woff'),
+    url('../../static/fonts/icomoon.svg?weix62#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linkedin:before {
+  content: '\e900';
+}
+.icon-github:before {
+  content: '\e901';
+}
+.icon-stack-overflow:before {
+  content: '\e902';
+}
+.icon-behance:before {
+  content: '\e903';
+}
+.icon-codepen:before {
+  content: '\e904';
+}
+.icon-stack-overflow-color:before {
+  content: '\e906';
+  color: #f48024;
+}
+.icon-stack-overflow-color:after {
+  content: '\e905';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #bcbbbb;
+}
+
+.icon-marker:before {
+  content: '\e90c';
+}
+.icon-cake:before {
+  content: '\e90d';
+}
+.icon-open-new-tab:before {
+  content: '\e90f';
+}
+.icon-email:before {
+  content: '\e90e';
+}
+.icon-link:before {
+  content: '\e907';
+}
+.icon-logo:before {
+  content: '\e908';
+}
+.icon-zigzag:before {
+  content: '\e909';
+}
+html,
+.root {
+  -webkit-font-smoothing: antialiased;
+}
+body,
+.article {
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+body {
+  font-family: Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  background-color: var(--bodyBackgroundColor);
+  color: var(--bodyColor);
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+h1,
+.h1 {
+  font-size: 1.9285714rem;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+h2,
+.h2 {
+  font-size: 1.5714286rem;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+h3,
+.h3 {
+  font-size: 1.2857143rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+}
+h4,
+.h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+}
+h5,
+.h5 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+}
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+/* Let's make sure all's aligned */
+hr,
+.hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+a,
+b,
+i,
+strong,
+em,
+small,
+code {
+  line-height: 1;
+}
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+pre {
+  //background-color: #2f1e2e !important;
+  //border-radius: 4px;
+  //font-size: 14px;
+}
+code {
+}
+
+.gatsby-highlight-code-line {
+  background-color: #4f424c;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.m-0 {
+  margin: 0 !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.date {
+  color: #9e9e9e;
+}
+.category-shadow {
+  box-shadow: 0 4px 3px 0px rgba(0, 0, 0, 0.16);
+}
+.navbar-special-styles.navbar-special-styles {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.half-rem-mt {
+  margin-top: 0.5rem;
+}
+.half-rem-mb {
+  margin-bottom: 0.5rem;
+}
+.two-rem-mt {
+  margin-top: 2rem;
+}
+.two-rem-mb {
+  margin-bottom: 2rem;
+}
+.four-rem-mt {
+  margin-top: 4rem;
+}
+.one-rem-mb {
+  margin-bottom: 1rem;
+}
+.one-rem-mt {
+  margin-top: 1rem;
+}
+/*Add back the container background-color, border-radius, padding, margin and overflow that we removed from <pre>.*/
+.gatsby-highlight {
+  background-color: #2d2d2d;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+  //border: 2px solid #38FF64;
+  border-left: 6px solid #38ff64;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.25);
+
+  /*
+  Remove the default PrismJS theme background-color, border-radius,margin, padding and overflow.
+  1. Make the element just wide enough to fit its content.
+  2. Always fill the visible space in .gatsby-highlight.
+  3. Adjust the position of the line numbers
+  */
+  pre[class*='language-'] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left;
+    min-width: calc(100% - 3em);
+
+    &.line-numbers {
+      padding-left: 3em;
+      padding-right: 1em;
+
+      .line-numbers-rows {
+        right: calc(100% - 25px);
+        left: unset !important;
+      }
+
+      .gatsby-highlight-code-line {
+        background-color: #455a64;
+        display: block;
+        margin-right: -1em;
+        margin-left: -1em;
+        padding-right: 1em;
+        padding-left: 0.75em;
+      }
+    }
+  }
+}
+:not(pre) > code[class*='language-'] {
+  padding: 2px 8px;
+  font-size: 0.85em;
+  color: #38ff64;
+  background: #404040;
+}
+.text-center {
+  text-align: center;
+}
+.metaball-svg {
+  height: 100vh;
+  width: 100%;
+  fill: red;
+  .balls {
+    /* transition: transform 1s linear; */
+    will-change: transform;
+  }
+}
+
+.tweakpane-container {
+  position: fixed;
+  right: 0;
+  top: 66px;
+}
+.text-right {
+  text-align: right;
+}
+.relative {
+  position: relative;
+}

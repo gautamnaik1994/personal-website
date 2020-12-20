@@ -8,7 +8,7 @@ import 'prismjs/themes/prism-tomorrow.css';
 import 'sanitize.css';
 import 'sanitize.css/typography.css';
 import 'sanitize.css/forms.css';
-import '../styles/style.css';
+import '../styles/style.scss';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { MDXLayoutComponents, MDXGlobalComponents } from './mdx';
@@ -19,13 +19,13 @@ import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 import { setColors, getThemeValue } from '../utils/themeConfig';
 import Sidebar from './Sidebar';
 
-type ThemeChangeContextProps = {
-  toggleTheme: () => void;
-};
+// type ThemeChangeContextProps = {
+//   toggleTheme: () => void;
+// };
 
-export const ThemeChangeContext = createContext<
-  Partial<ThemeChangeContextProps>
->({});
+// export const ThemeChangeContext = createContext<
+//   Partial<ThemeChangeContextProps>
+// >({});
 
 // This context provider is passed to any component requiring the context
 
@@ -40,31 +40,21 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
 
     setColors(currentTheme);
     setTheme(currentTheme);
+    console.log('called toggl thme');
   };
 
-  // const ThemeChangeProvider = ({ children }) => {
-  //   return (
-  //     <ThemeChangeContext.Provider
-  //       value={{
-  //         toggleTheme,
-  //       }}
-  //     >
-  //       {children}
-  //     </ThemeChangeContext.Provider>
-  //   );
-  // };
-
-  useEffect(() => {
-    //themeConfig();
-    //setTheme(theme);
-    // window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
-    //   if (e.matches) {
-    //     console.log('dark mode is enabled');
-    //   } else {
-    //     console.log('dark mode is disabled');
-    //   }
-    // });
-  }, []);
+  // useEffect(() => {
+  // themeConfig();
+  // setTheme(theme);
+  // alert(' d', theme);
+  // window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
+  //   if (e.matches) {
+  //     console.log('dark mode is enabled');
+  //   } else {
+  //     console.log('dark mode is disabled');
+  //   }
+  // });
+  // }, []);
 
   return (
     <Fragment>
