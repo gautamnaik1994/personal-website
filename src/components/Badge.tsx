@@ -7,16 +7,12 @@ export interface Props {
 }
 
 const Badge = styled(Link)`
-  padding: 5px 8px;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.015rem;
   color: var(--accent);
   cursor: pointer;
   & + & {
     margin-left: 7px;
   }
+  text-transform: uppercase;
 `;
 
 export default ({ name }: Props): JSX.Element => (

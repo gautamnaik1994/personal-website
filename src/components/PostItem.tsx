@@ -50,10 +50,11 @@ const PostItem = styled.div`
     opacity: 0.75;
   }
   ${media.desktop} {
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 10px;
+    margin-bottom: 25px;
     box-shadow: none;
     padding-left: 320px;
+    border-radius: 0px;
     .img-container {
       position: absolute;
       left: 0;
@@ -100,6 +101,9 @@ export default ({
     <div className="img-container">
       <img src={banner} />
     </div>
+    <div className="half-rem-mb">
+      <Badge name={category} />
+    </div>
     <Link title={title} to={`/blog/${link}`}>
       <h2 className="m-0">{title}</h2>
     </Link>
@@ -107,9 +111,6 @@ export default ({
       {date} &bull; {readTime} minutes read
     </small>
 
-    <div className="half-rem-mt">
-      <Badge name={category} />
-    </div>
     <article className="one-rem-mt one-rem-mb">{excerpt}</article>
     <Link title="Read More" to={`/blog/${link}`}>
       Read More
