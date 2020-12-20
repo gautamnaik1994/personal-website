@@ -95,16 +95,14 @@ export default ({
   tags,
   readTime,
   banner,
-}: Props) => (
+}: Props): JSX.Element => (
   <PostItem>
     <div className="img-container">
       <img src={banner} />
     </div>
-    <h2 className="m-0">
-      <Link title={title} to={`/blog/${link}`}>
-        {title}
-      </Link>
-    </h2>
+    <Link title={title} to={`/blog/${link}`}>
+      <h2 className="m-0">{title}</h2>
+    </Link>
     <small>
       {date} &bull; {readTime} minutes read
     </small>

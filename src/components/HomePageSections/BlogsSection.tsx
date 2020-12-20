@@ -85,7 +85,7 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
         })}
       </SubContainer>
       <div className="text-center">
-        <LinkButton variant="primary" to="/blog/">
+        <LinkButton title="Go To All Blogs" variant="primary" to="/blog/">
           Goto All Blogs
         </LinkButton>
       </div>

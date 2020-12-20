@@ -7,6 +7,13 @@ import SubContainer from './SubContainer';
 interface Props {
   className?: string;
 }
+interface SkillProps {
+  frontmatter: {
+    title: string;
+    value: number;
+    details: [];
+  };
+}
 
 const SkillsSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
@@ -30,7 +37,7 @@ const SkillsSection = ({ className }: Props): JSX.Element => {
     <div className={className}>
       <SectionTitle title="Skills" />
       <SubContainer>
-        {data.allMdx.nodes.map((d, i) => {
+        {data.allMdx.nodes.map((d: SkillProps, i: number) => {
           return (
             <Skill
               key={i}

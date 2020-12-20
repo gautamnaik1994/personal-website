@@ -12,9 +12,10 @@ const Item = styled.div`
   }
   .value {
     font-size: 18px;
+    margin-top: 1rem;
   }
   & + & {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 `;
 

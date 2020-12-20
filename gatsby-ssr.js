@@ -1,7 +1,6 @@
 import React from 'react';
 
 function htmlThemeFunction() {
-  console.log('dddA');
   let initialThemeValue = 'light';
   if (localStorage.getItem('theme') === null) {
     if (matchMedia('(prefers-color-scheme: dark)').matches) {

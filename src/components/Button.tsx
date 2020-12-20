@@ -23,7 +23,8 @@ export interface ButtonProps {
   className?: string;
   children?: JSX.Element | string;
   variant?: string;
-  onClick: () => {};
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  title?: string;
 }
 
 export default (props: ButtonProps): JSX.Element => {
@@ -32,6 +33,7 @@ export default (props: ButtonProps): JSX.Element => {
       variant={props.variant || 'default'}
       onClick={props.onClick}
       className={props.className}
+      title={props.title}
     >
       {props.children}
     </Button>
