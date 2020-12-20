@@ -3,7 +3,7 @@ updatedDate: 2019-08-23
 keywords:
   - vim
   - keymap
-slug: /create-quick-backup-vim
+slug: create-quick-backup-vim
 banner: ./images/banner.png
 title: Create quick backup of current file in VIM
 date: 2019-08-09
@@ -11,12 +11,13 @@ description: Sometimes we have a create a copy of current working file, just for
   trying out some new thing or feature.
 tags:
   - vim
-  - keymaps
 categories:
   - vim
+category: Vim
 bannerImage: /img/create-backup.png
 ---
-Sometimes we have to create a copy of the current working file, just for trying out some new thing or feature.
+
+Sometimes we have to create a copy of the current working file, just for trying out some new thing or feature.
 
 Of course, version control systems were made for this solving this problem.
 

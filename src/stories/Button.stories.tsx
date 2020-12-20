@@ -9,7 +9,15 @@ export default {
   component: Button,
 } as Meta;
 
-export const ButtonDefault = (): JSX.Element => <Button>Default</Button>;
+export const ButtonDefault = (): JSX.Element => (
+  <Button
+    onClick={() => {
+      console.log('clicked');
+    }}
+  >
+    Default
+  </Button>
+);
 export const ButtonPrimary = (): JSX.Element => (
   <Button
     onClick={() => {

@@ -18,6 +18,7 @@ export interface Frontmatter {
   description?: string = '';
   keywords?: string[] = [];
   categories?: string[] | any = [];
+  category: string;
   tags?: string[] | any = [];
   bannerImage: { childImageSharp: { fluid: any }; publicURL: string };
 }
@@ -35,6 +36,6 @@ export interface LayoutProps {
 }
 
 export interface PageContext {
-  next: { fields: { title: string; slug: string } };
-  prev: { fields: { title: string; slug: string } };
+  next: { frontmatter: { title: string; slug: string } };
+  prev: { frontmatter: { title: string; slug: string } };
 }

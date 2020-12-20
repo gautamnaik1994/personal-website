@@ -9,7 +9,7 @@ import Hero from '../components/Hero';
 import PostItem from '../components/PostItem';
 import CategoryTagList from '../components/CategoryTagList';
 import Pagination from '../components/Pagination';
-import { Site } from '../types';
+import { Frontmatter, SiteMetadata, Site } from '../types';
 import media from '../utils/MediaQueries';
 import Container from '../components/Container';
 import BlogSideBar from '../components/BlogSideBar';
@@ -26,57 +26,47 @@ const Grid = styled(Container)`
 interface Props {
   data: { site: Site; allMdx: { edges: [] } };
   pageContext: {
-    currentPage: number;
-    pageCount: number;
-    base: string;
-    categories: [];
-    activeCategoryIndex: number;
-  };
-}
-
-interface PostItemProps {
-  node: {
-    id: string;
-    frontmatter: {
-      slug: string;
-      date: string;
-      description: string;
-      title: string;
-      excerpt: string;
-      tags: [];
-      bannerImage: { publicURL: string };
-      category: string;
+    pagination: {
+      page: [];
+      nextPagePath: string;
+      previousPagePath: string;
     };
-    timeToRead: number;
+    categories: string[];
+    activeCategoryIndex: number;
+    tags: string[];
   };
+  location?: any;
 }
 
-const Blog = ({ data, pageContext }: Props): JSX.Element => {
-  const { site, allMdx } = data;
-  const posts = allMdx.edges;
+const Blog = ({
+  data: { site, allMdx },
+  pageContext: { pagination, categories, activeCategoryIndex, tags },
+  location: { state },
+}: Props) => {
+  const { page, nextPagePath, previousPagePath } = pagination;
+
+  const posts = page.map((id: number) =>
+    allMdx.edges.find((edge: { node: { id: number } }) => edge.node.id === id),
+  );
+
   const [showHero, setShowHero] = useState<boolean>(true);
 
-  const {
-    currentPage,
-    pageCount,
-    base,
-    categories,
-    activeCategoryIndex,
-  } = pageContext;
-
-  const nextPagePath = (): string => {
-    if (currentPage + 1 <= pageCount) {
-      return `${base}/${currentPage + 1}`;
-    } else return '';
-  };
-  const previousPagePath = (): string => {
-    if (currentPage - 1 > 0) {
-      if (currentPage - 1 == 1) {
-        return `${base}`;
-      }
-      return `${base}/${currentPage - 1}`;
-    } else return '';
-  };
+  //useEffect(() => {
+  //console.log('Called Effects');
+  //if (state && state.fromCategoryItem) {
+  ////setShowHero(false);
+  //setScrollPos(300);
+  //console.log('Called Effects inside');
+  ////window.scrollTo(0, 300);
+  //}
+  //}, [pathname]);
+  useLayoutEffect(() => {
+    console.log('Called Layout Effects');
+    if (state && state.fromCategoryItem) {
+      console.log('Layout Effects indide');
+      setShowHero(false);
+    }
+  }, []);
 
   return (
     <Layout>
@@ -104,30 +94,30 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
       <Hero showHero={showHero} title="Welcome to Blog" />
       <Grid>
         <div className="left-sec">
-          {posts.map(({ node }: PostItemProps) => (
+          {posts.map(({ node }: any) => (
             <PostItem
               key={node.id}
               link={node.frontmatter.slug}
               title={node.frontmatter.title}
               date={node.frontmatter.date}
-              excerpt={node.frontmatter.description}
+              excerpt={node.excerpt}
               tags={node.frontmatter.tags}
               banner={node.frontmatter.bannerImage.publicURL}
-              category={node.frontmatter.category}
+              category={node.frontmatter.categories}
               readTime={node.timeToRead}
             />
           ))}
           <Pagination
-            nextPagePath={nextPagePath()}
-            previousPagePath={previousPagePath()}
+            nextPagePath={nextPagePath}
+            previousPagePath={previousPagePath}
           />
         </div>
         <div className="right-sec">
           <BlogSideBar>
             <CategoryTagList
               name={'Categories'}
-              list={categories}
               activeIndex={activeCategoryIndex}
+              list={categories}
             />
           </BlogSideBar>
         </div>
@@ -138,37 +128,29 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
 
 export default Blog;
 
-export const query = graphql`
-  query MyQuery(
-    $skip: Int = 0
-    $blogPostPerPage: Int = 2
-    $activeCategory: String
-  ) {
+export const pageQuery = graphql`
+  query {
     site {
       ...site
     }
-    allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "/_data/blog/" }
-        frontmatter: { category: { eq: $activeCategory } }
-      }
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: $blogPostPerPage
-      skip: $skip
-    ) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/_data/blog/" } }) {
       edges {
         node {
+          excerpt(pruneLength: 200)
           id
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
             slug
-            category
+            categories
             keywords
-            description
+            tags
             bannerImage {
               publicURL
             }
+          }
+          wordCount {
+            words
           }
           timeToRead
         }

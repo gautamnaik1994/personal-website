@@ -151,7 +151,11 @@ const Experience = styled.div`
   }
 `;
 
-export default ({ className }: string): JSX.Element => {
+interface Props {
+  className?: string;
+}
+
+export default ({ className }: Props): JSX.Element => {
   const [dateData, setDateData] = useState({
     years: 0,
     months: 0,

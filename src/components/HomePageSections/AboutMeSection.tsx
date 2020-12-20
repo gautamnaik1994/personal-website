@@ -33,10 +33,16 @@ const AboutMeImage = styled.img`
   }
 `;
 
-const AboutMeSection = ({ className }: string) => {
+interface Props {
+  className?: string;
+}
+
+const AboutMeSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
-      mdx(fileAbsolutePath: { regex: "/siteData/" }) {
+      mdx(
+        fileAbsolutePath: { regex: "/_data/siteData/websiteStaticContent/" }
+      ) {
         body
         frontmatter {
           company

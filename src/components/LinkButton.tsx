@@ -25,14 +25,17 @@ export interface LinkButtonProps {
   children?: JSX.Element | string;
   variant?: string;
   to: string;
+  download?: boolean;
+  title: string;
 }
 
-export default (props: ButtonProps): JSX.Element => {
+export default (props: LinkButtonProps): JSX.Element => {
   return (
     <LinkButton
       variant={props.variant || 'default'}
       to={props.to}
       className={props.className}
+      title={props.title}
     >
       {props.children}
     </LinkButton>

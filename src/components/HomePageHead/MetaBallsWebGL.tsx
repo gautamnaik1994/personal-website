@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { Fragment } from 'react';
 import Tweakpane from 'tweakpane';
 import { ThemeContext, withTheme } from 'styled-components';
@@ -114,7 +115,9 @@ class Metaballs extends React.Component<IProps, IState> {
         'webgl',
         webglOptions,
       ) as WebGLRenderingContext;
-    } catch (e) {}
+    } catch (e) {
+      console.log('not supported');
+    }
 
     if (!this.gl) throw new Error('WebGL not supported');
 

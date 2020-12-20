@@ -1,302 +1,144 @@
-const path = require('path');
+import path, { resolve } from 'path';
 
-const PAGINATION_OFFSET = 3;
+let categories = [];
+let blogPostPerPage = 4;
 
-const pluckCategories = (edges) =>
-  Object.keys(
-    edges.reduce((acc, value) => {
-      value.node.fields.categories.forEach((category) => {
-        if (!acc[category]) {
-          acc[category] = category;
-        }
-      });
+export async function createPages(params) {
+  await fetchImportantData(params);
+  await Promise.all([
+    createCategoryPages(params),
+    createPostPage(params),
+    createBlogPages(params),
+  ]);
+}
 
-      return acc;
-    }, {}),
-  );
-
-const groupByCategory = (edges) =>
-  edges.reduce((acc, value) => {
-    value.node.fields.categories.forEach((category) => {
-      if (!acc[category]) {
-        acc[category] = [];
-      }
-      acc[category].push(value);
-    });
-    return acc;
-  }, {});
-
-const pluckTags = (edges) =>
-  Object.keys(
-    edges.reduce((acc, value) => {
-      value.node.fields.tags.forEach((tag) => {
-        if (!acc[tag]) {
-          acc[tag] = tag;
-        }
-      });
-
-      return acc;
-    }, {}),
-  );
-
-const groupByTag = (edges) =>
-  edges.reduce((acc, value) => {
-    value.node.fields.tags.forEach((tag) => {
-      if (!acc[tag]) {
-        acc[tag] = [];
-      }
-      acc[tag].push(value);
-    });
-    return acc;
-  }, {});
-
-const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
-  const pages = edges.reduce((acc, value, index) => {
-    const pageIndex = Math.floor(index / PAGINATION_OFFSET);
-
-    if (!acc[pageIndex]) {
-      acc[pageIndex] = [];
-    }
-
-    acc[pageIndex].push(value.node.id);
-
-    return acc;
-  }, []);
-
-  pages.forEach((page, index) => {
-    const nextPagePath =
-      index === pages.length - 1 ? `/blog` : `/blog/${index + 1}`;
-    const previousPagePath = index === 0 ? `/blog` : `/blog/${index - 1}`;
-    createPage({
-      path: index > 0 ? `/blog/${index}` : `${pathPrefix}`,
-      component: path.resolve(`src/templates/blog.tsx`),
-      context: {
-        pagination: {
-          page,
-          nextPagePath: nextPagePath,
-          previousPagePath: index === 1 ? pathPrefix : previousPagePath,
-          pageCount: pages.length,
-          pathPrefix,
-        },
-        ...context,
-      },
-    });
-  });
-};
-
-const createPaginatedPagesForCategoriesAndTags = (
-  createPage,
-  edges,
-  pathPrefix,
-  context,
-) => {
-  const pages = edges.reduce((acc, value, index) => {
-    const pageIndex = Math.floor(index / PAGINATION_OFFSET);
-    if (!acc[pageIndex]) {
-      acc[pageIndex] = [];
-    }
-    acc[pageIndex].push(value.node.id);
-    return acc;
-  }, []);
-  pages.forEach((page, index) => {
-    const nextPagePath =
-      index === pages.length - 1 ? null : `${pathPrefix}/${index + 1}`;
-    const previousPagePath = index === 0 ? null : `${pathPrefix}/${index - 1}`;
-    createPage({
-      path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
-      component: path.resolve(`src/templates/blog.tsx`),
-      context: {
-        pagination: {
-          page,
-          nextPagePath: nextPagePath,
-          previousPagePath: index === 1 ? pathPrefix : previousPagePath,
-          pageCount: pages.length,
-          pathPrefix,
-        },
-        ...context,
-      },
-    });
-  });
-};
-
-const createCategoryPages = (createPage, edges) => {
-  const categories = pluckCategories(edges);
-  const posts = groupByCategory(edges);
-  Object.keys(posts).forEach((category, index) => {
-    createPaginatedPagesForCategoriesAndTags(
-      createPage,
-      posts[category],
-      `/blog/categories/${category}`,
-      {
-        categories,
-        activeCategory: category,
-        activeCategoryIndex: index,
-      },
-    );
-  });
-};
-
-const createTagPages = (createPage, edges) => {
-  const tags = pluckTags(edges);
-  const categories = pluckCategories(edges);
-  const posts = groupByTag(edges);
-  Object.keys(posts).forEach((tag, index) => {
-    createPaginatedPagesForCategoriesAndTags(
-      createPage,
-      posts[tag],
-      `/blog/tags/${tag}`,
-      {
-        tags,
-        categories,
-        activeTag: tag,
-        activeTagIndex: index,
-      },
-    );
-  });
-};
-
-const createPosts = (createPage, edges) => {
-  edges.forEach(({ node }, i) => {
-    const prev = i === 0 ? null : edges[i - 1].node;
-    const next = i === edges.length - 1 ? null : edges[i + 1].node;
-    createPage({
-      path: `/blog${node.fields.slug}`,
-      component: path.resolve(`./src/templates/post.tsx`),
-      context: {
-        id: node.id,
-        prev,
-        next,
-      },
-    });
-  });
-};
-
-const createBlog = (createPage, edges) => {
-  const categories = pluckCategories(edges);
-  createPaginatedPages(createPage, edges, '/blog/', {
-    categories,
-  });
-};
-
-exports.createPages = ({ actions, graphql }) =>
-  graphql(`
+async function createPostPage({ actions, graphql }) {
+  const template = path.resolve(`./src/templates/post.tsx`);
+  const { data } = await graphql(`
     query {
-      allMdx(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { fileAbsolutePath: { regex: "/_data/blog/" } }
-      ) {
+      allMdx(filter: { fileAbsolutePath: { regex: "/_data/blog/" } }) {
         edges {
           node {
             id
-            excerpt(pruneLength: 250)
-            fields {
+            frontmatter {
+              slug
+            }
+          }
+          next {
+            frontmatter {
               title
               slug
-              categories
-              tags
+            }
+          }
+          previous {
+            frontmatter {
+              title
+              slug
             }
           }
         }
       }
     }
-  `).then(({ data, errors }) => {
-    if (errors) {
-      return Promise.reject(errors);
-    }
-
-    const { edges } = data.allMdx;
-    // createIBlog(actions.createPage, edges);
-    createBlog(actions.createPage, edges);
-    createPosts(actions.createPage, edges);
-    createCategoryPages(actions.createPage, edges);
-    //createTagPages(actions.createPage, edges);
-  });
-
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-      alias: {
-        $components: path.resolve(__dirname, 'src/components'),
+  `);
+  const { edges } = data.allMdx;
+  edges.forEach((post) => {
+    actions.createPage({
+      path: `/blog/${post.node.frontmatter.slug}`,
+      component: template,
+      context: {
+        id: post.node.id,
+        next: post.next,
+        prev: post.previous,
       },
-    },
+    });
   });
-};
+}
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === `Mdx`) {
-    const parent = getNode(node.parent);
-    if (parent.internal.type === 'File') {
-      createNodeField({
-        name: `sourceName`,
-        node,
-        value: parent.sourceInstanceName,
-      });
+async function fetchImportantData({ actions, graphql }) {
+  console.log('called fetch data');
+  const { data } = await graphql(`
+    query {
+      siteData: allMdx(
+        filter: { fileAbsolutePath: { regex: "/_data/siteData/settings/" } }
+      ) {
+        nodes {
+          frontmatter {
+            posts {
+              postPerPage
+            }
+          }
+        }
+      }
+      allMdx(filter: { fileAbsolutePath: { regex: "/_data/blog/" } }) {
+        group(field: frontmatter___category) {
+          fieldValue
+        }
+      }
     }
-    createNodeField({
-      name: 'id',
-      node,
-      value: node.id,
-    });
-    createNodeField({
-      name: 'g_id',
-      node,
-      value: node.id,
-    });
+  `);
+  blogPostPerPage = data.siteData.nodes[0].frontmatter.posts.postPerPage;
 
-    createNodeField({
-      name: 'title',
-      node,
-      value: node.frontmatter.title,
-    });
+  data.allMdx.group.forEach(({ fieldValue }) => {
+    categories.push(fieldValue);
+  });
+  categories = [...new Set(categories)];
+}
 
-    createNodeField({
-      name: 'description',
-      node,
-      value: node.frontmatter.description,
-    });
+async function createBlogPages({ actions, graphql }) {
+  const template = path.resolve(`./src/templates/blog.tsx`);
+  const { data } = await graphql(`
+    query {
+      allMdx(filter: { fileAbsolutePath: { regex: "/_data/blog/" } }) {
+        totalCount
+      }
+    }
+  `);
+  const pageCount = Math.ceil(data.allMdx.totalCount / blogPostPerPage);
 
-    createNodeField({
-      name: 'slug',
-      node,
-      value: node.frontmatter.slug,
+  Array.from({ length: pageCount }).forEach((_, i) => {
+    actions.createPage({
+      path: `/blog/${i < 1 ? '' : i + 1}`,
+      component: template,
+      context: {
+        skip: i * blogPostPerPage,
+        currentPage: i + 1,
+        blogPostPerPage,
+        base: '/blog',
+        pageCount,
+        categories,
+      },
     });
+  });
+}
 
-    createNodeField({
-      name: 'date',
-      node,
-      value: node.frontmatter.date || '',
+async function createCategoryPages({ actions, graphql }) {
+  const template = path.resolve(`./src/templates/blog.tsx`);
+  let catIndex = 0;
+  for await (const cat of categories) {
+    const { data } = await graphql(`
+      query {
+        allMdx(filter: {fileAbsolutePath: {regex: "/_data/blog/"}, frontmatter: {category: {eq: "${cat}"}}}) {
+          totalCount
+        }
+      }
+    `);
+    const pageCount = Math.ceil(data.allMdx.totalCount / blogPostPerPage);
+    Array.from({ length: pageCount }).forEach((_, i) => {
+      actions.createPage({
+        path: `/blog/${cat}/${i < 1 ? '' : i + 1}`,
+        component: template,
+        context: {
+          skip: i * blogPostPerPage,
+          currentPage: i + 1,
+          blogPostPerPage,
+          base: `/blog/${cat}`,
+          pageCount,
+          categories,
+          activeCategory: cat,
+          activeCategoryIndex: catIndex,
+        },
+      });
     });
-
-    createNodeField({
-      name: 'updatedDate',
-      node,
-      value: node.frontmatter.updatedDate || '',
-    });
-
-    createNodeField({
-      name: 'bannerImage',
-      node,
-      bannerImage: node.frontmatter.bannerImage,
-    });
-
-    createNodeField({
-      name: 'categories',
-      node,
-      value: node.frontmatter.categories || [],
-    });
-
-    createNodeField({
-      name: 'tags',
-      node,
-      value: node.frontmatter.tags || [],
-    });
-
-    createNodeField({
-      name: 'keywords',
-      node,
-      value: node.frontmatter.keywords || [],
-    });
+    catIndex++;
   }
-};
+}

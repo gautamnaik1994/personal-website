@@ -3,7 +3,7 @@ updatedDate: 2020-05-20
 keywords:
   - vim
   - keymap
-slug: /remap-esc
+slug: remap-esc
 banner: ./images/banner.png
 title: Why should you remap ESC key in Vim
 date: 2020-05-20
@@ -15,9 +15,11 @@ tags:
   - keymaps
 categories:
   - vim
+category: Vim
 bannerImage: /img/remap-esc.png
 ---
-By default,the <kbd>ESC</kbd> key is used to switch to Normal mode from Insert mode.
+
+By default,the <kbd>ESC</kbd> key is used to switch to Normal mode from Insert mode.
 But as you can see on a regular keyboard, the position of <kbd>ESC</kbd> key is far from the home row keys. To press it without lifting your entire hand, you have to extend your pinky finger. This is fine if you are doing some light typing/editing.
 But doing this for prolonged typing/editing sessions, this can be quite exhausting.
 

@@ -8,14 +8,13 @@ const HomePageHeader = styled.div`
 `;
 
 export default () => {
-  const HomePageHeaderRef = useRef<HTMLElement>(null);
+  const HomePageHeaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       function (entries) {
         if (HomePageHeaderRef && HomePageHeaderRef.current) {
           // no intersection with screen
-          console.log('Inr Ra ', entries[0].intersectionRatio);
           if (entries[0].intersectionRatio < 0.5) {
             //HomePageHeaderRef.current.classList.add('category-shadow');
 

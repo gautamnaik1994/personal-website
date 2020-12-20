@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import HomePageHeader from '../components/HomePageSections/HomePageHeader';
+import Container from '../components/Container';
+import SubContainer from '../components/SubContainer';
 import AboutMeSection from '../components/HomePageSections/AboutMeSection';
 import Experience from '../components/Experience/Experience';
 import SkillsSection from '../components/SkillsSection';
-import Container from '../components/Container';
-import SubContainer from '../components/SubContainer';
 import DownloadCVSection from '../components/HomePageSections/DownloadCVSection';
 import BlogsSection from '../components/HomePageSections/BlogsSection';
 

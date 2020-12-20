@@ -5,7 +5,28 @@ import SectionTitle from '../SectionTitle';
 import SubContainer from '../SubContainer';
 import LinkButton from '../LinkButton';
 
-const BlogsSection = ({ className }) => {
+interface Props {
+  className?: string;
+}
+
+interface PostItemProps {
+  node: {
+    id: string;
+    frontmatter: {
+      slug: string;
+      date: string;
+      description: string;
+      title: string;
+      excerpt: string;
+      tags: [];
+      bannerImage: { publicURL: string };
+      category: string;
+    };
+    timeToRead: number;
+  };
+}
+
+const BlogsSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       allMdx(
@@ -19,7 +40,8 @@ const BlogsSection = ({ className }) => {
               slug
               tags
               title
-              categories
+              category
+              description
               date(formatString: "MMMM DD, YYYY")
               bannerImage {
                 publicURL
@@ -45,16 +67,17 @@ const BlogsSection = ({ className }) => {
     <div className={className}>
       <SectionTitle title="Recent Blogs" />
       <SubContainer>
-        {data.allMdx.edges.map((post): any => {
+        {data.allMdx.edges.map((post: PostItemProps) => {
           const _data = post.node.frontmatter;
           return (
             <PostItem
+              key={post.node.id}
               title={_data.title}
-              category={_data.categories}
+              category={_data.category}
               link={_data.slug}
               banner={_data.bannerImage.publicURL}
-              tags={_data.categories}
-              excerpt={post.node.excerpt}
+              tags={_data.tags}
+              excerpt={_data.description}
               date={_data.date}
               readTime={post.node.timeToRead}
             />
@@ -62,7 +85,7 @@ const BlogsSection = ({ className }) => {
         })}
       </SubContainer>
       <div className="text-center">
-        <LinkButton variant="primary" to="/blog/">
+        <LinkButton title="Go To All Blogs" variant="primary" to="/blog/">
           Goto All Blogs
         </LinkButton>
       </div>

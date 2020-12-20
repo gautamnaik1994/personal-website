@@ -26,14 +26,10 @@ const CategoryTagList = styled.ul`
 export default ({ list = [], activeIndex, name }: Props) => {
   return (
     <CategoryTagList>
-      <p className="">{name}</p>
+      <h3 className="one-rem-mb">{name}</h3>
       {list.map((item, index) => (
-        <Link
-          key={item}
-          title={item}
-          to={'/blog/' + name.toLowerCase() + '/' + item}
-        >
-          {item}
+        <Link key={item} title={item} to={'/blog/' + item}>
+          {item} {activeIndex === index && 'active'}
         </Link>
       ))}
     </CategoryTagList>

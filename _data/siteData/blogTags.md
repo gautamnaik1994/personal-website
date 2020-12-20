@@ -1,0 +1,13 @@
+---
+title:
+  - css
+  - git
+  - vim
+  - web
+  - python
+  - machine-leaning
+  - blender
+  - maths
+  - ui
+  - ux
+---
