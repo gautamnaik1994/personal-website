@@ -43,23 +43,24 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
     console.log('called toggl thme');
   };
 
-  // useEffect(() => {
-  // themeConfig();
-  // setTheme(theme);
-  // alert(' d', theme);
-  // window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
-  //   if (e.matches) {
-  //     console.log('dark mode is enabled');
-  //   } else {
-  //     console.log('dark mode is disabled');
-  //   }
-  // });
-  // }, []);
+  useEffect(() => {
+    // themeConfig();
+    setTheme(theme);
+    // alert(' d', theme);
+    // window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
+    //   if (e.matches) {
+    //     console.log('dark mode is enabled');
+    //   } else {
+    //     console.log('dark mode is disabled');
+    //   }
+    // });
+  }, []);
 
   return (
     <Fragment>
       <Helmet>
         <html lang="en" />
+        <title>Gautam Naik</title>
         <link
           href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,700,700i&display=swap"
           rel="stylesheet"

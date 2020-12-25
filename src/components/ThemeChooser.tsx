@@ -44,7 +44,7 @@ const ThemeChooser = styled.button`
   border: none;
   outline: none;
   circle {
-    will-change: transform;
+    /* will-change: transform; */
     transform-origin: center;
   }
 `;

@@ -55,8 +55,8 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 620,
-              srcSetBreakpoints: [400],
+              // maxWidth: 620,
+              // srcSetBreakpoints: [400],
             },
           },
           {
@@ -90,6 +90,9 @@ module.exports = {
         theme_color: '#525dce',
         display: 'standalone',
         icon: 'assets/logo.png',
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
     'gatsby-plugin-offline',

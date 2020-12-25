@@ -112,7 +112,9 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
               date={node.frontmatter.date}
               excerpt={node.frontmatter.description}
               tags={node.frontmatter.tags}
-              banner={node.frontmatter.bannerImage.publicURL}
+              banner={
+                node.frontmatter.bannerImage.childImageSharp.gatsbyImageData
+              }
               category={node.frontmatter.category}
               readTime={node.timeToRead}
             />
@@ -167,7 +169,9 @@ export const query = graphql`
             keywords
             description
             bannerImage {
-              publicURL
+              childImageSharp {
+                gatsbyImageData(width: 300)
+              }
             }
           }
           timeToRead

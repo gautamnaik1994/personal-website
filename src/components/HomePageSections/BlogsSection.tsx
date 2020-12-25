@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+
 import PostItem from '../PostItem';
 import SectionTitle from '../SectionTitle';
 import SubContainer from '../SubContainer';
@@ -44,15 +45,8 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
               description
               date(formatString: "MMMM DD, YYYY")
               bannerImage {
-                publicURL
                 childImageSharp {
-                  fixed {
-                    src
-                    srcWebp
-                  }
-                  fluid {
-                    src
-                  }
+                  gatsbyImageData(width: 300)
                 }
               }
             }
@@ -63,6 +57,7 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
       }
     }
   `);
+
   return (
     <div className={className}>
       <SectionTitle title="Recent Blogs" />
@@ -75,7 +70,7 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
               title={_data.title}
               category={_data.category}
               link={_data.slug}
-              banner={_data.bannerImage.publicURL}
+              banner={_data.bannerImage.childImageSharp.gatsbyImageData}
               tags={_data.tags}
               excerpt={_data.description}
               date={_data.date}

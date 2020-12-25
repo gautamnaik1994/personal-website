@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import theme from 'styled-theming';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { lighten } from 'polished';
 import Link from './Link';
 import Badge from './Badge';
@@ -65,6 +66,9 @@ const PostItem = styled.div`
       transform: translateY(-50%);
       border-radius: 5px;
       overflow: hidden;
+      .gatsby-image-wrapper {
+        height: 100% !important;
+      }
       img {
       }
     }
@@ -99,7 +103,7 @@ export default ({
 }: Props): JSX.Element => (
   <PostItem>
     <div className="img-container">
-      <img src={banner} />
+      <GatsbyImage image={banner} />
     </div>
     <div className="half-rem-mb">
       <Badge name={category} />

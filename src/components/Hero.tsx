@@ -85,7 +85,7 @@ const Hero = styled.header<HeroProps>`
     width: 6540px;
     top: 0;
     bottom: 0;
-    background-image: url('abstractbgRings.svg');
+    background-image: url('/abstractbgRings.svg');
     animation: ${bgAnim} 350s infinite linear;
     ${media.desktop} {
       height: auto;
@@ -95,7 +95,7 @@ const Hero = styled.header<HeroProps>`
     height: ${(props) => (props.showHero ? 50 : 0)}vh;
   }
   .img-bg-2 {
-    background-image: url('abstractbgOther.svg');
+    background-image: url('/abstractbgOther.svg');
     animation: ${bgAnim} 250s infinite linear;
   }
 `;

@@ -14,6 +14,7 @@ import Badge from '../components/Badge';
 import { Site, Mdx, PageContext } from '../types';
 import { darkBackgroundColor } from '../utils/colors';
 import Container from '../components/Container';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const bodyBackgroundColor = theme('mode', {
   light: '#f5f5f5',
@@ -74,7 +75,7 @@ interface GatsbyImageProps {
   fluid: any;
 }
 
-const CustomImg = styled(Img)<GatsbyImageProps>`
+const CustomImg = styled(GatsbyImage)<GatsbyImageProps>`
   width: 100%;
   ${media.desktop} {
     width: 650px;
@@ -125,13 +126,14 @@ const StyledMDXRenderer = styled.div`
 export default ({
   data: { site, mdx },
   pageContext: { next, prev },
+  location,
 }: Props): JSX.Element => {
   return (
     <Fragment>
       <GatsbySeo
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description}
-        canonical={`${site.siteMetadata.siteUrl}${mdx.frontmatter.slug}/`}
+        canonical={location.href}
         metaTags={[
           {
             name: 'keywords',
@@ -141,12 +143,12 @@ export default ({
           },
         ]}
         openGraph={{
-          url: `${site.siteMetadata.siteUrl}${mdx.frontmatter.slug}/`,
+          url: location.href,
           title: mdx.frontmatter.title,
           description: mdx.frontmatter.description,
           images: [
             {
-              url: `${site.siteMetadata.siteUrl}${mdx.frontmatter.bannerImage.publicURL}`,
+              url: `${location.origin}${mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData.images.fallback.src}`,
               width: 1200,
               height: 630,
               alt: mdx.frontmatter.title,
@@ -154,13 +156,21 @@ export default ({
           ],
         }}
       />
-      <Banner bgImage={mdx.frontmatter.bannerImage.childImageSharp.fluid.src}>
+      <Banner
+        bgImage={
+          mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData
+            .placeholder.fallback
+        }
+      >
         <div className="blur-container"></div>
-        <CustomImg
-          fluid={mdx.frontmatter.bannerImage.childImageSharp.fluid}
-          alt={site.siteMetadata.keywords.join(', ')}
-        />
+        <Container>
+          <GatsbyImage
+            image={mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData}
+            alt={site.siteMetadata.keywords.join(', ')}
+          />
+        </Container>
       </Banner>
+
       <Grid>
         <div className="left-sec">
           <Post>
@@ -207,14 +217,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMM D, 'YY")
         updatedDate(formatString: "MMM D, 'YY")
+
         bannerImage {
           childImageSharp {
-            fluid(maxWidth: 650) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(maxWidth: 1140, layout: FLUID)
           }
-          publicURL
         }
+
         slug
         category
         keywords
