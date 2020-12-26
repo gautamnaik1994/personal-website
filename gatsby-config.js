@@ -8,10 +8,10 @@ var netlifyCmsPaths = {
 module.exports = {
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
-    PRESERVE_WEBPACK_CACHE: false,
-    FAST_REFRESH: false,
-    FAST_DEV: false,
-    QUERY_ON_DEMAND: false,
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_REFRESH: true,
+    FAST_DEV: true,
+    QUERY_ON_DEMAND: true,
     LAZY_IMAGES: true,
     DEV_SSR: false,
   },
@@ -73,6 +73,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-typescript',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',

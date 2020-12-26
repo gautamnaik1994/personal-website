@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './src/components/Layout';
 
 function htmlThemeFunction() {
-  let initialThemeValue = 'light';
+  let initialThemeValue = 'dark';
   if (localStorage.getItem('theme') === null) {
     if (matchMedia('(prefers-color-scheme: dark)').matches) {
       initialThemeValue = 'dark';
@@ -12,7 +12,7 @@ function htmlThemeFunction() {
       initialThemeValue = 'light';
     }
   } else {
-    initialThemeValue = localStorage.getItem('theme') || 'light';
+    initialThemeValue = localStorage.getItem('theme') || 'dark';
   }
   const darkTheme = [
     { name: 'primary', value: '#FF8C32' },
@@ -56,7 +56,5 @@ export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
 };
 
 export function wrapPageElement({ element, props }) {
-  // props provide same data to Layout as Page element will get
-  // including location, data, etc - you don't need to pass it
   return <Layout {...props}>{element}</Layout>;
 }

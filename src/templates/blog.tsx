@@ -54,7 +54,7 @@ interface PostItemProps {
 const Blog = ({ data, pageContext }: Props): JSX.Element => {
   const { site, allMdx } = data;
   const posts = allMdx.edges;
-  const [showHero, setShowHero] = useState<boolean>(true);
+  //const [showHero, setShowHero] = useState<boolean>(true);
 
   const {
     currentPage,
@@ -101,7 +101,10 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
           ],
         }}
       />
-      <Hero showHero={showHero} title="Welcome to Blog" />
+      <Hero
+        showHero={currentPage != 1 ? true : false}
+        title="Welcome to Blog"
+      />
       <Grid>
         <div className="left-sec">
           {posts.map(({ node }: PostItemProps) => (

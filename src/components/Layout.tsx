@@ -71,7 +71,7 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
       </Helmet>
       <ThemeProvider
         theme={{
-          mode: theme || null,
+          mode: theme || 'dark',
           primary: theme === 'light' ? primaryCol : desaturatedPrimaryCol,
         }}
       >

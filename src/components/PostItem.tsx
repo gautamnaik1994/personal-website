@@ -29,6 +29,9 @@ const PostItem = styled.div`
     object-fit: cover;
     display: block;
   }
+  .gatsby-image-wrapper {
+    width: 100% !important;
+  }
   h2 {
     font-variant-ligatures: none;
     line-height: 2rem;

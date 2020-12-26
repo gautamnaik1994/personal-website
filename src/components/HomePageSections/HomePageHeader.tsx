@@ -11,6 +11,7 @@ export default () => {
   const HomePageHeaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log('called use effect');
     const observer = new IntersectionObserver(
       function (entries) {
         if (HomePageHeaderRef && HomePageHeaderRef.current) {
@@ -37,6 +38,9 @@ export default () => {
     HomePageHeaderRef &&
       HomePageHeaderRef.current &&
       observer.observe(HomePageHeaderRef.current);
+    return () => {
+      document.querySelector('nav')?.classList.remove('navbar-special-styles');
+    };
   });
   return (
     <HomePageHeader ref={HomePageHeaderRef}>

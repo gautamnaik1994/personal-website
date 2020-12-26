@@ -1,7 +1,7 @@
 import { darkTheme, lightTheme } from './colors';
 
 export const getThemeValue = (): string => {
-  let initialThemeValue = 'light';
+  let initialThemeValue = 'dark';
   if (typeof window !== 'undefined') {
     if (localStorage.getItem('theme') === null) {
       if (matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -12,7 +12,7 @@ export const getThemeValue = (): string => {
         initialThemeValue = 'light';
       }
     } else {
-      initialThemeValue = localStorage.getItem('theme') || 'light';
+      initialThemeValue = localStorage.getItem('theme') || 'dark';
     }
   }
 
