@@ -45,7 +45,7 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
 
   useEffect(() => {
     // themeConfig();
-    setTheme(theme);
+    //setTheme(theme);
     // alert(' d', theme);
     // window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
     //   if (e.matches) {

@@ -11,7 +11,7 @@ interface Props {
   list: string[];
 }
 
-const CategoryTagList = styled.ul`
+const CategoryTagList = styled.div`
   margin: 0;
   padding-bottom: 15px;
   top: 60px;

@@ -56,6 +56,7 @@ interface HeroProps {
 
 const Hero = styled.header<HeroProps>`
   position: relative;
+  margin-top: 60px;
   height: ${(props) => (props.showHero ? 30 : 0)}vh;
   background: rgba(0, 132, 255, 1);
   background-image: linear-gradient(

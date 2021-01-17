@@ -15,7 +15,7 @@ const Item = styled.div`
     }
     ${media.tablet} {
       &:after {
-        content: attr(data-titleMed);
+        content: attr(data-titlemed);
       }
     }
   }
@@ -40,13 +40,13 @@ const Item = styled.div`
 
 interface ItemProps {
   title: string;
-  titleMed: string;
+  titlemed: string;
   value: number;
 }
 
-export default ({ title, titleMed, value }: ItemProps) => (
+export default ({ title, titlemed, value }: ItemProps) => (
   <Item>
     <div className="value">{value.toString().padStart(2, '0')}</div>
-    <div className="title" data-titleMed={titleMed} data-title={title}></div>
+    <div className="title" data-titlemed={titlemed} data-title={title}></div>
   </Item>
 );

@@ -101,15 +101,12 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
           ],
         }}
       />
-      <Hero
-        showHero={currentPage != 1 ? true : false}
-        title="Welcome to Blog"
-      />
+      <Hero showHero={currentPage > 1 ? false : true} title="Welcome to Blog" />
       <Grid>
         <div className="left-sec">
-          {posts.map(({ node }: PostItemProps) => (
+          {posts.map(({ node }: PostItemProps, index: number) => (
             <PostItem
-              key={node.id}
+              key={index}
               link={node.frontmatter.slug}
               title={node.frontmatter.title}
               date={node.frontmatter.date}

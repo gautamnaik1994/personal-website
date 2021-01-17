@@ -62,11 +62,11 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
     <div className={className}>
       <SectionTitle title="Recent Blogs" />
       <SubContainer>
-        {data.allMdx.edges.map((post: PostItemProps) => {
+        {data.allMdx.edges.map((post: PostItemProps, index: number) => {
           const _data = post.node.frontmatter;
           return (
             <PostItem
-              key={post.node.id}
+              key={index}
               title={_data.title}
               category={_data.category}
               link={_data.slug}

@@ -170,7 +170,6 @@ export default ({
           />
         </Container>
       </Banner>
-
       <Grid>
         <div className="left-sec">
           <Post>
@@ -217,13 +216,11 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMM D, 'YY")
         updatedDate(formatString: "MMM D, 'YY")
-
         bannerImage {
           childImageSharp {
             gatsbyImageData(maxWidth: 1140, layout: FLUID)
           }
         }
-
         slug
         category
         keywords

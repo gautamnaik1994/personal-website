@@ -106,7 +106,7 @@ export default ({
 }: Props): JSX.Element => (
   <PostItem>
     <div className="img-container">
-      <GatsbyImage image={banner} />
+      <GatsbyImage image={banner} alt={title} />
     </div>
     <div className="half-rem-mb">
       <Badge name={category} />

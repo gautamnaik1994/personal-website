@@ -188,11 +188,11 @@ export default ({ className }: Props): JSX.Element => {
       <div>
         <div className="box-title">TOTAL EXPERIENCE</div>
         <div className="date-container">
-          <Item titleMed="Years" title="Yrs" value={dateData['years']} />
-          <Item titleMed="Months" title="Mons" value={dateData['months']} />
-          <Item titleMed="Days" title="Days" value={dateData['days']} />
-          <Item titleMed="Hours" title="Hrs" value={dateData['hours']} />
-          <Item titleMed="Minutes" title="Mins" value={dateData['minutes']} />
+          <Item titlemed="Years" title="Yrs" value={dateData['years']} />
+          <Item titlemed="Months" title="Mons" value={dateData['months']} />
+          <Item titlemed="Days" title="Days" value={dateData['days']} />
+          <Item titlemed="Hours" title="Hrs" value={dateData['hours']} />
+          <Item titlemed="Minutes" title="Mins" value={dateData['minutes']} />
         </div>
       </div>
     </Experience>
