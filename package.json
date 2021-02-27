@@ -48,7 +48,7 @@
     "sanitize.css": "^12.0.1",
     "styled-components": "^5.2.1",
     "styled-theming": "^2.2.0",
-    "tweakpane": "^1.5.7"
+    "tweakpane": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
