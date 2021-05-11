@@ -238,12 +238,8 @@ class Metaballs extends React.Component<IProps, IState> {
   };
 
   render() {
-    const {
-      ballCount,
-      blurStdDeviation,
-      matrixW,
-      matrixAlpha,
-    }: IState = this.state;
+    const { ballCount, blurStdDeviation, matrixW, matrixAlpha }: IState =
+      this.state;
 
     const { mode = 'dark' } = this.context;
 

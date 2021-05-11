@@ -207,7 +207,7 @@ export default ({
 };
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     site {
       ...site
     }

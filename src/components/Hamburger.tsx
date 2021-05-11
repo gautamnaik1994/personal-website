@@ -52,9 +52,8 @@ interface Props {
 }
 
 export default (props: Props): JSX.Element => {
-  const { transform1, transform2, transform, y2, y1, opacity } = properties[
-    props.menuOpen ? 'open' : 'close'
-  ];
+  const { transform1, transform2, transform, y2, y1, opacity } =
+    properties[props.menuOpen ? 'open' : 'close'];
 
   const rect1Props = useSpring({
     transform: transform1,

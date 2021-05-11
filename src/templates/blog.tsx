@@ -56,13 +56,8 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
   const posts = allMdx.edges;
   //const [showHero, setShowHero] = useState<boolean>(true);
 
-  const {
-    currentPage,
-    pageCount,
-    base,
-    categories,
-    activeCategoryIndex,
-  } = pageContext;
+  const { currentPage, pageCount, base, categories, activeCategoryIndex } =
+    pageContext;
 
   const nextPagePath = (): string => {
     if (currentPage + 1 <= pageCount) {

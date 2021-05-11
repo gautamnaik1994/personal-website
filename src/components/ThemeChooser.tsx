@@ -58,9 +58,8 @@ export default ({ toggleTheme, maskName }: Props): JSX.Element => {
   const themeContext = useContext(ThemeContext);
   // const themeChangeContext = useContext(ThemeChangeContext);
   const isDarkMode = themeContext.mode === 'dark';
-  const { r, transform, cx, cy, opacity, rayTransform, rayColor } = properties[
-    isDarkMode ? 'dark' : 'light'
-  ];
+  const { r, transform, cx, cy, opacity, rayTransform, rayColor } =
+    properties[isDarkMode ? 'dark' : 'light'];
 
   const svgContainerProps = useSpring({
     transform,
