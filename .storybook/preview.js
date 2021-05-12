@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import 'sanitize.css';
 import 'sanitize.css/typography.css';
 import 'sanitize.css/forms.css';
-import '../src/styles/style.css';
+import '!style-loader!css-loader!sass-loader!../src/styles/style.scss';
 import { configure, addDecorator } from '@storybook/react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { withThemesProvider } from 'storybook-addon-styled-component-theme';

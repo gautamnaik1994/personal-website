@@ -16,3 +16,9 @@ export const lightTheme = [
   { name: 'bodyBackgroundColor', value: '#fff' },
   { name: 'bodyColor', value: '#333' },
 ];
+
+// #22272e  Dim
+// #adbac7
+
+// #0d1117 Dark
+// #c9d1d9

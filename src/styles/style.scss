@@ -74,8 +74,16 @@
 .icon-zigzag:before {
   content: '\e909';
 }
+
+// Import Vanilla framework
+// @import '~vanilla-framework/scss/vanilla';
+// @include vf-base;
+// @include vf-b-placeholders;
+// @include vf-p-headings;
+
 html,
 .root {
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 body,
