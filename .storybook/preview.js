@@ -16,6 +16,12 @@ import { ThemeProvider as StyleThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../src/components/GlobalStyle';
 import ThemeProvider from '../src/components/ThemeProvider';
 import { setColors } from '../src/utils/themeConfig';
+import {
+  primaryColor,
+  desaturatedPrimaryCol,
+  darkBackgroundColor,
+  lightBackgroundColor,
+} from '../src/utils/colors';
 
 // const withGloabalStyleProvider = (Story, context) => {
 //   return (
@@ -31,12 +37,12 @@ const appThemes = [
   {
     name: 'light',
     mode: 'light',
-    primary: '#FF8C32',
+    primary: primaryColor,
   },
   {
     name: 'dark',
     mode: 'dark',
-    primary: '#FF8C32',
+    primary: desaturatedPrimaryCol,
   },
 ];
 
@@ -117,17 +123,18 @@ const customViewports = {
 
 export const parameters = {
   backgrounds: {
-    default: 'dark',
-    values: [
-      {
-        name: 'dark',
-        value: '#212738',
-      },
-      {
-        name: 'light',
-        value: '#fff',
-      },
-    ],
+    // default: 'dark',
+    // values: [
+    //   {
+    //     name: 'dark',
+    //     value: darkBackgroundColor,
+    //   },
+    //   {
+    //     name: 'light',
+    //     value: lightBackgroundColor,
+    //   },
+    // ],
+    disable: true,
   },
   viewport: {
     viewports: {
@@ -137,8 +144,11 @@ export const parameters = {
     defaultViewport: DEFAULT_VIEWPORT,
   },
   darkMode: {
-    //dark: { ...themes.dark, appBg: '#212738', stylePreview: true },
+    stylePreview: true,
   },
+  // darkMode: {
+  //   //dark: { ...themes.dark, appBg: '#212738', stylePreview: true },
+  // },
 };
 
 // Gatsby's Link overrides:

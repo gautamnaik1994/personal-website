@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './src/components/Layout';
+import { darkTheme, lightTheme } from './src/utils/colors';
 
 function htmlThemeFunction() {
   let initialThemeValue = 'dark';
@@ -14,18 +15,8 @@ function htmlThemeFunction() {
   } else {
     initialThemeValue = localStorage.getItem('theme') || 'dark';
   }
-  const darkTheme = [
-    { name: 'primary', value: '#FF8C32' },
-    { name: 'accent', value: '#44D6BC' },
-    { name: 'bodyBackgroundColor', value: '#212738' },
-    { name: 'bodyColor', value: '#fff' },
-  ];
-  const lightTheme = [
-    { name: 'primary', value: '#FF8C32' },
-    { name: 'accent', value: '#44D6BC' },
-    { name: 'bodyBackgroundColor', value: '#fff' },
-    { name: 'bodyColor', value: '#333' },
-  ];
+  const darkTheme = '🌑';
+  const lightTheme = '🌕';
   if (initialThemeValue === 'light') {
     document.documentElement.style.setProperty('--theme', 'light');
     lightTheme.forEach((data) => {
@@ -40,7 +31,9 @@ function htmlThemeFunction() {
 }
 
 const ScriptTag = () => {
-  const boundFn = String(htmlThemeFunction);
+  const boundFn = String(htmlThemeFunction)
+    .replace("'🌑'", darkTheme)
+    .replace("'🌕'", lightTheme);
 
   let calledFunction = `(${boundFn})()`;
 

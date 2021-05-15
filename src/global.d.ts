@@ -9,3 +9,4 @@
 // }
 
 declare module 'countdown';
+declare module 'colors';

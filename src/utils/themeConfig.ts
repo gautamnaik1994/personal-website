@@ -20,13 +20,18 @@ export const getThemeValue = (): string => {
   return initialThemeValue;
 };
 
+interface colorData {
+  name: string;
+  value: string;
+}
+
 export const setColors = (theme: string): void => {
   if (theme === 'light') {
-    lightTheme.forEach((data) => {
+    lightTheme.forEach((data: colorData) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });
   } else {
-    darkTheme.forEach((data) => {
+    darkTheme.forEach((data: colorData) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });
   }

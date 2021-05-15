@@ -11,143 +11,87 @@ const bgColor = theme('mode', {
 });
 
 const boxShadow = theme('mode', {
-  dark: '0 0 20px 0px rgb(19 22 32)',
-  light: '0 0 20px 0px rgba(0, 0, 0,  0.12)',
+  light: '0px 22px 40px rgba(0, 0, 0, 0.1)',
 });
 
-const spin1 = keyframes`
+const pulse = keyframes`
   from {
-    transform: rotate(0deg);
+      box-shadow: 0 0 0px 0px #00800033, 0 0 0px 8px #00800033;
   }
   to {
-    transform: rotate(360deg);
+      box-shadow: 0 0 0px 9px #00800033, 0 0 0px 20px #00800033;
   }
 `;
 
 const Experience = styled.div`
   padding: 10px 15px;
   border-radius: 10px;
-  background: ${bgColor};
+  background: var(--cardColor);
   box-shadow: ${boxShadow};
-  .circle-container {
-    display: none;
-    width: 125px;
-    height: 125px;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    /* transform: rotate3d(1, 0, 0, 73deg); */
-    transform-style: preserve-3d;
-    &:after {
+  //filter: drop-shadow(0px 22px 40px rgba(0, 0, 0, 0.1));
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  .light-holder {
+    position: absolute;
+    bottom: -26px;
+    width: 100px;
+    height: 26px;
+    background: inherit;
+    box-shadow: inherit;
+    &:after,
+    &:before {
       content: '';
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background-color: #c4c4c4;
+      width: 20px;
+      background: inherit;
+      height: 100%;
+      display: block;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    }
+    &:before {
+      right: -10px;
+      transform: skew(-20deg);
+    }
+    &:after {
+      transform: skew(20deg);
+      left: -10px;
     }
   }
-  .box-title {
-    text-align: center;
-    margin: 0.5rem 0;
-    font-weight: var(--fontWeightBold);
-    font-size: 20px;
-    color: var(--primary);
+  .light {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    &.middle {
+      background: green;
+      box-shadow: 0 0 0px 9px #00800033, 0 0 0px 20px #00800033;
+      animation: ${pulse} 2s linear infinite;
+    }
+    &:after,
+    &:before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      border-radius: 50%;
+    }
+    &:after {
+      background: red;
+      right: 30px;
+    }
+    &:before {
+      background: yellow;
+      left: 30px;
+    }
   }
   ${media.tablet} {
-    display: flex;
     width: 680px;
     padding: 40px 50px;
     margin: 2rem auto;
     border-radius: 15px;
-    .box-title {
-      font-size: 24px;
-      text-align: left;
-      margin: 0;
-    }
-    .circle-container {
-      display: flex;
-      margin-right: 30px;
-    }
-  }
-
-  .circle {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border-radius: 50%;
-    border-style: solid;
-    border-width: 7px;
-    &:after,
-    &:before {
-      content: '';
-      position: absolute;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-    }
-  }
-
-  .circle-1 {
-    border-color: #ff8c32;
-    border-top-color: transparent;
-    animation: ${spin1} 60s linear infinite;
-    &:after,
-    &:before {
-      top: 11px;
-      background: #ff8c32;
-    }
-    &:after {
-      left: 10px;
-    }
-    &:before {
-      right: 10px;
-    }
-  }
-  .circle-2 {
-    width: 75%;
-    height: 75%;
-    border-color: #55c2d8;
-    border-top-color: transparent;
-    //transform: translateZ(20px);
-    animation: ${spin1} 45s linear infinite reverse;
-    &:after,
-    &:before {
-      background: #55c2d8;
-      top: 5px;
-    }
-    &:after {
-      left: 6px;
-    }
-    &:before {
-      right: 6px;
-    }
-  }
-  .circle-3 {
-    width: 50%;
-    height: 50%;
-    border-color: #fc5050;
-    border-top-color: transparent;
-    //transform: translateZ(40px);
-    animation: ${spin1} 25s linear infinite;
-    &:after,
-    &:before {
-      background: #fc5050;
-      top: 1px;
-    }
-    &:after {
-      left: 1px;
-    }
-    &:before {
-      right: 1px;
-    }
-  }
-  .date-container {
-    display: flex;
-    justify-content: space-around;
   }
 `;
 
@@ -180,20 +124,14 @@ export default ({ className }: Props): JSX.Element => {
 
   return (
     <Experience className={className}>
-      <div className="circle-container">
-        <div className="circle circle-1"></div>
-        <div className="circle circle-2"></div>
-        <div className="circle circle-3"></div>
-      </div>
-      <div>
-        <div className="box-title">TOTAL EXPERIENCE</div>
-        <div className="date-container">
-          <Item titlemed="Years" title="Yrs" value={dateData['years']} />
-          <Item titlemed="Months" title="Mons" value={dateData['months']} />
-          <Item titlemed="Days" title="Days" value={dateData['days']} />
-          <Item titlemed="Hours" title="Hrs" value={dateData['hours']} />
-          <Item titlemed="Minutes" title="Mins" value={dateData['minutes']} />
-        </div>
+      <Item titlemed="Years" title="Yrs" value={dateData['years']} />
+      <Item titlemed="Months" title="Mons" value={dateData['months']} />
+      <Item titlemed="Days" title="Days" value={dateData['days']} />
+      <Item titlemed="Hours" title="Hrs" value={dateData['hours']} />
+      <Item titlemed="Minutes" title="Mins" value={dateData['minutes']} />
+      <div className="light-holder">
+        <div className="light side" />
+        <div className="light middle" />
       </div>
     </Experience>
   );

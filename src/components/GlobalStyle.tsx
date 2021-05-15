@@ -29,7 +29,6 @@ interface Props {
 }
 
 //transition: background-color 0.3s ease-in, color 0.3s ease-in;
-
 export const GlobalStyle = createGlobalStyle<Props>`
 :root {
     --primary: ${primaryCol};
@@ -46,8 +45,9 @@ export const GlobalStyle = createGlobalStyle<Props>`
   }}
 
 	html{
-		font-size: 14px;
-		line-height: 21px;
+
+		/* font-size: 14px;
+		line-height: 21px; */
 	}
 
   
