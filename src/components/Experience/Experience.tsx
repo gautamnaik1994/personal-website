@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import countdown from 'countdown';
+import { opacify } from 'polished';
 import theme from 'styled-theming';
 import Item from './Item';
 import media from '../../utils/MediaQueries';
@@ -15,16 +16,33 @@ const boxShadow = theme('mode', {
 });
 
 const pulse = keyframes`
-  from {
-      box-shadow: 0 0 0px 0px #00800033, 0 0 0px 8px #00800033;
-  }
-  to {
-      box-shadow: 0 0 0px 9px #00800033, 0 0 0px 20px #00800033;
+  0% {
+		transform:  scale(0.75);
+      box-shadow: 0 0 0px 0px ${opacify(
+        0.2,
+        '#34CA8000',
+      )}, 0 0 0px 8px ${opacify(0.2, '#34CA8000')};
+	}
+
+	70% {
+		transform:  scale(1);
+	box-shadow: 0 0 0px 15px ${opacify(0.0, '#34CA8000')}, 0 0 0px 26px ${opacify(
+  0.0,
+  '#34CA8000',
+)};
+	}
+
+  100% {
+		transform:  scale(0.75);
+      box-shadow: 0 0 0px 0px ${opacify(
+        0.0,
+        '#34CA8000',
+      )}, 0 0 0px 0px ${opacify(0.0, '#34CA8000')};
   }
 `;
 
 const Experience = styled.div`
-  padding: 10px 15px;
+  padding: 22px 15px 18px;
   border-radius: 10px;
   background: var(--cardColor);
   box-shadow: ${boxShadow};
@@ -35,10 +53,13 @@ const Experience = styled.div`
   .light-holder {
     position: absolute;
     bottom: -26px;
-    width: 100px;
+    width: 90px;
     height: 26px;
     background: inherit;
     box-shadow: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     &:after,
     &:before {
       content: '';
@@ -50,41 +71,29 @@ const Experience = styled.div`
     }
     &:before {
       right: -10px;
-      transform: skew(-20deg);
+      transform: skew(-30deg);
     }
     &:after {
-      transform: skew(20deg);
+      transform: skew(30deg);
       left: -10px;
     }
   }
   .light {
-    width: 5px;
-    height: 5px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
     &.middle {
-      background: green;
-      box-shadow: 0 0 0px 9px #00800033, 0 0 0px 20px #00800033;
+      background: #34ca80;
+      transform: scale(1);
       animation: ${pulse} 2s linear infinite;
     }
-    &:after,
-    &:before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      position: absolute;
-      border-radius: 50%;
+    &.left {
+      background: #f44336;
     }
-    &:after {
-      background: red;
-      right: 30px;
-    }
-    &:before {
-      background: yellow;
-      left: 30px;
+    &.right {
+      background: #ffeb3b;
     }
   }
   ${media.tablet} {
@@ -130,8 +139,9 @@ export default ({ className }: Props): JSX.Element => {
       <Item titlemed="Hours" title="Hrs" value={dateData['hours']} />
       <Item titlemed="Minutes" title="Mins" value={dateData['minutes']} />
       <div className="light-holder">
-        <div className="light side" />
+        <div className="light left" />
         <div className="light middle" />
+        <div className="light right" />
       </div>
     </Experience>
   );

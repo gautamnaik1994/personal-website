@@ -21,6 +21,7 @@ const Item = styled.div`
   }
   .value {
     font-size: 25px;
+    margin-bottom: 5px;
   }
   ${media.tablet} {
     & + & {

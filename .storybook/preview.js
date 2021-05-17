@@ -17,7 +17,7 @@ import { GlobalStyle } from '../src/components/GlobalStyle';
 import ThemeProvider from '../src/components/ThemeProvider';
 import { setColors } from '../src/utils/themeConfig';
 import {
-  primaryColor,
+  primaryCol,
   desaturatedPrimaryCol,
   darkBackgroundColor,
   lightBackgroundColor,
@@ -37,7 +37,7 @@ const appThemes = [
   {
     name: 'light',
     mode: 'light',
-    primary: primaryColor,
+    primary: primaryCol,
   },
   {
     name: 'dark',
