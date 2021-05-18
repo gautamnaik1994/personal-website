@@ -26,53 +26,85 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-linkedin:before {
+.icon-list-view:before {
   content: '\e900';
 }
-.icon-github:before {
+.icon-grid-view:before {
   content: '\e901';
 }
-.icon-stack-overflow:before {
+.icon-calendar:before {
   content: '\e902';
 }
-.icon-behance:before {
+.icon-double-arrow:before {
   content: '\e903';
 }
-.icon-codepen:before {
+.icon-arrow-right:before {
   content: '\e904';
 }
-.icon-stack-overflow-color:before {
-  content: '\e906';
-  color: #f48024;
-}
-.icon-stack-overflow-color:after {
+.icon-category:before {
   content: '\e905';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #bcbbbb;
 }
-
+.icon-pluralsight:before {
+  content: '\e90b';
+}
+.icon-logo:before {
+  content: '\e908';
+}
+.icon-link:before {
+  content: '\e907';
+}
 .icon-marker:before {
   content: '\e90c';
 }
 .icon-cake:before {
   content: '\e90d';
 }
-.icon-open-new-tab:before {
-  content: '\e90f';
-}
 .icon-email:before {
   content: '\e90e';
 }
-.icon-link:before {
-  content: '\e907';
+.icon-open-new-tab:before {
+  content: '\e90f';
 }
-.icon-logo:before {
-  content: '\e908';
+.icon-stack-overflow-bottom:before {
+  content: '\e906';
 }
-.icon-zigzag:before {
+.icon-stack-overflow-top:before {
   content: '\e909';
+}
+.icon-linkedin:before {
+  content: '\e90a';
+}
+.icon-github:before {
+  content: '\e910';
+}
+.icon-stack-overflow:before {
+  content: '\e911';
+}
+.icon-behance:before {
+  content: '\e912';
+}
+.icon-codepen:before {
+  content: '\e913';
+}
+.icon-moon:before {
+  content: '\e914';
+}
+.icon-sun:before {
+  content: '\e915';
+}
+.icon-arrow:before {
+  content: '\e916';
+}
+.icon-stack-overflow-color:before {
+  content: '\e909';
+  color: #f48024;
+}
+.icon-stack-overflow-color:after {
+  content: '\e906';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #bcbbbb;
 }
 
 // Import Vanilla framework

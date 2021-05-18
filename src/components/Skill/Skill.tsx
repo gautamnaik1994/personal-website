@@ -12,7 +12,7 @@ const Skill = styled.div`
   background-color: var(--cardColor);
   padding: 15px;
   padding-top: 25px;
-
+  width: 90%;
   .box-title {
     font-weight: var(--fontWeightBold);
     font-size: 24px;
@@ -26,6 +26,17 @@ const Skill = styled.div`
   }
   .info-inner {
     padding-top: 25px;
+  }
+  .more-less-btn {
+    border: none;
+    color: var(--primary);
+    i {
+      vertical-align: text-bottom;
+      transform: rotate(90deg);
+      display: inline-block;
+      margin-left: 3px;
+      font-weight: bold;
+    }
   }
 `;
 
@@ -46,10 +57,14 @@ export default ({
   const [contentHeight, setContentHeight] = useState(defaultHeight);
   const [ref, { height }] = useMeasure();
   const expand = useSpring({
-    config: { friction: 10 },
-    height: open ? `${contentHeight}px` : defaultHeight,
+    config: { mass: 4, tension: 250, friction: 30 },
+    height: open ? `${contentHeight + 25}px` : defaultHeight,
   });
 
+  const rotate = useSpring({
+    config: { mass: 4, tension: 250, friction: 30 },
+    transform: open ? `rotate(270deg)` : 'rotate(90deg)',
+  });
   useEffect(() => {
     //Sets initial height
     setContentHeight(height);
@@ -73,7 +88,10 @@ export default ({
         </div>
       </animated.div>
       <div className="button-holder text-center">
-        <button onClick={() => toggle(!open)}>More</button>
+        <button className="more-less-btn" onClick={() => toggle(!open)}>
+          {open ? 'Less' : 'More'}{' '}
+          <animated.i className=" icon-arrow-right" style={rotate} />{' '}
+        </button>
       </div>
     </Skill>
   );

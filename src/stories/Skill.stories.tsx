@@ -24,6 +24,22 @@ export const SkillBeginner = (): JSX.Element => (
 export const SkillAmateur = (): JSX.Element => (
   <Skill name="UI Designing" level={49} details={details}></Skill>
 );
-export const SkillSsemiPro = (): JSX.Element => (
+export const SkillSemiPro = (): JSX.Element => (
   <Skill name="UI Designing" level={74} details={details}></Skill>
+);
+export const SkillList = (): JSX.Element => (
+  <div
+    style={{
+      display: 'flex',
+      whiteSpace: 'nowrap',
+      overflow: 'auto',
+      alignItems: 'flex-start',
+      gap: 20,
+    }}
+  >
+    <Skill name="Frontend Developer" level={79} details={details}></Skill>
+    <Skill name="UI Designing" level={24} details={details}></Skill>
+    <Skill name="UI Designing" level={74} details={details}></Skill>
+    <Skill name="UI Designing" level={49} details={details}></Skill>
+  </div>
 );
