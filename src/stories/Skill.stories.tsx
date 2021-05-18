@@ -9,29 +9,21 @@ export default {
   component: Skill,
 } as Meta;
 
+const details = [
+  { key: 'Tech Stack', value: ' Photoshop, Adone XD, Illustrator' },
+  { key: 'Languages', value: ' Photoshop, Adone XD, Illustrator' },
+  { key: 'Tools', value: ' Photoshop, Adone XD, Illustrator' },
+];
+
 export const SkillProfessional = (): JSX.Element => (
-  <Skill name="UI Designing" level={79}>
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-  </Skill>
+  <Skill name="UI Designing" level={79} details={details}></Skill>
 );
 export const SkillBeginner = (): JSX.Element => (
-  <Skill name="UI Designing" level={24}>
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-  </Skill>
+  <Skill name="UI Designing" level={24} details={details}></Skill>
 );
 export const SkillAmateur = (): JSX.Element => (
-  <Skill name="UI Designing" level={49}>
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-  </Skill>
+  <Skill name="UI Designing" level={49} details={details}></Skill>
 );
 export const SkillSsemiPro = (): JSX.Element => (
-  <Skill name="UI Designing" level={74}>
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-    <Item label="Tech Stack" value="Photoshop, Adone XD, Illustrator" />
-  </Skill>
+  <Skill name="UI Designing" level={74} details={details}></Skill>
 );

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useSpring, animated } from 'react-spring';
+import { useMeasure } from 'react-use';
 import SkillMeter from './SkillMeter';
 import media from '../../utils/MediaQueries';
 import Item from './Item';
@@ -7,49 +9,23 @@ import Item from './Item';
 const Skill = styled.div`
   border-radius: 8px;
   margin-bottom: 6rem;
+  background-color: var(--cardColor);
+  padding: 15px;
+  padding-top: 25px;
 
   .box-title {
-    margin: 0.5rem 0 1rem 0;
     font-weight: var(--fontWeightBold);
-    font-size: 20px;
+    font-size: 24px;
     color: var(--primary);
     text-transform: uppercase;
     margin-bottom: 2rem;
+    text-align: center;
   }
-  .right-sec {
-    margin-top: 1.5rem;
+  .info-sec {
+    overflow: hidden;
   }
-  ${media.tablet} {
-    position: relative;
-    .skill-meter {
-      position: absolute;
-      left: 15px;
-      top: 0%;
-      bottom: 0;
-      //transform: translateY(-50%);
-      width: 180px;
-    }
-    .right-sec {
-      margin-top: 0;
-    }
-    .inner {
-      display: flex;
-      align-items: center;
-    }
-    padding: 25px 30px;
-    padding-left: 230px;
-    .box-title {
-      font-size: 24px;
-      text-align: left;
-      margin: 0;
-      margin-bottom: 2rem;
-    }
-    .v-hr {
-      width: 1px;
-      background: #808080;
-      align-self: stretch;
-      margin: 0 25px;
-    }
+  .info-inner {
+    padding-top: 25px;
   }
 `;
 
@@ -65,14 +41,39 @@ export default ({
   details,
   ...props
 }: Props): JSX.Element => {
+  const defaultHeight = '25px';
+  const [open, toggle] = useState(false);
+  const [contentHeight, setContentHeight] = useState(defaultHeight);
+  const [ref, { height }] = useMeasure();
+  const expand = useSpring({
+    config: { friction: 10 },
+    height: open ? `${contentHeight}px` : defaultHeight,
+  });
+
+  useEffect(() => {
+    //Sets initial height
+    setContentHeight(height);
+
+    //Adds resize event listener
+    window.addEventListener('resize', setContentHeight(height));
+
+    // Clean-up
+    return window.removeEventListener('resize', setContentHeight(height));
+  }, [height]);
+  console.log('height ', height);
   return (
     <Skill>
       <div className="box-title">{name}</div>
       <SkillMeter className="skill-meter" level={level} />
-      <div className="right-sec">
-        {details.map(({ key, value }) => (
-          <Item key={key} label={key} value={value} />
-        ))}
+      <animated.div className="info-sec" style={expand}>
+        <div ref={ref} className="info-inner">
+          {details.map(({ key, value }) => (
+            <Item key={key} label={key} value={value} />
+          ))}
+        </div>
+      </animated.div>
+      <div className="button-holder text-center">
+        <button onClick={() => toggle(!open)}>More</button>
       </div>
     </Skill>
   );

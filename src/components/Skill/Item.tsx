@@ -2,20 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Item = styled.div`
-  .value,
   .label {
-    font-weight: var(--fontWeightMedium);
-    font-size: 20px;
-  }
-  .label {
-    color: #44d6bc;
+    font-size: 16px;
+    font-weight: var(--fontWeightBold);
+    color: var(--accent);
   }
   .value {
-    font-size: 18px;
-    margin-top: 1rem;
   }
   & + & {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 `;
 

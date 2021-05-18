@@ -94,72 +94,23 @@ const backgroundGrad = (props: GradientProps) => css`
 
 const SkillMeter = styled.div<{ glow: string }>`
   --glassDims: 100px;
-  .value,
-  .label {
-    font-weight: var(--fontWeightMedium);
-    font-size: 20px;
-  }
-  .label {
-    color: #44d6bc;
-  }
+  text-align: center;
   .value {
-    text-transform: uppercase;
-    font-size: 25px;
+    font-weight: var(--fontWeightMedium);
+    font-size: 26px;
+    letter-spacing: -1px;
+    margin-top: 1rem;
   }
   position: relative;
-  padding-left: calc(var(--glassDims) + 15px);
   min-height: var(--glassDims);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  .info-wrapper {
-    position: relative;
-    &:before {
-      content: '';
-      background: #${(props) => props.glow};
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      top: -4px;
-      right: -4px;
-      border-radius: 4px 12px;
-    }
-    .info-wrapper-inner {
-      padding: 10px;
-      background: rgba(126, 126, 126, 0.2);
-      backdrop-filter: blur(15px);
-      text-align: center;
-      border-radius: 12px;
-    }
-  }
-  ${media.tablet} {
-    padding-left: 0;
-    text-align: center;
-    flex-basis: 200px;
-    &:after {
-      content: '';
-      width: 2px;
-      top: 10px;
-      right: -20px;
-      bottom: 10px;
-      background: #${(props) => props.glow};
-      position: absolute;
-    }
-    .info-wrapper {
-      margin-top: 1rem;
-      &:before {
-        content: none;
-      }
-      .info-wrapper-inner {
-        padding: 5px 15px;
-        backdrop-filter: none;
-        background: none;
-      }
-    }
-    .value,
-    .label {
-      font-size: 20px;
-    }
+  .glass-shadow {
+    background: black;
+    height: calc(var(--glassDims) / 9);
+    width: calc(var(--glassDims) * 0.9);
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 1rem;
+    filter: blur(9px);
   }
 `;
 
@@ -176,12 +127,6 @@ const Glass = styled.div<{ level: number; glow: string }>`
   transform: rotate(var(--angle));
   background: rgba(0, 0, 0, 0.13);
   box-shadow: inset 0 0 20px #${(props) => props.glow};
-  position: absolute;
-  left: 0;
-  top: 0;
-  ${media.tablet} {
-    position: static;
-  }
   svg {
     position: absolute;
     top: 0px;
@@ -271,12 +216,8 @@ export default ({ level, className = ' ' }: Props): JSX.Element => {
           />
         </svg>
       </Glass>
-      <div className="info-wrapper">
-        <div className="info-wrapper-inner">
-          <div className="label ">Level</div>
-          <div className="value ">{currentConfig.label}</div>
-        </div>
-      </div>
+      <div className="glass-shadow" />
+      <div className="value ">{currentConfig.label}</div>
     </SkillMeter>
   );
 };
