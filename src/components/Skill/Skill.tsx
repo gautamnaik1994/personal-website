@@ -38,6 +38,9 @@ const Skill = styled.div`
       font-weight: bold;
     }
   }
+  ${media.tablet} {
+    width: 270px;
+  }
 `;
 
 interface Props {

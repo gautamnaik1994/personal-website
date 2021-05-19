@@ -16,16 +16,16 @@ const details = [
 ];
 
 export const SkillProfessional = (): JSX.Element => (
-  <Skill name="UI Designing" level={79} details={details}></Skill>
+  <Skill name="User Interface Designing" level={79} details={details}></Skill>
 );
 export const SkillBeginner = (): JSX.Element => (
-  <Skill name="UI Designing" level={24} details={details}></Skill>
+  <Skill name="Frontend Development" level={24} details={details}></Skill>
 );
 export const SkillAmateur = (): JSX.Element => (
-  <Skill name="UI Designing" level={49} details={details}></Skill>
+  <Skill name="Game Developement" level={49} details={details}></Skill>
 );
 export const SkillSemiPro = (): JSX.Element => (
-  <Skill name="UI Designing" level={74} details={details}></Skill>
+  <Skill name="Machine Learning" level={74} details={details}></Skill>
 );
 export const SkillList = (): JSX.Element => (
   <div
@@ -37,9 +37,9 @@ export const SkillList = (): JSX.Element => (
       gap: 20,
     }}
   >
-    <Skill name="Frontend Developer" level={79} details={details}></Skill>
-    <Skill name="UI Designing" level={24} details={details}></Skill>
-    <Skill name="UI Designing" level={74} details={details}></Skill>
-    <Skill name="UI Designing" level={49} details={details}></Skill>
+    <Skill name="User Interface Designing" level={79} details={details}></Skill>
+    <Skill name="Frontend Development" level={24} details={details}></Skill>
+    <Skill name="Game Developement" level={49} details={details}></Skill>
+    <Skill name="Machine Learning" level={74} details={details}></Skill>
   </div>
 );
