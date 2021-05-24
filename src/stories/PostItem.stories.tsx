@@ -13,16 +13,14 @@ export default {
 } as Meta;
 
 export const PostItemDefault = (): JSX.Element => (
-  <Container>
-    <PostItem
-      title="Css Variables some long title and extra stuff"
-      link="https://google.com"
-      tags={['css', 'vim']}
-      category={['css', 'vim']}
-      excerpt="lorem ipsum dolor sit amet, consectetur adipiscing Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
-      readTime={5}
-      date={'15 Aug 2020'}
-      banner={banner}
-    />
-  </Container>
+  <PostItem
+    title="Css Variables some long title and extra stuff"
+    link="https://google.com"
+    tags={['css', 'vim']}
+    category={['css', 'vim']}
+    excerpt="lorem ipsum dolor sit amet, consectetur adipiscing Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+    readTime={5}
+    date={'15 Aug 2020'}
+    banner={banner}
+  />
 );

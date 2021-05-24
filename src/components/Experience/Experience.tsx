@@ -6,11 +6,6 @@ import theme from 'styled-theming';
 import Item from './Item';
 import media from '../../utils/MediaQueries';
 
-const bgColor = theme('mode', {
-  dark: '#131620',
-  light: '#fff',
-});
-
 const boxShadow = theme('mode', {
   light: '0px 22px 40px rgba(0, 0, 0, 0.1)',
 });
