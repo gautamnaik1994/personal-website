@@ -2,27 +2,28 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 import { useMeasure } from 'react-use';
-import SkillMeter from './SkillMeter';
 import media from '../../utils/MediaQueries';
-import Item from './Item';
 
-const Skill = styled.div`
+const WorkExperienceMainItem = styled.div`
   border-radius: 8px;
-  margin-bottom: 6rem;
+  margin-bottom: 1rem;
   background-color: var(--cardColor);
   padding: 15px;
-  padding-top: 25px;
-  width: 90%;
-  .box-title {
-    font-weight: var(--fontWeightBold);
-    font-size: 24px;
-    color: var(--primary);
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    text-align: center;
+  position: relative;
+  .top-content {
+    padding-left: 60px;
+    position: relative;
   }
   .info-sec {
     overflow: hidden;
+  }
+  .company {
+    font-weight: var(--fontWeightMedium);
+    text-transform: uppercase;
+  }
+  .time {
+    font-size: 14px;
+    color: #b7b7b7;
   }
   .info-inner {
     padding-top: 25px;
@@ -30,11 +31,20 @@ const Skill = styled.div`
   .more-less-btn {
     border: none;
     color: var(--primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid var(--bodyBackgroundColor);
+    padding: 0;
+    background: var(--cardColor);
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    bottom: -20px;
     i {
       vertical-align: text-bottom;
       transform: rotate(90deg);
       display: inline-block;
-      margin-left: 3px;
       font-weight: bold;
     }
   }
@@ -44,24 +54,26 @@ const Skill = styled.div`
 `;
 
 interface Props {
-  name: string;
-  level: number;
-  details: Array<{ key: string; value: string }>;
+  title: string;
+  responsibilities: string;
+  role: string;
+  timeRange: string;
 }
 
 export default ({
-  name = 'UI Designing',
-  level = 55,
-  details,
+  title = 'Bidchat',
+  responsibilities = 'CSS variables is a new addition to CSS. As the name says, we can now add custom variables, similar to SCSS, Less and Stylus. Example This… ',
+  role = 'Frontend Developer',
+  timeRange = 'March 2017 - March 2020',
   ...props
 }: Props): JSX.Element => {
-  const defaultHeight = '25px';
+  const defaultHeight = '0px';
   const [open, toggle] = useState(false);
   const [contentHeight, setContentHeight] = useState(defaultHeight);
   const [ref, { height }] = useMeasure();
   const expand = useSpring({
     config: { mass: 4, tension: 250, friction: 30 },
-    height: open ? `${contentHeight + 25}px` : defaultHeight,
+    height: open ? `${contentHeight + 0}px` : defaultHeight,
   });
 
   const rotate = useSpring({
@@ -78,23 +90,24 @@ export default ({
     // Clean-up
     return window.removeEventListener('resize', setContentHeight(height));
   }, [height]);
+
   return (
-    <Skill>
-      <div className="box-title">{name}</div>
-      <SkillMeter className="skill-meter" level={level} />
+    <WorkExperienceMainItem>
+      <div className="top-content">
+        <div className="">{role}</div>
+        <div className="company text-primary">{title}</div>
+        <div className="time">{timeRange}</div>
+      </div>
+
       <animated.div className="info-sec" style={expand}>
         <div ref={ref} className="info-inner">
-          {details.map(({ key, value }) => (
-            <Item key={key} label={key} value={value} />
-          ))}
+          {responsibilities}
         </div>
       </animated.div>
-      <div className="button-holder text-center">
-        <button className="more-less-btn" onClick={() => toggle(!open)}>
-          {open ? 'Less' : 'More'}{' '}
-          <animated.i className=" icon-arrow-right" style={rotate} />{' '}
-        </button>
-      </div>
-    </Skill>
+
+      <button className="more-less-btn" onClick={() => toggle(!open)}>
+        <animated.i className=" icon-arrow-right" style={rotate} />{' '}
+      </button>
+    </WorkExperienceMainItem>
   );
 };

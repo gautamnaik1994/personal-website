@@ -296,11 +296,13 @@ collections: # A list of collections the CMS should be able to edit
     editor:
       preview: false
     create: true
+    sortable_fields: ['order']
     description: 'Work Experience Info'
     fields:
       - { label: 'Company Name', name: 'title', widget: 'string' }
       - { label: 'Role', name: 'role', widget: 'string' }
       - { label: 'Time Range', name: 'timeRange', widget: 'string' }
+      - { label: 'Order', name: 'order', widget: 'number' }
       - {
           label: 'Responsibilities',
           name: 'responsibilities',

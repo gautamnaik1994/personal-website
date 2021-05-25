@@ -8,5 +8,5 @@
 //   }
 // }
 
-declare module 'countdown';
+// declare module 'countdown';
 declare module 'colors';

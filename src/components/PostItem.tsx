@@ -56,11 +56,15 @@ const PostItem = styled.div`
     font-variant-ligatures: none;
     line-height: 2rem;
   }
+  .icon-arrow-right {
+    margin-left: 3px;
+    vertical-align: text-bottom;
+    font-weight: bold;
+  }
   ${media.desktop} {
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 25px;
     padding-left: 320px;
-    border-radius: 0px;
     .img-container {
       position: absolute;
       left: 0;
@@ -74,10 +78,6 @@ const PostItem = styled.div`
       .gatsby-image-wrapper {
         height: 100% !important;
       }
-      img {
-      }
-    }
-    h2 {
     }
   }
   &:last-child {
@@ -128,8 +128,11 @@ export default ({
     </Link>
 
     <article className="one-rem-mt one-rem-mb">{excerpt}</article>
-    <Link title="Read More" to={`/blog/${link}`}>
-      Read More
-    </Link>
+    <div className="text-center">
+      <Link title="Read More" to={`/blog/${link}`}>
+        Read More
+        <i className="icon-arrow-right " />
+      </Link>
+    </div>
   </PostItem>
 );

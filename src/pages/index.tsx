@@ -9,6 +9,7 @@ import Experience from '../components/Experience/Experience';
 import SkillsSection from '../components/HomePageSections/SkillsSection';
 import DownloadCVSection from '../components/HomePageSections/DownloadCVSection';
 import BlogsSection from '../components/HomePageSections/BlogsSection';
+import WorkExperience from '../components/HomePageSections/WorkExperience';
 import { Fragment } from 'react';
 
 export default () => (
@@ -22,6 +23,7 @@ export default () => (
       </SubContainer>
       <SkillsSection className="four-rem-mt" />
       <BlogsSection className="two-rem-mb" />
+      <WorkExperience className="two-rem-mb" />
     </Container>
   </Fragment>
 );

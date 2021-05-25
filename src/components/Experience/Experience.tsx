@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import countdown from 'countdown';
+import { intervalToDuration } from 'date-fns';
 import { opacify } from 'polished';
 import theme from 'styled-theming';
 import Item from './Item';
@@ -103,8 +104,17 @@ interface Props {
   className?: string;
 }
 
+interface dateTypes {
+  years: number;
+  months: number;
+  days: number;
+  minutes: number;
+  hours: number;
+  seconds: number;
+}
+
 export default ({ className }: Props): JSX.Element => {
-  const [dateData, setDateData] = useState({
+  const [dateData, setDateData] = useState<dateTypes>({
     years: 0,
     months: 0,
     days: 0,
@@ -116,8 +126,15 @@ export default ({ className }: Props): JSX.Element => {
   useEffect(() => {
     const date = new Date(1438765200000);
     const dateInterval = setInterval(function () {
-      const _dateData = countdown(date, new Date());
-      const { years, months, days, hours, minutes, seconds } = _dateData;
+      const _dateData = intervalToDuration({ start: date, end: new Date() });
+      const {
+        years = 0,
+        months = 0,
+        days = 0,
+        hours = 0,
+        minutes = 0,
+        seconds = 0,
+      } = _dateData;
       setDateData({ years, months, days, hours, minutes, seconds });
     }, 1000);
 
@@ -128,11 +145,11 @@ export default ({ className }: Props): JSX.Element => {
 
   return (
     <Experience className={className}>
-      <Item titlemed="Years" title="Yrs" value={dateData['years']} />
-      <Item titlemed="Months" title="Mons" value={dateData['months']} />
-      <Item titlemed="Days" title="Days" value={dateData['days']} />
-      <Item titlemed="Hours" title="Hrs" value={dateData['hours']} />
-      <Item titlemed="Minutes" title="Mins" value={dateData['minutes']} />
+      <Item titlemed="Years" title="Yrs" value={dateData.years} />
+      <Item titlemed="Months" title="Mons" value={dateData.months} />
+      <Item titlemed="Days" title="Days" value={dateData.days} />
+      <Item titlemed="Hours" title="Hrs" value={dateData.hours} />
+      <Item titlemed="Minutes" title="Mins" value={dateData.minutes} />
       <div className="light-holder">
         <div className="light left" />
         <div className="light middle" />
