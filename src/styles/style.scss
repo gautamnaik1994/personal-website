@@ -106,6 +106,15 @@
   top: 0;
   color: #bcbbbb;
 }
+.icon-stop:before {
+  content: '\e917';
+}
+.icon-pause:before {
+  content: '\e918';
+}
+.icon-play:before {
+  content: '\e919';
+}
 
 // Import Vanilla framework
 // @import '~vanilla-framework/scss/vanilla';

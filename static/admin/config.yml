@@ -304,6 +304,13 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Time Range', name: 'timeRange', widget: 'string' }
       - { label: 'Order', name: 'order', widget: 'number' }
       - {
+          label: 'Status',
+          name: 'status',
+          widget: 'select',
+          options: ['pause', 'play', 'stop'],
+          default: ['stop'],
+        }
+      - {
           label: 'Responsibilities',
           name: 'responsibilities',
           widget: 'markdown',

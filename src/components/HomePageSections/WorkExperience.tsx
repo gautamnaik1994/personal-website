@@ -29,6 +29,7 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
             responsibilities
             role
             timeRange
+            status
           }
         }
       }
@@ -47,6 +48,7 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
               role={d.frontmatter.role}
               responsibilities={d.frontmatter.responsibilities}
               timeRange={d.frontmatter.timeRange}
+              status={status}
             />
           );
         })}

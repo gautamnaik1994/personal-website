@@ -1,0 +1,59 @@
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+
+const rotate = keyframes`
+	from{
+		transform: rotate(0deg) scale(1.2);
+	}
+	to{
+	transform:rotate(360deg) scale(1.2);
+	}
+
+`;
+
+const Status = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  font-size: 24px;
+  &.status-play {
+    background: #4caf50;
+  }
+  &.status-pause {
+    background: #00bcd4;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00bcd4;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      animation: ${rotate} 1s ease-in-out infinite;
+      //transform: scale(1.2);
+    }
+  }
+  &.status-stop {
+    background: #f44336;
+  }
+`;
+
+interface Props {
+  status: string;
+}
+
+export default ({ status = 'play', ...props }: Props): JSX.Element => {
+  return (
+    <Status className={`status-${status} ${props.className}`}>
+      <i className={`icon-${status}`} />
+    </Status>
+  );
+};

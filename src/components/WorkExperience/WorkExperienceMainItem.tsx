@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 import { useMeasure } from 'react-use';
 import media from '../../utils/MediaQueries';
+import Status from './Status';
 
 const WorkExperienceMainItem = styled.div`
   border-radius: 8px;
@@ -53,11 +54,18 @@ const WorkExperienceMainItem = styled.div`
   }
 `;
 
+const StyledStatus = styled(Status)`
+  position: absolute;
+  left: 0;
+  top: 0;
+`;
+
 interface Props {
   title: string;
   responsibilities: string;
   role: string;
   timeRange: string;
+  status: string;
 }
 
 export default ({
@@ -65,6 +73,7 @@ export default ({
   responsibilities = 'CSS variables is a new addition to CSS. As the name says, we can now add custom variables, similar to SCSS, Less and Stylus. Example This… ',
   role = 'Frontend Developer',
   timeRange = 'March 2017 - March 2020',
+  status = 'stop',
   ...props
 }: Props): JSX.Element => {
   const defaultHeight = '0px';
@@ -94,6 +103,7 @@ export default ({
   return (
     <WorkExperienceMainItem>
       <div className="top-content">
+        <StyledStatus status={status} />
         <div className="">{role}</div>
         <div className="company text-primary">{title}</div>
         <div className="time">{timeRange}</div>
@@ -105,7 +115,12 @@ export default ({
         </div>
       </animated.div>
 
-      <button className="more-less-btn" onClick={() => toggle(!open)}>
+      <button
+        className="more-less-btn"
+        onClick={() => toggle(!open)}
+        ariaLabel="Show Responsibilities"
+        title="Show Responsibilities"
+      >
         <animated.i className=" icon-arrow-right" style={rotate} />{' '}
       </button>
     </WorkExperienceMainItem>

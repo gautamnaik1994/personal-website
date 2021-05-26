@@ -10,6 +10,7 @@ module.exports = {
     '@storybook/addon-backgrounds',
     'storybook-dark-mode/register',
     '@storybook/addon-docs/preset',
+    '@storybook/addon-essentials',
   ],
   webpackFinal: async (config) => {
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.

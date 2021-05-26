@@ -122,6 +122,7 @@ const customViewports = {
 };
 
 export const parameters = {
+  controls: { expanded: true },
   backgrounds: {
     // default: 'dark',
     // values: [

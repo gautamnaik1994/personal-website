@@ -6,8 +6,18 @@ import WorkExperienceMainItem from '../components/WorkExperience/WorkExperienceM
 export default {
   title: 'Components/WorkExperienceItem',
   component: WorkExperienceMainItem,
+  argTypes: {
+    status: {
+      options: ['play', 'pause', 'stop'],
+      control: { type: 'radio' },
+    },
+  },
 } as Meta;
 
-export const WorkExperienceDefault = (): JSX.Element => (
-  <WorkExperienceMainItem />
-);
+// export const WorkExperienceDefault = (): JSX.Element => (
+//   <WorkExperienceMainItem />
+// );
+
+const Template: Story = (args) => <WorkExperienceMainItem {...args} />;
+
+export const WorkExperienceItem = Template.bind({});
