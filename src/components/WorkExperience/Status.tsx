@@ -8,9 +8,28 @@ const rotate = keyframes`
 	to{
 	transform:rotate(360deg) scale(1.2);
 	}
-
 `;
 
+const pulse = keyframes`
+	0% {
+		transform:scale(1);
+	}
+	10%{
+		transform:scale(1.2);
+	}
+	20%{
+		transform:scale(1);
+	}
+	30%{
+		transform:scale(1.2);
+	}
+	40%{
+		transform:scale(1);
+	}
+	100%{
+	transform:scale(1);
+	}
+`;
 const Status = styled.div`
   width: 50px;
   height: 50px;
@@ -26,6 +45,9 @@ const Status = styled.div`
   }
   &.status-pause {
     background: #00bcd4;
+    i {
+      animation: ${pulse} 1s linear infinite;
+    }
     &:after {
       content: '';
       display: block;
@@ -37,7 +59,7 @@ const Status = styled.div`
       border: 1px solid #00bcd4;
       border-bottom-color: transparent;
       border-radius: 50%;
-      animation: ${rotate} 1s ease-in-out infinite;
+      animation: ${rotate} 1s infinite;
       //transform: scale(1.2);
     }
   }

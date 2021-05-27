@@ -8,11 +8,41 @@ import Status from './Status';
 const WorkExperienceMainItem = styled.div`
   border-radius: 8px;
   margin-bottom: 1rem;
+  margin-top: 2rem;
   background-color: var(--cardColor);
   padding: 15px;
+  padding-bottom: 0;
   position: relative;
+  .link-chain {
+    position: absolute;
+    top: -30px;
+    border-radius: 10px;
+    left: 15px;
+    height: 40px;
+    width: 5px;
+    background-color: var(--primary);
+    &:after,
+    &:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: #2d364d;
+      display: block;
+      position: absolute;
+      border-radius: 3px;
+      left: -7px;
+      border: 2px solid #212738;
+    }
+    &:after {
+      bottom: 0;
+    }
+
+    &:before {
+      top: 0;
+    }
+  }
   .top-content {
-    padding-left: 60px;
+    padding-left: 80px;
     position: relative;
   }
   .info-sec {
@@ -28,6 +58,9 @@ const WorkExperienceMainItem = styled.div`
   }
   .info-inner {
     padding-top: 25px;
+  }
+  .pad-bottom {
+    height: 15px;
   }
   .more-less-btn {
     border: none;
@@ -56,8 +89,9 @@ const WorkExperienceMainItem = styled.div`
 
 const StyledStatus = styled(Status)`
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
 interface Props {
@@ -76,13 +110,13 @@ export default ({
   status = 'stop',
   ...props
 }: Props): JSX.Element => {
-  const defaultHeight = '0px';
+  const defaultHeight = '15px';
   const [open, toggle] = useState(false);
   const [contentHeight, setContentHeight] = useState(defaultHeight);
   const [ref, { height }] = useMeasure();
   const expand = useSpring({
     config: { mass: 4, tension: 250, friction: 30 },
-    height: open ? `${contentHeight + 0}px` : defaultHeight,
+    height: open ? `${contentHeight + 25}px` : defaultHeight,
   });
 
   const rotate = useSpring({
@@ -102,6 +136,7 @@ export default ({
 
   return (
     <WorkExperienceMainItem>
+      <div className="link-chain"></div>
       <div className="top-content">
         <StyledStatus status={status} />
         <div className="">{role}</div>
@@ -112,6 +147,7 @@ export default ({
       <animated.div className="info-sec" style={expand}>
         <div ref={ref} className="info-inner">
           {responsibilities}
+          <div className="pad-bottom" />
         </div>
       </animated.div>
 
