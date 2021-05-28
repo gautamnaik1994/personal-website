@@ -6,39 +6,78 @@ import media from '../../utils/MediaQueries';
 import Status from './Status';
 
 const WorkExperienceMainItem = styled.div`
+  --gap: 28px;
   border-radius: 8px;
   margin-bottom: 1rem;
-  margin-top: 2rem;
+  margin-top: var(--gap);
   background-color: var(--cardColor);
   padding: 15px;
   padding-bottom: 0;
   position: relative;
+  box-shadow: var(--cardShadow);
+  &:first-child {
+    --gap: 60px;
+    margin-bottom: var(--gap);
+  }
+  &:last-child {
+    .link-chain {
+      display: none;
+    }
+  }
+  .test-tube {
+    height: calc(var(--gap) - 10px);
+    width: 8px;
+    border-radius: 20px;
+    position: absolute;
+    top: calc(100% + 4px);
+    background: rgb(255 255 255 / 8%);
+    left: 48px;
+    box-shadow: inset 0 0 3px 0px rgb(255 255 255 / 37%),
+      0 0 4px rgb(255 255 255 / 13%);
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffbf46;
+      top: 50%;
+      border-radius: 25px;
+      z-index: -1;
+      box-shadow: 0 0 7px #ffbf46;
+    }
+  }
   .link-chain {
     position: absolute;
-    top: -30px;
+    top: calc(100% - 10px);
     border-radius: 10px;
-    left: 15px;
-    height: 40px;
-    width: 5px;
+    left: 48px;
+    height: calc(var(--gap) + 22px);
+    width: 4px;
     background-color: var(--primary);
+    z-index: 1;
     &:after,
     &:before {
       content: '';
       width: 20px;
-      height: 20px;
-      background: #2d364d;
+      height: 17px;
+      background-color: var(--cardColor);
       display: block;
       position: absolute;
       border-radius: 3px;
-      left: -7px;
-      border: 2px solid #212738;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 3px solid var(--bodyBackgroundColor);
     }
     &:after {
       bottom: 0;
+      border-top-width: 0;
     }
 
     &:before {
       top: 0;
+      border-bottom-width: 0;
     }
   }
   .top-content {
@@ -83,7 +122,7 @@ const WorkExperienceMainItem = styled.div`
     }
   }
   ${media.tablet} {
-    width: 270px;
+    width: 400px;
   }
 `;
 
@@ -100,6 +139,7 @@ interface Props {
   role: string;
   timeRange: string;
   status: string;
+  frustration: number;
 }
 
 export default ({
@@ -108,6 +148,7 @@ export default ({
   role = 'Frontend Developer',
   timeRange = 'March 2017 - March 2020',
   status = 'stop',
+  frustration = 50,
   ...props
 }: Props): JSX.Element => {
   const defaultHeight = '15px';
@@ -136,7 +177,11 @@ export default ({
 
   return (
     <WorkExperienceMainItem>
-      <div className="link-chain"></div>
+      {status === 'play' ? (
+        <div className="test-tube" />
+      ) : (
+        <div className="link-chain" />
+      )}
       <div className="top-content">
         <StyledStatus status={status} />
         <div className="">{role}</div>

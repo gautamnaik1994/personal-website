@@ -18,6 +18,12 @@ export default {
 //   <WorkExperienceMainItem />
 // );
 
-const Template: Story = (args) => <WorkExperienceMainItem {...args} />;
+const Template: Story = (args) => (
+  <div>
+    <WorkExperienceMainItem {...args} status="play" />{' '}
+    <WorkExperienceMainItem {...args} status="pause" />{' '}
+    <WorkExperienceMainItem {...args} /> <WorkExperienceMainItem {...args} />{' '}
+  </div>
+);
 
 export const WorkExperienceItem = Template.bind({});

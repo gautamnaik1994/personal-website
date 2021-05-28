@@ -18,7 +18,8 @@ const PostItem = styled.div`
   border-radius: 8px;
   margin-bottom: 6rem;
   background-color: var(--cardColor);
-  box-shadow: ${boxShadow};
+  //box-shadow: ${boxShadow};
+  box-shadow: var(--cardShadow);
   &:last-child {
     margin-bottom: 100px;
   }

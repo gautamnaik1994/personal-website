@@ -39,7 +39,7 @@ const Status = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  font-size: 24px;
+  font-size: 30px;
   &.status-play {
     background: #4caf50;
   }
@@ -60,7 +60,6 @@ const Status = styled.div`
       border-bottom-color: transparent;
       border-radius: 50%;
       animation: ${rotate} 1s infinite;
-      //transform: scale(1.2);
     }
   }
   &.status-stop {

@@ -41,7 +41,8 @@ const Experience = styled.div`
   padding: 22px 15px 18px;
   border-radius: 10px;
   background: var(--cardColor);
-  box-shadow: ${boxShadow};
+  //box-shadow: ${boxShadow};
+  box-shadow: var(--cardShadow);
   //filter: drop-shadow(0px 22px 40px rgba(0, 0, 0, 0.1));
   display: flex;
   justify-content: space-around;
