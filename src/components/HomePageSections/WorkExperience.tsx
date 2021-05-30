@@ -13,6 +13,7 @@ interface WorkExperienceProps {
     responsibilities: string;
     role: string;
     timeRange: string;
+    status: string;
   };
 }
 
@@ -24,12 +25,12 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
         sort: { order: DESC, fields: frontmatter___order }
       ) {
         nodes {
+          body
           frontmatter {
-            title
-            responsibilities
-            role
             timeRange
+            title
             status
+            role
           }
         }
       }
@@ -46,9 +47,9 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
               key={i}
               title={d.frontmatter.title}
               role={d.frontmatter.role}
-              responsibilities={d.frontmatter.responsibilities}
+              responsibilities={d.body}
               timeRange={d.frontmatter.timeRange}
-              status={status}
+              status={d.frontmatter.status}
             />
           );
         })}

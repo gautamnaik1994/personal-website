@@ -1,9 +1,9 @@
 ---
-title: Genora Infotech
-role: UI & Web Designer
-timeRange: August 2015 - March 2017
-order: 3
-status: stop
+title: Your Company
+role: Some Role
+timeRange: You decide
+order: 5
+status: play
 ---
 
 <!--StartFragment-->

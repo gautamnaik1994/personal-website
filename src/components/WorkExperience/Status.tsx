@@ -42,9 +42,11 @@ const Status = styled.div`
   font-size: 30px;
   &.status-play {
     background: #4caf50;
+    box-shadow: 0 0 20px #4caf50;
   }
   &.status-pause {
     background: #00bcd4;
+    box-shadow: 0 0 20px #00bcd4;
     i {
       animation: ${pulse} 1s linear infinite;
     }
@@ -64,6 +66,7 @@ const Status = styled.div`
   }
   &.status-stop {
     background: #f44336;
+    box-shadow: 0 0 20px #f44336;
   }
 `;
 

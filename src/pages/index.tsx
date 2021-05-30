@@ -17,10 +17,10 @@ export default () => (
     <HomePageHeader />
     <Container>
       <AboutMeSection className="two-rem-mb two-rem-mt" />
-      <SubContainer>
-        <Experience className="two-rem-mt" />
-        <DownloadCVSection />
-      </SubContainer>
+
+      <Experience className="two-rem-mt" />
+      <DownloadCVSection />
+
       <SkillsSection className="four-rem-mt" />
       <BlogsSection className="two-rem-mb" />
       <WorkExperience className="two-rem-mb" />

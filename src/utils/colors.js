@@ -16,6 +16,7 @@ export const darkTheme = [
   { name: 'bodyBackgroundColor', value: darkBackgroundColor },
   { name: 'bodyColor', value: darkBackgroundTextColor },
   { name: 'cardColor', value: darkCardColor },
+  { name: 'sideCardColor', value: '#0D1117' },
   { name: 'cardShadow', value: '0px 22px 40px rgba(0, 0, 0, 0)' },
 ];
 export const lightTheme = [
@@ -24,6 +25,7 @@ export const lightTheme = [
   { name: 'bodyBackgroundColor', value: lightBackgroundColor },
   { name: 'bodyColor', value: lightBackgroundTextColor },
   { name: 'cardColor', value: lightCardColor },
+  { name: 'sideCardColor', value: '#ffffff' },
   { name: 'cardShadow', value: '0px 22px 40px rgba(0, 0, 0, 0.1)' },
 ];
 

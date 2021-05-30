@@ -1,8 +1,21 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import Skill from '../Skill/Skill';
 import SectionTitle from '../SectionTitle';
-import SubContainer from '../SubContainer';
+
+const SkillList = styled.div`
+  display: flex;
+  white-space: nowrap;
+  overflow: auto;
+  & > div {
+    /* margin-left: 30px; */
+  }
+`;
+
+const StyledSkill = styled(Skill)`
+  margin-left: 30px;
+`;
 
 interface Props {
   className?: string;
@@ -36,10 +49,11 @@ const SkillsSection = ({ className }: Props): JSX.Element => {
   return (
     <div className={className}>
       <SectionTitle title="Skills" />
-      <SubContainer>
+
+      <SkillList>
         {data.allMdx.nodes.map((d: SkillProps, i: number) => {
           return (
-            <Skill
+            <StyledSkill
               key={i}
               name={d.frontmatter.title}
               level={d.frontmatter.value}
@@ -47,7 +61,7 @@ const SkillsSection = ({ className }: Props): JSX.Element => {
             />
           );
         })}
-      </SubContainer>
+      </SkillList>
     </div>
   );
 };

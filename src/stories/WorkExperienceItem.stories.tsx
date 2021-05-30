@@ -9,7 +9,7 @@ export default {
   argTypes: {
     status: {
       options: ['play', 'pause', 'stop'],
-      control: { type: 'radio' },
+      control: { type: 'inline-radio' },
     },
   },
 } as Meta;

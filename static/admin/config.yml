@@ -310,8 +310,4 @@ collections: # A list of collections the CMS should be able to edit
           options: ['pause', 'play', 'stop'],
           default: ['stop'],
         }
-      - {
-          label: 'Responsibilities',
-          name: 'responsibilities',
-          widget: 'markdown',
-        }
+      - { label: 'Responsibilities', name: 'body', widget: 'markdown' }

@@ -1,9 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import theme from 'styled-theming';
 import { useSpring, animated } from 'react-spring';
 import { useMeasure } from 'react-use';
 import media from '../../utils/MediaQueries';
 import Status from './Status';
+
+const testTube = keyframes`
+
+	0%,100%{
+		color:#ffbf46;
+		transform:scale(1,1);
+	}
+	50%{
+		color:#f44336;
+		transform:scale(1,1.4);
+	}
+
+`;
+
+const testTubeShadow = theme('mode', {
+  light:
+    'inset 0 0 5px 0px rgb(99 99 99 / 44%), 0 0 12px 7px rgb(255 255 255 / 55%)',
+  dark: 'inset 0 0 3px 0px rgb(255 255 255 / 37%), 0 0 4px rgb(255 255 255 / 13%)',
+});
 
 const WorkExperienceMainItem = styled.div`
   --gap: 28px;
@@ -32,20 +53,23 @@ const WorkExperienceMainItem = styled.div`
     top: calc(100% + 4px);
     background: rgb(255 255 255 / 8%);
     left: 48px;
-    box-shadow: inset 0 0 3px 0px rgb(255 255 255 / 37%),
-      0 0 4px rgb(255 255 255 / 13%);
+    box-shadow: ${testTubeShadow};
     &:before {
       content: '';
       position: absolute;
       display: block;
+      color: #ffbf46;
       bottom: 0;
       left: 0;
       right: 0;
-      background: #ffbf46;
+      background: currentColor;
       top: 50%;
       border-radius: 25px;
       z-index: -1;
-      box-shadow: 0 0 7px #ffbf46;
+      box-shadow: 0 0 7px currentColor;
+      transition: transform 0.1s linear;
+      animation: ${testTube} 2.8s linear infinite;
+      transform-origin: bottom;
     }
   }
   .link-chain {
@@ -139,7 +163,6 @@ interface Props {
   role: string;
   timeRange: string;
   status: string;
-  frustration: number;
 }
 
 export default ({
@@ -148,7 +171,6 @@ export default ({
   role = 'Frontend Developer',
   timeRange = 'March 2017 - March 2020',
   status = 'stop',
-  frustration = 50,
   ...props
 }: Props): JSX.Element => {
   const defaultHeight = '15px';
@@ -191,7 +213,7 @@ export default ({
 
       <animated.div className="info-sec" style={expand}>
         <div ref={ref} className="info-inner">
-          {responsibilities}
+          <MDXRenderer>{responsibilities}</MDXRenderer>
           <div className="pad-bottom" />
         </div>
       </animated.div>

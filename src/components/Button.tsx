@@ -1,22 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Button = styled.button<{ variant: string }>`
-  padding: 10px 35px;
-  border-radius: 3px;
-  font-weight: var(--fontWeightBold);
-  background-color: ${(props) => `var(--${props.variant})`};
+export const btnStyles = css<{ variant: string }>`
+  padding: 13px 35px;
+  border-radius: 5px;
+  font-weight: var(--fontWeightRegular);
   transition: all 0.3s ease-in-out;
   border-width: 0px;
   color: white;
   display: inline-block;
-  &: hover {
+  background-color: ${({ variant }) => `var(--${variant})`};
+  line-height: 1;
+  font-size: 14px;
+  &:hover {
     filter: brightness(120%);
   }
   &:focus,
   &:active {
     filter: brightness(75%);
   }
+`;
+
+const Button = styled.button`
+  ${btnStyles}
 `;
 
 export interface ButtonProps {

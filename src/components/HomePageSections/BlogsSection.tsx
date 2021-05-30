@@ -61,24 +61,24 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
   return (
     <div className={className}>
       <SectionTitle title="Recent Blogs" />
-      <SubContainer>
-        {data.allMdx.edges.map((post: PostItemProps, index: number) => {
-          const _data = post.node.frontmatter;
-          return (
-            <PostItem
-              key={index}
-              title={_data.title}
-              category={_data.category}
-              link={_data.slug}
-              banner={_data.bannerImage.childImageSharp.gatsbyImageData}
-              tags={_data.tags}
-              excerpt={_data.description}
-              date={_data.date}
-              readTime={post.node.timeToRead}
-            />
-          );
-        })}
-      </SubContainer>
+
+      {data.allMdx.edges.map((post: PostItemProps, index: number) => {
+        const _data = post.node.frontmatter;
+        return (
+          <PostItem
+            key={index}
+            title={_data.title}
+            category={_data.category}
+            link={_data.slug}
+            banner={_data.bannerImage.childImageSharp.gatsbyImageData}
+            tags={_data.tags}
+            excerpt={_data.description}
+            date={_data.date}
+            readTime={post.node.timeToRead}
+          />
+        );
+      })}
+
       <div className="text-center">
         <LinkButton title="Go To All Blogs" variant="primary" to="/blog/">
           Goto All Blogs

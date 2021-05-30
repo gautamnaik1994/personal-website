@@ -61,23 +61,22 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
   return (
     <div className={`relative ${className}`}>
       <SectionTitle title="About Me" />
-      <SubContainer>
-        <AboutMeImage src={_data.aboutMeImage} />
-        <StyledAboutMe>
-          <MDXRenderer>{aboutMe}</MDXRenderer>
-        </StyledAboutMe>
+
+      <AboutMeImage src={_data.aboutMeImage} />
+      <StyledAboutMe>
+        <MDXRenderer>{aboutMe}</MDXRenderer>
+      </StyledAboutMe>
+      <div>
         <div>
-          <div>
-            <i className="icon-email" /> {_data.email}{' '}
-          </div>
-          <div>
-            <i className="icon-marker" /> {_data.location}{' '}
-          </div>
-          <div>
-            <i className="icon-cake" /> {_data.bday}{' '}
-          </div>
+          <i className="icon-email" /> {_data.email}{' '}
         </div>
-      </SubContainer>
+        <div>
+          <i className="icon-marker" /> {_data.location}{' '}
+        </div>
+        <div>
+          <i className="icon-cake" /> {_data.bday}{' '}
+        </div>
+      </div>
     </div>
   );
 };
