@@ -221,7 +221,7 @@ export default ({
       <button
         className="more-less-btn"
         onClick={() => toggle(!open)}
-        ariaLabel="Show Responsibilities"
+        aria-label="Show Responsibilities"
         title="Show Responsibilities"
       >
         <animated.i className=" icon-arrow-right" style={rotate} />{' '}

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { lighten } from 'polished';
@@ -10,6 +10,22 @@ import media from '../utils/MediaQueries';
 const boxShadow = theme('mode', {
   light: '0px 22px 40px rgba(0, 0, 0, 0.1)',
 });
+
+const HLayout = css`
+  --img-width: 360px;
+  padding-left: calc(var(--img-width) + 30px);
+  .img-container {
+    position: absolute;
+    left: 15px;
+    width: var(--img-width);
+    top: 15px;
+    bottom: 15px;
+    margin: 0;
+  }
+  .btn-holder {
+    text-align: right;
+  }
+`;
 
 const PostItem = styled.div`
   padding: 15px;
@@ -22,6 +38,9 @@ const PostItem = styled.div`
   box-shadow: var(--cardShadow);
   &:last-child {
     margin-bottom: 100px;
+  }
+  .btn-holder {
+    text-align: center;
   }
   .category-link {
     display: block;
@@ -62,27 +81,16 @@ const PostItem = styled.div`
     vertical-align: text-bottom;
     font-weight: bold;
   }
-  ${media.desktop} {
-    padding: 15px;
-    margin-bottom: 25px;
-    padding-left: 320px;
-    .img-container {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 300px;
-      height: 200px;
-      margin: 0;
-      transform: translateY(-50%);
-      border-radius: 5px;
-      overflow: hidden;
-      .gatsby-image-wrapper {
-        height: 100% !important;
-      }
-    }
-  }
   &:last-child {
     margin-bottom: 40px;
+  }
+  &.is-horizontal {
+    ${HLayout}
+  }
+  &.is-responsive {
+    ${media.tablet} {
+      ${HLayout}
+    }
   }
 `;
 
@@ -95,6 +103,8 @@ interface Props {
   tags: string[];
   readTime: number;
   banner: string;
+  layout?: string;
+  responsive: string;
 }
 
 export default ({
@@ -106,8 +116,10 @@ export default ({
   tags,
   readTime,
   banner,
+  layout = 'vertical',
+  responsive = 'not-responsive',
 }: Props): JSX.Element => (
-  <PostItem>
+  <PostItem className={` is-${layout} is-${responsive} `}>
     <div className="img-container">
       <img src={banner} />
       <GatsbyImage image={banner} alt={title} />
@@ -129,7 +141,7 @@ export default ({
     </Link>
 
     <article className="one-rem-mt one-rem-mb">{excerpt}</article>
-    <div className="text-center">
+    <div className="btn-holder">
       <Link title="Read More" to={`/blog/${link}`}>
         Read More
         <i className="icon-arrow-right " />

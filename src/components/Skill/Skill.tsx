@@ -13,6 +13,7 @@ const Skill = styled.div`
   padding: 15px;
   padding-top: 25px;
   width: 90%;
+  white-space: normal;
   .box-title {
     font-weight: var(--fontWeightBold);
     font-size: 24px;
@@ -47,6 +48,7 @@ interface Props {
   name: string;
   level: number;
   details: Array<{ key: string; value: string }>;
+  className?: string;
 }
 
 export default ({
@@ -79,7 +81,7 @@ export default ({
     return window.removeEventListener('resize', setContentHeight(height));
   }, [height]);
   return (
-    <Skill>
+    <Skill className={props.className}>
       <div className="box-title">{name}</div>
       <SkillMeter className="skill-meter" level={level} />
       <animated.div className="info-sec" style={expand}>

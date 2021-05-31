@@ -40,20 +40,19 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
   return (
     <div className={className}>
       <SectionTitle title="WorkExperience" />
-      <SubContainer>
-        {data.allMdx.nodes.map((d: WorkExperienceProps, i: number) => {
-          return (
-            <WorkExperienceMainItem
-              key={i}
-              title={d.frontmatter.title}
-              role={d.frontmatter.role}
-              responsibilities={d.body}
-              timeRange={d.frontmatter.timeRange}
-              status={d.frontmatter.status}
-            />
-          );
-        })}
-      </SubContainer>
+
+      {data.allMdx.nodes.map((d: WorkExperienceProps, i: number) => {
+        return (
+          <WorkExperienceMainItem
+            key={i}
+            title={d.frontmatter.title}
+            role={d.frontmatter.role}
+            responsibilities={d.body}
+            timeRange={d.frontmatter.timeRange}
+            status={d.frontmatter.status}
+          />
+        );
+      })}
     </div>
   );
 };

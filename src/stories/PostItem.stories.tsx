@@ -10,9 +10,19 @@ import PostItem from '../components/PostItem';
 export default {
   title: 'Components/PostItem',
   component: PostItem,
+  argTypes: {
+    layout: {
+      options: ['vertical', 'horizontal'],
+      control: { type: 'inline-radio' },
+    },
+    responsive: {
+      options: ['responsive', 'not-responsive'],
+      control: { type: 'inline-radio' },
+    },
+  },
 } as Meta;
 
-export const PostItemDefault = (): JSX.Element => (
+const Template: Story = (args) => (
   <PostItem
     title="Css Variables some long title and extra stuff"
     link="https://google.com"
@@ -22,5 +32,7 @@ export const PostItemDefault = (): JSX.Element => (
     readTime={5}
     date={'15 Aug 2020'}
     banner={banner}
+    {...args}
   />
 );
+export const PostItemDefault = Template.bind({});

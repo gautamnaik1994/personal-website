@@ -31,10 +31,10 @@ interface Props {
 //transition: background-color 0.3s ease-in, color 0.3s ease-in;
 export const GlobalStyle = createGlobalStyle<Props>`
 :root {
-    --primary: ${primaryCol};
+    /* --primary: ${primaryCol};
     --accent: ${accentColor};
 		--bodyBackgroundColor: #fff;
-    --bodyColor: #333;
+    --bodyColor: #333; */
 		--fontWeightBold:700;
 		--fontWeightMedium:500;
 		--fontWeightRegular:400;

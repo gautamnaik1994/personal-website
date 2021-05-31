@@ -8,13 +8,10 @@ const SkillList = styled.div`
   display: flex;
   white-space: nowrap;
   overflow: auto;
-  & > div {
-    /* margin-left: 30px; */
+  align-items: flex-start;
+  & > div + div {
+    margin-left: 30px;
   }
-`;
-
-const StyledSkill = styled(Skill)`
-  margin-left: 30px;
 `;
 
 interface Props {
@@ -53,7 +50,7 @@ const SkillsSection = ({ className }: Props): JSX.Element => {
       <SkillList>
         {data.allMdx.nodes.map((d: SkillProps, i: number) => {
           return (
-            <StyledSkill
+            <Skill
               key={i}
               name={d.frontmatter.title}
               level={d.frontmatter.value}
