@@ -1,10 +1,27 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-
+import styled from 'styled-components';
+import media from '../../utils/MediaQueries';
 import PostItem from '../PostItem';
 import SectionTitle from '../SectionTitle';
-import SubContainer from '../SubContainer';
 import LinkButton from '../LinkButton';
+
+const StyledLinkButton = styled(LinkButton)`
+  justify-self: center;
+  align-self: center;
+`;
+
+const StyledPostItem = styled(PostItem)`
+  margin-bottom: 0;
+`;
+
+const BlogList = styled.div`
+  ${media.desktop} {
+    display: grid;
+    grid-template-columns: 400px 400px 1fr;
+    grid-gap: 30px;
+  }
+`;
 
 interface Props {
   className?: string;
@@ -61,29 +78,30 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
   return (
     <div className={className}>
       <SectionTitle title="Recent Blogs" />
-
-      {data.allMdx.edges.map((post: PostItemProps, index: number) => {
-        const _data = post.node.frontmatter;
-        return (
-          <PostItem
-            key={index}
-            title={_data.title}
-            category={_data.category}
-            link={_data.slug}
-            banner={_data.bannerImage.childImageSharp.gatsbyImageData}
-            tags={_data.tags}
-            excerpt={_data.description}
-            date={_data.date}
-            readTime={post.node.timeToRead}
-          />
-        );
-      })}
-
-      <div className="text-center">
-        <LinkButton title="Go To All Blogs" variant="primary" to="/blog/">
+      <BlogList>
+        {data.allMdx.edges.map((post: PostItemProps, index: number) => {
+          const _data = post.node.frontmatter;
+          return (
+            <StyledPostItem
+              responsive={false}
+              key={index}
+              title={_data.title}
+              category={_data.category}
+              link={_data.slug}
+              banner={_data.bannerImage.childImageSharp.gatsbyImageData}
+              tags={_data.tags}
+              excerpt={_data.description}
+              date={_data.date}
+              readTime={post.node.timeToRead}
+            />
+          );
+        })}
+        <StyledLinkButton title="Go To All Blogs" variant="primary" to="/blog/">
           Goto All Blogs
-        </LinkButton>
-      </div>
+        </StyledLinkButton>
+      </BlogList>
+
+      <div className="text-center"></div>
     </div>
   );
 };

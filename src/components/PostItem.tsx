@@ -2,9 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { lighten } from 'polished';
 import Link from './Link';
-import Badge from './Badge';
 import media from '../utils/MediaQueries';
 
 const boxShadow = theme('mode', {
@@ -27,13 +25,14 @@ const HLayout = css`
   }
 `;
 
-const PostItem = styled.div`
+const PostItem = styled.div<{ responsive: boolean }>`
   padding: 15px;
   margin-bottom: 40px;
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 6rem;
   background-color: var(--cardColor);
+  white-space: normal;
   //box-shadow: ${boxShadow};
   box-shadow: var(--cardShadow);
   &:last-child {
@@ -84,13 +83,8 @@ const PostItem = styled.div`
   &:last-child {
     margin-bottom: 40px;
   }
-  &.is-horizontal {
-    ${HLayout}
-  }
-  &.is-responsive {
-    ${media.tablet} {
-      ${HLayout}
-    }
+  ${media.tablet} {
+    ${({ responsive }) => responsive && HLayout};
   }
 `;
 
@@ -103,8 +97,7 @@ interface Props {
   tags: string[];
   readTime: number;
   banner: string;
-  layout?: string;
-  responsive: string;
+  responsive: boolean;
 }
 
 export default ({
@@ -116,12 +109,11 @@ export default ({
   tags,
   readTime,
   banner,
-  layout = 'vertical',
-  responsive = 'not-responsive',
+  responsive = true,
 }: Props): JSX.Element => (
-  <PostItem className={` is-${layout} is-${responsive} `}>
+  <PostItem responsive={responsive}>
     <div className="img-container">
-      <img src={banner} />
+      {/* <img src={banner} /> */}
       <GatsbyImage image={banner} alt={title} />
     </div>
     <Link title={title} to={`/blog/${link}`}>

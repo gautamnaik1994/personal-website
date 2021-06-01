@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Skill from '../Skill/Skill';
 import SectionTitle from '../SectionTitle';
+import media from '../../utils/MediaQueries';
 
 const SkillList = styled.div`
   display: flex;
@@ -10,7 +11,10 @@ const SkillList = styled.div`
   overflow: auto;
   align-items: flex-start;
   & > div + div {
-    margin-left: 30px;
+    margin-left: 15px;
+    ${media.desktop} {
+      margin-left: 30px;
+    }
   }
 `;
 

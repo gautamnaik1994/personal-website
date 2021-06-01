@@ -38,7 +38,7 @@ const pulse = keyframes`
 `;
 
 const Experience = styled.div`
-  padding: 22px 15px 18px;
+  padding: 35px 15px 18px;
   border-radius: 10px;
   background: var(--cardColor);
   //box-shadow: ${boxShadow};
@@ -49,7 +49,7 @@ const Experience = styled.div`
   position: relative;
   .light-holder {
     position: absolute;
-    bottom: -26px;
+    top: 100%;
     width: 90px;
     height: 26px;
     background: inherit;
@@ -65,15 +65,28 @@ const Experience = styled.div`
       height: 100%;
       display: block;
       position: absolute;
+      border-radius: 0 0 3px 3px;
     }
     &:before {
-      right: -10px;
-      transform: skew(-30deg);
+      right: 90%;
+      transform: skew(30deg);
     }
     &:after {
-      transform: skew(30deg);
-      left: -10px;
+      transform: skew(-30deg);
+      left: 90%;
     }
+  }
+  .name-holder {
+    position: absolute;
+    top: 0;
+    background: inherit;
+    border-radius: 14px;
+    border: 4px solid var(--bodyBackgroundColor);
+    transform: translateY(-50%);
+    padding: 6px 25px;
+    text-transform: uppercase;
+    font-weight: var(--fontWeightMedium);
+    letter-spacing: 1px;
   }
   .light {
     width: 8px;
@@ -98,6 +111,24 @@ const Experience = styled.div`
     padding: 40px 50px;
     margin: 2rem auto;
     border-radius: 15px;
+    .light-holder {
+      width: 130px;
+      height: 36px;
+      &:after,
+      &:before {
+        width: 30px;
+        border-radius: 0 0 3px 3px;
+      }
+    }
+    .light {
+      width: 15px;
+      height: 15px;
+    }
+    .name-holder {
+      font-size: 26px;
+      padding: 15px 40px;
+      border-width: 6px;
+    }
   }
 `;
 
@@ -146,6 +177,7 @@ export default ({ className }: Props): JSX.Element => {
 
   return (
     <Experience className={className}>
+      <div className="name-holder">Experience</div>
       <Item titlemed="Years" title="Yrs" value={dateData.years} />
       <Item titlemed="Months" title="Mons" value={dateData.months} />
       <Item titlemed="Days" title="Days" value={dateData.days} />

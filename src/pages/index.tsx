@@ -19,7 +19,7 @@ export default () => (
       <AboutMeSection className="two-rem-mb two-rem-mt" />
 
       <Experience className="two-rem-mt" />
-      <DownloadCVSection />
+      {/* <DownloadCVSection /> */}
 
       <SkillsSection className="four-rem-mt" />
       <BlogsSection className="two-rem-mb" />

@@ -6,6 +6,7 @@ import TitleAnimationBox from './TitleAnimationBox';
 const SectionTitle = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
   h2 {
     font-size: 24px;
     margin: 0;
@@ -18,7 +19,7 @@ const SectionTitle = styled.div`
   }
 `;
 
-export default ({ title = 'Default' }: { title: string }) => {
+export default ({ title = 'Default' }: { title: string }): JSX.Element => {
   return (
     <SectionTitle>
       <TitleAnimationBox /> <h2>{title}</h2>

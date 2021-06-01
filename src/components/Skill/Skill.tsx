@@ -12,7 +12,7 @@ const Skill = styled.div`
   background-color: var(--cardColor);
   padding: 15px;
   padding-top: 25px;
-  width: 90%;
+  flex: 0 0 85%;
   white-space: normal;
   .box-title {
     font-weight: var(--fontWeightBold);
@@ -21,6 +21,11 @@ const Skill = styled.div`
     text-transform: uppercase;
     margin-bottom: 2rem;
     text-align: center;
+    min-height: 56px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .info-sec {
     overflow: hidden;
@@ -40,7 +45,7 @@ const Skill = styled.div`
     }
   }
   ${media.tablet} {
-    width: 270px;
+    flex: 0 0 270px;
   }
 `;
 

@@ -11,13 +11,8 @@ export default {
   title: 'Components/PostItem',
   component: PostItem,
   argTypes: {
-    layout: {
-      options: ['vertical', 'horizontal'],
-      control: { type: 'inline-radio' },
-    },
     responsive: {
-      options: ['responsive', 'not-responsive'],
-      control: { type: 'inline-radio' },
+      control: { type: 'boolean' },
     },
   },
 } as Meta;
