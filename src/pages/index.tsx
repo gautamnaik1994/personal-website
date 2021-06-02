@@ -18,7 +18,7 @@ export default () => (
     <Container>
       <AboutMeSection className="two-rem-mb two-rem-mt" />
 
-      <Experience className="two-rem-mt" />
+      <Experience />
       {/* <DownloadCVSection /> */}
 
       <SkillsSection className="four-rem-mt" />

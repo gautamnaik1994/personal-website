@@ -6,15 +6,24 @@ import TitleAnimationBox from './TitleAnimationBox';
 const SectionTitle = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+
   h2 {
     font-size: 24px;
-    margin: 0;
     font-weight: var(--fontWeightMedium);
     line-height: 1.3;
-    margin-left: 15px;
-    ${media.desktop} {
-      font-size: 30px;
+    margin: 0 15px;
+    & + div {
+      display: none;
+    }
+  }
+  ${media.desktop} {
+    justify-content: center;
+    h2 {
+      font-size: 40px;
+      & + div {
+        display: block;
+      }
     }
   }
 `;
@@ -22,7 +31,7 @@ const SectionTitle = styled.div`
 export default ({ title = 'Default' }: { title: string }): JSX.Element => {
   return (
     <SectionTitle>
-      <TitleAnimationBox /> <h2>{title}</h2>
+      <TitleAnimationBox /> <h2>{title}</h2> <TitleAnimationBox />
     </SectionTitle>
   );
 };

@@ -109,7 +109,7 @@ const Experience = styled.div`
   ${media.tablet} {
     width: 680px;
     padding: 40px 50px;
-    margin: 2rem auto;
+    margin: 10rem auto;
     border-radius: 15px;
     .light-holder {
       width: 130px;

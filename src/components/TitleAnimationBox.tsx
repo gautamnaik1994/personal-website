@@ -11,12 +11,16 @@ const TitleAnimationBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export default () => {
   return (
     <TitleAnimationBox
-      dangerouslySetInnerHTML={{ __html: toSvg(new Date(), 40) }}
+      dangerouslySetInnerHTML={{ __html: toSvg(new Date(), 35) }}
     ></TitleAnimationBox>
   );
 };
