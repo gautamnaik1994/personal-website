@@ -61,8 +61,9 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
       <Helmet>
         <html lang="en" />
         <title>Gautam Naik</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,700,700i&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
         />
         <meta name="robots" content="all" />
