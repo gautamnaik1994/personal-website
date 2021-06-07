@@ -14,9 +14,9 @@ export const getThemeValue = (): string => {
     } else {
       initialThemeValue = localStorage.getItem('theme') || 'dark';
     }
+    setColors(initialThemeValue);
   }
-  console.log('initialThemeValue ', initialThemeValue);
-  setColors(initialThemeValue);
+
   return initialThemeValue;
 };
 
