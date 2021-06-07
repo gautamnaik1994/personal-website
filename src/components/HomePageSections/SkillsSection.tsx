@@ -16,6 +16,9 @@ const SkillList = styled.div`
       margin-left: 30px;
     }
   }
+  ${media.desktop} {
+    justify-content: center;
+  }
 `;
 
 interface Props {

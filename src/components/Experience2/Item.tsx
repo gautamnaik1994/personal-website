@@ -6,6 +6,7 @@ import media from '../../utils/MediaQueries';
 const Item = styled.div`
   text-align: center;
   text-transform: uppercase;
+  position: relative;
   .title {
     font-size: 12px;
     color: #808080;
@@ -21,12 +22,13 @@ const Item = styled.div`
     }
   }
   .value {
-    font-size: 25px;
-    margin-bottom: 6px;
+    font-size: 30px;
+    margin-bottom: 10px;
     font-family: 'Orbitron', sans-serif;
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
     letter-spacing: 2px;
+    min-width: 32px;
   }
   ${media.tablet} {
     & + & {
@@ -35,6 +37,7 @@ const Item = styled.div`
       font-size: 60px;
       line-height: 1;
       margin-bottom: 10px;
+      min-width: 80px;
     }
     .title {
       font-size: 17px;
@@ -46,10 +49,11 @@ interface ItemProps {
   title: string;
   titlemed: string;
   value: number;
+  className?: string;
 }
 
-export default ({ title, titlemed, value }: ItemProps) => (
-  <Item>
+export default ({ title, titlemed, value, className }: ItemProps) => (
+  <Item className={className}>
     <div className="value">{value}</div>
     <div className="title" data-titlemed={titlemed} data-title={title}></div>
   </Item>

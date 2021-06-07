@@ -5,9 +5,8 @@ import HomePageHeader from '../components/HomePageSections/HomePageHeader';
 import Container from '../components/Container';
 import SubContainer from '../components/SubContainer';
 import AboutMeSection from '../components/HomePageSections/AboutMeSection';
-import Experience from '../components/Experience/Experience';
+import ExperienceSection from '../components/HomePageSections/ExperienceSection';
 import SkillsSection from '../components/HomePageSections/SkillsSection';
-import DownloadCVSection from '../components/HomePageSections/DownloadCVSection';
 import BlogsSection from '../components/HomePageSections/BlogsSection';
 import WorkExperience from '../components/HomePageSections/WorkExperience';
 import { Fragment } from 'react';
@@ -17,10 +16,7 @@ export default () => (
     <HomePageHeader />
     <Container>
       <AboutMeSection className="two-rem-mb two-rem-mt" />
-
-      <Experience />
-      {/* <DownloadCVSection /> */}
-
+      <ExperienceSection className="two-rem-mb two-rem-mt" />
       <SkillsSection className="four-rem-mt" />
       <BlogsSection className="two-rem-mb" />
       <WorkExperience className="two-rem-mb" />

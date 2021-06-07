@@ -12,14 +12,21 @@ const StyledLinkButton = styled(LinkButton)`
 `;
 
 const StyledPostItem = styled(PostItem)`
-  margin-bottom: 0;
+  margin-bottom: 2rem;
+  ${media.desktop} {
+    flex: 0 0 350px;
+    & + div {
+      margin-left: 30px;
+    }
+  }
 `;
 
 const BlogList = styled.div`
   ${media.desktop} {
-    display: grid;
-    grid-template-columns: 400px 400px 1fr;
-    grid-gap: 30px;
+    display: flex;
+    white-space: nowrap;
+    align-items: flex-start;
+    justify-content: center;
   }
 `;
 
@@ -96,10 +103,12 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
             />
           );
         })}
+      </BlogList>
+      <div className="text-center">
         <StyledLinkButton title="Go To All Blogs" variant="primary" to="/blog/">
           Goto All Blogs
         </StyledLinkButton>
-      </BlogList>
+      </div>
 
       <div className="text-center"></div>
     </div>

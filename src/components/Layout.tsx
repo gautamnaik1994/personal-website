@@ -63,7 +63,15 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
         <title>Gautam Naik</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap&text=0123456789"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
         />
         <meta name="robots" content="all" />
