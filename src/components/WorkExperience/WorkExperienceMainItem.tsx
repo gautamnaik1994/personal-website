@@ -39,6 +39,7 @@ const WorkExperienceMainItem = styled.div`
   &:first-child {
     --gap: 60px;
     margin-bottom: var(--gap);
+    margin-top: 0;
   }
   &:last-child {
     .link-chain {

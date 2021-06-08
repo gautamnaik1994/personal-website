@@ -12,6 +12,7 @@ const ExperienceSection = styled.div`
   ${media.desktop} {
     display: flex;
     & > div + div {
+      margin-top: 0;
       margin-left: 30px;
     }
   }
@@ -22,8 +23,11 @@ interface Props {
 }
 
 export default ({ className }: Props): JSX.Element => (
-  <ExperienceSection className={className}>
-    <Experience />
-    <DownloadCVBox />
-  </ExperienceSection>
+  <section className={className}>
+    <SectionTitle title="Experience" />
+    <ExperienceSection>
+      <Experience />
+      <DownloadCVBox />
+    </ExperienceSection>
+  </section>
 );

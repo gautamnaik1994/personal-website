@@ -15,11 +15,11 @@ export default () => (
   <Fragment>
     <HomePageHeader />
     <Container>
-      <AboutMeSection className="two-rem-mb two-rem-mt" />
-      <ExperienceSection className="two-rem-mb two-rem-mt" />
-      <SkillsSection className="four-rem-mt" />
-      <BlogsSection className="two-rem-mb" />
-      <WorkExperience className="two-rem-mb" />
+      <AboutMeSection className="six-rem-mb six-rem-mt" />
+      <ExperienceSection className="six-rem-mb six-rem-mt" />
+      <SkillsSection className="six-rem-mb six-rem-mt" />
+      <BlogsSection className="six-rem-mb six-rem-mt" />
+      <WorkExperience className="six-rem-mb six-rem-mt" />
     </Container>
   </Fragment>
 );

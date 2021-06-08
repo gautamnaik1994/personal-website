@@ -51,7 +51,7 @@ const SkillsSection = ({ className }: Props): JSX.Element => {
   `);
   // console.log(data.allMdx.nodes);
   return (
-    <div className={className}>
+    <section className={className}>
       <SectionTitle title="Skills" />
 
       <SkillList>
@@ -66,7 +66,7 @@ const SkillsSection = ({ className }: Props): JSX.Element => {
           );
         })}
       </SkillList>
-    </div>
+    </section>
   );
 };
 

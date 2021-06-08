@@ -83,7 +83,7 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
   `);
 
   return (
-    <div className={className}>
+    <section className={className}>
       <SectionTitle title="Recent Blogs" />
       <BlogList>
         {data.allMdx.edges.map((post: PostItemProps, index: number) => {
@@ -109,9 +109,8 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
           Goto All Blogs
         </StyledLinkButton>
       </div>
-
       <div className="text-center"></div>
-    </div>
+    </section>
   );
 };
 

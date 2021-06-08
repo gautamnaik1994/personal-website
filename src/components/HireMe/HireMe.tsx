@@ -69,6 +69,8 @@ const StyledHireMe = styled.div`
       font-size: 40px;
     }
     width: 380px;
+    position: sticky;
+    top: 70px;
   }
 `;
 

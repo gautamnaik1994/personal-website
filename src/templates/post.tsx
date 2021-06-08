@@ -218,7 +218,11 @@ export const pageQuery = graphql`
         updatedDate(formatString: "MMM D, 'YY")
         bannerImage {
           childImageSharp {
-            gatsbyImageData(width: 1140, layout: FULL_WIDTH)
+            gatsbyImageData(
+              width: 1140
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+            )
           }
         }
         slug

@@ -59,10 +59,9 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
   const aboutMe = data.mdx.body;
 
   return (
-    <div className={`relative ${className}`}>
+    <section className={`relative ${className}`}>
       <SectionTitle title="About Me" />
 
-      <AboutMeImage src={_data.aboutMeImage} />
       <StyledAboutMe>
         <MDXRenderer>{aboutMe}</MDXRenderer>
       </StyledAboutMe>
@@ -77,7 +76,7 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
           <i className="icon-cake" /> {_data.bday}{' '}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
