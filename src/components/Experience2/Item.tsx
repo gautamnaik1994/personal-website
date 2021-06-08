@@ -24,7 +24,6 @@ const Item = styled.div`
   .value {
     font-size: 30px;
     margin-bottom: 10px;
-    font-family: 'Orbitron', sans-serif;
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
     letter-spacing: 2px;
