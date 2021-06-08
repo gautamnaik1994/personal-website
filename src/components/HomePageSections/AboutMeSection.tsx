@@ -51,6 +51,12 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
           location
           aboutMeImage
           cv
+          education
+          socialLinks {
+            key
+            value
+            iconClassName
+          }
         }
       }
     }
@@ -66,6 +72,13 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
         <MDXRenderer>{aboutMe}</MDXRenderer>
       </StyledAboutMe>
       <div>
+        {_data.socialLinks.map((link, index) => {
+          return (
+            <a href={link.value} key={index}>
+              <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
+            </a>
+          );
+        })}
         <div>
           <i className="icon-email" /> {_data.email}{' '}
         </div>

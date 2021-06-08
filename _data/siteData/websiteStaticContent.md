@@ -1,5 +1,6 @@
 ---
 position: Frontend Developer & Designer
+education: "Bachelors in Computer Science "
 company: Bidchat
 bday: 2nd May '94
 email: gautamnaik1994@gmail.com
@@ -7,6 +8,22 @@ location: Panaji - Goa
 aboutMeImage: /siteMedia/aboutme.png
 cv: /siteMedia/gautam-naik-ui-frontend-dev.pdf
 footer: This is footer
+socialLinks:
+  - key: Stack Overflow
+    value: https://stackoverflow.com/users/2376317/gautam-naik?tab=profile
+    iconClassName: stack-overflow-color
+  - key: Github
+    value: https://github.com/gautamnaik1994
+    iconClassName: github
+  - key: Behance
+    value: https://www.behance.net/gautamnaik1994
+    iconClassName: behance
+  - key: Codepen
+    value: https://codepen.io/gautamnaik1994/
+    iconClassName: codepen
+  - key: Linkedin
+    value: https://www.linkedin.com/in/gautamnaik1994/
+    iconClassName: linkedin
 ---
 
 I'm a **Designer & Front-end Developer** with 5 **years** of professional experience. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces, mobile interfaces, and frontend web development.

@@ -71,6 +71,12 @@ collections: # A list of collections the CMS should be able to edit
               default: 'Frontend Developer & Designer',
             }
           - {
+              label: 'Education',
+              name: 'education',
+              widget: 'string',
+              default: 'Bachelors in Computer Science',
+            }
+          - {
               label: 'Company',
               name: 'company',
               widget: 'string',
@@ -124,9 +130,9 @@ collections: # A list of collections the CMS should be able to edit
                 name: value
                 widget: string
                 default: 'https/StackOverflow.com'
-              - label: Icon
-                name: icon
-                widget: file
+              - label: Icon ClassName
+                name: iconClassName
+                widget: string
           - { label: 'About Me', name: 'body', widget: 'markdown' }
       - name: 'blogCategories'
         label: 'Blog Categories'
