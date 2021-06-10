@@ -72,19 +72,23 @@
   content: '\e909';
 }
 .icon-linkedin:before {
+  color: #0077b5;
   content: '\e90a';
 }
 .icon-github:before {
   content: '\e910';
+  color: white;
 }
 .icon-stack-overflow:before {
   content: '\e911';
 }
 .icon-behance:before {
+  color: #1769ff;
   content: '\e912';
 }
 .icon-codepen:before {
   content: '\e913';
+  color: white;
 }
 .icon-moon:before {
   content: '\e914';
@@ -94,6 +98,9 @@
 }
 .icon-arrow:before {
   content: '\e916';
+}
+.icon-stack-overflow-color {
+  position: relative;
 }
 .icon-stack-overflow-color:before {
   content: '\e909';

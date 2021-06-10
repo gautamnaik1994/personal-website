@@ -15,22 +15,14 @@ const StyledAboutMe = styled.div`
   }
 `;
 
-const AboutMeImage = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: auto;
-  transform: translate(-50%, -50%);
-  opacity: 0.2;
-  z-index: -1;
+const FlexBox = styled.div`
   ${media.desktop} {
-    left: auto;
-    right: 0;
-    transform: translate(0, -50%);
-    width: 450px;
-    opacity: 1;
+    display: flex;
   }
+`;
+
+const BlackBox = styled.div`
+  background-color: black;
 `;
 
 interface Props {
@@ -68,27 +60,33 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
     <section className={`relative ${className}`}>
       <SectionTitle title="About Me" />
 
-      <StyledAboutMe>
-        <MDXRenderer>{aboutMe}</MDXRenderer>
-      </StyledAboutMe>
-      <div>
-        {_data.socialLinks.map((link, index) => {
-          return (
-            <a href={link.value} key={index}>
-              <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
-            </a>
-          );
-        })}
-        <div>
-          <i className="icon-email" /> {_data.email}{' '}
-        </div>
-        <div>
-          <i className="icon-marker" /> {_data.location}{' '}
-        </div>
-        <div>
-          <i className="icon-cake" /> {_data.bday}{' '}
-        </div>
-      </div>
+      <FlexBox>
+        <StyledAboutMe>
+          <MDXRenderer>{aboutMe}</MDXRenderer>
+        </StyledAboutMe>
+        <BlackBox>
+          <h3 className="">Social Links</h3>
+          {_data.socialLinks.map((link, index) => {
+            return (
+              <a href={link.value} key={index}>
+                <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
+              </a>
+            );
+          })}
+          <h3 className="">Useless Info</h3>
+          <div>
+            <i className="icon-email" /> {_data.email}{' '}
+          </div>
+          <div>
+            <i className="icon-marker" /> {_data.location}{' '}
+          </div>
+          <div>
+            <i className="icon-cake" /> {_data.bday}{' '}
+          </div>
+          <h3 className="">Education</h3>
+          <h4>{_data.education}</h4>
+        </BlackBox>
+      </FlexBox>
     </section>
   );
 };
