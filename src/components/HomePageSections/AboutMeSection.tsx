@@ -11,18 +11,39 @@ const StyledAboutMe = styled.div`
     font-size: 16px;
   }
   ${media.desktop} {
-    width: 550px;
+    /* width: 550px; */
+    padding-right: 30px;
   }
 `;
 
 const FlexBox = styled.div`
   ${media.desktop} {
     display: flex;
+    align-items: flex-start;
   }
 `;
 
 const BlackBox = styled.div`
-  background-color: black;
+  background: var(--sideCardColor);
+  padding: 30px;
+  border-radius: 8px;
+  h3 {
+    font-size: 16px;
+    color: var(--accent);
+  }
+  .link-list {
+    a {
+      display: block;
+      margin-top: 10px;
+      color: var(--bodyColor);
+    }
+    i {
+      margin-right: 10px;
+    }
+  }
+  ${media.desktop} {
+    flex: 0 0 400px;
+  }
 `;
 
 interface Props {
@@ -65,14 +86,17 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
           <MDXRenderer>{aboutMe}</MDXRenderer>
         </StyledAboutMe>
         <BlackBox>
-          <h3 className="">Social Links</h3>
-          {_data.socialLinks.map((link, index) => {
-            return (
-              <a href={link.value} key={index}>
-                <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
-              </a>
-            );
-          })}
+          <h3 className="mt-0">Social Links</h3>
+          <div className="link-list">
+            {_data.socialLinks.map((link, index) => {
+              return (
+                <a href={link.value} key={index}>
+                  <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
+                </a>
+              );
+            })}
+          </div>
+
           <h3 className="">Useless Info</h3>
           <div>
             <i className="icon-email" /> {_data.email}{' '}
@@ -84,7 +108,7 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
             <i className="icon-cake" /> {_data.bday}{' '}
           </div>
           <h3 className="">Education</h3>
-          <h4>{_data.education}</h4>
+          <div>{_data.education}</div>
         </BlackBox>
       </FlexBox>
     </section>

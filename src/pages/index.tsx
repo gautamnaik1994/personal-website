@@ -13,7 +13,7 @@ import { Fragment } from 'react';
 
 export default () => (
   <Fragment>
-    <HomePageHeader />
+    {/* <HomePageHeader /> */}
     <Container>
       <AboutMeSection className="six-rem-mb six-rem-mt" />
       <ExperienceSection className="six-rem-mb six-rem-mt" />
