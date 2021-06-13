@@ -8,6 +8,6 @@ status: stop
 
 <!--StartFragment-->
 
-Studied
+Studied some stuff
 
 <!--EndFragment-->

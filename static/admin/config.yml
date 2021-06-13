@@ -262,11 +262,13 @@ collections: # A list of collections the CMS should be able to edit
     create: true
     slug: 'project-{{title}}'
     description: 'Projects Info'
+    sortable_fields: ['order']
     fields:
-      - { label: 'Name', name: 'title', widget: 'string' }
-      - { label: 'Image', name: 'image', widget: 'image' }
-      - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Order', name: 'order', widget: 'number' }
+      - { label: 'Name', name: 'title', widget: 'string'}
+      - { label: 'Image', name: 'image', widget: 'image', required: false}
+      - { label: 'Description', name: 'body', widget: 'markdown'}
+      - { label: 'Order', name: 'order', widget: 'number'}
+      - { label: 'Project Color', name: 'projectColor', widget: 'color', enableAlpha: true, allowInput: true}
       - label: 'Details'
         name: 'details'
         widget: 'list'

@@ -44,7 +44,7 @@ const Skill = styled.div`
     }
   }
   ${media.tablet} {
-    flex: 0 0 270px;
+    flex: 0 0 320px;
   }
 `;
 

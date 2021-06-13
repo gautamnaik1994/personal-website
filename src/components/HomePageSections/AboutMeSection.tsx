@@ -27,19 +27,32 @@ const BlackBox = styled.div`
   background: var(--sideCardColor);
   padding: 30px;
   border-radius: 8px;
+  box-shadow: var(--cardShadow);
   h3 {
     font-size: 16px;
     color: var(--accent);
+    margin-bottom: 6px;
   }
   .link-list {
     a {
       display: block;
-      margin-top: 10px;
       color: var(--bodyColor);
+      line-height: 1.5rem;
     }
-    i {
-      margin-right: 10px;
+    a + a {
     }
+  }
+  i {
+    margin-right: 10px;
+  }
+  .icon-cake {
+    color: #b178f4;
+  }
+  .icon-email {
+    color: #7af478;
+  }
+  .icon-marker {
+    color: #ff8c32;
   }
   ${media.desktop} {
     flex: 0 0 400px;
@@ -90,14 +103,21 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
           <div className="link-list">
             {_data.socialLinks.map((link, index) => {
               return (
-                <a href={link.value} key={index}>
+                <a
+                  href={link.value}
+                  key={index}
+                  target="_blank"
+                  title={link.key}
+                  rel="noreferrer"
+                >
                   <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
                 </a>
               );
             })}
           </div>
-
-          <h3 className="">Useless Info</h3>
+          <h3 className="">Education</h3>
+          <div>{_data.education}</div>
+          <h3 className="">Other Useless Info</h3>
           <div>
             <i className="icon-email" /> {_data.email}{' '}
           </div>
@@ -107,8 +127,6 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
           <div>
             <i className="icon-cake" /> {_data.bday}{' '}
           </div>
-          <h3 className="">Education</h3>
-          <div>{_data.education}</div>
         </BlackBox>
       </FlexBox>
     </section>

@@ -77,7 +77,7 @@
 }
 .icon-github:before {
   content: '\e910';
-  color: white;
+  color: var(--bodyColor);
 }
 .icon-stack-overflow:before {
   content: '\e911';
@@ -88,7 +88,7 @@
 }
 .icon-codepen:before {
   content: '\e913';
-  color: white;
+  color: var(--bodyColor);
 }
 .icon-moon:before {
   content: '\e914';
@@ -256,7 +256,7 @@ code {
 .m-0 {
   margin: 0 !important;
 }
-.mt-0{
+.mt-0 {
   margin-top: 0;
 }
 .mb-0 {
