@@ -43,9 +43,33 @@ const ScriptTag = () => {
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />;
 };
 
-export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
+export const onRenderBody = ({
+  setPreBodyComponents,
+  setHeadComponents,
+  setPostBodyComponents,
+  setBodyAttributes,
+}) => {
   // setHeadComponents(<FallbackStyles />);
-  setPreBodyComponents(<ScriptTag />);
+  setHeadComponents([
+    <link as="script" rel="preload" href="/scripts/preloader.js" />,
+  ]);
+  // setPreBodyComponents(<ScriptTag />);
+  setPreBodyComponents([
+    <ScriptTag />,
+    <div id="preloader">
+      {/* Optional: */}
+      <img
+        src="/img/logo.svg"
+        alt="logo"
+        style={{ height: 'calc(3.23625vw + 77.86408px)' }}
+      />
+      <div className="preloader_animation"></div>
+    </div>,
+  ]);
+  setBodyAttributes({
+    className: 'preloader_active',
+  });
+  setPostBodyComponents([<script src="/scripts/preloader.js" />]);
 };
 
 export function wrapPageElement({ element, props }) {
