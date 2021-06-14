@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
-import DownloadCV from '../components/DownloadCV';
+import DownloadCV from '../components/DownloadCVBox';
 
 export default {
   title: 'LandingPage/DownloadCV',

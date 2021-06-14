@@ -329,9 +329,9 @@ class Metaballs extends React.Component<IProps, IState> {
 
     if (this.state.theme === 0) {
       // gl_FragColor = vec4(0.12, 0.15, 0.21, 1.0);
-      gl.uniform4f(this.bgColorUniformLocation, 0.12, 0.15, 0.21, 1);
+      gl.uniform4f(this.bgColorUniformLocation, 0.1294, 0.1529, 0.2196, 1);
     } else {
-      gl.uniform4f(this.bgColorUniformLocation, 1.0, 1.0, 1.0, 1.0);
+      gl.uniform4f(this.bgColorUniformLocation, 0.898, 0.898, 0.898, 1.0);
     }
 
     gl.uniform4f(
@@ -346,9 +346,9 @@ class Metaballs extends React.Component<IProps, IState> {
   changeBackground = (val: string): void => {
     if (val === 'dark' && this.gl) {
       // gl_FragColor = vec4(0.12, 0.15, 0.21, 1.0);
-      this.gl.uniform4f(this.bgColorUniformLocation, 0.12, 0.15, 0.21, 1);
+      this.gl.uniform4f(this.bgColorUniformLocation, 0.1294, 0.1529, 0.2196, 1);
     } else if (val === 'light' && this.gl) {
-      this.gl.uniform4f(this.bgColorUniformLocation, 1.0, 1.0, 1.0, 1.0);
+      this.gl.uniform4f(this.bgColorUniformLocation, 0.898, 0.898, 0.898, 1.0);
     }
   };
 
