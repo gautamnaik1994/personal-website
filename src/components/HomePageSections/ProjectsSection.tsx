@@ -25,7 +25,7 @@ const ProjectList = styled.div`
   ${media.desktop} {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: center;
   }
 `;

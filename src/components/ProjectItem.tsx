@@ -16,6 +16,9 @@ const ProjectItem = styled.div`
   background-color: var(--cardColor);
   box-shadow: var(--cardShadow);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .btn-holder {
     text-align: center;
   }
@@ -45,32 +48,9 @@ const ProjectItem = styled.div`
     font-variant-ligatures: none;
     line-height: 2rem;
   }
-  .icon-arrow-right {
-    margin-left: 3px;
-    vertical-align: text-bottom;
-    font-weight: bold;
-  }
-  .info-sec {
-    overflow: hidden;
-  }
-  .more-less-btn {
-    border: none;
-    color: var(--primary);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 3px solid var(--bodyBackgroundColor);
-    padding: 0;
-    background: var(--cardColor);
-    margin: 0;
-    position: absolute;
-    right: 20px;
-    bottom: -20px;
-    i {
-      vertical-align: text-bottom;
-      transform: rotate(90deg);
-      display: inline-block;
-      font-weight: bold;
+  .link-holder {
+    a + a {
+      margin-left: 15px;
     }
   }
 `;
@@ -94,62 +74,45 @@ export default ({
   description,
   ...props
 }: Props): JSX.Element => {
-  const defaultHeight = '0px';
-  const [open, toggle] = useState(false);
-  const [contentHeight, setContentHeight] = useState(defaultHeight);
-  const [ref, { height }] = useMeasure();
-  const expand = useSpring({
-    config: { mass: 4, tension: 250, friction: 30 },
-    height: open ? `${contentHeight + 25}px` : defaultHeight,
-  });
-
-  const rotate = useSpring({
-    config: { mass: 4, tension: 250, friction: 30 },
-    transform: open ? `rotate(270deg)` : 'rotate(90deg)',
-  });
-  useEffect(() => {
-    //Sets initial height
-    setContentHeight(height);
-
-    //Adds resize event listener
-    window.addEventListener('resize', setContentHeight(height));
-
-    // Clean-up
-    return window.removeEventListener('resize', setContentHeight(height));
-  }, [height]);
+  //const defaultHeight = '0px';
+  //const [open, toggle] = useState(false);
+  //const [contentHeight, setContentHeight] = useState(defaultHeight);
+  //const [ref, { height }] = useMeasure();
+  //const expand = useSpring({
+  //config: { mass: 4, tension: 250, friction: 30 },
+  //height: open ? `${contentHeight + 25}px` : defaultHeight,
+  //});
+  //const rotate = useSpring({
+  //config: { mass: 4, tension: 250, friction: 30 },
+  //transform: open ? `rotate(270deg)` : 'rotate(90deg)',
+  //});
+  //useEffect(() => {
+  //setContentHeight(height);
+  //window.addEventListener('resize', setContentHeight(height));
+  //return window.removeEventListener('resize', setContentHeight(height));
+  //}, [height]);
 
   return (
     <ProjectItem className={props.className}>
-      <div className="img-container" style={{ background: color }}>
-        {banner ? <img src={banner} alt={title} /> : <>{title}</>}
-      </div>
-      <h2 className="m-0 text-primary">{title}</h2>
-      <MDXRenderer>{description}</MDXRenderer>
-      <animated.div className="info-sec" style={expand}>
-        <div ref={ref} className="info-inner">
-          <div>
-            {details.map(({ key, value }) => (
-              <Item key={key} label={key} value={value} />
-            ))}
-          </div>
+      <div className="top-section">
+        <div className="img-container" style={{ background: color }}>
+          {banner ? <img src={banner} alt={title} /> : <>{title}</>}
         </div>
-      </animated.div>
-
-      <div>
+        <h2 className="m-0 text-primary">{title}</h2>
+        <MDXRenderer>{description}</MDXRenderer>
+        <div>
+          {details.map(({ key, value }) => (
+            <Item key={key} label={key} value={value} />
+          ))}
+        </div>
+      </div>
+      <div className="one-rem-mt link-holder">
         {links.map(({ key, value }) => (
           <a key={key} href={value}>
             {key}
           </a>
         ))}
       </div>
-      <button
-        className="more-less-btn"
-        onClick={() => toggle(!open)}
-        aria-label="Show Responsibilities"
-        title="Show Responsibilities"
-      >
-        <animated.i className=" icon-arrow-right" style={rotate} />{' '}
-      </button>
     </ProjectItem>
   );
 };
