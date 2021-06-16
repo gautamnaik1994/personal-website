@@ -1,15 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
-import Layout from '../components/Layout';
 import HomePageHeader from '../components/HomePageSections/HomePageHeader';
 import Container from '../components/Container';
-import SubContainer from '../components/SubContainer';
 import AboutMeSection from '../components/HomePageSections/AboutMeSection';
 import ExperienceSection from '../components/HomePageSections/ExperienceSection';
 import SkillsSection from '../components/HomePageSections/SkillsSection';
 import BlogsSection from '../components/HomePageSections/BlogsSection';
 import ProjectsSection from '../components/HomePageSections/ProjectsSection';
 import WorkExperience from '../components/HomePageSections/WorkExperience';
+import OuterLinks from '../components/OuterLinks';
 import { Fragment } from 'react';
 
 export default () => (
@@ -23,5 +21,6 @@ export default () => (
       <WorkExperience className="six-rem-mb six-rem-mt" />
       <ProjectsSection className="six-rem-mb six-rem-mt" />
     </Container>
+    <OuterLinks />
   </Fragment>
 );

@@ -19,16 +19,6 @@ import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 import { setColors, getThemeValue } from '../utils/themeConfig';
 import Sidebar from './Sidebar';
 
-// type ThemeChangeContextProps = {
-//   toggleTheme: () => void;
-// };
-
-// export const ThemeChangeContext = createContext<
-//   Partial<ThemeChangeContextProps>
-// >({});
-
-// This context provider is passed to any component requiring the context
-
 export default ({ site, children }: LayoutProps): JSX.Element => {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
 
