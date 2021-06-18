@@ -28,6 +28,8 @@ const BlackBox = styled.div`
   padding: 30px;
   border-radius: 8px;
   box-shadow: var(--cardShadow);
+  position: relative;
+  overflow: hidden;
   h3 {
     font-size: 16px;
     color: var(--accent);
@@ -53,6 +55,37 @@ const BlackBox = styled.div`
   }
   .icon-marker {
     color: #ff8c32;
+  }
+  .circle {
+    position: absolute;
+    --dims: 250px;
+    top: calc(var(--dims) * -0.5);
+    right: calc(var(--dims) * -0.5);
+    width: var(--dims);
+    height: var(--dims);
+    border-radius: 50%;
+    background: #f9a43f;
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      width: var(--dims);
+      height: var(--dims);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:after {
+      width: calc(var(--dims) * 0.5);
+      height: calc(var(--dims) * 0.5);
+      background: #e34850;
+    }
+    &:before {
+      width: calc(var(--dims) * 0.75);
+      height: calc(var(--dims) * 0.75);
+      background: #f76d74;
+    }
   }
   ${media.desktop} {
     flex: 0 0 400px;
@@ -99,6 +132,7 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
           <MDXRenderer>{aboutMe}</MDXRenderer>
         </StyledAboutMe>
         <BlackBox>
+          <div className="circle" />
           <h3 className="mt-0">Social Links</h3>
           <div className="link-list">
             {_data.socialLinks.map((link, index) => {

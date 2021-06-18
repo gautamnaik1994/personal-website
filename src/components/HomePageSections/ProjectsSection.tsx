@@ -54,6 +54,7 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
     {
       allMdx(
         filter: { fileAbsolutePath: { regex: "/_data/projects/" } }
+        sort: { order: ASC, fields: frontmatter___order }
         limit: 6
       ) {
         edges {

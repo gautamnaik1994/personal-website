@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import Container from './Container';
 import theme from 'styled-theming';
 import media from '../utils/MediaQueries';
 import Logo from './Logo';
@@ -14,17 +15,6 @@ const Footer = styled.footer`
   min-height: 150px;
   border-top: 1px solid ${DividerColor};
   border-bottom: 5px solid var(--primary);
-  ${media.desktop} {
-    display: grid;
-    grid-template-columns:
-      auto minmax(auto, 200px) minmax(550px, 650px) minmax(0, 200px)
-      auto;
-    grid-gap: 15px;
-  }
-  .inner {
-    padding: 15px 15px 55px 15px;
-    grid-column: 3/4;
-  }
   .bottom-info {
     text-align: center;
     small {
@@ -44,7 +34,7 @@ const getYear = () => {
 
 export default () => (
   <Footer>
-    <div className="inner">
+    <Container>
       <Logo />
       <p>
         This is created and maintained by Gautam Naik. If you see anything
@@ -74,6 +64,6 @@ export default () => (
         </small>
         <small>&copy; Copyright {getYear()}, Gautam Naik</small>
       </div>
-    </div>
+    </Container>
   </Footer>
 );

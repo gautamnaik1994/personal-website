@@ -44,7 +44,7 @@ export default () => {
   });
   return (
     <HomePageHeader ref={HomePageHeaderRef}>
-      <Metaballs showTweakPane={false} /> 
+      <Metaballs showTweakPane={false} />
       <Name />
     </HomePageHeader>
   );

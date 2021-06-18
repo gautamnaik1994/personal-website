@@ -392,14 +392,13 @@ class Metaballs extends React.Component<IProps, IState> {
 
   render() {
     const { mode } = this.context;
-    console.log('Mode ', mode);
     this.changeBackground(mode);
     return (
       <Fragment>
         <div
           style={{
             height: '100vh',
-            //marginTop: 60,
+            overflow: 'hidden',
           }}
         >
           <canvas ref={this.canvasRef} id="main"></canvas>
