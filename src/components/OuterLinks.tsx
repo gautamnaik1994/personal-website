@@ -11,6 +11,12 @@ const StyledOuterLinks = styled.div`
     position: absolute;
     bottom: 0;
     --sideSpace: 15px;
+    a {
+      transition: transform 0.3s ease-in;
+      &:hover {
+        transform: translateY(-4px);
+      }
+    }
     &:after {
       content: '';
       height: 150px;
@@ -30,8 +36,17 @@ const StyledOuterLinks = styled.div`
   }
   .right-side {
     right: var(--sideSpace);
+    i {
+      display: inline-block;
+      color: #7af478;
+      margin-bottom: 5px;
+      position: relative;
+      right: 3px;
+      font-size: 20px;
+    }
     .inner {
       writing-mode: vertical-rl;
+      color: var(--bodyColor);
     }
   }
   display: none;
@@ -77,9 +92,9 @@ export default () => {
         })}
       </div>
       <div className="right-side">
-        <div className="inner">
+        <a className="inner" href={`mailto:${_data.email}`}>
           <i className="icon-email" /> {_data.email}{' '}
-        </div>
+        </a>
       </div>
     </StyledOuterLinks>
   );
