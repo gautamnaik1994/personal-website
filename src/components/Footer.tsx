@@ -15,6 +15,7 @@ const Footer = styled.footer`
   min-height: 150px;
   border-top: 1px solid ${DividerColor};
   border-bottom: 5px solid var(--primary);
+  padding: 25px;
   .bottom-info {
     text-align: center;
     small {

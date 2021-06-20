@@ -14,7 +14,7 @@ export default () => (
   <Fragment>
     <HomePageHeader />
     <Container>
-      {/*<AboutMeSection className="six-rem-mb six-rem-mt" />*/}
+      <AboutMeSection className="six-rem-mb six-rem-mt" />
       <ExperienceSection className="six-rem-mb six-rem-mt" />
       <SkillsSection className="six-rem-mb six-rem-mt" />
       <BlogsSection className="six-rem-mb six-rem-mt" />
