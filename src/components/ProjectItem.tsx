@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
+import { rgba, rgb, parseToRgb } from 'polished';
 import { useSpring, animated } from 'react-spring';
 import { useMeasure } from 'react-use';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -19,21 +20,25 @@ const ProjectItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 1rem;
   .btn-holder {
     text-align: center;
   }
   .img-container {
-    margin: -15px;
-    margin-bottom: 1rem;
+    margin-bottom: -1rem;
     height: 200px;
     padding: 45px;
-    border-radius: 8px 8px 0 0;
+    border-radius: 20px;
     color: white;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     display: grid;
     place-content: center;
+    line-height: 1.2;
+    position: relative;
+    top: -2rem;
+    box-shadow: 0 6px 40px 0px var(--boxShadowcolor);
   }
   img {
     width: 100%;
@@ -91,11 +96,15 @@ export default ({
   //window.addEventListener('resize', setContentHeight(height));
   //return window.removeEventListener('resize', setContentHeight(height));
   //}, [height]);
+  //
 
   return (
     <ProjectItem className={props.className}>
       <div className="top-section">
-        <div className="img-container" style={{ background: color }}>
+        <div
+          className="img-container"
+          style={{ background: color, '--boxShadowcolor': rgba(color, 0.4) }}
+        >
           {banner ? <img src={banner} alt={title} /> : <>{title}</>}
         </div>
         <h2 className="m-0 text-primary">{title}</h2>
@@ -109,7 +118,7 @@ export default ({
       <div className="one-rem-mt link-holder">
         {links.map(({ key, value }) => (
           <a key={key} href={value}>
-            {key}
+            {key} <i className="icon-open-new-tab" />
           </a>
         ))}
       </div>

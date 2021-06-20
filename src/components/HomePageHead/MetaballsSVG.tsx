@@ -270,8 +270,8 @@ class Metaballs extends React.Component<IProps, IState> {
               {/* <feDropShadow dx="0" dy="0" stdDeviation="0" /> */}
             </filter>
             <linearGradient id="myGradient" gradientTransform="rotate(90)">
-              <stop offset="1%" stopColor="#0575E6" />
-              <stop offset="99%" stopColor="#00F260" />
+              <stop offset="1%" stopColor="#57fde3" />
+              <stop offset="99%" stopColor="#570ae3" />
             </linearGradient>
           </defs>
           <rect
@@ -283,7 +283,7 @@ class Metaballs extends React.Component<IProps, IState> {
           <rect
             width="100%"
             height="100%"
-            fill={mode === 'dark' ? '#212738' : '#ffffff'}
+            fill={mode === 'dark' ? '#212738' : '#E5E5E5'}
             strokeWidth="0"
             mask="url(#metaballsMask)"
           />

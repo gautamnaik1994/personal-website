@@ -4,7 +4,7 @@ image: /img/grassdoorlogo.png
 description: Grassdoor is a web platform that allows users to place orders for
   medical supplies and get them delivered at home.
 order: 0
-projectColor: "#36c1c8"
+projectColor: "#38c5cb"
 details:
   - key: "Role "
     value: "UI designer and Frontend Developer  "

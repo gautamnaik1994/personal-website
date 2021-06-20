@@ -57,6 +57,8 @@ const BlackBox = styled.div`
     color: #ff8c32;
   }
   .circle {
+    transition: transform 10s ease-in;
+    transform-origin: center center;
     position: absolute;
     --dims: 250px;
     top: calc(var(--dims) * -0.5);
@@ -89,6 +91,11 @@ const BlackBox = styled.div`
   }
   ${media.desktop} {
     flex: 0 0 400px;
+  }
+  &:hover {
+    .circle {
+      transform: scale(1.5) translate(-10%, 10%);
+    }
   }
 `;
 

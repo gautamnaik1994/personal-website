@@ -12,21 +12,18 @@ const StyledLinkButton = styled(LinkButton)`
 `;
 
 const StyledProjectItem = styled(ProjectItem)`
-  margin-bottom: 2rem;
   ${media.desktop} {
-    flex: 0 0 350px;
-    & + div {
-      margin-left: 30px;
-    }
+    margin-bottom: 0;
   }
 `;
 
 const ProjectList = styled.div`
+  margin-top: 3rem;
   ${media.desktop} {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px 25px;
   }
 `;
 
@@ -104,11 +101,6 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
           );
         })}
       </ProjectList>
-      <div className="text-center">
-        <StyledLinkButton title="Go To All Blogs" variant="primary" to="/blog/">
-          Go to All projects
-        </StyledLinkButton>
-      </div>
     </section>
   );
 };

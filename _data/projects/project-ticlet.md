@@ -4,10 +4,12 @@ image: /img/ticlet.png
 order: 3
 projectColor: "#6b75d2"
 details:
-  - key: Languages
-    value: HTML, CSS
+  - key: "Role "
+    value: UI Designer
+  - key: "Technologies Used "
+    value: Photoshop, Illustrator
 links:
-  - key: Project Link
-    value: HTML, CSS
+  - key: Design Link
+    value: https://www.behance.net/gallery/50665321/Events-App-UI-Design
 ---
-Ticket booking
+Ticlet is a mobile app that allows users to explore the nightlife in clubs in Goa & book tickets for events happening around your location.

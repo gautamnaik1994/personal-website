@@ -83,6 +83,12 @@ collections: # A list of collections the CMS should be able to edit
               default: 'Bidchat',
             }
           - {
+              label: 'Company Website',
+              name: 'companyWebsite',
+              widget: 'string',
+              default: 'https://bidchat.in/',
+            }
+          - {
               label: 'Birthdate',
               name: 'bday',
               widget: 'string',
@@ -268,7 +274,7 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Image', name: 'image', widget: 'image', required: false}
       - { label: 'Description', name: 'body', widget: 'markdown'}
       - { label: 'Order', name: 'order', widget: 'number'}
-      - { label: 'Project Color', name: 'projectColor', widget: 'color', enableAlpha: true, allowInput: true}
+      - { label: 'Project Color', name: 'projectColor', widget: 'color', enableAlpha: false, allowInput: true}
       - label: 'Details'
         name: 'details'
         widget: 'list'

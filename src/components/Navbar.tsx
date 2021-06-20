@@ -32,7 +32,7 @@ const Navbar = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: var(--bodyBackgroundColor);
+  background-color: rgba(var(--bodyBackgroundColorRgb), 0.7);
   box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.3);
   padding: 10px 15px;
   position: fixed;
@@ -41,6 +41,7 @@ const Navbar = styled.nav`
   right: 0;
   width: 100%;
   z-index: 2;
+  backdrop-filter: blur(10px);
   button {
     display: none;
     //margin-left: 5px;

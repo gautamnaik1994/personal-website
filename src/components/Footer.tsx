@@ -37,17 +37,13 @@ export default () => (
     <Container>
       <Logo />
       <p>
-        This is created and maintained by Gautam Naik. If you see anything
+        This website is built and maintained by Gautam Naik. If you see anything
         broken, you are welcome to create a pull request&nbsp;
         <Link
           title="Github Link"
           to="https://github.com/gautamnaik1994/personal-website"
         >
           here
-        </Link>
-        . To know more about me, visit my website{' '}
-        <Link title="Personal Website Link" to="www.gautamnaik.netlify.com">
-          www.gautamnaik.netlify.com
         </Link>
         .
       </p>

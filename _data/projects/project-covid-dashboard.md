@@ -15,6 +15,6 @@ links:
 ---
 <!--StartFragment-->
 
-Simple Covid Tracker built using Python, Plotly and Dash
+Simple Covid Tracker that shows the daily infection, recovered, and death count of India in various graphical formats. Takes little time to load as it uses the free tier of Heroku server.
 
 <!--EndFragment-->

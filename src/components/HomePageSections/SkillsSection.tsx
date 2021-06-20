@@ -35,7 +35,10 @@ interface SkillProps {
 const SkillsSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
-      allMdx(filter: { fileAbsolutePath: { regex: "/skills/" } }) {
+      allMdx(
+        filter: { fileAbsolutePath: { regex: "/skills/" } }
+        sort: { order: DESC, fields: frontmatter___value }
+      ) {
         nodes {
           frontmatter {
             title

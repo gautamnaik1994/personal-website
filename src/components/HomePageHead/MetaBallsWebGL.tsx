@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { Fragment } from 'react';
+import MetaBallsSVG from './MetaballsSVG';
 import Tweakpane from 'tweakpane';
 import { ThemeContext, withTheme } from 'styled-components';
 
@@ -69,6 +70,7 @@ class Metaballs extends React.Component<IProps, IState> {
       g: 0.5,
       b: 0.89,
       theme: 0,
+      webGLNotSupported: false,
     };
   }
 
@@ -119,7 +121,11 @@ class Metaballs extends React.Component<IProps, IState> {
       console.log('not supported');
     }
 
-    if (!this.gl) throw new Error('WebGL not supported');
+    //if (!this.gl) throw new Error('WebGL not supported');
+    if (!this.gl) {
+      this.setState({ webGLNotSupported: true });
+      return;
+    }
 
     this.setupGL(this.gl);
     this.renderBalls(this.state.ballCount);
@@ -393,6 +399,11 @@ class Metaballs extends React.Component<IProps, IState> {
   render() {
     const { mode } = this.context;
     this.changeBackground(mode);
+
+    if (this.state.webGLNotSupported) {
+      return <MetaBallsSVG />;
+    }
+
     return (
       <Fragment>
         <div

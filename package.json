@@ -52,6 +52,7 @@
     "styled-components": "^5.2.1",
     "styled-theming": "^2.2.0",
     "tweakpane": "^2.0.0",
+    "use-sound": "^4.0.0",
     "vanilla-framework": "^2.29.0"
   },
   "devDependencies": {
