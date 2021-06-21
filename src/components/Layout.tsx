@@ -19,16 +19,6 @@ import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 import { setColors, getThemeValue } from '../utils/themeConfig';
 import Sidebar from './Sidebar';
 
-// type ThemeChangeContextProps = {
-//   toggleTheme: () => void;
-// };
-
-// export const ThemeChangeContext = createContext<
-//   Partial<ThemeChangeContextProps>
-// >({});
-
-// This context provider is passed to any component requiring the context
-
 export default ({ site, children }: LayoutProps): JSX.Element => {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
 
@@ -63,7 +53,7 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
         <title>Gautam Naik</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700display=swap&text=0123456789"
+          href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap&text=0123456789"
           rel="stylesheet"
         />
         <link

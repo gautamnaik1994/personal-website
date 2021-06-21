@@ -93,7 +93,7 @@ const backgroundGrad = (props: GradientProps) => css`
 `;
 
 const SkillMeter = styled.div<{ glow: string }>`
-  --glassDims: 100px;
+  --glassDims: 130px;
   text-align: center;
   .value {
     font-weight: var(--fontWeightMedium);

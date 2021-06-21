@@ -2,6 +2,7 @@
 position: Frontend Developer & Designer
 education: "Bachelors in Computer Science "
 company: Bidchat
+companyWebsite: https://bidchat.in/
 bday: 2nd May '94
 email: gautamnaik1994@gmail.com
 location: Panaji - Goa
