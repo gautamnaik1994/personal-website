@@ -16,6 +16,9 @@ const SkillList = styled.div`
       margin-left: 30px;
     }
   }
+  ${media.desktop} {
+    justify-content: center;
+  }
 `;
 
 interface Props {
@@ -32,7 +35,10 @@ interface SkillProps {
 const SkillsSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
-      allMdx(filter: { fileAbsolutePath: { regex: "/skills/" } }) {
+      allMdx(
+        filter: { fileAbsolutePath: { regex: "/skills/" } }
+        sort: { order: DESC, fields: frontmatter___value }
+      ) {
         nodes {
           frontmatter {
             title
@@ -48,7 +54,7 @@ const SkillsSection = ({ className }: Props): JSX.Element => {
   `);
   // console.log(data.allMdx.nodes);
   return (
-    <div className={className}>
+    <section className={className}>
       <SectionTitle title="Skills" />
 
       <SkillList>
@@ -63,7 +69,7 @@ const SkillsSection = ({ className }: Props): JSX.Element => {
           );
         })}
       </SkillList>
-    </div>
+    </section>
   );
 };
 

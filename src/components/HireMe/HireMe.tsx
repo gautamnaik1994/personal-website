@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import useSound from 'use-sound';
 import theme from 'styled-theming';
 import { useSpring, animated } from 'react-spring';
 import media from '../../utils/MediaQueries';
@@ -69,10 +70,13 @@ const StyledHireMe = styled.div`
       font-size: 40px;
     }
     width: 380px;
+    position: sticky;
+    top: 70px;
   }
 `;
 
 export default (props): JSX.Element => {
+  const [play] = useSound('/click.mp3', { volume: 0.1 });
   const [entered, setEntered] = useState(false);
   const [entered2, setEntered2] = useState(false);
   const intersectionRef = useRef<HTMLDivElement>(null);
@@ -92,8 +96,10 @@ export default (props): JSX.Element => {
             setEntered(false);
           }
           if (ratio > 0.8) {
+            //play();
             setEntered2(true);
           } else {
+            //play();
             setEntered2(false);
           }
         }
@@ -113,6 +119,11 @@ export default (props): JSX.Element => {
         observer.unobserve(intersectionRef.current);
     };
   }, []);
+
+  useEffect(() => {
+    play();
+  }, [entered2]);
+
   return (
     <StyledHireMe ref={intersectionRef} {...props}>
       <div className="top-sec text-center">

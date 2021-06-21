@@ -19,16 +19,6 @@ import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 import { setColors, getThemeValue } from '../utils/themeConfig';
 import Sidebar from './Sidebar';
 
-// type ThemeChangeContextProps = {
-//   toggleTheme: () => void;
-// };
-
-// export const ThemeChangeContext = createContext<
-//   Partial<ThemeChangeContextProps>
-// >({});
-
-// This context provider is passed to any component requiring the context
-
 export default ({ site, children }: LayoutProps): JSX.Element => {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
 
@@ -61,8 +51,13 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
       <Helmet>
         <html lang="en" />
         <title>Gautam Naik</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,700,700i&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap&text=0123456789"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
         />
         <meta name="robots" content="all" />

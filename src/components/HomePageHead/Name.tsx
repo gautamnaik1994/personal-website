@@ -26,6 +26,11 @@ export default () => (
   <Holder>
     <p>Hi, I am</p>
     <Name>Gautam Naik</Name>
-    <p className="text-right">Frontend Developer @ Bidchat</p>
+    <p className="text-right">
+      Frontend Developer @{' '}
+      <a href="https://bidchat.in/" target="_blank" rel="noreferrer noopener">
+        Bidchat
+      </a>{' '}
+    </p>
   </Holder>
 );

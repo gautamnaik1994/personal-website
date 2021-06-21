@@ -72,19 +72,23 @@
   content: '\e909';
 }
 .icon-linkedin:before {
+  color: #0077b5;
   content: '\e90a';
 }
 .icon-github:before {
   content: '\e910';
+  color: var(--bodyColor);
 }
 .icon-stack-overflow:before {
   content: '\e911';
 }
 .icon-behance:before {
+  color: #1769ff;
   content: '\e912';
 }
 .icon-codepen:before {
   content: '\e913';
+  color: var(--bodyColor);
 }
 .icon-moon:before {
   content: '\e914';
@@ -94,6 +98,9 @@
 }
 .icon-arrow:before {
   content: '\e916';
+}
+.icon-stack-overflow-color {
+  position: relative;
 }
 .icon-stack-overflow-color:before {
   content: '\e909';
@@ -249,6 +256,9 @@ code {
 .m-0 {
   margin: 0 !important;
 }
+.mt-0 {
+  margin-top: 0;
+}
 .mb-0 {
   margin-bottom: 0 !important;
 }
@@ -261,6 +271,7 @@ code {
 .navbar-special-styles.navbar-special-styles {
   box-shadow: none;
   background-color: transparent;
+  backdrop-filter: none;
 }
 
 .half-rem-mt {
@@ -280,6 +291,12 @@ code {
 }
 .four-rem-mb {
   margin-bottom: 4rem;
+}
+.six-rem-mt {
+  margin-top: 6rem;
+}
+.six-rem-mb {
+  margin-bottom: 6rem;
 }
 .one-rem-mb {
   margin-bottom: 1rem;

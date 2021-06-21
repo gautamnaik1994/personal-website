@@ -98,6 +98,7 @@ interface Props {
   readTime: number;
   banner: string;
   responsive: boolean;
+  className?: string;
 }
 
 export default ({
@@ -110,8 +111,9 @@ export default ({
   readTime,
   banner,
   responsive = true,
+  ...props
 }: Props): JSX.Element => (
-  <PostItem responsive={responsive}>
+  <PostItem responsive={responsive} className={props.className}>
     <div className="img-container">
       {/* <img src={banner} /> */}
       <GatsbyImage image={banner} alt={title} />

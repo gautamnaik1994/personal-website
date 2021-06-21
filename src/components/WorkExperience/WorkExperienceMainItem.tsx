@@ -39,6 +39,7 @@ const WorkExperienceMainItem = styled.div`
   &:first-child {
     --gap: 60px;
     margin-bottom: var(--gap);
+    margin-top: 0;
   }
   &:last-child {
     .link-chain {
@@ -200,7 +201,7 @@ export default ({
   return (
     <WorkExperienceMainItem>
       {status === 'play' ? (
-        <div className="test-tube" />
+        <div className="test-tube" title="Frustration Meter" />
       ) : (
         <div className="link-chain" />
       )}

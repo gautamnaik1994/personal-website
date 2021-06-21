@@ -6,4 +6,5 @@ title:
   - Vim
   - Blender
   - CSS
+  - Stock
 ---

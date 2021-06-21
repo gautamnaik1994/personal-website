@@ -10,4 +10,5 @@ title:
   - maths
   - ui
   - ux
+  - stocks
 ---

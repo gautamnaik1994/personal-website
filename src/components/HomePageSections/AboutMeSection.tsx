@@ -11,25 +11,91 @@ const StyledAboutMe = styled.div`
     font-size: 16px;
   }
   ${media.desktop} {
-    width: 550px;
+    /* width: 550px; */
+    padding-right: 30px;
   }
 `;
 
-const AboutMeImage = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: auto;
-  transform: translate(-50%, -50%);
-  opacity: 0.2;
-  z-index: -1;
+const FlexBox = styled.div`
   ${media.desktop} {
-    left: auto;
-    right: 0;
-    transform: translate(0, -50%);
-    width: 450px;
-    opacity: 1;
+    display: flex;
+    align-items: flex-start;
+  }
+`;
+
+const BlackBox = styled.div`
+  background: var(--sideCardColor);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--cardShadow);
+  position: relative;
+  overflow: hidden;
+  h3 {
+    font-size: 16px;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .link-list {
+    a {
+      display: block;
+      color: var(--bodyColor);
+      line-height: 1.5rem;
+    }
+    a + a {
+    }
+  }
+  i {
+    margin-right: 10px;
+  }
+  .icon-cake {
+    color: #b178f4;
+  }
+  .icon-email {
+    color: #7af478;
+  }
+  .icon-marker {
+    color: #ff8c32;
+  }
+  .circle {
+    transition: transform 10s ease-in;
+    transform-origin: center center;
+    position: absolute;
+    --dims: 250px;
+    top: calc(var(--dims) * -0.5);
+    right: calc(var(--dims) * -0.5);
+    width: var(--dims);
+    height: var(--dims);
+    border-radius: 50%;
+    background: #f9a43f;
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      width: var(--dims);
+      height: var(--dims);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:after {
+      width: calc(var(--dims) * 0.5);
+      height: calc(var(--dims) * 0.5);
+      background: #e34850;
+    }
+    &:before {
+      width: calc(var(--dims) * 0.75);
+      height: calc(var(--dims) * 0.75);
+      background: #f76d74;
+    }
+  }
+  ${media.desktop} {
+    flex: 0 0 400px;
+  }
+  &:hover {
+    .circle {
+      transform: scale(1.5) translate(-10%, 10%);
+    }
   }
 `;
 
@@ -51,6 +117,12 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
           location
           aboutMeImage
           cv
+          education
+          socialLinks {
+            key
+            value
+            iconClassName
+          }
         }
       }
     }
@@ -59,25 +131,46 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
   const aboutMe = data.mdx.body;
 
   return (
-    <div className={`relative ${className}`}>
+    <section className={`relative ${className}`}>
       <SectionTitle title="About Me" />
 
-      <AboutMeImage src={_data.aboutMeImage} />
-      <StyledAboutMe>
-        <MDXRenderer>{aboutMe}</MDXRenderer>
-      </StyledAboutMe>
-      <div>
-        <div>
-          <i className="icon-email" /> {_data.email}{' '}
-        </div>
-        <div>
-          <i className="icon-marker" /> {_data.location}{' '}
-        </div>
-        <div>
-          <i className="icon-cake" /> {_data.bday}{' '}
-        </div>
-      </div>
-    </div>
+      <FlexBox>
+        <StyledAboutMe>
+          <MDXRenderer>{aboutMe}</MDXRenderer>
+        </StyledAboutMe>
+        <BlackBox>
+          <div className="circle" />
+          <h3 className="mt-0">Social Links</h3>
+          <div className="link-list">
+            {_data.socialLinks.map((link, index) => {
+              return (
+                <a
+                  href={link.value}
+                  key={index}
+                  target="_blank"
+                  title={link.key}
+                  rel="noreferrer"
+                >
+                  <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
+                </a>
+              );
+            })}
+          </div>
+          <h3 className="">Education</h3>
+          <div>{_data.education}</div>
+          <h3 className="">Other Useless Info</h3>
+          <div>
+            <i className="icon-email" /> {_data.email}{' '}
+          </div>
+          <div>
+            <i className="icon-marker" /> {_data.location}{' '}
+          </div>
+          <div>
+            <i className="icon-cake" /> {_data.bday}{' '}
+          </div>
+        </BlackBox>
+      </FlexBox>
+    </section>
   );
 };
 

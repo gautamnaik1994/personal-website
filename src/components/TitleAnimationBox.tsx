@@ -17,9 +17,10 @@ const TitleAnimationBox = styled.div`
   }
 `;
 
-export default () => {
+export default ({ ...props }) => {
   return (
     <TitleAnimationBox
+      className={props.className}
       dangerouslySetInnerHTML={{ __html: toSvg(new Date(), 35) }}
     ></TitleAnimationBox>
   );

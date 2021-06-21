@@ -8,7 +8,6 @@ import Item from './Item';
 
 const Skill = styled.div`
   border-radius: 8px;
-  margin-bottom: 6rem;
   background-color: var(--cardColor);
   padding: 15px;
   padding-top: 25px;
@@ -45,7 +44,7 @@ const Skill = styled.div`
     }
   }
   ${media.tablet} {
-    flex: 0 0 270px;
+    flex: 0 0 320px;
   }
 `;
 

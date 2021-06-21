@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useSpring, animated, useTransition } from 'react-spring';
 import styled, { ThemeContext } from 'styled-components';
+import useSound from 'use-sound';
 
 const smallCircles = [
   { key: 0, cx: '14', cy: '4' },
@@ -85,6 +86,8 @@ export default ({ toggleTheme, maskName }: Props): JSX.Element => {
     key: number;
   }
 
+  const [play] = useSound('/click.mp3', { volume: 0.1 });
+
   const transition = useTransition(smallCircles, {
     keys: (item: itemProps) => item.key,
     initial: { transform: 'scale(0)' },
@@ -98,7 +101,10 @@ export default ({ toggleTheme, maskName }: Props): JSX.Element => {
   return (
     <ThemeChooser
       title="Toggle Theme"
-      onClick={toggleTheme}
+      onClick={() => {
+        toggleTheme();
+        play();
+      }}
       aria-label="Toggle Theme"
     >
       <animated.svg

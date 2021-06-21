@@ -1,29 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
-import Layout from '../components/Layout';
 import HomePageHeader from '../components/HomePageSections/HomePageHeader';
 import Container from '../components/Container';
-import SubContainer from '../components/SubContainer';
 import AboutMeSection from '../components/HomePageSections/AboutMeSection';
-import Experience from '../components/Experience/Experience';
+import ExperienceSection from '../components/HomePageSections/ExperienceSection';
 import SkillsSection from '../components/HomePageSections/SkillsSection';
-import DownloadCVSection from '../components/HomePageSections/DownloadCVSection';
 import BlogsSection from '../components/HomePageSections/BlogsSection';
+import ProjectsSection from '../components/HomePageSections/ProjectsSection';
 import WorkExperience from '../components/HomePageSections/WorkExperience';
+import OuterLinks from '../components/OuterLinks';
 import { Fragment } from 'react';
 
 export default () => (
   <Fragment>
     <HomePageHeader />
     <Container>
-      <AboutMeSection className="two-rem-mb two-rem-mt" />
-
-      <Experience />
-      {/* <DownloadCVSection /> */}
-
-      <SkillsSection className="four-rem-mt" />
-      <BlogsSection className="two-rem-mb" />
-      <WorkExperience className="two-rem-mb" />
+      <AboutMeSection className="six-rem-mb six-rem-mt" />
+      <ExperienceSection className="six-rem-mb six-rem-mt" />
+      <SkillsSection className="six-rem-mb six-rem-mt" />
+      <BlogsSection className="six-rem-mb six-rem-mt" />
+      <WorkExperience className="six-rem-mb six-rem-mt" />
+      <ProjectsSection className="six-rem-mb six-rem-mt" />
     </Container>
+    <OuterLinks />
   </Fragment>
 );

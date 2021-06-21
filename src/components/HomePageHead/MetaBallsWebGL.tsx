@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { Fragment } from 'react';
+import MetaBallsSVG from './MetaballsSVG';
 import Tweakpane from 'tweakpane';
 import { ThemeContext, withTheme } from 'styled-components';
 
@@ -69,6 +70,7 @@ class Metaballs extends React.Component<IProps, IState> {
       g: 0.5,
       b: 0.89,
       theme: 0,
+      webGLNotSupported: false,
     };
   }
 
@@ -119,7 +121,11 @@ class Metaballs extends React.Component<IProps, IState> {
       console.log('not supported');
     }
 
-    if (!this.gl) throw new Error('WebGL not supported');
+    //if (!this.gl) throw new Error('WebGL not supported');
+    if (!this.gl) {
+      this.setState({ webGLNotSupported: true });
+      return;
+    }
 
     this.setupGL(this.gl);
     this.renderBalls(this.state.ballCount);
@@ -329,9 +335,9 @@ class Metaballs extends React.Component<IProps, IState> {
 
     if (this.state.theme === 0) {
       // gl_FragColor = vec4(0.12, 0.15, 0.21, 1.0);
-      gl.uniform4f(this.bgColorUniformLocation, 0.12, 0.15, 0.21, 1);
+      gl.uniform4f(this.bgColorUniformLocation, 0.1294, 0.1529, 0.2196, 1);
     } else {
-      gl.uniform4f(this.bgColorUniformLocation, 1.0, 1.0, 1.0, 1.0);
+      gl.uniform4f(this.bgColorUniformLocation, 0.898, 0.898, 0.898, 1.0);
     }
 
     gl.uniform4f(
@@ -346,9 +352,9 @@ class Metaballs extends React.Component<IProps, IState> {
   changeBackground = (val: string): void => {
     if (val === 'dark' && this.gl) {
       // gl_FragColor = vec4(0.12, 0.15, 0.21, 1.0);
-      this.gl.uniform4f(this.bgColorUniformLocation, 0.12, 0.15, 0.21, 1);
+      this.gl.uniform4f(this.bgColorUniformLocation, 0.1294, 0.1529, 0.2196, 1);
     } else if (val === 'light' && this.gl) {
-      this.gl.uniform4f(this.bgColorUniformLocation, 1.0, 1.0, 1.0, 1.0);
+      this.gl.uniform4f(this.bgColorUniformLocation, 0.898, 0.898, 0.898, 1.0);
     }
   };
 
@@ -392,14 +398,18 @@ class Metaballs extends React.Component<IProps, IState> {
 
   render() {
     const { mode } = this.context;
-    console.log('Mode ', mode);
     this.changeBackground(mode);
+
+    if (this.state.webGLNotSupported) {
+      return <MetaBallsSVG />;
+    }
+
     return (
       <Fragment>
         <div
           style={{
             height: '100vh',
-            //marginTop: 60,
+            overflow: 'hidden',
           }}
         >
           <canvas ref={this.canvasRef} id="main"></canvas>
