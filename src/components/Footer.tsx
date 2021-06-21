@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import Container from './Container';
 import theme from 'styled-theming';
+import useSocialData from '../hooks/useSocialData';
 import media from '../utils/MediaQueries';
 import Logo from './Logo';
 import Link from './Link';
@@ -11,19 +11,38 @@ const DividerColor = theme('mode', {
   dark: '#414141',
 });
 
+const StyledLogo = styled(Logo)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  h1 {
+    margin-left: 0;
+  }
+`;
+
 const Footer = styled.footer`
-  min-height: 150px;
   border-top: 1px solid ${DividerColor};
   border-bottom: 5px solid var(--primary);
-  padding: 25px;
-  .bottom-info {
-    text-align: center;
-    small {
-      display: block;
+  text-align: center;
+  padding: 2rem;
+  small {
+    display: block;
+  }
+  .social-links {
+    a {
+      font-size: 20px;
+      & + a {
+        margin-left: 15px;
+      }
     }
-    ${media.desktop} {
-      display: flex;
-      justify-content: space-between;
+    i:before {
+      color: var(--bodyColor);
+    }
+  }
+  ${media.tablet} {
+    .social-links {
+      display: none;
     }
   }
 `;
@@ -33,34 +52,37 @@ const getYear = () => {
   return d.getFullYear();
 };
 
-export default () => (
-  <Footer>
-    <Container>
-      <Logo />
-      <p>
-        This website is built and maintained by Gautam Naik. If you see anything
-        broken, you are welcome to create a pull request&nbsp;
-        <Link
-          title="Github Link"
-          to="https://github.com/gautamnaik1994/personal-website"
-        >
-          here
-        </Link>
-        .
-      </p>
-      <div className="bottom-info">
-        <small>
-          Built using{' '}
-          <Link title="GatsbyJs" to="https://www.gatsbyjs.org/">
-            GatsbyJs
-          </Link>{' '}
-          and hosted on{' '}
-          <Link title="Netlify" to="https://www.netlify.com/">
-            Netlify
-          </Link>
-        </small>
-        <small>&copy; Copyright {getYear()}, Gautam Naik</small>
+export default () => {
+  const _data = useSocialData();
+  return (
+    <Footer>
+      <StyledLogo />
+      <div className="social-links">
+        {_data.socialLinks.map((link, index) => {
+          return (
+            <a
+              href={link.value}
+              key={index}
+              target="_blank"
+              title={link.key}
+              rel="noreferrer"
+            >
+              <i className={`icon-${link.iconClassName}`} />
+            </a>
+          );
+        })}
       </div>
-    </Container>
-  </Footer>
-);
+      <small className="two-rem-mt half-rem-mb">
+        Built using{' '}
+        <Link title="GatsbyJs" to="https://www.gatsbyjs.org/">
+          GatsbyJs
+        </Link>{' '}
+        and hosted on{' '}
+        <Link title="Netlify" to="https://www.netlify.com/">
+          Netlify
+        </Link>
+      </small>
+      <small>&copy; Copyright {getYear()}, Gautam Naik</small>
+    </Footer>
+  );
+};

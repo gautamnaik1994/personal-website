@@ -87,8 +87,8 @@ module.exports = {
         name: 'Gautam Naik',
         short_name: 'Gautam Naik',
         start_url: '/',
-        background_color: '#fff',
-        theme_color: '#525dce',
+        background_color: '#212738',
+        theme_color: '#4BACFE',
         display: 'standalone',
         icon: 'assets/logo.png',
         icon_options: {

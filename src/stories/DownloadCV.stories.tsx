@@ -3,11 +3,11 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 
 import DownloadCV from '../components/DownloadCVBox';
 
-export default {
-  title: 'LandingPage/DownloadCV',
-  component: DownloadCV,
-} as Meta;
+//export default {
+//title: 'LandingPage/DownloadCV',
+//component: DownloadCV,
+//} as Meta;
 
-const Template: Story = (args) => <DownloadCV {...args} />;
+//const Template: Story = (args) => <DownloadCV {...args} />;
 
-export const DownloadCVDefault = Template.bind({});
+//export const DownloadCVDefault = Template.bind({});

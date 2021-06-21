@@ -50,6 +50,20 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
     <Fragment>
       <Helmet>
         <html lang="en" />
+        <meta charset="UTF-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1,
+        maximum-scale=1, user-scalable = no, shrink-to-fit=no"
+        />
+        <meta name="apple-mobile-web-app-title" content="Gautam Naik" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="apple-mobile-web-app-title" content=" " />
+        <meta name="application-name" content=" " />
+        <meta name="msapplication-TileColor" content="#ffffff" />
         <title>Gautam Naik</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link

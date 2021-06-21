@@ -27,9 +27,8 @@ const Logo = styled.div<Props>`
 `;
 
 export default ({ className, hideName }: Props): JSX.Element => (
-  <Logo hideName={hideName}>
+  <Logo hideName={hideName} className={className}>
     <svg
-      className={className}
       width="30"
       height="40"
       viewBox="0 0 30 40"

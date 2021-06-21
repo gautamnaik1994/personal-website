@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import useSocialData from '../hooks/useSocialData';
 import styled from 'styled-components';
 import media from '../utils/MediaQueries';
 
@@ -33,6 +34,9 @@ const StyledOuterLinks = styled.div`
       margin-bottom: 20px;
       font-size: 20px;
     }
+    i:before {
+      color: var(--bodyColor);
+    }
   }
   .right-side {
     right: var(--sideSpace);
@@ -58,23 +62,7 @@ const StyledOuterLinks = styled.div`
 `;
 
 export default () => {
-  const data = useStaticQuery(graphql`
-    {
-      mdx(
-        fileAbsolutePath: { regex: "/_data/siteData/websiteStaticContent/" }
-      ) {
-        frontmatter {
-          email
-          socialLinks {
-            iconClassName
-            key
-            value
-          }
-        }
-      }
-    }
-  `);
-  const _data = data.mdx.frontmatter;
+  const _data = useSocialData();
   return (
     <StyledOuterLinks>
       <div className="left-side">

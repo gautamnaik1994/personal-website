@@ -125,7 +125,7 @@ class Metaballs extends React.Component<IProps, IState> {
   }
 
   step = (): void => {
-    console.log('stepping');
+    //console.log('stepping');
     const requestAnimationFrame =
       window.requestAnimationFrame ||
       window.mozRequestAnimationFrame ||

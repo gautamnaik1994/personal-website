@@ -1,5 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import media from '../../utils/MediaQueries';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import SubContainer from '../SubContainer';
@@ -52,6 +54,10 @@ const BlackBox = styled.div`
   }
   .icon-email {
     color: #7af478;
+    position: relative;
+    top: 3px;
+    transform: scale(1.1);
+    display: inline-block;
   }
   .icon-marker {
     color: #ff8c32;
@@ -88,6 +94,10 @@ const BlackBox = styled.div`
       height: calc(var(--dims) * 0.75);
       background: #f76d74;
     }
+  }
+  .stack-badge {
+    margin-top: 10px;
+    display: block;
   }
   ${media.desktop} {
     flex: 0 0 400px;
@@ -130,6 +140,10 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
   const _data = data.mdx.frontmatter;
   const aboutMe = data.mdx.body;
 
+  const themeContext = useContext(ThemeContext);
+
+  console.log('Current theme: ', themeContext);
+
   return (
     <section className={`relative ${className}`}>
       <SectionTitle title="About Me" />
@@ -140,25 +154,28 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
         </StyledAboutMe>
         <BlackBox>
           <div className="circle" />
-          <h3 className="mt-0">Social Links</h3>
-          <div className="link-list">
-            {_data.socialLinks.map((link, index) => {
-              return (
-                <a
-                  href={link.value}
-                  key={index}
-                  target="_blank"
-                  title={link.key}
-                  rel="noreferrer"
-                >
-                  <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
-                </a>
-              );
-            })}
-          </div>
-          <h3 className="">Education</h3>
-          <div>{_data.education}</div>
-          <h3 className="">Other Useless Info</h3>
+          <div className="relative">
+            <h3 className="mt-0">Social Links</h3>
+            <div className="link-list">
+              {_data.socialLinks.map((link, index) => {
+                return (
+                  <a
+                    href={link.value}
+                    key={index}
+                    target="_blank"
+                    title={link.key}
+                    rel="noreferrer"
+                  >
+                    <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
+                  </a>
+                );
+              })}
+              <i className="icon-email" /> {_data.email}{' '}
+            </div>
+            <h3 className="">Education</h3>
+            <div>{_data.education}</div>
+            <h3 className="">Stackoverflow Badge</h3>
+            {/*
           <div>
             <i className="icon-email" /> {_data.email}{' '}
           </div>
@@ -167,6 +184,35 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
           </div>
           <div>
             <i className="icon-cake" /> {_data.bday}{' '}
+          </div>
+					*/}
+            {themeContext.mode === 'dark' ? (
+              <a
+                href="https://stackoverflow.com/users/2376317/gautam-naik"
+                className="stack-badge"
+              >
+                <img
+                  src="https://stackoverflow.com/users/flair/2376317.png?theme=dark"
+                  width="208"
+                  height="58"
+                  alt="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                  title="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                />
+              </a>
+            ) : (
+              <a
+                href="https://stackoverflow.com/users/2376317/gautam-naik"
+                className="stack-badge"
+              >
+                <img
+                  src="https://stackoverflow.com/users/flair/2376317.png"
+                  width="208"
+                  height="58"
+                  alt="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                  title="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                />
+              </a>
+            )}
           </div>
         </BlackBox>
       </FlexBox>
