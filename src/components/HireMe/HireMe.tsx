@@ -77,6 +77,7 @@ const StyledHireMe = styled.div`
 
 export default (props): JSX.Element => {
   const [play] = useSound('/click.mp3', { volume: 0.1 });
+  //const [audio] = useState(new Audio('/click.mp3'));
   const [entered, setEntered] = useState(false);
   const [entered2, setEntered2] = useState(false);
   const intersectionRef = useRef<HTMLDivElement>(null);
@@ -122,6 +123,9 @@ export default (props): JSX.Element => {
 
   useEffect(() => {
     play();
+    //audio.muted = true;
+    //audio.volume = 0.1;
+    //audio.play();
   }, [entered2]);
 
   return (

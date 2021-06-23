@@ -27,7 +27,7 @@ const FlexBox = styled.div`
 
 const BlackBox = styled.div`
   background: var(--sideCardColor);
-  padding: 30px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: var(--cardShadow);
   position: relative;
@@ -38,16 +38,21 @@ const BlackBox = styled.div`
     margin-bottom: 6px;
   }
   .link-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     a {
-      display: block;
       color: var(--bodyColor);
-      line-height: 1.5rem;
+      line-height: 2rem;
+      display: flex;
+      align-items: center;
     }
     a + a {
     }
   }
   i {
     margin-right: 10px;
+    font-size: 20px;
   }
   .icon-cake {
     color: #b178f4;
@@ -56,7 +61,7 @@ const BlackBox = styled.div`
     color: #7af478;
     position: relative;
     top: 3px;
-    transform: scale(1.1);
+    transform: scale(1.05);
     display: inline-block;
   }
   .icon-marker {
@@ -101,6 +106,7 @@ const BlackBox = styled.div`
   }
   ${media.desktop} {
     flex: 0 0 400px;
+    padding: 30px;
   }
   &:hover {
     .circle {
@@ -163,14 +169,16 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
                     href={link.value}
                     key={index}
                     target="_blank"
-                    title={link.key}
+                    title={`Visit ${link.key} profile`}
                     rel="noreferrer"
                   >
                     <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
                   </a>
                 );
               })}
-              <i className="icon-email" /> {_data.email}{' '}
+              <a href={`mailto:${_data.email}`} title="Mail me">
+                <i className="icon-email" /> {_data.email}
+              </a>
             </div>
             <h3 className="">Education</h3>
             <div>{_data.education}</div>

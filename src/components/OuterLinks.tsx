@@ -34,7 +34,8 @@ const StyledOuterLinks = styled.div`
       margin-bottom: 20px;
       font-size: 20px;
     }
-    i:before {
+    i:before,
+    i:after {
       color: var(--bodyColor);
     }
   }
@@ -72,7 +73,7 @@ export default () => {
               href={link.value}
               key={index}
               target="_blank"
-              title={link.key}
+              title={`Visit ${link.key} profile`}
               rel="noreferrer"
             >
               <i className={`icon-${link.iconClassName}`} />
@@ -81,7 +82,7 @@ export default () => {
         })}
       </div>
       <div className="right-side">
-        <a className="inner" href={`mailto:${_data.email}`}>
+        <a className="inner" title="Mail me" href={`mailto:${_data.email}`}>
           {_data.email}{' '}
         </a>
       </div>

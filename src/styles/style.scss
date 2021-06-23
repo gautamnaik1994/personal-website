@@ -122,7 +122,12 @@
 .icon-play:before {
   content: '\e919';
 }
-
+.icon-single-arrow:before {
+  content: '\e91a';
+}
+.icon-single-arrow-big:before {
+  content: '\e91b';
+}
 // Import Vanilla framework
 // @import '~vanilla-framework/scss/vanilla';
 // @include vf-base;

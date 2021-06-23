@@ -8,13 +8,15 @@ interface Props {
 
 const Logo = styled.div<Props>`
   svg,
-  h1 {
+  h1,
+  i {
     display: inline-block;
     vertical-align: middle;
+    color: var(--bodyColor);
   }
 
   path {
-    fill: currentColor;
+    fill: var(--bodyColor);
   }
 
   h1 {
@@ -28,6 +30,9 @@ const Logo = styled.div<Props>`
 
 export default ({ className, hideName }: Props): JSX.Element => (
   <Logo hideName={hideName} className={className}>
+    {/*
+
+		*/}
     <svg
       width="30"
       height="40"
@@ -44,6 +49,7 @@ export default ({ className, hideName }: Props): JSX.Element => (
         fill="white"
       />
     </svg>
+    {/*<i className="icon-logo" />*/}
     <h1>Gautam Naik</h1>
   </Logo>
 );

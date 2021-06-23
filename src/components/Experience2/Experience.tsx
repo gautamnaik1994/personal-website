@@ -5,6 +5,7 @@ import { opacify } from 'polished';
 import theme from 'styled-theming';
 import Item from './Item';
 import media from '../../utils/MediaQueries';
+import Space from '../../img/space.svg';
 
 const boxShadow = theme('mode', {
   light: '0px 22px 40px rgba(0, 0, 0, 0.1)',
@@ -129,7 +130,7 @@ export default ({ className, ...props }: Props): JSX.Element => {
   return (
     <Experience className={className}>
       <div className="img-container">
-        <img src="/space.svg" alt="space" />
+        <img src={Space} alt="space" />
       </div>
       <Item titlemed="Years" title="Yrs" value={dateData.years} />
       <Item titlemed="Months" title="Mons" value={dateData.months} />

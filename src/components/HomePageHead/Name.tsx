@@ -16,6 +16,10 @@ const Holder = styled.div`
   ${media.desktop} {
     font-size: 26px;
   }
+  a {
+    color: var(--bodyColor);
+    text-decoration: underline;
+  }
 `;
 const Name = styled.h1`
   font-size: 3.5em;

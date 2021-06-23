@@ -53,7 +53,6 @@ const Navbar = styled.nav`
 
 const HomeLink = styled(Link)`
   margin-right: auto;
-  color: ${logoColor};
 `;
 
 export interface Props {

@@ -50,7 +50,7 @@ export const GlobalStyle = createGlobalStyle<Props>`
 		line-height: 21px; */
 	}
 
-  
+
 
   .show-for-tablet {
     display: none;
@@ -58,5 +58,11 @@ export const GlobalStyle = createGlobalStyle<Props>`
       display: block;
     }
   }
-  
+.section-spacer {
+  margin: 6rem 0;
+	${media.desktop} {
+		margin: 10rem 0;
+	}
+}
+
 `;

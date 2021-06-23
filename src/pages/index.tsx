@@ -14,12 +14,12 @@ export default () => (
   <Fragment>
     <HomePageHeader />
     <Container>
-      <AboutMeSection className="six-rem-mb six-rem-mt" />
-      <ExperienceSection className="six-rem-mb six-rem-mt" />
-      <SkillsSection className="six-rem-mb six-rem-mt" />
-      <BlogsSection className="six-rem-mb six-rem-mt" />
-      <WorkExperience className="six-rem-mb six-rem-mt" />
-      <ProjectsSection className="six-rem-mb six-rem-mt" />
+      <AboutMeSection className="section-spacer" />
+      <ExperienceSection className="section-spacer" />
+      <SkillsSection className="section-spacer" />
+      <BlogsSection className="section-spacer" />
+      <WorkExperience className="section-spacer" />
+      <ProjectsSection className="section-spacer" />
     </Container>
     <OuterLinks />
   </Fragment>

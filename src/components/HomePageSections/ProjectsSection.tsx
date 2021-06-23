@@ -84,7 +84,7 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
 
   return (
     <section className={className}>
-      <SectionTitle title="My Projects" />
+      <SectionTitle title="Projects" />
       <ProjectList>
         {data.allMdx.edges.map((project: ProjectItemProps, index: number) => {
           const _data = project.node.frontmatter;

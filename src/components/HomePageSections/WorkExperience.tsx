@@ -56,7 +56,7 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
 
   return (
     <section className={className}>
-      <SectionTitle title="Work Experience" />
+      <SectionTitle title="Timeline" />
       <WorkExperienceSection>
         <div>
           {data.allMdx.nodes.map((d: WorkExperienceProps, i: number) => {
