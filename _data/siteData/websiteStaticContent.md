@@ -9,6 +9,9 @@ location: Panaji - Goa
 aboutMeImage: /siteMedia/aboutme.png
 cv: /siteMedia/gautam-naik-ui-frontend-dev.pdf
 footer: This is footer
+contactMeText: Although I'm not currently looking for any new opportunities, my
+  inbox is always open. Drop an email if you have something exciting to share
+  and I'll try my best to get back to you!
 socialLinks:
   - key: Stack Overflow
     value: https://stackoverflow.com/users/2376317/gautam-naik?tab=profile

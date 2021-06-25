@@ -18,6 +18,7 @@ import { ThemeProvider } from 'styled-components';
 import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 import { setColors, getThemeValue } from '../utils/themeConfig';
 import Sidebar from './Sidebar';
+import OuterLinks from './OuterLinks.tsx';
 
 export default ({ site, children }: LayoutProps): JSX.Element => {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
@@ -96,6 +97,7 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
               <Navbar toggleTheme={toggleTheme} />
               <Sidebar toggleTheme={toggleTheme} />
               {children}
+              <OuterLinks />
               <Footer />
             </Fragment>
           </MDXProvider>

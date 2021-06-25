@@ -30,7 +30,7 @@ const PostItem = styled.div<{ responsive: boolean }>`
   margin-bottom: 40px;
   overflow: hidden;
   border-radius: 8px;
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
   background-color: var(--cardColor);
   white-space: normal;
   //box-shadow: ${boxShadow};
@@ -70,6 +70,7 @@ const PostItem = styled.div<{ responsive: boolean }>`
   }
   .gatsby-image-wrapper {
     width: 100% !important;
+    height: 100%;
   }
   h2 {
     font-variant-ligatures: none;

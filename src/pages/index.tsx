@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fragment } from 'react';
 import HomePageHeader from '../components/HomePageSections/HomePageHeader';
 import Container from '../components/Container';
 import AboutMeSection from '../components/HomePageSections/AboutMeSection';
@@ -7,8 +8,8 @@ import SkillsSection from '../components/HomePageSections/SkillsSection';
 import BlogsSection from '../components/HomePageSections/BlogsSection';
 import ProjectsSection from '../components/HomePageSections/ProjectsSection';
 import WorkExperience from '../components/HomePageSections/WorkExperience';
-import OuterLinks from '../components/OuterLinks';
-import { Fragment } from 'react';
+import ContactMeSection from '../components/HomePageSections/ContactMeSection';
+import Declaration from '../components/HomePageSections/Declaration';
 
 export default () => (
   <Fragment>
@@ -20,7 +21,8 @@ export default () => (
       <BlogsSection className="section-spacer" />
       <WorkExperience className="section-spacer" />
       <ProjectsSection className="section-spacer" />
+      <Declaration className="section-spacer" />
+      <ContactMeSection className="section-spacer" />
     </Container>
-    <OuterLinks />
   </Fragment>
 );

@@ -121,6 +121,8 @@ collections: # A list of collections the CMS should be able to edit
               public_folder: '/siteMedia',
             }
           - { label: 'Footer', name: 'footer', widget: 'string' }
+          - { label: 'Contact Me Text', name: 'contactMeText', widget: 'string'}
+          - { label: 'Looking For Job', name: 'lookingForJob', widget: 'boolean', required: false}
             # Socail Links
           - label: 'Social Links'
             name: 'socialLinks'
