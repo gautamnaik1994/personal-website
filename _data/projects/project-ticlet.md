@@ -2,6 +2,9 @@
 title: Ticlet
 image: /img/ticlet.png
 order: 3
+publish: true
+isPersonalProject: false
+companyName: Genora Infotech
 projectColor: "#6b75d2"
 details:
   - key: "Role "

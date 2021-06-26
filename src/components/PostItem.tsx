@@ -61,6 +61,7 @@ const PostItem = styled.div<{ responsive: boolean }>`
   .img-container {
     margin: -15px;
     margin-bottom: 1rem;
+    height: 200px;
   }
   img {
     width: 100%;

@@ -152,6 +152,16 @@ collections: # A list of collections the CMS should be able to edit
             widget: 'list'
             allow_add: true
             default: ['React']
+      - name: 'companiesWorkedFor'
+        label: 'Companies Worked For'
+        file: '_data/siteData/companiesWorkedFor.md'
+        description: 'Companies that I have worked in'
+        fields:
+          - label: 'Title'
+            name: 'title'
+            widget: 'list'
+            allow_add: true
+            default: ['Genora Infotech','Bidchat']
       - name: 'blogTags'
         label: 'Blog Tags'
         file: '_data/siteData/blogTags.md'
@@ -247,7 +257,7 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: 'Name', name: 'title', widget: 'string' }
       - { label: 'Value', name: 'value', widget: 'number', min: 1, max: 99 }
-      - { label: 'Order', name: 'order', widget: 'number' }
+      - { label: 'Publish', name: 'publish', widget: 'boolean', default: true }
       - label: 'Details'
         name: 'details'
         widget: 'list'
@@ -276,7 +286,20 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Image', name: 'image', widget: 'image', required: false}
       - { label: 'Description', name: 'body', widget: 'markdown'}
       - { label: 'Order', name: 'order', widget: 'number'}
+      - { label: 'Publish', name: 'publish', widget: 'boolean', default: true }
+      - { label: 'Personal Project', name: 'isPersonalProject', widget: 'boolean', default: false }
       - { label: 'Project Color', name: 'projectColor', widget: 'color', enableAlpha: false, allowInput: true}
+      - {
+          label: 'Company Name',
+          name: 'companyName',
+          widget: 'relation',
+          collection: 'settings',
+          file: 'companiesWorkedFor',
+          valueField: 'title.*',
+          searchFields: ['title.*'],
+          displayFields: ['title.*'],
+          required: false,
+        }
       - label: 'Details'
         name: 'details'
         widget: 'list'

@@ -1,6 +1,7 @@
 ---
 title: Frontend Developer
 value: 80
+publish: true
 details:
   - key: Expertise
     value: " Website Development • Single Page Applications • Progressive Web Apps"

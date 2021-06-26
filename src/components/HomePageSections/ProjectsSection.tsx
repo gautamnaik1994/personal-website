@@ -13,7 +13,8 @@ const StyledLinkButton = styled(LinkButton)`
 
 const StyledProjectItem = styled(ProjectItem)`
   ${media.desktop} {
-    margin-bottom: 0;
+    flex: 0 0 30%;
+    margin: 20px 10px;
   }
 `;
 
@@ -21,9 +22,9 @@ const ProjectList = styled.div`
   margin-top: 3rem;
   ${media.desktop} {
     margin-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 `;
 
@@ -50,7 +51,10 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/_data/projects/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/_data/projects/" }
+          frontmatter: { publish: { eq: true } }
+        }
         sort: { order: ASC, fields: frontmatter___order }
         limit: 6
       ) {

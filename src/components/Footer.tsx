@@ -7,7 +7,7 @@ import Logo from './Logo';
 import Link from './Link';
 
 const DividerColor = theme('mode', {
-  light: '#dbdbdb',
+  light: '#afafaf',
   dark: '#414141',
 });
 

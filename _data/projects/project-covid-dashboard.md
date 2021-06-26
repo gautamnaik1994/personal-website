@@ -1,6 +1,8 @@
 ---
 title: Covid Dashboard
 order: 2
+publish: true
+isPersonalProject: true
 projectColor: "#5fd879"
 details:
   - key: Languages

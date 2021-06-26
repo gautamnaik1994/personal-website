@@ -9,7 +9,7 @@ import BlogsSection from '../components/HomePageSections/BlogsSection';
 import ProjectsSection from '../components/HomePageSections/ProjectsSection';
 import WorkExperience from '../components/HomePageSections/WorkExperience';
 import ContactMeSection from '../components/HomePageSections/ContactMeSection';
-import Declaration from '../components/HomePageSections/Declaration';
+import DeclarationSection from '../components/HomePageSections/DeclarationSection';
 
 export default () => (
   <Fragment>
@@ -21,7 +21,7 @@ export default () => (
       <BlogsSection className="section-spacer" />
       <WorkExperience className="section-spacer" />
       <ProjectsSection className="section-spacer" />
-      <Declaration className="section-spacer" />
+      <DeclarationSection className="section-spacer" />
       <ContactMeSection className="section-spacer" />
     </Container>
   </Fragment>

@@ -390,3 +390,8 @@ code {
 .relative {
   position: relative;
 }
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

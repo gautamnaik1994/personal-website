@@ -1,9 +1,10 @@
 ---
 title: Grassdoor
 image: /img/grassdoorlogo.png
-description: Grassdoor is a web platform that allows users to place orders for
-  medical supplies and get them delivered at home.
 order: 0
+publish: true
+isPersonalProject: false
+companyName: Bidchat
 projectColor: "#13c7cd"
 details:
   - key: "Role "
@@ -13,6 +14,8 @@ details:
 links:
   - key: Link
     value: https://grassdoor.com/
+description: Grassdoor is a web platform that allows users to place orders for
+  medical supplies and get them delivered at home.
 ---
 <!--StartFragment-->
 

@@ -2,7 +2,10 @@
 title: Mwell
 image: /img/mwell.png
 order: 4
+publish: true
+isPersonalProject: false
 projectColor: "#53c0e4"
+companyName: Genora Infotech
 details:
   - key: Role
     value: UI Designer

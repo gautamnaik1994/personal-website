@@ -1,6 +1,8 @@
 ---
 title: Flight Search Engine
 order: 5
+publish: true
+isPersonalProject: true
 projectColor: "#323cda"
 details:
   - key: Technologies Used
