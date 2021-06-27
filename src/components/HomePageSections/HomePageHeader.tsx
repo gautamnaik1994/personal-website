@@ -11,21 +11,14 @@ export default () => {
   const HomePageHeaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log('called use effect');
     const observer = new IntersectionObserver(
       function (entries) {
         if (HomePageHeaderRef && HomePageHeaderRef.current) {
-          // no intersection with screen
           if (entries[0].intersectionRatio < 0.5) {
-            //HomePageHeaderRef.current.classList.add('category-shadow');
-
             document
               .querySelector('nav')
               ?.classList.remove('navbar-special-styles');
-          }
-          // fully intersects with screen
-          else if (entries[0].intersectionRatio > 0.5) {
-            //HomePageHeaderRef.current.classList.remove('category-shadow');
+          } else if (entries[0].intersectionRatio > 0.5) {
             document
               .querySelector('nav')
               ?.classList.add('navbar-special-styles');

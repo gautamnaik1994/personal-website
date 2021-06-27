@@ -18,7 +18,7 @@ import { ThemeProvider } from 'styled-components';
 import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 import { setColors, getThemeValue } from '../utils/themeConfig';
 import Sidebar from './Sidebar';
-import OuterLinks from './OuterLinks.tsx';
+import OuterLinks from './OuterLinks';
 
 export default ({ site, children }: LayoutProps): JSX.Element => {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
@@ -51,7 +51,7 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
     <Fragment>
       <Helmet>
         <html lang="en" />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
