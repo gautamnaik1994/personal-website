@@ -10,6 +10,7 @@ import ProjectsSection from '../components/HomePageSections/ProjectsSection';
 import WorkExperience from '../components/HomePageSections/WorkExperience';
 import ContactMeSection from '../components/HomePageSections/ContactMeSection';
 import DeclarationSection from '../components/HomePageSections/DeclarationSection';
+import OuterLinks from '../components/OuterLinks';
 
 export default () => (
   <Fragment>
@@ -24,5 +25,6 @@ export default () => (
       <DeclarationSection className="section-spacer" />
       <ContactMeSection className="section-spacer" />
     </Container>
+    <OuterLinks />
   </Fragment>
 );

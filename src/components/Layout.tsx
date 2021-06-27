@@ -97,7 +97,6 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
               <Navbar toggleTheme={toggleTheme} />
               <Sidebar toggleTheme={toggleTheme} />
               {children}
-              <OuterLinks />
               <Footer />
             </Fragment>
           </MDXProvider>

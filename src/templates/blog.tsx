@@ -13,6 +13,7 @@ import { Site } from '../types';
 import media from '../utils/MediaQueries';
 import Container from '../components/Container';
 import BlogSideBar from '../components/BlogSideBar';
+import OuterLinks from '../components/OuterLinks';
 
 const Grid = styled(Container)`
   ${media.desktop} {
@@ -129,6 +130,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
           </BlogSideBar>
         </div>
       </Grid>
+      <OuterLinks />
     </Fragment>
   );
 };
