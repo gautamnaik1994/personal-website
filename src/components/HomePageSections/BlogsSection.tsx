@@ -25,7 +25,7 @@ const BlogList = styled.div`
   ${media.desktop} {
     display: flex;
     white-space: nowrap;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     justify-content: center;
   }
 `;
@@ -55,7 +55,10 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/_data/blog/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/_data/blog/" }
+          frontmatter: { publish: { eq: true } }
+        }
         limit: 2
         sort: { fields: frontmatter___date, order: DESC }
       ) {

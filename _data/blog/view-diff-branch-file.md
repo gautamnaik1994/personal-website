@@ -1,18 +1,19 @@
 ---
-updatedDate: 2020-05-20
-keywords:
-  - vim
-  - keymap
-  - git
-slug: view-different-branch-file
-banner: ./images/banner.png
 title: View different branch file inside VIM
 date: 2020-05-20
+slug: view-different-branch-file
+updatedDate: 2020-05-20
 description: There will come a time when you will want to view the contents of
   the same file or a different file from another branch.
 tags:
   - vim
   - git
+keywords:
+  - vim
+  - keymap
+  - git
+banner: ./images/banner.png
+publish: true
 categories:
   - vim
   - git

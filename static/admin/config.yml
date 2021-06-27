@@ -180,12 +180,14 @@ collections: # A list of collections the CMS should be able to edit
       preview: true
     create: true
     description: 'Blogs'
+    sortable_fields: ['title','date','publish']
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Browser Address', name: 'slug', widget: 'string' }
       - { label: 'Updated Date', name: 'updatedDate', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Publish', name: 'publish', widget: 'boolean', default: false }
       - {
           label: 'Featured Post',
           name: 'featuredpost',

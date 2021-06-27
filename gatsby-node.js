@@ -69,7 +69,12 @@ async function fetchImportantData({ actions, graphql }) {
           }
         }
       }
-      allMdx(filter: { fileAbsolutePath: { regex: "/_data/blog/" } }) {
+      allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/_data/blog/" }
+          frontmatter: { publish: { eq: true } }
+        }
+      ) {
         group(field: frontmatter___category) {
           fieldValue
         }
@@ -88,7 +93,12 @@ async function createBlogPages({ actions, graphql }) {
   const template = path.resolve(`./src/templates/blog.tsx`);
   const { data } = await graphql(`
     query {
-      allMdx(filter: { fileAbsolutePath: { regex: "/_data/blog/" } }) {
+      allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/_data/blog/" }
+          frontmatter: { publish: { eq: true } }
+        }
+      ) {
         totalCount
       }
     }
@@ -117,7 +127,7 @@ async function createCategoryPages({ actions, graphql }) {
   for await (const cat of categories) {
     const { data } = await graphql(`
       query {
-        allMdx(filter: {fileAbsolutePath: {regex: "/_data/blog/"}, frontmatter: {category: {eq: "${cat}"}}}) {
+        allMdx(filter: {fileAbsolutePath: {regex: "/_data/blog/"}, frontmatter: {category: {eq: "${cat}"},publish: {eq: true}}}) {
           totalCount
         }
       }

@@ -23,6 +23,7 @@ export default (props: LinkButtonProps): JSX.Element => {
       to={props.to}
       className={props.className}
       title={props.title}
+      download={props.download}
     >
       {props.children}
     </LinkButton>

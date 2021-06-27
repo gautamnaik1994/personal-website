@@ -12,8 +12,9 @@ export const btnStyles = css<{ variant: string }>`
   background-color: ${({ variant }) => `var(--${variant})`};
   line-height: 1;
   font-size: 14px;
+  cursor: pointer;
   &:hover {
-    filter: brightness(120%);
+    filter: brightness(90%);
   }
   &:focus,
   &:active {

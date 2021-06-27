@@ -66,15 +66,16 @@ const Hero = styled.header<HeroProps>`
   );
   overflow: hidden;
   .inner-container {
-    overflow: hidden;
-    white-space: nowrap;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    > * {
-      display: inline-block;
-      vertical-align: middle;
+    color: white;
+    font-size: 21px;
+    font-weight: var(--fontWeightBold);
+
+    ${media.desktop} {
+      font-size: 33px;
     }
   }
 
@@ -115,14 +116,7 @@ export default ({ title, showHero }: Props) => {
     <Hero showHero={showHero}>
       <div className="img-bg"></div>
       <div className="img-bg img-bg-2"></div>
-      <div className="inner-container">
-        <StyledLogo />
-        <Name marginLeft={marginLeft}>
-          Gautam
-          <br />
-          Blogs
-        </Name>
-      </div>
+      <div className="inner-container">Gautam Blogs</div>
     </Hero>
   );
 };

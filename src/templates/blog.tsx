@@ -149,7 +149,10 @@ export const query = graphql`
     allMdx(
       filter: {
         fileAbsolutePath: { regex: "/_data/blog/" }
-        frontmatter: { category: { eq: $activeCategory } }
+        frontmatter: {
+          category: { eq: $activeCategory }
+          publish: { eq: true }
+        }
       }
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: $blogPostPerPage

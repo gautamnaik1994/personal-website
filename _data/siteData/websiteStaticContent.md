@@ -7,7 +7,7 @@ bday: 2nd May '94
 email: gautamnaik1994@gmail.com
 location: Panaji - Goa
 aboutMeImage: /siteMedia/aboutme.png
-cv: /siteMedia/gautam-naik-ui-frontend-dev.pdf
+cv: /siteMedia/gautam-naik-cv-2018.pdf
 footer: This is footer
 contactMeText: Although I'm not currently looking for any new opportunities, my
   inbox is always open. Drop an email if you have something exciting to share

@@ -5,8 +5,7 @@ import LinkButton from './LinkButton';
 const DownloadCVButton = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
-      mdx(fileAbsolutePath: { regex: "/siteData/" }) {
-        body
+      mdx(fileAbsolutePath: { regex: "/websiteStaticContent/" }) {
         frontmatter {
           cv
         }
@@ -16,7 +15,12 @@ const DownloadCVButton = (): JSX.Element => {
 
   const _data = data.mdx.frontmatter;
   return (
-    <LinkButton variant="primary" to={_data.cv} download title="Download CV">
+    <LinkButton
+      variant="primary"
+      to={_data.cv}
+      download={true}
+      title="Download CV"
+    >
       Download CV
     </LinkButton>
   );
