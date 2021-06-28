@@ -8,12 +8,13 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import PostItem from '../components/PostItem';
 import CategoryTagList from '../components/CategoryTagList';
-import Pagination from '../components/Pagination';
+import Pagination from '../components/BlogPagination';
 import { Site } from '../types';
 import media from '../utils/MediaQueries';
 import Container from '../components/Container';
 import BlogSideBar from '../components/BlogSideBar';
 import OuterLinks from '../components/OuterLinks';
+import PageUnderConstruction from '../components/PageUnderConstruction';
 
 const Grid = styled(Container)`
   ${media.desktop} {
@@ -97,6 +98,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
           ],
         }}
       />
+      <PageUnderConstruction />
       <Hero showHero={currentPage > 1 ? false : true} title="Welcome to Blog" />
       <Grid>
         <div className="left-sec">
@@ -170,7 +172,7 @@ export const query = graphql`
             description
             bannerImage {
               childImageSharp {
-                gatsbyImageData(width: 300)
+                gatsbyImageData(width: 350)
               }
             }
           }

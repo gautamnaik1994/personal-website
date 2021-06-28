@@ -2,6 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import media from '../utils/MediaQueries';
 import Logo from './Logo';
+import AbstractbgOther from '../img/abstractbgOther.svg';
+import AbstractbgRings from '../img/abstractbgRings.svg';
 
 const bgAnim = keyframes`
     0%{
@@ -56,7 +58,7 @@ interface HeroProps {
 
 const Hero = styled.header<HeroProps>`
   position: relative;
-  margin-top: 60px;
+  //margin-top: 60px;
   height: ${(props) => (props.showHero ? 30 : 0)}vh;
   background: rgba(0, 132, 255, 1);
   background-image: linear-gradient(
@@ -87,7 +89,7 @@ const Hero = styled.header<HeroProps>`
     width: 6540px;
     top: 0;
     bottom: 0;
-    background-image: url('/abstractbgRings.svg');
+    background-image: url(${AbstractbgRings});
     animation: ${bgAnim} 350s infinite linear;
     ${media.desktop} {
       height: auto;
@@ -97,7 +99,7 @@ const Hero = styled.header<HeroProps>`
     height: ${(props) => (props.showHero ? 50 : 0)}vh;
   }
   .img-bg-2 {
-    background-image: url('/abstractbgOther.svg');
+    background-image: url(${AbstractbgOther});
     animation: ${bgAnim} 250s infinite linear;
   }
 `;

@@ -36,7 +36,7 @@ const PostItem = styled.div<{ responsive: boolean }>`
   //box-shadow: ${boxShadow};
   box-shadow: var(--cardShadow);
   &:last-child {
-    margin-bottom: 100px;
+    //margin-bottom: 100px;
   }
   .btn-holder {
     text-align: center;
@@ -83,7 +83,7 @@ const PostItem = styled.div<{ responsive: boolean }>`
     font-weight: bold;
   }
   &:last-child {
-    margin-bottom: 40px;
+    //margin-bottom: 40px;
   }
   ${media.tablet} {
     ${({ responsive }) => responsive && HLayout};
@@ -134,6 +134,7 @@ export default ({
       <i className="icon-category text-accent l-icon" />
       <span>{category}</span>
       <i className="icon-double-arrow r-icon" />
+      {/*TODO:animate this icon*/}
     </Link>
 
     <article className="one-rem-mt one-rem-mb">{excerpt}</article>

@@ -105,6 +105,7 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
           );
         })}
       </ProjectList>
+      {/*TODO: Add links to Behance and Github*/}
     </section>
   );
 };

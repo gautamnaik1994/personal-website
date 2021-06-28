@@ -16,7 +16,12 @@ async function createPostPage({ actions, graphql }) {
   const template = path.resolve(`./src/templates/post.tsx`);
   const { data } = await graphql(`
     query {
-      allMdx(filter: { fileAbsolutePath: { regex: "/_data/blog/" } }) {
+      allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/_data/blog/" }
+          frontmatter: { publish: { eq: true } }
+        }
+      ) {
         edges {
           node {
             id

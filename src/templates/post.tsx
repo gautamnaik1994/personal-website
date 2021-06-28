@@ -15,6 +15,7 @@ import { Site, Mdx, PageContext } from '../types';
 import { darkBackgroundColor } from '../utils/colors';
 import Container from '../components/Container';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import PageUnderConstruction from '../components/PageUnderConstruction';
 
 const bodyBackgroundColor = theme('mode', {
   light: '#f5f5f5',
@@ -156,6 +157,7 @@ export default ({
           ],
         }}
       />
+      <PageUnderConstruction />
       <Banner
         bgImage={
           mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData
@@ -211,7 +213,7 @@ export const pageQuery = graphql`
     site {
       ...site
     }
-    mdx(id: { eq: $id }) {
+    mdx(id: { eq: $id }, frontmatter: { publish: { eq: true } }) {
       frontmatter {
         title
         date(formatString: "MMM D, 'YY")

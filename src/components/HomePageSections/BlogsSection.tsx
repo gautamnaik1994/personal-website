@@ -14,6 +14,15 @@ const StyledLinkButton = styled(LinkButton)`
 const StyledPostItem = styled(PostItem)`
   margin-bottom: 2rem;
   ${media.desktop} {
+    padding-bottom: 50px;
+    .btn-holder {
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px;
+    }
     flex: 0 0 350px;
     & + div {
       margin-left: 30px;
@@ -73,7 +82,7 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
               date(formatString: "MMMM DD, YYYY")
               bannerImage {
                 childImageSharp {
-                  gatsbyImageData(width: 300)
+                  gatsbyImageData(width: 350)
                 }
               }
             }
