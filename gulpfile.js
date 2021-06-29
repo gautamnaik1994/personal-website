@@ -39,9 +39,9 @@ gulp.task('sass', function (done) {
 
 gulp.task('copyfiles', function (done) {
     gulp.src('./src/*.html')
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./public'));
     gulp.src(['./src/assets/**/*.*', '!./src/assets/**/*.js'])
-        .pipe(gulp.dest('./dist/assets'));
+        .pipe(gulp.dest('./public/assets'));
     done();
 });
 
@@ -53,28 +53,28 @@ gulp.task('buildcss', function (done) {
             errLogToConsole: true
         }))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", "Android 2", "Firefox ESR"))
-        .pipe(gulp.dest('dist/assets/css'));
+        .pipe(gulp.dest('public/assets/css'));
 });
 
 gulp.task('compress', function (cb) {
     pump([
             gulp.src('src/assets/js/*.js'),
             uglify(),
-            gulp.dest('dist/assets/js')
+            gulp.dest('public/assets/js')
         ],
         cb
     );
 });
 
-const dist = 'dist';
+const public = 'public';
 
 gulp.task('gsw', () => {
     return workbox.generateSW({
-        globDirectory: dist,
+        globDirectory: public,
         globPatterns: [
             '**/*.{html,js,png,ttf,svg,woff,woff2,eot,pdf,css,json,ico,xml,mp3}'
         ],
-        swDest: `${dist}/sw.js`,
+        swDest: `${public}/sw.js`,
         clientsClaim: true,
         skipWaiting: true,
         runtimeCaching: [{

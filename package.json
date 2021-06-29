@@ -4,9 +4,9 @@
   "description": "Website will showcase content not visible on CV",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d public",
     "build": "gulp build",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf public",
     "postbuild": "gulp gsw",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
