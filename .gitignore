@@ -31,7 +31,6 @@ node_modules
 .DS_Store
 public/
 dist/
-
 public
 tags
 NERD_tree*
