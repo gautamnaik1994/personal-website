@@ -54,6 +54,7 @@ interface PostItemProps {
 }
 
 const Blog = ({ data, pageContext }: Props): JSX.Element => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const { site, allMdx } = data;
   const posts = allMdx.edges;
   //const [showHero, setShowHero] = useState<boolean>(true);
@@ -118,12 +119,18 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
             />
           ))}
           <Pagination
+            menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
             nextPagePath={nextPagePath()}
             previousPagePath={previousPagePath()}
           />
         </div>
         <div className="right-sec">
-          <BlogSideBar>
+          <BlogSideBar
+            menuOpen={menuOpen}
+            nextPagePath={nextPagePath()}
+            previousPagePath={previousPagePath()}
+          >
             <CategoryTagList
               name={'Categories'}
               list={categories}

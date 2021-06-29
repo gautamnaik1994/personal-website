@@ -43,6 +43,12 @@ const FilterButton = styled.button`
   left: 50%;
   transform: translateX(-50%);
   z-index: 99;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: var(--primary);
+  background: rgba(var(--primaryRgb), 0.3);
   ${media.desktop} {
     display: none;
   }
@@ -50,11 +56,19 @@ const FilterButton = styled.button`
 
 export interface Props {
   className?: string;
+  nextPagePath?: string;
+  previousPagePath?: string;
   children: JSX.Element;
 }
 
-export default ({ className, children }: Props): JSX.Element => {
-  const [menuOpen, setMenuOpen] = useState(false);
+export default ({
+  className,
+  previousPagePath,
+  nextPagePath,
+  menuOpen,
+  children,
+}: Props): JSX.Element => {
+  // const [menuOpen, setMenuOpen] = useState(false);
 
   const { transform } = properties[menuOpen ? 'open' : 'close'];
 
@@ -70,9 +84,11 @@ export default ({ className, children }: Props): JSX.Element => {
       >
         {children}
       </BlogSidebar>
-      <FilterButton onClick={() => setMenuOpen(!menuOpen)}>
-        Categories
-      </FilterButton>
+      {/* <div className="button-container">
+        <FilterButton onClick={() => setMenuOpen(!menuOpen)}>
+          <i className="icon-category" />
+        </FilterButton>
+      </div> */}
     </Fragment>
   );
 };
