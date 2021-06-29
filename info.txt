@@ -1,3 +1,0 @@
-openssl genrsa -out privatekey.pem 1024
-openssl req -new -key privatekey.pem -out certrequest.csr -config C:\OpenSSL-Win64\bin\openssl.cfg
-openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem
