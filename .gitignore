@@ -30,6 +30,7 @@ node_modules
 .cache/
 .DS_Store
 public/
+dist/
 public
 tags
 NERD_tree*

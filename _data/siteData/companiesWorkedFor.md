@@ -1,5 +1,0 @@
----
-title:
-  - Bidchat
-  - Genora Infotech
----

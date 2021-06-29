@@ -1,0 +1,107 @@
+html {
+  font-size: 16px;
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 18px;
+  }
+}
+
+body {
+  font-size: 1rem;
+  background-color: $body-background-color;
+  color: $body-text-color;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 6px 15px;
+  background: $body-background-color;
+  z-index: 9998;
+  .menu-btn {
+    background: transparent;
+    padding: 5px 10px;
+    padding-right: 5px;
+    @include media-breakpoint-up(md) {
+      padding: 5px 10px;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+    .icon {
+      width: 25px;
+      height: 22px;
+      position: relative;
+      margin: 0px auto;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+    }
+    span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: white;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+    }
+    span:nth-child(1) {
+      top: 0px;
+    }
+    span:nth-child(2) {
+      top: 9px;
+    }
+    span:nth-child(3) {
+      top: 18px;
+    }
+    &.open {
+      span:nth-child(1) {
+        top: 12px;
+        transform: rotate(135deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+
+      span:nth-child(3) {
+        top: 12px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+  .icon-logo {
+    color: white;
+    font-size: 40px;
+    @include media-breakpoint-up(md) {
+      font-size: 60px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+li + li {
+  margin-top: 5px;
+}
+ul {
+  padding-left: 18px;
+  margin-bottom: 1.5rem;
+}
+hr {
+  height: 1px;
+  background: hsla(0, 0%, 50%, 0.5);
+  border: 0 none;
+}
