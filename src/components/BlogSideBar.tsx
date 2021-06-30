@@ -56,6 +56,7 @@ const FilterButton = styled.button`
 
 export interface Props {
   className?: string;
+  menuOpen: boolean;
   nextPagePath?: string;
   previousPagePath?: string;
   children: JSX.Element;

@@ -3,25 +3,40 @@ import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import Link from './Link';
 import media from '../utils/MediaQueries';
-import { transparentize, lighten, desaturate } from 'polished';
-
-const color = theme('mode', {
-  light: '#fff',
-  dark: '#333',
-});
-
-const navBarBgColor = theme('mode', {
-  light: '#fff',
-  dark: lighten(0.15, '#121212'),
-});
-const boxShadow = theme('mode', {
-  light: (props: any) =>
-    `0 3px var(--blur) -2px ${transparentize(0.6, props.theme.primary)}`,
-});
 
 const PaginationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  bottom: -1px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(var(--bodyBackgroundColorRgb), 1);
+  /* box-shadow: 0 1px 9px 1px rgb(0 0 0 / 30%); */
+  backdrop-filter: blur(10px);
+  margin: 0 -15px;
+  .left,
+  .right {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    color: var(--primary);
+    background: var(--cardColor);
+    line-height: 30px;
+    text-align: center;
+    i {
+      position: relative;
+      right: -2px;
+    }
+    span {
+      display: none;
+    }
+  }
+  .left {
+    transform: rotate(180deg);
+    display: inline-block;
+  }
 `;
 
 const FilterButton = styled.button`
@@ -31,6 +46,8 @@ const FilterButton = styled.button`
   border: none;
   color: var(--primary);
   background: rgba(var(--primaryRgb), 0.3);
+  font-size: 24px;
+  margin: 10px 20px;
   ${media.desktop} {
     display: none;
   }
@@ -41,6 +58,8 @@ interface Props {
   previousPagePath?: string;
   nextPostTitle?: string;
   prevPostTitle?: string;
+  setMenuOpen: () => void;
+  menuOpen: boolean;
 }
 
 export default ({
@@ -52,20 +71,28 @@ export default ({
   menuOpen,
 }: Props) => (
   <PaginationWrapper>
-    {previousPagePath && (
-      <Link className="left" title={prevPostTitle} to={previousPagePath}>
-        <i className="icon-arrow" />
-        <span>&nbsp;{prevPostTitle}</span>
-      </Link>
-    )}
+    <Link
+      className="left"
+      title={prevPostTitle}
+      to={previousPagePath}
+      disabled={!previousPagePath}
+    >
+      <i className="icon-arrow-right" />
+      <span>&nbsp;{prevPostTitle}</span>
+    </Link>
+
     <FilterButton onClick={() => setMenuOpen(!menuOpen)}>
       <i className="icon-category" />
     </FilterButton>
-    {nextPagePath && (
-      <Link className="right" title={nextPostTitle} to={nextPagePath}>
-        <span>{nextPostTitle}&nbsp;</span>
-        <i className="icon-arrow" />
-      </Link>
-    )}
+
+    <Link
+      className="right"
+      title={nextPostTitle}
+      to={nextPagePath}
+      disabled={!nextPagePath}
+    >
+      <span>{nextPostTitle}&nbsp;</span>
+      <i className="icon-arrow-right" />
+    </Link>
   </PaginationWrapper>
 );
