@@ -12,14 +12,20 @@ interface Props {
 }
 
 const CategoryTagList = styled.div`
+  h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: var(--accent);
+    font-weight: var(--fontWeightBold);
+  }
   margin: 0;
   padding-bottom: 15px;
-  top: 60px;
-  position: sticky;
-  z-index: 2;
   a {
     display: block;
     line-height: 1;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    color: var(--bodyColor);
   }
 `;
 

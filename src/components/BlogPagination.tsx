@@ -23,11 +23,16 @@ const PaginationWrapper = styled.div`
     border: none;
     color: var(--primary);
     background: var(--cardColor);
-    line-height: 30px;
+    line-height: 32px;
     text-align: center;
+    box-shadow: 0 0 0px 1px var(--primary);
+    &.disabled {
+      pointer-events: none;
+      opacity: 0;
+    }
     i {
-      position: relative;
-      right: -2px;
+      text-indent: 3px;
+      display: inline-block;
     }
     span {
       display: none;
@@ -44,8 +49,9 @@ const FilterButton = styled.button`
   height: 50px;
   border-radius: 50%;
   border: none;
-  color: var(--primary);
-  background: rgba(var(--primaryRgb), 0.3);
+  color: #fff;
+  background: var(--primary);
+  box-shadow: 0 0 0px 1px var(--primary);
   font-size: 24px;
   margin: 10px 20px;
   ${media.desktop} {
@@ -58,7 +64,7 @@ interface Props {
   previousPagePath?: string;
   nextPostTitle?: string;
   prevPostTitle?: string;
-  setMenuOpen: () => void;
+  setMenuOpen: (arg0: boolean) => void;
   menuOpen: boolean;
 }
 
@@ -72,24 +78,20 @@ export default ({
 }: Props) => (
   <PaginationWrapper>
     <Link
-      className="left"
+      className={` left ${!previousPagePath ? 'disabled' : ''} `}
       title={prevPostTitle}
       to={previousPagePath}
-      disabled={!previousPagePath}
     >
       <i className="icon-arrow-right" />
       <span>&nbsp;{prevPostTitle}</span>
     </Link>
-
     <FilterButton onClick={() => setMenuOpen(!menuOpen)}>
       <i className="icon-category" />
     </FilterButton>
-
     <Link
-      className="right"
+      className={` right ${!nextPagePath ? 'disabled' : ''} `}
       title={nextPostTitle}
       to={nextPagePath}
-      disabled={!nextPagePath}
     >
       <span>{nextPostTitle}&nbsp;</span>
       <i className="icon-arrow-right" />

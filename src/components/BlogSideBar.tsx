@@ -30,6 +30,16 @@ const BlogSidebar = styled(animated.div)`
   width: 100%;
   will-change: transform;
   box-shadow: 2px 0px 20px 0px rgba(0, 0, 0, 0.5);
+
+  padding: 25px;
+  overscroll-behavior: contain;
+
+  .inner {
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+  }
   ${media.desktop} {
     position: static;
     box-shadow: none;
@@ -38,17 +48,24 @@ const BlogSidebar = styled(animated.div)`
 `;
 
 const FilterButton = styled.button`
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  position: absolute;
+  bottom: 50px;
+  left: -20px;
   z-index: 99;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  line-height: 43px;
+  padding: 0;
+  height: 40px;
   border-radius: 50%;
   border: none;
-  color: var(--primary);
-  background: rgba(var(--primaryRgb), 0.3);
+  background: var(--primary);
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 0 0 0px 1px var(--primary);
+  i {
+    text-indent: 2px;
+    display: inline-block;
+  }
   ${media.desktop} {
     display: none;
   }
@@ -59,6 +76,7 @@ export interface Props {
   menuOpen: boolean;
   nextPagePath?: string;
   previousPagePath?: string;
+  setMenuOpen: (arg0: boolean) => void;
   children: JSX.Element;
 }
 
@@ -67,6 +85,7 @@ export default ({
   previousPagePath,
   nextPagePath,
   menuOpen,
+  setMenuOpen,
   children,
 }: Props): JSX.Element => {
   // const [menuOpen, setMenuOpen] = useState(false);
@@ -83,13 +102,13 @@ export default ({
         className={className}
         style={{ transform: sideBarProps.transform }}
       >
-        {children}
+        <div className="inner">
+          {children}
+          <FilterButton onClick={() => setMenuOpen(!menuOpen)}>
+            <i className="icon-arrow-right" />
+          </FilterButton>
+        </div>
       </BlogSidebar>
-      {/* <div className="button-container">
-        <FilterButton onClick={() => setMenuOpen(!menuOpen)}>
-          <i className="icon-category" />
-        </FilterButton>
-      </div> */}
     </Fragment>
   );
 };

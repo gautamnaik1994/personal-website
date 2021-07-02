@@ -128,6 +128,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
         <div className="right-sec">
           <BlogSideBar
             menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
             nextPagePath={nextPagePath()}
             previousPagePath={previousPagePath()}
           >
