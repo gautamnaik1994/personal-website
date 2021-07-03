@@ -27,6 +27,14 @@ const CategoryTagList = styled.div`
     font-size: 16px;
     color: var(--bodyColor);
   }
+  ${media.desktop} {
+    h3 {
+      font-size: 22px;
+    }
+    a {
+      margin-bottom: 0.5rem;
+    }
+  }
 `;
 
 export default ({ list = [], activeIndex, name }: Props) => {

@@ -180,7 +180,7 @@ export const query = graphql`
             description
             bannerImage {
               childImageSharp {
-                gatsbyImageData(width: 350)
+                gatsbyImageData(width: 350, placeholder: BLURRED)
               }
             }
           }

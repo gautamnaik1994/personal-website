@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import Link from './Link';
 import media from '../utils/MediaQueries';
+import { btnStyles } from './Button';
 
 const PaginationWrapper = styled.div`
   display: flex;
@@ -12,7 +13,6 @@ const PaginationWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgba(var(--bodyBackgroundColorRgb), 1);
-  /* box-shadow: 0 1px 9px 1px rgb(0 0 0 / 30%); */
   backdrop-filter: blur(10px);
   margin: 0 -15px;
   .left,
@@ -22,7 +22,7 @@ const PaginationWrapper = styled.div`
     border-radius: 50%;
     border: none;
     color: var(--primary);
-    background: var(--cardColor);
+    background-color: var(--cardColor);
     line-height: 32px;
     text-align: center;
     box-shadow: 0 0 0px 1px var(--primary);
@@ -41,6 +41,29 @@ const PaginationWrapper = styled.div`
   .left {
     transform: rotate(180deg);
     display: inline-block;
+  }
+  ${media.desktop} {
+    position: static;
+    justify-content: space-between;
+    margin: 0;
+    padding-bottom: 25px;
+    .left,
+    .right {
+      ${btnStyles}
+      width: auto;
+      height: auto;
+      background-color: var(--primary);
+
+      span {
+        display: inline-block;
+      }
+    }
+    .left {
+      transform: rotate(0deg);
+      i {
+        transform: scale(-1, 1);
+      }
+    }
   }
 `;
 

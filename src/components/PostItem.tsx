@@ -21,11 +21,11 @@ const HLayout = css`
     margin: 0;
   }
   .btn-holder {
-    text-align: right;
+    text-align: left;
   }
 `;
 
-const PostItem = styled.div<{ responsive: boolean }>`
+const PostItem = styled.div<{ responsive: boolean; bgImage: string }>`
   padding: 15px;
   margin-bottom: 40px;
   overflow: hidden;
@@ -33,7 +33,6 @@ const PostItem = styled.div<{ responsive: boolean }>`
   margin-bottom: 2rem;
   background-color: var(--cardColor);
   white-space: normal;
-  //box-shadow: ${boxShadow};
   box-shadow: var(--cardShadow);
   &:last-child {
     //margin-bottom: 100px;
@@ -61,7 +60,12 @@ const PostItem = styled.div<{ responsive: boolean }>`
   .img-container {
     margin: -15px;
     margin-bottom: 1rem;
-    height: 200px;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    //height: auto;
+    background-image: url(${({ bgImage }) => bgImage});
   }
   img {
     width: 100%;
@@ -71,7 +75,7 @@ const PostItem = styled.div<{ responsive: boolean }>`
   }
   .gatsby-image-wrapper {
     width: 100% !important;
-    height: 100%;
+    //height: 100%;
   }
   h2 {
     font-variant-ligatures: none;
@@ -81,9 +85,6 @@ const PostItem = styled.div<{ responsive: boolean }>`
     margin-left: 3px;
     vertical-align: text-bottom;
     font-weight: bold;
-  }
-  &:last-child {
-    //margin-bottom: 40px;
   }
   ${media.tablet} {
     ${({ responsive }) => responsive && HLayout};
@@ -115,9 +116,12 @@ export default ({
   responsive = true,
   ...props
 }: Props): JSX.Element => (
-  <PostItem responsive={responsive} className={props.className}>
+  <PostItem
+    responsive={responsive}
+    className={props.className}
+    bgImage={banner.placeholder?.fallback}
+  >
     <div className="img-container">
-      {/* <img src={banner} /> */}
       <GatsbyImage image={banner} alt={title} />
     </div>
     <Link title={title} to={`/blog/${link}`}>

@@ -41,6 +41,7 @@ const BlogSidebar = styled(animated.div)`
     align-items: center;
   }
   ${media.desktop} {
+    padding: 0 0 0 25px;
     position: static;
     box-shadow: none;
     transform: translateY(0) !important;
