@@ -53,15 +53,27 @@ const PaginationWrapper = styled.div`
       width: auto;
       height: auto;
       background-color: var(--primary);
-
+      i {
+        display: none;
+      }
       span {
         display: inline-block;
+        position: relative;
+        &:before {
+          position: absolute;
+          content: '\\e904';
+          display: inline-block;
+          font-family: 'icomoon' !important;
+          left: 100%;
+        }
       }
     }
     .left {
       transform: rotate(0deg);
-      i {
+      span:before {
         transform: scale(-1, 1);
+        right: 100%;
+        left: auto;
       }
     }
   }

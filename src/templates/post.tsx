@@ -17,15 +17,6 @@ import Container from '../components/Container';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PageUnderConstruction from '../components/PageUnderConstruction';
 
-const bodyBackgroundColor = theme('mode', {
-  light: '#f5f5f5',
-  dark: darkBackgroundColor,
-});
-// const postBgColor = theme('mode', {
-//   light: '#fff',
-//   dark: lighten(0.05, darkBackgroundColor),
-// });
-
 const Grid = styled(Container)`
   ${media.desktop} {
     display: grid;
@@ -58,10 +49,6 @@ const Banner = styled.div<BannerProps>`
 `;
 
 const Post = styled.div`
-  padding: 20px 15px 50px 15px;
-
-  background: var(--bodyBackgroundColor);
-  box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.126);
   margin-bottom: 25px;
 `;
 
@@ -97,8 +84,7 @@ const Title = styled.h1`
 
 const MetaDataContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin: 1rem 0;
+  margin: 1rem -10px;
   .title {
     font-size: 12px;
     color: #888;
@@ -106,6 +92,10 @@ const MetaDataContainer = styled.div`
   }
   .value {
     font-size: 14px;
+  }
+
+  & > div {
+    margin: 10px;
   }
 
   ${media.desktop} {
@@ -194,7 +184,6 @@ export default ({
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </StyledMDXRenderer>
             <Pagination
-              insidePost
               nextPagePath={next && `/blog/${next.frontmatter.slug}`}
               previousPagePath={prev && `/blog/${prev.frontmatter.slug}`}
               nextPostTitle={next && next.frontmatter.title}

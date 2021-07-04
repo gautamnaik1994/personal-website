@@ -44,7 +44,6 @@ const Name = styled.div<NameProps>`
   //font-family: 'Merriweather', serif;
   position: relative;
   z-index: -1;
-  margin-left: ${(props) => props.marginLeft}px;
 
   ${media.desktop} {
     font-size: 33px;
@@ -106,19 +105,18 @@ const Hero = styled.header<HeroProps>`
 
 interface Props {
   title: string;
-  showHero: boolean;
+  showHero?: boolean;
 }
 
-export default ({ title, showHero }: Props) => {
-  const [marginLeft, setMarginLeft] = useState<number>(-200);
-  useEffect(() => {
-    setMarginLeft(0);
-  }, []);
+export default ({
+  title = 'Gautam Blogs',
+  showHero = true,
+}: Props): JSX.Element => {
   return (
     <Hero showHero={showHero}>
       <div className="img-bg"></div>
       <div className="img-bg img-bg-2"></div>
-      <div className="inner-container">Gautam Blogs</div>
+      <div className="inner-container">{title}</div>
     </Hero>
   );
 };

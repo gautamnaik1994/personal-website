@@ -21,6 +21,11 @@ const Grid = styled(Container)`
     display: grid;
     grid-template-columns: 1fr 200px;
     grid-gap: 15px;
+    align-items: start;
+    .right-sec {
+      position: sticky;
+      top: 70px;
+    }
   }
   margin-top: 60px;
 `;
@@ -76,6 +81,14 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
     } else return '';
   };
 
+  const heroTitle = (): string | null => {
+    if (activeCategoryIndex >= 0) {
+      console.log(' activeCategoryIndex', categories[activeCategoryIndex]);
+      return categories[activeCategoryIndex];
+    }
+    return undefined;
+  };
+
   return (
     <Fragment>
       <GatsbySeo
@@ -100,7 +113,8 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
         }}
       />
       <PageUnderConstruction />
-      <Hero showHero={currentPage > 1 ? false : true} title="Welcome to Blog" />
+      {/*<Hero showHero={currentPage > 1 ? false : true} title="Welcome to Blog" />*/}
+      <Hero title={heroTitle()} />
       <Grid>
         <div className="left-sec">
           {posts.map(({ node }: PostItemProps, index: number) => (

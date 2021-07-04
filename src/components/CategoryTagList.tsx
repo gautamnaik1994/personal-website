@@ -26,6 +26,22 @@ const CategoryTagList = styled.div`
     margin-bottom: 1rem;
     font-size: 16px;
     color: var(--bodyColor);
+    position: relative;
+    &:before {
+      content: '●';
+      color: var(--primary);
+      margin-right: 10px;
+      margin-left: 5px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &.active {
+      font-weight: var(--fontWeightBold);
+      &:before {
+        content: '\\e903';
+        font-family: icomoon !important;
+      }
+    }
   }
   ${media.desktop} {
     h3 {
@@ -42,8 +58,13 @@ export default ({ list = [], activeIndex, name }: Props) => {
     <CategoryTagList>
       <h3 className="one-rem-mb">{name}</h3>
       {list.map((item, index) => (
-        <Link key={item} title={item} to={'/blog/' + item}>
-          {item} {activeIndex === index && 'active'}
+        <Link
+          key={item}
+          title={item}
+          to={'/blog/' + item}
+          className={activeIndex === index ? 'active' : ''}
+        >
+          {item}
         </Link>
       ))}
     </CategoryTagList>

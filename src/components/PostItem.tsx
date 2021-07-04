@@ -130,11 +130,7 @@ export default ({
     <small>
       {date} &bull; {readTime} minutes read
     </small>
-    <Link
-      className="category-link"
-      title={category}
-      to={`/category/${category}`}
-    >
+    <Link className="category-link" title={category} to={`/blog/${category}`}>
       <i className="icon-category text-accent l-icon" />
       <span>{category}</span>
       <i className="icon-double-arrow r-icon" />
