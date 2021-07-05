@@ -114,6 +114,13 @@ collections: # A list of collections the CMS should be able to edit
               public_folder: '/siteMedia',
             }
           - {
+              label: 'OG Image',
+              name: 'ogImage',
+              widget: 'image',
+              media_folder: '/static/siteMedia',
+              public_folder: '/siteMedia',
+            }
+          - {
               label: 'CV',
               name: 'cv',
               widget: 'file',

@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect, createContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
+import { graphql, useStaticQuery } from 'gatsby';
 // import '../global.d.ts';
 // Had added @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
@@ -20,9 +21,24 @@ import { setColors, getThemeValue } from '../utils/themeConfig';
 import Sidebar from './Sidebar';
 import OuterLinks from './OuterLinks';
 
-export default ({ site, children }: LayoutProps): JSX.Element => {
+export default ({ children }: LayoutProps): JSX.Element => {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
 
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+          description
+          siteUrl
+          author
+          keywords
+          ogImage
+        }
+      }
+    }
+  `);
+  const site = data.site;
   const toggleTheme = (): void => {
     const currentTheme = theme === 'light' ? 'dark' : 'light';
     if (typeof window !== 'undefined') {
@@ -79,6 +95,27 @@ export default ({ site, children }: LayoutProps): JSX.Element => {
         <meta name="googlebot" content="all" />
         <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" />
       </Helmet>
+      <GatsbySeo
+        title={site.siteMetadata.title}
+        description={site.siteMetadata.description}
+        canonical={site.siteMetadata.siteUrl}
+        metaTags={[
+          { name: 'keywords', content: site.siteMetadata.keywords.join(',') },
+        ]}
+        openGraph={{
+          url: site.siteMetadata.siteUrl,
+          title: site.siteMetadata.title,
+          description: site.siteMetadata.description,
+          images: [
+            {
+              url: `${site.siteMetadata.siteUrl}${site.siteMetadata.ogImage}`,
+              width: 1200,
+              height: 630,
+              alt: site.siteMetadata.title,
+            },
+          ],
+        }}
+      />
       <ThemeProvider
         theme={{
           mode: theme || 'dark',
@@ -114,6 +151,7 @@ export const pageQuery = graphql`
       author
       keywords
       siteUrl
+      ogImage
     }
   }
 `;

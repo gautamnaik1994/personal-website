@@ -92,24 +92,11 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
   return (
     <Fragment>
       <GatsbySeo
-        title={site.siteMetadata.title}
-        description={site.siteMetadata.description}
-        canonical={site.siteMetadata.siteUrl}
-        metaTags={[
-          { name: 'keywords', content: site.siteMetadata.keywords.join(',') },
-        ]}
+        title="Gautam Blogs"
+        description="This blogs contains posts based on VIM, CSS and various topics"
+        canonical={`${site.siteMetadata.siteUrl}/blog`}
         openGraph={{
-          url: site.siteMetadata.siteUrl,
-          title: site.siteMetadata.title,
-          description: site.siteMetadata.description,
-          images: [
-            {
-              url: `${site.siteMetadata.siteUrl}/banner.png`,
-              width: 1200,
-              height: 630,
-              alt: site.siteMetadata.title,
-            },
-          ],
+          title: 'Gautam Blogs',
         }}
       />
       <PageUnderConstruction />

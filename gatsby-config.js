@@ -22,6 +22,7 @@ module.exports = {
     title: 'Gautam Naik',
     description: 'Personal Website',
     keywords: ['ui', 'ux', 'designer', 'css', 'frontend'],
+    ogImage: '/siteMedia/og-image.png',
   },
   plugins: [
     // {

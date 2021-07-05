@@ -136,7 +136,6 @@ export default ({
         openGraph={{
           url: location.href,
           title: mdx.frontmatter.title,
-          description: mdx.frontmatter.description,
           images: [
             {
               url: `${location.origin}${mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData.images.fallback.src}`,
