@@ -39,3 +39,4 @@ privatekey.pem
 certrequest.csr
 certificate.pem
 [BufExplorer]
+.env.production
