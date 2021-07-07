@@ -1,6 +1,6 @@
 ---
 position: Frontend Developer & Designer
-education: "Bachelors in Computer Science "
+education: 'Bachelors in Computer Science '
 company: Bidchat
 companyWebsite: https://bidchat.in/
 bday: 2nd May '94
@@ -10,8 +10,8 @@ aboutMeImage: /siteMedia/aboutme.png
 ogImage: /siteMedia/og-image.png
 cv: /siteMedia/gautam-naik-cv-2018.pdf
 footer: This is footer
-contactMeText: Although I'm not currently looking for any new opportunities, my
-  inbox is always open. Drop an email if you have something exciting to share
+contactMeText:
+  I am always on the lookout for new and exciting opportunities. Drop an email if you have something exciting to share
   and I'll try my best to get back to you!
 socialLinks:
   - key: Stack Overflow
