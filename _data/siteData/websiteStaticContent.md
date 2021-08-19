@@ -1,6 +1,6 @@
 ---
 position: Frontend Developer & Designer
-education: 'Bachelors in Computer Science '
+education: "Bachelors in Computer Science "
 company: Bidchat
 companyWebsite: https://bidchat.in/
 bday: 2nd May '94
@@ -8,11 +8,11 @@ email: gautamnaik1994@gmail.com
 location: Panaji - Goa
 aboutMeImage: /siteMedia/aboutme.png
 ogImage: /siteMedia/og-image.png
-cv: /siteMedia/gautam-naik-cv-2018.pdf
+cv: /siteMedia/gautamnaik_cv.pdf
 footer: This is footer
-contactMeText:
-  I am always on the lookout for new and exciting opportunities. Drop an email if you have something exciting to share
-  and I'll try my best to get back to you!
+contactMeText: I am always on the lookout for new and exciting opportunities.
+  Drop an email if you have something exciting to share and I'll try my best to
+  get back to you!
 socialLinks:
   - key: Stack Overflow
     value: https://stackoverflow.com/users/2376317/gautam-naik?tab=profile
@@ -30,8 +30,7 @@ socialLinks:
     value: https://www.linkedin.com/in/gautamnaik1994/
     iconClassName: linkedin
 ---
-
-I'm a **Designer & Front-end Developer** with 5 **years** of professional experience. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces, mobile interfaces, and frontend web development.
+I'm a **Designer & Front-end Developer** with 6 **years** of professional experience. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces, mobile interfaces, and frontend web development.
 
 I also have skills in other fields like user experience, branding, icon design, and game development. I enjoy turning complex problems into simple, beautiful and intuitive designs.
 
