@@ -8,7 +8,7 @@ email: gautamnaik1994@gmail.com
 location: Panaji - Goa
 aboutMeImage: /siteMedia/aboutme.png
 ogImage: /siteMedia/og-image.png
-cv: /siteMedia/gautamnaik_cv.pdf
+cv: /siteMedia/resumev22021.pdf
 footer: This is footer
 contactMeText: I am always on the lookout for new and exciting opportunities.
   Drop an email if you have something exciting to share and I'll try my best to
