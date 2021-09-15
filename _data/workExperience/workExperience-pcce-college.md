@@ -8,7 +8,7 @@ status: stop
 <!--StartFragment-->
 
 * Studied various programming languages. 
-* Made a game as final year project
-* Participated in various hackathons
+* Made a game as final year project using Unity 3D engine.
+* Participated in various hackathons.
 
 <!--EndFragment-->
