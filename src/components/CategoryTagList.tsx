@@ -57,6 +57,9 @@ export default ({ list = [], activeIndex, name }: Props) => {
   return (
     <CategoryTagList>
       <h3 className="one-rem-mb">{name}</h3>
+      <Link title="All" to={'/blog/'} className={!activeIndex && 'active'}>
+        All
+      </Link>
       {list.map((item, index) => (
         <Link
           key={item}
