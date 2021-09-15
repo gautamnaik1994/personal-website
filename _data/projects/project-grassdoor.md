@@ -4,8 +4,8 @@ image: /img/grassdoorlogo.png
 order: 0
 publish: true
 isPersonalProject: false
+projectColor: "#36c1c8"
 companyName: Bidchat
-projectColor: "#13c7cd"
 details:
   - key: "Role "
     value: "UI designer and Frontend Developer  "

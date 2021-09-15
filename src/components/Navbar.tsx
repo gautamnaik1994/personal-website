@@ -22,7 +22,7 @@ const NavLink = styled(Link)`
   margin-right: 15px;
   font-size: 16px;
   display: none;
-  ${media.desktop} {
+  ${media.tablet} {
     display: inline-block;
   }
 `;
@@ -45,7 +45,7 @@ const Navbar = styled.nav`
   button {
     display: none;
     //margin-left: 5px;
-    ${media.desktop} {
+    ${media.tablet} {
       display: inline-block;
     }
   }

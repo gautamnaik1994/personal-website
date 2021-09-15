@@ -33,13 +33,17 @@ const StyledHireMe = styled.div`
       display: inline-block;
       //transform: translateY(-100%);
     }
-    i {
+    .i-wrapper {
       position: absolute;
       color: var(--primary);
       right: 50%;
       transform: rotate(270deg);
       top: 100%;
-      filter: drop-shadow(-16px 0px 0px currentColor);
+      .s-icon {
+        position: absolute;
+        right: 16px;
+      }
+      /* filter: drop-shadow(-16px 0px 0px currentColor); */
     }
   }
   .bottom-sec {
@@ -66,12 +70,16 @@ const StyledHireMe = styled.div`
   &.entered {
   }
   ${media.tablet} {
+    padding: 30px 15px;
     .hire-text {
       font-size: 40px;
     }
     width: 380px;
     position: sticky;
     top: 70px;
+  }
+  ${media.desktop} {
+    padding: 30px;
   }
 `;
 
@@ -138,7 +146,12 @@ export default (props): JSX.Element => {
       <div className="middle-sec">
         <span>NEXT</span>
         <animated.span className="lvl" style={jump}>
-          LEVEL? <i className="icon-arrow-right" />{' '}
+          LEVEL?{' '}
+          <span className="i-wrapper">
+            {' '}
+            <i className="icon-arrow-right" />
+            <i className="icon-arrow-right s-icon" />
+          </span>
         </animated.span>
       </div>
       <div className="bottom-sec">

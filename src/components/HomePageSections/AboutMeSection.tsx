@@ -12,14 +12,14 @@ const StyledAboutMe = styled.div`
   p {
     font-size: 16px;
   }
-  ${media.desktop} {
+  ${media.tablet} {
     /* width: 550px; */
     padding-right: 30px;
   }
 `;
 
 const FlexBox = styled.div`
-  ${media.desktop} {
+  ${media.tablet} {
     display: flex;
     align-items: flex-start;
   }
@@ -104,6 +104,11 @@ const BlackBox = styled.div`
     margin-top: 10px;
     display: block;
   }
+  ${media.tablet} {
+    flex: 0 0 300px;
+    padding: 15px;
+  }
+
   ${media.desktop} {
     flex: 0 0 400px;
     padding: 30px;
