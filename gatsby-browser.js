@@ -7,3 +7,6 @@ export function wrapPageElement({ element, props }) {
   // including location, data, etc - you don't need to pass it
   return <Layout {...props}>{element}</Layout>;
 }
+export function onServiceWorkerUpdateReady() {
+  typeof window !== 'undefined' && window.location.reload(true);
+}
