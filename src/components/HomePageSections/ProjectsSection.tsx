@@ -12,15 +12,18 @@ const StyledLinkButton = styled(LinkButton)`
 `;
 
 const StyledProjectItem = styled(ProjectItem)`
+  ${media.tablet} {
+    flex: 0 0 47%;
+    margin: 20px 10px;
+  }
   ${media.desktop} {
     flex: 0 0 30%;
-    margin: 20px 10px;
   }
 `;
 
 const ProjectList = styled.div`
   margin-top: 3rem;
-  ${media.desktop} {
+  ${media.tablet} {
     margin-top: 2rem;
     display: flex;
     justify-content: center;

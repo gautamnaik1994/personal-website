@@ -60,11 +60,15 @@ const Experience = styled.div`
     right: 0;
     animation: ${pulse} 50s linear infinite;
   }
-  .hide-for-mobile {
+  .hide-for-tablet {
     display: none;
   }
   ${media.tablet} {
-    .hide-for-mobile {
+    width: 500px;
+  }
+
+  ${media.desktop} {
+    .hide-for-tablet {
       display: block;
     }
     width: 830px;
@@ -138,7 +142,7 @@ export default ({ className, ...props }: Props): JSX.Element => {
       <Item titlemed="Hours" title="Hrs" value={dateData.hours} />
       <Item titlemed="Minutes" title="Mins" value={dateData.minutes} />
       <Item
-        className="hide-for-mobile"
+        className="hide-for-tablet"
         titlemed="Seconds"
         title="Sec"
         value={dateData.seconds}

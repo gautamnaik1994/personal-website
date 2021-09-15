@@ -27,6 +27,10 @@ const StyledDownloadCV = styled.div`
 
   ${media.tablet} {
     width: 280px;
+    min-height: 230px;
+  }
+  ${media.desktop} {
+    min-height: 290px;
   }
 `;
 

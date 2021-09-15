@@ -28,7 +28,7 @@ const ProjectItem = styled.div`
     margin-bottom: -1rem;
     height: 200px;
     padding: 45px;
-    border-radius: 20px;
+    border-radius: 10px;
     color: white;
     text-align: center;
     font-size: 30px;

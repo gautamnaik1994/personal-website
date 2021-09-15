@@ -13,7 +13,7 @@ const StyledLinkButton = styled(LinkButton)`
 
 const StyledPostItem = styled(PostItem)`
   margin-bottom: 2rem;
-  ${media.desktop} {
+  ${media.tablet} {
     padding-bottom: 50px;
     .btn-holder {
       text-align: center;
@@ -25,13 +25,18 @@ const StyledPostItem = styled(PostItem)`
     }
     flex: 0 0 350px;
     & + div {
+      margin-left: 15px;
+    }
+  }
+  ${media.tablet} {
+    & + div {
       margin-left: 30px;
     }
   }
 `;
 
 const BlogList = styled.div`
-  ${media.desktop} {
+  ${media.tablet} {
     display: flex;
     white-space: nowrap;
     /* align-items: flex-start; */

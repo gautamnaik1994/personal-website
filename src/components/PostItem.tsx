@@ -29,6 +29,7 @@ const PostItem = styled.div<{ responsive: boolean; bgImage: string }>`
   padding: 15px;
   margin-bottom: 40px;
   overflow: hidden;
+  z-index: 0;
   border-radius: 8px;
   margin-bottom: 2rem;
   background-color: var(--cardColor);

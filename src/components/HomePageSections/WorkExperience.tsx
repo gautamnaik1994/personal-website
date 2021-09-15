@@ -10,12 +10,17 @@ const WorkExperienceSection = styled.div`
   & > div + div {
     margin-top: 30px;
   }
-  ${media.desktop} {
+  ${media.tablet} {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     & > div + div {
       margin-top: 0;
+      margin-left: 15px;
+    }
+  }
+  ${media.desktop} {
+    & > div + div {
       margin-left: 30px;
     }
   }
