@@ -5,9 +5,9 @@ timeRange: Dont Remember - May 2011
 order: 1
 status: stop
 ---
-
 <!--StartFragment-->
 
-Studied some stuff
+* Studied science, maths and some languages.
+* Participated in various quiz competitions.
 
 <!--EndFragment-->

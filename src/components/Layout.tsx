@@ -4,9 +4,9 @@ import { GatsbySeo } from 'gatsby-plugin-next-seo';
 import { graphql, useStaticQuery } from 'gatsby';
 // import '../global.d.ts';
 // Had added @ts-ignore
-import { MDXProvider } from '@mdx-js/react';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'sanitize.css';
+import { MDXProvider } from '@mdx-js/react';
 import 'sanitize.css/typography.css';
 import 'sanitize.css/forms.css';
 import '../styles/style.scss';
@@ -71,14 +71,14 @@ export default ({ children }: LayoutProps): JSX.Element => {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-				<meta property="fb:app_id" content="293772252484025"/>
+        <meta property="fb:app_id" content="293772252484025" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1,
         maximum-scale=1, user-scalable = no, shrink-to-fit=no"
         />
-        <meta name="apple-mobile-web-app-title" content="Gautam Naik" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="apple-mobile-web-app-title" content="Gautam Naik" />
         <meta name="apple-mobile-web-app-title" content=" " />
         <meta name="application-name" content=" " />
         <meta name="msapplication-TileColor" content="#ffffff" />
