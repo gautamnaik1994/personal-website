@@ -85,7 +85,7 @@
     "eslint-plugin-react": "7.25.1",
     "esm": "^3.2.25",
     "husky": "7.0.2",
-    "lint-staged": "^11.0.0",
+    "lint-staged": "11.2.6",
     "nodemon": "2.0.12",
     "prettier": "2.4.0",
     "react-is": "17.0.2",
