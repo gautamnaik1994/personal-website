@@ -1,8 +1,8 @@
 ---
 position: Frontend Developer & Designer
 education: "Bachelors in Computer Science "
-company: Bidchat
-companyWebsite: https://bidchat.in/
+company: Grassdoor
+companyWebsite: https://grassdoor.com/
 bday: 2nd May '94
 email: gautamnaik1994@gmail.com
 location: Panaji - Goa
