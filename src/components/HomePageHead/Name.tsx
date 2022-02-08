@@ -32,8 +32,12 @@ export default () => (
     <Name>Gautam Naik</Name>
     <p className="text-right">
       Frontend Developer @{' '}
-      <a href="https://bidchat.in/" target="_blank" rel="noreferrer noopener">
-        Bidchat
+      <a
+        href="https://grassdoor.com/"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Grassdoor
       </a>{' '}
     </p>
   </Holder>
