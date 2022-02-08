@@ -1,5 +1,5 @@
 ---
-title: Bidchat
+title: Grassdoor
 role: Frontend Developer
 timeRange: April 2017 - Present
 order: 4
