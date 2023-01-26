@@ -43,8 +43,9 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/workExperience/" } }
-        sort: { order: DESC, fields: frontmatter___order }
+        filter: { internal: { contentFilePath: { regex: "/workExperience/" } } }
+
+        sort: { frontmatter: { order: DESC } }
       ) {
         nodes {
           body

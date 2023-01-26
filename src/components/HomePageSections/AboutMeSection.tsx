@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import media from '../../utils/MediaQueries';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import SubContainer from '../SubContainer';
 import SectionTitle from '../SectionTitle';
-import styled from 'styled-components';
 
 const StyledAboutMe = styled.div`
   p {
@@ -128,7 +126,9 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       mdx(
-        fileAbsolutePath: { regex: "/_data/siteData/websiteStaticContent/" }
+        internal: {
+          contentFilePath: { regex: "/_data/siteData/websiteStaticContent/" }
+        }
       ) {
         body
         frontmatter {
@@ -153,7 +153,7 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
 
   const themeContext = useContext(ThemeContext);
 
-  console.log('Current theme: ', themeContext);
+  console.log(`Current theme: `, themeContext);
 
   return (
     <section className={`relative ${className}`}>
@@ -177,7 +177,8 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
                     title={`Visit ${link.key} profile`}
                     rel="noreferrer"
                   >
-                    <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
+                    <i className={`icon-${link.iconClassName}`} /> {link.key}
+                    {` `}
                   </a>
                 );
               })}
@@ -199,7 +200,7 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
             <i className="icon-cake" /> {_data.bday}{' '}
           </div>
 					*/}
-            {themeContext.mode === 'dark' ? (
+            {themeContext.mode === `dark` ? (
               <a
                 href="https://stackoverflow.com/users/2376317/gautam-naik"
                 className="stack-badge"

@@ -70,11 +70,11 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
     {
       allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/_data/blog/" }
+          internal: { contentFilePath: { regex: "/_data/blog/" } }
           frontmatter: { publish: { eq: true } }
         }
         limit: 2
-        sort: { fields: frontmatter___date, order: DESC }
+        sort: { frontmatter: { date: DESC } }
       ) {
         edges {
           node {

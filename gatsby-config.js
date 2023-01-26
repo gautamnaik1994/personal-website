@@ -1,13 +1,6 @@
-require('dotenv').config({
+require(`dotenv`).config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-
-var netlifyCmsPaths = {
-  resolve: `gatsby-plugin-netlify-cms-paths`,
-  options: {
-    cmsConfig: `/static/admin/config.yml`,
-  },
-};
 
 module.exports = {
   flags: {
@@ -19,31 +12,31 @@ module.exports = {
     LAZY_IMAGES: true,
     DEV_SSR: false,
   },
-  pathPrefix: '/',
+  graphqlTypegen: true,
+  pathPrefix: `/`,
   siteMetadata: {
-    siteUrl: 'https://gautamnaik.com',
-    author: 'Gautam Naik',
-    title: 'Gautam Naik',
-    description:
-      'Gautam Naik is a UI Designer and Frontend Web Developer who specializes in building mobile-friendly web apps',
+    siteUrl: `https://gautamnaik.com`,
+    author: `Gautam Naik`,
+    title: `Gautam Naik`,
+    description: `Gautam Naik is a UI Designer and Frontend Web Developer who specializes in building mobile-friendly web apps`,
     keywords: [
-      'ui',
-      'ux',
-      'designer',
-      'css',
-      'frontend',
-      'reactjs',
-      'javascript',
-      'python',
-      'scss',
-      'adobe',
-      'xd',
-      'photoshop',
-      'illustrator',
-      'figma',
-      'blog',
+      `ui`,
+      `ux`,
+      `designer`,
+      `css`,
+      `frontend`,
+      `reactjs`,
+      `javascript`,
+      `python`,
+      `scss`,
+      `adobe`,
+      `xd`,
+      `photoshop`,
+      `illustrator`,
+      `figma`,
+      `blog`,
     ],
-    ogImage: '/siteMedia/og-image.png',
+    ogImage: `/siteMedia/og-image.png`,
   },
   plugins: [
     // {
@@ -67,15 +60,16 @@ module.exports = {
         path: `${__dirname}/_data`,
       },
     },
-    netlifyCmsPaths,
+
+    // netlifyCmsPaths,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: ['.mdx', '.md'],
+        extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
-          netlifyCmsPaths,
+          // netlifyCmsPaths,
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-images`,
             options: {
               // maxWidth: 620,
               // srcSetBreakpoints: [400],
@@ -84,7 +78,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: 'language-',
+              classPrefix: `language-`,
               inlineCodeMarker: null,
               aliases: {},
               noInlineHighlight: false,
@@ -94,39 +88,41 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-sass',
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sass`,
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Gautam Naik',
-        short_name: 'Gautam Naik',
-        start_url: '/',
-        background_color: '#212738',
-        theme_color: '#4BACFE',
-        display: 'standalone',
-        icon: 'assets/logo.png',
+        // This will impact how browsers show your PWA/website
+        // https://css-tricks.com/meta-theme-color-and-trickery/
+        name: `Gautam Naik`,
+        short_name: `Gautam Naik`,
+        start_url: `/`,
+        background_color: `#212738`,
+        theme_color: `#4BACFE`,
+        display: `standalone`,
+        icon: `assets/logo.png`,
         icon_options: {
           purpose: `any maskable`,
         },
       },
     },
-    'gatsby-plugin-offline',
+    `gatsby-plugin-offline`,
     {
-      resolve: 'gatsby-plugin-next-seo',
+      resolve: `gatsby-plugin-next-seo`,
       options: {
         openGraph: {
-          type: 'website',
-          locale: 'en_IN',
-          url: 'https://www.gautamnaik.com/',
-          site_name: 'Gautam Naik',
+          type: `website`,
+          locale: `en_IN`,
+          url: `https://www.gautamnaik.com/`,
+
+          site_name: `Gautam Naik`,
         },
         facebook: {
           appId: 543210136344363,
@@ -139,7 +135,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-tagmanager',
+      resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: `${process.env.GTM_KEY}`,
       },

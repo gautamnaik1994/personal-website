@@ -5,7 +5,7 @@ import LinkButton from './LinkButton';
 const DownloadCVButton = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
-      mdx(fileAbsolutePath: { regex: "/websiteStaticContent/" }) {
+      mdx(internal: { contentFilePath: { regex: "/websiteStaticContent/" } }) {
         frontmatter {
           cv
         }

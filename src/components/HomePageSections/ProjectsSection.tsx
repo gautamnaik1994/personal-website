@@ -55,10 +55,10 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
     {
       allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/_data/projects/" }
+          internal: { contentFilePath: { regex: "/_data/projects/" } }
           frontmatter: { publish: { eq: true } }
         }
-        sort: { order: ASC, fields: frontmatter___order }
+        sort: { frontmatter: { order: ASC } }
         limit: 6
       ) {
         edges {
@@ -108,7 +108,7 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
           );
         })}
       </ProjectList>
-      {/*TODO: Add links to Behance and Github*/}
+      {/* TODO: Add links to Behance and Github */}
     </section>
   );
 };
