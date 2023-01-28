@@ -54,7 +54,7 @@ interface PostItemProps {
       bannerImage: { publicURL: string };
       category: string;
     };
-    timeToRead: number;
+    // timeToRead: number;
   };
 }
 
@@ -116,7 +116,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
                 node.frontmatter.bannerImage.childImageSharp.gatsbyImageData
               }
               category={node.frontmatter.category}
-              readTime={node.timeToRead}
+              // readTime={node.timeToRead}
             />
           ))}
           <Pagination
@@ -185,7 +185,6 @@ export const query = graphql`
               }
             }
           }
-          timeToRead
         }
       }
     }

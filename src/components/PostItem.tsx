@@ -5,8 +5,8 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Link from './Link';
 import media from '../utils/MediaQueries';
 
-const boxShadow = theme('mode', {
-  light: '0px 22px 40px rgba(0, 0, 0, 0.1)',
+const boxShadow = theme(`mode`, {
+  light: `0px 22px 40px rgba(0, 0, 0, 0.1)`,
 });
 
 const HLayout = css`
@@ -99,8 +99,8 @@ interface Props {
   excerpt: string;
   category: string;
   tags: string[];
-  readTime: number;
-  banner: string;
+  // readTime: number;
+  // banner: string;
   responsive: boolean;
   className?: string;
 }
@@ -112,30 +112,30 @@ export default ({
   excerpt,
   category,
   tags,
-  readTime,
-  banner,
+  // readTime,
+  // banner,
   responsive = true,
   ...props
 }: Props): JSX.Element => (
   <PostItem
     responsive={responsive}
     className={props.className}
-    bgImage={banner.placeholder?.fallback}
+    // bgImage={banner.placeholder?.fallback}
   >
     <div className="img-container">
-      <GatsbyImage image={banner} alt={title} />
+      {/* <GatsbyImage image={banner} alt={title} /> */}
     </div>
     <Link title={title} to={`/blog/${link}`}>
       <h2 className="m-0">{title}</h2>
     </Link>
-    <small>
+    {/* <small>
       {date} &bull; {readTime} minutes read
-    </small>
+    </small> */}
     <Link className="category-link" title={category} to={`/blog/${category}`}>
       <i className="icon-category text-accent l-icon" />
       <span>{category}</span>
       <i className="icon-double-arrow r-icon" />
-      {/*TODO:animate this icon*/}
+      {/* TODO:animate this icon */}
     </Link>
 
     <article className="one-rem-mt one-rem-mb">{excerpt}</article>

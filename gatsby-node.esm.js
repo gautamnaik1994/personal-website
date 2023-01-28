@@ -29,6 +29,9 @@ async function createPostPage({ actions, graphql }) {
             frontmatter {
               slug
             }
+            internal {
+              contentFilePath
+            }
           }
           next {
             frontmatter {
@@ -49,7 +52,7 @@ async function createPostPage({ actions, graphql }) {
   const { edges } = data.allMdx;
   edges.forEach((post) => {
     actions.createPage({
-      path: `/blog/${post.node.frontmatter.slug}`,
+      path: `/blog/${post.node.frontmatter.slug}?__contentFilePath=${post.node.internal.contentFilePath}`,
       component: template,
       context: {
         id: post.node.id,
@@ -186,14 +189,8 @@ export async function createSchemaCustomization({ actions }) {
   // blog posts are stored inside "content/blog" instead of returning an error
   createTypes(`
     type SiteSiteMetadata {
-      author: Author
       siteUrl: String
       social: Social
-    }
-
-    type Author {
-      name: String
-      summary: String
     }
 
     type Social {
@@ -219,5 +216,19 @@ export async function createSchemaCustomization({ actions }) {
     type Fields {
       slug: String
     }
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+      fields: Fields
+    }
   `);
 }
+// type SiteSiteMetadata {
+//   author: Author
+//   siteUrl: String
+//   social: Social
+// }
+
+// type Author {
+//   name: String
+//   summary: String
+// }

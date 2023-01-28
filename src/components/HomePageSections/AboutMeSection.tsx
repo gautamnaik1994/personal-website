@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeContext } from 'styled-components';
 import media from '../../utils/MediaQueries';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+// import { MDXRenderer } from 'gatsby-plugin-mdx';
 import SubContainer from '../SubContainer';
 import SectionTitle from '../SectionTitle';
 
@@ -125,12 +125,10 @@ interface Props {
 const AboutMeSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
-      mdx(
-        internal: {
-          contentFilePath: { regex: "/_data/siteData/websiteStaticContent/" }
-        }
+      markdownRemark(
+        fileAbsolutePath: { regex: "/_data/siteData/websiteStaticContent/" }
       ) {
-        body
+        html
         frontmatter {
           company
           bday
@@ -148,21 +146,19 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
       }
     }
   `);
-  const _data = data.mdx.frontmatter;
-  const aboutMe = data.mdx.body;
+  const _data = data.markdownRemark.frontmatter;
+  const aboutMe = data.markdownRemark.html;
 
   const themeContext = useContext(ThemeContext);
 
-  console.log(`Current theme: `, themeContext);
+  console.log(`Current theme: `, aboutMe);
 
   return (
     <section className={`relative ${className}`}>
       <SectionTitle title="About Me" />
 
       <FlexBox>
-        <StyledAboutMe>
-          <MDXRenderer>{aboutMe}</MDXRenderer>
-        </StyledAboutMe>
+        <StyledAboutMe dangerouslySetInnerHTML={{ __html: aboutMe }} />
         <BlackBox>
           <div className="circle" />
           <div className="relative">

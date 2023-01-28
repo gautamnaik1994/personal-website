@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+// import { MDXRenderer } from 'gatsby-plugin-mdx';
 import theme from 'styled-theming';
 import { useSpring, animated } from 'react-spring';
 import { useMeasure } from 'react-use';
@@ -20,10 +20,9 @@ const testTube = keyframes`
 
 `;
 
-const testTubeShadow = theme('mode', {
-  light:
-    'inset 0 0 5px 0px rgb(99 99 99 / 44%), 0 0 12px 7px rgb(255 255 255 / 55%)',
-  dark: 'inset 0 0 3px 0px rgb(255 255 255 / 37%), 0 0 4px rgb(255 255 255 / 13%)',
+const testTubeShadow = theme(`mode`, {
+  light: `inset 0 0 5px 0px rgb(99 99 99 / 44%), 0 0 12px 7px rgb(255 255 255 / 55%)`,
+  dark: `inset 0 0 3px 0px rgb(255 255 255 / 37%), 0 0 4px rgb(255 255 255 / 13%)`,
 });
 
 const WorkExperienceMainItem = styled.div`
@@ -167,14 +166,14 @@ interface Props {
 }
 
 export default ({
-  title = 'Bidchat',
-  responsibilities = 'CSS variables is a new addition to CSS. As the name says, we can now add custom variables, similar to SCSS, Less and Stylus. Example This… ',
-  role = 'Frontend Developer',
-  timeRange = 'March 2017 - March 2020',
-  status = 'stop',
+  title = `Bidchat`,
+  responsibilities = `CSS variables is a new addition to CSS. As the name says, we can now add custom variables, similar to SCSS, Less and Stylus. Example This… `,
+  role = `Frontend Developer`,
+  timeRange = `March 2017 - March 2020`,
+  status = `stop`,
   ...props
 }: Props): JSX.Element => {
-  const defaultHeight = '15px';
+  const defaultHeight = `15px`;
   const [open, toggle] = useState(false);
   const [contentHeight, setContentHeight] = useState(defaultHeight);
   const [ref, { height }] = useMeasure();
@@ -185,22 +184,22 @@ export default ({
 
   const rotate = useSpring({
     config: { mass: 4, tension: 250, friction: 30 },
-    transform: open ? `rotate(270deg)` : 'rotate(90deg)',
+    transform: open ? `rotate(270deg)` : `rotate(90deg)`,
   });
   useEffect(() => {
-    //Sets initial height
+    // Sets initial height
     setContentHeight(height);
 
-    //Adds resize event listener
-    window.addEventListener('resize', setContentHeight(height));
+    // Adds resize event listener
+    window.addEventListener(`resize`, setContentHeight(height));
 
     // Clean-up
-    return window.removeEventListener('resize', setContentHeight(height));
+    return window.removeEventListener(`resize`, setContentHeight(height));
   }, [height]);
 
   return (
     <WorkExperienceMainItem>
-      {status === 'play' ? (
+      {status === `play` ? (
         <div className="test-tube" title="Frustration Meter" />
       ) : (
         <div className="link-chain" />
@@ -214,7 +213,7 @@ export default ({
 
       <animated.div className="info-sec" style={expand}>
         <div ref={ref} className="info-inner">
-          <MDXRenderer>{responsibilities}</MDXRenderer>
+          <p dangerouslySetInnerHTML={{ __html: responsibilities }} />
           <div className="pad-bottom" />
         </div>
       </animated.div>
@@ -225,7 +224,8 @@ export default ({
         aria-label="Show Responsibilities"
         title="Show Responsibilities"
       >
-        <animated.i className=" icon-arrow-right" style={rotate} />{' '}
+        <animated.i className=" icon-arrow-right" style={rotate} />
+        {` `}
       </button>
     </WorkExperienceMainItem>
   );

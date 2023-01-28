@@ -38,7 +38,7 @@ interface Props {
 interface ProjectItemProps {
   node: {
     id: string;
-    body: string;
+    html: string;
     frontmatter: {
       description: string;
       projectColor: string;
@@ -53,9 +53,9 @@ interface ProjectItemProps {
 const ProjectsSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
-      allMdx(
+      allMarkdownRemark(
         filter: {
-          internal: { contentFilePath: { regex: "/_data/projects/" } }
+          fileAbsolutePath: { regex: "/_data/projects/" }
           frontmatter: { publish: { eq: true } }
         }
         sort: { frontmatter: { order: ASC } }
@@ -63,7 +63,7 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
       ) {
         edges {
           node {
-            body
+            html
             frontmatter {
               projectColor
               title
@@ -74,13 +74,6 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
               links {
                 key
                 value
-              }
-              image {
-                childImageSharp {
-                  original {
-                    src
-                  }
-                }
               }
             }
           }
@@ -93,20 +86,22 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
     <section className={className}>
       <SectionTitle title="Projects" />
       <ProjectList>
-        {data.allMdx.edges.map((project: ProjectItemProps, index: number) => {
-          const _data = project.node.frontmatter;
-          return (
-            <StyledProjectItem
-              key={index}
-              title={_data.title}
-              description={project.node.body}
-              links={_data.links}
-              details={_data.details}
-              color={_data.projectColor}
-              banner={_data.image?.childImageSharp.original.src}
-            />
-          );
-        })}
+        {data.allMarkdownRemark.edges.map(
+          (project: ProjectItemProps, index: number) => {
+            const _data = project.node.frontmatter;
+            return (
+              <StyledProjectItem
+                key={index}
+                title={_data.title}
+                description={project.node.html}
+                links={_data.links}
+                details={_data.details}
+                color={_data.projectColor}
+                banner={_data.image?.childImageSharp.original.src}
+              />
+            );
+          },
+        )}
       </ProjectList>
       {/* TODO: Add links to Behance and Github */}
     </section>

@@ -61,7 +61,7 @@ interface PostItemProps {
       bannerImage: { publicURL: string };
       category: string;
     };
-    timeToRead: number;
+    // timeToRead: number;
   };
 }
 
@@ -92,7 +92,6 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
               }
             }
             excerpt
-            timeToRead
           }
         }
       }
@@ -112,11 +111,11 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
               title={_data.title}
               category={_data.category}
               link={_data.slug}
-              banner={_data.bannerImage.childImageSharp.gatsbyImageData}
+              // banner={_data.bannerImage.childImageSharp.gatsbyImageData}
               tags={_data.tags}
               excerpt={_data.description}
               date={_data.date}
-              readTime={post.node.timeToRead}
+              // readTime={post.node.timeToRead}
             />
           );
         })}
