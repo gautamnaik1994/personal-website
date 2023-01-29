@@ -75,6 +75,13 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
                 key
                 value
               }
+              image {
+                childImageSharp {
+                  original {
+                    src
+                  }
+                }
+              }
             }
           }
         }

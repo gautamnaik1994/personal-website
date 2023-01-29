@@ -1,18 +1,18 @@
 import { darkTheme, lightTheme } from './colors';
 
 export const getThemeValue = (): string => {
-  let initialThemeValue = 'dark';
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('theme') === null) {
-      if (matchMedia('(prefers-color-scheme: dark)').matches) {
-        initialThemeValue = 'dark';
-        localStorage.setItem('theme', 'dark');
+  let initialThemeValue = `dark`;
+  if (typeof window !== `undefined`) {
+    if (localStorage.getItem(`theme`) === null) {
+      if (matchMedia(`(prefers-color-scheme: dark)`).matches) {
+        initialThemeValue = `dark`;
+        localStorage.setItem(`theme`, `dark`);
       } else {
-        localStorage.setItem('theme', 'light');
-        initialThemeValue = 'light';
+        localStorage.setItem(`theme`, `light`);
+        initialThemeValue = `light`;
       }
     } else {
-      initialThemeValue = localStorage.getItem('theme') || 'dark';
+      initialThemeValue = localStorage.getItem(`theme`) || `dark`;
     }
     setColors(initialThemeValue);
   }
@@ -26,7 +26,7 @@ interface colorData {
 }
 
 export const setColors = (theme: string): void => {
-  if (theme === 'light') {
+  if (theme === `light`) {
     lightTheme.forEach((data: colorData) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });

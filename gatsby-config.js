@@ -46,6 +46,7 @@ module.exports = {
     //     name: 'blog',
     //   },
     // },
+    // `gatsby-plugin-netlify-cms-paths`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -68,6 +69,7 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           // netlifyCmsPaths,
+          // `gatsby-remark-relative-images`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -75,6 +77,7 @@ module.exports = {
               // srcSetBreakpoints: [400],
             },
           },
+
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -92,12 +95,14 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          // `gatsby-remark-relative-images`,
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
             },
           },
+
           // {
           //   resolve: `gatsby-remark-responsive-iframe`,
           //   options: {

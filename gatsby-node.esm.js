@@ -1,5 +1,6 @@
 import path, { resolve } from 'path';
 import { createFilePath } from 'gatsby-source-filesystem';
+// import fmImagesToRelative from 'gatsby-remark-relative-images';
 
 let categories = [];
 let blogPostPerPage = 4;
@@ -52,8 +53,8 @@ async function createPostPage({ actions, graphql }) {
   const { edges } = data.allMdx;
   edges.forEach((post) => {
     actions.createPage({
-      path: `/blog/${post.node.frontmatter.slug}?__contentFilePath=${post.node.internal.contentFilePath}`,
-      component: template,
+      path: `/blog/${post.node.frontmatter.slug}`,
+      component: `${template}?__contentFilePath=${post.node.internal.contentFilePath}`,
       context: {
         id: post.node.id,
         next: post.next,
@@ -166,7 +167,7 @@ async function createCategoryPages({ actions, graphql }) {
 
 export async function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
-
+  // fmImagesToRelative(node); // convert image paths for gatsby images
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
 

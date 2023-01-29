@@ -114,7 +114,7 @@ const StyledMDXRenderer = styled.div`
   }
 `;
 
-export default ({
+const PosTemplate = ({
   data: { site, mdx },
   pageContext: { next, prev },
   location,
@@ -122,7 +122,7 @@ export default ({
 }: Props): JSX.Element => {
   return (
     <Fragment>
-      <GatsbySeo
+      {/* <GatsbySeo
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description}
         canonical={location.href}
@@ -146,7 +146,7 @@ export default ({
             },
           ],
         }}
-      />
+      /> */}
       <PageUnderConstruction />
       <Banner
         bgImage={
@@ -208,7 +208,7 @@ export const pageQuery = graphql`
         bannerImage {
           childImageSharp {
             gatsbyImageData(
-              width: 1140
+              width: 1200
               layout: FULL_WIDTH
               placeholder: BLURRED
             )
@@ -223,3 +223,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default PosTemplate;

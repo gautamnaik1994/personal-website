@@ -151,8 +151,6 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
 
   const themeContext = useContext(ThemeContext);
 
-  console.log(`Current theme: `, aboutMe);
-
   return (
     <section className={`relative ${className}`}>
       <SectionTitle title="About Me" />

@@ -1,11 +1,11 @@
 ---
 title: Ticlet
-image: /img/ticlet.png
+image: ticlet.png
 order: 3
 publish: true
 isPersonalProject: false
-companyName: Genora Infotech
 projectColor: "#6b75d2"
+companyName: Genora Infotech
 details:
   - key: "Role "
     value: UI Designer

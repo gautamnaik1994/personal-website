@@ -105,7 +105,7 @@ interface Props {
   className?: string;
 }
 
-export default ({
+const PostItemMain = ({
   link,
   title,
   date,
@@ -113,7 +113,7 @@ export default ({
   category,
   tags,
   // readTime,
-  // banner,
+  banner,
   responsive = true,
   ...props
 }: Props): JSX.Element => (
@@ -123,7 +123,7 @@ export default ({
     // bgImage={banner.placeholder?.fallback}
   >
     <div className="img-container">
-      {/* <GatsbyImage image={banner} alt={title} /> */}
+      <GatsbyImage image={banner} alt={title} />
     </div>
     <Link title={title} to={`/blog/${link}`}>
       <h2 className="m-0">{title}</h2>
@@ -147,3 +147,5 @@ export default ({
     </div>
   </PostItem>
 );
+
+export default PostItemMain;

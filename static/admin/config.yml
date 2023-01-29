@@ -11,9 +11,9 @@ backend:
 
 local_backend: true
 
-site_url: https://gautamn.netlify.app
+site_url: https://gautam.netlify.app
 
-logo_url: https://gautamn.netlify.app/blogLogo.svg
+logo_url: https://gautam.netlify.app/blogLogo.svg
 
 publish_mode: editorial_workflow
 
@@ -22,6 +22,7 @@ slug:
   clean_accents: true
   sanitize_replacement: '-'
 
+media_folder_relative: true
 media_folder: static/img
 public_folder: /img
 
@@ -128,8 +129,17 @@ collections: # A list of collections the CMS should be able to edit
               public_folder: '/siteMedia',
             }
           - { label: 'Footer', name: 'footer', widget: 'string' }
-          - { label: 'Contact Me Text', name: 'contactMeText', widget: 'string'}
-          - { label: 'Looking For Job', name: 'lookingForJob', widget: 'boolean', required: false}
+          - {
+              label: 'Contact Me Text',
+              name: 'contactMeText',
+              widget: 'string',
+            }
+          - {
+              label: 'Looking For Job',
+              name: 'lookingForJob',
+              widget: 'boolean',
+              required: false,
+            }
             # Socail Links
           - label: 'Social Links'
             name: 'socialLinks'
@@ -168,7 +178,7 @@ collections: # A list of collections the CMS should be able to edit
             name: 'title'
             widget: 'list'
             allow_add: true
-            default: ['Genora Infotech','Bidchat']
+            default: ['Genora Infotech', 'Bidchat']
       - name: 'blogTags'
         label: 'Blog Tags'
         file: '_data/siteData/blogTags.md'
@@ -183,11 +193,15 @@ collections: # A list of collections the CMS should be able to edit
     label: 'Blog'
     folder: '_data/blog'
     slug: '{{slug}}'
+    path: '{{slug}}/index'
+    identifier_field: slug
+    media_folder: ''
+    public_folder: ''
     editor:
       preview: true
     create: true
     description: 'Blogs'
-    sortable_fields: ['title','date','publish']
+    sortable_fields: ['title', 'date', 'publish']
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
@@ -288,16 +302,29 @@ collections: # A list of collections the CMS should be able to edit
       preview: false
     create: true
     slug: 'project-{{title}}'
+    media_folder: ''
+    public_folder: ''
     description: 'Projects Info'
     sortable_fields: ['order']
     fields:
-      - { label: 'Name', name: 'title', widget: 'string'}
-      - { label: 'Image', name: 'image', widget: 'image', required: false}
-      - { label: 'Description', name: 'body', widget: 'markdown'}
-      - { label: 'Order', name: 'order', widget: 'number'}
+      - { label: 'Name', name: 'title', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Description', name: 'body', widget: 'markdown' }
+      - { label: 'Order', name: 'order', widget: 'number' }
       - { label: 'Publish', name: 'publish', widget: 'boolean', default: true }
-      - { label: 'Personal Project', name: 'isPersonalProject', widget: 'boolean', default: false }
-      - { label: 'Project Color', name: 'projectColor', widget: 'color', enableAlpha: false, allowInput: true}
+      - {
+          label: 'Personal Project',
+          name: 'isPersonalProject',
+          widget: 'boolean',
+          default: false,
+        }
+      - {
+          label: 'Project Color',
+          name: 'projectColor',
+          widget: 'color',
+          enableAlpha: false,
+          allowInput: true,
+        }
       - {
           label: 'Company Name',
           name: 'companyName',

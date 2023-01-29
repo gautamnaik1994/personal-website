@@ -111,7 +111,7 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
               title={_data.title}
               category={_data.category}
               link={_data.slug}
-              // banner={_data.bannerImage.childImageSharp.gatsbyImageData}
+              banner={_data.bannerImage.childImageSharp.gatsbyImageData}
               tags={_data.tags}
               excerpt={_data.description}
               date={_data.date}

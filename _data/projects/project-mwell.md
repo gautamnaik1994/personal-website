@@ -1,6 +1,6 @@
 ---
 title: Mwell
-image: /img/mwell.png
+image: mwell.png
 order: 4
 publish: true
 isPersonalProject: false
