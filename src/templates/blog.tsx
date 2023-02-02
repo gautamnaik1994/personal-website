@@ -1,10 +1,10 @@
 import React, { useLayoutEffect, useState, Fragment } from 'react';
 import { graphql } from 'gatsby';
-//import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-//import Link from '../components/Link';
+// import Link from '../components/Link';
 import Hero from '../components/Hero';
 import PostItem from '../components/PostItem';
 import CategoryTagList from '../components/CategoryTagList';
@@ -54,7 +54,7 @@ interface PostItemProps {
       bannerImage: { publicURL: string };
       category: string;
     };
-    timeToRead: number;
+    // timeToRead: number;
   };
 }
 
@@ -62,7 +62,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { site, allMdx } = data;
   const posts = allMdx.edges;
-  //const [showHero, setShowHero] = useState<boolean>(true);
+  // const [showHero, setShowHero] = useState<boolean>(true);
 
   const { currentPage, pageCount, base, categories, activeCategoryIndex } =
     pageContext;
@@ -70,7 +70,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
   const nextPagePath = (): string => {
     if (currentPage + 1 <= pageCount) {
       return `${base}/${currentPage + 1}`;
-    } else return '';
+    } else return ``;
   };
   const previousPagePath = (): string => {
     if (currentPage - 1 > 0) {
@@ -78,12 +78,12 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
         return `${base}`;
       }
       return `${base}/${currentPage - 1}`;
-    } else return '';
+    } else return ``;
   };
 
   const heroTitle = (): string | null => {
     if (activeCategoryIndex >= 0) {
-      console.log(' activeCategoryIndex', categories[activeCategoryIndex]);
+      console.log(` activeCategoryIndex`, categories[activeCategoryIndex]);
       return categories[activeCategoryIndex];
     }
     return undefined;
@@ -96,11 +96,11 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
         description="This blogs contains posts based on VIM, CSS and various topics"
         canonical={`${site.siteMetadata.siteUrl}/blog`}
         openGraph={{
-          title: 'Gautam Blogs',
+          title: `Gautam Blogs`,
         }}
       />
       <PageUnderConstruction />
-      {/*<Hero showHero={currentPage > 1 ? false : true} title="Welcome to Blog" />*/}
+      {/* <Hero showHero={currentPage > 1 ? false : true} title="Welcome to Blog" /> */}
       <Hero title={heroTitle()} />
       <Grid>
         <div className="left-sec">
@@ -116,7 +116,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
                 node.frontmatter.bannerImage.childImageSharp.gatsbyImageData
               }
               category={node.frontmatter.category}
-              readTime={node.timeToRead}
+              readTime={node.fields.timeToRead.text}
             />
           ))}
           <Pagination
@@ -134,7 +134,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
             previousPagePath={previousPagePath()}
           >
             <CategoryTagList
-              name={'Categories'}
+              name={`Categories`}
               list={categories}
               activeIndex={activeCategoryIndex}
             />
@@ -159,13 +159,13 @@ export const query = graphql`
     }
     allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/_data/blog/" }
+        internal: { contentFilePath: { regex: "/blog/" } }
         frontmatter: {
           category: { eq: $activeCategory }
           publish: { eq: true }
         }
       }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { frontmatter: { date: DESC } }
       limit: $blogPostPerPage
       skip: $skip
     ) {
@@ -185,7 +185,11 @@ export const query = graphql`
               }
             }
           }
-          timeToRead
+           fields {
+                  timeToRead {
+                    text
+                  }
+                }
         }
       }
     }

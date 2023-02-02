@@ -1,6 +1,6 @@
 ---
 title: Grassdoor
-image: /img/grassdoorlogo.png
+image: grassdoorlogo.png
 order: 0
 publish: true
 isPersonalProject: false

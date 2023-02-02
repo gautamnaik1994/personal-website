@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import media from '../../utils/MediaQueries';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+// import { MDXRenderer } from 'gatsby-plugin-mdx';
 import SubContainer from '../SubContainer';
 import SectionTitle from '../SectionTitle';
-import styled from 'styled-components';
 
 const StyledAboutMe = styled.div`
   p {
@@ -127,10 +125,10 @@ interface Props {
 const AboutMeSection = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
-      mdx(
+      markdownRemark(
         fileAbsolutePath: { regex: "/_data/siteData/websiteStaticContent/" }
       ) {
-        body
+        html
         frontmatter {
           company
           bday
@@ -148,21 +146,17 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
       }
     }
   `);
-  const _data = data.mdx.frontmatter;
-  const aboutMe = data.mdx.body;
+  const _data = data.markdownRemark.frontmatter;
+  const aboutMe = data.markdownRemark.html;
 
   const themeContext = useContext(ThemeContext);
-
-  console.log('Current theme: ', themeContext);
 
   return (
     <section className={`relative ${className}`}>
       <SectionTitle title="About Me" />
 
       <FlexBox>
-        <StyledAboutMe>
-          <MDXRenderer>{aboutMe}</MDXRenderer>
-        </StyledAboutMe>
+        <StyledAboutMe dangerouslySetInnerHTML={{ __html: aboutMe }} />
         <BlackBox>
           <div className="circle" />
           <div className="relative">
@@ -177,7 +171,8 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
                     title={`Visit ${link.key} profile`}
                     rel="noreferrer"
                   >
-                    <i className={`icon-${link.iconClassName}`} /> {link.key}{' '}
+                    <i className={`icon-${link.iconClassName}`} /> {link.key}
+                    {` `}
                   </a>
                 );
               })}
@@ -199,7 +194,7 @@ const AboutMeSection = ({ className }: Props): JSX.Element => {
             <i className="icon-cake" /> {_data.bday}{' '}
           </div>
 					*/}
-            {themeContext.mode === 'dark' ? (
+            {themeContext.mode === `dark` ? (
               <a
                 href="https://stackoverflow.com/users/2376317/gautam-naik"
                 className="stack-badge"

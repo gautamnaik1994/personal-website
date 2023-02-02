@@ -1,11 +1,11 @@
 ---
 title: Meet & Greet
-image: /img/mglogo.png
+image: mglogo.png
 order: 1
 publish: true
 isPersonalProject: false
-companyName: Bidchat
 projectColor: "#f53e3b"
+companyName: Bidchat
 details:
   - key: "Role "
     value: UI designer and Frontend Developer

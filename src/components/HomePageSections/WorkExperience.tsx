@@ -30,6 +30,7 @@ interface Props {
   className?: string;
 }
 interface WorkExperienceProps {
+  html: string;
   frontmatter: {
     title: string;
     responsibilities: string;
@@ -42,12 +43,13 @@ interface WorkExperienceProps {
 const WorkExperience = ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
-      allMdx(
+      allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/workExperience/" } }
-        sort: { order: DESC, fields: frontmatter___order }
+
+        sort: { frontmatter: { order: DESC } }
       ) {
         nodes {
-          body
+          html
           frontmatter {
             timeRange
             title
@@ -64,18 +66,20 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
       <SectionTitle title="Timeline" />
       <WorkExperienceSection>
         <div>
-          {data.allMdx.nodes.map((d: WorkExperienceProps, i: number) => {
-            return (
-              <WorkExperienceMainItem
-                key={i}
-                title={d.frontmatter.title}
-                role={d.frontmatter.role}
-                responsibilities={d.body}
-                timeRange={d.frontmatter.timeRange}
-                status={d.frontmatter.status}
-              />
-            );
-          })}
+          {data.allMarkdownRemark.nodes.map(
+            (d: WorkExperienceProps, i: number) => {
+              return (
+                <WorkExperienceMainItem
+                  key={i}
+                  title={d.frontmatter.title}
+                  role={d.frontmatter.role}
+                  responsibilities={d.html}
+                  timeRange={d.frontmatter.timeRange}
+                  status={d.frontmatter.status}
+                />
+              );
+            },
+          )}
         </div>
         <HireMe />
       </WorkExperienceSection>

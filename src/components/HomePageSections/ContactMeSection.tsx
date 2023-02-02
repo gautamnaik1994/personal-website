@@ -22,7 +22,9 @@ export default ({ className }: Props): JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       mdx(
-        fileAbsolutePath: { regex: "/_data/siteData/websiteStaticContent/" }
+        internal: {
+          contentFilePath: { regex: "/_data/siteData/websiteStaticContent/" }
+        }
       ) {
         frontmatter {
           contactMeText

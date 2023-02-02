@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import theme from 'styled-theming';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 // Had added @ts-ignore
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+// import { MDXRenderer } from 'gatsby-plugin-mdx';
 import media from '../utils/MediaQueries';
 import Layout from '../components/Layout';
 import Pagination from '../components/Pagination';
@@ -114,23 +114,24 @@ const StyledMDXRenderer = styled.div`
   }
 `;
 
-export default ({
+const PosTemplate = ({
   data: { site, mdx },
   pageContext: { next, prev },
   location,
+  children,
 }: Props): JSX.Element => {
   return (
     <Fragment>
-      <GatsbySeo
+      {/* <GatsbySeo
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description}
         canonical={location.href}
         metaTags={[
           {
-            name: 'keywords',
+            name: `keywords`,
             content: mdx.frontmatter.keywords
-              ? mdx.frontmatter.keywords.join(',')
-              : '',
+              ? mdx.frontmatter.keywords.join(`,`)
+              : ``,
           },
         ]}
         openGraph={{
@@ -145,7 +146,7 @@ export default ({
             },
           ],
         }}
-      />
+      /> */}
       <PageUnderConstruction />
       <Banner
         bgImage={
@@ -157,7 +158,7 @@ export default ({
         <Container>
           <GatsbyImage
             image={mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData}
-            alt={site.siteMetadata.keywords.join(', ')}
+            alt={site.siteMetadata.keywords.join(`, `)}
           />
         </Container>
       </Banner>
@@ -179,9 +180,7 @@ export default ({
                 <div className="value">{mdx.frontmatter.updatedDate}</div>
               </div>
             </MetaDataContainer>
-            <StyledMDXRenderer>
-              <MDXRenderer>{mdx.body}</MDXRenderer>
-            </StyledMDXRenderer>
+            <StyledMDXRenderer>{children}</StyledMDXRenderer>
             <Pagination
               nextPagePath={next && `/blog/${next.frontmatter.slug}`}
               previousPagePath={prev && `/blog/${prev.frontmatter.slug}`}
@@ -209,7 +208,7 @@ export const pageQuery = graphql`
         bannerImage {
           childImageSharp {
             gatsbyImageData(
-              width: 1140
+              width: 1200
               layout: FULL_WIDTH
               placeholder: BLURRED
             )
@@ -224,3 +223,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default PosTemplate;

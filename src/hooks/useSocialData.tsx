@@ -5,7 +5,9 @@ function useSocialData() {
   const data = useStaticQuery(graphql`
     {
       mdx(
-        fileAbsolutePath: { regex: "/_data/siteData/websiteStaticContent/" }
+        internal: {
+          contentFilePath: { regex: "/_data/siteData/websiteStaticContent/" }
+        }
       ) {
         frontmatter {
           email

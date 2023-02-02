@@ -37,10 +37,10 @@ const SkillsSection = ({ className }: Props): JSX.Element => {
     {
       allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/skills/" }
+          internal: { contentFilePath: { regex: "/skills/" } }
           frontmatter: { publish: { eq: true } }
         }
-        sort: { order: DESC, fields: frontmatter___value }
+        sort: { frontmatter: { value: DESC } }
       ) {
         nodes {
           frontmatter {
