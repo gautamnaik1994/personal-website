@@ -116,7 +116,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
                 node.frontmatter.bannerImage.childImageSharp.gatsbyImageData
               }
               category={node.frontmatter.category}
-              // readTime={node.timeToRead}
+              readTime={node.fields.timeToRead.text}
             />
           ))}
           <Pagination
@@ -185,6 +185,11 @@ export const query = graphql`
               }
             }
           }
+           fields {
+                  timeToRead {
+                    text
+                  }
+                }
         }
       }
     }

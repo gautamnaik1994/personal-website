@@ -99,7 +99,7 @@ interface Props {
   excerpt: string;
   category: string;
   tags: string[];
-  // readTime: number;
+  readTime: string;
   // banner: string;
   responsive: boolean;
   className?: string;
@@ -112,7 +112,7 @@ const PostItemMain = ({
   excerpt,
   category,
   tags,
-  // readTime,
+  readTime,
   banner,
   responsive = true,
   ...props
@@ -120,7 +120,7 @@ const PostItemMain = ({
   <PostItem
     responsive={responsive}
     className={props.className}
-    // bgImage={banner.placeholder?.fallback}
+  // bgImage={banner.placeholder?.fallback}
   >
     <div className="img-container">
       <GatsbyImage image={banner} alt={title} />
@@ -128,9 +128,9 @@ const PostItemMain = ({
     <Link title={title} to={`/blog/${link}`}>
       <h2 className="m-0">{title}</h2>
     </Link>
-    {/* <small>
-      {date} &bull; {readTime} minutes read
-    </small> */}
+    <small>
+      {date} &bull; {readTime}
+    </small>
     <Link className="category-link" title={category} to={`/blog/${category}`}>
       <i className="icon-category text-accent l-icon" />
       <span>{category}</span>

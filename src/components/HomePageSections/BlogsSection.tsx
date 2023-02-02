@@ -61,7 +61,7 @@ interface PostItemProps {
       bannerImage: { publicURL: string };
       category: string;
     };
-    // timeToRead: number;
+    timeToRead: Object;
   };
 }
 
@@ -91,6 +91,11 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
                 }
               }
             }
+           fields {
+                  timeToRead {
+                    text
+                  }
+                }
             excerpt
           }
         }
@@ -115,7 +120,7 @@ const BlogsSection = ({ className }: Props): JSX.Element => {
               tags={_data.tags}
               excerpt={_data.description}
               date={_data.date}
-              // readTime={post.node.timeToRead}
+              readTime={post.node.fields.timeToRead.text}
             />
           );
         })}

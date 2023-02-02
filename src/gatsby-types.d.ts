@@ -366,18 +366,22 @@ type FieldSelectorEnum =
 
 type Fields = {
   readonly slug: Maybe<Scalars['String']>;
+  readonly timeToRead: Maybe<TimeToRead>;
 };
 
 type FieldsFieldSelector = {
   readonly slug: InputMaybe<FieldSelectorEnum>;
+  readonly timeToRead: InputMaybe<TimeToReadFieldSelector>;
 };
 
 type FieldsFilterInput = {
   readonly slug: InputMaybe<StringQueryOperatorInput>;
+  readonly timeToRead: InputMaybe<TimeToReadFilterInput>;
 };
 
 type FieldsSortInput = {
   readonly slug: InputMaybe<SortOrderEnum>;
+  readonly timeToRead: InputMaybe<TimeToReadSortInput>;
 };
 
 type File = Node & {
@@ -3193,6 +3197,38 @@ type StringQueryOperatorInput = {
   readonly regex: InputMaybe<Scalars['String']>;
 };
 
+type TimeToRead = {
+  readonly minutes: Maybe<Scalars['Int']>;
+  readonly seconds: Maybe<Scalars['Int']>;
+  readonly text: Maybe<Scalars['String']>;
+  readonly time: Maybe<Scalars['Int']>;
+  readonly words: Maybe<Scalars['Int']>;
+};
+
+type TimeToReadFieldSelector = {
+  readonly minutes: InputMaybe<FieldSelectorEnum>;
+  readonly seconds: InputMaybe<FieldSelectorEnum>;
+  readonly text: InputMaybe<FieldSelectorEnum>;
+  readonly time: InputMaybe<FieldSelectorEnum>;
+  readonly words: InputMaybe<FieldSelectorEnum>;
+};
+
+type TimeToReadFilterInput = {
+  readonly minutes: InputMaybe<IntQueryOperatorInput>;
+  readonly seconds: InputMaybe<IntQueryOperatorInput>;
+  readonly text: InputMaybe<StringQueryOperatorInput>;
+  readonly time: InputMaybe<IntQueryOperatorInput>;
+  readonly words: InputMaybe<IntQueryOperatorInput>;
+};
+
+type TimeToReadSortInput = {
+  readonly minutes: InputMaybe<SortOrderEnum>;
+  readonly seconds: InputMaybe<SortOrderEnum>;
+  readonly text: InputMaybe<SortOrderEnum>;
+  readonly time: InputMaybe<SortOrderEnum>;
+  readonly words: InputMaybe<SortOrderEnum>;
+};
+
 type TransformOptions = {
   readonly cropFocus: InputMaybe<ImageCropFocus>;
   readonly duotone: InputMaybe<DuotoneGradient>;
@@ -3239,7 +3275,7 @@ type MyQueryQueryVariables = Exact<{
 }>;
 
 
-type MyQueryQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null, readonly author: string | null, readonly keywords: ReadonlyArray<string | null> | null, readonly siteUrl: string | null, readonly ogImage: string | null } | null } | null, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly slug: string | null, readonly category: string | null, readonly keywords: ReadonlyArray<string | null> | null, readonly description: string | null, readonly bannerImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } }> } };
+type MyQueryQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null, readonly author: string | null, readonly keywords: ReadonlyArray<string | null> | null, readonly siteUrl: string | null, readonly ogImage: string | null } | null } | null, readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly slug: string | null, readonly category: string | null, readonly keywords: ReadonlyArray<string | null> | null, readonly description: string | null, readonly bannerImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly fields: { readonly timeToRead: { readonly text: string | null } | null } | null } }> } };
 
 type siteFragment = { readonly siteMetadata: { readonly title: string | null, readonly description: string | null, readonly author: string | null, readonly keywords: ReadonlyArray<string | null> | null, readonly siteUrl: string | null, readonly ogImage: string | null } | null };
 

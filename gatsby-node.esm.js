@@ -1,5 +1,6 @@
 import path, { resolve } from 'path';
 import { createFilePath } from 'gatsby-source-filesystem';
+import readingTime from 'reading-time';
 // import fmImagesToRelative from 'gatsby-remark-relative-images';
 
 let categories = [];
@@ -8,7 +9,7 @@ let blogPostPerPage = 4;
 export async function createPages(params) {
   await fetchImportantData(params);
   await Promise.all([
-    // createCategoryPages(params),
+    createCategoryPages(params),
     createPostPage(params),
     createBlogPages(params),
   ]);
@@ -176,6 +177,11 @@ export async function onCreateNode({ node, actions, getNode }) {
       node,
       value,
     });
+    createNodeField({
+      node,
+      name: `timeToRead`,
+      value: readingTime(node.body),
+    });
   }
 }
 
@@ -213,10 +219,17 @@ export async function createSchemaCustomization({ actions }) {
       image: File @fileByRelativePath
       date: Date @dateformat
     }
-
+    type TimeToRead {
+      minutes: Int
+      seconds: Int
+      text: String
+      words: Int
+    }
     type Fields {
       slug: String
+      timeToRead: TimeToRead
     }
+
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
       fields: Fields

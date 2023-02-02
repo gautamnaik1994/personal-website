@@ -6,9 +6,9 @@ import { useSpring, animated } from 'react-spring';
 import media from '../../utils/MediaQueries';
 import Bulb from './Bulb';
 
-const textColorEnd = theme('mode', {
-  light: 'hsl(46deg 100% 73%)',
-  dark: 'hsla(46, 100%, 86%, 1)',
+const textColorEnd = theme(`mode`, {
+  light: `hsl(46deg 100% 73%)`,
+  dark: `hsla(46, 100%, 86%, 1)`,
 });
 
 const StyledHireMe = styled.div`
@@ -53,6 +53,7 @@ const StyledHireMe = styled.div`
   }
   .hire-text {
     font-size: 25px;
+    line-height: 1;
     opacity: 0.05;
     font-weight: var(--fontWeightBold);
     @supports (-webkit-background-clip: text) {
@@ -84,19 +85,19 @@ const StyledHireMe = styled.div`
 `;
 
 export default (props): JSX.Element => {
-  const [play] = useSound('/click.mp3', { volume: 0.1 });
-  //const [audio] = useState(new Audio('/click.mp3'));
+  const [play] = useSound(`/click.mp3`, { volume: 0.1 });
+  // const [audio] = useState(new Audio('/click.mp3'));
   const [entered, setEntered] = useState(false);
   const [entered2, setEntered2] = useState(false);
   const intersectionRef = useRef<HTMLDivElement>(null);
   const jump = useSpring({
     config: { mass: 4, tension: 250, friction: 30 },
-    transform: entered ? `translateY(-100%)` : 'translateY(0%)',
+    transform: entered ? `translateY(-100%)` : `translateY(0%)`,
   });
   useEffect(() => {
     const observer = new IntersectionObserver(
       function (entries) {
-        //console.log('called callback', entries[0].intersectionRatio);
+        // console.log('called callback', entries[0].intersectionRatio);
         if (intersectionRef && intersectionRef.current) {
           const ratio = entries[0].intersectionRatio;
           if (ratio > 0.75) {
@@ -105,18 +106,18 @@ export default (props): JSX.Element => {
             setEntered(false);
           }
           if (ratio > 0.8) {
-            //play();
+            // play();
             setEntered2(true);
           } else {
-            //play();
+            // play();
             setEntered2(false);
           }
         }
       },
       {
         threshold: [0.75, 1],
-        rootMargin: '200px 0px -150px 0px',
-        //root: document.querySelector('#f_root'),
+        rootMargin: `200px 0px -150px 0px`,
+        // root: document.querySelector('#f_root'),
       },
     );
     intersectionRef &&
@@ -131,9 +132,9 @@ export default (props): JSX.Element => {
 
   useEffect(() => {
     play();
-    //audio.muted = true;
-    //audio.volume = 0.1;
-    //audio.play();
+    // audio.muted = true;
+    // audio.volume = 0.1;
+    // audio.play();
   }, [entered2]);
 
   return (
@@ -146,9 +147,9 @@ export default (props): JSX.Element => {
       <div className="middle-sec">
         <span>NEXT</span>
         <animated.span className="lvl" style={jump}>
-          LEVEL?{' '}
+          LEVEL?{` `}
           <span className="i-wrapper">
-            {' '}
+            {` `}
             <i className="icon-arrow-right" />
             <i className="icon-arrow-right s-icon" />
           </span>
