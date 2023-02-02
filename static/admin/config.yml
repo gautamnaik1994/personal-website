@@ -10,7 +10,6 @@ backend:
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
 local_backend: true
-
 site_url: https://www.gautamnaik.com/
 
 logo_url: https://www.gautamnaik.com/blogLogo.svg
