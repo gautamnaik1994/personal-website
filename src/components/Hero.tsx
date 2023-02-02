@@ -109,7 +109,7 @@ interface Props {
 }
 
 export default ({
-  title = 'Gautam Blogs',
+  title = `Gautam Blogs`,
   showHero = true,
 }: Props): JSX.Element => {
   return (
