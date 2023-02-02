@@ -30,6 +30,9 @@
     "build-storybook": "build-storybook",
     "postinstall": "node postinstall.js"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@mdx-js/mdx": ">=2.2.1",
     "@mdx-js/react": ">=2.2.1",
