@@ -11,9 +11,9 @@ backend:
 
 local_backend: true
 
-site_url: https://gautam.netlify.app
+site_url: https://www.gautamnaik.com/
 
-logo_url: https://gautam.netlify.app/blogLogo.svg
+logo_url: https://www.gautamnaik.com/blogLogo.svg
 
 publish_mode: editorial_workflow
 
