@@ -89,6 +89,7 @@ const Hero = styled.header<HeroProps>`
     top: 0;
     bottom: 0;
     background-image: url(${AbstractbgRings});
+    background-repeat: repeat;
     animation: ${bgAnim} 350s infinite linear;
     ${media.desktop} {
       height: auto;
