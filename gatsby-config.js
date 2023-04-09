@@ -1,6 +1,20 @@
+// const rehypeSlug = require(`rehype-slug`);
+// const rehypeAutolinkHeadings = require(`rehype-autolink-headings`);
+// import rehypeSlug from 'rehype-slug';
+// import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+
 require(`dotenv`).config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+
+const wrapESMPlugin = (name) =>
+  function wrapESM(opts) {
+    return async (...args) => {
+      const mod = await import(name);
+      const plugin = mod.default(opts);
+      return plugin(...args);
+    };
+  };
 
 module.exports = {
   flags: {
@@ -89,6 +103,22 @@ module.exports = {
             },
           },
         ],
+        mdxOptions: {
+          remarkPlugins: [
+            // Add GitHub Flavored Markdown (GFM) support
+            // require(`remark-gfm`),
+            // To pass options, use a 2-element array with the
+            // configuration in an object in the second element
+            // [require(`remark-external-links`), { target: false }],
+          ],
+          rehypePlugins: [
+            // Generate heading ids for rehype-autolink-headings
+            wrapESMPlugin(`rehype-slug`),
+            // To pass options, use a 2-element array with the
+            // configuration in an object in the second element
+            // [wrapESMPlugin(`rehype-autolink-headings`), { behavior: `wrap` }],
+          ],
+        },
       },
     },
     {

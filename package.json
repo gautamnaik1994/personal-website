@@ -77,6 +77,8 @@
     "react-use": ">=17.4.0",
     "react-youtube": ">=10.1.0",
     "reading-time": "^1.5.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.1.0",
     "sanitize.css": ">=13.0.0",
     "sass": ">=1.57.1",
     "styled-components": ">=5.3.6",

@@ -16,14 +16,16 @@ import { darkBackgroundColor } from '../utils/colors';
 import Container from '../components/Container';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PageUnderConstruction from '../components/PageUnderConstruction';
+import TableOfContents from '../components/TableOfContents';
 
 const Grid = styled(Container)`
   ${media.desktop} {
     display: grid;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 400px;
     grid-gap: 15px;
+    align-items: start;
   }
-  margin-top: 60px;
+  margin-top: 1rem;
 `;
 
 interface BannerProps {
@@ -79,12 +81,14 @@ const Title = styled.h1`
     font-weight: 600;
     font-size: 36px;
     line-height: 47px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 `;
 
 const MetaDataContainer = styled.div`
   display: flex;
-  margin: 1rem -10px;
+  margin: 0rem -10px 1rem;
   .title {
     font-size: 12px;
     color: #888;
@@ -120,6 +124,7 @@ const PosTemplate = ({
   location,
   children,
 }: Props): JSX.Element => {
+  console.log(mdx.tableOfContents);
   return (
     <Fragment>
       {/* <GatsbySeo
@@ -163,33 +168,33 @@ const PosTemplate = ({
         </Container>
       </Banner>
       <Grid>
-        <div className="left-sec">
-          <Post>
-            <Title>{mdx.frontmatter.title}</Title>
-            <MetaDataContainer>
-              <div className="">
-                <div className="title">Posted in</div>
-                <Badge name={mdx.frontmatter.category} />
-              </div>
-              <div>
-                <div className="title">Published on </div>
-                <div className="value">{mdx.frontmatter.date}</div>
-              </div>
-              <div>
-                <div className="title">Updated on </div>
-                <div className="value">{mdx.frontmatter.updatedDate}</div>
-              </div>
-            </MetaDataContainer>
-            <StyledMDXRenderer>{children}</StyledMDXRenderer>
-            <Pagination
-              nextPagePath={next && `/blog/${next.frontmatter.slug}`}
-              previousPagePath={prev && `/blog/${prev.frontmatter.slug}`}
-              nextPostTitle={next && next.frontmatter.title}
-              prevPostTitle={prev && prev.frontmatter.title}
-            />
-          </Post>
-        </div>
-        <div className="right-sec"></div>
+        <Post>
+          <Title>{mdx.frontmatter.title}</Title>
+          <MetaDataContainer>
+            <div className="">
+              <div className="title">Posted in</div>
+              <Badge name={mdx.frontmatter.category} />
+            </div>
+            <div>
+              <div className="title">Published on </div>
+              <div className="value">{mdx.frontmatter.date}</div>
+            </div>
+            <div>
+              <div className="title">Updated on </div>
+              <div className="value">{mdx.frontmatter.updatedDate}</div>
+            </div>
+          </MetaDataContainer>
+
+          <StyledMDXRenderer>{children}</StyledMDXRenderer>
+          <Pagination
+            nextPagePath={next && `/blog/${next.frontmatter.slug}`}
+            previousPagePath={prev && `/blog/${prev.frontmatter.slug}`}
+            nextPostTitle={next && next.frontmatter.title}
+            prevPostTitle={prev && prev.frontmatter.title}
+          />
+        </Post>
+
+        <TableOfContents items={mdx.tableOfContents.items} />
       </Grid>
     </Fragment>
   );
@@ -220,6 +225,7 @@ export const pageQuery = graphql`
         description
       }
       body
+      tableOfContents
     }
   }
 `;

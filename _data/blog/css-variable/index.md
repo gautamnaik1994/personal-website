@@ -17,7 +17,7 @@ bannerImage: css-variable.png
 
 CSS variables is a new addition to CSS. As the name says, we can now add custom variables, similar to SCSS, Less and Stylus.
 
-### Example
+## Example
 
 ```css
 :root {

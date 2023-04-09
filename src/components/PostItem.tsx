@@ -9,37 +9,30 @@ const boxShadow = theme(`mode`, {
   light: `0px 22px 40px rgba(0, 0, 0, 0.1)`,
 });
 
-const HLayout = css`
-  --img-width: 360px;
-  padding-left: calc(var(--img-width) + 30px);
-  .img-container {
-    position: absolute;
-    left: 15px;
-    width: var(--img-width);
-    top: 15px;
-    bottom: 15px;
-    margin: 0;
-  }
-  .btn-holder {
-    text-align: left;
-  }
-`;
+const HLayout = css``;
 
 const PostItem = styled.div<{ responsive: boolean; bgImage: string }>`
   padding: 15px;
-  margin-bottom: 40px;
   overflow: hidden;
   z-index: 0;
   border-radius: 8px;
-  margin-bottom: 2rem;
   background-color: var(--cardColor);
   white-space: normal;
   box-shadow: var(--cardShadow);
-  &:last-child {
-    //margin-bottom: 100px;
-  }
+  margin-bottom: 2rem;
   .btn-holder {
     text-align: center;
+  }
+  ${media.tablet} {
+    margin-bottom: 0rem;
+    padding-bottom: 50px;
+    .btn-holder {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px;
+    }
   }
   .category-link {
     display: block;
@@ -87,9 +80,6 @@ const PostItem = styled.div<{ responsive: boolean; bgImage: string }>`
     vertical-align: text-bottom;
     font-weight: bold;
   }
-  ${media.tablet} {
-    ${({ responsive }) => responsive && HLayout};
-  }
 `;
 
 interface Props {
@@ -120,7 +110,7 @@ const PostItemMain = ({
   <PostItem
     responsive={responsive}
     className={props.className}
-  // bgImage={banner.placeholder?.fallback}
+    // bgImage={banner.placeholder?.fallback}
   >
     <div className="img-container">
       <GatsbyImage image={banner} alt={title} />

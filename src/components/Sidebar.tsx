@@ -13,21 +13,21 @@ import { NAVIGATION } from '../utils/constant';
 
 const properties = {
   close: {
-    transform: 'translateX(-110%)',
+    transform: `translateX(-110%)`,
   },
   open: {
-    transform: 'translateX(0%)',
+    transform: `translateX(0%)`,
   },
   springConfig: { mass: 5, tension: 250, friction: 35 },
 };
 
-const logoColor = theme('mode', {
-  light: '#333',
-  dark: '#fff',
+const logoColor = theme(`mode`, {
+  light: `#333`,
+  dark: `#fff`,
 });
 
-const bgColor = theme('mode', {
-  light: transparentize(0.5, '#fff'),
+const bgColor = theme(`mode`, {
+  light: transparentize(0.5, `#fff`),
   dark: transparentize(0.5, darkBackgroundColor),
 });
 
@@ -45,9 +45,9 @@ const Sidebar = styled(animated.aside)`
   transition: background-color 0.3s ease-in;
 
   background-color: ${bgColor};
-  backdrop-filter: blur(30px);
-  ${typeof window !== 'undefined' &&
-  navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
+  backdrop-filter: blur(10px);
+  ${typeof window !== `undefined` &&
+  navigator.userAgent.toLowerCase().indexOf(`firefox`) > -1 &&
   css`
     background-color: var(--bodyBackgroundColor);
   `};
@@ -78,7 +78,7 @@ export interface Props {
 export default ({ className, toggleTheme }: Props): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { transform } = properties[menuOpen ? 'open' : 'close'];
+  const { transform } = properties[menuOpen ? `open` : `close`];
 
   const sideBarProps = useSpring({
     transform,

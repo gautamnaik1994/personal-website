@@ -53,25 +53,27 @@ interface Props {
   prevPostTitle?: string;
 }
 
-export default ({
+export default function Pagination({
   insidePost,
   nextPagePath,
   previousPagePath,
-  nextPostTitle = 'Next',
-  prevPostTitle = 'Prev',
-}: Props) => (
-  <PaginationWrapper>
-    {previousPagePath && (
-      <Link className="left" title={prevPostTitle} to={previousPagePath}>
-        <i className="icon-arrow-right" />
-        <span>&nbsp;{prevPostTitle}</span>
-      </Link>
-    )}
-    {nextPagePath && (
-      <Link className="right" title={nextPostTitle} to={nextPagePath}>
-        <span>{nextPostTitle}&nbsp;</span>
-        <i className="icon-arrow-right" />
-      </Link>
-    )}
-  </PaginationWrapper>
-);
+  nextPostTitle = `Next`,
+  prevPostTitle = `Prev`,
+}: Props) {
+  return (
+    <PaginationWrapper>
+      {previousPagePath && (
+        <Link className="left" title={prevPostTitle} to={previousPagePath}>
+          <i className="icon-arrow-right" />
+          <span>&nbsp;{prevPostTitle}</span>
+        </Link>
+      )}
+      {nextPagePath && (
+        <Link className="right" title={nextPostTitle} to={nextPagePath}>
+          <span>{nextPostTitle}&nbsp;</span>
+          <i className="icon-arrow-right" />
+        </Link>
+      )}
+    </PaginationWrapper>
+  );
+}

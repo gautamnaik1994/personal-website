@@ -16,18 +16,14 @@ import BlogSideBar from '../components/BlogSideBar';
 import OuterLinks from '../components/OuterLinks';
 import PageUnderConstruction from '../components/PageUnderConstruction';
 
-const Grid = styled(Container)`
+const Grid = styled.div`
   ${media.desktop} {
     display: grid;
-    grid-template-columns: 1fr 200px;
-    grid-gap: 15px;
-    align-items: start;
-    .right-sec {
-      position: sticky;
-      top: 70px;
-    }
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
   }
-  margin-top: 60px;
+  margin-bottom: 2rem;
+  /* margin-top: 60px; */
 `;
 
 interface Props {
@@ -99,11 +95,16 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
           title: `Gautam Blogs`,
         }}
       />
-      <PageUnderConstruction />
+      {/* <PageUnderConstruction /> */}
       {/* <Hero showHero={currentPage > 1 ? false : true} title="Welcome to Blog" /> */}
       <Hero title={heroTitle()} />
-      <Grid>
-        <div className="left-sec">
+      <Container>
+        <CategoryTagList
+          name={`Categories`}
+          list={categories}
+          activeIndex={activeCategoryIndex}
+        />
+        <Grid>
           {posts.map(({ node }: PostItemProps, index: number) => (
             <PostItem
               key={index}
@@ -119,14 +120,16 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
               readTime={node.fields.timeToRead.text}
             />
           ))}
-          <Pagination
-            menuOpen={menuOpen}
-            setMenuOpen={setMenuOpen}
-            nextPagePath={nextPagePath()}
-            previousPagePath={previousPagePath()}
-          />
-        </div>
-        <div className="right-sec">
+        </Grid>
+        <Pagination
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+          nextPagePath={nextPagePath()}
+          previousPagePath={previousPagePath()}
+        />
+      </Container>
+
+      {/* <div className="right-sec">
           <BlogSideBar
             menuOpen={menuOpen}
             setMenuOpen={setMenuOpen}
@@ -139,8 +142,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
               activeIndex={activeCategoryIndex}
             />
           </BlogSideBar>
-        </div>
-      </Grid>
+        </div> */}
       <OuterLinks />
     </Fragment>
   );
@@ -151,7 +153,7 @@ export default Blog;
 export const query = graphql`
   query MyQuery(
     $skip: Int = 0
-    $blogPostPerPage: Int = 2
+    $blogPostPerPage: Int = 9
     $activeCategory: String
   ) {
     site {
@@ -185,11 +187,11 @@ export const query = graphql`
               }
             }
           }
-           fields {
-                  timeToRead {
-                    text
-                  }
-                }
+          fields {
+            timeToRead {
+              text
+            }
+          }
         }
       }
     }

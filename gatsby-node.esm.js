@@ -4,7 +4,7 @@ import readingTime from 'reading-time';
 // import fmImagesToRelative from 'gatsby-remark-relative-images';
 
 let categories = [];
-let blogPostPerPage = 4;
+let blogPostPerPage = 9;
 
 export async function createPages(params) {
   await fetchImportantData(params);

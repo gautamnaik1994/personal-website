@@ -1,5 +1,4 @@
-import React from 'react';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import HomePageHeader from '../components/HomePageSections/HomePageHeader';
 import Container from '../components/Container';
 import AboutMeSection from '../components/HomePageSections/AboutMeSection';
@@ -12,19 +11,21 @@ import ContactMeSection from '../components/HomePageSections/ContactMeSection';
 import DeclarationSection from '../components/HomePageSections/DeclarationSection';
 import OuterLinks from '../components/OuterLinks';
 
-export default () => (
-  <Fragment>
-    <HomePageHeader />
-    <Container>
-      <AboutMeSection className="section-spacer" />
-      <ExperienceSection className="section-spacer" />
-      <SkillsSection className="section-spacer" />
-      <BlogsSection className="section-spacer" />
-      <WorkExperience className="section-spacer" />
-      <ProjectsSection className="section-spacer" />
-      <DeclarationSection className="section-spacer" />
-      <ContactMeSection className="section-spacer" />
-    </Container>
-    <OuterLinks />
-  </Fragment>
-);
+export default function Homepage() {
+  return (
+    <Fragment>
+      <HomePageHeader />
+      <Container>
+        <AboutMeSection className="section-spacer" />
+        <ExperienceSection className="section-spacer" />
+        <SkillsSection className="section-spacer" />
+        <BlogsSection className="section-spacer" />
+        <WorkExperience className="section-spacer" />
+        <ProjectsSection className="section-spacer" />
+        <DeclarationSection className="section-spacer" />
+        <ContactMeSection className="section-spacer" />
+      </Container>
+      <OuterLinks />
+    </Fragment>
+  );
+}

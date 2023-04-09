@@ -1,75 +1,82 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import media from '../utils/MediaQueries';
-import CategoryItem from './CategoryItem';
 import Link from './Link';
 
 interface Props {
   activeIndex?: number;
-  name: string;
+  name?: string;
   active?: boolean;
   list: string[];
 }
 
 const CategoryTagList = styled.div`
-  h3 {
-    margin-top: 0;
-    font-size: 16px;
-    color: var(--accent);
-    font-weight: var(--fontWeightBold);
-  }
-  margin: 0;
+  display: flex;
+  margin-top: 1rem;
   padding-bottom: 15px;
+  align-items: center;
+  h3 {
+    display: none;
+  }
   a {
     display: block;
     line-height: 1;
-    margin-bottom: 1rem;
     font-size: 16px;
     color: var(--bodyColor);
     position: relative;
-    &:before {
-      content: '●';
-      color: var(--primary);
-      margin-right: 10px;
-      margin-left: 5px;
-      display: inline-block;
-      vertical-align: middle;
-    }
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #ffffff38;
+    margin-right: 10px;
     &.active {
-      font-weight: var(--fontWeightBold);
-      &:before {
-        content: '\\e903';
-        font-family: icomoon !important;
-      }
+      /* font-weight: var(--fontWeightBold); */
+      background-color: var(--accent);
+      color: white;
+    }
+    &:hover:not(.active) {
+      /* background-color: rgba(var(--primaryRgb), 0.5);
+      color: white; */
     }
   }
   ${media.desktop} {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
     h3 {
+      display: block;
       font-size: 22px;
+      margin: 0;
+      margin-right: 15px;
+      /* color: var(--accent); */
     }
     a {
-      margin-bottom: 0.5rem;
+      font-size: 18px;
+      padding: 10px 20px;
+      margin-right: 15px;
     }
   }
 `;
 
-export default ({ list = [], activeIndex, name }: Props) => {
+export default function List({ list = [], activeIndex, name }: Props) {
   return (
     <CategoryTagList>
       <h3 className="one-rem-mb">{name}</h3>
-      <Link title="All" to={'/blog/'} className={!activeIndex && 'active'}>
+      <Link
+        title="All"
+        to={`/blog/`}
+        className={activeIndex === undefined ? `active` : ``}
+      >
         All
       </Link>
       {list.map((item, index) => (
         <Link
           key={item}
           title={item}
-          to={'/blog/' + item}
-          className={activeIndex === index ? 'active' : ''}
+          to={`/blog/` + item}
+          className={activeIndex === index ? `active` : ``}
         >
           {item}
         </Link>
       ))}
     </CategoryTagList>
   );
-};
+}
