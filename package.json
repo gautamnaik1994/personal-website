@@ -116,7 +116,7 @@
     "cross-env": ">=7.0.3",
     "dotenv-webpack": ">=8.0.1",
     "eslint": "8.32.0",
-    "eslint-config-prettier": "8.6.0",
+    "eslint-config-prettier": "8.8.0",
     "eslint-config-standard": "17.0.0",
     "eslint-import-resolver-typescript": "3.5.5",
     "eslint-plugin-import": "2.27.5",
