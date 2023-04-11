@@ -21,6 +21,7 @@ const StyledPostItem = styled(PostItem)`
 `;
 
 const BlogList = styled.div`
+  margin-bottom:2rem;
   ${media.tablet} {
     display: flex;
     white-space: nowrap;

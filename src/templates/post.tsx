@@ -19,13 +19,14 @@ import PageUnderConstruction from '../components/PageUnderConstruction';
 import TableOfContents from '../components/TableOfContents';
 
 const Grid = styled(Container)`
+  margin-top: 2rem;
   ${media.desktop} {
     display: grid;
     grid-template-columns: 1fr 400px;
     grid-gap: 15px;
     align-items: start;
+    margin-top: 1rem;
   }
-  margin-top: 1rem;
 `;
 
 interface BannerProps {
@@ -78,7 +79,7 @@ const Title = styled.h1`
   margin-top: 0;
   font-variant-ligatures: none;
   ${media.desktop} {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 36px;
     line-height: 47px;
     margin-top: 2rem;
@@ -115,6 +116,19 @@ const MetaDataContainer = styled.div`
 const StyledMDXRenderer = styled.div`
   a {
     text-decoration: underline;
+  }
+  #introduction {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    scroll-margin-top: 250px;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    scroll-margin-top: 200px;
   }
 `;
 
@@ -225,7 +239,7 @@ export const pageQuery = graphql`
         description
       }
       body
-      tableOfContents
+      tableOfContents(maxDepth: 3)
     }
   }
 `;

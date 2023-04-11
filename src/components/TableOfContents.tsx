@@ -35,7 +35,11 @@ function useActiveId(itemIds) {
     });
     return () => {
       itemIds.forEach((id) => {
-        observer.unobserve(document.getElementById(id));
+        // console.log(`unobserve`, id);
+        const elem = document.getElementById(id);
+        if (elem) {
+          observer.unobserve(elem);
+        }
       });
     };
   }, [itemIds]);
@@ -75,6 +79,7 @@ const StyledToc = styled.div`
     list-style-type: none;
     padding-left: 10px;
     font-size: 14px;
+    margin-left: 0px;
     li {
       margin: 5px 0;
     }

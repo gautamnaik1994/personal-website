@@ -26,6 +26,7 @@ const PaginationWrapper = styled.div`
     white-space: normal;
     span {
       border-bottom: 1px dashed;
+      line-height: 1.5;
     }
     &.right {
       text-align: right;

@@ -15,9 +15,11 @@ keywords:
 bannerImage: css-variable.png
 ---
 
+## Introduction
+
 CSS variables is a new addition to CSS. As the name says, we can now add custom variables, similar to SCSS, Less and Stylus.
 
-## Example
+### Example
 
 ```css
 :root {
@@ -65,6 +67,8 @@ If the variable is not defined or may not be available/accessible due to any rea
 }
 ```
 
+## General Usage
+
 Another cool thing that CSS variables can do is change the `box-shadow` size of an element on hover.
 Before CSS variables, we had to write the following code to change the `box-shadow` on hover.
 
@@ -97,11 +101,11 @@ Notice that we had to write the entire box-shadow syntax again.
 
 As we can see, this method can be extended to use any CSS property like `background-image` URL's and will also help in writing cleaner CSS.
 
-## Usage with SCSS
+### Usage with SCSS
 
 Note that we can use this feature with SCSS/SASS if you want.
 
-## Usage with Styled Components
+### Usage with Styled Components
 
 [Styled Components](https://www.styled-components.com/) is a component-based styling framework for [Reactjs](www.reactjs.org). This blog is built using styled-components. When using styled-components, we can define color variables in a dedicated file.
 

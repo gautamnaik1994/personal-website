@@ -21,7 +21,7 @@ import { setColors, getThemeValue } from '../utils/themeConfig';
 import Sidebar from './Sidebar';
 import OuterLinks from './OuterLinks';
 
-export default ({ children }: LayoutProps): JSX.Element => {
+export default function Layout({ children }: LayoutProps): JSX.Element {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
 
   const data = useStaticQuery(graphql`
@@ -40,19 +40,19 @@ export default ({ children }: LayoutProps): JSX.Element => {
   `);
   const site = data.site;
   const toggleTheme = (): void => {
-    const currentTheme = theme === 'light' ? 'dark' : 'light';
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('theme', currentTheme);
+    const currentTheme = theme === `light` ? `dark` : `light`;
+    if (typeof window !== `undefined`) {
+      localStorage.setItem(`theme`, currentTheme);
     }
 
     setColors(currentTheme);
     setTheme(currentTheme);
-    console.log('called toggl thme');
+    console.log(`called toggl thme`);
   };
 
   useEffect(() => {
     // themeConfig();
-    //setTheme(theme);
+    // setTheme(theme);
     // alert(' d', theme);
     // window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
     //   if (e.matches) {
@@ -101,7 +101,7 @@ export default ({ children }: LayoutProps): JSX.Element => {
         description={site.siteMetadata.description}
         canonical={site.siteMetadata.siteUrl}
         metaTags={[
-          { name: 'keywords', content: site.siteMetadata.keywords.join(',') },
+          { name: `keywords`, content: site.siteMetadata.keywords.join(`,`) },
         ]}
         openGraph={{
           url: site.siteMetadata.siteUrl,
@@ -119,8 +119,8 @@ export default ({ children }: LayoutProps): JSX.Element => {
       />
       <ThemeProvider
         theme={{
-          mode: theme || 'dark',
-          primary: theme === 'light' ? primaryCol : desaturatedPrimaryCol,
+          mode: theme || `dark`,
+          primary: theme === `light` ? primaryCol : desaturatedPrimaryCol,
         }}
       >
         <Fragment>
@@ -142,7 +142,7 @@ export default ({ children }: LayoutProps): JSX.Element => {
       </ThemeProvider>
     </Fragment>
   );
-};
+}
 
 export const pageQuery = graphql`
   fragment site on Site {

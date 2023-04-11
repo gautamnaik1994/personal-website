@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
 export default styled.h1`
-  text-align: center;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.1;
-  border-top: 1px solid #f3f3f3;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-top: 30px;
-  padding-bottom: 10px;
+  margin-top: var(--spacing-12);
+  margin-bottom: var(--spacing-6);
+  line-height: var(--lineHeight-tight);
+  letter-spacing: -0.025em;
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-6);
 `;
