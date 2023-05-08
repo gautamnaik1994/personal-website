@@ -1,6 +1,6 @@
 ---
 title: Flight Search Engine
-order: 5
+order: 3
 publish: true
 isPersonalProject: true
 projectColor: "#323cda"

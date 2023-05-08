@@ -1,11 +1,11 @@
 ---
 title: Meet & Greet
 image: mglogo.png
-order: 1
+order: 7
 publish: true
 isPersonalProject: false
 projectColor: "#f53e3b"
-companyName: Bidchat
+companyName: Grassdoor
 details:
   - key: "Role "
     value: UI designer and Frontend Developer

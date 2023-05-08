@@ -1,7 +1,7 @@
 ---
 title: Ticlet
 image: ticlet.png
-order: 3
+order: 5
 publish: true
 isPersonalProject: false
 projectColor: "#6b75d2"

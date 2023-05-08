@@ -58,6 +58,17 @@ const ProjectItem = styled.div`
       margin-left: 15px;
     }
   }
+  .personal-tag {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 14px;
+    padding: 5px 9px;
+    font-weight: var(--fontWeightRegular);
+    background: rgb(0 0 0 / 50%);
+    border-radius: 9px 0 9px 0;
+    color: rgb(255 255 255 / 75%);
+  }
 `;
 
 interface Props {
@@ -68,6 +79,7 @@ interface Props {
   banner: string;
   description: string;
   className?: string;
+  isPersonalProject?: boolean;
 }
 
 export default ({
@@ -77,6 +89,7 @@ export default ({
   details,
   color,
   description,
+  isPersonalProject,
   ...props
 }: Props): JSX.Element => {
   // const defaultHeight = '0px';
@@ -106,8 +119,13 @@ export default ({
           style={{ background: color, '--boxShadowcolor': rgba(color, 0.4) }}
         >
           {banner ? <img src={banner} alt={title} /> : <>{title}</>}
+          {isPersonalProject && (
+            <div className="personal-tag">Personal Project</div>
+          )}
         </div>
+
         <h2 className="m-0 text-primary">{title}</h2>
+
         <p dangerouslySetInnerHTML={{ __html: description }} />
         <div>
           {details.map(({ key, value }) => (

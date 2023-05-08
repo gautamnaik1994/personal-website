@@ -313,6 +313,12 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Publish', name: 'publish', widget: 'boolean', default: true }
       - {
           label: 'Personal Project',
+          name: 'personal',
+          widget: 'boolean',
+          default: false,
+        }
+      - {
+          label: 'Personal Project',
           name: 'isPersonalProject',
           widget: 'boolean',
           default: false,

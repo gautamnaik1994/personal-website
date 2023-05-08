@@ -1,9 +1,10 @@
 ---
 title: Covid Dashboard
-order: 2
+order: 6
 publish: true
 isPersonalProject: true
-projectColor: "#5fd879"
+projectColor: "#4caf50"
+companyName: Grassdoor
 details:
   - key: Languages
     value: Python, HTML, CSS

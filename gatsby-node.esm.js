@@ -21,7 +21,7 @@ async function createPostPage({ actions, graphql }) {
     query {
       allMdx(
         filter: {
-          internal: { contentFilePath: { regex: "/blog/" } }
+          internal: { contentFilePath: { regex: "/_data/blog/" } }
           frontmatter: { publish: { eq: true } }
         }
       ) {

@@ -114,7 +114,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
               excerpt={node.frontmatter.description}
               tags={node.frontmatter.tags}
               banner={
-                node.frontmatter.bannerImage.childImageSharp.gatsbyImageData
+                node.frontmatter.bannerImage?.childImageSharp.gatsbyImageData
               }
               category={node.frontmatter.category}
               readTime={node.fields.timeToRead.text}
@@ -161,7 +161,7 @@ export const query = graphql`
     }
     allMdx(
       filter: {
-        internal: { contentFilePath: { regex: "/blog/" } }
+        internal: { contentFilePath: { regex: "/_data/blog/" } }
         frontmatter: {
           category: { eq: $activeCategory }
           publish: { eq: true }

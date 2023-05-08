@@ -46,6 +46,7 @@ interface ProjectItemProps {
       links: Array<{ key: string; value: string }>;
       title: string;
       image: { publicURL: string };
+      isPersonalProject?: boolean;
     };
   };
 }
@@ -59,7 +60,7 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
           frontmatter: { publish: { eq: true } }
         }
         sort: { frontmatter: { order: ASC } }
-        limit: 6
+        limit: 8
       ) {
         edges {
           node {
@@ -75,6 +76,7 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
                 key
                 value
               }
+              isPersonalProject
               image {
                 childImageSharp {
                   original {
@@ -105,6 +107,7 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
                 details={_data.details}
                 color={_data.projectColor}
                 banner={_data.image?.childImageSharp.original.src}
+                isPersonalProject={_data.isPersonalProject}
               />
             );
           },
