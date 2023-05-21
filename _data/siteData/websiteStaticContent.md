@@ -30,14 +30,14 @@ socialLinks:
     value: https://www.linkedin.com/in/gautamnaik1994/
     iconClassName: linkedin
 ---
-I'm a **Designer & Front-end Developer** with 7 **years** of professional experience. I'm interested in all kinds of visual communication, but my major focus is on designing web interfaces, mobile interfaces, and frontend web development.
+I'm a professional **Designer & Front-end Developer** with **7 years** of experience in the industry. My passion is creating visually appealing and user-friendly web and mobile interfaces, as well as developing them with the latest web technologies.
 
-I also have skills in other fields like user experience, branding, icon design, and game development. I enjoy turning complex problems into simple, beautiful and intuitive designs.
+I have a diverse skill set that includes user experience, branding, icon design, and game development. I love solving complex problems with simple, elegant and intuitive solutions.
 
-My career began in August 2015 as a Junior Designer, and I’ve arrived as a UI Designer & Frontend Developer focused on crafting clean & user‑friendly experiences.
+I started my career in August 2015 as a Junior Designer, and I have grown into a UI Designer & Frontend Developer who focuses on delivering clean & user‑friendly experiences.
 
-As a Frontend Web Developer, my toolset includes HTML/CSS, Javascript, ReactJS, JSX, Bootstrap, Foundation, Webpack, Gulp, NPM and Git.
+As a Frontend Web Developer, I use HTML/CSS, Javascript, ReactJS, JSX, Bootstrap, Foundation, Webpack, Gulp, NPM and Git as my tools of choice.
 
-As a Designer, I have experience in diverse areas of the development process, including prototyping, UX/UI design, and user needs research.
+As a Designer, I have experience in various stages of the development process, such as prototyping, UX/UI design, and user needs research.
 
-Being both Designer and a Developer, gives me added advantage in the form of more control over the interface designs and their implementations.
+Being both a Designer and a Developer gives me an edge in terms of having more control over the interface designs and their implementations.
