@@ -20423,9 +20423,9 @@ tunnel-agent@^0.6.0:
     safe-buffer "^5.0.1"
 
 tweakpane@>=3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/tweakpane/-/tweakpane-3.1.2.tgz#09ee02468def7a1b3d08ee38fb2cf296264fc4f0"
-  integrity sha512-bgPu0IKCqShX0tDpviD+hBHNhlSOExw9WvSpqK+fAT8Sh5eOpBhl18gMitvTXLmeZRMYr2HwgC+UR4URqL39bw==
+  version "3.1.10"
+  resolved "https://registry.yarnpkg.com/tweakpane/-/tweakpane-3.1.10.tgz#d2e11a3ee668017f7572ce53417f06eed41f5ab8"
+  integrity sha512-rqwnl/pUa7+inhI2E9ayGTqqP0EPOOn/wVvSWjZsRbZUItzNShny7pzwL3hVlaN4m9t/aZhsP0aFQ9U5VVR2VQ==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
