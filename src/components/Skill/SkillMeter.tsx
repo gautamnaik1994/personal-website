@@ -41,38 +41,38 @@ const bob2 = keyframes`
 
 const config = [
   {
-    label: 'Beginner',
+    label: `Beginner`,
     limit: 25,
-    top: '4facfe', //blue
-    bottom: '00f2fe',
-    topDark: darken(0.2, '#4facfe').split('#')[1],
-    bottomDark: darken(0.2, '#00f2fe').split('#')[1],
+    top: `4facfe`, // blue
+    bottom: `00f2fe`,
+    topDark: darken(0.2, `#4facfe`).split(`#`)[1],
+    bottomDark: darken(0.2, `#00f2fe`).split(`#`)[1],
   },
   {
-    label: 'Amateur',
+    label: `Amateur`,
     limit: 50,
-    top: '43e97b', //green
-    bottom: '38f9d7',
-    topDark: darken(0.2, '#43e97b').split('#')[1],
-    bottomDark: darken(0.2, '#38f9d7').split('#')[1],
+    top: `43e97b`, // green
+    bottom: `38f9d7`,
+    topDark: darken(0.2, `#43e97b`).split(`#`)[1],
+    bottomDark: darken(0.2, `#38f9d7`).split(`#`)[1],
   },
   {
-    label: 'Semi Pro',
-    //yellow
+    label: `Semi Pro`,
+    // yellow
     limit: 75,
-    top: 'f7b71d',
-    bottom: 'fdef96',
-    topDark: darken(0.2, '#f7b71d').split('#')[1],
-    bottomDark: darken(0.2, '#fdef96').split('#')[1],
+    top: `f7b71d`,
+    bottom: `fdef96`,
+    topDark: darken(0.2, `#f7b71d`).split(`#`)[1],
+    bottomDark: darken(0.2, `#fdef96`).split(`#`)[1],
   },
   {
-    label: 'Professional',
-    //red
+    label: `Professional`,
+    // red
     limit: 100,
-    top: 'ff0844',
-    bottom: 'ffb199',
-    topDark: darken(0.2, '#ff0844').split('#')[1],
-    bottomDark: darken(0.2, '#ffb199').split('#')[1],
+    top: `ff0844`,
+    bottom: `ffb199`,
+    topDark: darken(0.2, `#ff0844`).split(`#`)[1],
+    bottomDark: darken(0.2, `#ffb199`).split(`#`)[1],
   },
 ];
 
@@ -170,7 +170,10 @@ interface Props {
   className?: string;
 }
 
-export default ({ level, className = ' ' }: Props): JSX.Element => {
+export default function SkillMeterFn({
+  level,
+  className = ` `,
+}: Props): JSX.Element {
   const currentConfig = config[findIndex(level)];
   const glassRef = useRef(null);
   let glassElem: HTMLElement | null = null;
@@ -179,14 +182,14 @@ export default ({ level, className = ' ' }: Props): JSX.Element => {
 
     z = event.gamma; // In degree in the range [-90,90]
     // console.log('z ', z);
-    glassElem?.style.setProperty('--angle', `${-z}deg`);
+    glassElem?.style.setProperty(`--angle`, `${-z}deg`);
   };
 
   useEffect(() => {
     glassElem = glassRef.current;
-    window.addEventListener('deviceorientation', handleOrientation, true);
+    window.addEventListener(`deviceorientation`, handleOrientation, true);
     return () => {
-      window.removeEventListener('deviceorientation', handleOrientation);
+      window.removeEventListener(`deviceorientation`, handleOrientation);
     };
   }, []);
 
@@ -220,6 +223,6 @@ export default ({ level, className = ' ' }: Props): JSX.Element => {
       <div className="value ">{currentConfig.label}</div>
     </SkillMeter>
   );
-};
+}
 
 // export default SkillMeter;

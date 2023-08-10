@@ -7,10 +7,10 @@ status: pause
 ---
 <!--StartFragment-->
 
-* Designed and developed a responsive website, its corresponding admin portal frontend for an e-commerce platform keeping in focus the user experience and following strict SEO guidelines.
+* Built Grassdoor, an ecommerce website and its associated admin portal using ReactJS and NextJS with a focus on mobile experience and SEO.
 * Used data from various analytics tools to gauge user behavior and acted upon those insights to improve the web app.
-* Handled UI/UX design of various modules/features for mobile and web apps thereby, reducing development time by decreasing rework.
-* Conducted multiple interviews for the role of web designer and frontend developers.
-* Managed and mentored a team of 5 developers.
+* Converted existing website into white label website for B2B customers, saving 80% development time for onboarding new customers.
+* Engineered shirt-designing tool for a separate project that seamlessly integrated with mobile phone covers and cups, reducing external vendor dependency by 100%.
+* Assembled and managed a front-end team of 7 developers by recruiting, training, and leading them. This included conducting multiple interviews to find the best candidates
 
 <!--EndFragment-->

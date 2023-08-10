@@ -17,8 +17,13 @@ const StyledDiv = styled.div`
     margin: auto;
   }
 `;
+interface Props {
+  className?: string;
+}
 
-export default ({ className }: Props): JSX.Element => {
+export default function ContactMeSection({
+  className,
+}: Props): React.ReactElement {
   const data = useStaticQuery(graphql`
     {
       mdx(
@@ -49,4 +54,4 @@ export default ({ className }: Props): JSX.Element => {
       </StyledDiv>
     </section>
   );
-};
+}

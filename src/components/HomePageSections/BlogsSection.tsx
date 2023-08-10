@@ -21,7 +21,7 @@ const StyledPostItem = styled(PostItem)`
 `;
 
 const BlogList = styled.div`
-  margin-bottom:2rem;
+  margin-bottom: 2rem;
   ${media.tablet} {
     display: flex;
     white-space: nowrap;
@@ -51,7 +51,7 @@ interface PostItemProps {
   };
 }
 
-const BlogsSection = ({ className }: Props): JSX.Element => {
+const BlogsSection = ({ className }: Props): React.ReactElement => {
   const data = useStaticQuery(graphql`
     {
       allMdx(

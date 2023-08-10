@@ -5,29 +5,29 @@ import media from '../utils/MediaQueries';
 
 const properties = {
   open: {
-    transform1: 'rotate(45deg)',
-    transform2: 'rotate(-45deg)',
+    transform1: `rotate(45deg)`,
+    transform2: `rotate(-45deg)`,
     y1: 13,
     y2: 13,
     opacity: 0,
-    transform: 'translate(-30px)',
+    transform: `translate(-30px)`,
   },
   close: {
-    transform1: 'rotate(0deg)',
-    transform2: 'rotate(0deg)',
+    transform1: `rotate(0deg)`,
+    transform2: `rotate(0deg)`,
     y1: 5,
     y2: 21,
     opacity: 1,
-    transform: 'translateX(0px)',
+    transform: `translateX(0px)`,
   },
   springConfig: { mass: 5, tension: 250, friction: 35 },
 };
 
 const Hamburger = styled.button`
   display: inline-block;
-  height: 28px;
+  height: 25px;
   overflow: hidden;
-  width: 28px;
+  width: 25px;
   overflow: hidden;
   padding: 0px;
   border: none;
@@ -51,9 +51,9 @@ interface Props {
   menuOpen: boolean;
 }
 
-export default (props: Props): JSX.Element => {
+export default function HamburgerFn(props: Props): React.Element {
   const { transform1, transform2, transform, y2, y1, opacity } =
-    properties[props.menuOpen ? 'open' : 'close'];
+    properties[props.menuOpen ? `open` : `close`];
 
   const rect1Props = useSpring({
     transform: transform1,
@@ -121,4 +121,4 @@ export default (props: Props): JSX.Element => {
       </svg>
     </Hamburger>
   );
-};
+}

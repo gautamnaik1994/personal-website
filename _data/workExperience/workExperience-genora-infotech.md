@@ -7,8 +7,8 @@ status: stop
 ---
 <!--StartFragment-->
 
-* Designed and developed frontend of websites, admin portals & web apps using technologies like HTML, Angular Material, Vanilla Javascript, and CSS frameworks like Bootstrap, Foundation.
+* Designed and launched websites for small and medium-sized businesses, using technologies such as Angular Material, HTML, CSS, Bootstrap UI, and JavaScript, which resulted in increased sales and reach.
 * Handled UI/UX design for mobile and web apps using Adobe Creative Cloud and other wireframing tools.
-* Designed banners, infographics, and other promotional material for the company
+* Designed banners, infographics, magazines  and other promotional materials for the company using a variety of design tools like Photoshop, Indesign, Illustrator which resulted in increased awareness about the company on social media.
 
 <!--EndFragment-->

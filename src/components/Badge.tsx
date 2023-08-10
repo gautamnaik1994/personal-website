@@ -15,7 +15,7 @@ const Badge = styled(Link)`
   text-transform: uppercase;
 `;
 
-export default ({ name }: Props): JSX.Element => (
+export default ({ name }: Props): React.ReactElement => (
   <Badge title={name} to={`/blog/${name}`}>
     {name}
   </Badge>

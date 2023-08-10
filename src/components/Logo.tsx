@@ -24,11 +24,11 @@ const Logo = styled.div<Props>`
     font-size: 24px;
     line-height: 1;
     margin: 6px 0 6px 13px;
-    display: ${(props) => props.hideName && 'none'};
+    display: ${(props) => props.hideName && `none`};
   }
 `;
 
-export default ({ className, hideName }: Props): JSX.Element => (
+export default ({ className, hideName }: Props): React.ReactElement => (
   <Logo hideName={hideName} className={className}>
     {/*
 
@@ -49,7 +49,7 @@ export default ({ className, hideName }: Props): JSX.Element => (
         fill="white"
       />
     </svg>
-    {/*<i className="icon-logo" />*/}
+    {/* <i className="icon-logo" /> */}
     <h1>Gautam Naik</h1>
   </Logo>
 );

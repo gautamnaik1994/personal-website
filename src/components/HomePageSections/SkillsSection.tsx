@@ -10,14 +10,10 @@ const SkillList = styled.div`
   white-space: nowrap;
   overflow: auto;
   align-items: flex-start;
-  & > div + div {
-    margin-left: 15px;
-    ${media.desktop} {
-      margin-left: 30px;
-    }
-  }
+  gap: 15px;
   ${media.desktop} {
     justify-content: center;
+    gap: 30px;
   }
 `;
 
@@ -32,7 +28,7 @@ interface SkillProps {
   };
 }
 
-const SkillsSection = ({ className }: Props): JSX.Element => {
+const SkillsSection = ({ className }: Props): React.ReactElement => {
   const data = useStaticQuery(graphql`
     {
       allMdx(

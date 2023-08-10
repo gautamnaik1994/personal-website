@@ -122,7 +122,7 @@ interface Props {
   className?: string;
 }
 
-const AboutMeSection = ({ className }: Props): JSX.Element => {
+const AboutMeSection = ({ className }: Props): React.ReactElement => {
   const data = useStaticQuery(graphql`
     {
       markdownRemark(

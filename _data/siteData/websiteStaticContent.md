@@ -30,14 +30,11 @@ socialLinks:
     value: https://www.linkedin.com/in/gautamnaik1994/
     iconClassName: linkedin
 ---
-I'm a professional **Designer & Front-end Developer** with **7 years** of experience in the industry. My passion is creating visually appealing and user-friendly web and mobile interfaces, as well as developing them with the latest web technologies.
 
-I have a diverse skill set that includes user experience, branding, icon design, and game development. I love solving complex problems with simple, elegant and intuitive solutions.
+With over **8 years** of hands-on experience as a **Frontend and UI Developer**, my expertise lies in implementing frontend systems using the latest technologies like ReactJS, JavaScript, ES6, and CSS. I have a proven track record of delivering high-quality user interfaces that are intuitive, responsive, and visually appealing. 
 
-I started my career in August 2015 as a Junior Designer, and I have grown into a UI Designer & Frontend Developer who focuses on delivering clean & user‑friendly experiences.
+What sets me apart is my ability to work collaboratively with UX/UI teams to translate functional specifications into seamless user experiences. I believe in building interfaces that are not just aesthetically pleasing but also highly functional, with a focus on usability and accessibility. 
 
-As a Frontend Web Developer, I use HTML/CSS, Javascript, ReactJS, JSX, Bootstrap, Foundation, Webpack, Gulp, NPM and Git as my tools of choice.
+Apart from my technical skills, one of my key strengths is building multi-platform websites that are optimized for different devices using responsive web design. I understand the importance of ensuring that websites are accessible and user-friendly, regardless of the platform or device being used. 
 
-As a Designer, I have experience in various stages of the development process, such as prototyping, UX/UI design, and user needs research.
-
-Being both a Designer and a Developer gives me an edge in terms of having more control over the interface designs and their implementations.
+Overall, I am a detail-oriented frontend developer with a passion for creating exceptional user experiences that meet the highest standards of quality and performance.
