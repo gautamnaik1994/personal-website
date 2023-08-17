@@ -1,10 +1,7 @@
 import styled from 'styled-components';
+import { baseStyle, generateFontSize } from './BaseUtils';
 
 export default styled.h6`
-  margin-top: var(--spacing-12);
-  margin-bottom: var(--spacing-6);
-  line-height: var(--lineHeight-tight);
-  letter-spacing: -0.025em;
-  font-weight: var(--fontWeight-bold);
-  font-size: var(--fontSize-1);
+  ${baseStyle};
+  font-size: 1rem;
 `;

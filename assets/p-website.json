@@ -2,7 +2,7 @@
   "metadata": {
     "name": "p-website",
     "lastOpened": 0,
-    "created": 1621063317630
+    "created": 1630443888162
   },
   "iconSets": [
     {
@@ -836,7 +836,7 @@
     },
     "historySize": 50,
     "gridSize": 16,
-    "showGrid": true,
+    "showGrid": false,
     "quickUsageToken": {
       "p-website": "NDViYjQwNTNlODY2Mjk1MzMzZGI0YjhmNDcwNzQxMTEjMSMxNjIxMzYxODg2IyMj"
     }

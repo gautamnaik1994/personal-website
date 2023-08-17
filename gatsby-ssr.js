@@ -3,27 +3,27 @@ import Layout from './src/components/Layout';
 import { darkTheme, lightTheme } from './src/utils/colors';
 
 function htmlThemeFunction() {
-  let initialThemeValue = 'dark';
-  if (localStorage.getItem('theme') === null) {
-    if (matchMedia('(prefers-color-scheme: dark)').matches) {
-      initialThemeValue = 'dark';
-      localStorage.setItem('theme', 'dark');
+  let initialThemeValue = `dark`;
+  if (localStorage.getItem(`theme`) === null) {
+    if (matchMedia(`(prefers-color-scheme: dark)`).matches) {
+      initialThemeValue = `dark`;
+      localStorage.setItem(`theme`, `dark`);
     } else {
-      localStorage.setItem('theme', 'light');
-      initialThemeValue = 'light';
+      localStorage.setItem(`theme`, `light`);
+      initialThemeValue = `light`;
     }
   } else {
-    initialThemeValue = localStorage.getItem('theme') || 'dark';
+    initialThemeValue = localStorage.getItem(`theme`) || `dark`;
   }
-  const darkTheme = '🌑';
-  const lightTheme = '🌕';
-  if (initialThemeValue === 'light') {
-    document.documentElement.style.setProperty('--theme', 'light');
+  const darkTheme = `🌑`;
+  const lightTheme = `🌕`;
+  if (initialThemeValue === `light`) {
+    document.documentElement.style.setProperty(`--theme`, `light`);
     lightTheme.forEach((data) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });
   } else {
-    document.documentElement.style.setProperty('--theme', 'dark');
+    document.documentElement.style.setProperty(`--theme`, `dark`);
     darkTheme.forEach((data) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });
@@ -32,10 +32,10 @@ function htmlThemeFunction() {
 
 const ScriptTag = () => {
   const boundFn = String(htmlThemeFunction)
-    .replace("'🌑'", darkTheme)
-    .replace("'🌕'", lightTheme);
+    .replace(`'🌑'`, darkTheme)
+    .replace(`'🌕'`, lightTheme);
 
-  let calledFunction = `(${boundFn})()`;
+  const calledFunction = `(${boundFn})()`;
 
   // calledFunction = Terser.minify(calledFunction).code;
 
@@ -61,13 +61,13 @@ export const onRenderBody = ({
       <img
         src="/img/logo.svg"
         alt="logo"
-        style={{ height: 'calc(3.23625vw + 77.86408px)' }}
+        style={{ height: `calc(3.23625vw + 77.86408px)` }}
       />
       <div className="preloader_animation"></div>
     </div>,
   ]);
   setBodyAttributes({
-    className: 'preloader_active',
+    className: `preloader_active`,
   });
   setPostBodyComponents([<script src="/scripts/preloader.js" />]);
 };

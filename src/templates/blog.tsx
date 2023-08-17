@@ -66,7 +66,9 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
   const nextPagePath = (): string => {
     if (currentPage + 1 <= pageCount) {
       return `${base}/${currentPage + 1}`;
-    } else return ``;
+    } else {
+      return ``;
+    }
   };
   const previousPagePath = (): string => {
     if (currentPage - 1 > 0) {
@@ -74,7 +76,9 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
         return `${base}`;
       }
       return `${base}/${currentPage - 1}`;
-    } else return ``;
+    } else {
+      return ``;
+    }
   };
 
   const heroTitle = (): string | null => {

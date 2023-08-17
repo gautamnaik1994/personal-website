@@ -4,6 +4,7 @@ import Link from './Link';
 
 export interface Props {
   name: string;
+  children?: React.ReactElement;
 }
 
 const Badge = styled(Link)`
@@ -15,8 +16,14 @@ const Badge = styled(Link)`
   text-transform: uppercase;
 `;
 
-export default ({ name }: Props): React.ReactElement => (
-  <Badge title={name} to={`/blog/${name}`}>
-    {name}
-  </Badge>
-);
+export default function BadgeParent({
+  name,
+  children,
+}: Props): React.ReactElement {
+  return (
+    <Badge title={name} to={`/blog/${name}`}>
+      {name}
+      {children}
+    </Badge>
+  );
+}

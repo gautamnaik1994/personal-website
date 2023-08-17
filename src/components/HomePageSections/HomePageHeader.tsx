@@ -7,7 +7,7 @@ const HomePageHeader = styled.div`
   position: relative;
 `;
 
-export default () => {
+export default function HomePageHeaderContainer() {
   const HomePageHeaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,12 +16,12 @@ export default () => {
         if (HomePageHeaderRef && HomePageHeaderRef.current) {
           if (entries[0].intersectionRatio < 0.5) {
             document
-              .querySelector('nav')
-              ?.classList.remove('navbar-special-styles');
+              .querySelector(`nav`)
+              ?.classList.remove(`navbar-special-styles`);
           } else if (entries[0].intersectionRatio > 0.5) {
             document
-              .querySelector('nav')
-              ?.classList.add('navbar-special-styles');
+              .querySelector(`nav`)
+              ?.classList.add(`navbar-special-styles`);
           }
         }
       },
@@ -32,7 +32,7 @@ export default () => {
       HomePageHeaderRef.current &&
       observer.observe(HomePageHeaderRef.current);
     return () => {
-      document.querySelector('nav')?.classList.remove('navbar-special-styles');
+      document.querySelector(`nav`)?.classList.remove(`navbar-special-styles`);
     };
   });
   return (
@@ -41,4 +41,4 @@ export default () => {
       <Name />
     </HomePageHeader>
   );
-};
+}

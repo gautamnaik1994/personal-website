@@ -68,15 +68,17 @@ const Hero = styled.header<HeroProps>`
   overflow: hidden;
   .inner-container {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    right: 0;
+    top: calc(50% + 15px);
+    transform: translate(0, -50%);
     color: white;
-    font-size: 21px;
+    font-size: 25px;
     font-weight: var(--fontWeightBold);
+    text-align: center;
 
     ${media.desktop} {
-      font-size: 33px;
+      font-size: 50px;
     }
   }
 

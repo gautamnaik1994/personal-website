@@ -1,10 +1,8 @@
 import styled from 'styled-components';
+import media from '../../utils/MediaQueries';
+import { baseStyle, generateFontSize } from './BaseUtils';
 
 export default styled.h2`
-  margin-top: var(--spacing-12);
-  margin-bottom: var(--spacing-6);
-  line-height: var(--lineHeight-tight);
-  letter-spacing: -0.025em;
-  font-weight: var(--fontWeight-bold);
-  font-size: var(--fontSize-5);
+  ${baseStyle};
+  ${generateFontSize(4)}
 `;

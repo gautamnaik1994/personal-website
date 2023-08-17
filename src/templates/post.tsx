@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { lighten } from 'polished';
@@ -16,43 +16,12 @@ import { darkBackgroundColor } from '../utils/colors';
 import Container from '../components/Container';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PageUnderConstruction from '../components/PageUnderConstruction';
-import TableOfContents from '../components/TableOfContents';
-
-const Grid = styled(Container)`
-  margin-top: 2rem;
-  ${media.desktop} {
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    grid-gap: 15px;
-    align-items: start;
-    margin-top: 1rem;
-  }
-`;
-
-interface BannerProps {
-  bgImage: string;
-}
-
-const Banner = styled.div<BannerProps>`
-  overflow: hidden;
-  position: relative;
-  .blur-container {
-    background-image: url(${(props) => props.bgImage});
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    filter: blur(30px);
-    right: 0;
-    top: 0;
-  }
-`;
+// import TableOfContents from '../components/TableOfContents';
+import Title from '../components/mdx/Title';
 
 const Post = styled.div`
   margin-bottom: 25px;
+  padding-top: 2rem;
 `;
 
 interface Props {
@@ -61,55 +30,51 @@ interface Props {
     mdx: Mdx;
   };
   pageContext: PageContext;
-}
-interface GatsbyImageProps {
-  fluid: any;
+  children: React.ReactNode;
 }
 
-const CustomImg = styled(GatsbyImage)<GatsbyImageProps>`
-  width: 100%;
+const CustomImg = styled(GatsbyImage)`
+  border-radius: 5px;
+  margin-top: 2rem;
+`;
+
+const PostContainer = styled(Container)`
+  max-width: 100%;
+  padding-top: 60px;
   ${media.desktop} {
-    width: 650px;
-    margin: auto;
+    max-width: 750px;
   }
 `;
 
-const Title = styled.h1`
-  margin-bottom: 0;
-  margin-top: 0;
-  font-variant-ligatures: none;
-  ${media.desktop} {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 47px;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+const Header = styled.div`
+  margin-top: 2rem;
+  .meta-data {
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
-`;
-
-const MetaDataContainer = styled.div`
-  display: flex;
-  margin: 0rem -10px 1rem;
-  .title {
-    font-size: 12px;
-    color: #888;
-    margin-bottom: 2px;
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
   }
-  .value {
+  .dates {
     font-size: 14px;
   }
-
-  & > div {
-    margin: 10px;
+  .back-btn {
+    font-size: 14px;
+    i {
+      margin-left: 2px;
+    }
   }
-
-  ${media.desktop} {
-    .title {
-      font-size: 14px;
-    }
-    .value {
-      font-size: 16px;
-    }
+  hr {
+    border: none;
+    border-bottom: 1px solid var(--bodyColor);
   }
 `;
 
@@ -135,12 +100,14 @@ const StyledMDXRenderer = styled.div`
 const PosTemplate = ({
   data: { site, mdx },
   pageContext: { next, prev },
-  location,
+  // location,
   children,
-}: Props): JSX.Element => {
-  console.log(mdx.tableOfContents);
+}: Props): React.ReactElement => {
+  // useEffect(() => {
+  //   document.querySelector(`nav`)?.classList.add(`remove-shadow`);
+  // }, []);
   return (
-    <Fragment>
+    <>
       {/* <GatsbySeo
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description}
@@ -166,51 +133,46 @@ const PosTemplate = ({
           ],
         }}
       /> */}
-      <PageUnderConstruction />
-      <Banner
-        bgImage={
-          mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData
-            .placeholder.fallback
-        }
-      >
-        <div className="blur-container"></div>
-        <Container>
-          <GatsbyImage
+      {/* <PageUnderConstruction /> */}
+      <PostContainer>
+        <Header>
+          <Title>{mdx.frontmatter.title}</Title>
+          <div className="meta-data">
+            <div className="avatar">
+              <i className="icon-logo"></i>
+            </div>
+            <div>
+              <div>Gautam Naik</div>
+              <div className="back-btn">
+                <span className="title">
+                  Posted in {` `}
+                  <Badge name={mdx.frontmatter.category}></Badge>
+                </span>
+                {`  `}&bull;{`  `}
+                {mdx.frontmatter.date}
+              </div>
+            </div>
+          </div>
+          <CustomImg
             image={mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData}
             alt={site.siteMetadata.keywords.join(`, `)}
           />
-        </Container>
-      </Banner>
-      <Grid>
+
+          {/* <hr className="one-rem-mt one-rem-mb" /> */}
+        </Header>
+
         <Post>
-          <Title>{mdx.frontmatter.title}</Title>
-          <MetaDataContainer>
-            <div className="">
-              <div className="title">Posted in</div>
-              <Badge name={mdx.frontmatter.category} />
-            </div>
-            <div>
-              <div className="title">Published on </div>
-              <div className="value">{mdx.frontmatter.date}</div>
-            </div>
-            <div>
-              <div className="title">Updated on </div>
-              <div className="value">{mdx.frontmatter.updatedDate}</div>
-            </div>
-          </MetaDataContainer>
-
           <StyledMDXRenderer>{children}</StyledMDXRenderer>
-          <Pagination
-            nextPagePath={next && `/blog/${next.frontmatter.slug}`}
-            previousPagePath={prev && `/blog/${prev.frontmatter.slug}`}
-            nextPostTitle={next && next.frontmatter.title}
-            prevPostTitle={prev && prev.frontmatter.title}
-          />
         </Post>
-
-        <TableOfContents items={mdx.tableOfContents.items} />
-      </Grid>
-    </Fragment>
+        <Pagination
+          nextPagePath={next && `/blog/${next.frontmatter.slug}`}
+          previousPagePath={prev && `/blog/${prev.frontmatter.slug}`}
+          nextPostTitle={next && next.frontmatter.title}
+          prevPostTitle={prev && prev.frontmatter.title}
+        />
+        {/* <TableOfContents items={mdx.tableOfContents.items} /> */}
+      </PostContainer>
+    </>
   );
 };
 
@@ -222,8 +184,8 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }, frontmatter: { publish: { eq: true } }) {
       frontmatter {
         title
-        date(formatString: "MMM D, 'YY")
-        updatedDate(formatString: "MMM D, 'YY")
+        date(formatString: "MMM D, YYYY")
+        updatedDate(formatString: "MMM D, 'YYYY")
         bannerImage {
           childImageSharp {
             gatsbyImageData(

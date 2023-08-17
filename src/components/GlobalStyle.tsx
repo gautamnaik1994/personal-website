@@ -9,18 +9,18 @@ import {
   accentColor,
 } from '../utils/colors';
 
-const _primaryCol = theme('mode', {
+const _primaryCol = theme(`mode`, {
   light: primaryCol,
   dark: desaturatedPrimaryCol,
 });
 
-const bodyBackgroundColor = theme('mode', {
-  light: '#fff',
+const bodyBackgroundColor = theme(`mode`, {
+  light: `#fff`,
   dark: darkBackgroundColor,
 });
 
-const bodyColor = theme('mode', {
-  light: '#333',
+const bodyColor = theme(`mode`, {
+  light: `#333`,
   dark: darkBackgroundTextColor,
 });
 
@@ -28,7 +28,7 @@ interface Props {
   theme?: { primary: string };
 }
 
-//transition: background-color 0.3s ease-in, color 0.3s ease-in;
+// transition: background-color 0.3s ease-in, color 0.3s ease-in;
 export const GlobalStyle = createGlobalStyle<Props>`
 :root {
     /* --primary: ${primaryCol};
@@ -43,12 +43,6 @@ export const GlobalStyle = createGlobalStyle<Props>`
   ${() => {
     /* Override PrismJS Defaults */ return null;
   }}
-
-	html{
-
-		/* font-size: 14px;
-		line-height: 21px; */
-	}
 
 
 

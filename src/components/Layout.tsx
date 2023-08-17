@@ -38,7 +38,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       }
     }
   `);
-  const site = data.site;
+  const { site } = data;
   const toggleTheme = (): void => {
     const currentTheme = theme === `light` ? `dark` : `light`;
     if (typeof window !== `undefined`) {

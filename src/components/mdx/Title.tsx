@@ -1,10 +1,9 @@
 import styled from 'styled-components';
+import { baseStyle, generateFontSize } from './BaseUtils';
+// https://typescale.com/?size=16&scale=1.125&text=Why%20should%20you%20remap%20ESC%20key%20in%20Vim&font=Ubuntu&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
+// https://typescale.com/?size=16&scale=1.250&text=Why%20should%20you%20remap%20ESC%20key%20in%20Vim&font=Ubuntu&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
 
 export default styled.h1`
-  margin-top: var(--spacing-12);
-  margin-bottom: var(--spacing-6);
-  line-height: var(--lineHeight-tight);
-  letter-spacing: -0.025em;
-  font-weight: var(--fontWeight-bold);
-  font-size: var(--fontSize-6);
+  ${baseStyle};
+  ${generateFontSize(5)}//line-height:ratio*font-size;
 `;

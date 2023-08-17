@@ -121,6 +121,16 @@ const WorkExperienceMainItem = styled.div`
   }
   .info-inner {
     padding-top: 25px;
+    ul {
+      padding-left: 15px;
+      margin-bottom: 15px;
+      ${media.desktop} {
+        padding-left: 25px;
+      }
+    }
+    p {
+      margin-bottom: 0;
+    }
   }
   .pad-bottom {
     height: 15px;
@@ -165,14 +175,14 @@ interface Props {
   status: string;
 }
 
-export default ({
+const WorkExpeContainer = ({
   title = `Bidchat`,
   responsibilities = `CSS variables is a new addition to CSS. As the name says, we can now add custom variables, similar to SCSS, Less and Stylus. Example This… `,
   role = `Frontend Developer`,
   timeRange = `March 2017 - March 2020`,
   status = `stop`,
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const defaultHeight = `15px`;
   const [open, toggle] = useState(false);
   const [contentHeight, setContentHeight] = useState(defaultHeight);
@@ -230,3 +240,5 @@ export default ({
     </WorkExperienceMainItem>
   );
 };
+
+export default WorkExpeContainer;

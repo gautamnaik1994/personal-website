@@ -75,7 +75,10 @@ export interface Props {
   toggleTheme: () => void;
 }
 
-export default ({ className, toggleTheme }: Props): JSX.Element => {
+export default function SidebarContainer({
+  className,
+  toggleTheme,
+}: Props): React.ReactElement {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const { transform } = properties[menuOpen ? `open` : `close`];
@@ -90,7 +93,13 @@ export default ({ className, toggleTheme }: Props): JSX.Element => {
         className={className}
         style={{ transform: sideBarProps.transform }}
       >
-        <HomeLink title="Gautam Naik" to="/">
+        <HomeLink
+          title="Gautam Naik"
+          to="/"
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+          }}
+        >
           <Logo />
         </HomeLink>
 
@@ -99,6 +108,9 @@ export default ({ className, toggleTheme }: Props): JSX.Element => {
             key={navigation.label}
             title={navigation.label}
             to={navigation.to}
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+            }}
           >
             {navigation.label}
           </NavLink>
@@ -111,4 +123,4 @@ export default ({ className, toggleTheme }: Props): JSX.Element => {
       />
     </Fragment>
   );
-};
+}
