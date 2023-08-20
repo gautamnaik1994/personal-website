@@ -51,12 +51,17 @@ export const onRenderBody = ({
 }) => {
   // setHeadComponents(<FallbackStyles />);
   setHeadComponents([
-    <link as="script" rel="preload" href="/scripts/preloader.js" />,
+    <link
+      as="script"
+      key="proloadKey"
+      rel="preload"
+      href="/scripts/preloader.js"
+    />,
   ]);
   // setPreBodyComponents(<ScriptTag />);
   setPreBodyComponents([
-    <ScriptTag />,
-    <div id="preloader">
+    <ScriptTag key="scriptTag" />,
+    <div id="preloader" key="preloader">
       {/* Optional: */}
       <img
         src="/img/logo.svg"
@@ -69,7 +74,9 @@ export const onRenderBody = ({
   setBodyAttributes({
     className: `preloader_active`,
   });
-  setPostBodyComponents([<script src="/scripts/preloader.js" />]);
+  setPostBodyComponents([
+    <script key="bodyScriptKey" src="/scripts/preloader.js" />,
+  ]);
 };
 
 export function wrapPageElement({ element, props }) {
