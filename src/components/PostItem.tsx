@@ -1,15 +1,9 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import theme from 'styled-theming';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Link from './Link';
 import media from '../utils/MediaQueries';
-
-const boxShadow = theme(`mode`, {
-  light: `0px 22px 40px rgba(0, 0, 0, 0.1)`,
-});
-
-const HLayout = css``;
+import Badge from './Badge';
 
 const PostItem = styled.div<{ responsive: boolean; bgImage: string }>`
   padding: 15px;
@@ -106,7 +100,7 @@ const PostItemMain = ({
   banner,
   responsive = true,
   ...props
-}: Props): JSX.Element => (
+}: Props): React.ReactElement => (
   <PostItem
     responsive={responsive}
     className={props.className}
@@ -125,7 +119,6 @@ const PostItemMain = ({
       <i className="icon-category text-accent l-icon" />
       <span>{category}</span>
       <i className="icon-double-arrow r-icon" />
-      {/* TODO:animate this icon */}
     </Link>
 
     <article className="one-rem-mt one-rem-mb">{excerpt}</article>

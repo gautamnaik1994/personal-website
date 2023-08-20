@@ -28,7 +28,9 @@ const NavLink = styled(Link)`
 `;
 
 const Navbar = styled.nav`
-  transition: background-color 0.3s ease-in, box-shadow 0.3s ease-in;
+  transition:
+    background-color 0.3s ease-in,
+    box-shadow 0.3s ease-in;
   display: flex;
   justify-content: flex-end;
   align-items: center;

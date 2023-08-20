@@ -1,6 +1,6 @@
-import React, { Fragment, useState, useEffect, createContext } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { GatsbySeo } from 'gatsby-plugin-next-seo';
+// import { GatsbySeo } from 'gatsby-plugin-next-seo';
 import { graphql, useStaticQuery } from 'gatsby';
 // import '../global.d.ts';
 // Had added @ts-ignore
@@ -19,26 +19,27 @@ import { ThemeProvider } from 'styled-components';
 import { primaryCol, desaturatedPrimaryCol } from '../utils/colors';
 import { setColors, getThemeValue } from '../utils/themeConfig';
 import Sidebar from './Sidebar';
-import OuterLinks from './OuterLinks';
+// import OuterLinks from './OuterLinks';
+// import SEO from './SEO';
 
-export default function Layout({ children }: LayoutProps): JSX.Element {
+function Layout({ children }: LayoutProps): React.ReactElement {
   const [theme, setTheme] = useState<string | null>(getThemeValue());
 
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          title
-          description
-          siteUrl
-          author
-          keywords
-          ogImage
-        }
-      }
-    }
-  `);
-  const { site } = data;
+  // const data = useStaticQuery(graphql`
+  //   {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //         description
+  //         siteUrl
+  //         author
+  //         keywords
+  //         ogImage
+  //       }
+  //     }
+  //   }
+  // `);
+  // const { site } = data;
   const toggleTheme = (): void => {
     const currentTheme = theme === `light` ? `dark` : `light`;
     if (typeof window !== `undefined`) {
@@ -47,42 +48,25 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
 
     setColors(currentTheme);
     setTheme(currentTheme);
-    console.log(`called toggl thme`);
+    // console.log(`called toggl thme`);
   };
 
-  useEffect(() => {
-    // themeConfig();
-    // setTheme(theme);
-    // alert(' d', theme);
-    // window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
-    //   if (e.matches) {
-    //     console.log('dark mode is enabled');
-    //   } else {
-    //     console.log('dark mode is disabled');
-    //   }
-    // });
-  }, []);
+  // useEffect(() => {
+  // themeConfig();
+  // setTheme(theme);
+  // alert(' d', theme);
+  // window.matchMedia('(prefers-color-scheme: dark)').addEventListener((e) => {
+  //   if (e.matches) {
+  //     console.log('dark mode is enabled');
+  //   } else {
+  //     console.log('dark mode is disabled');
+  //   }
+  // });
+  // }, []);
 
   return (
-    <Fragment>
+    <>
       <Helmet>
-        <html lang="en" />
-        <meta charSet="UTF-8" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta property="fb:app_id" content="293772252484025" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1,
-        maximum-scale=1, user-scalable = no, shrink-to-fit=no"
-        />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="apple-mobile-web-app-title" content="Gautam Naik" />
-        <meta name="apple-mobile-web-app-title" content=" " />
-        <meta name="application-name" content=" " />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <title>Gautam Naik</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap&text=0123456789"
@@ -92,38 +76,15 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
         />
-        <meta name="robots" content="all" />
-        <meta name="googlebot" content="all" />
         <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" />
       </Helmet>
-      <GatsbySeo
-        title={site.siteMetadata.title}
-        description={site.siteMetadata.description}
-        canonical={site.siteMetadata.siteUrl}
-        metaTags={[
-          { name: `keywords`, content: site.siteMetadata.keywords.join(`,`) },
-        ]}
-        openGraph={{
-          url: site.siteMetadata.siteUrl,
-          title: site.siteMetadata.title,
-          description: site.siteMetadata.description,
-          images: [
-            {
-              url: `${site.siteMetadata.siteUrl}${site.siteMetadata.ogImage}`,
-              width: 1200,
-              height: 630,
-              alt: site.siteMetadata.title,
-            },
-          ],
-        }}
-      />
       <ThemeProvider
         theme={{
           mode: theme || `dark`,
           primary: theme === `light` ? primaryCol : desaturatedPrimaryCol,
         }}
       >
-        <Fragment>
+        <>
           <GlobalStyle />
           <MDXProvider
             components={{
@@ -131,18 +92,20 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
               ...MDXGlobalComponents,
             }}
           >
-            <Fragment>
+            <>
               <Navbar toggleTheme={toggleTheme} />
               <Sidebar toggleTheme={toggleTheme} />
               {children}
               <Footer />
-            </Fragment>
+            </>
           </MDXProvider>
-        </Fragment>
+        </>
       </ThemeProvider>
-    </Fragment>
+    </>
   );
 }
+
+export default Layout;
 
 export const pageQuery = graphql`
   fragment site on Site {

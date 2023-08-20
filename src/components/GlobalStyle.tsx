@@ -30,22 +30,11 @@ interface Props {
 
 // transition: background-color 0.3s ease-in, color 0.3s ease-in;
 export const GlobalStyle = createGlobalStyle<Props>`
-:root {
-    /* --primary: ${primaryCol};
-    --accent: ${accentColor};
-		--bodyBackgroundColor: #fff;
-    --bodyColor: #333; */
-		--fontWeightBold:700;
-		--fontWeightMedium:500;
-		--fontWeightRegular:400;
-		--fontWeightLight:300;
-  }
+
   ${() => {
     /* Override PrismJS Defaults */ return null;
   }}
-
-
-
+  
   .show-for-tablet {
     display: none;
     ${media.desktop} {

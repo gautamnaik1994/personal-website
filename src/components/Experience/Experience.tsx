@@ -23,9 +23,9 @@ const pulse = keyframes`
 	70% {
 		transform:  scale(1);
 	box-shadow: 0 0 0px 15px ${opacify(0.0, '#34CA8000')}, 0 0 0px 26px ${opacify(
-  0.0,
-  '#34CA8000',
-)};
+    0.0,
+    '#34CA8000',
+  )};
 	}
 
   100% {

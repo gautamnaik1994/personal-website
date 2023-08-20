@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import media from '../utils/MediaQueries';
-import { toSvg } from 'jdenticon';
 
 const TitleAnimationBox = styled.div`
   display: flex;

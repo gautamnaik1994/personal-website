@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Link from '../components/Link';
 import { primaryCol } from '../utils/colors';
 import { transparentize, lighten, desaturate } from 'polished';
+import SEO from '../components/SEO';
 
 const HomepageLink = styled(Link)`
   --blur: 7px;
@@ -32,11 +33,12 @@ const Wrapper = styled.div`
     }
     h2,
     h4 {
-      color: #333;
+      color: var(--bodyColor);
       margin: 0;
     }
     h4 {
       font-weight: normal;
+      margin-top: 8px;
     }
     //text-align: center;
     .number {
@@ -68,3 +70,5 @@ export default () => (
     </div>
   </Wrapper>
 );
+
+export const Head = () => <SEO />;

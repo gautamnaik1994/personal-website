@@ -73,7 +73,7 @@ const BlogsSection = ({ className }: Props): React.ReactElement => {
               date(formatString: "MMMM DD, YYYY")
               bannerImage {
                 childImageSharp {
-                  gatsbyImageData(width: 350)
+                  gatsbyImageData(width: 500)
                 }
               }
             }

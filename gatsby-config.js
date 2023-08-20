@@ -32,11 +32,16 @@ module.exports = {
     siteUrl: `https://gautamnaik.com`,
     author: `Gautam Naik`,
     title: `Gautam Naik`,
-    description: `Gautam Naik is a UI Designer and Frontend Web Developer who specializes in building mobile-friendly web apps`,
+    description: `Gautam Naik is a Frontend Web Developer and UI Developer who specializes in building mobile-friendly web apps`,
     keywords: [
       `ui`,
       `ux`,
       `designer`,
+      `responsive web design`,
+      `progressive web application`,
+      `web application`,
+      `web design`,
+      `web development`,
       `css`,
       `frontend`,
       `reactjs`,
@@ -129,7 +134,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 720,
             },
           },
 
@@ -151,6 +156,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -159,6 +165,7 @@ module.exports = {
         name: `Gautam Naik`,
         short_name: `Gautam Naik`,
         start_url: `/`,
+        id: `gautamnaik`,
         background_color: `#212738`,
         theme_color: `#4BACFE`,
         display: `standalone`,
@@ -166,29 +173,40 @@ module.exports = {
         icon_options: {
           purpose: `any maskable`,
         },
+        orientation: `portrait`,
+        description: `Gautam Naik is a Frontend Web Developer and UI Developer who specializes in building mobile-friendly web apps`,
+        shortcuts: [
+          {
+            name: `Gautam Blogs`,
+            short_name: `Gautam Blogs`,
+            description: `Gautam Blogs`,
+            url: `/blog`,
+            icons: [
+              {
+                src: `icons/icon-192x192.png?v=d069094058bc95375f4c5230909458da`,
+                sizes: `192x192`,
+              },
+            ],
+          },
+        ],
       },
     },
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-next-seo`,
-      options: {
-        openGraph: {
-          type: `website`,
-          locale: `en_IN`,
-          url: `https://www.gautamnaik.com/`,
+    // {
+    //   resolve: `gatsby-plugin-next-seo`,
+    //   options: {
+    //     openGraph: {
+    //       type: `website`,
+    //       locale: `en_IN`,
+    //       url: `https://www.gautamnaik.com/`,
 
-          site_name: `Gautam Naik`,
-        },
-        facebook: {
-          appId: 543210136344363,
-        },
-        // twitter: {
-        //   handle: '@handle',
-        //   site: '@site',
-        //   cardType: 'summary_large_image',
-        // },
-      },
-    },
+    //       site_name: `Gautam Naik`,
+    //     },
+    //     facebook: {
+    //       appId: 543210136344363,
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
@@ -208,5 +226,6 @@ module.exports = {
         htmlFavicon: `./assets/logo.png`,
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 };

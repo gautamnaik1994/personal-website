@@ -10,6 +10,7 @@ import WorkExperience from '../components/HomePageSections/WorkExperience';
 import ContactMeSection from '../components/HomePageSections/ContactMeSection';
 import DeclarationSection from '../components/HomePageSections/DeclarationSection';
 import OuterLinks from '../components/OuterLinks';
+import SEO from '../components/SEO';
 
 export default function Homepage() {
   return (
@@ -29,3 +30,4 @@ export default function Homepage() {
     </Fragment>
   );
 }
+export const Head = () => <SEO />;

@@ -1,43 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 import media from '../../utils/MediaQueries';
-
-const swim = keyframes`
- from {
-    background-position-x: 0px;
-  }
-  to {
-    background-position-x: 6000px;
-  }
-`;
-
-const bob = keyframes`
-  0% {
-    transform: translatey(0px);
-  }
-
-  50% {
-    transform: translatey(3px);
-  }
-
-  100% {
- 10px   transform: translatey(0px);
-  }
-`;
-const bob2 = keyframes`
-  0% {
-    transform: translatey(0px);
-  }
-
-  50% {
-    transform: translatey(-3px);
-  }
-
-  100% {
-    transform: translatey(0px);
-  }
-`;
 
 const config = [
   {
@@ -147,14 +111,16 @@ const Glass = styled.div<{ level: number; glow: string }>`
 `;
 
 const LiquidBackground = styled.div`
-  animation: ${swim} 200s infinite linear alternate,
-    ${bob} 2s infinite ease-in-out;
+  animation:
+    swim 200s infinite linear alternate,
+    bob 2s infinite ease-in-out;
   ${backgroundGrad};
 `;
 
 const LiquidForeground = styled.div`
-  animation: ${swim} 200s infinite linear alternate-reverse,
-    ${bob2} 2s infinite ease-in-out;
+  animation:
+    swim 200s infinite linear alternate-reverse,
+    bob2 2s infinite ease-in-out;
   ${foregroundGrad};
 `;
 
@@ -173,7 +139,7 @@ interface Props {
 export default function SkillMeterFn({
   level,
   className = ` `,
-}: Props): JSX.Element {
+}: Props): React.ReactElement {
   const currentConfig = config[findIndex(level)];
   const glassRef = useRef(null);
   let glassElem: HTMLElement | null = null;

@@ -15,6 +15,7 @@ import Container from '../components/Container';
 import BlogSideBar from '../components/BlogSideBar';
 import OuterLinks from '../components/OuterLinks';
 import PageUnderConstruction from '../components/PageUnderConstruction';
+import SEO from '../components/SEO';
 
 const Grid = styled.div`
   ${media.desktop} {
@@ -56,7 +57,7 @@ interface PostItemProps {
 
 const Blog = ({ data, pageContext }: Props): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { site, allMdx } = data;
+  const { allMdx } = data;
   const posts = allMdx.edges;
   // const [showHero, setShowHero] = useState<boolean>(true);
 
@@ -91,14 +92,6 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
 
   return (
     <Fragment>
-      <GatsbySeo
-        title="Gautam Blogs"
-        description="This blogs contains posts based on VIM, CSS and various topics"
-        canonical={`${site.siteMetadata.siteUrl}/blog`}
-        openGraph={{
-          title: `Gautam Blogs`,
-        }}
-      />
       {/* <PageUnderConstruction /> */}
       {/* <Hero showHero={currentPage > 1 ? false : true} title="Welcome to Blog" /> */}
       <Hero title={heroTitle()} />
@@ -153,6 +146,7 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
 };
 
 export default Blog;
+export const Head = () => <SEO title="Gautam Blogs" />;
 
 export const query = graphql`
   query MyQuery(
@@ -160,9 +154,6 @@ export const query = graphql`
     $blogPostPerPage: Int = 9
     $activeCategory: String
   ) {
-    site {
-      ...site
-    }
     allMdx(
       filter: {
         internal: { contentFilePath: { regex: "/_data/blog/" } }
@@ -187,7 +178,7 @@ export const query = graphql`
             description
             bannerImage {
               childImageSharp {
-                gatsbyImageData(width: 350, placeholder: BLURRED)
+                gatsbyImageData(width: 500, placeholder: BLURRED)
               }
             }
           }

@@ -1,23 +1,24 @@
-import React, { Fragment, useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { lighten } from 'polished';
+// import Img from 'gatsby-image';
+// import { lighten } from 'polished';
 import styled from 'styled-components';
-import theme from 'styled-theming';
-import { GatsbySeo } from 'gatsby-plugin-next-seo';
+// import theme from 'styled-theming';
+// import { GatsbySeo } from 'gatsby-plugin-next-seo';
 // Had added @ts-ignore
 // import { MDXRenderer } from 'gatsby-plugin-mdx';
 import media from '../utils/MediaQueries';
-import Layout from '../components/Layout';
+// import Layout from '../components/Layout';
 import Pagination from '../components/Pagination';
 import Badge from '../components/Badge';
 import { Site, Mdx, PageContext } from '../types';
-import { darkBackgroundColor } from '../utils/colors';
+// import { darkBackgroundColor } from '../utils/colors';
 import Container from '../components/Container';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import PageUnderConstruction from '../components/PageUnderConstruction';
+import { GatsbyImage } from 'gatsby-plugin-image';
+// import PageUnderConstruction from '../components/PageUnderConstruction';
 // import TableOfContents from '../components/TableOfContents';
 import Title from '../components/mdx/Title';
+import SEO from '../components/SEO';
 
 const Post = styled.div`
   margin-bottom: 25px;
@@ -98,14 +99,11 @@ const StyledMDXRenderer = styled.div`
 `;
 
 const PosTemplate = ({
-  data: { site, mdx },
+  data: { mdx },
   pageContext: { next, prev },
   // location,
   children,
 }: Props): React.ReactElement => {
-  // useEffect(() => {
-  //   document.querySelector(`nav`)?.classList.add(`remove-shadow`);
-  // }, []);
   return (
     <>
       {/* <GatsbySeo
@@ -150,15 +148,15 @@ const PosTemplate = ({
                 </span>
                 {`  `}&bull;{`  `}
                 {mdx.frontmatter.date}
+                {`  `}&bull;{`  `}
+                {mdx.fields.timeToRead.text}
               </div>
             </div>
           </div>
           <CustomImg
             image={mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData}
-            alt={site.siteMetadata.keywords.join(`, `)}
+            alt={mdx.frontmatter.title}
           />
-
-          {/* <hr className="one-rem-mt one-rem-mb" /> */}
         </Header>
 
         <Post>
@@ -178,9 +176,9 @@ const PosTemplate = ({
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    site {
-      ...site
-    }
+    # site {
+    #   ...site
+    # }
     mdx(id: { eq: $id }, frontmatter: { publish: { eq: true } }) {
       frontmatter {
         title
@@ -200,10 +198,27 @@ export const pageQuery = graphql`
         keywords
         description
       }
+      fields {
+        timeToRead {
+          text
+        }
+      }
       body
-      tableOfContents(maxDepth: 3)
+      # tableOfContents(maxDepth: 3)
     }
   }
 `;
+
+export const Head = ({ data }) => (
+  <SEO
+    title={data.mdx.frontmatter.title}
+    image={
+      data.mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData.images
+        .fallback.src
+    }
+    keywords={data.mdx.frontmatter.keywords}
+    description={data.mdx.frontmatter.description}
+  />
+);
 
 export default PosTemplate;
