@@ -27,11 +27,11 @@ interface colorData {
 
 export const setColors = (theme: string): void => {
   if (theme === `light`) {
-    lightTheme.forEach((data: colorData) => {
+    lightTheme?.forEach((data: colorData) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });
   } else {
-    darkTheme.forEach((data: colorData) => {
+    darkTheme?.forEach((data: colorData) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });
   }

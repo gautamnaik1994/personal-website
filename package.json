@@ -128,6 +128,7 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "esm": ">=3.2.25",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.31",
     "husky": ">=8.0.3",
     "identity-obj-proxy": "3.0.0",
     "jsdom": "22.1.0",

@@ -19,12 +19,12 @@ function htmlThemeFunction() {
   const lightTheme = `🌕`;
   if (initialThemeValue === `light`) {
     document.documentElement.style.setProperty(`--theme`, `light`);
-    lightTheme.forEach((data) => {
+    lightTheme?.forEach((data) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });
   } else {
     document.documentElement.style.setProperty(`--theme`, `dark`);
-    darkTheme.forEach((data) => {
+    darkTheme?.forEach((data) => {
       document.documentElement.style.setProperty(`--${data.name}`, data.value);
     });
   }
@@ -53,7 +53,7 @@ export const onRenderBody = ({
   setHeadComponents([
     <link
       as="script"
-      key="proloadKey"
+      key="preloadKey"
       rel="preload"
       href="/scripts/preloader.js"
     />,

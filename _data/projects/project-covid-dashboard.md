@@ -11,8 +11,6 @@ details:
   - key: Technology
     value: Plotly Graphs, Dash
 links:
-  - key: App Link
-    value: http://g-covidash.herokuapp.com/
   - key: Git Link
     value: https://github.com/gautamnaik1994/Covid-Dashboard
 ---

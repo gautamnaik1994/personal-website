@@ -4,12 +4,6 @@ import styled from 'styled-components';
 import media from '../../utils/MediaQueries';
 import ProjectItem from '../ProjectItem';
 import SectionTitle from '../SectionTitle';
-import LinkButton from '../LinkButton';
-
-const StyledLinkButton = styled(LinkButton)`
-  justify-self: center;
-  align-self: center;
-`;
 
 const StyledProjectItem = styled(ProjectItem)`
   ${media.tablet} {
@@ -79,9 +73,10 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
               isPersonalProject
               image {
                 childImageSharp {
-                  original {
-                    src
-                  }
+                  gatsbyImageData(
+                    width: 300
+                    transformOptions: { fit: CONTAIN }
+                  )
                 }
               }
             }
@@ -106,7 +101,7 @@ const ProjectsSection = ({ className }: Props): JSX.Element => {
                 links={_data.links}
                 details={_data.details}
                 color={_data.projectColor}
-                banner={_data.image?.childImageSharp.original.src}
+                banner={_data.image?.childImageSharp.gatsbyImageData}
                 isPersonalProject={_data.isPersonalProject}
               />
             );

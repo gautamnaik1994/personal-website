@@ -32,10 +32,9 @@ export const SEO = ({
     url: `${siteUrl}${pathname || ``}`,
     keywords: keywords ? keywords.join(`, `) : defaultKeywords.join(`, `),
   };
-  console.log(seo);
-
   return (
     <>
+      <html lang="en" />
       <title>{seo.title}</title>
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="mobile-web-app-capable" content="yes" />

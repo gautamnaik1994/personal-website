@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeContext } from 'styled-components';
 import media from '../../utils/MediaQueries';
 // import { MDXRenderer } from 'gatsby-plugin-mdx';
-import SubContainer from '../SubContainer';
+
 import SectionTitle from '../SectionTitle';
 
 const StyledAboutMe = styled.div`

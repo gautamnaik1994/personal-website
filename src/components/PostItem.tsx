@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import Link from './Link';
 import media from '../utils/MediaQueries';
-import Badge from './Badge';
 
-const PostItem = styled.div<{ responsive: boolean; bgImage: string }>`
+const PostItem = styled.div<{ bgImage: string }>`
   padding: 15px;
   overflow: hidden;
   z-index: 0;
@@ -84,8 +83,7 @@ interface Props {
   category: string;
   tags: string[];
   readTime: string;
-  // banner: string;
-  responsive: boolean;
+  banner: IGatsbyImageData;
   className?: string;
 }
 
@@ -95,14 +93,11 @@ const PostItemMain = ({
   date,
   excerpt,
   category,
-  tags,
   readTime,
   banner,
-  responsive = true,
   ...props
 }: Props): React.ReactElement => (
   <PostItem
-    responsive={responsive}
     className={props.className}
     // bgImage={banner.placeholder?.fallback}
   >

@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { Fragment } from 'react';
 import MetaBallsSVG from './MetaballsSVG';
-import Tweakpane from 'tweakpane';
+// import Tweakpane from 'tweakpane';
 import { ThemeContext, withTheme } from 'styled-components';
 
 interface IState {
@@ -21,7 +21,7 @@ interface IState {
 }
 
 const webglOptions = {
-  powerPreference: 'high-performance',
+  powerPreference: `high-performance`,
   antialias: false,
   transparent: true,
   resolution: 0.1,
@@ -42,9 +42,7 @@ interface MetaBallObject {
   r: number;
 }
 
-interface IProps {
-  showTweakPane: boolean;
-}
+interface IProps {}
 
 declare global {
   interface Window {
@@ -107,21 +105,21 @@ class Metaballs extends React.Component<IProps, IState> {
     const canvasElem = this.canvasRef.current;
     this.CANVAS_HEIGHT = canvasElem!.parentElement.clientHeight;
     this.CANVAS_WIDTH = canvasElem!.parentElement.clientWidth;
-    canvasElem.setAttribute('height', this.CANVAS_HEIGHT + 'px');
-    canvasElem.setAttribute('width', this.CANVAS_WIDTH + 'px');
+    canvasElem.setAttribute(`height`, this.CANVAS_HEIGHT + `px`);
+    canvasElem.setAttribute(`width`, this.CANVAS_WIDTH + `px`);
     this.CANVAS_CENTER_X = this.CANVAS_WIDTH / 2;
     this.CANVAS_CENTER_Y = this.CANVAS_HEIGHT / 2;
 
     try {
       this.gl = canvasElem.getContext(
-        'webgl',
+        `webgl`,
         webglOptions,
       ) as WebGLRenderingContext;
     } catch (e) {
-      console.log('not supported');
+      console.log(`not supported`);
     }
 
-    //if (!this.gl) throw new Error('WebGL not supported');
+    // if (!this.gl) throw new Error('WebGL not supported');
     if (!this.gl) {
       this.setState({ webGLNotSupported: true });
       return;
@@ -310,7 +308,7 @@ class Metaballs extends React.Component<IProps, IState> {
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexDataBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, vertexData, gl.STATIC_DRAW);
 
-    const positionHandle = this.getAttribLocation(program, 'position', gl);
+    const positionHandle = this.getAttribLocation(program, `position`, gl);
     gl.enableVertexAttribArray(positionHandle);
     gl.vertexAttribPointer(
       positionHandle,
@@ -321,15 +319,15 @@ class Metaballs extends React.Component<IProps, IState> {
       0, // offset into each span of vertex data
     );
 
-    this.metaballsHandle = this.getUniformLocation(program, 'metaballs', gl);
+    this.metaballsHandle = this.getUniformLocation(program, `metaballs`, gl);
     this.bgColorUniformLocation = this.getUniformLocation(
       program,
-      'bg_color',
+      `bg_color`,
       gl,
     );
     const metaballColorUniformLocation = this.getUniformLocation(
       program,
-      'metaball_color',
+      `metaball_color`,
       gl,
     );
 
@@ -350,10 +348,10 @@ class Metaballs extends React.Component<IProps, IState> {
   };
 
   changeBackground = (val: string): void => {
-    if (val === 'dark' && this.gl) {
+    if (val === `dark` && this.gl) {
       // gl_FragColor = vec4(0.12, 0.15, 0.21, 1.0);
       this.gl.uniform4f(this.bgColorUniformLocation, 0.1294, 0.1529, 0.2196, 1);
-    } else if (val === 'light' && this.gl) {
+    } else if (val === `light` && this.gl) {
       this.gl.uniform4f(this.bgColorUniformLocation, 0.898, 0.898, 0.898, 1.0);
     }
   };
@@ -365,10 +363,11 @@ class Metaballs extends React.Component<IProps, IState> {
   ): number => {
     const attributeLocation = gl.getAttribLocation(program, name);
     if (attributeLocation === -1) {
-      throw 'Can not find attribute ' + name + '.';
+      throw `Can not find attribute ` + name + `.`;
     }
     return attributeLocation;
   };
+
   getUniformLocation = (
     program: WebGLProgram,
     name: string,
@@ -376,10 +375,11 @@ class Metaballs extends React.Component<IProps, IState> {
   ): WebGLUniformLocation => {
     const uniformLocation = gl.getUniformLocation(program, name);
     if (uniformLocation === -1) {
-      throw 'Can not find uniform ' + name + '.';
+      throw `Can not find uniform ` + name + `.`;
     }
     return uniformLocation;
   };
+
   compileShader = (
     shaderSource: string,
     shaderType: number,
@@ -390,7 +390,7 @@ class Metaballs extends React.Component<IProps, IState> {
     gl.compileShader(shader);
 
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      throw 'Shader compile failed with: ' + gl.getShaderInfoLog(shader);
+      throw `Shader compile failed with: ` + gl.getShaderInfoLog(shader);
     }
 
     return shader;
@@ -408,14 +408,12 @@ class Metaballs extends React.Component<IProps, IState> {
       <Fragment>
         <div
           style={{
-            height: '100vh',
-            overflow: 'hidden',
+            height: `100vh`,
+            overflow: `hidden`,
           }}
         >
           <canvas ref={this.canvasRef} id="main"></canvas>
         </div>
-        {/*TODO: need tp remove this later*/}
-        <div id="tweakpaneContainer" className="tweakpane-container" />
       </Fragment>
     );
   }

@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 import React, { Fragment } from 'react';
-import Tweakpane from 'tweakpane';
+// import Tweakpane from 'tweakpane';
 import { ThemeContext } from 'styled-components';
 
 interface IState {
@@ -25,16 +25,14 @@ declare module 'react' {
   }
 }
 
-interface IProps {
-  showTweakPane: boolean;
-}
+interface IProps {}
 
 class Metaballs extends React.Component<IProps, IState> {
   config = {
     ballCount: 2,
     smallCircleRadius: 100,
     distributionRadius: 90,
-    color: '#8df',
+    color: `#8df`,
     blurStdDeviation: 30,
     matrixAlpha: 25,
     matrixW: 20,
@@ -42,6 +40,7 @@ class Metaballs extends React.Component<IProps, IState> {
     ySpeed: 1,
     radiusDivider: 9,
   };
+
   private svgRef: React.RefObject<HTMLElement>;
   private ballHolder: React.RefObject<HTMLElement>;
   constructor(props: IProps) {
@@ -80,7 +79,7 @@ class Metaballs extends React.Component<IProps, IState> {
   };
 
   componentDidMount(): void {
-    console.log('cdm');
+    console.log(`cdm`);
     this.cancelAll();
 
     const svgElem = this.svgRef.current;
@@ -96,26 +95,26 @@ class Metaballs extends React.Component<IProps, IState> {
       ...this.config,
     };
 
-    if (this.props.showTweakPane) {
-      const pane = new Tweakpane({
-        container: document.getElementById('tweakpaneContainer'),
-      });
-      const f1 = pane.addFolder({
-        title: 'Tweaks',
-      });
+    // if (this.props.showTweakPane) {
+    //   const pane = new Tweakpane({
+    //     container: document.getElementById('tweakpaneContainer'),
+    //   });
+    //   const f1 = pane.addFolder({
+    //     title: 'Tweaks',
+    //   });
 
-      for (const [key, val] of Object.entries(this.config)) {
-        f1.addInput(PARAMS, key, {
-          min: 1,
-          max: 100,
-          step: 1,
-        }).on('change', (val) => {
-          this.setState({
-            [key]: val,
-          });
-        });
-      }
-    }
+    //   for (const [key, val] of Object.entries(this.config)) {
+    //     f1.addInput(PARAMS, key, {
+    //       min: 1,
+    //       max: 100,
+    //       step: 1,
+    //     }).on('change', (val) => {
+    //       this.setState({
+    //         [key]: val,
+    //       });
+    //     });
+    //   }
+    // }
 
     this.ballHolderElem = this.ballHolder.current;
     this.allCircles = this.ballHolderElem?.childNodes;
@@ -125,7 +124,7 @@ class Metaballs extends React.Component<IProps, IState> {
   }
 
   step = (): void => {
-    //console.log('stepping');
+    // console.log('stepping');
     const requestAnimationFrame =
       window.requestAnimationFrame ||
       window.mozRequestAnimationFrame ||
@@ -241,7 +240,7 @@ class Metaballs extends React.Component<IProps, IState> {
     const { ballCount, blurStdDeviation, matrixW, matrixAlpha }: IState =
       this.state;
 
-    const { mode = 'dark' } = this.context;
+    const { mode = `dark` } = this.context;
 
     return (
       <Fragment>
@@ -283,7 +282,7 @@ class Metaballs extends React.Component<IProps, IState> {
           <rect
             width="100%"
             height="100%"
-            fill={mode === 'dark' ? '#212738' : '#E5E5E5'}
+            fill={mode === `dark` ? `#212738` : `#E5E5E5`}
             strokeWidth="0"
             mask="url(#metaballsMask)"
           />
@@ -292,8 +291,6 @@ class Metaballs extends React.Component<IProps, IState> {
             <use href="#ballHolderMain" />
           </mask>
         </svg>
-        {/*TODO: need tp remove this later*/}
-        <div id="tweakpaneContainer" className="tweakpane-container" />
       </Fragment>
     );
   }

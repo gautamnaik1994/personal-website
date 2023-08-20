@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
-import theme from 'styled-theming';
-import { rgba, rgb, parseToRgb } from 'polished';
-import { useSpring, animated } from 'react-spring';
-import { useMeasure } from 'react-use';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React from 'react';
+import styled from 'styled-components';
+
+import { rgba } from 'polished';
+
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 // import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Link from './Link';
-import media from '../utils/MediaQueries';
+
 import Item from './Skill/Item';
 
-const ProjectItem = styled.div`
+const ProjectItemStyles = styled.div`
   padding: 15px;
   margin-bottom: 40px;
   border-radius: 8px;
@@ -76,13 +74,13 @@ interface Props {
   title: string;
   details: Array<{ key: string; value: string }>;
   links: Array<{ key: string; value: string }>;
-  banner: string;
+  banner: IGatsbyImageData;
   description: string;
   className?: string;
   isPersonalProject?: boolean;
 }
 
-export default ({
+export default function ProjectItem({
   title,
   banner,
   links,
@@ -91,7 +89,7 @@ export default ({
   description,
   isPersonalProject,
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement {
   // const defaultHeight = '0px';
   // const [open, toggle] = useState(false);
   // const [contentHeight, setContentHeight] = useState(defaultHeight);
@@ -112,13 +110,21 @@ export default ({
   //
 
   return (
-    <ProjectItem className={props.className}>
+    <ProjectItemStyles className={props.className}>
       <div className="top-section">
         <div
           className="img-container"
           style={{ background: color, '--boxShadowcolor': rgba(color, 0.4) }}
         >
-          {banner ? <img src={banner} alt={title} /> : <>{title}</>}
+          {banner ? (
+            <GatsbyImage
+              imgStyle={{ objectFit: `contain` }}
+              image={banner}
+              alt={title}
+            />
+          ) : (
+            <>{title}</>
+          )}
           {isPersonalProject && (
             <div className="personal-tag">Personal Project</div>
           )}
@@ -140,6 +146,6 @@ export default ({
           </a>
         ))}
       </div>
-    </ProjectItem>
+    </ProjectItemStyles>
   );
-};
+}
