@@ -4,9 +4,9 @@ value: 80
 publish: true
 details:
   - key: Expertise
-    value: " Website Development • Single Page Applications • Progressive Web Apps"
+    value: " Web Development • Single Page Applications • Progressive Web Apps"
   - key: Technologies
-    value: HTML/CSS/SCSS • ReactJS • Javascript(ES5 & ES6) • Webpack & Gulp
+    value: HTML/CSS/SCSS • ReactJS • JavaScript • Typescript • Webpack
   - key: "Version Control "
     value: Git
 ---

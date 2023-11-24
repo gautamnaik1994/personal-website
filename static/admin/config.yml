@@ -127,6 +127,12 @@ collections: # A list of collections the CMS should be able to edit
               media_folder: '/static/siteMedia',
               public_folder: '/siteMedia',
             }
+          - {
+              label: 'CV2',
+              name: 'cv2',
+              widget: 'string',
+              default: 'https://docs.google.com/document/d/1qSEwteeD2bf8_L0-9OLJa4N--wFb8ApMShBwx571WwM/edit?usp=sharing',
+            }
           - { label: 'Footer', name: 'footer', widget: 'string' }
           - {
               label: 'Contact Me Text',

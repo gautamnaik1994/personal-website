@@ -745,6 +745,7 @@ type Frontmatter = {
   readonly companyWebsite: Maybe<Scalars['String']>;
   readonly contactMeText: Maybe<Scalars['String']>;
   readonly cv: Maybe<Scalars['String']>;
+  readonly cv2: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
   readonly description: Maybe<Scalars['String']>;
   readonly details: Maybe<ReadonlyArray<Maybe<MdxFrontmatterDetails>>>;
@@ -756,6 +757,7 @@ type Frontmatter = {
   readonly keywords: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly links: Maybe<ReadonlyArray<Maybe<MdxFrontmatterLinks>>>;
   readonly location: Maybe<Scalars['String']>;
+  readonly lookingForJob: Maybe<Scalars['Boolean']>;
   readonly ogImage: Maybe<Scalars['String']>;
   readonly order: Maybe<Scalars['Int']>;
   readonly position: Maybe<Scalars['String']>;
@@ -800,6 +802,7 @@ type FrontmatterFieldSelector = {
   readonly companyWebsite: InputMaybe<FieldSelectorEnum>;
   readonly contactMeText: InputMaybe<FieldSelectorEnum>;
   readonly cv: InputMaybe<FieldSelectorEnum>;
+  readonly cv2: InputMaybe<FieldSelectorEnum>;
   readonly date: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
   readonly details: InputMaybe<MdxFrontmatterDetailsFieldSelector>;
@@ -811,6 +814,7 @@ type FrontmatterFieldSelector = {
   readonly keywords: InputMaybe<FieldSelectorEnum>;
   readonly links: InputMaybe<MdxFrontmatterLinksFieldSelector>;
   readonly location: InputMaybe<FieldSelectorEnum>;
+  readonly lookingForJob: InputMaybe<FieldSelectorEnum>;
   readonly ogImage: InputMaybe<FieldSelectorEnum>;
   readonly order: InputMaybe<FieldSelectorEnum>;
   readonly position: InputMaybe<FieldSelectorEnum>;
@@ -839,6 +843,7 @@ type FrontmatterFilterInput = {
   readonly companyWebsite: InputMaybe<StringQueryOperatorInput>;
   readonly contactMeText: InputMaybe<StringQueryOperatorInput>;
   readonly cv: InputMaybe<StringQueryOperatorInput>;
+  readonly cv2: InputMaybe<StringQueryOperatorInput>;
   readonly date: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly details: InputMaybe<MdxFrontmatterDetailsFilterListInput>;
@@ -850,6 +855,7 @@ type FrontmatterFilterInput = {
   readonly keywords: InputMaybe<StringQueryOperatorInput>;
   readonly links: InputMaybe<MdxFrontmatterLinksFilterListInput>;
   readonly location: InputMaybe<StringQueryOperatorInput>;
+  readonly lookingForJob: InputMaybe<BooleanQueryOperatorInput>;
   readonly ogImage: InputMaybe<StringQueryOperatorInput>;
   readonly order: InputMaybe<IntQueryOperatorInput>;
   readonly position: InputMaybe<StringQueryOperatorInput>;
@@ -878,6 +884,7 @@ type FrontmatterSortInput = {
   readonly companyWebsite: InputMaybe<SortOrderEnum>;
   readonly contactMeText: InputMaybe<SortOrderEnum>;
   readonly cv: InputMaybe<SortOrderEnum>;
+  readonly cv2: InputMaybe<SortOrderEnum>;
   readonly date: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
   readonly details: InputMaybe<MdxFrontmatterDetailsSortInput>;
@@ -889,6 +896,7 @@ type FrontmatterSortInput = {
   readonly keywords: InputMaybe<SortOrderEnum>;
   readonly links: InputMaybe<MdxFrontmatterLinksSortInput>;
   readonly location: InputMaybe<SortOrderEnum>;
+  readonly lookingForJob: InputMaybe<SortOrderEnum>;
   readonly ogImage: InputMaybe<SortOrderEnum>;
   readonly order: InputMaybe<SortOrderEnum>;
   readonly position: InputMaybe<SortOrderEnum>;

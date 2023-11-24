@@ -8,14 +8,14 @@ import Logo from './Logo';
 import ThemeChooser from './ThemeChooser';
 import { NAVIGATION } from '../utils/constant';
 
-const navBarBgColor = theme('mode', {
-  light: '#fff',
-  dark: lighten(0.15, '#121212'),
+const navBarBgColor = theme(`mode`, {
+  light: `#fff`,
+  dark: lighten(0.15, `#121212`),
 });
 
-const logoColor = theme('mode', {
-  light: '#333',
-  dark: '#fff',
+const logoColor = theme(`mode`, {
+  light: `#333`,
+  dark: `#fff`,
 });
 
 const NavLink = styled(Link)`
@@ -73,6 +73,8 @@ export default ({ toggleTheme, className }: Props) => (
         key={navigation.label}
         title={navigation.label}
         to={navigation.to}
+        target={navigation.external ? `_blank` : undefined}
+        rel={navigation.external ? `noopener noreferrer` : undefined}
       >
         {navigation.label}
       </NavLink>

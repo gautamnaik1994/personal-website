@@ -4,7 +4,7 @@ import theme from 'styled-theming';
 import { useSpring, animated } from 'react-spring';
 import media from '../utils/MediaQueries';
 import LinkButton from './LinkButton';
-import DownloadCVButton from './DownloadCVButton';
+import DownloadCVButton from './ViewCVButton';
 
 const StyledDownloadCV = styled.div`
   padding: 30px;
@@ -37,8 +37,8 @@ const StyledDownloadCV = styled.div`
 export default (props): JSX.Element => {
   return (
     <StyledDownloadCV {...props}>
-      <div className="top-sec">Download my CV</div>
-      <div className="middle-sec">Only 1 page</div>
+      <div className="top-sec">Curriculum Vitae</div>
+      <div className="middle-sec">Only 2 pages</div>
       <DownloadCVButton />
     </StyledDownloadCV>
   );

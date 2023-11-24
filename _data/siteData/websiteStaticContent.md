@@ -9,10 +9,12 @@ location: Panaji - Goa
 aboutMeImage: /siteMedia/aboutme.png
 ogImage: /siteMedia/og-image.png
 cv: /siteMedia/resume-2021.pdf
+cv2: https://docs.google.com/document/d/1qSEwteeD2bf8_L0-9OLJa4N--wFb8ApMShBwx571WwM/edit?usp=sharing
 footer: This is footer
 contactMeText: I am always on the lookout for new and exciting opportunities.
   Drop an email if you have something exciting to share and I'll try my best to
   get back to you!
+lookingForJob: true
 socialLinks:
   - key: Stack Overflow
     value: https://stackoverflow.com/users/2376317/gautam-naik?tab=profile

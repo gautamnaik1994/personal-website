@@ -10,6 +10,8 @@ interface Props {
   className?: string;
   title: string;
   download?: boolean;
+  target?: string;
+  rel?: string;
 }
 
 const Link = ({ children, to, title, ...other }: Props) => {
