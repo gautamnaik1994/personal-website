@@ -33,10 +33,12 @@ socialLinks:
     iconClassName: linkedin
 ---
 
-With over **8 years** of hands-on experience as a **Frontend and UI Developer**, my expertise lies in implementing frontend systems using the latest technologies like ReactJS, JavaScript, ES6, and CSS. I have a proven track record of delivering high-quality user interfaces that are intuitive, responsive, and visually appealing. 
+With over **8 years** of experience as a **Frontend and UI Developer**, I have a proven track record of delivering high-quality user interfaces that are intuitive, responsive, and visually appealing. I am proficient in implementing frontend systems using the latest technologies, such as **ReactJS, NextJS, Redux, Typescript, JavaScript, ES6, and CSS**.
 
-What sets me apart is my ability to work collaboratively with UX/UI teams to translate functional specifications into seamless user experiences. I believe in building interfaces that are not just aesthetically pleasing but also highly functional, with a focus on usability and accessibility. 
+I am able to work collaboratively with UX/UI teams and stakeholders to translate functional specifications into seamless user experiences. I believe in building interfaces that are not only aesthetically pleasing but also highly functional, with a focus on usability and accessibility.
 
-Apart from my technical skills, one of my key strengths is building multi-platform websites that are optimized for different devices using responsive web design. I understand the importance of ensuring that websites are accessible and user-friendly, regardless of the platform or device being used. 
+One of my key strengths is building multi-platform websites that are optimized for different devices using responsive web design. I understand the importance of ensuring that websites are accessible and user-friendly, regardless of the platform or device being used.
 
-Overall, I am a detail-oriented frontend developer with a passion for creating exceptional user experiences that meet the highest standards of quality and performance.
+What sets me apart from others is my working knowledge of backend technologies, such as **Python, NodeJS, Fast API, MySQL, and DynamoDB**. I am also proficient in building serverless applications using AWS Lambda and deploying them using AWS Cloud Development Kit.
+
+Overall, I am a detail-oriented engineer with a passion for creating exceptional user experiences that meet the highest standards of quality and performance.
