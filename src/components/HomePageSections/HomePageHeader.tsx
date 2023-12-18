@@ -37,7 +37,7 @@ export default function HomePageHeaderContainer() {
   });
   return (
     <HomePageHeader ref={HomePageHeaderRef}>
-      <Metaballs showTweakPane={false} />
+      <Metaballs />
       <Name />
     </HomePageHeader>
   );

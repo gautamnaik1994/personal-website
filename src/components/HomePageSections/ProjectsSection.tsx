@@ -45,7 +45,7 @@ interface ProjectItemProps {
   };
 }
 
-const ProjectsSection = ({ className }: Props): JSX.Element => {
+const ProjectsSection = ({ className }: Props): React.JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(

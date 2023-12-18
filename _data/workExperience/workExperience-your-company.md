@@ -8,6 +8,6 @@ status: play
 
 <!--StartFragment-->
 
-Can handle UI development of your site.
+Can handle frontend development of your site.
 
 <!--EndFragment-->

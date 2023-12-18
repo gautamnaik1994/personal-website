@@ -39,6 +39,6 @@ I am able to work collaboratively with UX/UI teams and stakeholders to translate
 
 One of my key strengths is building multi-platform websites that are optimized for different devices using responsive web design. I understand the importance of ensuring that websites are accessible and user-friendly, regardless of the platform or device being used.
 
-What sets me apart from others is my working knowledge of backend technologies, such as **Python, NodeJS, Fast API, MySQL, and DynamoDB**. I am also proficient in building serverless applications using AWS Lambda and deploying them using AWS Cloud Development Kit.
+What sets me apart from others is my working knowledge of backend technologies, such as **Python, NodeJS, Fast API, MySQL and DynamoDB**. I am also proficient in building serverless applications using AWS Lambda and deploying them using AWS Cloud Development Kit.
 
 Overall, I am a detail-oriented engineer with a passion for creating exceptional user experiences that meet the highest standards of quality and performance.

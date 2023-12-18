@@ -2,7 +2,7 @@
 title: Game Developer
 value: 48
 order: 3
-publish: true
+publish: false
 details:
   - key: Expertise
     value: 3D Modelling • Texturing • Level Design • UI Design
