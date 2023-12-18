@@ -6,7 +6,7 @@ details:
   - key: Expertise
     value: " Web Development • Single Page Applications • Progressive Web Apps"
   - key: Technologies
-    value: HTML/CSS/SCSS • ReactJS • JavaScript • Typescript • Webpack
+    value: HTML-CSS • ReactJS • NextJS • Redux • JavaScript • Typescript • Webpack
   - key: "Version Control "
     value: Git
 ---
