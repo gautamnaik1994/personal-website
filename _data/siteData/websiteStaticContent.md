@@ -31,6 +31,9 @@ socialLinks:
   - key: Linkedin
     value: https://www.linkedin.com/in/gautamnaik1994/
     iconClassName: linkedin
+  - key: Kaggle
+    value: https://www.kaggle.com/gautamnaik1994
+    iconClassName: kaggle
 ---
 
 With over **8 years** of experience as a **Frontend and UI Developer**, I have a proven track record of delivering high-quality user interfaces that are intuitive, responsive, and visually appealing. I am proficient in implementing frontend systems using the latest technologies, such as **ReactJS, NextJS, Redux, Typescript, JavaScript, ES6, and CSS**.
