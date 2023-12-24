@@ -1,26 +1,14 @@
-import { lighten } from 'polished';
 import React from 'react';
 import styled from 'styled-components';
-import theme from 'styled-theming';
 import media from '../utils/MediaQueries';
 import Link from './Link';
 import Logo from './Logo';
 import ThemeChooser from './ThemeChooser';
 import { NAVIGATION } from '../utils/constant';
 
-const navBarBgColor = theme(`mode`, {
-  light: `#fff`,
-  dark: lighten(0.15, `#121212`),
-});
-
-const logoColor = theme(`mode`, {
-  light: `#333`,
-  dark: `#fff`,
-});
-
 const NavLink = styled(Link)`
-  margin-right: 15px;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: var(--fontWeightMedium);
   display: none;
   ${media.tablet} {
     display: inline-block;
@@ -34,6 +22,7 @@ const Navbar = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 25px;
   background-color: rgba(var(--bodyBackgroundColorRgb), 0.7);
   box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.3);
   padding: 10px 15px;
@@ -71,7 +60,7 @@ export default ({ toggleTheme, className }: Props) => (
     {NAVIGATION.map((navigation) => (
       <NavLink
         key={navigation.label}
-        title={navigation.label}
+        title={navigation.title}
         to={navigation.to}
         target={navigation.external ? `_blank` : undefined}
         rel={navigation.external ? `noopener noreferrer` : undefined}

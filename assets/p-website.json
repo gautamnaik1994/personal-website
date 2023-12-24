@@ -101,12 +101,20 @@
     {
       "selection": [
         {
+          "order": 35,
+          "id": 40,
+          "name": "kaggle",
+          "prevSize": 24,
+          "code": 59674,
+          "tempChar": ""
+        },
+        {
           "order": 28,
           "id": 39,
           "name": "list-view",
           "prevSize": 24,
           "code": 59648,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 29,
@@ -114,7 +122,7 @@
           "name": "grid-view",
           "prevSize": 24,
           "code": 59649,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 30,
@@ -122,7 +130,7 @@
           "name": "calendar",
           "prevSize": 24,
           "code": 59650,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 31,
@@ -130,7 +138,7 @@
           "name": "double-arrow",
           "prevSize": 24,
           "code": 59651,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 32,
@@ -138,7 +146,7 @@
           "name": "arrow-right",
           "prevSize": 24,
           "code": 59652,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 34,
@@ -146,14 +154,14 @@
           "name": "category",
           "prevSize": 24,
           "code": 59653,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 16,
           "id": 17,
           "name": "pluralsight",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59659
         },
         {
@@ -161,7 +169,7 @@
           "id": 18,
           "name": "logo",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59656
         },
         {
@@ -169,7 +177,7 @@
           "id": 19,
           "name": "link",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59655
         },
         {
@@ -177,7 +185,7 @@
           "id": 20,
           "name": "marker",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59660
         },
         {
@@ -185,7 +193,7 @@
           "id": 21,
           "name": "cake",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59661
         },
         {
@@ -193,7 +201,7 @@
           "id": 22,
           "name": "email",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59662
         },
         {
@@ -201,7 +209,7 @@
           "id": 23,
           "name": "open-new-tab",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59663
         },
         {
@@ -209,7 +217,7 @@
           "id": 24,
           "name": "stack-overflow-bottom",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59654
         },
         {
@@ -217,7 +225,7 @@
           "id": 25,
           "name": "stack-overflow-top",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59657
         },
         {
@@ -225,7 +233,7 @@
           "id": 26,
           "name": "linkedin",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59658
         },
         {
@@ -233,7 +241,7 @@
           "id": 27,
           "name": "github",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59664
         },
         {
@@ -241,7 +249,7 @@
           "id": 28,
           "name": "stack-overflow",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59665
         },
         {
@@ -249,7 +257,7 @@
           "id": 29,
           "name": "behance",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59666
         },
         {
@@ -257,7 +265,7 @@
           "id": 30,
           "name": "codepen",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59667
         },
         {
@@ -265,7 +273,7 @@
           "id": 31,
           "name": "moon",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59668
         },
         {
@@ -273,7 +281,7 @@
           "id": 32,
           "name": "sun",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59669
         },
         {
@@ -281,7 +289,7 @@
           "id": 33,
           "name": "arrow",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59670
         }
       ],
@@ -294,13 +302,33 @@
         "license": "Custom",
         "licenseURL": "https://github.com/FortAwesome/Font-Awesome#license",
         "importSize": {
-          "width": 22,
-          "height": 19
+          "width": 10,
+          "height": 16
         }
       },
       "height": 1024,
       "prevSize": 28,
       "icons": [
+        {
+          "id": 40,
+          "paths": [
+            "M752.676 921.1l-243.008-302.012 233.008-225.508c4.332-4.5 2.832-17.5-8.832-17.5h-115.337c-5.832 0-11.668 3-17.5 8.832l-220.508 222.842v-510.020q0-12.5-12.5-12.5h-86.504q-12.5 0-12.5 12.5v828.364q0 12.5 12.5 12.5h86.504q12.5 0 12.5-12.5v-181.672l51.336-48.836 184.173 234.344c5 5.832 10.833 8.832 17.5 8.832h111.504q8.832 0 10-5z"
+          ],
+          "attrs": [
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 24,
+          "tags": [
+            "kaggle"
+          ],
+          "colorPermutations": {
+            "1731861991238868112552552551751722541": [
+              {}
+            ]
+          }
+        },
         {
           "id": 39,
           "paths": [
@@ -315,7 +343,9 @@
           "tags": [
             "listview"
           ],
-          "colorPermutations": {}
+          "colorPermutations": {
+            "1731861991238868112552552551751722541": []
+          }
         },
         {
           "id": 38,
@@ -332,7 +362,9 @@
           "tags": [
             "grid view"
           ],
-          "colorPermutations": {}
+          "colorPermutations": {
+            "1731861991238868112552552551751722541": []
+          }
         },
         {
           "id": 37,
@@ -346,7 +378,9 @@
           "tags": [
             "calendar"
           ],
-          "colorPermutations": {}
+          "colorPermutations": {
+            "1731861991238868112552552551751722541": []
+          }
         },
         {
           "id": 36,
@@ -361,7 +395,9 @@
           "tags": [
             "double arrow"
           ],
-          "colorPermutations": {}
+          "colorPermutations": {
+            "1731861991238868112552552551751722541": []
+          }
         },
         {
           "id": 35,
@@ -375,7 +411,9 @@
           "tags": [
             "Expand More"
           ],
-          "colorPermutations": {}
+          "colorPermutations": {
+            "1731861991238868112552552551751722541": []
+          }
         },
         {
           "id": 34,
@@ -389,7 +427,9 @@
           "tags": [
             "category"
           ],
-          "colorPermutations": {}
+          "colorPermutations": {
+            "1731861991238868112552552551751722541": []
+          }
         },
         {
           "id": 17,
@@ -402,7 +442,8 @@
           "isMulticolor": false,
           "isMulticolor2": false,
           "colorPermutations": {
-            "12552552551": []
+            "12552552551": [],
+            "1731861991238868112552552551751722541": []
           },
           "tags": [
             "pluralsight"
@@ -424,6 +465,10 @@
           "isMulticolor2": false,
           "colorPermutations": {
             "12552552551": [
+              {},
+              {}
+            ],
+            "1731861991238868112552552551751722541": [
               {},
               {}
             ]
@@ -453,6 +498,11 @@
               {},
               {},
               {}
+            ],
+            "1731861991238868112552552551751722541": [
+              {},
+              {},
+              {}
             ]
           },
           "tags": [
@@ -475,6 +525,10 @@
           "isMulticolor2": false,
           "colorPermutations": {
             "12552552551": [
+              {},
+              {}
+            ],
+            "1731861991238868112552552551751722541": [
               {},
               {}
             ]
@@ -501,6 +555,10 @@
             "12552552551": [
               {},
               {}
+            ],
+            "1731861991238868112552552551751722541": [
+              {},
+              {}
             ]
           },
           "tags": [
@@ -521,6 +579,9 @@
           "isMulticolor2": false,
           "colorPermutations": {
             "12552552551": [
+              {}
+            ],
+            "1731861991238868112552552551751722541": [
               {}
             ]
           },
@@ -543,6 +604,9 @@
           "colorPermutations": {
             "12552552551": [
               {}
+            ],
+            "1731861991238868112552552551751722541": [
+              {}
             ]
           },
           "tags": [
@@ -563,6 +627,9 @@
           "isMulticolor2": false,
           "colorPermutations": {
             "12552552551": [
+              {}
+            ],
+            "1731861991238868112552552551751722541": [
               {}
             ]
           },
@@ -585,6 +652,9 @@
           "colorPermutations": {
             "12552552551": [
               {}
+            ],
+            "1731861991238868112552552551751722541": [
+              {}
             ]
           },
           "tags": [
@@ -602,7 +672,8 @@
           "isMulticolor": false,
           "isMulticolor2": false,
           "colorPermutations": {
-            "12552552551": []
+            "12552552551": [],
+            "1731861991238868112552552551751722541": []
           },
           "tags": [
             "linkedin"
@@ -622,6 +693,9 @@
           "isMulticolor2": false,
           "colorPermutations": {
             "12552552551": [
+              {}
+            ],
+            "1731861991238868112552552551751722541": [
               {}
             ]
           },
@@ -644,6 +718,9 @@
           "colorPermutations": {
             "12552552551": [
               {}
+            ],
+            "1731861991238868112552552551751722541": [
+              {}
             ]
           },
           "tags": [
@@ -665,6 +742,9 @@
           "colorPermutations": {
             "12552552551": [
               {}
+            ],
+            "1731861991238868112552552551751722541": [
+              {}
             ]
           },
           "tags": [
@@ -685,6 +765,9 @@
           "isMulticolor2": false,
           "colorPermutations": {
             "12552552551": [
+              {}
+            ],
+            "1731861991238868112552552551751722541": [
               {}
             ]
           },
@@ -712,6 +795,9 @@
           "colorPermutations": {
             "12552552551": [
               {}
+            ],
+            "1731861991238868112552552551751722541": [
+              {}
             ]
           }
         },
@@ -733,6 +819,9 @@
           "colorPermutations": {
             "12552552551": [
               {}
+            ],
+            "1731861991238868112552552551751722541": [
+              {}
             ]
           }
         },
@@ -753,6 +842,9 @@
           "defaultCode": 59648,
           "colorPermutations": {
             "12552552551": [
+              {}
+            ],
+            "1731861991238868112552552551751722541": [
               {}
             ]
           }
@@ -836,9 +928,9 @@
     },
     "historySize": 50,
     "gridSize": 16,
-    "showGrid": false,
+    "showGrid": true,
     "quickUsageToken": {
-      "p-website": "NDViYjQwNTNlODY2Mjk1MzMzZGI0YjhmNDcwNzQxMTEjMSMxNjIxMzYxODg2IyMj"
+      "p-website": "ZTA5YzJmZjY4OCMxNzAzMjIzNjI1I29qRUFKalhoei81eXQzSkZaN2xxT2tCTDVMY1NYY28yUWlaN0Fub2tYdUx6"
     }
   },
   "uid": -1

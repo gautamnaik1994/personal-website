@@ -22,7 +22,7 @@ export default function Homepage() {
         <SkillsSection className="section-spacer" />
         <BlogsSection className="section-spacer" />
         <WorkExperience className="section-spacer" />
-        <ProjectsSection className="section-spacer" />
+        <ProjectsSection className="section-spacer scroll-top-margin" />
         <DeclarationSection className="section-spacer" />
         <ContactMeSection className="section-spacer" />
       </Container>

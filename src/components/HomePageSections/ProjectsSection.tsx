@@ -87,7 +87,7 @@ const ProjectsSection = ({ className }: Props): React.JSX.Element => {
   `);
 
   return (
-    <section className={className}>
+    <section className={className} id="projects">
       <SectionTitle title="Projects" />
       <ProjectList>
         {data.allMarkdownRemark.edges.map(

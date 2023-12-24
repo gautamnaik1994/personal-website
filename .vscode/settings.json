@@ -34,7 +34,7 @@
   "typescript.tsdk": "./node_modules/typescript/lib",
   "debug.node.autoAttach": "on",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#807dce",
