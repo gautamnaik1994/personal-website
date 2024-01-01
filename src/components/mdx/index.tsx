@@ -19,7 +19,9 @@ export const MDXLayoutComponents = {
   h4: (props: any) => <H4 {...props} />,
   h5: (props: any) => <H5 {...props} />,
   h6: (props: any) => <H6 {...props} />,
-  // a: (props: any) => <Link {...props} />,
+  a: (props: any) => (
+    <Link target="_blank" rel="noopener noreferrer" {...props} />
+  ),
   kbd: (props: any) => <Keyboard {...props} />,
 };
 

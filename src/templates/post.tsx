@@ -96,6 +96,12 @@ const StyledMDXRenderer = styled.div`
   h6 {
     scroll-margin-top: 200px;
   }
+  .gatsby-resp-image-wrapper {
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgb(128 128 128);
+    margin-bottom: 8px;
+  }
 `;
 
 const PosTemplate = ({

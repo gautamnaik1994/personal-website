@@ -43,6 +43,7 @@ module.exports = {
       `web design`,
       `web development`,
       `css`,
+      `aws`,
       `frontend`,
       `reactjs`,
       `javascript`,
@@ -86,25 +87,38 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        // plugins: [
+        //   `gatsby-remark-images`,
+        //   `gatsby-remark-images-medium-zoom` // Important!
+        // ],
         gatsbyRemarkPlugins: [
           // netlifyCmsPaths,
           // `gatsby-remark-relative-images`,
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // maxWidth: 620,
+              maxWidth: 900,
+              linkImagesToOriginal: false,
               // srcSetBreakpoints: [400],
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {
+              background: `#212738`,
             },
           },
 
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
+              title: true,
               classPrefix: `language-`,
               inlineCodeMarker: null,
               aliases: {},
               noInlineHighlight: false,
               showLineNumbers: false,
+              showLanguages: true,
             },
           },
         ],
