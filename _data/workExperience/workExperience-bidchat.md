@@ -1,9 +1,9 @@
 ---
 title: Grassdoor
 role: Frontend Developer
-timeRange: April 2017 - Present
+timeRange: April 2017 - Dec 2023
 order: 4
-status: pause
+status: stop
 ---
 <!--StartFragment-->
 
