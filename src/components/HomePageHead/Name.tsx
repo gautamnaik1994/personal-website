@@ -33,11 +33,11 @@ export default () => (
     <p className="text-right">
       Frontend Developer @{' '}
       <a
-        href="https://grassdoor.com/"
+        href="https://kaaratech.com/"
         target="_blank"
         rel="noreferrer noopener"
       >
-        Grassdoor
+        Kaara Tech
       </a>{' '}
     </p>
   </Holder>
