@@ -122,8 +122,9 @@ def lambda_handler(event, context):
 
 ### 2. S3 Bucket
 
-S3 is a cloud-based storage service that I use to store all of my stock symbols data in CSV format. I chose S3 over DynamoDB because CSV files can be large, and I need to be able to download them in bulk. DynamoDB is not a good fit for this task because it is not designed for storing and retrieving large amounts of data.  
-**Following is the skeleton code of the lambda function**
+S3 is a cloud-based storage service that I use to store all of my stock symbols data in CSV format. I chose S3 over DynamoDB because CSV files can be large, and I need to be able to download them in bulk. DynamoDB is not a good fit for this task because it is not designed for storing and retrieving large amounts of data.
+
+**Following is the code to set up S3 bucket**
 
 ```typescript
 const csvBucket = new s3.Bucket(this, "Bucket", {
@@ -159,6 +160,7 @@ const systemConfigTableV1 = new db.Table(this, "SystemConfigTable", {
 ### 3. Scheduler
 
 This is where the event to run the function at a particular time is created. It is similar to a cron job. This was the second most important AWS service to me as I have more than 20 cron jobs which will keep on increasing as the project grows.
+
 **Following is the code to set cron schedule**
 
 ```typescript
@@ -186,6 +188,7 @@ tokenGeneratorFnCron.addTarget(
 ### 5. API Gateway
 
 This service is used to build APIs. These APIs can be linked to Lambda functions. This means I can call a Lambda function by calling an API endpoint.
+
 **Folowing is the code to set up the API Gateway**
 
 ```typescript
