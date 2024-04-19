@@ -6,6 +6,7 @@ updatedDate: 2023-01-30T09:36:28.482Z
 description: CSS variables are a new addition to CSS. As the name says, we can
   now add custom variables, similar to SCSS, Less and Stylus.
 publish: true
+featuredpost: false
 tags:
   - css
 category: CSS

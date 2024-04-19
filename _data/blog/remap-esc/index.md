@@ -7,6 +7,7 @@ description: By default, the ESC key is used to switch to Normal mode from
   Insert mode. But as you can see on a regular keyboard, the position of the ESC
   key is far from the home row keys.
 publish: true
+featuredpost: false
 tags:
   - vim
 category: Vim

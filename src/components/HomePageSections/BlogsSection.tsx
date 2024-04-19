@@ -52,12 +52,43 @@ interface PostItemProps {
 }
 
 const BlogsSection = ({ className }: Props): React.ReactElement => {
-  const data = useStaticQuery(graphql`
+  const { featuredPost, data } = useStaticQuery(graphql`
     {
-      allMdx(
+      featuredPost: allMdx(
         filter: {
           internal: { contentFilePath: { regex: "/_data/blog/" } }
-          frontmatter: { publish: { eq: true } }
+          frontmatter: { publish: { eq: true }, featuredpost: { eq: true } }
+        }
+        limit: 1 # sort: { frontmatter: { date: DESC } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+              tags
+              title
+              category
+              description
+              date(formatString: "MMMM DD, YYYY")
+              bannerImage {
+                childImageSharp {
+                  gatsbyImageData(width: 500)
+                }
+              }
+            }
+            fields {
+              timeToRead {
+                text
+              }
+            }
+            excerpt
+          }
+        }
+      }
+      data: allMdx(
+        filter: {
+          internal: { contentFilePath: { regex: "/_data/blog/" } }
+          frontmatter: { publish: { eq: true }, featuredpost: { eq: false } }
         }
         limit: 2
         sort: { frontmatter: { date: DESC } }
@@ -89,11 +120,13 @@ const BlogsSection = ({ className }: Props): React.ReactElement => {
     }
   `);
 
+  const allData = [...featuredPost.edges, ...data.edges];
+
   return (
     <section className={className}>
       <SectionTitle title="Recent Blogs" />
       <BlogList>
-        {data.allMdx.edges.map((post: PostItemProps, index: number) => {
+        {allData.map((post: PostItemProps, index: number) => {
           const _data = post.node.frontmatter;
           return (
             <StyledPostItem

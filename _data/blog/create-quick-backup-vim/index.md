@@ -6,6 +6,7 @@ updatedDate: 2023-01-29T17:45:06.607Z
 description: Sometimes we have to create a copy of the current working file,
   just to try out some new thing or feature.
 publish: true
+featuredpost: false
 tags:
   - vim
 categories:

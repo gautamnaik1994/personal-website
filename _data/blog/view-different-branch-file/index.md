@@ -6,6 +6,7 @@ updatedDate: 2023-01-30T10:23:43.364Z
 description: There will come a time when you will want to view the contents of
   the same file or a different file from another branch.
 publish: true
+featuredpost: false
 tags:
   - vim
   - git

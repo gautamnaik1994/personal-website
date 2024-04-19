@@ -5,6 +5,7 @@ slug: automated-trading-system
 updatedDate: 2023-12-29T17:45:06.582Z
 description: Case study of my automated trading system. This post will walk through the process of building the system, the components and technologies used, how it works, and the challenges faced.
 publish: true
+featuredpost: true
 tags:
   - python
 categories:
@@ -53,7 +54,17 @@ Pandas is used to handle large tabular datasets. Numpy is a numerical computatio
 
 All of the above libraries have a C and C++ backend, which is the main source of their speed. This speed is necessary to run calculations for hundreds of stocks, each of which has 200 or more days of historical data.
 
+## Analysis Dashboard
 
+The following is a dashboard that presents data based on the trades executed by the system. This dashboard has been built using [Streamlit](https://streamlit.io/) and is hosted on Streamlit Cloud. The rationale for employing this technology is that Streamlit allows the creation of browser applications using Python. This feature enables access to various analytical libraries such as Numpy, Pandas, and Scipy that are not accessible in a Javascript environment. 
+
+You can access the hosted dashboard at [Automated Trading System Dashboard](https://gmmm-dashboard.streamlit.app/), and the source code for the project is available on [Github Repo](https://github.com/gautamnaik1994/Automated-Trading-System-Dashboard).
+
+<iframe
+  src="https://gmmm-dashboard.streamlit.app/?embed=true"
+  height="600"
+  style={{ width: "100%", border: "none" }}
+></iframe>
 
 ## Backend System
 

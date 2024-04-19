@@ -753,6 +753,7 @@ type Frontmatter = {
   readonly details: Maybe<ReadonlyArray<Maybe<MdxFrontmatterDetails>>>;
   readonly education: Maybe<Scalars['String']>;
   readonly email: Maybe<Scalars['String']>;
+  readonly featuredpost: Maybe<Scalars['Boolean']>;
   readonly footer: Maybe<Scalars['String']>;
   readonly image: Maybe<File>;
   readonly isPersonalProject: Maybe<Scalars['Boolean']>;
@@ -810,6 +811,7 @@ type FrontmatterFieldSelector = {
   readonly details: InputMaybe<MdxFrontmatterDetailsFieldSelector>;
   readonly education: InputMaybe<FieldSelectorEnum>;
   readonly email: InputMaybe<FieldSelectorEnum>;
+  readonly featuredpost: InputMaybe<FieldSelectorEnum>;
   readonly footer: InputMaybe<FieldSelectorEnum>;
   readonly image: InputMaybe<FileFieldSelector>;
   readonly isPersonalProject: InputMaybe<FieldSelectorEnum>;
@@ -851,6 +853,7 @@ type FrontmatterFilterInput = {
   readonly details: InputMaybe<MdxFrontmatterDetailsFilterListInput>;
   readonly education: InputMaybe<StringQueryOperatorInput>;
   readonly email: InputMaybe<StringQueryOperatorInput>;
+  readonly featuredpost: InputMaybe<BooleanQueryOperatorInput>;
   readonly footer: InputMaybe<StringQueryOperatorInput>;
   readonly image: InputMaybe<FileFilterInput>;
   readonly isPersonalProject: InputMaybe<BooleanQueryOperatorInput>;
@@ -892,6 +895,7 @@ type FrontmatterSortInput = {
   readonly details: InputMaybe<MdxFrontmatterDetailsSortInput>;
   readonly education: InputMaybe<SortOrderEnum>;
   readonly email: InputMaybe<SortOrderEnum>;
+  readonly featuredpost: InputMaybe<SortOrderEnum>;
   readonly footer: InputMaybe<SortOrderEnum>;
   readonly image: InputMaybe<FileSortInput>;
   readonly isPersonalProject: InputMaybe<SortOrderEnum>;

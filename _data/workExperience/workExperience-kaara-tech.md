@@ -5,4 +5,9 @@ timeRange: Jan 2024 - Present
 order: 5
 status: pause
 ---
-R﻿esponsible for handling frontend developement tasks
+
+<!--StartFragment-->
+
+* Responsible for handling frontend development tasks.
+
+<!--EndFragment-->
