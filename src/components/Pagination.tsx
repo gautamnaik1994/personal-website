@@ -37,11 +37,15 @@ const PaginationWrapper = styled.div`
     display: inline-block;
   }
   ${media.desktop} {
+    width: 750px;
+
     flex-direction: row;
     justify-content: space-between;
     margin: 0 -1rem;
+    margin-left: auto;
+    margin-right: auto;
     a {
-      margin: 1rem;
+      margin: 1rem 0;
     }
   }
 `;

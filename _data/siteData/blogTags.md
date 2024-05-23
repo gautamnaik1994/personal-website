@@ -11,4 +11,6 @@ title:
   - ui
   - ux
   - stocks
+  - data-science
+  - data-analytics
 ---

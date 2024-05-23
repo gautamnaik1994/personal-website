@@ -4,6 +4,7 @@ export const primaryRgb = `33, 150, 243`;
 export const lightBackgroundColorRgb = `229, 229, 229`;
 export const lightBackgroundTextColor = `#24292E`;
 export const lightCardColor = `#ffffff`;
+export const lightTertiaryColor = `#3f51b5`;
 
 export const desaturatedPrimaryCol = `#4BACFE`;
 export const darkBackgroundColor = `#212738`;
@@ -11,6 +12,7 @@ export const desaturatedPrimaryRgb = `75, 172, 254`;
 export const darkBackgroundColorRgb = `33, 39, 56`;
 export const darkBackgroundTextColor = `#ADBAC7`;
 export const darkCardColor = `#2D364D`;
+export const darkTertiaryColor = `#FFC107`;
 
 export const accentColor = `#EE5651`;
 
@@ -18,6 +20,7 @@ export const darkTheme = [
   { name: `primary`, value: desaturatedPrimaryCol },
   { name: `primaryRgb`, value: desaturatedPrimaryRgb },
   { name: `accent`, value: accentColor },
+  { name: `tertiary`, value: darkTertiaryColor },
   { name: `bodyBackgroundColor`, value: darkBackgroundColor },
   { name: `bodyBackgroundColorRgb`, value: darkBackgroundColorRgb },
   { name: `bodyColor`, value: darkBackgroundTextColor },
@@ -29,6 +32,7 @@ export const lightTheme = [
   { name: `primary`, value: primaryCol },
   { name: `primaryRgb`, value: primaryRgb },
   { name: `accent`, value: accentColor },
+  { name: `tertiary`, value: lightTertiaryColor },
   { name: `bodyBackgroundColor`, value: lightBackgroundColor },
   { name: `bodyBackgroundColorRgb`, value: lightBackgroundColorRgb },
   { name: `bodyColor`, value: lightBackgroundTextColor },

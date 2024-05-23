@@ -763,6 +763,7 @@ type Frontmatter = {
   readonly lookingForJob: Maybe<Scalars['Boolean']>;
   readonly ogImage: Maybe<Scalars['String']>;
   readonly order: Maybe<Scalars['Int']>;
+  readonly personal: Maybe<Scalars['Boolean']>;
   readonly position: Maybe<Scalars['String']>;
   readonly posts: Maybe<MdxFrontmatterPosts>;
   readonly projectColor: Maybe<Scalars['String']>;
@@ -821,6 +822,7 @@ type FrontmatterFieldSelector = {
   readonly lookingForJob: InputMaybe<FieldSelectorEnum>;
   readonly ogImage: InputMaybe<FieldSelectorEnum>;
   readonly order: InputMaybe<FieldSelectorEnum>;
+  readonly personal: InputMaybe<FieldSelectorEnum>;
   readonly position: InputMaybe<FieldSelectorEnum>;
   readonly posts: InputMaybe<MdxFrontmatterPostsFieldSelector>;
   readonly projectColor: InputMaybe<FieldSelectorEnum>;
@@ -863,6 +865,7 @@ type FrontmatterFilterInput = {
   readonly lookingForJob: InputMaybe<BooleanQueryOperatorInput>;
   readonly ogImage: InputMaybe<StringQueryOperatorInput>;
   readonly order: InputMaybe<IntQueryOperatorInput>;
+  readonly personal: InputMaybe<BooleanQueryOperatorInput>;
   readonly position: InputMaybe<StringQueryOperatorInput>;
   readonly posts: InputMaybe<MdxFrontmatterPostsFilterInput>;
   readonly projectColor: InputMaybe<StringQueryOperatorInput>;
@@ -905,6 +908,7 @@ type FrontmatterSortInput = {
   readonly lookingForJob: InputMaybe<SortOrderEnum>;
   readonly ogImage: InputMaybe<SortOrderEnum>;
   readonly order: InputMaybe<SortOrderEnum>;
+  readonly personal: InputMaybe<SortOrderEnum>;
   readonly position: InputMaybe<SortOrderEnum>;
   readonly posts: InputMaybe<MdxFrontmatterPostsSortInput>;
   readonly projectColor: InputMaybe<SortOrderEnum>;

@@ -10,7 +10,7 @@ tags:
   - python
 categories:
   - python
-category: Case Study
+category: Data Science
 keywords:
   - aws
   - lambda
@@ -45,7 +45,6 @@ As a front-end developer, I had not yet learned how to build back-end systems. I
 
 Being proficient in the technical aspects of the system was not enough. I also had to have a thorough understanding of the markets. Before implementing the system, I spent many months learning technical analysis of the stock market. I did not intend to build the system while studying the markets. The idea of building the system came to me later.
 
-
 ## How Does It Work ?
 
 The system is primarily constructed with Python. Python was selected because it is the most popular language for developing finance and data-related applications. Python is also the primary language for many data science libraries, such as [Pandas](https://pandas.pydata.org/), [Numpy](https://numpy.org/), and [TA-Lib](https://ta-lib.org/);
@@ -56,14 +55,15 @@ All of the above libraries have a C and C++ backend, which is the main source of
 
 ## Analysis Dashboard
 
-The following is a dashboard that presents data based on the trades executed by the system. This dashboard has been built using [Streamlit](https://streamlit.io/) and is hosted on Streamlit Cloud. The rationale for employing this technology is that Streamlit allows the creation of browser applications using Python. This feature enables access to various analytical libraries such as Numpy, Pandas, and Scipy that are not accessible in a Javascript environment. 
+The following is a dashboard that presents data based on the trades executed by the system. This dashboard has been built using [Streamlit](https://streamlit.io/) and is hosted on Streamlit Cloud. The rationale for employing this technology is that Streamlit allows the creation of browser applications using Python. This feature enables access to various analytical libraries such as Numpy, Pandas, and Scipy that are not accessible in a Javascript environment.
 
 You can access the hosted dashboard at [Automated Trading System Dashboard](https://gmmm-dashboard.streamlit.app/), and the source code for the project is available on [Github Repo](https://github.com/gautamnaik1994/Automated-Trading-System-Dashboard).
 
 <iframe
   src="https://gmmm-dashboard.streamlit.app/?embed=true"
   height="600"
-  style={{ width: "100%", border: "none" }}
+  className="blog-wide-section"
+  title="Automated Trading System Dashboard"
 ></iframe>
 
 ## Backend System
@@ -143,7 +143,6 @@ const csvBucket = new s3.Bucket(this, "Bucket", {
 });
 
 ```
-
 
 ### 3. DynamoDB
 
@@ -242,7 +241,6 @@ There is also an option to square off all trades during emergencies.
 
 **Following are some screenshots of the admin portal**
 
-
 ![Trades](./trades.png)
 <p class="text-center">Daily Trades</p>
 
@@ -251,7 +249,6 @@ There is also an option to square off all trades during emergencies.
 
 ![Monthly Pnl](./monthlypnl.png)
 <p class="text-center">Monthly PNL</p>
-
 
 ![Analytics](./analysis.png)
 <p class="text-center">Daily Analysis</p>
@@ -264,15 +261,13 @@ AWS CDK can be used with Typescript, Python, and other languages. I used Typescr
 
 ## Error Reporting
 
-Software and apps will inevitably experience problems, errors, and crashes. The same was true for me. Because my entire app was built on the broker's API, there was a possibility of failure. I might have integrated a service like Sentry.io or Rollbar. However, I opted for a simpler solution. Telegram Bot. 
+Software and apps will inevitably experience problems, errors, and crashes. The same was true for me. Because my entire app was built on the broker's API, there was a possibility of failure. I might have integrated a service like Sentry.io or Rollbar. However, I opted for a simpler solution. Telegram Bot.
 
 All you have to do is make an API request with the content and bot token, and you'll get a notification in your Telegram app. I set up all of my success messages and errors on Telegram, along with the error code or message.
 
 ![Telegram](./telegram.png)
 <p class="text-center">Telegram</p>
 
-
 ## Closing thoughts
 
 The system is currently under development and various features are still being worked on to enhance its functionalities. As the development progresses, I will be constantly adding more strategies and refining the existing ones. At the same time, I will also be improving my engineering skills to ensure better output.
-

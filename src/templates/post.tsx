@@ -42,8 +42,10 @@ const CustomImg = styled(GatsbyImage)`
 const PostContainer = styled(Container)`
   max-width: 100%;
   padding-top: 60px;
-  ${media.desktop} {
-    max-width: 750px;
+  ${media.tablet} {
+    /* max-width: 750px; */
+    /* & > * {
+    } */
   }
 `;
 
@@ -77,6 +79,12 @@ const Header = styled.div`
     border: none;
     border-bottom: 1px solid var(--bodyColor);
   }
+
+  ${media.tablet} {
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 const StyledMDXRenderer = styled.div`
@@ -101,6 +109,14 @@ const StyledMDXRenderer = styled.div`
     overflow: hidden;
     border: 1px solid rgb(128 128 128);
     margin-bottom: 8px;
+  }
+  ${media.tablet} {
+    & > * {
+      width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
   }
 `;
 

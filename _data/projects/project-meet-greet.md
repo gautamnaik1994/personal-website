@@ -2,7 +2,8 @@
 title: Meet & Greet
 image: mglogo.png
 order: 7
-publish: true
+publish: false
+personal: false
 isPersonalProject: false
 projectColor: "#f53e3b"
 companyName: Grassdoor

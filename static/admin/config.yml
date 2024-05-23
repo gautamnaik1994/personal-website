@@ -219,6 +219,7 @@ collections: # A list of collections the CMS should be able to edit
           name: 'featuredpost',
           widget: 'boolean',
           required: false,
+          default: false,
         }
       - {
           label: 'Tags',

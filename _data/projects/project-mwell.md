@@ -2,7 +2,8 @@
 title: Mwell
 image: mwell.png
 order: 4
-publish: true
+publish: false
+personal: false
 isPersonalProject: false
 projectColor: "#53c0e4"
 companyName: Genora Infotech

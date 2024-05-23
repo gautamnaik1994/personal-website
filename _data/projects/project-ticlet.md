@@ -2,7 +2,8 @@
 title: Ticlet
 image: ticlet.png
 order: 5
-publish: true
+publish: false
+personal: false
 isPersonalProject: false
 projectColor: "#6b75d2"
 companyName: Genora Infotech

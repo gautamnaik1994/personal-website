@@ -4,5 +4,7 @@ import { baseStyle, generateFontSize } from './BaseUtils';
 
 export default styled.h2`
   ${baseStyle};
+  color: var(--tertiary);
+  letter-spacing: -0.7px;
   ${generateFontSize(4)}
 `;

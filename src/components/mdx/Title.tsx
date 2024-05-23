@@ -5,5 +5,6 @@ import { baseStyle, generateFontSize } from './BaseUtils';
 
 export default styled.h1`
   ${baseStyle};
+  letter-spacing: -0.6px;
   ${generateFontSize(5)}//line-height:ratio*font-size;
 `;

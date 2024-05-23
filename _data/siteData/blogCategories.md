@@ -7,4 +7,6 @@ title:
   - Blender
   - CSS
   - Stock
+  - Data Science
+  - Case Study
 ---
