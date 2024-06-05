@@ -88,8 +88,8 @@
   },
   "devDependencies": {
     "@babel/core": ">=7.22.10",
-    "@babel/preset-react": "7.22.5",
-    "@babel/preset-typescript": "7.22.5",
+    "@babel/preset-react": "7.24.7",
+    "@babel/preset-typescript": "7.24.7",
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
     "@storybook/addon-a11y": ">=7.3.2",
