@@ -31,7 +31,7 @@ export default () => (
     <p>Hi, I am</p>
     <Name>Gautam Naik</Name>
     <p className="text-right">
-      Frontend Developer @{' '}
+      Senior Software Engineer @{' '}
       <a
         href="https://kaaratech.com/"
         target="_blank"
