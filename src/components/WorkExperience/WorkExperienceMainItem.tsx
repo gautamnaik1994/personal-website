@@ -115,6 +115,10 @@ const WorkExperienceMainItem = styled.div`
     font-weight: var(--fontWeightMedium);
     text-transform: uppercase;
   }
+  .role {
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
   .time {
     font-size: 14px;
     color: #b7b7b7;
@@ -173,6 +177,7 @@ interface Props {
   role: string;
   timeRange: string;
   status: string;
+  companyUrl: string;
 }
 
 const WorkExpeContainer = ({
@@ -181,6 +186,7 @@ const WorkExpeContainer = ({
   role = `Frontend Developer`,
   timeRange = `March 2017 - March 2020`,
   status = `stop`,
+  companyUrl = '#',
   ...props
 }: Props): React.ReactElement => {
   const defaultHeight = `15px`;
@@ -216,8 +222,15 @@ const WorkExpeContainer = ({
       )}
       <div className="top-content">
         <StyledStatus status={status} />
-        <div className="">{role}</div>
-        <div className="company text-primary">{title}</div>
+        <div className="role">{role}</div>
+        <a
+          href={companyUrl}
+          className="company text-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {title}
+        </a>
         <div className="time">{timeRange}</div>
       </div>
 

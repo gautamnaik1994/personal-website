@@ -22,7 +22,9 @@ const StyledHireMe = styled.div`
   align-items: center;
   box-shadow: var(--cardShadow);
   .top-sec {
-    font-size: 20px;
+    font-weight: var(--fontWeightMedium);
+    font-size: 22px;
+    line-height: 1.2;
   }
   .middle-sec {
     font-size: 30px;
@@ -84,7 +86,7 @@ const StyledHireMe = styled.div`
   }
 `;
 
-export default (props): JSX.Element => {
+export default function HireMe(props: any): React.Element {
   const [play] = useSound(`/click.mp3`, { volume: 0.1 });
   // const [audio] = useState(new Audio('/click.mp3'));
   const [entered, setEntered] = useState(false);
@@ -161,4 +163,4 @@ export default (props): JSX.Element => {
       </div>
     </StyledHireMe>
   );
-};
+}

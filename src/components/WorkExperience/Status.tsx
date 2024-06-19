@@ -1,35 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const rotate = keyframes`
-	from{
-		transform: rotate(0deg) scale(1.2);
-	}
-	to{
-	transform:rotate(360deg) scale(1.2);
-	}
-`;
-
-const pulse = keyframes`
-	0% {
-		transform:scale(1);
-	}
-	10%{
-		transform:scale(1.2);
-	}
-	20%{
-		transform:scale(1);
-	}
-	30%{
-		transform:scale(1.2);
-	}
-	40%{
-		transform:scale(1);
-	}
-	100%{
-	transform:scale(1);
-	}
-`;
 const Status = styled.div`
   width: 50px;
   height: 50px;
@@ -48,7 +19,7 @@ const Status = styled.div`
     background: #00bcd4;
     box-shadow: 0 0 20px #00bcd4;
     i {
-      animation: ${pulse} 1s linear infinite;
+      animation: pulse 1s linear infinite;
     }
     &:after {
       content: '';
@@ -61,17 +32,18 @@ const Status = styled.div`
       border: 1px solid #00bcd4;
       border-bottom-color: transparent;
       border-radius: 50%;
-      animation: ${rotate} 1s infinite;
+      animation: rotate 1s infinite;
     }
   }
   &.status-stop {
-    background: #f44336;
-    box-shadow: 0 0 20px #f44336;
+    background: #ff7043;
+    box-shadow: 0 0 15px #ff7043;
   }
 `;
 
 interface Props {
   status: string;
+  className?: string;
 }
 
 export default ({ status = 'play', ...props }: Props): JSX.Element => {

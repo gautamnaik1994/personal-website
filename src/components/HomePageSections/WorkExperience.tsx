@@ -37,6 +37,7 @@ interface WorkExperienceProps {
     role: string;
     timeRange: string;
     status: string;
+    companyUrl: string;
   };
 }
 
@@ -55,6 +56,7 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
             title
             status
             role
+            companyUrl
           }
         }
       }
@@ -76,6 +78,7 @@ const WorkExperience = ({ className }: Props): JSX.Element => {
                   responsibilities={d.html}
                   timeRange={d.frontmatter.timeRange}
                   status={d.frontmatter.status}
+                  companyUrl={d.frontmatter.companyUrl}
                 />
               );
             },

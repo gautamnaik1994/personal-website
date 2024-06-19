@@ -141,7 +141,7 @@ export default function ProjectItem({
       </div>
       <div className="one-rem-mt link-holder">
         {links.map(({ key, value }) => (
-          <a key={key} href={value}>
+          <a key={key} href={value} target="_blank" rel="noopener noreferrer">
             {key} <i className="icon-open-new-tab" />
           </a>
         ))}

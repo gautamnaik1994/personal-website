@@ -744,6 +744,7 @@ type Frontmatter = {
   readonly category: Maybe<Scalars['String']>;
   readonly company: Maybe<Scalars['String']>;
   readonly companyName: Maybe<Scalars['String']>;
+  readonly companyUrl: Maybe<Scalars['String']>;
   readonly companyWebsite: Maybe<Scalars['String']>;
   readonly contactMeText: Maybe<Scalars['String']>;
   readonly cv: Maybe<Scalars['String']>;
@@ -803,6 +804,7 @@ type FrontmatterFieldSelector = {
   readonly category: InputMaybe<FieldSelectorEnum>;
   readonly company: InputMaybe<FieldSelectorEnum>;
   readonly companyName: InputMaybe<FieldSelectorEnum>;
+  readonly companyUrl: InputMaybe<FieldSelectorEnum>;
   readonly companyWebsite: InputMaybe<FieldSelectorEnum>;
   readonly contactMeText: InputMaybe<FieldSelectorEnum>;
   readonly cv: InputMaybe<FieldSelectorEnum>;
@@ -846,6 +848,7 @@ type FrontmatterFilterInput = {
   readonly category: InputMaybe<StringQueryOperatorInput>;
   readonly company: InputMaybe<StringQueryOperatorInput>;
   readonly companyName: InputMaybe<StringQueryOperatorInput>;
+  readonly companyUrl: InputMaybe<StringQueryOperatorInput>;
   readonly companyWebsite: InputMaybe<StringQueryOperatorInput>;
   readonly contactMeText: InputMaybe<StringQueryOperatorInput>;
   readonly cv: InputMaybe<StringQueryOperatorInput>;
@@ -889,6 +892,7 @@ type FrontmatterSortInput = {
   readonly category: InputMaybe<SortOrderEnum>;
   readonly company: InputMaybe<SortOrderEnum>;
   readonly companyName: InputMaybe<SortOrderEnum>;
+  readonly companyUrl: InputMaybe<SortOrderEnum>;
   readonly companyWebsite: InputMaybe<SortOrderEnum>;
   readonly contactMeText: InputMaybe<SortOrderEnum>;
   readonly cv: InputMaybe<SortOrderEnum>;

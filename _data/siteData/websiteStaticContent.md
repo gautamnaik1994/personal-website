@@ -32,8 +32,9 @@ socialLinks:
 
 With over **8 years** of experience as a **Software Engineer**, I have a proven track record of delivering high-quality user interfaces that are intuitive, responsive, and visually appealing. I am proficient in implementing frontend systems using the latest technologies, such as **ReactJS, NextJS, Redux, Typescript, JavaScript, ES6, and CSS**.
 
-I collaborate effectively with UX/UI teams and stakeholders to translate functional specifications into seamless user experiences. I prioritize building interfaces that are both aesthetically pleasing and highly functional, emphasizing usability and accessibility.
-
 What sets me apart from others is my working knowledge of backend technologies, such as **Python, NodeJS, Fast API, MySQL and DynamoDB**. I am also proficient in building serverless applications using **AWS Lambda** and deploying them using **AWS Cloud Development Kit**.
+
+I am committed to continuous learning and believe in the importance of staying updated with the latest advancements.
+Currently, I am enrolled in the <a href="https://www.scaler.com/data-science-course/" target="_blank">Data Science and Machine Learning Program <span class="icon-open-new-tab"></span></a> by Scaler an online edtech platform to deepen my knowledge of Data Science and Machine Learning.
 
 Overall, I am a detail-oriented engineer with a passion for creating exceptional user experiences that meet the highest standards of quality and performance.

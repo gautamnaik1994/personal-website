@@ -10,8 +10,10 @@ const StyledAboutMe = styled.div`
   p {
     font-size: 16px;
   }
+  a {
+    font-weight: var(--fontWeightMedium);
+  }
   ${media.tablet} {
-    /* width: 550px; */
     padding-right: 30px;
   }
 `;
@@ -44,12 +46,17 @@ const BlackBox = styled.div`
       line-height: 2rem;
       display: flex;
       align-items: center;
-    }
-    a + a {
+      gap: 10px;
+      padding: 0 8px;
+      border-radius: 5px;
+      margin: 0px -8px;
+      transition: background 0.1s;
+      &:hover {
+        background: rgb(128 128 128 / 27%);
+      }
     }
   }
   i {
-    margin-right: 10px;
     font-size: 20px;
   }
   .icon-cake {
@@ -57,10 +64,6 @@ const BlackBox = styled.div`
   }
   .icon-email {
     color: #7af478;
-    position: relative;
-    top: 3px;
-    transform: scale(1.05);
-    display: inline-block;
   }
   .icon-marker {
     color: #ff8c32;
