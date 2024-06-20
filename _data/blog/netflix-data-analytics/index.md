@@ -9,7 +9,7 @@ description: This case study delves deeply into Netflix data to uncover insights
 publish: true
 featuredpost: false
 tags:
-  - css
+  - data
 category: Data Science
 keywords:
   - data analytics
@@ -141,4 +141,4 @@ Here are the links to the Jupyter Notebook containing detailed code, insights, a
 
 Following is the embedded version of above notebook hosted on Kaggle
 
-<iframe src="https://www.kaggle.com/embed/gautamnaik1994/netflix-case-study?kernelSessionId=179013761" height="800"  className="blog-wide-section" frameborder="0" scrolling="auto" title="Netflix Case Study"></iframe>
+<iframe src="https://www.kaggle.com/embed/gautamnaik1994/netflix-case-study?kernelSessionId=179013761" height="800"  className="blog-wide-section" frameBorder="0" scrolling="auto" title="Netflix Case Study"></iframe>

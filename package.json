@@ -82,7 +82,6 @@
     "sass": ">=1.66.1",
     "styled-components": ">=6.0.7",
     "styled-theming": ">=2.2.0",
-    "tweakpane": ">=4.0.0",
     "use-sound": ">=4.0.1",
     "vanilla-framework": ">=4.2.0"
   },

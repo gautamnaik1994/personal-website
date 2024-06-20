@@ -1,7 +1,6 @@
 // @ts-nocheck
 import React, { Fragment } from 'react';
 import MetaBallsSVG from './MetaballsSVG';
-// import Tweakpane from 'tweakpane';
 import { ThemeContext, withTheme } from 'styled-components';
 
 interface IState {

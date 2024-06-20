@@ -7,6 +7,8 @@ projectColor: "#323cda"
 details:
   - key: Technologies Used
     value: ReactJS, Bootstrap CSS
+  - key: Languages
+    value: HTML, CSS, React
 links:
   - key: App Link
     value: https://flightsearchengine.netlify.app/

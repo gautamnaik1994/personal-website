@@ -15,19 +15,27 @@ function htmlThemeFunction() {
   } else {
     initialThemeValue = localStorage.getItem(`theme`) || `dark`;
   }
-  const darkTheme = `🌑`;
-  const lightTheme = `🌕`;
-  if (initialThemeValue === `light`) {
-    document.documentElement.style.setProperty(`--theme`, `light`);
-    lightTheme?.forEach((data) => {
-      document.documentElement.style.setProperty(`--${data.name}`, data.value);
-    });
-  } else {
-    document.documentElement.style.setProperty(`--theme`, `dark`);
-    darkTheme?.forEach((data) => {
-      document.documentElement.style.setProperty(`--${data.name}`, data.value);
-    });
-  }
+  const _darkTheme = `🌑`;
+  const _lightTheme = `🌕`;
+  try {
+    if (initialThemeValue === `light`) {
+      document.documentElement.style.setProperty(`--theme`, `light`);
+      _lightTheme?.forEach((data) => {
+        document.documentElement.style.setProperty(
+          `--${data.name}`,
+          data.value,
+        );
+      });
+    } else {
+      document.documentElement.style.setProperty(`--theme`, `dark`);
+      _darkTheme?.forEach((data) => {
+        document.documentElement.style.setProperty(
+          `--${data.name}`,
+          data.value,
+        );
+      });
+    }
+  } catch (e) {}
 }
 
 const ScriptTag = () => {
