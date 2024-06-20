@@ -390,6 +390,7 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Role', name: 'role', widget: 'string' }
       - { label: 'Time Range', name: 'timeRange', widget: 'string' }
       - { label: 'Order', name: 'order', widget: 'number' }
+      - { label: 'Company Url', name: 'companyUrl', widget: 'string' }
       - {
           label: 'Status',
           name: 'status',
