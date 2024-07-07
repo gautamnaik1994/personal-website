@@ -59,7 +59,7 @@ const BlogsSection = ({ className }: Props): React.ReactElement => {
           internal: { contentFilePath: { regex: "/_data/blog/" } }
           frontmatter: { publish: { eq: true }, featuredpost: { eq: true } }
         }
-        limit: 1 # sort: { frontmatter: { date: DESC } }
+        limit: 3 # sort: { frontmatter: { date: DESC } }
       ) {
         edges {
           node {
@@ -85,46 +85,46 @@ const BlogsSection = ({ className }: Props): React.ReactElement => {
           }
         }
       }
-      data: allMdx(
-        filter: {
-          internal: { contentFilePath: { regex: "/_data/blog/" } }
-          frontmatter: { publish: { eq: true }, featuredpost: { eq: false } }
-        }
-        limit: 2
-        sort: { frontmatter: { date: DESC } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              slug
-              tags
-              title
-              category
-              description
-              date(formatString: "MMMM DD, YYYY")
-              bannerImage {
-                childImageSharp {
-                  gatsbyImageData(width: 500)
-                }
-              }
-            }
-            fields {
-              timeToRead {
-                text
-              }
-            }
-            excerpt
-          }
-        }
-      }
+      # data: allMdx(
+      #   filter: {
+      #     internal: { contentFilePath: { regex: "/_data/blog/" } }
+      #     frontmatter: { publish: { eq: true }, featuredpost: { eq: false } }
+      #   }
+      #   limit: 1
+      #   sort: { frontmatter: { date: DESC } }
+      # ) {
+      #   edges {
+      #     node {
+      #       frontmatter {
+      #         slug
+      #         tags
+      #         title
+      #         category
+      #         description
+      #         date(formatString: "MMMM DD, YYYY")
+      #         bannerImage {
+      #           childImageSharp {
+      #             gatsbyImageData(width: 500)
+      #           }
+      #         }
+      #       }
+      #       fields {
+      #         timeToRead {
+      #           text
+      #         }
+      #       }
+      #       excerpt
+      #     }
+      #   }
+      # }
     }
   `);
 
-  const allData = [...featuredPost.edges, ...data.edges];
+  const allData = [...featuredPost.edges];
 
   return (
     <section className={className}>
-      <SectionTitle title="Recent Blogs" />
+      <SectionTitle title="Blogs" />
       <BlogList>
         {allData.map((post: PostItemProps, index: number) => {
           const _data = post.node.frontmatter;

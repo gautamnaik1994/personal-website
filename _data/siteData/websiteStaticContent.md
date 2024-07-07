@@ -23,7 +23,7 @@ socialLinks:
     value: https://github.com/gautamnaik1994
     iconClassName: github
   - key: Kaggle
-    value: https://www.kaggle.com/gautamnaik1994
+    value: https://www.kaggle.com/gautamnaik1994/code
     iconClassName: kaggle
   - key: Linkedin
     value: https://www.linkedin.com/in/gautamnaik1994/
