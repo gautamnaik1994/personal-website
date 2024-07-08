@@ -550,3 +550,10 @@ table td {
     transform: translateX(-2180px);
   }
 }
+
+p:has(span.gatsby-resp-image-wrapper) {
+  width: 100% !important;
+  border: none;
+  border-radius: 8px;
+  max-width: 1366px;
+}

@@ -80,25 +80,25 @@ const saveLiquidStocksTokenFn = new lambda.Function(
   "SaveLiquidStocksTokenFn",
   {
     //can use Java, Javascript etc
-    runtime: lambda.Runtime.PYTHON_3_9, 
+    runtime: lambda.Runtime.PYTHON_3_9,
     handler: "save_liquid_stocks.lambda_handler",
-    code: lambda.Code.fromAsset("src/stock_token/fno_stocks"), 
+    code: lambda.Code.fromAsset("src/stock_token/fno_stocks"),
     timeout: Duration.minutes(5),
 
-      // faster & cheaper, but complex setup 
+      // faster & cheaper, but complex setup
     architecture: lambda.Architecture.ARM_64,
 
     //common code shared between functions
-    layers: [pandasTaLibLayer, utilsLayer], 
+    layers: [pandasTaLibLayer, utilsLayer],
 
-    //pass env variable 
+    //pass env variable
     environment: {
       S3_BUCKET_NAME: csvBucket.bucketName,
       SYSTEM_CONFIG_TABLE: systemConfigTableV1.tableName,
     },
 
     //more memory, more speed, more cost
-    memorySize: 512,  
+    memorySize: 512,
   }
 );
 ```
@@ -117,13 +117,14 @@ import send_telegram
 # Access AWS resources using boto3 library
 s3_client = boto3.client('s3')
 dynamodb = boto3.resource('dynamodb')
+# Access environment variables passed while creating lambda fn
 system_config_table_name = os.environ['SYSTEM_CONFIG_TABLE']
 table = dynamodb.Table(os.environ['S3_BUCKET_NAME'])
 
 
 def lambda_handler(event, context):
     try:
-        # Logic 
+        # Logic
         send_telegram.t_success("Success")
 
     except Exception as e:
@@ -223,7 +224,7 @@ httpApiV1.addRoutes({
     "DemoApi",
     DemoLambdaFunction, //Lambda function to call
   ),
-  authorizer, 
+  authorizer,
 });
 ```
 
@@ -241,6 +242,9 @@ There is also an option to square off all trades during emergencies.
 
 **Following are some screenshots of the admin portal**
 
+![Signals](./signals.png)
+<p class="text-center">Daily Signals</p>
+
 ![Trades](./trades.png)
 <p class="text-center">Daily Trades</p>
 
@@ -255,7 +259,7 @@ There is also an option to square off all trades during emergencies.
 
 ## DevOps
 
-To reduce costs, I used [AWS Serverless](https://aws.amazon.com/serverless/) architecture for this project. It has a generous free tier that is appropriate for small projects. I employed AWS CDK (Cloud Development Kit) to accomplish this. It is an infrastructure-as-a-code tool like Terraform, but it is exclusively designed for AWS services. Keep in mind that AWS CDK is not limited to serverless applications. The output of this project is a Cloudformation file, which instructs AWS on how to configure all of the services.  
+To reduce costs, I used [AWS Serverless](https://aws.amazon.com/serverless/) architecture for this project. It has a generous free tier that is appropriate for small projects. I employed AWS CDK (Cloud Development Kit) to accomplish this. It is an infrastructure-as-a-code tool like Terraform, but it is exclusively designed for AWS services. Keep in mind that AWS CDK is not limited to serverless applications. The output of this project is a Cloudformation file, which instructs AWS on how to configure all of the services.
 
 AWS CDK can be used with Typescript, Python, and other languages. I used Typescript because of the type checking that CDK provided when combined with VS Code.
 

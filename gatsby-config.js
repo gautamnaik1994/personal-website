@@ -102,12 +102,12 @@ module.exports = {
               // srcSetBreakpoints: [400],
             },
           },
-          {
-            resolve: `gatsby-remark-images-medium-zoom`,
-            options: {
-              background: `#212738`,
-            },
-          },
+          // {
+          //   resolve: `gatsby-remark-images-medium-zoom`,
+          //   options: {
+          //     background: `#212738`,
+          //   },
+          // },
 
           {
             resolve: `gatsby-remark-prismjs`,

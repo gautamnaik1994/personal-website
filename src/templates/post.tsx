@@ -105,6 +105,8 @@ const StyledMDXRenderer = styled.div`
     scroll-margin-top: 200px;
   }
   .gatsby-resp-image-wrapper {
+    width: 100%;
+    max-width: 100% !important;
     border-radius: 5px;
     overflow: hidden;
     border: 1px solid rgb(128 128 128);
