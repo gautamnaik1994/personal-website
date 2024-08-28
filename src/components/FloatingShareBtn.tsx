@@ -30,7 +30,7 @@ const FloatingShareBtn: React.FC = () => {
     }
   };
 
-  if (!navigator.share) {
+  if (typeof navigator === `undefined` || !navigator.share) {
     return null;
   }
 
