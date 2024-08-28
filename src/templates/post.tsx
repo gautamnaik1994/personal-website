@@ -19,6 +19,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 // import TableOfContents from '../components/TableOfContents';
 import Title from '../components/mdx/Title';
 import SEO from '../components/SEO';
+import FloatingShareBtn from '../components/FloatingShareBtn';
 
 const Post = styled.div`
   margin-bottom: 25px;
@@ -192,6 +193,7 @@ const PosTemplate = ({
           nextPostTitle={next && next.frontmatter.title}
           prevPostTitle={prev && prev.frontmatter.title}
         />
+        <FloatingShareBtn />
         {/* <TableOfContents items={mdx.tableOfContents.items} /> */}
       </PostContainer>
     </>

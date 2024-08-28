@@ -133,6 +133,9 @@
   color: #20beff;
   content: '\e91a';
 }
+.icon-share:before {
+  content: '\e91b';
+}
 // Import Vanilla framework
 // @import '~vanilla-framework/scss/vanilla';
 // @include vf-base;
