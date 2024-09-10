@@ -10,6 +10,8 @@ import H6 from './H6';
 import Link from '../Link';
 import Keyboard from './Keyboard';
 import Details from './Details';
+import ExpandableSeeMore from './ExpandableSeeMore';
+import Alert from './Alert';
 
 export const MDXLayoutComponents = {
   h1: (props: any) => <Title {...props} />,
@@ -24,10 +26,13 @@ export const MDXLayoutComponents = {
     <Link target="_blank" rel="noopener noreferrer" {...props} />
   ),
   kbd: (props: any) => <Keyboard {...props} />,
+  // blockquote: (props: any) => <Blockquote {...props} />,
   // details: (props: any) => <Details {...props} />,
 };
 
 export const MDXGlobalComponents = {
   Link,
   Details,
+  ExpandableSeeMore,
+  Alert,
 };

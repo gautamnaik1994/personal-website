@@ -1,8 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-export const btnStyles = css<{ variant: string }>`
+export const btnStyles = css<{ variant: string; size: string }>`
   padding: 13px 35px;
+  padding: ${({ size }) => size === `small` && `10px 20px`};
   border-radius: 5px;
   font-weight: var(--fontWeightRegular);
   transition: all 0.3s ease-in-out;
@@ -30,6 +31,7 @@ export interface ButtonProps {
   className?: string;
   children?: JSX.Element | string;
   variant?: string;
+  size?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   title?: string;
 }
@@ -37,7 +39,8 @@ export interface ButtonProps {
 export default (props: ButtonProps): JSX.Element => {
   return (
     <Button
-      variant={props.variant || 'default'}
+      variant={props.variant || `default`}
+      size={props.size || `default`}
       onClick={props.onClick}
       className={props.className}
       title={props.title}

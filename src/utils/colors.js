@@ -5,6 +5,7 @@ export const lightBackgroundColorRgb = `229, 229, 229`;
 export const lightBackgroundTextColor = `#24292E`;
 export const lightCardColor = `#ffffff`;
 export const lightTertiaryColor = `#3f51b5`;
+export const lightWarningColor = `#FFC107`;
 
 export const desaturatedPrimaryCol = `#4BACFE`;
 export const darkBackgroundColor = `#212738`;
@@ -46,3 +47,10 @@ export const lightTheme = [
 
 // #0d1117 Dark
 // #c9d1d9
+
+export const colorObject = {
+  default: `#d4d5d8`,
+  warning: `#e6a700`,
+  danger: `#e13238`,
+  info: `#4cb3d4`,
+};

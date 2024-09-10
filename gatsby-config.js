@@ -92,7 +92,6 @@ module.exports = {
         //   `gatsby-remark-images-medium-zoom` // Important!
         // ],
         gatsbyRemarkPlugins: [
-          // netlifyCmsPaths,
           // `gatsby-remark-relative-images`,
           {
             resolve: `gatsby-remark-images`,
@@ -102,13 +101,6 @@ module.exports = {
               // srcSetBreakpoints: [400],
             },
           },
-          // {
-          //   resolve: `gatsby-remark-images-medium-zoom`,
-          //   options: {
-          //     background: `#212738`,
-          //   },
-          // },
-
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -234,7 +226,7 @@ module.exports = {
     //   },
     // },
     {
-      resolve: `gatsby-plugin-netlify-cms`,
+      resolve: `gatsby-plugin-decap-cms`,
       options: {
         htmlTitle: `Gautam's Content Manager`,
         htmlFavicon: `./assets/logo.png`,

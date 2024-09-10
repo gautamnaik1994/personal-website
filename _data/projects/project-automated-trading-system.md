@@ -1,6 +1,6 @@
 ---
 title: Automated Trading System
-order: 7
+order: 9
 publish: true
 personal: true
 isPersonalProject: true

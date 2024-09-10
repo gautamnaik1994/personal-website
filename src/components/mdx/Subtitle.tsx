@@ -7,4 +7,6 @@ export default styled.h2`
   color: var(--tertiary);
   letter-spacing: -0.7px;
   ${generateFontSize(4)}
+  text-transform: uppercase;
+  word-spacing: 3px;
 `;

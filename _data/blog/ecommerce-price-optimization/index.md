@@ -48,9 +48,7 @@ We will use the revenue earned as a metric.
 
 ## Data Description
 
-<Details>
-
-  <summary>data description</summary>
+<ExpandableSeeMore>
 
 The dataset consists of monthly sales data of products, freight charges, product score, competitor price and their product score data
 
@@ -184,7 +182,7 @@ The dataset consists of monthly sales data of products, freight charges, product
 </tbody>
 </table>
 
-</Details>
+</ExpandableSeeMore>
 
 ## Presentation
 
@@ -206,11 +204,18 @@ The dataset consists of monthly sales data of products, freight charges, product
 
 ## Jupyter Notebook
 
-Here are the links to the Jupyter Notebook containing detailed code, insights, and recommendations:
+The main notebook used for the analysis can be found below. One can view the notebook using the nbviewer or open it in Google Colab.
 
-- Github Link: [https://github.com/gautamnaik1994/E-com-Price-Optimization](https://github.com/gautamnaik1994/E-com-Price-Optimization)
-- Kaggle Link: [https://www.kaggle.com/code/gautamnaik1994/e-commerce-price-optimization/notebook](https://www.kaggle.com/code/gautamnaik1994/e-commerce-price-optimization/notebook)
+<div>
 
-Following is the embedded version of above notebook hosted on Kaggle
+[![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.org/github/gautamnaik1994/E-com-Price-Optimization/blob/main/price_optimization_v2.ipynb?flush_cache=true)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gautamnaik1994/E-com-Price-Optimization/blob/main/price_optimization_v2.ipynb)
+[![kaagle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/gautamnaik1994/e-commerce-price-optimization/notebook)
 
-<iframe src="https://www.kaggle.com/embed/gautamnaik1994/e-commerce-price-optimization?kernelSessionId=187211554" height="800"  className="blog-wide-section" frameBorder="0" scrolling="auto" title="E-com Price Optimization"></iframe>
+</div>
+
+## GitHub Repository
+
+The complete code can be found in the GitHub repository below
+
+[![GitHub](https://img.shields.io/badge/View%20on-GitHub-blue?logo=github)](https://github.com/gautamnaik1994/E-com-Price-Optimization)

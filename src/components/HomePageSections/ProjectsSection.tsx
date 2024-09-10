@@ -53,7 +53,7 @@ const ProjectsSection = ({ className }: Props): React.JSX.Element => {
           fileAbsolutePath: { regex: "/_data/projects/" }
           frontmatter: { publish: { eq: true } }
         }
-        sort: { frontmatter: { order: ASC } }
+        sort: { frontmatter: { order: DESC } }
         limit: 8
       ) {
         edges {

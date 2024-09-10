@@ -340,6 +340,7 @@ pre {
     float: left;
     min-width: calc(100% - 3em);
     font-size: 0.9em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     &.line-numbers {
       padding-left: 3em;
@@ -362,9 +363,10 @@ pre {
   }
 }
 :not(pre) > code[class*='language-'] {
-  padding: 2px 8px;
+  padding: 2px 6px;
+  margin-left: 3px;
   font-size: 0.85em;
-  color: #38ff64;
+  color: #7ec699;
   background: #404040;
 }
 
@@ -559,4 +561,39 @@ p:has(span.gatsby-resp-image-wrapper) {
   border: none;
   border-radius: 8px;
   max-width: 1366px;
+}
+
+.side-scrolling-table-container {
+  overflow-x: auto;
+  table {
+    width: 100%;
+  }
+}
+
+.expandable-see-more {
+  text-align: center;
+  .inner {
+    text-align: left;
+  }
+  .open {
+    height: auto;
+  }
+  .close {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    &:after {
+      content: '';
+      height: 80px;
+      background: linear-gradient(
+        180deg,
+        rgba(var(--bodyBackgroundColorRgb), 0) 0%,
+        rgba(var(--bodyBackgroundColorRgb), 100%) 100%
+      );
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+  }
 }

@@ -20,6 +20,10 @@ const RoundButton = styled.button`
 
 const FloatingShareBtn: React.FC = () => {
   const handleShare = async () => {
+    console.log({
+      title: document.title,
+      url: window.location.href,
+    });
     try {
       await navigator.share({
         title: document.title,

@@ -14,7 +14,7 @@ export const generateFontSize = (level: number) => {
   return css`
     font-size: ${Math.pow(mobileRatio, level).toFixed(3)}rem;
     ${media.desktop} {
-      font-size: ${Math.pow(desktopRatio, level).toFixed(3)}rem;
+      /* font-size: ${Math.pow(desktopRatio, level).toFixed(3)}rem; */
     }
   `;
 };

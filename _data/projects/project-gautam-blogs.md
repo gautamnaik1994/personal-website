@@ -1,6 +1,6 @@
 ---
 title: Gautam Blogs
-order: 2
+order: 7
 publish: true
 isPersonalProject: true
 projectColor: "#2196f3"

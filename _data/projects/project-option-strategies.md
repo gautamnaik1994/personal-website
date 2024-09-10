@@ -1,7 +1,7 @@
 ---
 title: Option Strategies
 image: text-logo.png
-order: 1
+order: 8
 publish: true
 isPersonalProject: true
 projectColor: "#212941"
