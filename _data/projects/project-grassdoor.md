@@ -2,7 +2,8 @@
 title: Grassdoor
 image: grassdoorlogo.png
 order: 0
-publish: true
+publish: false
+personal: false
 isPersonalProject: false
 projectColor: "#36c1c8"
 companyName: Grassdoor
