@@ -4,13 +4,15 @@ export const getThemeValue = (): string => {
   let initialThemeValue = `dark`;
   if (typeof window !== `undefined`) {
     if (localStorage.getItem(`theme`) === null) {
-      if (matchMedia(`(prefers-color-scheme: dark)`).matches) {
-        initialThemeValue = `dark`;
-        localStorage.setItem(`theme`, `dark`);
-      } else {
-        localStorage.setItem(`theme`, `light`);
-        initialThemeValue = `light`;
-      }
+      // if (matchMedia(`(prefers-color-scheme: dark)`).matches) {
+      //   initialThemeValue = `dark`;
+      //   localStorage.setItem(`theme`, `dark`);
+      // } else {
+      //   localStorage.setItem(`theme`, `light`);
+      //   initialThemeValue = `light`;
+      // }
+      initialThemeValue = `dark`;
+      localStorage.setItem(`theme`, `dark`);
     } else {
       initialThemeValue = localStorage.getItem(`theme`) || `dark`;
     }
