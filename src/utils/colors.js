@@ -1,7 +1,7 @@
 export const primaryCol = `#2196F3`;
-export const lightBackgroundColor = `#E5E5E5`;
+export const lightBackgroundColor = `#f5f5f7`;
 export const primaryRgb = `33, 150, 243`;
-export const lightBackgroundColorRgb = `229, 229, 229`;
+export const lightBackgroundColorRgb = `245, 245, 247`;
 export const lightBackgroundTextColor = `#24292E`;
 export const lightCardColor = `#ffffff`;
 export const lightTertiaryColor = `#3f51b5`;

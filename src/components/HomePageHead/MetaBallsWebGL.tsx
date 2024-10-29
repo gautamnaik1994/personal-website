@@ -41,7 +41,7 @@ interface MetaBallObject {
   r: number;
 }
 
-interface IProps {}
+interface IProps { }
 
 declare global {
   interface Window {
@@ -351,7 +351,7 @@ class Metaballs extends React.Component<IProps, IState> {
       // gl_FragColor = vec4(0.12, 0.15, 0.21, 1.0);
       this.gl.uniform4f(this.bgColorUniformLocation, 0.1294, 0.1529, 0.2196, 1);
     } else if (val === `light` && this.gl) {
-      this.gl.uniform4f(this.bgColorUniformLocation, 0.898, 0.898, 0.898, 1.0);
+      this.gl.uniform4f(this.bgColorUniformLocation, 0.960, 0.960, 0.968, 1.0);
     }
   };
 
