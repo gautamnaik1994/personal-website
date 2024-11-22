@@ -1,7 +1,7 @@
 ---
 title: Covid Dashboard
 order: 6
-publish: true
+publish: false
 isPersonalProject: true
 projectColor: "#4caf50"
 companyName: Grassdoor

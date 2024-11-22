@@ -27,7 +27,7 @@ interface Props {
   className?: string;
 }
 
-export default ({ className }: Props): JSX.Element => (
+const ExperienceSectionComponent = ({ className }: Props): React.ReactNode => (
   <section className={className}>
     <SectionTitle title="Experience" />
     <ExperienceSection>
@@ -36,3 +36,5 @@ export default ({ className }: Props): JSX.Element => (
     </ExperienceSection>
   </section>
 );
+
+export default ExperienceSectionComponent;

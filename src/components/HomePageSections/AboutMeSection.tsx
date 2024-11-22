@@ -204,6 +204,7 @@ const AboutMeSection = ({ className }: Props): React.ReactElement => {
               >
                 <img
                   src="https://stackoverflow.com/users/flair/2376317.png?theme=dark"
+                  loading="lazy"
                   width="208"
                   height="58"
                   alt="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
@@ -219,6 +220,7 @@ const AboutMeSection = ({ className }: Props): React.ReactElement => {
                   src="https://stackoverflow.com/users/flair/2376317.png"
                   width="208"
                   height="58"
+                  loading="lazy"
                   alt="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
                   title="profile for Gautam Naik at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
                 />

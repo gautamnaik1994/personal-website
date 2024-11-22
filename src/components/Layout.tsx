@@ -66,7 +66,7 @@ function Layout({ children }: LayoutProps): React.ReactElement {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap&text=0123456789"
@@ -76,8 +76,7 @@ function Layout({ children }: LayoutProps): React.ReactElement {
           href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
         />
-        <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" />
-      </Helmet>
+      </Helmet> */}
       <ThemeProvider
         theme={{
           mode: theme || `dark`,

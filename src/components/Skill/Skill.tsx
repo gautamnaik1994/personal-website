@@ -55,13 +55,13 @@ interface Props {
   className?: string;
 }
 
-export default ({
-  name = 'UI Designing',
+const SkillComponent = ({
+  name = `UI Designing`,
   level = 55,
   details,
   ...props
-}: Props): JSX.Element => {
-  const defaultHeight = '25px';
+}: Props): React.ReactNode => {
+  const defaultHeight = `25px`;
   const [open, toggle] = useState(false);
   const [contentHeight, setContentHeight] = useState(defaultHeight);
   const [ref, { height }] = useMeasure();
@@ -72,17 +72,17 @@ export default ({
 
   const rotate = useSpring({
     config: { mass: 4, tension: 250, friction: 30 },
-    transform: open ? `rotate(270deg)` : 'rotate(90deg)',
+    transform: open ? `rotate(270deg)` : `rotate(90deg)`,
   });
   useEffect(() => {
-    //Sets initial height
+    // Sets initial height
     setContentHeight(height);
 
-    //Adds resize event listener
-    window.addEventListener('resize', setContentHeight(height));
+    // Adds resize event listener
+    window.addEventListener(`resize`, setContentHeight(height));
 
     // Clean-up
-    return window.removeEventListener('resize', setContentHeight(height));
+    return window.removeEventListener(`resize`, setContentHeight(height));
   }, [height]);
   return (
     <Skill className={props.className}>
@@ -97,10 +97,14 @@ export default ({
       </animated.div>
       <div className="button-holder text-center">
         <button className="more-less-btn" onClick={() => toggle(!open)}>
-          {open ? 'Less' : 'More'}{' '}
-          <animated.i className=" icon-arrow-right" style={rotate} />{' '}
+          {open ? `Less` : `More`}
+          {` `}
+          <animated.i className=" icon-arrow-right" style={rotate} />
+          {` `}
         </button>
       </div>
     </Skill>
   );
 };
+
+export default SkillComponent;

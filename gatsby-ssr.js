@@ -54,6 +54,17 @@ export const onRenderBody = ({
 }) => {
   // setHeadComponents(<FallbackStyles />);
   setHeadComponents([
+    <link key="fg" rel="preconnect" href="https://fonts.gstatic.com" />,
+    <link
+      key="fontLink_r"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap&text=0123456789"
+      rel="stylesheet"
+    />,
+    <link
+      key="fontLink_u"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />,
     <link
       as="script"
       key="preloadKey"

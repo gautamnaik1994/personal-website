@@ -3,15 +3,13 @@
   "version": "1.0.0",
   "description": "personal website",
   "author": "Gautam Naik <gautamnaik@gmail.com> (https://gautamnaik.com/)",
-  "repository": "https://github.com/gautamnaik1994/my-blog",
+  "repository": "https://github.com/gautamnaik1994/personal-website",
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "storybook-https": "start-storybook --https --ssl-key privatekey.pem --ssl-cert certificate.pem",
-    "storybook": "start-storybook -p 6006",
     "prestart": "rimraf .cache",
     "clean": "gatsby clean",
     "start": "gatsby develop -o -H 0.0.0.0 -p 8080",
@@ -25,10 +23,7 @@
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "lint:fix": "npm run lint --fix",
     "format": "prettier --write \"src/**/*.tsx\" \"src/**/*.ts\" \"*.js\"",
-    "format-md": "prettier --write \"content/**/*.md\"",
-    "gentags": "genCtags.bat",
-    "build-storybook": "build-storybook",
-    "postinstall": "node postinstall.js"
+    "format-md": "prettier --write \"content/**/*.md\""
   },
   "engines": {
     "node": ">=18.0.0"
@@ -73,7 +68,6 @@
     "react-helmet-async": ">=1.3.0",
     "react-spring": ">=9.7.2",
     "react-use": ">=17.4.0",
-    "react-youtube": ">=10.1.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.1.0",
@@ -90,13 +84,6 @@
     "@babel/preset-typescript": "7.22.5",
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
-    "@storybook/addon-a11y": ">=7.3.2",
-    "@storybook/addon-actions": ">=7.3.2",
-    "@storybook/addon-docs": ">=7.3.2",
-    "@storybook/addon-essentials": ">=7.3.2",
-    "@storybook/addon-links": ">=7.3.2",
-    "@storybook/addon-storysource": ">=7.3.2",
-    "@storybook/react": ">=7.3.2",
     "@types/mdx-js__react": ">=1.5.5",
     "@types/node": ">=20.5.1",
     "@types/react": ">=18.2.20",
@@ -136,8 +123,6 @@
     "react-is": ">=18.2.0",
     "replace-in-file": ">=7.0.1",
     "rimraf": ">=5.0.1",
-    "storybook-addon-styled-component-theme": ">=2.0.0",
-    "storybook-dark-mode": ">=3.0.1",
     "typescript": ">=5.1.6"
   }
 }
