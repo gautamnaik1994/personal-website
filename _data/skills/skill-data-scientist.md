@@ -1,10 +1,10 @@
 ---
 title: Data Science
-value: 30
+value: 50
 publish: true
 details:
   - key: Expertise
-    value: 'Data Cleaning • EDA • Visualizations • Business Intelligence'
+    value: 'Machine Learning • Time Series Analysis • Data Cleaning • EDA • Visualizations • Business Intelligence'
   - key: 'Tools'
-    value: Python • Pandas • Numpy • SQL • Streamlit
+    value: Python • Pandas • Numpy • SQL • Streamlit • Tableau • Sci-kit Learn • PySpark
 ---

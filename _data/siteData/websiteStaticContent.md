@@ -1,6 +1,8 @@
 ---
 position: Frontend Developer & Designer
-education: 'Bachelors in Computer Science '
+education:
+  - 'Bachelor of Engineering in Computer Science'
+  - 'Masters in Computer Science: AI and ML'
 company: Kaara Tech
 companyWebsite: https://kaaratech.com/
 bday: 2nd May '94

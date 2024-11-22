@@ -1,10 +1,6 @@
-import React, { useLayoutEffect, useState, Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import { graphql } from 'gatsby';
-// import Img from 'gatsby-image';
-import { GatsbySeo } from 'gatsby-plugin-next-seo';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
-// import Link from '../components/Link';
 import Hero from '../components/Hero';
 import PostItem from '../components/PostItem';
 import CategoryTagList from '../components/CategoryTagList';
@@ -12,9 +8,7 @@ import Pagination from '../components/BlogPagination';
 import { Site } from '../types';
 import media from '../utils/MediaQueries';
 import Container from '../components/Container';
-import BlogSideBar from '../components/BlogSideBar';
 import OuterLinks from '../components/OuterLinks';
-import PageUnderConstruction from '../components/PageUnderConstruction';
 import SEO from '../components/SEO';
 
 const Grid = styled.div`
@@ -92,8 +86,6 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
 
   return (
     <Fragment>
-      {/* <PageUnderConstruction /> */}
-      {/* <Hero showHero={currentPage > 1 ? false : true} title="Welcome to Blog" /> */}
       <Hero title={heroTitle()} />
       <Container>
         <CategoryTagList
@@ -125,21 +117,6 @@ const Blog = ({ data, pageContext }: Props): JSX.Element => {
           previousPagePath={previousPagePath()}
         />
       </Container>
-
-      {/* <div className="right-sec">
-          <BlogSideBar
-            menuOpen={menuOpen}
-            setMenuOpen={setMenuOpen}
-            nextPagePath={nextPagePath()}
-            previousPagePath={previousPagePath()}
-          >
-            <CategoryTagList
-              name={`Categories`}
-              list={categories}
-              activeIndex={activeCategoryIndex}
-            />
-          </BlogSideBar>
-        </div> */}
       <OuterLinks />
     </Fragment>
   );

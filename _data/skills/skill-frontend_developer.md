@@ -7,6 +7,4 @@ details:
     value: " Web Development • Single Page Applications • Progressive Web Apps"
   - key: Technologies
     value: HTML-CSS • ReactJS • NextJS • Redux • JavaScript • Typescript • Webpack
-  - key: "Version Control "
-    value: Git
 ---

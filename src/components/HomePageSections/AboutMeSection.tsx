@@ -37,10 +37,14 @@ const BlackBox = styled.div`
     color: var(--accent);
     margin-bottom: 6px;
   }
+
   .link-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    .icon-open-new-tab {
+      display: none;
+    }
     a {
       color: var(--bodyColor);
       line-height: 2rem;
@@ -53,6 +57,9 @@ const BlackBox = styled.div`
       transition: background 0.1s;
       &:hover {
         background: rgb(128 128 128 / 27%);
+        .icon-open-new-tab {
+          display: inline-block;
+        }
       }
     }
   }
@@ -67,6 +74,12 @@ const BlackBox = styled.div`
   }
   .icon-marker {
     color: #ff8c32;
+  }
+  .masters-link {
+    color: var(--bodyColor);
+    span {
+      color: var(--primary);
+    }
   }
   .circle {
     transition: transform 10s ease-in;
@@ -100,6 +113,12 @@ const BlackBox = styled.div`
       height: calc(var(--dims) * 0.75);
       background: #f76d74;
     }
+  }
+  .edu-item {
+    display: flex;
+    gap: 5px;
+    line-height: 1.2;
+    margin-bottom: 10px;
   }
   .stack-badge {
     margin-top: 10px;
@@ -175,16 +194,35 @@ const AboutMeSection = ({ className }: Props): React.ReactElement => {
                     rel="noreferrer"
                   >
                     <i className={`icon-${link.iconClassName}`} /> {link.key}
-                    {` `}
+                    <span className="icon-open-new-tab"></span>
                   </a>
                 );
               })}
-              <a href={`mailto:${_data.email}`} title="Mail me">
+              {/* <a href={`mailto:${_data.email}`} title="Mail me">
                 <i className="icon-email" /> {_data.email}
-              </a>
+              </a> */}
             </div>
             <h3 className="">Education</h3>
-            <div>{_data.education}</div>
+            <div>
+              <div className="edu-item">
+                <span>•</span>
+                {_data.education[0]}
+              </div>
+              <div className="edu-item">
+                <span>•</span>
+                <a
+                  href="https://woolf.university/id/1003119532"
+                  target="_blank"
+                  title="View my credentials"
+                  rel="noreferrer"
+                  className="masters-link"
+                >
+                  {_data.education[1]}
+                  {` `}
+                  <span className="icon-open-new-tab"></span>
+                </a>
+              </div>
+            </div>
             <h3 className="">Stackoverflow Badge</h3>
             {/*
           <div>

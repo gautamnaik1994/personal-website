@@ -1,22 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-// import Img from 'gatsby-image';
-// import { lighten } from 'polished';
 import styled from 'styled-components';
-// import theme from 'styled-theming';
-// import { GatsbySeo } from 'gatsby-plugin-next-seo';
-// Had added @ts-ignore
-// import { MDXRenderer } from 'gatsby-plugin-mdx';
 import media from '../utils/MediaQueries';
-// import Layout from '../components/Layout';
 import Pagination from '../components/Pagination';
 import Badge from '../components/Badge';
 import { Site, Mdx, PageContext } from '../types';
-// import { darkBackgroundColor } from '../utils/colors';
 import Container from '../components/Container';
 import { GatsbyImage } from 'gatsby-plugin-image';
-// import PageUnderConstruction from '../components/PageUnderConstruction';
-// import TableOfContents from '../components/TableOfContents';
 import Title from '../components/mdx/Title';
 import SEO from '../components/SEO';
 import FloatingShareBtn from '../components/FloatingShareBtn';
@@ -131,32 +121,6 @@ const PosTemplate = ({
 }: Props): React.ReactElement => {
   return (
     <>
-      {/* <GatsbySeo
-        title={mdx.frontmatter.title}
-        description={mdx.frontmatter.description}
-        canonical={location.href}
-        metaTags={[
-          {
-            name: `keywords`,
-            content: mdx.frontmatter.keywords
-              ? mdx.frontmatter.keywords.join(`,`)
-              : ``,
-          },
-        ]}
-        openGraph={{
-          url: location.href,
-          title: mdx.frontmatter.title,
-          images: [
-            {
-              url: `${location.origin}${mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData.images.fallback.src}`,
-              width: 1200,
-              height: 630,
-              alt: mdx.frontmatter.title,
-            },
-          ],
-        }}
-      /> */}
-      {/* <PageUnderConstruction /> */}
       <PostContainer>
         <Header>
           <Title>{mdx.frontmatter.title}</Title>
