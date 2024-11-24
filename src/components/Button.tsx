@@ -29,14 +29,14 @@ const Button = styled.button`
 
 export interface ButtonProps {
   className?: string;
-  children?: JSX.Element | string;
+  children?: React.ReactNode | string;
   variant?: string;
   size?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   title?: string;
 }
 
-export default (props: ButtonProps): JSX.Element => {
+export default (props: ButtonProps): React.ReactNode => {
   return (
     <Button
       variant={props.variant || `default`}

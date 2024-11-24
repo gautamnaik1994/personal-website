@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import theme from 'styled-theming';
-import { useSpring, animated } from 'react-spring';
 import media from '../utils/MediaQueries';
-import LinkButton from './LinkButton';
 import DownloadCVButton from './ViewCVButton';
 
 const StyledDownloadCV = styled.div`

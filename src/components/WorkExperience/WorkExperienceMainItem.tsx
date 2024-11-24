@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 // import { MDXRenderer } from 'gatsby-plugin-mdx';
 import theme from 'styled-theming';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import { useMeasure } from 'react-use';
 import media from '../../utils/MediaQueries';
 import Status from './Status';

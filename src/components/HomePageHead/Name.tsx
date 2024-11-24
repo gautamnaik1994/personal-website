@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import media from '../../utils/MediaQueries';
 
@@ -26,19 +26,22 @@ const Name = styled.h1`
   line-height: 1.2;
 `;
 
-export default () => (
-  <Holder>
-    <p>Hi, I am</p>
-    <Name>Gautam Naik</Name>
-    <p className="text-right">
-      Senior Software Engineer @{' '}
-      <a
-        href="https://kaaratech.com/"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        Kaara Tech
-      </a>{' '}
-    </p>
-  </Holder>
-);
+export default function NameComponent() {
+  return (
+    <Holder>
+      <p>Hi, I am</p>
+      <Name>Gautam Naik</Name>
+      <p className="text-right">
+        Senior Software Engineer @{` `}
+        <a
+          href="https://kaaratech.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Kaara Tech
+        </a>
+        {` `}
+      </p>
+    </Holder>
+  );
+}

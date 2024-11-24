@@ -1,18 +1,14 @@
-import React, { Fragment, useState } from 'react';
-import styled, { css } from 'styled-components';
-import theme from 'styled-theming';
-import { useSpring, animated } from 'react-spring';
-import { darkBackgroundColor } from '../utils/colors';
-import Link from './Link';
-import { transparentize } from 'polished';
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import { useSpring, animated } from '@react-spring/web';
 import media from '../utils/MediaQueries';
 
 const properties = {
   close: {
-    transform: 'translateX(100%)',
+    transform: `translateX(100%)`,
   },
   open: {
-    transform: 'translateX(0%)',
+    transform: `translateX(0%)`,
   },
   springConfig: { mass: 5, tension: 250, friction: 35 },
 };
@@ -30,7 +26,6 @@ const BlogSidebar = styled(animated.div)`
   width: 100%;
   will-change: transform;
   box-shadow: 2px 0px 20px 0px rgba(0, 0, 0, 0.5);
-
   padding: 25px;
   overscroll-behavior: contain;
 
@@ -91,7 +86,7 @@ export default ({
 }: Props): JSX.Element => {
   // const [menuOpen, setMenuOpen] = useState(false);
 
-  const { transform } = properties[menuOpen ? 'open' : 'close'];
+  const { transform } = properties[menuOpen ? `open` : `close`];
 
   const sideBarProps = useSpring({
     transform,

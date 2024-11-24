@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useEffect } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { transparentize, lighten, desaturate } from 'polished';
@@ -16,21 +16,21 @@ interface Props {
 
 const tone = compose(desaturate(0.2), lighten(0.1));
 
-const textColor = theme('mode', {
+const textColor = theme(`mode`, {
   dark: (props: any) => tone(props.theme.primary),
 });
 
-const textColorTablet = theme('mode', {
-  dark: '#333',
-  light: '#fff',
+const textColorTablet = theme(`mode`, {
+  dark: `#333`,
+  light: `#fff`,
 });
 
-const boxShadow = theme('mode', {
+const boxShadow = theme(`mode`, {
   light: (props: any) =>
     `0 3px var(--blur) 0px ${transparentize(0.6, props.theme.primary)}`,
 });
 
-const backgroundColor = theme('mode', {
+const backgroundColor = theme(`mode`, {
   dark: (props: any) => transparentize(0.4, props.theme.primary),
 });
 
@@ -53,7 +53,7 @@ const CategoryItem = styled(Link)<CategoryItemProps>`
   ${(props) =>
     props.activeCategory &&
     css`
-      text-decoration: undeline;
+      text-decoration: underline;
     `};
 
   ${media.desktop} {

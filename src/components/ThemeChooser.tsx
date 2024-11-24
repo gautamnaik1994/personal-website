@@ -1,36 +1,36 @@
 import React, { useContext } from 'react';
-import { useSpring, animated, useTransition } from 'react-spring';
+import { useSpring, animated, useTransition } from '@react-spring/web';
 import styled, { ThemeContext } from 'styled-components';
-import useSound from 'use-sound';
+// import useSound from 'use-sound';
 
 const smallCircles = [
-  { key: 0, cx: '14', cy: '4' },
-  { key: 1, cx: '23', cy: '9' },
-  { key: 2, cx: '23', cy: '19' },
-  { key: 3, cx: '14', cy: '24' },
-  { key: 4, cx: '5', cy: '19' },
-  { key: 5, cx: '5', cy: '9' },
+  { key: 0, cx: `14`, cy: `4` },
+  { key: 1, cx: `23`, cy: `9` },
+  { key: 2, cx: `23`, cy: `19` },
+  { key: 3, cx: `14`, cy: `24` },
+  { key: 4, cx: `5`, cy: `19` },
+  { key: 5, cx: `5`, cy: `9` },
 ];
 
 const properties = {
   light: {
     r: 9,
-    transform: 'rotate(40deg)',
-    rayTransform: 'scale(0)',
+    transform: `rotate(40deg)`,
+    rayTransform: `scale(0)`,
     cx: 14,
     cy: 6,
     opacity: 0,
-    rayColor: '#000', //not matters
+    rayColor: `#000`, // not matters
   },
   dark: {
     r: 6,
-    transform: 'rotate(90deg)',
-    rayTransform: 'scale(1)',
+    transform: `rotate(90deg)`,
+    rayTransform: `scale(1)`,
     cx: 30,
     cy: 0,
     opacity: 1,
 
-    rayColor: '#fff',
+    rayColor: `#fff`,
   },
   springConfig: { mass: 5, tension: 250, friction: 35 },
 };
@@ -58,9 +58,9 @@ interface Props {
 export default ({ toggleTheme, maskName }: Props): JSX.Element => {
   const themeContext = useContext(ThemeContext);
   // const themeChangeContext = useContext(ThemeChangeContext);
-  const isDarkMode = themeContext.mode === 'dark';
+  const isDarkMode = themeContext.mode === `dark`;
   const { r, transform, cx, cy, opacity, rayTransform, rayColor } =
-    properties[isDarkMode ? 'dark' : 'light'];
+    properties[isDarkMode ? `dark` : `light`];
 
   const svgContainerProps = useSpring({
     transform,
@@ -86,14 +86,14 @@ export default ({ toggleTheme, maskName }: Props): JSX.Element => {
     key: number;
   }
 
-  const [play] = useSound('/click.mp3', { volume: 0.1 });
+  // const [play] = useSound('/click.mp3', { volume: 0.1 });
 
   const transition = useTransition(smallCircles, {
     keys: (item: itemProps) => item.key,
-    initial: { transform: 'scale(0)' },
+    initial: { transform: `scale(0)` },
     enter: { transform: rayTransform },
     update: { transform: rayTransform },
-    leave: { transform: 'scale(0)' },
+    leave: { transform: `scale(0)` },
     trail: 100,
     config: properties.springConfig,
   });
@@ -103,7 +103,7 @@ export default ({ toggleTheme, maskName }: Props): JSX.Element => {
       title="Toggle Theme"
       onClick={() => {
         toggleTheme();
-        play();
+        // play();
       }}
       aria-label="Toggle Theme"
     >

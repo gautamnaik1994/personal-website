@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import { darkBackgroundColor } from '../utils/colors';
 import Link from './Link';
 import Logo from './Logo';

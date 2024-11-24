@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
 
-const boxShadow = theme('mode', {
-  light: '0 0 75px 41px rgba(255, 197, 12,  0.8)',
-  dark: ' 0 0 75px 41px rgba(255, 197, 12, 0.27)',
+const boxShadow = theme(`mode`, {
+  light: `0 0 75px 41px rgba(255, 197, 12,  0.8)`,
+  dark: ` 0 0 75px 41px rgba(255, 197, 12, 0.27)`,
 });
 
 const StyledBulb = styled.div`
@@ -61,9 +61,9 @@ interface Props {
   entered: boolean;
 }
 
-export default ({ entered }: Props) => {
+export default function Bulb({ entered }: Props) {
   return (
-    <StyledBulb className={entered && 'entered'}>
+    <StyledBulb className={entered && `entered`}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.1 128.1">
         <rect
           className="cls-1"
@@ -96,4 +96,4 @@ export default ({ entered }: Props) => {
       </svg>
     </StyledBulb>
   );
-};
+}

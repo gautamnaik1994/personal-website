@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import useSound from 'use-sound';
+// import useSound from 'use-sound';
 import theme from 'styled-theming';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import media from '../../utils/MediaQueries';
 import Bulb from './Bulb';
 
@@ -70,8 +70,6 @@ const StyledHireMe = styled.div`
       background-clip: text;
     }
   }
-  &.entered {
-  }
   ${media.tablet} {
     padding: 30px 15px;
     .hire-text {
@@ -86,8 +84,8 @@ const StyledHireMe = styled.div`
   }
 `;
 
-export default function HireMe(props: any): React.Element {
-  const [play] = useSound(`/click.mp3`, { volume: 0.1 });
+export default function HireMe(props: any): React.ReactNode {
+  // const [play] = useSound(`/click.mp3`, { volume: 0.1 });
   // const [audio] = useState(new Audio('/click.mp3'));
   const [entered, setEntered] = useState(false);
   const [entered2, setEntered2] = useState(false);
@@ -132,12 +130,12 @@ export default function HireMe(props: any): React.Element {
     };
   }, []);
 
-  useEffect(() => {
-    play();
-    // audio.muted = true;
-    // audio.volume = 0.1;
-    // audio.play();
-  }, [entered2]);
+  // useEffect(() => {
+  // play();
+  // audio.muted = true;
+  // audio.volume = 0.1;
+  // audio.play();
+  // }, [entered2]);
 
   return (
     <StyledHireMe ref={intersectionRef} {...props}>

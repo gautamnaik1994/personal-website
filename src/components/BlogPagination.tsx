@@ -1,8 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import theme from 'styled-theming';
+import styled from 'styled-components';
 import Link from './Link';
-import media from '../utils/MediaQueries';
 import { btnStyles } from './Button';
 
 const PaginationWrapper = styled.div`

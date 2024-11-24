@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import { useMeasure } from 'react-use';
 import SkillMeter from './SkillMeter';
 import media from '../../utils/MediaQueries';

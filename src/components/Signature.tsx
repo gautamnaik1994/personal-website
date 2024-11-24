@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import theme from 'styled-theming';
 
 const dashAnim = keyframes`
   to {
@@ -61,7 +60,7 @@ interface Props {
   className?: string;
 }
 
-export default ({ className }: Props): JSX.Element => {
+export default ({ className }: Props): React.ReactNode => {
   return (
     <StyledSvg
       id="gautan_naik"
