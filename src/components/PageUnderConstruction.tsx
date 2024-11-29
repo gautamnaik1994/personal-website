@@ -13,9 +13,7 @@ const StyledDiv = styled.div`
 `;
 
 const PageUnderConstruction = () => (
-  <StyledDiv>
-    **This page is under construction. Please bear with me..{` `}
-  </StyledDiv>
+  <StyledDiv>**This page is under construction...{` `}</StyledDiv>
 );
 
 export default PageUnderConstruction;

@@ -1,11 +1,12 @@
 ---
 title: Driver Churn Prediction
+image: churn-prediction.png
 order: 10
 publish: true
 homepage: true
 category: AI & Machine Learning
 externalProject: false
-projectColor: "#673AB7"
+projectColor: "#222222"
 details:
   - key: "Role"
     value: "Data Scientist"

@@ -1,10 +1,11 @@
 ---
 title: Automated Trading System
+image: automated-trading-system.png
 order: 9
 publish: true
 homepage: true
 externalProject: false
-projectColor: "#47c6d9"
+projectColor: "#222222"
 category: AI & Machine Learning
 companyName: ""
 details:

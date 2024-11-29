@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import countdown from 'countdown';
 import { intervalToDuration } from 'date-fns';
 import { opacify } from 'polished';
 import theme from 'styled-theming';
 import Item from './Item';
 import media from '../../utils/MediaQueries';
 
-const boxShadow = theme('mode', {
-  light: '0px 22px 40px rgba(0, 0, 0, 0.1)',
+const boxShadow = theme(`mode`, {
+  light: `0px 22px 40px rgba(0, 0, 0, 0.1)`,
 });
 
 const pulse = keyframes`
@@ -16,15 +15,15 @@ const pulse = keyframes`
 		transform:  scale(0.75);
       box-shadow: 0 0 0px 0px ${opacify(
         0.2,
-        '#34CA8000',
-      )}, 0 0 0px 8px ${opacify(0.2, '#34CA8000')};
+        `#34CA8000`,
+      )}, 0 0 0px 8px ${opacify(0.2, `#34CA8000`)};
 	}
 
 	70% {
 		transform:  scale(1);
-	box-shadow: 0 0 0px 15px ${opacify(0.0, '#34CA8000')}, 0 0 0px 26px ${opacify(
+	box-shadow: 0 0 0px 15px ${opacify(0.0, `#34CA8000`)}, 0 0 0px 26px ${opacify(
     0.0,
-    '#34CA8000',
+    `#34CA8000`,
   )};
 	}
 
@@ -32,8 +31,8 @@ const pulse = keyframes`
 		transform:  scale(0.75);
       box-shadow: 0 0 0px 0px ${opacify(
         0.0,
-        '#34CA8000',
-      )}, 0 0 0px 0px ${opacify(0.0, '#34CA8000')};
+        `#34CA8000`,
+      )}, 0 0 0px 0px ${opacify(0.0, `#34CA8000`)};
   }
 `;
 

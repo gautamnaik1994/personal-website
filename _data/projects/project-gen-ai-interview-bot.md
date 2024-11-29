@@ -5,7 +5,7 @@ order: 10
 publish: true
 homepage: true
 externalProject: false
-projectColor: "#2B2B2B"
+projectColor: "#222"
 category: AI & Machine Learning
 companyName: []
 details:

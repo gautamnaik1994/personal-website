@@ -17,4 +17,4 @@ links:
     value: https://github.com/gautamnaik1994/personal-website
 ---
 
-Gautam Blogs contains articles about CSS and Vim editor for now. More content will be added in the future.
+Gautam Blogs contains articles about CSS, Data Science and VIM for now. More content will be added in the future.

@@ -20,7 +20,6 @@ module.exports = {
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
     PRESERVE_WEBPACK_CACHE: true,
-    PARTIAL_HYDRATION: true,
     FAST_REFRESH: true,
     FAST_DEV: true,
     QUERY_ON_DEMAND: true,
@@ -181,7 +180,7 @@ module.exports = {
           purpose: `any maskable`,
         },
         orientation: `portrait`,
-        description: `Gautam Naik is a Frontend Web Developer and UI Developer who specializes in building mobile-friendly web apps`,
+        description: `Gautam Naik is a Senior Software Engineer who specializes in Web Development, Data Science and Machine Learning.`,
         shortcuts: [
           {
             name: `Gautam Blogs`,
