@@ -21,8 +21,8 @@ export default function Homepage() {
         <ExperienceSection className="section-spacer" />
         <SkillsSection className="section-spacer" />
         <BlogsSection className="section-spacer" />
-        <WorkExperience className="section-spacer" />
         <ProjectsSection className="section-spacer scroll-top-margin" />
+        <WorkExperience className="section-spacer" />
         <DeclarationSection className="section-spacer" />
         <ContactMeSection className="section-spacer" />
       </Container>

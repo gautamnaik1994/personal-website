@@ -2,7 +2,8 @@
 title: Gautam Blogs
 order: 7
 publish: true
-isPersonalProject: true
+category: Web Development
+externalProject: false
 projectColor: "#2196f3"
 details:
   - key: Technologies Used

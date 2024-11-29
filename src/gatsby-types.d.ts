@@ -752,17 +752,17 @@ type Frontmatter = {
   readonly details: Maybe<ReadonlyArray<Maybe<MdxFrontmatterDetails>>>;
   readonly education: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly email: Maybe<Scalars['String']>;
+  readonly externalProject: Maybe<Scalars['Boolean']>;
   readonly featuredpost: Maybe<Scalars['Boolean']>;
   readonly footer: Maybe<Scalars['String']>;
+  readonly homepage: Maybe<Scalars['Boolean']>;
   readonly image: Maybe<File>;
-  readonly isPersonalProject: Maybe<Scalars['Boolean']>;
   readonly keywords: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly links: Maybe<ReadonlyArray<Maybe<MdxFrontmatterLinks>>>;
   readonly location: Maybe<Scalars['String']>;
   readonly lookingForJob: Maybe<Scalars['Boolean']>;
   readonly ogImage: Maybe<Scalars['String']>;
   readonly order: Maybe<Scalars['Int']>;
-  readonly personal: Maybe<Scalars['Boolean']>;
   readonly position: Maybe<Scalars['String']>;
   readonly posts: Maybe<MdxFrontmatterPosts>;
   readonly projectColor: Maybe<Scalars['String']>;
@@ -812,17 +812,17 @@ type FrontmatterFieldSelector = {
   readonly details: InputMaybe<MdxFrontmatterDetailsFieldSelector>;
   readonly education: InputMaybe<FieldSelectorEnum>;
   readonly email: InputMaybe<FieldSelectorEnum>;
+  readonly externalProject: InputMaybe<FieldSelectorEnum>;
   readonly featuredpost: InputMaybe<FieldSelectorEnum>;
   readonly footer: InputMaybe<FieldSelectorEnum>;
+  readonly homepage: InputMaybe<FieldSelectorEnum>;
   readonly image: InputMaybe<FileFieldSelector>;
-  readonly isPersonalProject: InputMaybe<FieldSelectorEnum>;
   readonly keywords: InputMaybe<FieldSelectorEnum>;
   readonly links: InputMaybe<MdxFrontmatterLinksFieldSelector>;
   readonly location: InputMaybe<FieldSelectorEnum>;
   readonly lookingForJob: InputMaybe<FieldSelectorEnum>;
   readonly ogImage: InputMaybe<FieldSelectorEnum>;
   readonly order: InputMaybe<FieldSelectorEnum>;
-  readonly personal: InputMaybe<FieldSelectorEnum>;
   readonly position: InputMaybe<FieldSelectorEnum>;
   readonly posts: InputMaybe<MdxFrontmatterPostsFieldSelector>;
   readonly projectColor: InputMaybe<FieldSelectorEnum>;
@@ -856,17 +856,17 @@ type FrontmatterFilterInput = {
   readonly details: InputMaybe<MdxFrontmatterDetailsFilterListInput>;
   readonly education: InputMaybe<StringQueryOperatorInput>;
   readonly email: InputMaybe<StringQueryOperatorInput>;
+  readonly externalProject: InputMaybe<BooleanQueryOperatorInput>;
   readonly featuredpost: InputMaybe<BooleanQueryOperatorInput>;
   readonly footer: InputMaybe<StringQueryOperatorInput>;
+  readonly homepage: InputMaybe<BooleanQueryOperatorInput>;
   readonly image: InputMaybe<FileFilterInput>;
-  readonly isPersonalProject: InputMaybe<BooleanQueryOperatorInput>;
   readonly keywords: InputMaybe<StringQueryOperatorInput>;
   readonly links: InputMaybe<MdxFrontmatterLinksFilterListInput>;
   readonly location: InputMaybe<StringQueryOperatorInput>;
   readonly lookingForJob: InputMaybe<BooleanQueryOperatorInput>;
   readonly ogImage: InputMaybe<StringQueryOperatorInput>;
   readonly order: InputMaybe<IntQueryOperatorInput>;
-  readonly personal: InputMaybe<BooleanQueryOperatorInput>;
   readonly position: InputMaybe<StringQueryOperatorInput>;
   readonly posts: InputMaybe<MdxFrontmatterPostsFilterInput>;
   readonly projectColor: InputMaybe<StringQueryOperatorInput>;
@@ -900,17 +900,17 @@ type FrontmatterSortInput = {
   readonly details: InputMaybe<MdxFrontmatterDetailsSortInput>;
   readonly education: InputMaybe<SortOrderEnum>;
   readonly email: InputMaybe<SortOrderEnum>;
+  readonly externalProject: InputMaybe<SortOrderEnum>;
   readonly featuredpost: InputMaybe<SortOrderEnum>;
   readonly footer: InputMaybe<SortOrderEnum>;
+  readonly homepage: InputMaybe<SortOrderEnum>;
   readonly image: InputMaybe<FileSortInput>;
-  readonly isPersonalProject: InputMaybe<SortOrderEnum>;
   readonly keywords: InputMaybe<SortOrderEnum>;
   readonly links: InputMaybe<MdxFrontmatterLinksSortInput>;
   readonly location: InputMaybe<SortOrderEnum>;
   readonly lookingForJob: InputMaybe<SortOrderEnum>;
   readonly ogImage: InputMaybe<SortOrderEnum>;
   readonly order: InputMaybe<SortOrderEnum>;
-  readonly personal: InputMaybe<SortOrderEnum>;
   readonly position: InputMaybe<SortOrderEnum>;
   readonly posts: InputMaybe<MdxFrontmatterPostsSortInput>;
   readonly projectColor: InputMaybe<SortOrderEnum>;
@@ -2585,6 +2585,7 @@ type SiteFlags = {
   readonly FAST_DEV: Maybe<Scalars['Boolean']>;
   readonly FAST_REFRESH: Maybe<Scalars['Boolean']>;
   readonly LAZY_IMAGES: Maybe<Scalars['Boolean']>;
+  readonly PARTIAL_HYDRATION: Maybe<Scalars['Boolean']>;
   readonly PRESERVE_FILE_DOWNLOAD_CACHE: Maybe<Scalars['Boolean']>;
   readonly PRESERVE_WEBPACK_CACHE: Maybe<Scalars['Boolean']>;
   readonly QUERY_ON_DEMAND: Maybe<Scalars['Boolean']>;
@@ -2595,6 +2596,7 @@ type SiteFlagsFieldSelector = {
   readonly FAST_DEV: InputMaybe<FieldSelectorEnum>;
   readonly FAST_REFRESH: InputMaybe<FieldSelectorEnum>;
   readonly LAZY_IMAGES: InputMaybe<FieldSelectorEnum>;
+  readonly PARTIAL_HYDRATION: InputMaybe<FieldSelectorEnum>;
   readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<FieldSelectorEnum>;
   readonly PRESERVE_WEBPACK_CACHE: InputMaybe<FieldSelectorEnum>;
   readonly QUERY_ON_DEMAND: InputMaybe<FieldSelectorEnum>;
@@ -2605,6 +2607,7 @@ type SiteFlagsFilterInput = {
   readonly FAST_DEV: InputMaybe<BooleanQueryOperatorInput>;
   readonly FAST_REFRESH: InputMaybe<BooleanQueryOperatorInput>;
   readonly LAZY_IMAGES: InputMaybe<BooleanQueryOperatorInput>;
+  readonly PARTIAL_HYDRATION: InputMaybe<BooleanQueryOperatorInput>;
   readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<BooleanQueryOperatorInput>;
   readonly PRESERVE_WEBPACK_CACHE: InputMaybe<BooleanQueryOperatorInput>;
   readonly QUERY_ON_DEMAND: InputMaybe<BooleanQueryOperatorInput>;
@@ -2615,6 +2618,7 @@ type SiteFlagsSortInput = {
   readonly FAST_DEV: InputMaybe<SortOrderEnum>;
   readonly FAST_REFRESH: InputMaybe<SortOrderEnum>;
   readonly LAZY_IMAGES: InputMaybe<SortOrderEnum>;
+  readonly PARTIAL_HYDRATION: InputMaybe<SortOrderEnum>;
   readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<SortOrderEnum>;
   readonly PRESERVE_WEBPACK_CACHE: InputMaybe<SortOrderEnum>;
   readonly QUERY_ON_DEMAND: InputMaybe<SortOrderEnum>;
@@ -3296,6 +3300,13 @@ type MyQueryQueryVariables = Exact<{
 
 
 type MyQueryQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly slug: string | null, readonly category: string | null, readonly keywords: ReadonlyArray<string | null> | null, readonly description: string | null, readonly bannerImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly fields: { readonly timeToRead: { readonly text: string | null } | null } | null } }> } };
+
+type MyQuery2QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type MyQuery2Query = { readonly AIProjects: { readonly edges: ReadonlyArray<{ readonly node: { readonly html: string | null, readonly frontmatter: { readonly projectColor: string | null, readonly externalProject: boolean | null, readonly title: string | null, readonly details: ReadonlyArray<{ readonly key: string | null, readonly value: string | null } | null> | null, readonly links: ReadonlyArray<{ readonly key: string | null, readonly value: string | null } | null> | null, readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } }> }, readonly WebDevProjects: { readonly edges: ReadonlyArray<{ readonly node: { readonly html: string | null, readonly frontmatter: { readonly projectColor: string | null, readonly externalProject: boolean | null, readonly title: string | null, readonly details: ReadonlyArray<{ readonly key: string | null, readonly value: string | null } | null> | null, readonly links: ReadonlyArray<{ readonly key: string | null, readonly value: string | null } | null> | null, readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } }> } };
+
+type ProjectFieldsFragment = { readonly edges: ReadonlyArray<{ readonly node: { readonly html: string | null, readonly frontmatter: { readonly projectColor: string | null, readonly externalProject: boolean | null, readonly title: string | null, readonly details: ReadonlyArray<{ readonly key: string | null, readonly value: string | null } | null> | null, readonly links: ReadonlyArray<{ readonly key: string | null, readonly value: string | null } | null> | null, readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } }> };
 
 type siteFragment = { readonly siteMetadata: { readonly title: string | null, readonly description: string | null, readonly author: string | null, readonly keywords: ReadonlyArray<string | null> | null, readonly siteUrl: string | null, readonly ogImage: string | null } | null };
 

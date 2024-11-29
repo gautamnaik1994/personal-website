@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import media from '../utils/MediaQueries';
 
 const StyledDiv = styled.div`
@@ -12,8 +12,10 @@ const StyledDiv = styled.div`
   }
 `;
 
-export default () => (
+const PageUnderConstruction = () => (
   <StyledDiv>
-    **This page is under construction. Please bear with me..{' '}
+    **This page is under construction. Please bear with me..{` `}
   </StyledDiv>
 );
+
+export default PageUnderConstruction;

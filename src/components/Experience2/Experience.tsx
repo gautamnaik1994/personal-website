@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { intervalToDuration } from 'date-fns';
-import { opacify } from 'polished';
-import theme from 'styled-theming';
 import Item from './Item';
 import media from '../../utils/MediaQueries';
 import Space from '../../img/space.svg';
-
-const boxShadow = theme('mode', {
-  light: '0px 22px 40px rgba(0, 0, 0, 0.1)',
-});
 
 const pulse = keyframes`
   0% {
@@ -100,7 +94,10 @@ interface dateTypes {
   seconds: number;
 }
 
-export default ({ className, ...props }: Props): JSX.Element => {
+const ExperienceComponent = ({
+  className,
+  ...props
+}: Props): React.ReactNode => {
   const [dateData, setDateData] = useState<dateTypes>({
     years: 0,
     months: 0,
@@ -114,7 +111,7 @@ export default ({ className, ...props }: Props): JSX.Element => {
     const date = new Date(1438765200000);
     const dateInterval = setInterval(function () {
       const _dateData = intervalToDuration({ start: date, end: new Date() });
-      //console.log('Data', _dateData);
+      // console.log('Data', _dateData);
       const {
         years = 0,
         months = 0,
@@ -150,3 +147,5 @@ export default ({ className, ...props }: Props): JSX.Element => {
     </Experience>
   );
 };
+
+export default ExperienceComponent;

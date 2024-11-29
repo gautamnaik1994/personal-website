@@ -12,6 +12,8 @@ interface Props {
   download?: boolean;
   target?: string;
   rel?: string;
+  activeClassName?: string;
+  partiallyActive?: boolean;
 }
 
 const Link = ({ children, to, title, ...other }: Props) => {

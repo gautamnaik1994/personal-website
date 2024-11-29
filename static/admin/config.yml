@@ -12,7 +12,7 @@ backend:
 local_backend: true
 site_url: https://www.gautamnaik.com/
 
-logo_url: https://www.gautamnaik.com/blogLogo.svg
+logo_url: https://www.gautamnaik.com/img/logo.svg
 
 publish_mode: editorial_workflow
 
@@ -319,14 +319,14 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Order', name: 'order', widget: 'number' }
       - { label: 'Publish', name: 'publish', widget: 'boolean', default: true }
       - {
-          label: 'Personal Project',
-          name: 'personal',
+          label: 'Show on Homepage',
+          name: 'homepage',
           widget: 'boolean',
           default: false,
         }
       - {
-          label: 'Personal Project',
-          name: 'isPersonalProject',
+          label: 'External Project',
+          name: 'externalProject',
           widget: 'boolean',
           default: false,
         }
@@ -336,6 +336,16 @@ collections: # A list of collections the CMS should be able to edit
           widget: 'color',
           enableAlpha: false,
           allowInput: true,
+        }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'relation',
+          collection: 'settings',
+          file: 'blogCategories',
+          valueField: 'title.*',
+          searchFields: ['title.*'],
+          displayFields: ['title.*'],
         }
       - {
           label: 'Company Name',

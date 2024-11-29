@@ -186,7 +186,7 @@ const WorkExpeContainer = ({
   role = `Frontend Developer`,
   timeRange = `March 2017 - March 2020`,
   status = `stop`,
-  companyUrl = '#',
+  companyUrl = `#`,
   ...props
 }: Props): React.ReactElement => {
   const defaultHeight = `15px`;

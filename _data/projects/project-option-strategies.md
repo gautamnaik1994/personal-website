@@ -3,7 +3,7 @@ title: Option Strategies
 image: text-logo.png
 order: 8
 publish: true
-isPersonalProject: true
+category: Web Development
 projectColor: "#212941"
 details:
   - key: Technologies Used

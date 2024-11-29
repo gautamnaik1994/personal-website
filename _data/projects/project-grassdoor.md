@@ -2,10 +2,10 @@
 title: Grassdoor
 image: grassdoorlogo.png
 order: 0
-publish: false
-personal: false
-isPersonalProject: false
+publish: true
+externalProject: true
 projectColor: "#36c1c8"
+category: Web Development
 companyName: Grassdoor
 details:
   - key: "Role "

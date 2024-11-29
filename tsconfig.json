@@ -30,7 +30,7 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["src/*"],
       "@/static/*": ["./static/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]

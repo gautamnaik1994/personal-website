@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import { rgba } from 'polished';
-
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 // import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Item from './Skill/Item';
+import media from '../utils/MediaQueries';
 
 const ProjectItemStyles = styled.div`
   padding: 15px;
@@ -67,6 +65,9 @@ const ProjectItemStyles = styled.div`
     border-radius: 9px 0 9px 0;
     color: rgb(255 255 255 / 75%);
   }
+  ${media.desktop} {
+    margin-bottom: 0;
+  }
 `;
 
 interface Props {
@@ -77,7 +78,7 @@ interface Props {
   banner: IGatsbyImageData;
   description: string;
   className?: string;
-  isPersonalProject?: boolean;
+  externalProject?: boolean;
 }
 
 export default function ProjectItem({
@@ -87,7 +88,7 @@ export default function ProjectItem({
   details,
   color,
   description,
-  isPersonalProject,
+  externalProject,
   ...props
 }: Props): React.ReactElement {
   // const defaultHeight = '0px';
@@ -112,10 +113,7 @@ export default function ProjectItem({
   return (
     <ProjectItemStyles className={props.className}>
       <div className="top-section">
-        <div
-          className="img-container"
-          style={{ background: color, '--boxShadowcolor': rgba(color, 0.4) }}
-        >
+        <div className="img-container" style={{ background: color }}>
           {banner ? (
             <GatsbyImage
               imgStyle={{ objectFit: `contain` }}
@@ -125,8 +123,8 @@ export default function ProjectItem({
           ) : (
             <>{title}</>
           )}
-          {isPersonalProject && (
-            <div className="personal-tag">Personal Project</div>
+          {externalProject && (
+            <div className="personal-tag">External Project</div>
           )}
         </div>
 

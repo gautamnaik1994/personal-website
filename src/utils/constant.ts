@@ -2,7 +2,7 @@ export const subContainerWidth = 800;
 
 export const NAVIGATION = [
   {
-    to: `#projects`,
+    to: `/projects`,
     label: `Projects`,
     closeSidebar: true,
     title: `Checkout my cool projects`,

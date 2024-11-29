@@ -14,7 +14,7 @@
     "clean": "gatsby clean",
     "start": "gatsby develop -o -H 0.0.0.0 -p 8080",
     "start-https": "gatsby develop -o -H 0.0.0.0 -p 8080 --https",
-    "localcms": "npx netlify-cms-proxy-server",
+    "localcms": "npx decap-server",
     "debug": "node --inspect node_modules/.bin/gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve -o -p 9000",
@@ -121,7 +121,6 @@
     "nodemon": ">=3.0.1",
     "prettier": ">=3.0.2",
     "react-is": ">=18.2.0",
-    "replace-in-file": ">=7.0.1",
     "rimraf": ">=5.0.1",
     "typescript": ">=5.1.6"
   }

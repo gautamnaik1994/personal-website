@@ -10,8 +10,19 @@ const NavLink = styled(Link)`
   font-size: 18px;
   font-weight: var(--fontWeightMedium);
   display: none;
+  position: relative;
   ${media.tablet} {
     display: inline-block;
+  }
+  &.nav-active:after {
+    content: '';
+    position: absolute;
+    bottom: -21px;
+    left: -10px;
+    right: -10px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--accent);
   }
 `;
 
@@ -35,7 +46,6 @@ const Navbar = styled.nav`
   backdrop-filter: blur(10px);
   button {
     display: none;
-    //margin-left: 5px;
     ${media.tablet} {
       display: inline-block;
     }
@@ -51,7 +61,7 @@ export interface Props {
   className?: any;
 }
 
-export default ({ toggleTheme, className }: Props) => (
+const NavbarComponent = ({ toggleTheme, className }: Props) => (
   <Navbar className={className}>
     <HomeLink title="Gautam Naik" to="/">
       <Logo />
@@ -59,6 +69,8 @@ export default ({ toggleTheme, className }: Props) => (
 
     {NAVIGATION.map((navigation) => (
       <NavLink
+        activeClassName="nav-active"
+        partiallyActive={true}
         key={navigation.label}
         title={navigation.title}
         to={navigation.to}
@@ -71,3 +83,5 @@ export default ({ toggleTheme, className }: Props) => (
     <ThemeChooser toggleTheme={toggleTheme} maskName="Navbar" />
   </Navbar>
 );
+
+export default NavbarComponent;

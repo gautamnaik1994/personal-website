@@ -2,7 +2,9 @@
 title: Driver Churn Prediction
 order: 10
 publish: true
-isPersonalProject: true
+homepage: true
+category: AI & Machine Learning
+externalProject: false
 projectColor: "#673AB7"
 details:
   - key: "Role"

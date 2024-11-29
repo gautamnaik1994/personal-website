@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 const Status = styled.div`
   width: 50px;
@@ -13,11 +13,11 @@ const Status = styled.div`
   font-size: 30px;
   &.status-play {
     background: #4caf50;
-    box-shadow: 0 0 20px #4caf50;
+    // box-shadow: 0 0 20px #4caf50;
   }
   &.status-pause {
-    background: #00bcd4;
-    box-shadow: 0 0 20px #00bcd4;
+    background: var(--primary);
+    // box-shadow: 0 0 20px var(--primary);
     i {
       animation: pulse 1s linear infinite;
     }
@@ -29,15 +29,15 @@ const Status = styled.div`
       left: 0;
       width: 100%;
       height: 100%;
-      border: 1px solid #00bcd4;
+      border: 1px solid var(--primary);
       border-bottom-color: transparent;
       border-radius: 50%;
       animation: rotate 1s infinite;
     }
   }
   &.status-stop {
-    background: #ff7043;
-    box-shadow: 0 0 15px #ff7043;
+    background: #607d8b;
+    // box-shadow: 0 0 15px #ff7043;
   }
 `;
 
@@ -46,10 +46,15 @@ interface Props {
   className?: string;
 }
 
-export default ({ status = 'play', ...props }: Props): JSX.Element => {
+const StatusComponent = ({
+  status = `play`,
+  ...props
+}: Props): React.ReactNode => {
   return (
     <Status className={`status-${status} ${props.className}`}>
       <i className={`icon-${status}`} />
     </Status>
   );
 };
+
+export default StatusComponent;

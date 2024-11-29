@@ -85,38 +85,6 @@ const BlogsSection = ({ className }: Props): React.ReactElement => {
           }
         }
       }
-      # data: allMdx(
-      #   filter: {
-      #     internal: { contentFilePath: { regex: "/_data/blog/" } }
-      #     frontmatter: { publish: { eq: true }, featuredpost: { eq: false } }
-      #   }
-      #   limit: 1
-      #   sort: { frontmatter: { date: DESC } }
-      # ) {
-      #   edges {
-      #     node {
-      #       frontmatter {
-      #         slug
-      #         tags
-      #         title
-      #         category
-      #         description
-      #         date(formatString: "MMMM DD, YYYY")
-      #         bannerImage {
-      #           childImageSharp {
-      #             gatsbyImageData(width: 500)
-      #           }
-      #         }
-      #       }
-      #       fields {
-      #         timeToRead {
-      #           text
-      #         }
-      #       }
-      #       excerpt
-      #     }
-      #   }
-      # }
     }
   `);
 
@@ -149,7 +117,6 @@ const BlogsSection = ({ className }: Props): React.ReactElement => {
           Goto All Blogs
         </StyledLinkButton>
       </div>
-      <div className="text-center"></div>
     </section>
   );
 };

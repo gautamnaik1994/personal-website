@@ -2,10 +2,11 @@
 title: Automated Trading System
 order: 9
 publish: true
-personal: true
-isPersonalProject: true
+homepage: true
+externalProject: false
 projectColor: "#47c6d9"
-companyName: Grassdoor
+category: AI & Machine Learning
+companyName: ""
 details:
   - key: Languages
     value: Python, Javascript, React

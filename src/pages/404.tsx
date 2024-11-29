@@ -2,18 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from '../components/Link';
 import { primaryCol } from '../utils/colors';
-import { transparentize, lighten, desaturate } from 'polished';
 import SEO from '../components/SEO';
 
 const HomepageLink = styled(Link)`
   --blur: 7px;
   background-color: ${primaryCol};
-  padding: 7px 20px;
+  padding: 7px 20px 10px;
   display: inline-block;
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
-  box-shadow: 0 3px var(--blur) -2px ${transparentize(0.6, primaryCol)};
   text-decoration: none;
   color: white;
   margin-top: 15px;
@@ -56,7 +54,7 @@ const Wrapper = styled.div`
   }
 `;
 
-export default () => (
+const FourOFour = () => (
   <Wrapper>
     <div className="inner">
       {/*
@@ -70,5 +68,7 @@ export default () => (
     </div>
   </Wrapper>
 );
+
+export default FourOFour;
 
 export const Head = () => <SEO />;

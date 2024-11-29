@@ -2,7 +2,8 @@
 title: Flight Search Engine
 order: 3
 publish: true
-isPersonalProject: true
+category: Web Development
+externalProject: false
 projectColor: "#323cda"
 details:
   - key: Technologies Used

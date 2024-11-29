@@ -20,6 +20,7 @@ module.exports = {
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
     PRESERVE_WEBPACK_CACHE: true,
+    PARTIAL_HYDRATION: true,
     FAST_REFRESH: true,
     FAST_DEV: true,
     QUERY_ON_DEMAND: true,
@@ -124,7 +125,7 @@ module.exports = {
           ],
           rehypePlugins: [
             // Generate heading ids for rehype-autolink-headings
-            wrapESMPlugin(`rehype-slug`),
+            //  wrapESMPlugin(`rehype-slug`),
             // To pass options, use a 2-element array with the
             // configuration in an object in the second element
             // [wrapESMPlugin(`rehype-autolink-headings`), { behavior: `wrap` }],
@@ -187,6 +188,18 @@ module.exports = {
             short_name: `Gautam Blogs`,
             description: `Gautam Blogs`,
             url: `/blog`,
+            icons: [
+              {
+                src: `icons/icon-192x192.png?v=d069094058bc95375f4c5230909458da`,
+                sizes: `192x192`,
+              },
+            ],
+          },
+          {
+            name: `Projects`,
+            short_name: `Projects`,
+            description: `Projects`,
+            url: `/projects`,
             icons: [
               {
                 src: `icons/icon-192x192.png?v=d069094058bc95375f4c5230909458da`,

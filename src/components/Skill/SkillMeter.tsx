@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
-import { darken } from 'polished';
-import media from '../../utils/MediaQueries';
 
 const config = [
   {
@@ -9,16 +7,16 @@ const config = [
     limit: 25,
     top: `4facfe`, // blue
     bottom: `00f2fe`,
-    topDark: darken(0.2, `#4facfe`).split(`#`)[1],
-    bottomDark: darken(0.2, `#00f2fe`).split(`#`)[1],
+    topDark: `3d8acb`,
+    bottomDark: `00c2cb`,
   },
   {
     label: `Amateur`,
     limit: 50,
     top: `43e97b`, // green
     bottom: `38f9d7`,
-    topDark: darken(0.2, `#43e97b`).split(`#`)[1],
-    bottomDark: darken(0.2, `#38f9d7`).split(`#`)[1],
+    topDark: `36b868`,
+    bottomDark: `2bc7a9`,
   },
   {
     label: `Semi Pro`,
@@ -26,8 +24,8 @@ const config = [
     limit: 75,
     top: `f7b71d`,
     bottom: `fdef96`,
-    topDark: darken(0.2, `#f7b71d`).split(`#`)[1],
-    bottomDark: darken(0.2, `#fdef96`).split(`#`)[1],
+    topDark: `c68f17`,
+    bottomDark: `cdbf78`,
   },
   {
     label: `Professional`,
@@ -35,8 +33,8 @@ const config = [
     limit: 100,
     top: `ff0844`,
     bottom: `ffb199`,
-    topDark: darken(0.2, `#ff0844`).split(`#`)[1],
-    bottomDark: darken(0.2, `#ffb199`).split(`#`)[1],
+    topDark: `cc0636`,
+    bottomDark: `cc8e7a`,
   },
 ];
 
@@ -110,14 +108,14 @@ const Glass = styled.div<{ level: number; glow: string }>`
   }
 `;
 
-const LiquidBackground = styled.div`
+const LiquidBackground = styled.div<{ colors: GradientProps['colors'] }>`
   animation:
     swim 200s infinite linear alternate,
     bob 2s infinite ease-in-out;
   ${backgroundGrad};
 `;
 
-const LiquidForeground = styled.div`
+const LiquidForeground = styled.div<{ colors: GradientProps['colors'] }>`
   animation:
     swim 200s infinite linear alternate-reverse,
     bob2 2s infinite ease-in-out;
@@ -143,11 +141,10 @@ export default function SkillMeterFn({
   const currentConfig = config[findIndex(level)];
   const glassRef = useRef(null);
   let glassElem: HTMLElement | null = null;
+
   const handleOrientation = (event: DeviceOrientationEvent) => {
     let z: any = 0;
-
     z = event.gamma; // In degree in the range [-90,90]
-    // console.log('z ', z);
     glassElem?.style.setProperty(`--angle`, `${-z}deg`);
   };
 

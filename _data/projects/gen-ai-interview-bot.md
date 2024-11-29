@@ -3,10 +3,11 @@ title: Gen AI Interview Bot
 image: gen-ai-interview-bot.png
 order: 10
 publish: true
-personal: true
-isPersonalProject: true
+homepage: true
+externalProject: false
 projectColor: "#2B2B2B"
-companyName: Self
+category: AI & Machine Learning
+companyName: []
 details:
   - key: Languages
     value: Python

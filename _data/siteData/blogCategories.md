@@ -9,4 +9,8 @@ title:
   - Stock
   - Data Science
   - Case Study
+  - AWS
+  - AI & Machine Learning
+  - Web Development
+  - UI Design
 ---

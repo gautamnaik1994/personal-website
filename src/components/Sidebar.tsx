@@ -1,13 +1,10 @@
 import React, { Fragment, useState } from 'react';
-import styled, { css } from 'styled-components';
-import theme from 'styled-theming';
+import styled from 'styled-components';
 import { useSpring, animated } from '@react-spring/web';
-import { darkBackgroundColor } from '../utils/colors';
 import Link from './Link';
 import Logo from './Logo';
 import ThemeChooser from './ThemeChooser';
 import Hamburger from './Hamburger';
-import { transparentize } from 'polished';
 
 import { NAVIGATION } from '../utils/constant';
 
@@ -21,36 +18,49 @@ const properties = {
   springConfig: { mass: 5, tension: 250, friction: 35 },
 };
 
-const logoColor = theme(`mode`, {
-  light: `#333`,
-  dark: `#fff`,
-});
+// const logoColor = theme(`mode`, {
+//   light: `#333`,
+//   dark: `#fff`,
+// });
 
-const bgColor = theme(`mode`, {
-  light: transparentize(0.5, `#fff`),
-  dark: transparentize(0.5, darkBackgroundColor),
-});
+// const bgColor = theme(`mode`, {
+//   light: `var(--bodyBackgroundColor)`,
+//   dark: darkBackgroundColor,
+// });
 
 const NavLink = styled(Link)`
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  position: relative;
+  align-self: flex-start;
+  font-weight: var(--fontWeightMedium);
   &:last-of-type {
     margin-bottom: 3rem;
+  }
+  &.nav-active:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0px;
+    right: -10px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--accent);
   }
 `;
 
 // const bgColor = transparentize(0.5, cssVar('--bodyBackgroundColor', '#fff'));
+// ${typeof window !== `undefined` &&
+//   navigator.userAgent.toLowerCase().indexOf(`firefox`) > -1 &&
+//   css`
+//     background-color: var(--bodyBackgroundColor);
+//   `};
 
 const Sidebar = styled(animated.aside)`
-  transition: background-color 0.3s ease-in;
+  // transition: background-color 0.3s ease-in;
 
-  background-color: ${bgColor};
-  backdrop-filter: blur(10px);
-  ${typeof window !== `undefined` &&
-  navigator.userAgent.toLowerCase().indexOf(`firefox`) > -1 &&
-  css`
-    background-color: var(--bodyBackgroundColor);
-  `};
+  background-color: var(--bodyBackgroundColor);
+  // backdrop-filter: blur(10px);
   padding: 35px;
   position: fixed;
   top: 0;
@@ -61,13 +71,13 @@ const Sidebar = styled(animated.aside)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 2px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  // box-shadow: 2px 0px 20px 0px rgba(0, 0, 0, 0.5);
   will-change: transform;
 `;
 
 const HomeLink = styled(Link)`
   margin-bottom: 3rem;
-  color: ${logoColor};
+  color: var(--textColor);
 `;
 
 export interface Props {
@@ -106,6 +116,7 @@ export default function SidebarContainer({
         {NAVIGATION.map((navigation) => (
           <NavLink
             key={navigation.label}
+            activeClassName="nav-active"
             title={navigation.label}
             to={navigation.to}
             onClick={() => {

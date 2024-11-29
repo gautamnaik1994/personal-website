@@ -4,6 +4,13 @@ import styled from 'styled-components';
 import media from '../../utils/MediaQueries';
 import ProjectItem from '../ProjectItem';
 import SectionTitle from '../SectionTitle';
+import { ProjectItemProps } from '../../types';
+import LinkButton from '../LinkButton';
+
+const StyledLinkButton = styled(LinkButton)`
+  justify-self: center;
+  align-self: center;
+`;
 
 const StyledProjectItem = styled(ProjectItem)`
   ${media.tablet} {
@@ -29,29 +36,13 @@ interface Props {
   className?: string;
 }
 
-interface ProjectItemProps {
-  node: {
-    id: string;
-    html: string;
-    frontmatter: {
-      description: string;
-      projectColor: string;
-      details: Array<{ key: string; value: string }>;
-      links: Array<{ key: string; value: string }>;
-      title: string;
-      image: { publicURL: string };
-      isPersonalProject?: boolean;
-    };
-  };
-}
-
 const ProjectsSection = ({ className }: Props): React.JSX.Element => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
         filter: {
           fileAbsolutePath: { regex: "/_data/projects/" }
-          frontmatter: { publish: { eq: true } }
+          frontmatter: { homepage: { eq: true } }
         }
         sort: { frontmatter: { order: DESC } }
         limit: 8
@@ -61,6 +52,7 @@ const ProjectsSection = ({ className }: Props): React.JSX.Element => {
             html
             frontmatter {
               projectColor
+              externalProject
               title
               details {
                 key
@@ -70,7 +62,6 @@ const ProjectsSection = ({ className }: Props): React.JSX.Element => {
                 key
                 value
               }
-              isPersonalProject
               image {
                 childImageSharp {
                   gatsbyImageData(
@@ -102,12 +93,21 @@ const ProjectsSection = ({ className }: Props): React.JSX.Element => {
                 details={_data.details}
                 color={_data.projectColor}
                 banner={_data.image?.childImageSharp.gatsbyImageData}
-                isPersonalProject={_data.isPersonalProject}
+                externalProject={_data.externalProject}
               />
             );
           },
         )}
       </ProjectList>
+      <div className="text-center one-rem-mt">
+        <StyledLinkButton
+          title="Go To All Projects"
+          variant="primary"
+          to="/projects/"
+        >
+          Goto All Projects
+        </StyledLinkButton>
+      </div>
       {/* TODO: Add links to Behance and Github */}
     </section>
   );

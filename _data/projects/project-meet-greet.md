@@ -3,8 +3,8 @@ title: Meet & Greet
 image: mglogo.png
 order: 7
 publish: false
-personal: false
-isPersonalProject: false
+category: Web Development
+externalProject: true
 projectColor: "#f53e3b"
 companyName: Grassdoor
 details:

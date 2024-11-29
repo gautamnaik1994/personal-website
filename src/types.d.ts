@@ -1,3 +1,6 @@
+import {  IGatsbyImageData } from 'gatsby-plugin-image';
+
+
 export interface SiteMetadata {
   title: string;
   description: string;
@@ -38,4 +41,20 @@ export interface LayoutProps {
 export interface PageContext {
   next: { frontmatter: { title: string; slug: string } };
   prev: { frontmatter: { title: string; slug: string } };
+}
+
+export interface ProjectItemProps {
+  node: {
+    id: string;
+    html: string;
+    frontmatter: {
+      description: string;
+      projectColor: string;
+      details: Array<{ key: string; value: string }>;
+      links: Array<{ key: string; value: string }>;
+      title: string;
+      image: IGatsbyImageData;
+      externalProject?: boolean;
+    };
+  };
 }

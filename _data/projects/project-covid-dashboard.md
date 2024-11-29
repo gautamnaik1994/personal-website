@@ -1,10 +1,12 @@
 ---
 title: Covid Dashboard
 order: 6
-publish: false
-isPersonalProject: true
+publish: true
+category: AI & Machine Learning
+externalProject: false
+homepage: false
 projectColor: "#4caf50"
-companyName: Grassdoor
+companyName: ""
 details:
   - key: Languages
     value: Python, HTML, CSS
