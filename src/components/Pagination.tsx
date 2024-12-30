@@ -4,10 +4,7 @@ import Link from './Link';
 import media from '../utils/MediaQueries';
 
 const PaginationWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  box-shadow: none;
-
+  padding-bottom: 1rem;
   a {
     float: none !important;
     margin: 0;
@@ -20,30 +17,41 @@ const PaginationWrapper = styled.div`
     background: transparent;
     color: var(--primary);
     box-shadow: none;
-    padding: 8px 0px;
+    padding: 8px;
     white-space: normal;
-    span {
-      border-bottom: 1px dashed;
+    border: 1px solid var(--cardColor);
+    small {
+      color: var(--bodyColor);
+    }
+    div {
       line-height: 1.5;
+      margin-top: 5px;
     }
     &.right {
       text-align: right;
     }
   }
-  .left i {
-    transform: scale(-1, 1);
-    display: inline-block;
-  }
   ${media.desktop} {
     width: 750px;
-
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 -1rem;
+    display: flex;
+    gap: 15px;
     margin-left: auto;
     margin-right: auto;
     a {
-      margin: 1rem 0;
+      padding: 10px 8px;
+      flex: 1;
+      &.left {
+        text-align: right;
+      }
+      &.right {
+        text-align: left;
+      }
+      div {
+        margin-top: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 `;
@@ -67,14 +75,14 @@ export default function Pagination({
     <PaginationWrapper>
       {previousPagePath && (
         <Link className="left" title={prevPostTitle} to={previousPagePath}>
-          <i className="icon-arrow-right" />
-          <span>&nbsp;{prevPostTitle}</span>
+          <small>Previous</small>
+          <div>{prevPostTitle}</div>
         </Link>
       )}
       {nextPagePath && (
         <Link className="right" title={nextPostTitle} to={nextPagePath}>
-          <span>{nextPostTitle}&nbsp;</span>
-          <i className="icon-arrow-right" />
+          <small>Next</small>
+          <div>{nextPostTitle}</div>
         </Link>
       )}
     </PaginationWrapper>

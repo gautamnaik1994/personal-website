@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import LinkButton from './LinkButton';
 
-const DownloadCVButton = (): JSX.Element => {
+const DownloadCVButton = (): React.ReactNode => {
   const data = useStaticQuery(graphql`
     {
       mdx(internal: { contentFilePath: { regex: "/websiteStaticContent/" } }) {

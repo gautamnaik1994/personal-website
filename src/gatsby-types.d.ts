@@ -2585,7 +2585,6 @@ type SiteFlags = {
   readonly FAST_DEV: Maybe<Scalars['Boolean']>;
   readonly FAST_REFRESH: Maybe<Scalars['Boolean']>;
   readonly LAZY_IMAGES: Maybe<Scalars['Boolean']>;
-  readonly PARTIAL_HYDRATION: Maybe<Scalars['Boolean']>;
   readonly PRESERVE_FILE_DOWNLOAD_CACHE: Maybe<Scalars['Boolean']>;
   readonly PRESERVE_WEBPACK_CACHE: Maybe<Scalars['Boolean']>;
   readonly QUERY_ON_DEMAND: Maybe<Scalars['Boolean']>;
@@ -2596,7 +2595,6 @@ type SiteFlagsFieldSelector = {
   readonly FAST_DEV: InputMaybe<FieldSelectorEnum>;
   readonly FAST_REFRESH: InputMaybe<FieldSelectorEnum>;
   readonly LAZY_IMAGES: InputMaybe<FieldSelectorEnum>;
-  readonly PARTIAL_HYDRATION: InputMaybe<FieldSelectorEnum>;
   readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<FieldSelectorEnum>;
   readonly PRESERVE_WEBPACK_CACHE: InputMaybe<FieldSelectorEnum>;
   readonly QUERY_ON_DEMAND: InputMaybe<FieldSelectorEnum>;
@@ -2607,7 +2605,6 @@ type SiteFlagsFilterInput = {
   readonly FAST_DEV: InputMaybe<BooleanQueryOperatorInput>;
   readonly FAST_REFRESH: InputMaybe<BooleanQueryOperatorInput>;
   readonly LAZY_IMAGES: InputMaybe<BooleanQueryOperatorInput>;
-  readonly PARTIAL_HYDRATION: InputMaybe<BooleanQueryOperatorInput>;
   readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<BooleanQueryOperatorInput>;
   readonly PRESERVE_WEBPACK_CACHE: InputMaybe<BooleanQueryOperatorInput>;
   readonly QUERY_ON_DEMAND: InputMaybe<BooleanQueryOperatorInput>;
@@ -2618,7 +2615,6 @@ type SiteFlagsSortInput = {
   readonly FAST_DEV: InputMaybe<SortOrderEnum>;
   readonly FAST_REFRESH: InputMaybe<SortOrderEnum>;
   readonly LAZY_IMAGES: InputMaybe<SortOrderEnum>;
-  readonly PARTIAL_HYDRATION: InputMaybe<SortOrderEnum>;
   readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<SortOrderEnum>;
   readonly PRESERVE_WEBPACK_CACHE: InputMaybe<SortOrderEnum>;
   readonly QUERY_ON_DEMAND: InputMaybe<SortOrderEnum>;
