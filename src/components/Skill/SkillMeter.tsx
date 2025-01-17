@@ -122,6 +122,37 @@ const LiquidForeground = styled.div<{ colors: GradientProps['colors'] }>`
   ${foregroundGrad};
 `;
 
+const BubbleHolder = styled.div<{ level: number }>`
+  position: absolute;
+  top: ${(props) => props.level + 10}%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  .bubble {
+    width: 10px;
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: swim-up 2s infinite linear;
+    height: 10px;
+    bottom: -5px;
+    left: 50%;
+  }
+  .bubble-1 {
+    animation-delay: 0.5s;
+    left: 30%;
+  }
+  .bubble-2 {
+    animation-delay: 1s;
+    left: 70%;
+  }
+  .bubble-3 {
+    animation-delay: 1.5s;
+    left: 50%;
+  }
+`;
+
 const findIndex = (val: number) => {
   if (val >= 75) return 3;
   else if (val >= 50) return 2;
@@ -160,7 +191,15 @@ export default function SkillMeterFn({
     <SkillMeter className={className} glow={currentConfig.top}>
       <Glass ref={glassRef} level={100 - level} glow={currentConfig.top}>
         <LiquidBackground colors={currentConfig} className="liquid" />
-        <LiquidForeground colors={currentConfig} className="liquid" />
+        <LiquidForeground
+          colors={currentConfig}
+          className="liquid"
+        ></LiquidForeground>
+        <BubbleHolder level={100 - level}>
+          <div className="bubble bubble-1" />
+          <div className="bubble bubble-2" />
+          <div className="bubble bubble-3" />
+        </BubbleHolder>
         <svg
           width="100%"
           height="100%"
