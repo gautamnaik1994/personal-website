@@ -15,6 +15,9 @@ const CategoryTagList = styled.div`
   margin-top: 1rem;
   padding-bottom: 15px;
   align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-bottom: 1rem;
   h3 {
     display: none;
   }
@@ -28,6 +31,7 @@ const CategoryTagList = styled.div`
     border-radius: 5px;
     background-color: #ffffff38;
     margin-right: 10px;
+    white-space: nowrap;
     &.active {
       /* font-weight: var(--fontWeightBold); */
       background-color: var(--accent);
@@ -39,7 +43,6 @@ const CategoryTagList = styled.div`
     }
   }
   ${media.desktop} {
-    margin-bottom: 1rem;
     margin-top: 2rem;
     h3 {
       display: block;
