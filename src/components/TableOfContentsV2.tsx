@@ -47,7 +47,11 @@ const TOC = styled.div`
   }
 `;
 
-const TableOfContents = ({ items, isPopup = false, onCloseHandler }: Props) => {
+const TableOfContents = ({
+  items,
+  isPopup = false,
+  onCloseHandler = () => {},
+}: Props) => {
   const handleClick = (e, url) => {
     e.preventDefault();
     const targetElement = document.querySelector(url);
