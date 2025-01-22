@@ -98,12 +98,28 @@
     {
       "selection": [
         {
-          "order": 36,
+          "order": 44,
+          "id": 43,
+          "name": "close",
+          "prevSize": 24,
+          "code": 59649,
+          "tempChar": ""
+        },
+        {
+          "order": 43,
+          "id": 42,
+          "name": "bullet-list",
+          "prevSize": 24,
+          "code": 59648,
+          "tempChar": ""
+        },
+        {
+          "order": 41,
           "id": 41,
           "name": "share",
           "prevSize": 24,
           "code": 59675,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 35,
@@ -111,7 +127,7 @@
           "name": "kaggle",
           "prevSize": 24,
           "code": 59674,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 0,
@@ -143,7 +159,7 @@
           "name": "double-arrow",
           "prevSize": 24,
           "code": 59651,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 32,
@@ -151,7 +167,7 @@
           "name": "arrow-right",
           "prevSize": 24,
           "code": 59652,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 34,
@@ -159,7 +175,7 @@
           "name": "category",
           "prevSize": 24,
           "code": 59653,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "order": 0,
@@ -174,7 +190,7 @@
           "id": 18,
           "name": "logo",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59656
         },
         {
@@ -214,7 +230,7 @@
           "id": 23,
           "name": "open-new-tab",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59663
         },
         {
@@ -222,7 +238,7 @@
           "id": 24,
           "name": "stack-overflow-bottom",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59654
         },
         {
@@ -230,7 +246,7 @@
           "id": 25,
           "name": "stack-overflow-top",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59657
         },
         {
@@ -238,7 +254,7 @@
           "id": 26,
           "name": "linkedin",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59658
         },
         {
@@ -246,7 +262,7 @@
           "id": 27,
           "name": "github",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59664
         },
         {
@@ -254,7 +270,7 @@
           "id": 28,
           "name": "stack-overflow",
           "prevSize": 24,
-          "tempChar": "",
+          "tempChar": "",
           "code": 59665
         },
         {
@@ -314,6 +330,36 @@
       "height": 1024,
       "prevSize": 28,
       "icons": [
+        {
+          "id": 43,
+          "paths": [
+            "M512 585.359l-256.764 256.764q-14.409 14.409-36.68 14.409t-36.68-14.409-14.409-36.68 14.409-36.68l256.764-256.764-256.764-256.764q-14.409-14.409-14.409-36.68t14.409-36.68 36.68-14.409 36.68 14.409l256.764 256.764 256.764-256.764q14.409-14.409 36.68-14.409t36.68 14.409 14.409 36.68-14.409 36.68l-256.764 256.764 256.764 256.764q14.409 14.409 14.409 36.68t-14.409 36.68-36.68 14.409-36.68-14.409l-256.764-256.764z"
+          ],
+          "attrs": [],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 24,
+          "tags": [
+            "close"
+          ],
+          "colorPermutations": {}
+        },
+        {
+          "id": 42,
+          "paths": [
+            "M416.001 848.001q-20.399 0-34.2-13.801t-13.801-34.2 13.801-34.2 34.2-13.801h480.001q20.399 0 34.2 13.801t13.801 34.2-13.801 34.2-34.2 13.801h-480.001zM416.001 560.001q-20.399 0-34.2-13.801t-13.801-34.2 13.801-34.2 34.2-13.801h480.001q20.399 0 34.2 13.801t13.801 34.2-13.801 34.2-34.2 13.801h-480.001zM416.001 272.001q-20.399 0-34.2-13.801t-13.801-34.2 13.801-34.2 34.2-13.801h480.001q20.399 0 34.2 13.801t13.801 34.2-13.801 34.2-34.2 13.801h-480.001zM175.999 895.999q-39.6 0-67.801-28.201t-28.201-67.801 28.201-67.801 67.801-28.201 67.801 28.201 28.201 67.801-28.201 67.801-67.801 28.201zM175.999 607.999q-39.6 0-67.801-28.201t-28.201-67.801 28.201-67.801 67.801-28.201 67.801 28.201 28.201 67.801-28.201 67.801-67.801 28.201zM175.999 319.999q-39.6 0-67.801-28.201t-28.201-67.801 28.201-67.801 67.801-28.201 67.801 28.201 28.201 67.801-28.201 67.801-67.801 28.201z"
+          ],
+          "attrs": [],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 24,
+          "tags": [
+            "format_list_bulleted"
+          ],
+          "colorPermutations": {
+            "1731861991238868112552552551751722541": []
+          }
+        },
         {
           "id": 41,
           "paths": [
@@ -432,7 +478,9 @@
           ],
           "isMulticolor": false,
           "isMulticolor2": false,
-          "colorPermutations": {}
+          "colorPermutations": {
+            "1731861991238868112552552551751722541": []
+          }
         },
         {
           "id": 34,
@@ -942,7 +990,7 @@
     "gridSize": 16,
     "showGrid": true,
     "quickUsageToken": {
-      "p-website": "M2U1OGQzN2E3ZCMxNzMyODgzODcyI21taXNJZzZXc25BemVDVFlqVkwrZUIvSTRtNUFpRFNVUSs2MW84cTQrdy9R"
+      "p-website": "YzE0MjMwY2I3NyMxNzM3NDgyODA0I0VHSGxaRmJjbHUxNTNjY3ZuS3IxS0J0aHUrQjFnaTdPMDlnZ0s2N1JFdXlM"
     }
   },
   "uid": -1

@@ -8,7 +8,7 @@ const RoundButton = styled.button`
   font-size: 24px;
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 15px;
   width: 56px;
   height: 56px;
   border-radius: 50%;

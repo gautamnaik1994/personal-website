@@ -1,5 +1,4 @@
-import {  IGatsbyImageData } from 'gatsby-plugin-image';
-
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 export interface SiteMetadata {
   title: string;
@@ -14,22 +13,27 @@ export interface Site {
 }
 
 export interface Frontmatter {
-  title?: string = '';
-  slug?: string = '';
-  date?: string = '';
-  updatedDate?: string = '';
-  description?: string = '';
-  keywords?: string[] = [];
-  categories?: string[] | any = [];
+  title?: string;
+  slug?: string;
+  date?: string;
+  updatedDate?: string;
+  description?: string;
+  keywords?: string[];
+  categories?: string[] | any;
   category: string;
-  tags?: string[] | any = [];
-  bannerImage: { childImageSharp: { fluid: any }; publicURL: string };
+  tags?: string[] | any;
+  bannerImage: {
+    childImageSharp: { fluid: any; gatsbyImageData: any };
+    publicURL: string;
+  };
 }
 
 export interface Mdx {
   edges: [];
   body: string;
   frontmatter: Frontmatter;
+  fields: { timeToRead: { text: string; time: number } };
+  tableOfContents: { items: [] };
 }
 
 export interface LayoutProps {

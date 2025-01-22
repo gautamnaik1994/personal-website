@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import media from '../utils/MediaQueries';
@@ -9,7 +9,9 @@ import Container from '../components/Container';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Title from '../components/mdx/Title';
 import SEO from '../components/SEO';
-import FloatingShareBtn from '../components/FloatingShareBtn';
+// import FloatingShareBtn from '../components/FloatingShareBtn';
+import FloatingTocBtn from '../components/FloatingTocBtn';
+import TableOfContents from '../components/TableOfContentsV2';
 
 const Post = styled.div`
   margin-bottom: 25px;
@@ -119,6 +121,31 @@ const PosTemplate = ({
   // location,
   children,
 }: Props): React.ReactElement => {
+  const isLargePost = mdx.fields.timeToRead.time / 1000 > 120;
+  const tocRef = useRef<HTMLDivElement>(null);
+  const [isTocInView, setIsTocInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsTocInView(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: `0px`,
+        threshold: 0.1,
+      },
+    );
+
+    if (tocRef.current) {
+      observer.observe(tocRef.current);
+    }
+
+    return () => {
+      if (tocRef.current) {
+        observer.unobserve(tocRef.current);
+      }
+    };
+  }, []);
   return (
     <>
       <PostContainer>
@@ -146,8 +173,13 @@ const PosTemplate = ({
             image={mdx.frontmatter.bannerImage.childImageSharp.gatsbyImageData}
             alt={mdx.frontmatter.title}
           />
+          {isLargePost && (
+            <div ref={tocRef}>
+              <TableOfContents items={mdx.tableOfContents.items} />
+              <hr className="two-rem-mt" />
+            </div>
+          )}
         </Header>
-
         <Post>
           <StyledMDXRenderer>{children}</StyledMDXRenderer>
         </Post>
@@ -157,8 +189,10 @@ const PosTemplate = ({
           nextPostTitle={next && next.frontmatter.title}
           prevPostTitle={prev && prev.frontmatter.title}
         />
-        <FloatingShareBtn />
-        {/* <TableOfContents items={mdx.tableOfContents.items} /> */}
+        {/* <FloatingShareBtn /> */}
+        {isLargePost && !isTocInView && (
+          <FloatingTocBtn items={mdx.tableOfContents.items} />
+        )}
       </PostContainer>
     </>
   );
@@ -170,6 +204,7 @@ export const pageQuery = graphql`
     #   ...site
     # }
     mdx(id: { eq: $id }, frontmatter: { publish: { eq: true } }) {
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMM D, YYYY")
@@ -191,6 +226,7 @@ export const pageQuery = graphql`
       fields {
         timeToRead {
           text
+          time
         }
       }
       body

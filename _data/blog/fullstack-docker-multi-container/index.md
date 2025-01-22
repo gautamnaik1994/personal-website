@@ -28,7 +28,9 @@ The application should include a frontend that displays the price data dynamical
 The solution is to build a application using React, Express, Socket.io, Redis and MongoDB.
 Docker will be used to containerize the application and Docker Compose will be used to manage the containers.
 
-> The goal of this project is to showcase how to use docker and docker-compose to build a multi-container application.
+<Alert title="NOTE" variant="warning">
+The goal of this project is to showcase how to use docker and docker-compose to build a multi-container application.
+</Alert>
 
 ## Architecture
 

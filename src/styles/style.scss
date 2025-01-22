@@ -134,6 +134,12 @@
 .icon-share:before {
   content: '\e91b';
 }
+.icon-bullet-list:before {
+  content: '\e900';
+}
+.icon-close:before {
+  content: '\e901';
+}
 // Import Vanilla framework
 // @import '~vanilla-framework/scss/vanilla';
 // @include vf-base;
@@ -606,3 +612,22 @@ p:has(span.gatsby-resp-image-wrapper) {
     opacity: 0;
   }
 }
+
+// .toc-list {
+//   list-style: none; /* Remove default list styles */
+//   counter-reset: section; /* Initialize the counter */
+// }
+
+// .toc-list > li {
+//   counter-increment: section; /* Increment the counter */
+// }
+
+// .toc-list > li:before {
+//   content: counters(section, '.') ' '; /* Use counters to display hierarchy */
+//   font-weight: bold;
+// }
+
+// .toc-list li ul {
+//   counter-reset: section; /* Reset counter for nested lists */
+//   padding-left: 20px; /* Add padding for nesting */
+// }
