@@ -131,6 +131,7 @@ module.exports = {
           rehypePlugins: [
             // Generate heading ids for rehype-autolink-headings
             wrapESMPlugin(`rehype-slug`),
+            require(`./src/utils/rehype-prepend-id`),
             // To pass options, use a 2-element array with the
             // configuration in an object in the second element
             // [wrapESMPlugin(`rehype-autolink-headings`), { behavior: `wrap` }],

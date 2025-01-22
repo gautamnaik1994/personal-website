@@ -68,7 +68,7 @@ You can access the hosted dashboard at [Automated Trading System Dashboard](http
 
 ## Backend System
 
-### 1. Lambda functions
+### Lambda functions
 
 [AWS Lambda](https://aws.amazon.com/lambda/) functions are comparable to microservices, which can be manually run by invoking them via API Gateway or AWS Scheduler. The objective is to divide your application into tiny bits of logic. Each function should perform a single task. For example, a Lambda function can get a day's trade signals from a database and place an order on the market by calling the broker API. If you have chosen to enable this behaviour, a Lambda function will restart if it fails or crashes.&#x20;
 
@@ -132,7 +132,7 @@ def lambda_handler(event, context):
         logging.error(f" Exception: {e}")
 ````
 
-### 2. S3 Bucket
+### S3 Bucket
 
 S3 is a cloud-based storage service that I use to store all of my stock symbols data in CSV format. I chose S3 over DynamoDB because CSV files can be large, and I need to be able to download them in bulk. DynamoDB is not a good fit for this task because it is not designed for storing and retrieving large amounts of data.
 
@@ -145,7 +145,7 @@ const csvBucket = new s3.Bucket(this, "Bucket", {
 
 ```
 
-### 3. DynamoDB
+### DynamoDB
 
 This is where I store all the data about trading signals, past trades, and their PNL data.
 
@@ -168,7 +168,7 @@ const systemConfigTableV1 = new db.Table(this, "SystemConfigTable", {
 });
 ```
 
-### 3. Scheduler
+### Scheduler
 
 This is where the event to run the function at a particular time is created. It is similar to a cron job. This was the second most important AWS service to me as I have more than 20 cron jobs which will keep on increasing as the project grows.
 
@@ -196,7 +196,7 @@ tokenGeneratorFnCron.addTarget(
 );
 ```
 
-### 5. API Gateway
+### API Gateway
 
 This service is used to build APIs. These APIs can be linked to Lambda functions. This means I can call a Lambda function by calling an API endpoint.
 
@@ -228,7 +228,7 @@ httpApiV1.addRoutes({
 });
 ```
 
-### 6. Cognito
+### Cognito
 
 Amazon Cognito provides secure access to your app's backend resources in AWS or any service behind Amazon API Gateway. I used it so that I can access my AWS services from my frontend website.
 

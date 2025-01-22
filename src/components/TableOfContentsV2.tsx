@@ -64,16 +64,19 @@ const TableOfContents = ({
   const renderItems = (items, level = 0) => {
     return (
       <ul className="toc-list" style={{ paddingLeft: `${level + 1 * 20}px` }}>
-        {items.map((item, index) => (
-          <li key={index}>
-            <a href={item.url} onClick={(e) => handleClick(e, item.url)}>
-              {item.title}
-            </a>
-            {item.items &&
-              item.items.length > 0 &&
-              renderItems(item.items, level + 1)}
-          </li>
-        ))}
+        {items.map((item, index) => {
+          const newUrl = item.url.replace(`#`, `#heading-`);
+          return (
+            <li key={index}>
+              <a href={newUrl} onClick={(e) => handleClick(e, newUrl)}>
+                {item.title}
+              </a>
+              {item.items &&
+                item.items.length > 0 &&
+                renderItems(item.items, level + 1)}
+            </li>
+          );
+        })}
       </ul>
     );
   };
