@@ -6,6 +6,7 @@ interface Props {
   isPopup?: boolean;
   items: [];
   onCloseHandler?: () => void;
+  isPhone?: boolean;
 }
 
 const TOC = styled.div`
@@ -51,28 +52,37 @@ const TableOfContents = ({
   items,
   isPopup = false,
   onCloseHandler = () => {},
+  isPhone,
 }: Props) => {
   const handleClick = (e, url) => {
     e.preventDefault();
     const targetElement = document.querySelector(url);
     if (targetElement) {
-      onCloseHandler();
       targetElement.scrollIntoView();
+      isPhone && onCloseHandler();
     }
   };
 
   const renderItems = (items, level = 0) => {
     return (
-      <ul className="toc-list" style={{ paddingLeft: `${level + 1 * 20}px` }}>
+      <ul
+        className={`toc-list `}
+        style={{ paddingLeft: `${level + 1 * 20}px` }}
+      >
         {items.map((item, index) => {
           const newUrl = item.url.replace(`#`, `#heading-`);
           return (
-            <li key={index}>
-              <a href={newUrl} onClick={(e) => handleClick(e, newUrl)}>
+            <li key={index} className={`toc-item `}>
+              <a
+                href={newUrl}
+                onClick={(e) => handleClick(e, newUrl)}
+                className={`toc-link `}
+              >
                 {item.title}
               </a>
               {item.items &&
                 item.items.length > 0 &&
+                level < 2 &&
                 renderItems(item.items, level + 1)}
             </li>
           );

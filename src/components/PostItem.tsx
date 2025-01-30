@@ -97,10 +97,7 @@ const PostItemMain = ({
   banner,
   ...props
 }: Props): React.ReactElement => (
-  <PostItem
-    className={props.className}
-    // bgImage={banner.placeholder?.fallback}
-  >
+  <PostItem className={props.className}>
     <div className="img-container">
       <GatsbyImage image={banner} alt={title} />
     </div>

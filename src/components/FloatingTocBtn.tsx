@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { btnStyles } from './Button';
 import styled from 'styled-components';
-import media, { isDesktop } from '../utils/MediaQueries';
+import media from '../utils/MediaQueries';
 
 import TableOfContents from './TableOfContentsV2';
 
 interface FloatingTocBtnProps {
   items: [];
+  isPhone: boolean;
 }
 
 const RoundButton = styled.button`
@@ -30,8 +31,8 @@ const RoundButton = styled.button`
   }
 `;
 
-const FloatingTocBtn: React.FC<FloatingTocBtnProps> = ({ items }) => {
-  const [isOpen, setIsOpen] = useState(isDesktop());
+const FloatingTocBtn: React.FC<FloatingTocBtnProps> = ({ items, isPhone }) => {
+  const [isOpen, setIsOpen] = useState(!isPhone);
 
   const handleClose = () => {
     setIsOpen(false);
@@ -42,13 +43,14 @@ const FloatingTocBtn: React.FC<FloatingTocBtnProps> = ({ items }) => {
       <RoundButton
         onClick={(e) => {
           setIsOpen(!isOpen);
-          e.target.blur();
+          (e.target as HTMLElement).blur();
         }}
       >
         <i className={`icon icon-${isOpen ? `close` : `bullet-list`}`}></i>
       </RoundButton>
       {isOpen && (
         <TableOfContents
+          isPhone={isPhone}
           items={items}
           isPopup={true}
           onCloseHandler={handleClose}

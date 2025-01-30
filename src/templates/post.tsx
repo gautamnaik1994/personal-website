@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import media from '../utils/MediaQueries';
+import media, { isDesktop } from '../utils/MediaQueries';
 import Pagination from '../components/Pagination';
 import Badge from '../components/Badge';
 import { Site, Mdx, PageContext } from '../types';
@@ -123,6 +123,7 @@ const PosTemplate = ({
 }: Props): React.ReactElement => {
   const isLargePost = mdx.fields.timeToRead.time / 1000 > 120;
   const tocRef = useRef<HTMLDivElement>(null);
+  const isPhone = !isDesktop();
   const [isTocInView, setIsTocInView] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -191,7 +192,7 @@ const PosTemplate = ({
         />
         {/* <FloatingShareBtn /> */}
         {isLargePost && !isTocInView && (
-          <FloatingTocBtn items={mdx.tableOfContents.items} />
+          <FloatingTocBtn items={mdx.tableOfContents.items} isPhone={isPhone} />
         )}
       </PostContainer>
     </>

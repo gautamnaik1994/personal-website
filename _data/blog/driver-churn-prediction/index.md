@@ -1,5 +1,5 @@
 ---
-title: OLA Cabs Driver Churn Prediction
+title: Driver Churn Prediction
 date: 2024-08-30T11:54:00.060Z
 slug: driver-churn-prediction
 updatedDate: 2024-08-30T11:54:00.060Z

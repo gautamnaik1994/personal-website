@@ -5,6 +5,7 @@ import media from '../../utils/MediaQueries';
 import PostItem from '../PostItem';
 import SectionTitle from '../SectionTitle';
 import LinkButton from '../LinkButton';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 const StyledLinkButton = styled(LinkButton)`
   justify-self: center;
@@ -44,15 +45,19 @@ interface PostItemProps {
       title: string;
       excerpt: string;
       tags: [];
-      bannerImage: { publicURL: string };
+      bannerImage: { childImageSharp: { gatsbyImageData: IGatsbyImageData } };
       category: string;
     };
-    timeToRead: Object;
+    fields: {
+      timeToRead: {
+        text: string;
+      };
+    };
   };
 }
 
 const BlogsSection = ({ className }: Props): React.ReactElement => {
-  const { featuredPost, data } = useStaticQuery(graphql`
+  const { featuredPost } = useStaticQuery(graphql`
     {
       featuredPost: allMdx(
         filter: {
@@ -72,7 +77,7 @@ const BlogsSection = ({ className }: Props): React.ReactElement => {
               date(formatString: "MMMM DD, YYYY")
               bannerImage {
                 childImageSharp {
-                  gatsbyImageData(width: 500)
+                  gatsbyImageData(width: 800)
                 }
               }
             }
@@ -98,7 +103,6 @@ const BlogsSection = ({ className }: Props): React.ReactElement => {
           const _data = post.node.frontmatter;
           return (
             <StyledPostItem
-              responsive={false}
               key={index}
               title={_data.title}
               category={_data.category}

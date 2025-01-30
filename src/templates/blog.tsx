@@ -10,6 +10,7 @@ import media from '../utils/MediaQueries';
 import Container from '../components/Container';
 import OuterLinks from '../components/OuterLinks';
 import SEO from '../components/SEO';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 const Grid = styled.div`
   ${media.desktop} {
@@ -42,14 +43,18 @@ interface PostItemProps {
       title: string;
       excerpt: string;
       tags: [];
-      bannerImage: { publicURL: string };
+      bannerImage: { childImageSharp: { gatsbyImageData: IGatsbyImageData } };
       category: string;
     };
-    // timeToRead: number;
+    fields: {
+      timeToRead: {
+        text: string;
+      };
+    };
   };
 }
 
-const Blog = ({ data, pageContext }: Props): JSX.Element => {
+const Blog = ({ data, pageContext }: Props): React.ReactNode => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { allMdx } = data;
   const posts = allMdx.edges;
@@ -155,7 +160,7 @@ export const query = graphql`
             description
             bannerImage {
               childImageSharp {
-                gatsbyImageData(width: 500, placeholder: BLURRED)
+                gatsbyImageData(width: 600, placeholder: BLURRED)
               }
             }
           }
