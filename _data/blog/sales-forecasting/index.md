@@ -511,47 +511,6 @@ The code for hypothesis testing can be found in the notebook linked below.
 6. **Data-Driven Decision Making**: By leveraging data analytics and machine learning models, businesses can make informed decisions based on data-driven insights. This can help optimize operations, improve forecasting accuracy, and drive business growth in a competitive retail environment.
 7. **Future Scope**: The analysis provides a solid foundation for future research and improvement. Businesses can explore advanced forecasting techniques, such as hierarchical forecasting and ensemble models, to enhance the accuracy and robustness of their sales forecasting systems.
 
-## Clustering
-
-Clustering is an unsupervised machine-learning technique used to group similar data points together based on their features. It is commonly used for customer segmentation, anomaly detection, and pattern recognition.
-
-### Why Clustering?
-
-#### Building Models for Each Cluster
-
-The dataset contained 365 stores, so building 365 individual models was not feasible. Clustering stores based on sales data was considered, with the goal of building a single model for each cluster. However, this approach was abandoned due to the inability to achieve a clear separation of clusters using KMeans clustering.
-
-Following is the plot generated using KMeans clustering
-
-![Kmeans](image-18.png)
-
-#### For Feature Engineering
-
-I wanted to incorporate some information about the stores into the model, but I also wanted to avoid data leakage, which can be a potential issue with target encoding on Store IDs.
-I attempted to use hierarchical clustering to generate clusters and then use the cluster ID as a feature in the model, but this approach was not successful. In the end, I used both target encoding on Store IDs and cluster IDs as features in the model. As you'll see in the feature importance plot provided in the following sections, cluster ID had the least feature importance.
-
-Following is the plot generated using Hierarchical clustering
-
-![Hierarchical Clusters](image-20.png)
-
-### Post Clustering Analysis
-
-After clustering the stores, I performed a post-clustering analysis to understand the characteristics of each cluster and identify any patterns or trends that could inform the forecasting model. This is done by aggregating the sales data for each cluster and analyzing the average sales, sales growth, and other relevant metrics.
-
-![Cluster analysis](image-24.png)
-
-The above polar plot shows the averaged data for each cluster. We can see that stores belonging to Cluster 2 have high average sales growth while stores belonging to Cluster 3 have high average sales.
-
-Code for generating data required to build dataset for clustering can be found in the notebook linked below.
-
-[![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.org/github/gautamnaik1994/SalesForecasting_ML_CaseStudy/blob/main/notebooks/data_processing/02.DataGeneration.ipynb?flush_cache=true)
-
-<p/>
-
-The code for the clustering can be found in the notebook linked below.
-
-[![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.org/github/gautamnaik1994/SalesForecasting_ML_CaseStudy/blob/main/notebooks/data_processing/03.Clustering.ipynb?flush_cache=true)
-
 ## Prediction and Forecasting
 
 Businesses rely on planning for success, which necessitates an understanding of future trends. While past sales data has offered valuable insights, we will now utilize machine learning algorithms to predict future sales.
@@ -825,6 +784,47 @@ Non-normality in residuals can also suggest the presence of outliers or structur
 </div>
 
 From the above table, we can see that LightGBM performed the best in terms of MAE. Compared to linear models, tree-based models like XGBoost and LightGBM are better at capturing non-linear relationships and interactions between features, making them more suitable for time series forecasting tasks.
+
+### Clustering
+
+Clustering is an unsupervised machine-learning technique used to group similar data points together based on their features. It is commonly used for customer segmentation, anomaly detection, and pattern recognition.
+
+#### Why Clustering?
+
+##### Building Models for Each Cluster
+
+The dataset contained 365 stores, so building 365 individual models was not feasible. Clustering stores based on sales data was considered, with the goal of building a single model for each cluster. However, this approach was abandoned due to the inability to achieve a clear separation of clusters using KMeans clustering.
+
+Following is the plot generated using KMeans clustering
+
+![Kmeans](image-18.png)
+
+##### For Feature Engineering
+
+I wanted to incorporate some information about the stores into the model, but I also wanted to avoid data leakage, which can be a potential issue with target encoding on Store IDs.
+I attempted to use hierarchical clustering to generate clusters and then use the cluster ID as a feature in the model, but this approach was not successful. In the end, I used both target encoding on Store IDs and cluster IDs as features in the model. As you'll see in the feature importance plot provided in the following sections, cluster ID had the least feature importance.
+
+Following is the plot generated using Hierarchical clustering
+
+![Hierarchical Clusters](image-20.png)
+
+#### Post Clustering Analysis
+
+After clustering the stores, I performed a post-clustering analysis to understand the characteristics of each cluster and identify any patterns or trends that could inform the forecasting model. This is done by aggregating the sales data for each cluster and analyzing the average sales, sales growth, and other relevant metrics.
+
+![Cluster analysis](image-24.png)
+
+The above polar plot shows the averaged data for each cluster. We can see that stores belonging to Cluster 2 have high average sales growth while stores belonging to Cluster 3 have high average sales.
+
+Code for generating data required to build dataset for clustering can be found in the notebook linked below.
+
+[![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.org/github/gautamnaik1994/SalesForecasting_ML_CaseStudy/blob/main/notebooks/data_processing/02.DataGeneration.ipynb?flush_cache=true)
+
+<p/>
+
+The code for the clustering can be found in the notebook linked below.
+
+[![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.org/github/gautamnaik1994/SalesForecasting_ML_CaseStudy/blob/main/notebooks/data_processing/03.Clustering.ipynb?flush_cache=true)
 
 ### Time Series Models
 
