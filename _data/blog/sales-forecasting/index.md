@@ -16,13 +16,14 @@ keywords:
   - data-analytics
 bannerImage: sales-forecasting.png
 ---
+
 ## Introduction
 
 <Alert variant="warning">
   This blog post is extensive. To navigate to a specific topic, utilize the provided "Table of Contents."
 </Alert>
 
-Imagine you run multiple retail stores. One day, you suddenly run out of your best-selling product because you didn't anticipate the high demand. Frustrating, right? That's where sales forecasting comes in handy. It helps you plan your inventory and manage resources efficiently, so you're always prepared for your customers' needs.  
+Imagine you run multiple retail stores. One day, you suddenly run out of your best-selling product because you didn't anticipate the high demand. Frustrating, right? That's where sales forecasting comes in handy. It helps you plan your inventory and manage resources efficiently, so you're always prepared for your customers' needs.
 
 Effective sales forecasting is fundamental for multiple aspects of retail management and operation, including:
 
@@ -194,7 +195,7 @@ EDA is an essential step in the data analysis process. It helps us understand th
 
 **Observations**
 
-- We can see that most of the order count for each store is around 50 - 80  
+- We can see that most of the order count for each store is around 50 - 80
 
 ---
 
@@ -303,7 +304,7 @@ To share this analysis with a wider audience, I have created an interactive Tabl
 
 ### Planning Tableau Dashboard
 
-Before starting the analysis, I created an outline of the Tableau dashboard to identify key insights.  
+Before starting the analysis, I created an outline of the Tableau dashboard to identify key insights.
 
 ![Planning Tableau Dashboard](./tableau-skeleton.png)
 
@@ -318,6 +319,10 @@ Click on the following badge to view the Tableau dashboard or use the embedded d
 [![Tableau](https://img.shields.io/badge/View%20on-Tableau-blue?logo=tableau)](https://public.tableau.com/views/SalesForecasting_17373524705280/SalesForecasting?:showVizHome=no&:embed=true)
 
 ### Tableau Dashboard Embed
+
+<Alert variant="warning">
+  Following Tablueau Dashboard has to be viewed in a wide screen for better viewing experience.
+</Alert>
 
 <iframe
   src="https://public.tableau.com/views/SalesForecasting_17373524705280/SalesForecasting?:showVizHome=no&:embed=true"
@@ -340,11 +345,13 @@ Time series analysis is a statistical method used to analyze and forecast time-d
 ### Trend
 
 ![Trend](./global_time_series.png)
+
 <p class="text-center">Global Time Series</p>
 
 As you can see from the above plot there is no clear trend in the data. The sales data is stationary and does not exhibit any significant upward or downward trend over time. For in-depth analysis, please check the Tableau dashboard linked above.
 
 ![Seasonal Decompose](image-13.png)
+
 <p class="text-center">Plot of Seasonal Decompose</p>
 
 The above plot shows the seasonal decomposition of the sales data. The data is decomposed into trend, seasonality, and residual components. The trend component represents the long-term movement of the data, while the seasonal component captures the periodic fluctuations. The residual component represents the random noise in the data.  
@@ -736,6 +743,7 @@ This is how I can verify the model's predictions and understand the impact of ea
 **Actual vs. Predicted**
 
 ![Acutual Sales vs Predicted Sales](image-15.png)
+
 <p class="text-center">Actual vs Predicted Sales</p>
 
 From the above plot, we can see that the model can predict the sales approximately. However, it couldn't predict the dips accurately.
@@ -883,6 +891,7 @@ From the above plot, we can see that there is slight right skewness in the resid
 **Actual vs. Predicted**
 
 ![Actual vs Predicted](image-19.png)
+
 <p class="text-center">Actual vs Predicted Global Sales</p>
 
 #### Model Evaluation
@@ -974,9 +983,11 @@ show which hyperparameters are important.
 Following are some screenshots of the Optuna Dashboard. Notice how the dashboard provides a detailed view of the minimization process, including the best hyperparameters and their corresponding values.
 
 ![Optuna Timeline](image-3.png)
+
 <p class="text-center">Optuna Timeline</p>
 
 ![Param Important](image-23.png)
+
 <p class="text-center">Hyperparameter Importance</p>
 
 ### MLflow
@@ -991,6 +1002,7 @@ experiments and models. It also helps you to reproduce the results.
 Following are some screenshots of the MLflow UI. Notice how the dashboard provides a detailed view of the experiments, including the metrics, parameters, and artefacts.
 
 ![MLflow Dashboard](./mlflow.png)
+
 <p class="text-center">MLFlow Dashboard</p>
 
 ## Deployment using Streamlit
@@ -1023,6 +1035,7 @@ For predicting store sales, I could have used directly used the cleaned data, bu
 Following is the flow diagram of the pipeline. It's built using [https://www.eraser.io/](https://www.eraser.io/) diagram as a code tool. The diagram code for the pipeline can be found in the [here](https://github.com/gautamnaik1994/SalesForecasting_ML_CaseStudy/blob/main/misc/ml_pipeline_arc.eraserdiagram).
 
 ![Pipeline](./ml_pipeline.png)
+
 <p class="text-center">ML Prediction Pipeline</p>
 
 ### Pipeline Implementation
@@ -1111,11 +1124,11 @@ class FeatureGenerator(BaseEstimator, TransformerMixin):
 
         # drop original cyclical features
         result = result.drop(columns=['Day', 'Day_of_Week', 'Month', 'Quarter', 'Week', 'Week_of_Month', 'Year', 'Sales'], axis=1)
-        
+
         self.dropped_indices_ = result.index[result.isnull().any(axis=1)].tolist()
         result = result.dropna()
         self.included_indices_ = result.index.tolist()
-        
+
         return result
 
 
