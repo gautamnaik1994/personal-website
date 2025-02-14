@@ -23,6 +23,7 @@ const TOC = styled.div`
 
   &.toc-popup {
     position: fixed;
+    margin-top: 0;
     bottom: 80px;
     height: 300px;
     overflow: auto;
@@ -34,7 +35,9 @@ const TOC = styled.div`
       margin-top: 5px;
     }
     ${media.tablet} {
-      height: 400px;
+      min-height: 400px;
+      max-height: 82vh;
+      height: auto;
       bottom: 80px;
     }
   }
