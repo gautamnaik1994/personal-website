@@ -175,10 +175,10 @@ export default function SkillMeterFn({
   const handleOrientation = (event: DeviceOrientationEvent) => {
     let z: number = 0;
     // z = event.beta - 90 ?? 0; // In degree in the range [0, 360]
-    if (event.beta) {
-      z = event.beta - 90;
+    if (event.gamma) {
+      z = event.gamma;
     }
-    glassRef.current?.style.setProperty(`--angle`, `${z}deg`);
+    glassRef.current?.style.setProperty(`--angle`, `${-z}deg`);
   };
   useEffect(() => {
     const handleOrientationDebounced = (event: DeviceOrientationEvent) => {
