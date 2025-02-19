@@ -170,20 +170,31 @@ export default function SkillMeterFn({
   className = ` `,
 }: Props): React.ReactElement {
   const currentConfig = config[findIndex(level)];
-  const glassRef = useRef(null);
-  let glassElem: HTMLElement | null = null;
+  const glassRef = useRef<HTMLDivElement>(null);
 
   const handleOrientation = (event: DeviceOrientationEvent) => {
-    let z: any = 0;
-    z = event.gamma; // In degree in the range [-90,90]
-    glassElem?.style.setProperty(`--angle`, `${-z}deg`);
+    let z: number = 0;
+    // z = event.beta - 90 ?? 0; // In degree in the range [0, 360]
+    if (event.beta) {
+      z = event.beta - 90;
+    }
+    glassRef.current?.style.setProperty(`--angle`, `${z}deg`);
   };
-
   useEffect(() => {
-    glassElem = glassRef.current;
-    window.addEventListener(`deviceorientation`, handleOrientation, true);
+    const handleOrientationDebounced = (event: DeviceOrientationEvent) => {
+      requestAnimationFrame(() => handleOrientation(event));
+    };
+
+    window.addEventListener(
+      `deviceorientation`,
+      handleOrientationDebounced,
+      true,
+    );
     return () => {
-      window.removeEventListener(`deviceorientation`, handleOrientation);
+      window.removeEventListener(
+        `deviceorientation`,
+        handleOrientationDebounced,
+      );
     };
   }, []);
 
